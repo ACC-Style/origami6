@@ -27,15 +27,15 @@
 				id="text"
 				name="text"
 				v-on:change="onChange(text)"
-				class="br_2 p-y_2 br_solid flex_auto p-x_4 lh_3"
-				type="text"
+				class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3"
+				:type="inputType"
 				v-model="text"
 				required="required"
 				:class="inputStyles"
 				:disabled="state == 'disabled'"
 			/>
 			<div
-				class="br_solid br_2 br-l_0 p-y_3 font_medium flex_none p-x_4 lh_3 flex flex_column"
+				class="br_solid br_2 br-l_0 p-y_3 font_medium flex_none p-x_4 lh_3 flex flex_column font-size_down"
 				v-if="postLabel"
 				:class="inputPrePostStyles"
 			>
@@ -70,6 +70,7 @@ export default {
 	name: "inputText",
 	props: {
 		inputId:{type:String,required:true},
+		inputType:{type:String,default:"text"},
 		defaultvalue: { type: String, default: "" },
 		icon: { type: String, default: null },
 		postLabel: { type: String, default: null },
