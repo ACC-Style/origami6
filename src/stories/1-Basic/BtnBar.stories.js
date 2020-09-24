@@ -1,8 +1,8 @@
-import SortBar from "../../../components/Transcript/Transcript.Sort";
+import BtnBar from "../../components/subComponents/BtnBar.vue";
 
 export default {
-	title: "Transcript/Sort",
-	component: SortBar,
+	title: "Basic/BtnBar",
+	component: BtnBar,
 	parameters: {
 		docs: {
 			description: {
@@ -11,7 +11,7 @@ export default {
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {
-				code: `<Sort :sortTypes="sortTypes" :selectedSort="selectedSort" @updateselectedsort="updateselectedsort"></Sort>`,
+				code: `<BtnBar :sortTypes="sortTypes" :selectedSort="selectedSort" @updateselectedsort="updateselectedsort">Optional Label</BtnBar>`,
 			},
 		},
 	},
@@ -20,7 +20,7 @@ export default {
 			description:
 				"The labels and types of sort this widget will display",
 		},
-		selectedSort: {
+		options: {
             description:
             "Current and Default Activated Sort Button",
 			control: {
@@ -34,12 +34,13 @@ export default {
 };
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { SortBar },
-	template: `<SortBar v-bind="$props"/>`,
+	components: { BtnBar },
+	template: `<BtnBar  v-bind="$props">Optional Label</BtnBar>`,
 });
-export const Legend = Template.bind({});
-Legend.args = {
-	sortTypes: ["Date", "Activity", "Product"],
-    selectedSort: "Date",
-    buttonDecorations:{shadow:false,corner:"square",size:"small",state:"secondary",isActivatable:true}
+export const Sort = Template.bind({});
+Sort.args = {
+	options: [{label:"Date",isActive:true},{label:"Product",isActive:false},{label:"Activity",isActive:false}],
+    buttonDecorations:{shadow:false,corner:"square",size:"small",state:"secondary",
+    isActivatable:true,
+    multiselect:false}
 };

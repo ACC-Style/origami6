@@ -1,8 +1,8 @@
 <template>
 	<label
 		class="value-space br_solid br_2 p_3 texture_light"
-		v-bind:class="areaStyle"
 		:for="inputNameTarget"
+		:class="areaStyle"
 	>
 		<i class="fas" v-bind:class="icon"></i>
 	</label>
@@ -13,7 +13,9 @@ export default {
 	name: "valueIcon",
 	props: {
 		inputNameTarget: { type: String },
-		state: { type: String, default: "" },
+		state: { type: String, default: "", validator: function (value) {
+        return ['alert','requiredAlert','warning','success','info','accent',''].indexOf(value) !== -1;
+      } },
 		icon: { type: String, default: "fa-check" }
 	},
 	computed: {
@@ -21,13 +23,13 @@ export default {
 			let styles = "";
 			switch (this.state) {
 				case "alert":
-					styles += " bg_alert-4 c_alert-n3 br_alert";
+					styles += " bg_alert-3 c_alert-1 br_alert-n1 ";
 					break;
 				case "warning":
-					styles += " bg_warning-4 c_warning-n3 br_warning";
+					styles += " bg_warning-3  c_warning br_warning-n1 ";
 					break;
 				case "success":
-					styles += " bg_sucess-4 c_success-n3  br_sucess";
+					styles += " bg_success-4 c_success-n3  br_success";
 					break;
 				case "info":
 					styles += " bg_info-4  c_info-n3 br_info";
@@ -35,11 +37,11 @@ export default {
 				case "accent":
 					styles += "bg_accent-n2 c_accent-n3 br_accent";
 					break;
-				case "shade":
-					styles += "bg_black-3 ";
+				case "disabled":
+					styles+=" c_black-3 bg_black-2 br_black-3  "
 					break;
 				default:
-					styles += "bg_black-2 br_black-3 c_black-8";
+					styles += "c_black-7 bg_black-2 br_black-5";
 					break;
 			}
 			return styles;

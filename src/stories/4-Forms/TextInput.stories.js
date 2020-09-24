@@ -18,7 +18,7 @@ export default{
     argTypes:{
         defaultvalue:{description:'the defualt or value of the input onload. '},
         icon:{description:'font-awesome icon for use with decorationg the input like a dollar sign, or user'},
-        state:{control:{type:'select', options:['alert','warning','success','info','accent']}}
+        state:{control:{type:'select', options:['alert','requiredAlert','warning','success','info','accent','disabled']}}
 
     }
 }
@@ -26,10 +26,18 @@ export default{
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { TextInput },
-	template: `<TextInput @onChange="onChange" v-bind="$props">User Name </TextInput>`,
+	template: `<TextInput @onChange="onChange" @onStateChange="onStateChange" v-bind="$props">User Name <tempalte v-slot:successMessage>Congradulations you can follow instructions</template></TextInput>`,
 });
 export const Base = Template.bind({});
 Base.args = {
-    defaultvalue:"test"
+	inputId:"uniqueTextInputId",
+	defaultvalue:"test",
+
+};
+
+export const Success = Template.bind({});
+Success.args = {
+	inputId:"uniqueTextInputId",
+	defaultvalue:"test",
 
 };

@@ -84,7 +84,7 @@ export default {
 					styles += " bg_warning-4 br_warning c_warning ";
 					break;
 				case "success":
-					styles += " bg_sucess-4 br_sucess c_sucess ";
+					styles += " bg_success-4 br_success c_success ";
 					break;
 				case "shade":
 					styles += " c_black bg_shade-3 ";

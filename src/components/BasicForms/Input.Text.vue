@@ -1,7 +1,7 @@
 <template>
-	<div id="inputEmail" class="question font_ui">
+	<div id="textInput" class="question font_ui">
 		<label
-			for="email"
+			for="text"
 			v-bind:class="{
 				c_alert: inputState == 'alert',
 				c_warning: inputState == 'warning'
@@ -19,9 +19,9 @@
 			<ValueIcon
 				v-if="icon"
 				class="flex_shrink"
-				:state="inputState"
+				:state="state"
 				:icon="icon"
-				inputNameTarget="'text'"
+				inputNameTarget="inputId"
 			/>
 			<input
 				id="text"
@@ -31,31 +31,33 @@
 				type="text"
 				v-model="text"
 				required="required"
-				:class="{
-					'br-l_0':icon,
-					'br_alert-n1': inputState == 'alert',
-					'br_warning-n1': inputState == 'warning',
-					'br_info-n1': inputState == 'info',
-					'br_success-n1': inputState == 'success',
-					'br_black-4 ': inputState == ''
-				}"
+				:class="inputStyles"
+				:disabled="state == 'disabled'"
 			/>
 			<div
-				class="optional  br_solid br_2 br-l_0 p-y_3 font_medium flex_shrink p-x_3 lh_3 flex flex_column"
-				v-if="!required"
-				:class="{
-
-					'br_alert-n1 c_alert': inputState == 'alert',
-					'br_warning-n1 c_warning': inputState == 'warning',
-					'br_info-n1 c_primary': inputState == 'info',
-					'br_success-n1 c_primary': inputState == 'success',
-					' br_shade c_primary ': inputState == ''
-				}"
+				class="br_solid br_2 br-l_0 p-y_3 font_medium flex_none p-x_4 lh_3 flex flex_column"
+				v-if="postLabel"
+				:class="inputPrePostStyles"
 			>
-				<small>optional</small>
+				{{postLabel}}
 			</div>
 		</div>
-		<messageHolder :state="inputState">{{ stateMessage }}</messageHolder>
+		<messageHolder :state="'alert'" v-if="state =='requiredAlert'">This input is required.</messageHolder>
+		<messageHolder :state="'alert'" v-if="state =='alert'">
+			<slot name="alertMessage"></slot>
+		</messageHolder>
+		<messageHolder :state="'warning'" v-if="state =='warning'">
+			<slot name="warningMessage"></slot>
+		</messageHolder>		
+		<messageHolder :state="'success'" v-if="state =='success'">
+			<slot name="successMessage"></slot>
+		</messageHolder>
+		<messageHolder :state="'info'" v-if="state =='info'">
+			<slot name="infoMessage"></slot>
+		</messageHolder>
+				<messageHolder :state="'accent'" v-if="state =='accent'">
+			<slot name="accentMessage"></slot>
+		</messageHolder>
 	</div>
 </template>
 
@@ -65,47 +67,73 @@ import stateIcon from "../subComponents/StatefullIcon";
 import ValueIcon from "../subComponents/inputValueIcon";
 
 export default {
-	name: "inputEmail",
+	name: "inputText",
 	props: {
+		inputId:{type:String,required:true},
 		defaultvalue: { type: String, default: "" },
-		icon: { type: String, default: "" },
+		icon: { type: String, default: null },
+		postLabel: { type: String, default: null },
 		required: { type: Boolean, default: true },
 		state: { type: String, default: "", 
 		 validator: function (value) {
-        return ['alert','warning','success','info'].indexOf(value) !== -1;
+        return ['alert','requiredAlert','warning','success','info','disabled',''].indexOf(value) !== -1;
       },}
 	},
 	data() {
 		return {
 			text: this.defaultvalue,
 			inputState: this.state,
-			stateMessage: ""
 		};
 	},
 	computed: {
-		inputStyles() {
+
+		inputPrePostStyles() {
 			let styles = "";
-			switch (this.inputState) {
+			switch (this.state) {
+				case  "requiredAlert":
 				case "alert":
-					styles += " bg_alert-4 br_alert c_alert ";
+					styles += "bg_alert-3 c_alert-1 br_alert-n1 ";
 					break;
 				case "warning":
-					styles += " bg_warning-4 br_warning c_warning ";
+					styles += " bg_warning-3  c_warning br_warning-n1 ";
 					break;
 				case "success":
-					styles += " bg_sucess-4 br_sucess c_sucess ";
+					styles += " bg_success-4 br_success-n1 c_success ";
 					break;
-				case "info":
-					styles += " bg_info-4 br_info c_info ";
+				case "disabled":
+					styles += " c_black-3 bg_black-2 br_black-3 ";
 					break;
-				case "accent":
-					styles += " c_black bg_accent-n2 ";
-					break;
-					return styles;
 				default:
-					styles += " c_black bg_shade-3 br_shade-2";
+					styles += "c_black-7 bg_black-2 br_black-5 ";
 					break;
 			}
+			return styles;
+
+		},
+		inputStyles() {
+			let styles = "";
+			switch (this.state) {
+				case  "requiredAlert":
+				case "alert":
+					styles += " c_alert br_alert-n1 ";
+					break;
+				case "warning":
+					styles += "  c_warning br_warning-n1 ";
+					break;
+				case "success":
+					styles += " br_success-n2 c_success ";
+					break;
+				case "disabled":
+					styles += " c_black bg_black-2 br_black-3 texture_disabled";
+					break;
+				default:
+					styles += " c_black bg_white-0 br_black-5 ";
+						break;
+			}
+				if(this.icon){
+					styles += " br-l_0";
+				}
+
 			return styles;
 		}
 	},
@@ -117,12 +145,11 @@ export default {
 	methods: {
 		onChange: function(value) {
 			if (value == "" && this.required) {
-				this.inputState = "alert";
-				this.stateMessage = "You didn't seem to type anything.";
+				this.state = "requiredAlert"
 				this.$emit("onChange", "");
-				this.$emit("onStateChange","this.inputState")
+				this.$emit("onStateChange","requiredAlert")
 			} else {
-				this.inputState = "";
+
 				this.$emit("onChange", value);
 			} 
 		}

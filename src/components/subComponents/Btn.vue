@@ -32,11 +32,10 @@ export default {
 		},
 		isActivatable: { type: Boolean, default: false },
 		isDisabled: { type: Boolean, default: false },
-		isActiveDefault:{type: Boolean, default: false}
+		isActive:{type: Boolean, default: false}
 	},
 	data() {
 		return {
-			isActive: this.isActiveDefault
 		};
 	},
 	methods: {
@@ -49,8 +48,7 @@ export default {
 			}
 		},
 		onTogggleActivate() {
-			this.isActive = !this.isActive;
-			if (this.isActive) {
+			if (!this.isActive) {
 				this.$emit("onActive");
 			}
 			else{

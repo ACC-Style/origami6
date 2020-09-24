@@ -1,6 +1,6 @@
 <template>
-	<div class="p-x_3 flex  justify_center" :class="areaStyle">
-		<i class="far text_center flex_auto self_center lh_0" :class="iconStyle"></i>
+	<div class="flex  justify_center" :class="areaStyle">
+		<i class="fas text_center flex_auto self_center lh_0" :class="iconStyle"></i>
 	</div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
 			type: String,
 			default: "",
 			validator: function (value) {
-				return ['alert','success','warning','info','accent',''].indexOf(value) !== -1;
+				return ['alert','success','warning','info','accent','disabled',''].indexOf(value) !== -1;
 			},
 		}
 	},
@@ -33,7 +33,10 @@ export default {
 					classes = "fa-info-circle";
 					break;
 				case "accent":
-					classes = "fa-info-square";
+					classes = "fa-info";
+					break;
+					case "diabled":
+					classes = "fa-ban";
 					break;
 				default:
 					break;
@@ -62,7 +65,7 @@ export default {
 					state += " c_black bg_info-3 ";
 					break;
 				case "accent":
-					state += " c_black bg_accent-n2 ";
+					state += " c_white bg_accent-n2 ";
 					break;
 				default:
 					state = " display_none ";
