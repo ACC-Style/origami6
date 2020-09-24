@@ -31,11 +31,12 @@ export default {
 			default:true
 		},
 		isActivatable: { type: Boolean, default: false },
-		isDisabled: { type: Boolean, default: false }
+		isDisabled: { type: Boolean, default: false },
+		isActiveDefault:{type: Boolean, default: false}
 	},
 	data() {
 		return {
-			isActive: this.isActivatable
+			isActive: this.isActiveDefault
 		};
 	},
 	methods: {
@@ -43,11 +44,11 @@ export default {
 			if (!this.isDisabled) {
 				this.$emit("onClick");
 				if (this.isActivatable) {
-					this.onActivate();
+					this.onTogggleActivate();
 				}
 			}
 		},
-		onActivate() {
+		onTogggleActivate() {
 			this.isActive = !this.isActive;
 			if (this.isActive) {
 				this.$emit("onActive");
