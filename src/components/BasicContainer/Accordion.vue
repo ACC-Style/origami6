@@ -1,10 +1,10 @@
 <template>
-	<div class="">
+	<div class="relative">
 		<header
 			data-attr="accordion-header"
 			@click="onClick"
-			:class="[{'is-active': expanded}, headerStyles ]"
-			class="flex"
+			:class="[headerStyles]"
+			class="flex t_0 r_0 l_0 z_2 bg_white shadow-clip"
 		>
 			<div :class="toggleStyles"
 				class="flex_shrink flex column justify_center "
@@ -14,7 +14,10 @@
 					:class="[toggleIcon, toggleIconStyles]"
 				></i>
 			</div>
-			<div class="flex_auto w_100 p-y_3 p-x_2 p-l_3">
+			<div
+			 class="flex_auto w_100 p-y_3 p-x_2 p-l_3"
+			:class="headerLabel"
+			>
 				<slot class name="header">No Content Passed</slot>
 			</div>
 		</header>
@@ -23,7 +26,8 @@
 				:class="contentStyles"
 				v-if="expanded"
 				data-attr="accordion-content"
-				class="transition_2 origin_tl"
+				class="transition_2 origin_tl reading-typography  z_0"
+			
 			>
 				<slot class="" name="content">No Content Passed</slot>
 			</article>
@@ -46,13 +50,31 @@ export default {
 				return ["parent", "child", "grandchild"].indexOf(value) !== -1;
 			},
 		},
+			internalIsExpaned:{type:Boolean,default:false}
 	},
 	data() {
 		return {
 			expanded: false,
+			
 		};
 	},
 	computed: {
+		headerLabel() {
+			let styles = "";
+			switch (this.type) {
+				case "grandchild":
+					styles = " c_primary h:c_primary-n2";
+					break;
+				case "child":
+					styles = "bg_black-2";
+					break;
+				default:
+					styles = "bg_black-1";
+					break;
+			}
+			
+			return styles;
+		},
 		headerStyles() {
 			let styles = "";
 			switch (this.type) {
@@ -60,13 +82,23 @@ export default {
 					styles = " c_primary h:c_primary-n2";
 					break;
 				case "child":
-					styles = "br_black-3 br_solid br_1 bg_black-1 ";
+					styles = "br_black-1 br_solid br_1 m-b_n1";
+					if(this.expanded){
+					 styles += ' shadow_1';}
 					break;
 				default:
-					styles = "br_black-3 br_solid br_1 bg_black-1 ";
+					styles = "br_black-3 br_solid br_1 ";
+					if(this.expanded){
+					 styles += ' shadow_overlap-light';}
 					break;
 			}
-			
+			// {'is-active': expanded},{'sticky':!internalExapanded} , 
+			if(this.expanded){
+				styles += " is-active active ";
+			}
+			if(!this.internalIsExpaned){
+				styles += " sticky ";
+			}
 			return styles;
 		},
 		toggleStyles() {
@@ -76,10 +108,10 @@ export default {
 					styles = "";
 					break;
 				case "child":
-					styles = "  p-x_3 p-x_4:md bg_shade-4 br_black-2 br_solid br-r_1";
+					styles = "font_1 p-x_3 p-y_2 bg_shade-4 br_black-1 br_solid br-r_1";
 					break;
 				default:
-					styles = "font-size_up p-x_3 p-x_4:md bg_primary-4 br_black-2 br_solid br-r_1";
+					styles = "font_3 p-x_3  bg_primary-4 br_black-2 br_solid br-r_1";
 					break;
 			}
 			return styles;
@@ -91,10 +123,10 @@ export default {
 					styles = "";
 					break;
 				case "child":
-					styles = " a:c_shade-n4 c_shade-n1";
+					styles = "font_0 a:c_shade-n4 c_shade-n1";
 					break;
 				default:
-					styles = "a:c_primary-n4 c_primary-n1";
+					styles = "font_1 a:c_primary-n4 c_primary-n1";
 					break;
 			}
 			return styles;
@@ -110,8 +142,11 @@ export default {
 					}
 		
 					break;
+				case "child":
+					styles = "br_black-2 br_solid br-t_1 br-b_1 p_3 p_4:lg";
+					break;
 				default:
-					styles = "br_black-3 br_solid br_1 p_4";
+					styles = "br_black-3 br_solid br_1 p_3 p_4:lg";
 					break;
 			}
 			return styles;
@@ -169,3 +204,8 @@ export default {
 </script>
 
 
+<style>
+	.shadow-clip{
+	  clip-path: polygon(0% 0%, 100% 0%, 100% 120%, 0 120%);
+}
+</style>

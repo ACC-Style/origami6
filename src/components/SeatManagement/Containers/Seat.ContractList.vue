@@ -1,11 +1,11 @@
 <template>
 	<div >
-		<div v-if="contracts==undefined">
+		<div v-if="contracts === undefined">
 			<ContractLoading/>
 		</div>
 		<div v-else-if="contracts.length > 0">
 			<div data-target="contracts_container" v-for="(contract, index) in contracts" :key="index">
-				<Contract :contract="contract" />
+				<Contract v-bind="contract" />
 			</div>
 		</div>
 		<div v-else class="reading-typography max-w_55">
@@ -22,7 +22,8 @@ import ContractLoading from "./Contract/Seat.Contract.Loading.vue";
 
 export default {
 	components: {
-		Contract,ContractLoading
+		Contract,
+		ContractLoading
 
 	},
 	data() {

@@ -1,7 +1,7 @@
 <template>
 	<HoverContainer>
 		<div
-			class=" flex flex_row:md flex_column p-y_3 p-x_4"
+			class=" flex flex_row:md flex_column p-y_3 p-x_4" @click="onClick(id)"
 		>
 			<div class="flex_auto">
 				<h3 class="font_3 font_display m-t_2 lh_1 m-b_0">{{ name }}</h3>
@@ -22,7 +22,7 @@
 					:requested="requested"
 				/>
 			</div>
-</div>
+		</div>
 	</HoverContainer>
 </template>
 
@@ -31,6 +31,7 @@ import HoverContainer from '../../Containers/SubContainers/hoverContainer.vue'
 import MicroSeatChart from "../../Charts/Seat.MicroSeatChart.vue";
 export default {
 	props: {
+		id:{type:Number,default:null},
 		name: {
 			type: String,
 			default: "Missing Label",
@@ -74,6 +75,9 @@ export default {
 			this.hoverDataStyles = "br_black-2 bg_white";
 			this.hoverIndicatorStyles = "r_5:md r_4";
 		},
+		onClick:function(value){
+			this.$emit('onClick',value)
+		}
 	},
 };
 </script>

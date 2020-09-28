@@ -70,10 +70,11 @@ Base.args = {
 };
 export const Icon = Template.bind({});
 Icon.args = {
-	activelabel: '<i class="fas fa-square fa-fw m-x_n3"></i>',
-	deactivelabel: '<i class="fas fa-check-square fa-fw m-x_n3"></i>',
+	activelabel: '<i class="far  fa-fw m-x_n3"></i>',
+	deactivelabel: '<i class="fas fa-check fa-fw m-x_n3"></i>',
 	state: "success",
 	size: "medium",
+	shadow:false
 };
 Icon.parameters = {
 	docs: {
@@ -86,8 +87,9 @@ Icon.parameters = {
 
 export const Switch = Template.bind({});
 Switch.args = {
-	activelabel: '<i class="fas fa-square fa-fw m-r_n3 p-l_2"></i>',
-	deactivelabel: '<i class="fas fa-square fa-fw m-l_n3  p-r_2"></i>',
+	activelabel: '<i class="fas fa-circle fa-fw m-r_n3 p-l_3 m-y_n3"></i>',
+	deactivelabel: '<i class="fas fa-circle fa-fw m-l_n3  p-r_3 m-y_n3"></i>',
+	corner:"round",
 	state: "secondary",
 	size: "medium",
 };
@@ -105,14 +107,14 @@ const TemplateStyled = (args, { argTypes }) => ({
 	components: { BtnToggle },
 	template: `
       <BtnToggle class="bg_success-n2 a:bg_alert h:bg_shade-n3 font_bold c_white" @onClick="onClick" @onActive="onActive" @onDeactive="onDeactive" v-bind="$props">
-          <template v-slot:active ><span v-html="activelabel"/></template >
-          <template v-slot:deactive ><span v-html="deactivelabel"/></template >
+          <template v-slot:active  v-html="activelabel"></template >
+          <template v-slot:deactive  v-html="deactivelabel"></template >
       </BtnToggle>`,
 });
 export const Styled = TemplateStyled.bind({});
 Styled.args = {
-	activelabel: "Yes",
-	deactivelabel: "No",
+	activelabel: "No",
+	deactivelabel: "Yes",
 	corner: "round",
 	state: "none",
 	size: "medium",

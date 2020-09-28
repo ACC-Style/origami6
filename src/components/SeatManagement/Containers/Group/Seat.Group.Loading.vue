@@ -8,12 +8,12 @@
 					<LoadingText/>
 				</h3>
 			</div>
-			<div class="flex_auto m-r_3 p_3 c_black text_right font_2">
-				<i class="fas fa-spinner-third fa-spin opacity_5 m-r_3"></i>
+			<div class="flex_auto m-r_3 p_3 c_black text_right font_1">
 				<div class="nowrap">Bundles</div>
+				<i class="fas fa-spinner-third fa-spin opacity_5 m-r_3 c_primary"></i>
 			</div>
 			<div
-				class="flex_auto flex_none:md w_40:lg w_60:md m-l_auto flex flex_column justify_around"
+				class="flex_auto flex_none:md w_40:lg w_60:md m-l_auto flex flex_column justify_around font_4:lg font_2:md font_1 "
 			>
 				<div
 					data-target="readableSeatChart"
@@ -21,14 +21,14 @@
 				>
 					<div
 						title="filled"
-						class="flex_auto m-r_3 p_3 c_white text_right texture_medium bg_success-4 br_black-2 br_1 br_solid"
+						class="flex_auto m-r_3 p_3 c_white text_right texture_medium bg_success-4 br_black-2 br_1 br_solid "
 					>
 						<span
-							class="lowercase font_6 lh_0 font_display font_light"
+							class="lowercase lh_0 font_display font_light"
 							><i
 								class="fas fa-spinner-third fa-spin opacity_5"
 							></i></span
-						><span class="lowercase block font_n1 font_medium"
+						><span class="lowercase block font_n2:lg font_n3 font_medium"
 							>Filled</span
 						>
 					</div>
@@ -37,11 +37,11 @@
 						class="flex_auto m-r_3 p_3 c_white text_right texture_medium bg_warning-4 br_black-2 br_1 br_solid"
 					>
 						<span
-							class="lowercase font_6 lh_0 font_display font_light"
+							class="lowercase lh_0 font_display font_light"
 							><i
 								class="fas fa-spinner-third fa-spin opacity_5"
 							></i></span
-						><span class="lowercase block font_n1 font_medium"
+						><span class="lowercase block font_n2:lg font_n3 font_medium"
 							>requested</span
 						>
 					</div>
@@ -50,11 +50,11 @@
 						class="flex_auto m-r_3 p_3 c_white text_right texture_medium bg_primary-4 br_black-2 br_1 br_solid"
 					>
 						<span
-							class="lowercase font_6 lh_0 font_display font_light"
+							class="lowercase lh_0 font_display font_light"
 							><i
 								class="fas fa-spinner-third fa-spin opacity_5"
 							></i></span
-						><span class="lowercase block font_n1 font_medium"
+						><span class="lowercase block font_n2:lg font_n3 font_medium"
 							>empty</span
 						>
 					</div>
@@ -64,11 +64,11 @@
 					>
 						<div class="flex_auto">
 							<span
-								class="lowercase font_6 lh_0 font_display font_light"
+								class="lowercase lh_0 font_display font_light"
 								><i
 									class="fas fa-spinner-third fa-spin opacity_5"
 								></i></span
-							><span class="lowercase block font_n1 font_medium"
+							><span class="lowercase block font_n2:lg font_n3 font_medium"
 								>locked</span
 							>
 						</div>
@@ -79,15 +79,15 @@
 						</div>
 					</div>
 					<div
-						class="label flex_auto c_black br_1 br_solid br_black-1 texture_medium bg_black-1 font_n2 c_black-8  p_3 text_right"
+						class="label flex_auto c_black br_1 br_solid br_black-1 texture_medium bg_black-1 c_black-8  p_3 text_right"
 					>
 						<span
-							class="lowercase font_6 lh_0 font_display font_light"
+							class="lowercase lh_0 font_display font_light"
 							><i
 								class="fas fa-spinner-third fa-spin opacity_5"
 							></i
 						></span>
-						<span class="lowercase block font_n1 font_medium"
+						<span class="lowercase block font_n2:lg font_n3 font_medium"
 							>Seats</span
 						>
 					</div>

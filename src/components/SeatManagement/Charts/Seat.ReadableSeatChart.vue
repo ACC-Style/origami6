@@ -1,7 +1,7 @@
 <template>
 	<div
 		data-target="readableSeatChart"
-		class="flex justify_between flex_column flex_row:lg font_5:lg font_3:md font_1"
+		class="flex justify_between flex_column flex_row:lg font_4:lg font_2:md font_1"
 	>
 
 		<div
@@ -11,7 +11,7 @@
 			<span class="lowercase lh_0 font_display font_light block">{{
 				filled
 			}}</span
-			><span class="lowercase block font_n1:lg font_n2 font_medium c_white-8 float_right">Filled</span>
+			><span class="lowercase block font_n2:lg font_n3 font_medium c_white-8 float_right">Filled</span>
 		</div>
 		<div
 			title="requested"
@@ -20,7 +20,7 @@
 			<span class="lowercase lh_0 font_display font_light block">{{
 				requested
 			}}</span
-			><span class="lowercase block font_n1:lg font_n2 font_medium c_white-8 float_right">requested</span>
+			><span class="lowercase block font_n2:lg font_n3 font_medium c_white-8 float_right">requested</span>
 		</div>
 		<div
 			title="empty"
@@ -29,7 +29,7 @@
 			<span class="lowercase lh_0 font_display font_light block">{{
 				empty
 			}}</span
-			><span class="lowercase block font_n1:lg font_n2 font_medium c_white-8 float_right">empty</span>
+			><span class="lowercase block font_n2:lg font_n3 font_medium c_white-8 float_right">empty</span>
 		</div>
 		<div
 			title="locked"
@@ -38,7 +38,7 @@
 			<div class="flex_auto"><span class="lowercase lh_0 font_display font_light block">{{
 				locked
 			}}</span
-			><span class="lowercase block font_n1:lg font_n2 font_medium c_white-8 float_right">locked</span></div>
+			><span class="lowercase block font_n2:lg font_n3 font_medium c_white-8 float_right">locked</span></div>
             <div class="flex_shrink  m-l_3 p-l_3 p-r_3 br-l_1 m-y_n3 br_white-8 br_solid text_center flex justify_center flex_column font_5:lg font_3:md font_1"><i class="fal fa-lock"></i></div>
 		</div>
 		<div
@@ -47,7 +47,7 @@
 			<span class="lowercase lh_0 font_display font_light block">{{
 				all
 			}}</span>
-			<span class="lowercase block font_n1:lg font_n2 font_medium c_black-8">Seats</span>
+			<span class="lowercase block font_n2:lg font_n3 font_medium c_black-8">Seats</span>
 		</div>
 	</div>
 </template>

@@ -4,7 +4,7 @@
 			<div class="flex_auto w_50 flex flex_column justify_start justify_between:lg flex_row:lg">
 				<div class="flex_shrink m-l_3">
 				<h3 class="font_4 font_display m-t_2 lh_1 m-b_0">{{ name }} <a href="" class="c_primary h:c_primary-n3 p_2 font_1"><i class="fas fa-pencil"></i></a></h3>
-				<span class="p_2 p-x_3 bg_shade c_white br_radius font_n3" @click="adminToggle = !adminToggle"><i class="fa fa-user-crown font-size_down p-x_2"></i> ADMINS <span class="c_black bg_white br_round p-x_2 font_n3 font_bold">{{admin.length}}</span></span>
+				<span class="p_2 p-x_3 bg_black-1 c_black-7 br_radius font_n3" @click="adminToggle = !adminToggle"><i class="fa fa-user-crown font-size_down p-x_2"></i> ADMINS <span class="c_black bg_white br_round p-x_3 font_n3 font_bold">{{admin.length}}</span></span>
 					
 					<TransitionExpand v-if="adminToggle">
 				<ul class="ul_none font_n1">
@@ -54,7 +54,7 @@ export default {
 			default: "Missing Name",
 		},
 		id: {
-			type: String,
+			type: Number,
 			default: null,
 		},
 		admin: {

@@ -1,4 +1,5 @@
 import Accordion from "../../components/BasicContainer/Accordion.vue";
+import {shortText, longText} from "../lorem/text.js";
 
 export default {
 	title: "Container/Accordion",
@@ -46,15 +47,38 @@ const Template = (args, { argTypes }) => ({
 export const Parent = Template.bind({});
 Parent.args = {
 	header: "Parent Header",
-	content: "Content",
+	content: longText,
 	type: "parent",
 };
-export const Child = Template.bind({});
+
+const ChildTemplate = (args, { argTypes }) => ({
+	props: Object.keys(argTypes),
+	components: { Accordion },
+	template: `
+		<Accordion @onClick="onClick" @onExpand="onExpand" @onCollapse="onCollapse" :type="'parent'" :internalIsExpaned="internalIsExpanedVar" >
+    		<template v-slot:header>Parent Header with Children</template>
+			<template v-slot:content>
+				<div v-html="subContent"/>
+				<Accordion class="m-t_4" @onClick="onClick" @onExpand="internalIsExpanedVar=true" :type="'child'" @onCollapse="internalIsExpanedVar=false" > 
+				<template v-slot:header><div v-html="childHeader1"/></template>
+				<template v-slot:content><div v-html="content" /></template>
+				</Accordion>
+			</template>
+        </Accordion>
+        `,
+});
+export const Child = ChildTemplate.bind({});
 Child.args = {
-	header: "Child Header",
-	content: "Content",
-	type: "child",
-};
+	header: "Parent Header",
+	content: longText,
+	type: "parent",
+	childHeader1:"<span>Child Header 1</span>",
+	childHeader2:"Child Header 2",
+	subContent: longText,
+	internalIsExpanedVar:false
+
+}
+
 export const GrandChild = Template.bind({});
 GrandChild.args = {
 	header: "read more ...",

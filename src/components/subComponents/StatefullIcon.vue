@@ -1,6 +1,9 @@
 <template>
-	<div class="flex  justify_center" :class="areaStyle">
-		<i class="fas text_center flex_auto self_center lh_0" :class="iconStyle"></i>
+	<div class="flex justify_center" :class="areaStyle">
+		<i
+			class="fas text_center flex_auto self_center lh_0"
+			:class="iconStyle"
+		></i>
 	</div>
 </template>
 
@@ -12,9 +15,19 @@ export default {
 			type: String,
 			default: "",
 			validator: function (value) {
-				return ['alert','success','warning','info','accent','disabled',''].indexOf(value) !== -1;
+				return (
+					[
+						"alert",
+						"success",
+						"warning",
+						"info",
+						"accent",
+						"disabled",
+						"",
+					].indexOf(value) !== -1
+				);
 			},
-		}
+		},
 	},
 	computed: {
 		iconStyle() {
@@ -35,7 +48,7 @@ export default {
 				case "accent":
 					classes = "fa-info";
 					break;
-					case "diabled":
+				case "disabled":
 					classes = "fa-ban";
 					break;
 				default:
@@ -58,6 +71,10 @@ export default {
 				case "shade":
 					state += " c_black bg_shade-3 ";
 					break;
+				case "disabled":
+					state += " c_black bg_shade-3 ";
+					break;
+
 				case "secondary":
 					state += " c_black bg_secondary-3 ";
 					break;
@@ -72,8 +89,8 @@ export default {
 					break;
 			}
 			return state;
-		}
-	}
+		},
+	},
 };
 </script>
 <style scoped>

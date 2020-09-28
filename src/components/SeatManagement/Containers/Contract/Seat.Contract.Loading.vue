@@ -55,8 +55,8 @@
 						>
 					</div>
 					<StatefullIcon
-						class="font_1 shadow_n1 flex_none m-l_4"
-						:state="'shade'"
+						class="font_1 shadow_n1 flex_none m-l_4 p-x_3"
+						:state="state"
 					/>
 				</div>
 				<div
@@ -74,8 +74,8 @@
 						>
 					</div>
 					<StatefullIcon
-						class="font_1 shadow_n1 flex_none"
-						:state="'shade'"
+						class="font_1 shadow_n1 flex_none p-x_3"
+						:state="state"
 					/>
 				</div>
 			</div>
@@ -108,7 +108,9 @@ export default {
 		MicroChartLoading,LoadingText,StatefullIcon
 	},
 	data() {
-		return {};
+		return {
+			state:"info"
+		};
 	},
 	props: {
 

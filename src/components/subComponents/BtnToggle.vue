@@ -1,5 +1,5 @@
 <template>
-	<Btn @onClick="onClick()" :size="size" :state="state" :corner="corner" :isDisabled="isDisabled" :shadow="shadow" isActivatable="isActive">
+	<Btn @onClick="onClick()" :size="size" :state="state" :corner="corner" :isDisabled="isDisabled" :shadow="shadow" :isActivatable="true" :isActive="isActive">
 		<slot class="" name="active" v-if="isActive">ON</slot>
 		<slot class="" name="deactive" v-if="!isActive">OFF</slot>
 	</Btn>

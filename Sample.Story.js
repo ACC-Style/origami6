@@ -15,13 +15,13 @@ export default {
 				code: `<CreditLegend v-bind="$props"/>`
 			},
 
-	},
-	argTypes:{
-        creditTypes:{
-            description:"", 
-                control:{type:"",options:[]}
-            },
-		}
+		},
+		argTypes:{
+			creditTypes:{
+				description:"", 
+					control:{type:"",options:[]}
+				},
+			}
 	}
 };
 const Template = (args, { argTypes }) => ({
