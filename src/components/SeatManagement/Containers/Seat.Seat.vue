@@ -1,10 +1,10 @@
 <template>
 <div>		
-<div  v-if="seats == null">
+<div  v-if="seats == null" class="cursor_wait">
 	<SingleSeatLoading />
 </div>
 <div v-else-if="seats.length > 0">
-	<ul class="ul_none" v-for="(seat, index) in seats.sort(compare('status'))" :key="index">
+	<ul class="ul_none" v-for="(seat, index) in sortedSeatArray" :key="index">
 		<SingleSeat v-bind="seat"/>
 	</ul>
 </div>
@@ -59,7 +59,9 @@ export default {
         }
 	},
 	computed: {
-	
+	sortedSeatArray(){
+		return this.seats.sort(this.compare('status'));
+	}
 	},
 };
 </script>

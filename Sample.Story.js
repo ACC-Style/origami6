@@ -3,7 +3,7 @@ import CreditLegend from "../../../components/Transcript/Transcript.CreditLegend
 export default {
 	title: "Transcript/Legend",
     component: CreditLegend,
-    subcomponent:,
+    subcomponents:{},
 	parameters: {
 		docs: {
 			description: {
@@ -16,13 +16,13 @@ export default {
 			},
 
 		},
-		argTypes:{
-			creditTypes:{
-				description:"", 
-					control:{type:"",options:[]}
-				},
-			}
-	}
+	},
+	argTypes:{
+		creditTypes:{
+			description:"", 
+				control:{type:"",options:[]}
+			},
+		}
 };
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),

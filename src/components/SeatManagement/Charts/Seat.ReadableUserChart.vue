@@ -1,7 +1,7 @@
 <template>
 	<div data-target="readableSeatChart" class="flex justify_between flex_column font_4:lg font_2 p-x_4 sticky">
         <div class="flex_auto flex text_right font_10:lg font_5" :class="blockClasses" >
-            <div class="flex_auto">{{userCount}}<div class="font_n1 lh_0">active users</div> </div>
+            <div class="flex_auto">{{groupAdminCount}}<div class="font_n1 lh_0">group admin</div> </div>
             <div class="flex_auto c_primary-n1">{{adminCount}} <div class="font_n1 lh_0">admin</div> </div>
         </div>
 		<div :class="blockClasses" class="flex_auto c_black br_1 br_solid br_black-1 bg_black-2 c_black-8 p_3 text_right">
@@ -10,7 +10,7 @@
 				all
 				}}
 			</span>
-			<span class="lowercase block font_n1 font_medium c_black-8">Seats</span>
+			<span class="lowercase block font_n1 font_medium c_black-8">Total Users</span>
 		</div>
 
 		<div :class="blockClasses" title="filled" class="flex_auto p_3 c_white text_right bg_success br_black-2 br_1 br_solid">
@@ -71,18 +71,18 @@ export default {
 	},
 	computed: {
         adminCount: function(){if (this.users.length > 0) {
-				return this.users.filter((ar) => (ar.status == "filled" && ( ar.type.admin == true || ar.type.groupadmin == true  ))).length;
+				return this.users.filter((ar) => (ar.status == "filled" && ( ar.type.admin ))).length;
 			} else {
 				return 0;
 			};},
-        userCount: function(){if (this.users.length > 0) {
-				return this.users.filter((ar) => ( ar.status == "filled" && ( ar.type.user == true )) ).length;
+        groupAdminCount: function(){if (this.users.length > 0) {
+				return this.users.filter((ar) => ( ar.status == "filled" && ( ar.type.groupadmin )) ).length;
 			} else {
 				return 0;
 			};},
 		all: function () {
 			if (this.users.length > 0) {
-				return this.users.length;
+				return this.users.filter((ar) => ( ar.status !== "filled") && !ar.type.admin && !ar.type.groupadmin && ar.type.user  ).length;
 			} else {
 				return 0;
 			}

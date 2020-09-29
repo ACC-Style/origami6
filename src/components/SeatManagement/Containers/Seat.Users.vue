@@ -1,6 +1,6 @@
 <template>
 <div>		
-<div  v-if="users == null">
+<div  v-if="users == null"  class="cursor_wait">
 	<SingleUserLoading />
 </div>
 <div v-else-if="users.length > 0" class="relative">

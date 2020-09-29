@@ -1,5 +1,6 @@
 import GroupList from "../../../../../components/SeatManagement/Containers/Seat.Group.vue";
 import Group from "../../../../../components/SeatManagement/Containers/Group/Seat.Group.Overview.vue";
+
 import {groupsData} from "../../Data/groupData.js";
 
 export default {

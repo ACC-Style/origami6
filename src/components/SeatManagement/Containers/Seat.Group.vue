@@ -1,6 +1,6 @@
 <template>
 	<div>
-        <div v-if="groups == undefined">
+        <div v-if="groups == undefined"  class="cursor_wait">
                 <GroupLoading/>
         </div>
         <div v-else-if="groups.length > 0">

@@ -93,12 +93,7 @@ export default {
 </script>
 
 <style scoped>
-.cursor_pointer {
-	cursor: pointer;
-}
-.cursor_not-allowed {
-	cursor: not-allowed;
-}
+
 @media (hover: none) {
 	.m-r_0\:touch {
 		margin-right: 0 !important;

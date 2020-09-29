@@ -1,6 +1,6 @@
 <template>
 	<div >
-		<div v-if="contracts === undefined">
+		<div v-if="contracts === undefined"  class="cursor_wait">
 			<ContractLoading/>
 		</div>
 		<div v-else-if="contracts.length > 0">

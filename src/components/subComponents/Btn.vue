@@ -148,7 +148,7 @@ export default {
 			}
 			let shadowStyle = "";
 			if (this.isDisabled) {
-				stateStyle += " c_black-3 disabled";
+				stateStyle += " c_black-3 disabled cursor_not-allowed";
 			}else{
 				stateStyle += " ";
 				shadowStyle =this.shadow? " shadow_overlap-light" :" "

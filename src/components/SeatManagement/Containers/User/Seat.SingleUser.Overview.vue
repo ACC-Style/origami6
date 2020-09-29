@@ -141,9 +141,9 @@ export default {
 	},
 	props: {
 		id: { type: Number, default: 1 },
-		type: { type: Object, default: () => { [] } },
-		groups: { type: Array, default: () => { [] } },
-		bundles: { type: Array, default: () => { [] } },
+		type: { type: Object, default: () => []  },
+		groups: { type: Array, default: () => []  },
+		bundles: { type: Array, default: () =>  []  },
 		status: { type: String, default: "empty" },
 		date_invite: { type: String, default: null },
 		date_accepted: { type: String, default: null },
