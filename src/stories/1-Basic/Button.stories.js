@@ -14,7 +14,7 @@ export default {
   },
   argTypes: {
     label:{description:'Buttons should be action oriented and can inlude font awesome icon tags to enrich the button'},
-    state: { control: { type: 'select', options: ['primary', 'shade', 'alert', 'warning', 'success', 'secondary', 'none', 'empty'] }  },
+    state: { control: { type: 'select', options: ['primary', 'black', 'alert', 'warning', 'success', 'secondary', 'none', 'empty'] }  },
     size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
     corner: { control: { type: 'select', options: ['square', 'radius', 'round'] } },
   },

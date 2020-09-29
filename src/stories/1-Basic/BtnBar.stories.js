@@ -1,8 +1,10 @@
 import BtnBar from "../../components/subComponents/BtnBar.vue";
+import Btn from "../../components/subComponents/Btn.vue";
 
 export default {
 	title: "Basic/BtnBar",
 	component: BtnBar,
+	subcomponents: { Btn },
 	parameters: {
 		docs: {
 			description: {

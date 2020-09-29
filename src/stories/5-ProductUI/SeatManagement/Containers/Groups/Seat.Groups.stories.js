@@ -1,9 +1,11 @@
-import Groups from "../../../../../components/SeatManagement/Containers/Seat.Group.vue";
+import GroupList from "../../../../../components/SeatManagement/Containers/Seat.Group.vue";
+import Group from "../../../../../components/SeatManagement/Containers/Group/Seat.Group.Overview.vue";
 import {groupsData} from "../../Data/groupData.js";
 
 export default {
 	title: "SeatManagment/Groups",
-    component: {Groups},
+	component: {Group},
+	subcomponents:{GroupList},
 	parameters: {
 		docs: {
 			description: {
@@ -12,7 +14,7 @@ export default {
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {
-				code: `<Groups v-bind="$props"/>`
+				code: `<Group v-bind="$props"/>`
 			},
 
 	},
@@ -26,19 +28,33 @@ export default {
 };
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { Groups },
-	template: `<Groups :groups="groups"/>`,
+	components: { Group },
+	template: `<Group v-bind="$props"/>`,
 });
-export const ListLoaded = Template.bind({});
+export const Single = Template.bind({});
+Single.args = {
+	name: groupsData[0].name,
+    id:groupsData[0].id,
+    admin: groupsData[0].admin,
+    bundles: groupsData[0].bundles
+ };
+
+
+const List = (args, { argTypes }) => ({
+	props: Object.keys(argTypes),
+	components: { GroupList },
+	template: `<GroupList :groups="groups"/>`,
+});
+export const ListLoaded = List.bind({});
 ListLoaded.args = {
 	groups:groupsData
 };
 
-export const ListEmpty = Template.bind({});
+export const ListEmpty = List.bind({});
 ListEmpty.args = {
 	groups:[]
 };
-export const ListLoading = Template.bind({});
+export const ListLoading = List.bind({});
 ListLoading.args = {
 	groups:null
 };

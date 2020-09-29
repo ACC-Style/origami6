@@ -55,7 +55,7 @@ const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { BtnToggle },
 	template: `
-    <BtnToggle @onClick="onClick" @onActive="onActive" @onDeactive="onDeactive" v-bind="$props">
+    <BtnToggle @onClick="onClick" @onActive="onActive" @onDeactive="onDeactive" :shadow="false" v-bind="$props">
         <template v-slot:active ><span v-html="activelabel"/></template >
         <template v-slot:deactive ><span v-html="deactivelabel"/></template >
     </BtnToggle>`,
@@ -70,8 +70,8 @@ Base.args = {
 };
 export const Icon = Template.bind({});
 Icon.args = {
-	activelabel: '<i class="far  fa-fw m-x_n3"></i>',
-	deactivelabel: '<i class="fas fa-check fa-fw m-x_n3"></i>',
+	activelabel: '<i class="far fa-check  fa-fw m-x_n3"></i>',
+	deactivelabel: '<i class="fas fa-fw m-x_n3"></i>',
 	state: "success",
 	size: "medium",
 	shadow:false
@@ -113,8 +113,8 @@ const TemplateStyled = (args, { argTypes }) => ({
 });
 export const Styled = TemplateStyled.bind({});
 Styled.args = {
-	activelabel: "No",
-	deactivelabel: "Yes",
+	activelabel: "Yes",
+	deactivelabel: "No",
 	corner: "round",
 	state: "none",
 	size: "medium",

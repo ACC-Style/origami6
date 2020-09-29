@@ -10,7 +10,7 @@
 				class="flex_shrink flex column justify_center "
 			>
 				<i
-					class="flex_auto self_center fas fa-fw"
+					class="flex_auto self_center far fa-fw"
 					:class="[toggleIcon, toggleIconStyles]"
 				></i>
 			</div>
@@ -79,7 +79,8 @@ export default {
 			let styles = "";
 			switch (this.type) {
 				case "grandchild":
-					styles = " c_primary h:c_primary-n2";
+					styles = "c_primary h:c_primary-n2 lh_0";
+					styles =(this.expanded)?"br-b_1  br_solid br_primary":"";
 					break;
 				case "child":
 					styles = "br_black-1 br_solid br_1 m-b_n1";
@@ -94,11 +95,9 @@ export default {
 			}
 			// {'is-active': expanded},{'sticky':!internalExapanded} , 
 			if(this.expanded){
-				styles += " is-active active ";
+				styles += " is-active active sticky";
 			}
-			if(!this.internalIsExpaned){
-				styles += " sticky ";
-			}
+
 			return styles;
 		},
 		toggleStyles() {
@@ -108,7 +107,7 @@ export default {
 					styles = "";
 					break;
 				case "child":
-					styles = "font_1 p-x_3 p-y_2 bg_shade-4 br_black-1 br_solid br-r_1";
+					styles = "font_1 p-x_3 p-y_2 bg_black-3 br_black-1 br_solid br-r_1";
 					break;
 				default:
 					styles = "font_3 p-x_3  bg_primary-4 br_black-2 br_solid br-r_1";
@@ -123,10 +122,12 @@ export default {
 					styles = "";
 					break;
 				case "child":
-					styles = "font_0 a:c_shade-n4 c_shade-n1";
+					styles = "font_0 a:c_black-3 c_black-8";
+					break;
+				case "parent":
+					styles = "font_1 a:c_primary-n4 c_primary-n1";
 					break;
 				default:
-					styles = "font_1 a:c_primary-n4 c_primary-n1";
 					break;
 			}
 			return styles;
@@ -136,7 +137,7 @@ export default {
 			switch (this.type) {
 				case "grandchild":
 					if (this.expanded) {
-					styles = "br-t_1 br_solid br_primary";
+					styles = "p-t_3";
 					} else {
 					styles = "";
 					}
@@ -153,10 +154,14 @@ export default {
 		},
 		toggleIcon() {
 			let styles = "";
-			if (this.expanded) {
-				styles = "fa-minus-square";
-			} else {
-				styles = "fa-plus-square";
+			switch (this.type) {
+				case "grandchild":
+					styles = (this.expanded)?"fa-chevron-down":"fa-chevron-right";
+				break;
+				case "child":
+					styles = (this.expanded)?"fa-minus":"fa-plus";break;
+				case "parent":
+					styles = (this.expanded)?"fa-minus":"fa-plus";break;
 			}
 			return styles;
 		},

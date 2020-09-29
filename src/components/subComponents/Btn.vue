@@ -77,31 +77,54 @@ export default {
 					break;
 			}
 			let stateStyle = "";
+			stateStyle +=" c_white h:c_white";
 			switch (this.state) {
 				case "alert":
-					stateStyle =
-						"c_white h:c_white bg_alert-n1 h:bg_alert-n3 a:bg_alert-n4 br_alert-n3";
-					if (this.isDisabled) stateStyle = "bg_alert-4";
-					break;
+					if (this.isDisabled)
+						{ stateStyle += " bg_alert-4";}
+					else{
+						stateStyle +=
+							"  h:bg_alert-n3 br_alert-n3";
+						stateStyle += (this.isActivatable)?" bg_alert-n4 a:bg_alert ":" bg_alert-n1";
+					}
+				break;
 				case "warning":
-					stateStyle =
-						"c_white h:c_white bg_warning-n1 h:bg_warning-n3 a:bg_warning-n4 br_warning-n3";
-					if (this.isDisabled) stateStyle = "bg_warning-4";
+					if (this.isDisabled)
+					{ stateStyle += " bg_warning-4";}
+					else{
+						stateStyle +=
+							"  h:bg_warning-n3 br_warning-n3";
+						stateStyle += (this.isActivatable)?" bg_warning-n4 a:bg_warning ":" bg_warning-n1";
+					}
+
 					break;
 				case "success":
-					stateStyle =
-						"c_white h:c_white bg_success-n1 h:bg_success-n3 a:bg_success-n4 br_success-n3";
-					if (this.isDisabled) stateStyle = "bg_success-4";
+					if (this.isDisabled)
+					{ stateStyle += " bg_success-4";}
+					else{
+						stateStyle +=
+							"  h:bg_success-n3 br_success-n3";
+						stateStyle += (this.isActivatable)?" bg_success-n4 a:bg_success ":" bg_success-n1";
+					}
 					break;
-				case "shade":
-					stateStyle =
-						"c_black bg_balack-3 h:bg_black-5 h:c_white a:c_white-8 a:bg_black-6 transition_1";
-					if (this.isDisabled) stateStyle = "bg_shade-4";
+				case "black":
+					if (this.isDisabled)
+					{ stateStyle += " bg_black-3";}
+					else{
+						stateStyle +=
+							"  h:bg_black-7 br_black-5";
+						stateStyle += (this.isActivatable)?" bg_black-8 a:bg_black-5 ":" bg_black-5";
+					}
+					break;
 					break;
 				case "secondary":
-					stateStyle =
-						"c_black bg_secondary-3 h:bg_secondary-1 h:c_white a:c_secondary-4 a:bg_secondary-n3";
-					if (this.isDisabled) stateStyle = "bg_secondary-4";
+					if (this.isDisabled)
+					{ stateStyle += " bg_secondary-4";}
+					else{
+						stateStyle +=
+							"  h:bg_secondary-n3 br_secondary-n3";
+						stateStyle += (this.isActivatable)?" bg_secondary-n4 a:bg_secondary ":" bg_secondary-n1";
+					}
 					break;
 				case "none":
 					stateStyle = this.isDisabled
@@ -114,9 +137,13 @@ export default {
 						: "underline h:undecorated bg_white-0";
 					break;
 				default:
-					stateStyle =
-						"c_white h:c_white bg_primary h:bg_primary-n2 a:bg_primary-n4";
-					if (this.isDisabled) stateStyle = "bg_primary-4";
+					if (this.isDisabled)
+					{ stateStyle += " bg_primary-4";}
+					else{
+						stateStyle +=
+							"  h:bg_primary-n3 br_primary-n3";
+						stateStyle += (this.isActivatable)?" bg_primary-n4 a:bg_primary ":" bg_primary-n1";
+					}
 					break;
 			}
 			let shadowStyle = "";
