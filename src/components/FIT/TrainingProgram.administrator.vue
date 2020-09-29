@@ -6,7 +6,7 @@
 		</div>
 		<div class="flex_shrink actions self_center m-r_4" v-if="!readOnly">
 			<div class="flex_inline p_2 br_radius bg_shade-4 shadow_n2">
-				<Btn class="br_radius" :size="'small'" :state="'error'" :icon="true" @click="$emit('click')"></Btn>
+				<Btn class="br_radius" :size="'small'" :state="'alert'" @onClick="removeAdmin()"><i class="fa-times far"></i></Btn>
 			</div>
 		</div>
 	</div>
@@ -34,8 +34,8 @@ export default {
 	},
 	methods: {
 		removeAdmin() {
-			this.$emit("removeAdmin");
-		}
+			this.$emit("onRemoveAdmin");
+		},
 	},
 	data() {
 		return {};

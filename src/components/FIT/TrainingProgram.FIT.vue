@@ -2,7 +2,7 @@
 	<section class="font_0 font_ui br_solid br-b_1 br_shade-4 h:bg_primary-5" :data-id="id">
 		<div class="primaryData flex">
 			<div
-				@click="function(){showshadeInfo = !showshadeInfo}"
+				@click="onToggleExpand"
 				class="flex_shrink flex toggle_handle p_3 br_shade-3 br-r_1 br_solid h:bg_shade-4 self_stretch"
 			>
 				<i class="far fa-plus-square vertical-align_middle flex_grow-0 self_center"></i>
@@ -11,13 +11,13 @@
 				v-if="statusOfRecord.state != ''"
 				class="flex_shrink text_center status_icon"
 				style="min-width:2.25rem;"
-				:state="statusOfRecord.state"
+				:state="'alert'"
 			></StatusIcon>
-						<StatusIcon
+			<StatusIcon
 				v-if="statusOfRecord.state == ''"
 				class="flex_shrink text_center status_icon shadow_n1 opacity_4"
 				style="min-width:2.25rem;"
-				:state="'shade'"
+				:state="'secondary'"
 			></StatusIcon>
 			<div class="flex_auto p-l_3 p-y_3 lh_2">
 				<span class="fullName">{{fullName}}</span>
@@ -25,7 +25,7 @@
 				<div class="statusMessage font_n2  " v-if="pendingReview">
 					<span class="c_alert">Pending Review</span>
 				</div>
-				<div class="endDate font_n2 c_primary-n3 " v-else>
+				<div class="endDate font_n2 c_primary-n3 " v-else  @click="onUpdateEndDate(id)">
 					<span class="">End Date:</span>
 					{{endDate}}
 					<span
@@ -33,8 +33,7 @@
 						v-if="endDate == '' || endDate == null"
 					>Missing End Date</span>
 				</div>
-				<div class="statusMessage font_n2  " v-if="birthday == ''||birthday == null">
-
+				<div class="statusMessage font_n2  " v-if="birthday == ''|| birthday == null" @click="onUpdateBirthday(id)">
 					<span class="c_accent">Missing Birthday</span>
 				</div>
 			</div>
@@ -44,39 +43,40 @@
 					<Btn
 						class="br_radius"
 						:size="'medium'"
-						:state="'error'"
-						:icon="true"
-						@click="$emit('removeFIT', id)"
+						:state="'alert'"		
+						@onClick="onRemove(id)"
 					>Remove</Btn>
 				</div>
 			</div>
 		</div>
-		<div
-			class="shadeData br_solid p_4 p-y_3 br-t_1 br_shade-4 shadow_n1 texture_light"
-			v-if="showshadeInfo"
-		>
-			<div class="flex">
-				<addressBlock class="flex_auto" v-bind="address"></addressBlock>
-			</div>
-			<div class="flex font_n1">
-				<div class="birthday flex_auto">
-					<strong>Birthday:</strong>
-					{{birthday}}
-					<span class="c_accent " v-if="birthday == '' || birthday == null">Missing Birthday</span>
+		<TransitionExpand>
+			<div
+				class="shadeData br_solid p_4 p-y_3 br-t_1 br_shade-4 shadow_n1 texture_light"
+				v-if="isExapanded"
+			>
+				<div class="flex">
+					<addressBlock class="flex_auto" v-bind="address" v-if="address != null"></addressBlock>
 				</div>
-				<div class="endDate flex_auto">
-					<strong>End Date:</strong>
-					
-					<span v-if="pendingReview" class="c_alert">
-						<i class="far fa-lock"/> locked till approved
-					</span>
-					<span v-else>
-						{{endDate}}
-						<span class="c_warning " v-if="endDate == '' || endDate == null">Missing End Date</span>
-					</span>
+				<div class="flex font_n1">
+					<div class="birthday flex_auto">
+						<strong>Birthday:</strong>
+						{{ timeConverter(birthday) }}
+						<span class="c_accent " v-if="birthday == '' || birthday == null">Missing Birthday</span>
+					</div>
+					<div class="endDate flex_auto">
+						<strong>End Date:</strong>
+						
+						<span v-if="pendingReview" class="c_alert">
+							<i class="far fa-lock"/> locked till approved
+						</span>
+						<span v-else>
+							{{ timeConverter(endDate)  }}
+							<span class="c_warning " v-if="endDate == '' || endDate == null">Missing End Date</span>
+						</span>
+					</div>
 				</div>
 			</div>
-		</div>
+		</TransitionExpand>
 	</section>
 </template>
 
@@ -84,26 +84,28 @@
 import Btn from "../subComponents/Btn";
 import AddressBlock from "../subComponents/AddressBlock";
 import StatusIcon from "../subComponents/StatefullIcon";
+import TransitionExpand from "../subComponents/TransitionExpand";
 
 export default {
 	name: "FIT",
 	components: {
 		Btn,
 		AddressBlock,
-		StatusIcon
+		StatusIcon,
+		TransitionExpand
 	},
 	props: {
 		id: {
-			type: String,
-			default: 0
+			type: Number,
+			default: null
 		},
 		fullName: {
 			type: String,
 			default: "Jacob Micheals, PHD, FACC"
 		},
 		endDate: {
-			type: String,
-			default: "04/04/2000"
+			type: Number,
+			default: null
 		},
 		email: {
 			type: String,
@@ -111,30 +113,47 @@ export default {
 		},
 
 		birthday: {
-			type: String,
-			default: "10/22/1958"
+			type: Number,
+			default: null
 		},
 		address: {
 			type: Object,
-			default: function() {
-				return { institution: "missing" };
-			}
+			default: null
 		},
-		pendingReview:{type:Boolean, defualt:true}
+		pendingReview:{
+			type:Boolean,
+			defualt:true
+			}
 	},
 	methods: {
-		updatedBirthday() {
-			this.$emit("update:Brithday");
+		onUpdateBirthday() {
+			this.$emit("onUpdateBrithday",id);
 		},
-		updateEndDate() {
-			this.$emit("update:endDate");
+		onUpdateEndDate() {
+			this.$emit("onUpdateEndDate",id);
+		},
+		onRemove(id){
+			this.$emit("onRemove", id)
+
+		},
+		onToggleExpand(){
+			this.isExapanded = !this.isExapanded
+		},
+		timeConverter(UNIX_timestamp){
+			var a = new Date(UNIX_timestamp);
+			var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+			var year = a.getFullYear();
+			var month = months[a.getMonth()];
+			var date = a.getDate();
+			var time = date + ' ' + month + ' ' + year;
+			return time;
 		}
 	},
 	computed: {
 		statusOfRecord() {
 			let status = { state: "", message: "" };
 			if (this.birthday == "" || this.birthday == null) {
-				status.state = "accent";
+				status.state = "info";
 				status.message = "missingBirthday";
 			}
 			if (this.endDate == "" || this.endDate == null) {
@@ -142,7 +161,7 @@ export default {
 				status.message = "missingEndDate";
 			}
 			if(this.pendingReview){
-				status.state = "error";
+				status.state = "alert";
 				status.message = "pendingReview";
 			}
 			return status;
@@ -150,7 +169,7 @@ export default {
 	},
 	data() {
 		return {
-			showshadeInfo: false
+			isExapanded: false
 		};
 	}
 };

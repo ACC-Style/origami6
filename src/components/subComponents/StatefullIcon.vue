@@ -23,6 +23,8 @@ export default {
 						"info",
 						"accent",
 						"disabled",
+						"secondary",
+						"primary",
 						"",
 					].indexOf(value) !== -1
 				);
@@ -74,7 +76,6 @@ export default {
 				case "disabled":
 					state += " c_black bg_shade-3 ";
 					break;
-
 				case "secondary":
 					state += " c_black bg_secondary-3 ";
 					break;
