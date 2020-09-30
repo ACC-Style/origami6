@@ -26,8 +26,8 @@ const Template = (args, { argTypes }) => ({
   template: '<btn @onClick="onClick" @onActive="onActive" @onDeactive="onDeactive" v-bind="$props"><span v-html="label"/></btn>',
 });
 
-export const Base = Template.bind({});
-Base.args = {
+export const Default = Template.bind({});
+Default.args = {
   label: 'Button',
   state:'priamry',
   size: 'medium',

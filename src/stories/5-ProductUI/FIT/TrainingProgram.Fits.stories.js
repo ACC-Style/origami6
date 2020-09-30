@@ -61,7 +61,7 @@ MissingEndDate.args = {
     data:fitData[0],
     id:fitData[0].id,
     birthday:fitData[0].birthday,
-    endDate:fitData[0].null,
+    endDate:null,
 
 };
 const ListTemplate = (args, { argTypes }) => ({
@@ -78,6 +78,6 @@ ListEmpty.args = {
     data:[]
 };
 export const ListLoading= ListTemplate.bind({});
-ListLoaded.args = {
-    data:null
+ListLoading.args = {
+data:null
 };

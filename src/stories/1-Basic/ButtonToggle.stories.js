@@ -61,8 +61,8 @@ const Template = (args, { argTypes }) => ({
     </BtnToggle>`,
 });
 
-export const Base = Template.bind({});
-Base.args = {
+export const Default = Template.bind({});
+Default.args = {
 	activelabel: "On",
 	deactivelabel: "Off",
 	state: "priamry",
