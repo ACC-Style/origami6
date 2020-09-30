@@ -4,7 +4,7 @@
 			:for="inputId"
 			v-bind:class="{
 				c_alert: inputState == 'alert',
-				c_warning: inputState == 'warning'
+				c_warning: inputState == 'warning',
 			}"
 			class="label-holder flex font_1 font_medium p-y_2"
 		>
@@ -12,7 +12,7 @@
 				<slot name="default"></slot>
 			</span>
 			<span v-if="required" class="required-holder flex_shrink font_n5">
-				<i class="fas fa-asterisk c_warning  vertical-align_top"></i>
+				<i class="fas fa-asterisk c_warning vertical-align_top"></i>
 			</span>
 		</label>
 		<div class="input-holder flex self_end">
@@ -23,39 +23,48 @@
 				:icon="icon"
 				inputNameTarget="inputId"
 			/>
-			<input
+			<select
+				v-model="selected"
 				:id="inputId"
 				:name="inputId"
-				v-on:change="onChange(text)"
+				v-on:change="onChange()"
 				class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3"
-				:type="inputType"
-				v-model="text"
-				required="required"
+				:required="required"
 				:class="inputStyles"
 				:disabled="state == 'disabled'"
-			/>
+			>
+				<option disabled value="">select one</option>
+				<option
+					v-for="(op, index) in options"
+					:key="'option_' + index"
+					:value="op.value"
+					:label="op.label"
+				/>
+			</select>
 			<div
 				class="br_solid br_2 br-l_0 p-y_3 font_medium flex_none p-x_4 lh_3 flex flex_column font-size_down"
 				v-if="postLabel"
 				:class="inputPrePostStyles"
 			>
-				{{postLabel}}
+				{{ postLabel }}
 			</div>
 		</div>
-		<messageHolder :state="'alert'" v-if="state =='requiredAlert'">This input is required.</messageHolder>
-		<messageHolder :state="'alert'" v-if="state =='alert'">
+		<messageHolder :state="'alert'" v-if="state == 'requiredAlert'"
+			>This input is required.</messageHolder
+		>
+		<messageHolder :state="'alert'" v-if="state == 'alert'">
 			<slot name="alertMessage"></slot>
 		</messageHolder>
-		<messageHolder :state="'warning'" v-if="state =='warning'">
+		<messageHolder :state="'warning'" v-if="state == 'warning'">
 			<slot name="warningMessage"></slot>
-		</messageHolder>		
-		<messageHolder :state="'success'" v-if="state =='success'">
+		</messageHolder>
+		<messageHolder :state="'success'" v-if="state == 'success'">
 			<slot name="successMessage"></slot>
 		</messageHolder>
-		<messageHolder :state="'info'" v-if="state =='info'">
+		<messageHolder :state="'info'" v-if="state == 'info'">
 			<slot name="infoMessage"></slot>
 		</messageHolder>
-				<messageHolder :state="'accent'" v-if="state =='accent'">
+		<messageHolder :state="'accent'" v-if="state == 'accent'">
 			<slot name="accentMessage"></slot>
 		</messageHolder>
 	</div>
@@ -67,31 +76,31 @@ import stateIcon from "../subComponents/StatefullIcon";
 import ValueIcon from "../subComponents/inputValueIcon";
 
 export default {
-	name: "inputText",
+	name: "inputSelect",
 	props: {
-		inputId:{type:String,required:true},
-		inputType:{type:String,default:"text"},
-		defaultvalue: { type: String, default: "" },
+		inputId: { type: String, required: true },
+		options: { type: Array, default: null },
 		icon: { type: String, default: null },
 		postLabel: { type: String, default: null },
 		required: { type: Boolean, default: true },
-		state: { type: String, default: "", 
-		 validator: function (value) {
-        return ['','alert','requiredAlert','warning','success','info','disabled'].indexOf(value) !== -1;
-      },}
+		state: {
+			type: String, default: "",
+			validator: function (value) {
+				return ['', 'alert', 'requiredAlert', 'warning', 'success', 'info', 'disabled'].indexOf(value) !== -1;
+			},
+		}
 	},
 	data() {
 		return {
-			text: this.defaultvalue,
+			selected: '',
 			inputState: this.state,
 		};
 	},
 	computed: {
-
 		inputPrePostStyles() {
 			let styles = "";
 			switch (this.state) {
-				case  "requiredAlert":
+				case "requiredAlert":
 				case "alert":
 					styles += "bg_alert-3 c_alert-1 br_alert-n1 ";
 					break;
@@ -114,7 +123,7 @@ export default {
 		inputStyles() {
 			let styles = "";
 			switch (this.state) {
-				case  "requiredAlert":
+				case "requiredAlert":
 				case "alert":
 					styles += " c_alert br_alert-n1 ";
 					break;
@@ -129,11 +138,11 @@ export default {
 					break;
 				default:
 					styles += " c_black bg_white-0 br_black-5 ";
-						break;
+					break;
 			}
-				if(this.icon){
-					styles += " br-l_0";
-				}
+			if (this.icon) {
+				styles += " br-l_0";
+			}
 
 			return styles;
 		}
@@ -144,15 +153,15 @@ export default {
 		ValueIcon
 	},
 	methods: {
-		onChange: function(value) {
-			if (value == "" && this.required) {
+		onChange: function () {
+			if (this.selected == "" && this.required) {
 				this.state = "requiredAlert"
 				this.$emit("onChange", "");
-				this.$emit("onStateChange","requiredAlert")
+				this.$emit("onStateChange", "requiredAlert")
 			} else {
 
-				this.$emit("onChange", value);
-			} 
+				this.$emit("onChange", this.selected);
+			}
 		}
 	}
 };

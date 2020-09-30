@@ -29,7 +29,13 @@ export default {
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { Fit },
-	template: `<Fit v-bind="data" :birthday="birthday" :endDate="endDate" @onUpdateBirthday="" @onUpdateEndeDate="" @onRemove=""/>`,
+	template: `<Fit 
+	:fullName="fullName"
+	:email ="email"
+	:address ="address"
+	:pendingReview ="pendingReview"
+	:id ="id"
+	 :birthday="birthday" :endDate="endDate" @onUpdateBirthday="" @onUpdateEndeDate="" @onRemove=""/>`,
 });
 export const FIT = Template.bind({});
 FIT.args = {

@@ -4,7 +4,7 @@
 		@click="onClick()"
 		:class="[buttonStyles,{' is-active active ':isActive}, 'br_'+ corner]"
 	>
-		<span class="flex h:undecorated">
+		<span class="flex">
 			<slot></slot>
 		</span>
 	</button>
@@ -148,7 +148,7 @@ export default {
 			}
 			let shadowStyle = "";
 			if (this.isDisabled) {
-				stateStyle += " c_black-3 disabled cursor_not-allowed";
+				stateStyle += " disabled cursor_not-allowed";
 			}else{
 				stateStyle += " ";
 				shadowStyle =this.shadow? " shadow_overlap-light" :" "

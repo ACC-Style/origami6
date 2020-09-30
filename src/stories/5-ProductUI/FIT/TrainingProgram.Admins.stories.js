@@ -1,9 +1,12 @@
-import Administrator from "../../../components/FIT/TrainingProgram.administrator.vue";
+import Administrator from "../../../components/FIT/TrainingProgram.Admin.vue";
+import  AdminList  from "../../../components/FIT/TrainingProgram.AdminList.vue";
+import  { adminData }  from "./Data/adminData.js";
+
 
 export default {
-	title: "ACC/FIT/ADMIN",
+	title: "ACC/FIT/Administrator",
     component: Administrator,
-    subcomponents:{},
+    subcomponents:{ AdminList },
 	parameters: {
 		docs: {
 			description: {
@@ -31,8 +34,27 @@ const Template = (args, { argTypes }) => ({
 });
 export const Admin = Template.bind({});
 Admin.args = {
+	id:"123532342",
     name:"John Smith",
     institution: "Fake Institution",
     adminType: "Director",
     readOnly:  false
+};
+const ListTemplate = (args, { argTypes }) => ({
+	props: Object.keys(argTypes),
+	components: { AdminList },
+	template: `<AdminList :admins="admins"/>`,
+});
+export const ListLoaded = ListTemplate.bind({});
+ListLoaded.args = {
+	admins:adminData
+};
+
+export const ListLoading = ListTemplate.bind({});
+ListLoading.args = {
+	admins:null
+};
+export const ListEmpty = ListTemplate.bind({});
+ListEmpty.args = {
+	admins:[]
 };

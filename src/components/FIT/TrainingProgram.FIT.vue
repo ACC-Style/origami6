@@ -39,14 +39,14 @@
 			</div>
 
 			<div class="flex_shrink actions p-r_3 p-y_2 text_right self_center m-r_4">
+				<div class="flex_inline p_2 br_radius bg_shade-4 shadow_n2">
 					<Btn
 						:size="'small'"
 						:state="'alert'"
 						:shadow="false"		
 						@onClick="onRemove(id)"
-					>Remove</Btn>
-				<!-- <div class="flex_inline p_2 br_radius bg_shade-4 shadow_n2">
-				</div> -->
+					><i class="far fa-times"></i></Btn>
+				</div>
 			</div>
 		</div>
 		<TransitionExpand>

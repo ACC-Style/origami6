@@ -18,7 +18,7 @@ export default{
     argTypes:{
         defaultvalue:{description:'the defualt or value of the input onload. '},
         icon:{description:'font-awesome icon for use with decorationg the input like a dollar sign, or user'},
-		state:{control:{type:'select', options:['alert','requiredAlert','warning','success','info','accent','disabled']}},
+		state:{control:{type:'select', options:['','alert','requiredAlert','warning','success','info','accent','disabled']}},
 		inputType:{control:{type:'select', options:['text','email','password','date']}}
 
     }
@@ -31,13 +31,13 @@ const Template = (args, { argTypes }) => ({
 });
 export const Base = Template.bind({});
 Base.args = {
-	inputId:"uniqueTextInputId",
+	inputId:"uniqueTextInputIdBase",
 	defaultvalue:"test",
 
 };
 export const Number = Template.bind({});
 Number.args = {
-	inputId:"uniqueTextInputId",
+	inputId:"uniqueTextInputIdNumber",
 	defaultvalue:"test",
 	inputType:'number'
 
@@ -45,7 +45,7 @@ Number.args = {
 
 export const Success = Template.bind({});
 Success.args = {
-	inputId:"uniqueTextInputId",
+	inputId:"uniqueTextInputIdSuccess",
 	defaultvalue:"test",
 	state:"success"
 
@@ -53,14 +53,14 @@ Success.args = {
 
 export const IconDecorated = Template.bind({});
 IconDecorated.args = {
-	inputId:"uniqueTextInputId",
+	inputId:"uniqueTextInputIdIcon",
 	defaultvalue:"test",
 	icon:"fa-user"
 
 };
 export const PostLabelInput = Template.bind({});
 PostLabelInput.args = {
-	inputId:"uniqueTextInputId",
+	inputId:"uniqueTextInputIdPostLabel",
 	defaultvalue:"test",
 	postLabel:"mg/ml"
 

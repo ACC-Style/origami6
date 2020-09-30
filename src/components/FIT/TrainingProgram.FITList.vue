@@ -96,7 +96,7 @@ export default {
 	components: { FIT, FITLoading, Btn, Modal, LoadingText },
 	methods: {
 		onRemoveFIT() {
-			this.$emit("onRemoveFIT", id);
+			this.$emit("onRemoveFIT");
 		},
 		onUpdateBrithday(fit) {
 			this.modalVisibleBirthday = true;
