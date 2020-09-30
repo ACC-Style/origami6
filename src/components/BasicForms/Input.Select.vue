@@ -6,7 +6,7 @@
 				'c_alert-n2': inputState == 'alert',
 				'c_warning-n2': inputState == 'warning',
 			}"
-			class="label-holder flex font_1 font_medium p-y_2"
+			class="label-holder flex font-size_up font_medium p-y_2"
 		>
 			<span class="text cell flex_shrink">
 				<slot name="default"></slot>
@@ -30,7 +30,7 @@
 					:id="inputId"
 					:name="inputId"
 					v-on:change="onChange()"
-					class="p-l_4 lh_3 flex_auto br_2 p-y_2 br_solid "
+					class="p-l_4 lh_3 flex_auto p-y_2 br_solid br_2"
 					:required="required"
 					:class="inputStyles"
 					:disabled="state == 'disabled'"
@@ -41,18 +41,20 @@
 						:key="'option_' + index"
 						:value="op.value"
 						:label="op.label"
+
 					/>
 				</select>
 			</div>
 			<div
-				class="br_solid br_2 br-l_0 p-y_3 font_medium flex_none p-x_4 lh_3 flex flex_column font-size_down"
+				class="br_solid br_2 br-l_0 p-y_2 font_medium flex_none p-x_4 lh_3 flex flex_column "
 				v-if="postLabel"
 				:class="inputPrePostStyles"
 			>
 				{{ postLabel }}
 			</div>
 		</div>
-		<messageHolder :state="'alert'" v-if="state == 'requiredAlert'"
+		<div class="font-size_down">
+			<messageHolder :state="'alert'" v-if="state == 'requiredAlert'"
 			>This input is required.</messageHolder
 		>
 		<messageHolder :state="'alert'" v-if="state == 'alert'">
@@ -70,6 +72,7 @@
 		<messageHolder :state="'accent'" v-if="state == 'accent'">
 			<slot name="accentMessage"></slot>
 		</messageHolder>
+		</div>
 	</div>
 </template>
 
@@ -117,7 +120,7 @@ export default {
 					styles += " c_black-3 bg_black-2 br_black-3 ";
 					break;
 				default:
-					styles += "c_black-7 bg_black-2 br_black-5 ";
+					styles += "c_black-6 bg_black-1 br_black-3 ";
 					break;
 			}
 			return styles;
@@ -140,7 +143,7 @@ export default {
 					styles += " c_black bg_black-2 br_black-3 texture_disabled";
 					break;
 				default:
-					styles += " c_black bg_white-0 br_black-5 ";
+					styles += " c_black bg_white br_black-3 ";
 					break;
 			}
 			if (this.icon) {

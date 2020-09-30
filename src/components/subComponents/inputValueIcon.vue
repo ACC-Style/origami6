@@ -39,10 +39,10 @@ export default {
 					styles += "bg_accent-n2 c_accent-n3 br_accent";
 					break;
 				case "disabled":
-					styles+=" c_black-3 bg_black-2 br_black-3  "
+					styles+=" c_black-3 bg_black-2 br_black-3"
 					break;
 				default:
-					styles += "c_black-7 bg_black-2 br_black-5";
+					styles += "c_black-7 bg_black-1 br_black-3";
 					break;
 			}
 			return styles;
