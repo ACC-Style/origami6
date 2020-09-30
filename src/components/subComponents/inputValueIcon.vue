@@ -23,10 +23,11 @@ export default {
 			let styles = "";
 			switch (this.state) {
 				case "alert":
-					styles += " bg_alert-3 c_alert-1 br_alert-n1 ";
+					styles += " bg_alert-3 c_alert-n3 br_alert-n1 ";
 					break;
+
 				case "warning":
-					styles += " bg_warning-3  c_warning br_warning-n1 ";
+					styles += " bg_warning-3  c_warning-n3 br_warning-n1 ";
 					break;
 				case "success":
 					styles += " bg_success-4 c_success-n3  br_success";

@@ -3,8 +3,8 @@
 		<label
 			:for="inputId"
 			v-bind:class="{
-				c_alert: inputState == 'alert',
-				c_warning: inputState == 'warning',
+				'c_alert-n2': inputState == 'alert',
+				'c_warning-n2': inputState == 'warning',
 			}"
 			class="label-holder flex font_1 font_medium p-y_2"
 		>
@@ -19,28 +19,31 @@
 			<ValueIcon
 				v-if="icon"
 				class="flex_shrink"
-				:state="state"
+				:state="(state == 'requiredAlert')?'alert':state"
 				:icon="icon"
 				inputNameTarget="inputId"
 			/>
-			<select
-				v-model="selected"
-				:id="inputId"
-				:name="inputId"
-				v-on:change="onChange()"
-				class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3"
-				:required="required"
-				:class="inputStyles"
-				:disabled="state == 'disabled'"
-			>
-				<option disabled value="">select one</option>
-				<option
-					v-for="(op, index) in options"
-					:key="'option_' + index"
-					:value="op.value"
-					:label="op.label"
-				/>
-			</select>
+			<div class="select-wrapper flex flex_auto relative">
+				<select
+					ref="selectHTML"
+					v-model="selected"
+					:id="inputId"
+					:name="inputId"
+					v-on:change="onChange()"
+					class="p-l_4 lh_3 flex_auto br_2 p-y_2 br_solid "
+					:required="required"
+					:class="inputStyles"
+					:disabled="state == 'disabled'"
+				>
+					<option disabled value="">select one</option>
+					<option
+						v-for="(op, index) in options"
+						:key="'option_' + index"
+						:value="op.value"
+						:label="op.label"
+					/>
+				</select>
+			</div>
 			<div
 				class="br_solid br_2 br-l_0 p-y_3 font_medium flex_none p-x_4 lh_3 flex flex_column font-size_down"
 				v-if="postLabel"
@@ -154,6 +157,7 @@ export default {
 	},
 	methods: {
 		onChange: function () {
+			this.$refs.selectHTML.blur();
 			if (this.selected == "" && this.required) {
 				this.state = "requiredAlert"
 				this.$emit("onChange", "");
@@ -172,4 +176,32 @@ export default {
 	border: inherit;
 	background: inherit;
 }
+
+select{
+	/* Here's the code we need */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	 -o-appearance: none;
+		appearance: none;
+}
+.select-wrapper:after {
+	font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    content: "\f107";
+    position: absolute;
+    color: currentColor;
+    top: 0rem;
+    right: .25rem;
+    padding: .5rem;
+    font-size: 1.25rem;
+    pointer-events: none;
+    display: inline-block;
+    bottom: 0;
+    line-height: 1.25;
+}
+.select-wrapper:focus-within:after{
+content: "\f106";
+}
+
 </style>
