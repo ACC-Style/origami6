@@ -1,7 +1,7 @@
 import Administrator from "../../../components/FIT/TrainingProgram.administrator.vue";
 
 export default {
-	title: "FIT/ADMIN",
+	title: "ACC/FIT/ADMIN",
     component: Administrator,
     subcomponents:{},
 	parameters: {

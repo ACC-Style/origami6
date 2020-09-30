@@ -5,7 +5,7 @@ import ReadableChart from "../../../../components/SeatManagement/Charts/Seat.Rea
 import {UserData} from "../Data/userData.js";
 
 export default {
-	title: "SeatManagment/Charts/UserChart",
+	title: "APPS/SeatManagment/Charts/UserChart",
 	component: {ReadableChart},
 	subcomponents:{},
 	parameters: {

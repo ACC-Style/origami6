@@ -8,16 +8,16 @@
 				<i class="far fa-plus-square vertical-align_middle flex_grow-0 self_center"></i>
 			</div>
 			<StatusIcon
-				v-if="statusOfRecord.state != ''"
-				class="flex_shrink text_center status_icon"
-				style="min-width:2.25rem;"
-				:state="'alert'"
-			></StatusIcon>
-			<StatusIcon
 				v-if="statusOfRecord.state == ''"
 				class="flex_shrink text_center status_icon shadow_n1 opacity_4"
 				style="min-width:2.25rem;"
 				:state="'secondary'"
+			></StatusIcon>
+			<StatusIcon
+				v-if="statusOfRecord.state != ''"
+				class="flex_shrink text_center status_icon"
+				style="min-width:2.25rem;"
+				:state="statusOfRecord.state"
 			></StatusIcon>
 			<div class="flex_auto p-l_3 p-y_3 lh_2">
 				<span class="fullName">{{fullName}}</span>
@@ -27,31 +27,31 @@
 				</div>
 				<div class="endDate font_n2 c_primary-n3 " v-else  @click="onUpdateEndDate(id)">
 					<span class="">End Date:</span>
-					{{endDate}}
+					
 					<span
 						class="c_warning "
-						v-if="endDate == '' || endDate == null"
-					>Missing End Date</span>
+						v-if="endDate == null"
+					>Missing End Date</span><span v-else>{{ timeConverter(endDate)  }}</span>
 				</div>
-				<div class="statusMessage font_n2  " v-if="birthday == ''|| birthday == null" @click="onUpdateBirthday(id)">
+				<div class="statusMessage font_n2  " v-if="birthday == null" @click="onUpdateBirthday(id)">
 					<span class="c_accent">Missing Birthday</span>
 				</div>
 			</div>
 
 			<div class="flex_shrink actions p-r_3 p-y_2 text_right self_center m-r_4">
-				<div class="flex_inline p_2 br_radius bg_shade-4 shadow_n2">
 					<Btn
-						class="br_radius"
-						:size="'medium'"
-						:state="'alert'"		
+						:size="'small'"
+						:state="'alert'"
+						:shadow="false"		
 						@onClick="onRemove(id)"
 					>Remove</Btn>
-				</div>
+				<!-- <div class="flex_inline p_2 br_radius bg_shade-4 shadow_n2">
+				</div> -->
 			</div>
 		</div>
 		<TransitionExpand>
 			<div
-				class="shadeData br_solid p_4 p-y_3 br-t_1 br_shade-4 shadow_n1 texture_light"
+				class="shadeData br_solid p-x_4 p-y_3 br-t_1 br_shade-4 shadow_n1 texture_light"
 				v-if="isExapanded"
 			>
 				<div class="flex">
@@ -60,8 +60,9 @@
 				<div class="flex font_n1">
 					<div class="birthday flex_auto">
 						<strong>Birthday:</strong>
-						{{ timeConverter(birthday) }}
+						
 						<span class="c_accent " v-if="birthday == '' || birthday == null">Missing Birthday</span>
+						<span v-else>{{ timeConverter(birthday) }}</span>
 					</div>
 					<div class="endDate flex_auto">
 						<strong>End Date:</strong>
@@ -70,8 +71,9 @@
 							<i class="far fa-lock"/> locked till approved
 						</span>
 						<span v-else>
-							{{ timeConverter(endDate)  }}
-							<span class="c_warning " v-if="endDate == '' || endDate == null">Missing End Date</span>
+							
+							<span class="c_warning " v-if="endDate === '' || endDate === null">Missing End Date</span>
+							<span v-else>{{ timeConverter(endDate)  }}</span>
 						</span>
 					</div>
 				</div>
@@ -96,7 +98,7 @@ export default {
 	},
 	props: {
 		id: {
-			type: Number,
+			type:[String,Number],
 			default: null
 		},
 		fullName: {
@@ -104,7 +106,7 @@ export default {
 			default: "Jacob Micheals, PHD, FACC"
 		},
 		endDate: {
-			type: Number,
+			type:[String,Number],
 			default: null
 		},
 		email: {
@@ -113,7 +115,7 @@ export default {
 		},
 
 		birthday: {
-			type: Number,
+			type: [String,Number],
 			default: null
 		},
 		address: {
@@ -127,20 +129,20 @@ export default {
 	},
 	methods: {
 		onUpdateBirthday() {
-			this.$emit("onUpdateBrithday",id);
+			this.$emit("onUpdateBrithday",this.id);
 		},
 		onUpdateEndDate() {
-			this.$emit("onUpdateEndDate",id);
+			this.$emit("onUpdateEndDate",this.id);
 		},
-		onRemove(id){
-			this.$emit("onRemove", id)
+		onRemove(){
+			this.$emit("onRemove", this.id)
 
 		},
 		onToggleExpand(){
 			this.isExapanded = !this.isExapanded
 		},
 		timeConverter(UNIX_timestamp){
-			var a = new Date(UNIX_timestamp);
+			var a = new Date(Number(UNIX_timestamp));
 			var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 			var year = a.getFullYear();
 			var month = months[a.getMonth()];
@@ -153,7 +155,7 @@ export default {
 		statusOfRecord() {
 			let status = { state: "", message: "" };
 			if (this.birthday == "" || this.birthday == null) {
-				status.state = "info";
+				status.state = "accent";
 				status.message = "missingBirthday";
 			}
 			if (this.endDate == "" || this.endDate == null) {

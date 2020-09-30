@@ -5,7 +5,7 @@ import LoadingContract from "../../../../../components/SeatManagement/Containers
 import {contractData} from "../../Data/contractData.js"
 
 export default {
-	title: "SeatManagment/Contracts",
+	title: "APPS/SeatManagment/Contracts",
     component: Contract,
     subcomponents:{ContractList, Bundle},
 	parameters: {

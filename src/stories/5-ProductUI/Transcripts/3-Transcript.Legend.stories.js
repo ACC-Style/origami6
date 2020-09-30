@@ -1,7 +1,7 @@
 import CreditLegend from "../../../components/Transcript/Transcript.CreditLegend.vue";
 
 export default {
-	title: "Transcript/Legend",
+	title: "ACC/Transcript/Legend",
 	component: CreditLegend,
 	parameters: {
 		docs: {

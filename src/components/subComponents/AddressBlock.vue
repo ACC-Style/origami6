@@ -2,12 +2,12 @@
 	<div class="address c_shade-n4 p-l_0:md p-y_0:md p-y_3">
 		<address>
 			<!-- http://microformats.org/wiki/hcard -->
-			<h4
+			<div
 				v-if="institution != ''"
-				class="m-b_1 font_normal font_display font_regular font_1"
-			>{{institution}}</h4>
-			<div class="flex flex_column flex_row:md c_black-8 font_n1 lh_0 font_ui">
-				<ul class="flex_auto p-r_4 ul_none w_10:md w_50:lg">
+				class="m-b_2 m-t_2 font_normal font_display font_regular font-size_up"
+			>{{institution}}</div>
+			<div class="flex flex_column flex_row:md c_black-8 font-size_down  font_ui">
+				<ul class="flex_auto p-r_4 ul_none w_10:md w_50:lg lh_0">
 					<li class="m-b_1 m-b_2:md font_normal">
 						<span class="street-address">{{street_1}}</span>
 					</li>

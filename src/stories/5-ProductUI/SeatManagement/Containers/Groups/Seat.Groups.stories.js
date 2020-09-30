@@ -4,7 +4,7 @@ import Group from "../../../../../components/SeatManagement/Containers/Group/Sea
 import {groupsData} from "../../Data/groupData.js";
 
 export default {
-	title: "SeatManagment/Groups",
+	title: "APPS/SeatManagment/Groups",
 	component: {Group},
 	subcomponents:{GroupList},
 	parameters: {

@@ -4,7 +4,7 @@ import SeatLoading from "../../../../../components/SeatManagement/Containers/Sea
 import {SeatData} from "../../Data/seatData.js"
 
 export default {
-	title: "SeatManagment/Seats",
+	title: "APPS/SeatManagment/Seats",
     component: SingleSeat,
     subcomponents:{SeatList,SeatLoading},
 	parameters: {

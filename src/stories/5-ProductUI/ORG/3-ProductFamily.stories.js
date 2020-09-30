@@ -1,7 +1,7 @@
 import ProductFamily from "../../../components/ORG/ORG.ProductFamily.vue";
 
 export default {
-	title: "AccOrg/ProductFamily",
+	title: "ACC/Home/ProductFamily",
     component: ProductFamily,
 	subcomponent:{},
 	parameters: {

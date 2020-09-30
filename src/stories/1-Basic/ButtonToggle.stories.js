@@ -2,7 +2,7 @@ import BtnToggle from "../../components/subComponents/BtnToggle.vue";
 import Btn from "../../components/subComponents/Btn.vue";
 
 export default {
-	title: "Basic/ButtonToggle",
+	title: "Basic/Button/Toggle",
 	component: BtnToggle,
 	subcomponents: { Btn },
 	parameters: {

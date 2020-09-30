@@ -3,7 +3,7 @@ import NavItemList from "../../../../components/SeatManagement/Navigation/Seat.S
 import {NavUsersData,NavApplicationData} from "../Data/navigationData.js"
 
 export default {
-	title: "SeatManagment/Navigation",
+	title: "APPS/SeatManagment/Navigation",
     component: NavItem,
     subcomponents:{NavItemList},
 	parameters: {

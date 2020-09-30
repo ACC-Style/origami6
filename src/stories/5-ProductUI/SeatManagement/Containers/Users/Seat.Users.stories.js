@@ -4,7 +4,7 @@ import UserLoading from "../../../../../components/SeatManagement/Containers/Use
 import {UserData} from "../../Data/userData.js"
 
 export default {
-	title: "SeatManagment/Users",
+	title: "APPS/SeatManagment/Users",
     component: User,
     subcomponents:{UserList,UserLoading},
 	parameters: {

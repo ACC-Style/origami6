@@ -4,7 +4,7 @@ import MicroSeatChart from "../../../../components/SeatManagement/Charts/Seat.Mi
 import {groupsData} from "../Data/groupData.js";
 
 export default {
-	title: "SeatManagment/Charts/SeatChart",
+	title: "APPS/SeatManagment/Charts/SeatChart",
 	component: {ReadableSeatChart},
 	subcomponents:{MicroSeatChart},
 	parameters: {
