@@ -207,4 +207,9 @@ select{
 content: "\f106";
 }
 
+.question select:focus {
+
+	outline:none
+}
+
 </style>

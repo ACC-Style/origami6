@@ -161,8 +161,8 @@ export default {
 </script>
 
 <style scoped>
-.question .input:focus {
-	border: inherit;
-	background: inherit;
+.question input:focus {
+
+	outline:none
 }
 </style>
