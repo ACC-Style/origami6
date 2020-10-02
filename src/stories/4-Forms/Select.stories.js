@@ -1,7 +1,7 @@
 import SelectInput from "../../components/BasicForms/Input.Select.vue";
 
 export default{
-    title: "Form/SelectInput",
+    title: "Form/Input",
     component: SelectInput,
     parameters: {
 		docs: {
@@ -29,8 +29,8 @@ const Template = (args, { argTypes }) => ({
 	components: { SelectInput },
 	template: `<SelectInput @onChange="onChange" @onStateChange="onStateChange" v-bind="$props">Select Plant<template v-slot:successMessage>Congradulations you can follow instructions</template></SelectInput>`,
 });
-export const Base = Template.bind({});
-Base.args = {
+export const Select = Template.bind({});
+Select.args = {
 	inputId:"uniqueSelectInputIdBase",
 	options:[{
 		"value": 1,

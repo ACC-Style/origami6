@@ -62,7 +62,7 @@
 						<strong>Birthday:</strong>
 						
 						<span class="c_accent " v-if="birthday == '' || birthday == null">Missing Birthday</span>
-						<span v-else>{{ timeConverter(birthday) }}</span>
+						<span v-else>{{ dateString(birthday, "monDayYear") }}</span>
 					</div>
 					<div class="endDate flex_auto">
 						<strong>End Date:</strong>
@@ -73,7 +73,7 @@
 						<span v-else>
 							
 							<span class="c_warning " v-if="endDate === '' || endDate === null">Missing End Date</span>
-							<span v-else>{{ timeConverter(endDate)  }}</span>
+							<span v-else>{{ dateString(endDate, "monDayYear")  }}</span>
 						</span>
 					</div>
 				</div>
@@ -87,9 +87,10 @@ import Btn from "../subComponents/Btn";
 import AddressBlock from "../subComponents/AddressBlock";
 import StatusIcon from "../subComponents/StatefullIcon";
 import TransitionExpand from "../subComponents/TransitionExpand";
-
+import TimeConverter from "../subComponents/TimeConverter";
 export default {
 	name: "FIT",
+	mixins:[TimeConverter],
 	components: {
 		Btn,
 		AddressBlock,
@@ -141,15 +142,6 @@ export default {
 		onToggleExpand(){
 			this.isExapanded = !this.isExapanded
 		},
-		timeConverter(UNIX_timestamp){
-			var a = new Date(Number(UNIX_timestamp));
-			var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-			var year = a.getFullYear();
-			var month = months[a.getMonth()];
-			var date = a.getDate();
-			var time = date + ' ' + month + ' ' + year;
-			return time;
-		}
 	},
 	computed: {
 		statusOfRecord() {

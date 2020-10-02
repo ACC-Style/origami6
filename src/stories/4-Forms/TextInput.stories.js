@@ -1,7 +1,7 @@
 import TextInput from "../../components/BasicForms/Input.Text.vue";
 
 export default{
-    title: "Form/TextInput",
+    title: "Form/Input/Text",
     component: TextInput,
     parameters: {
 		docs: {
@@ -29,8 +29,8 @@ const Template = (args, { argTypes }) => ({
 	components: { TextInput },
 	template: `<TextInput @onChange="onChange" @onStateChange="onStateChange" v-bind="$props">User Name <template v-slot:successMessage>Congradulations you can follow instructions</template></TextInput>`,
 });
-export const Base = Template.bind({});
-Base.args = {
+export const Default = Template.bind({});
+Default.args = {
 	inputId:"uniqueTextInputIdBase",
 	defaultvalue:"test",
 
