@@ -1,8 +1,8 @@
-import SelectInput from "../../components/BasicForms/Input.Select.vue";
+import RadioInput from "../../components/BasicForms/Input.Radio.vue";
 import { commonArgs } from "./common.argTypes.js";
 export default{
-    title: "Form/Input/Select",
-    component: SelectInput,
+    title: "Form/Input/Radio",
+    component: RadioInput,
     parameters: {
 		docs: {
 			description: {
@@ -11,22 +11,25 @@ export default{
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {
-				code: `<SelectInput @onChange="onChange" @onStateChange="onStateChange" v-bind="$props"/>`
+				code: `<RadioInput @onChange="onChange" @onStateChange="onStateChange" v-bind="$props"/>`
 			},
 		},
     },
-    argTypes:{...commonArgs}
+    argTypes:{ ...commonArgs,
+        radioSize:{control:{type:'select', options:['tiny', 'small', 'medium', 'large']}},
+    }
 }
 
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { SelectInput },
-	template: `<SelectInput @onChange="onChange" @onStateChange="onStateChange" v-bind="$props">Select Plant<template v-slot:successMessage>Congradulations you can follow instructions</template></SelectInput>`,
+	components: { RadioInput },
+	template: `<RadioInput @onChange="onChange" @onStateChange="onStateChange" v-bind="$props" :options="options">Pick Your Favorite Plant <template v-slot:successMessage>Congradulations you can follow instructions</template></RadioInput>`,
 });
 export const Default = Template.bind({});
 Default.args = {
-	inputId:"uniqueSelectInputIdBase",
-	options:[{
+    inputId:"uniqueRadio",
+    radioSize:"small",
+    options:[{
 		"value": 1,
 		"label": "Widowstears",
 		
@@ -67,4 +70,5 @@ Default.args = {
 		"label": "Matricary Grapefern",
 		
 	  }],
+
 };

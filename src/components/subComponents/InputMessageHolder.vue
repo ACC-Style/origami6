@@ -1,20 +1,20 @@
 <template>
 	<div
-		class="message-holder font_n1 br_solid br_0"
+		class="message-holder font-size_down "
 		v-bind:class="{
-            'br_0': state != '',
-            'br_alert-n1 c_alert-n1 br_0 br-t_1 m-t_n1': state == 'alert', 
-            'br_warning-n1 c_warning-n1 br_0 br-t_1 m-t_n1': state == 'warning',
-            'br_info-n1 c_info-n1 br_0 br-t_1 m-t_n1': state == 'info',
-            'br_success-n1 c_success-n1 br_0 br-t_1 m-t_n1': state == 'success'
+            '': state != '',
+            'c_alert-n1': state == 'alert', 
+            'c_warning-n1': state == 'warning',
+            'c_info-n1': state == 'info',
+            'c_success-n1': state == 'success'
             }"
 	>
 		<div
-			class="p_2 font_bold inline-flex"
+			class="p_2 font_bold inline-flex "
 			v-if="state != ''"
 		>
-			<Icon class="flex_none font_n3 m-r_3" style="width:2em; height:2em;" :state="state"></Icon>
-			<slot>Enter A "{{ state }}" Message</slot>
+			<Icon class="flex_none font-size_down m-r_3" style="width:2em; height:2em;" :state="state"></Icon>
+			<div class="flex flex_column justify_center"><div class=""><slot>Enter A "{{ state }}" Message</slot></div></div>
 		</div>
 	</div>
 </template>

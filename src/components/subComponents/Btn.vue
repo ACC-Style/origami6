@@ -122,8 +122,8 @@ export default {
 					{ stateStyle += " bg_secondary-4";}
 					else{
 						stateStyle +=
-							"  h:bg_secondary-n3 br_secondary-n3";
-						stateStyle += (this.isActivatable)?" bg_secondary-n4 a:bg_secondary ":" bg_secondary-n1";
+							"  h:bg_secondary-n1 br_secondary-n1";
+						stateStyle += (this.isActivatable)?" bg_secondary-n2 a:bg_secondary-1 ":" bg_secondary";
 					}
 					break;
 				case "none":
@@ -140,9 +140,8 @@ export default {
 					if (this.isDisabled)
 					{ stateStyle += " bg_primary-4";}
 					else{
-						stateStyle +=
-							"  h:bg_primary-n3 br_primary-n3";
-						stateStyle += (this.isActivatable)?" bg_primary-n4 a:bg_primary ":" bg_primary-n1";
+						stateStyle += " h:bg_primary-n2 br_primary-n3";
+						stateStyle += (this.isActivatable)? " bg_primary-n3 a:bg_primary-1 ":" bg_primary-n1";
 					}
 					break;
 			}

@@ -1,5 +1,6 @@
 <template>
 	<div class="question font_ui">
+		<div class="c_alert font_2">Incomplete Component</div>
 		<label
 			:for="inputId"
 			v-bind:class="{
@@ -23,21 +24,25 @@
 				:icon="icon"
 				inputNameTarget="inputId"
 			/>
-			<input
+			<div class="flex_auto flex_column">
+				<input
 
 				:name="inputId"
                 :list="inputId"
 				v-on:change="onChange(text)"
-				class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3"
-				:type="inputType"
+				class="br_2 p-y_2 br_solid  p-l_4 lh_3 flex_auto w_100"
+				type="text"
 				v-model="text"
+				autocomplete="on"
 				:required="required"
 				:class="inputStyles"
 				:disabled="state == 'disabled'"
+				placeholder="select one"
 			/>
-            <datalist :id="inputId" class="w_100">
+            <datalist :id="inputId" class="display_none">
                 <option v-for="( option, index) in options" :key="inputId+'_'+index" :value="option.value"/>
             </datalist>
+			</div>
 			<div
 				class="br_solid br_2 br-l_0 p-y_2 font_medium flex_none p-x_4 lh_3 flex flex_column "
 				v-if="postLabel"
@@ -76,7 +81,6 @@ export default {
 	name: "inputText",
 	props: {
 		inputId:{type:String,required:true},
-		inputType:{type:String,default:"text"},
 		options: { type: Array, default: null },
 		icon: { type: String, default: null },
 		postLabel: { type: String, default: null },
@@ -169,4 +173,5 @@ export default {
 	border: inherit;
 	background: inherit;
 }
+input[list]{font-size:1rem;width:500px}
 </style>

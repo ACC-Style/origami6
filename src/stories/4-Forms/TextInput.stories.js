@@ -1,5 +1,5 @@
 import TextInput from "../../components/BasicForms/Input.Text.vue";
-
+import { commonArgs } from "./common.argTypes.js";
 export default{
     title: "Form/Input/Text",
     component: TextInput,
@@ -16,9 +16,8 @@ export default{
 		},
     },
     argTypes:{
+		...commonArgs,
         defaultvalue:{description:'the defualt or value of the input onload. '},
-        icon:{description:'font-awesome icon for use with decorationg the input like a dollar sign, or user'},
-		state:{control:{type:'select', options:['','alert','requiredAlert','warning','success','info','accent','disabled']}},
 		inputType:{control:{type:'select', options:['text','email','password','date']}}
 
     }

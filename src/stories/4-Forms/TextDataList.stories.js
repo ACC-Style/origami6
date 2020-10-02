@@ -1,7 +1,9 @@
 import DataListInput from "../../components/BasicForms/Input.DataList.vue";
+import { commonArgs } from "./common.argTypes.js";
+
 
 export default{
-    title: "Form/DataListInput",
+    title: "Form/Input/DataList",
     component: DataListInput,
     parameters: {
 		docs: {
@@ -15,12 +17,8 @@ export default{
 			},
 		},
     },
-    argTypes:{
-        defaultvalue:{description:'the defualt or value of the input onload. '},
-        icon:{description:'font-awesome icon for use with decorationg the input like a dollar sign, or user'},
-		state:{control:{type:'select', options:['','alert','requiredAlert','warning','success','info','accent','disabled']}},
-		inputType:{control:{type:'select', options:['text','email','password','date']}}
-
+    argTypes:{...commonArgs
+        
     }
 }
 
