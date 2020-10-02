@@ -19,7 +19,7 @@
             return {
                 messageSender:(this.userid == this.id )?"self":"others",
                 avatar:'https://robohash.org/'+this.id+'.png">',
-                time:this.dateString(this.timestamp,'dd/mm/yyyy_h:m:s')
+                time:this.dateToString(this.timestamp,'dd/mm/yyyy_h:m:s')
             }
         },
         props:{

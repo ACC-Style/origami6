@@ -1,21 +1,20 @@
 <template>
 	<div
-		class="flex font_ui br_solid br-b_1 br_shade-4 h:bg_primary-5"
-		@click="onToggle"
+		class="flex font_ui br_solid br-b_1 br_shade-4"
+
 	>
 		<div
 			class="flex_shrink flex toggle_handle p_3 br_shade-3 br-r_1 br_solid h:bg_shade-4 self_stretch"
 		>
 			<i
-				class="far vertical-align_middle flex_grow-0 self_center"
-				:class="[isSelected ?'fa-square' : 'fa-check-square']"
+				class="far vertical-align_middle flex_grow-0 self_center fa-square opacity_5"
 			></i>
 		</div>
 		<div class="flex_auto p-y_2 p-x_4">
-			<div class="font_0">{{email}}</div>
-			<div class="font_n2 c_primary-n3">
-				<strong>Invitation Sent</strong>
-				{{ dateToString(dateOfRequest, "dayMonYear") }}
+			<div class="font_0 lorem-loader w_30">&nbsp;<i class="fas fa-spin fa-spinner-third"></i></div>
+			<div class="font_n2 c_primary-n3 m-t_2">
+				<strong class="lorem-loader inline-block w_20 m-r_3">&nbsp;</strong>
+                
 			</div>
 		</div>
 		<div class="flex_shrink m-l_auto self_center">
@@ -27,7 +26,7 @@
 						:corners="'radius'"
 						:icon="false"
 						:size="'small'"
-						@click="onResendRequest()"
+                        :isDisabled="true"
 					>Resend</Btn>
 				</div>
 				<div class="flex_shrink self_center">
@@ -37,7 +36,7 @@
 						class=""
 						:icon="true"
 						:size="'small'"
-						@click="onCancelRequest()"
+                        :isDisabled="true"
 					><i class="far fa-times"></i></Btn>
 				</div>
 			</div>
@@ -47,11 +46,10 @@
 
 <script>
 import Btn from "../subComponents/Btn";
-import TimeConverter from "../subComponents/TimeConverter"
 
 export default {
 	name: "FitRequest",
-	mixins:[TimeConverter],
+
 	components: { Btn },
 	props: {
 		id:{type: [Number,String],default:null},
@@ -65,27 +63,10 @@ export default {
 		}
 	},
 	methods: {
-		onToggle(){
-			this.isSelected = !this.isSelected;
-			if(this.isSelected ){
-				this.$emit("onSelected", this.id);
-			}
-		},
-		onSelected() {
-			this.$emit("onSelected", this.id);
-		},
-		onCancelRequest() {
-			this.$emit("onCancelRequest", this.id);
-		},
-		onResendRequest() {
-			this.$emit("onResendRequest", this.id);
-		}
+		
 	},
 	data() {
-		return {
-			isSelected: "false",
-			dateString: this.dateToString(this.dateOfRequest,'monDayYear')
-		};
+        return{}
 	}
 };
 </script>

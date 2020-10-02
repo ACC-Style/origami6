@@ -32,7 +32,7 @@ export default {
 			let months = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 			return months[d.getMonth()];
 		},
-		dateString(timesstamp, format) {
+		dateToString(timesstamp, format) {
 			let date = this.timeConverter(timesstamp), string = '';
 			switch (format) {
                 case 'dd/mm/yyyy_h:m:s':

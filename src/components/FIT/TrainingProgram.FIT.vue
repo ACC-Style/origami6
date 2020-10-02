@@ -62,7 +62,7 @@
 						<strong>Birthday:</strong>
 						
 						<span class="c_accent " v-if="birthday == '' || birthday == null">Missing Birthday</span>
-						<span v-else>{{ dateString(birthday, "monDayYear") }}</span>
+						<span v-else>{{ dateToString(birthday, "monDayYear") }}</span>
 					</div>
 					<div class="endDate flex_auto">
 						<strong>End Date:</strong>
@@ -73,7 +73,7 @@
 						<span v-else>
 							
 							<span class="c_warning " v-if="endDate === '' || endDate === null">Missing End Date</span>
-							<span v-else>{{ dateString(endDate, "monDayYear")  }}</span>
+							<span v-else>{{ dateToString(endDate, "monDayYear")  }}</span>
 						</span>
 					</div>
 				</div>

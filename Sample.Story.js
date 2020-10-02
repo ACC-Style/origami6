@@ -1,8 +1,8 @@
-import CreditLegend from "../../../components/Transcript/Transcript.CreditLegend.vue";
+import VueComp from "../../../components/VueComp.vue";
 
 export default {
 	title: "Transcript/Legend",
-    component: CreditLegend,
+    component: VueComp,
     subcomponents:{},
 	parameters: {
 		docs: {
@@ -12,7 +12,7 @@ export default {
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {
-				code: `<CreditLegend v-bind="$props"/>`
+				code: `<VueComp v-bind="$props"/>`
 			},
 
 		},
@@ -26,10 +26,10 @@ export default {
 };
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { CreditLegend },
-	template: `<CreditLegend v-bind="$props"/>`,
+	components: { VueComp },
+	template: `<VueComp v-bind="$props"/>`,
 });
-export const Legend = Template.bind({});
-Legend.args = {
+export const Default = Template.bind({});
+Default.args = {
 	arg1:1
 };
