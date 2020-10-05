@@ -52,7 +52,7 @@
 				</div>
 				<div
 					class="text_center bg_secondary-1 c_white uppercase h:bg_secondary-n1 p-y_2 font_ui font_n2 flex_auto display_none:print"
-					@click="$emit('showModalLegendEvent')"
+					@click="$emit('onShowModalLegendEvent')"
 				>
 					<span>
 						<i class="fa fas fa-list-alt"></i>&nbsp;Credit Legend
@@ -67,8 +67,8 @@
 export default {
     name: "SummaryBar",
 	props: {
-			startDate: { type: [Number, Date] },
-			endDate: { type:  [Number, Date]  },
+			startDate: { type: [Number, String, Date] },
+			endDate: { type:  [Number, String, Date]  },
             filteredCreditCountDictionary: { type: Object, required: true, default: () => ({})},
             totalCreditCountInDateRange: { type: Number, default: 0 }
 	},
@@ -76,22 +76,21 @@ export default {
 	methods: {
 		creditBackgroundColorClass: function (credit) {
 			return "bg_" + credit + " c_white";
-        }
+		},
+		convertToDate(date){
+			if(Object.prototype.toString.call(date) === "[object Date]"){
+				return date;
+			}else{
+				return	new Date(Number(date))
+			}
+		}
 	},
 	computed: {
 		filterStartDate: function(){
-			if(Object.prototype.toString.call(this.startDate) === "[object Date]"){
-				return this.startDate;
-				}else{
-				return	new Date(this.startDate)
-			}
+			return this.convertToDate(this.startDate);
 		},
-				filterEndDate: function(){
-			if(Object.prototype.toString.call(this.endDate) === "[object Date]"){
-				return this.endDate;
-				}else{
-				return	new Date(this.endDate)
-			}
+		filterEndDate: function(){
+			return this.convertToDate(this.endDate);
 		},
         creditCounterDecoratorClass: function () {
             var count = Object.keys(this.filteredCreditCountDictionary).length;

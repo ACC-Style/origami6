@@ -47,7 +47,7 @@ const Template = (args, { argTypes }) => ({
 export const Default = Template.bind({});
 Default.args = {
 	endDate:null,
-	startDate:1539521172000,
+	startDate:'1539521172000',
 	filteredCreditCountDictionary:creditDictionary,
 	totalCreditCountInDateRange:25
 
