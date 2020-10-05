@@ -1,6 +1,6 @@
 <template>
 	<div id="CreditType" class="text_right:md flex_end flex_auto p-l_4:md p-l_0 p-t_3 p-t_0:md">
-		<span class="uppercase c_shade h:c_white h:bg_shade font_bold font_n2 m-x_2 p-x_2" @click="$emit('showModalLegendEvent')">
+		<span class="uppercase c_shade h:c_white h:bg_shade font_bold font_n2 m-x_2 p-x_2" @click="$emit('onShowModalLegendEvent')">
 			Filter Credit Types
 			<i class="fa fas fa-question-circle"></i>
 		</span>
@@ -65,11 +65,11 @@ export default {
 				return;
 			}
 
-			this.$emit("updatefilter", this.selectedFilters);
+			this.$emit("onUpdatefilter", this.selectedFilters);
 		},
 		filterReset: function () {
 			this.selectedFilters = ["None"];
-			this.$emit("updatefilter", this.selectedFilters);
+			this.$emit("onUpdatefilter", this.selectedFilters);
 		}
 	}
 };

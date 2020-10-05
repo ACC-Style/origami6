@@ -2,7 +2,7 @@ import BtnBar from "../../components/subComponents/BtnBar.vue";
 import Btn from "../../components/subComponents/Btn.vue";
 
 export default {
-	title: "Basic/Button",
+	title: "Basic/Button/BtnBar",
 	component: BtnBar,
 	subcomponents: { Btn },
 	parameters: {
@@ -39,10 +39,10 @@ const Template = (args, { argTypes }) => ({
 	components: { BtnBar },
 	template: `<BtnBar  v-bind="$props">Optional Label</BtnBar>`,
 });
-export const ButtonBar = Template.bind({});
-ButtonBar.args = {
+export const Default = Template.bind({});
+Default.args = {
 	options: [{label:"Date",isActive:true},{label:"Product",isActive:false},{label:"Activity",isActive:false}],
-    buttonDecorations:{shadow:false,corner:"square",size:"small",state:"secondary",
+    buttonDecorations:{shadow:false,corner:"square",size:"small",state:"black",
     isActivatable:true,
     multiselect:false}
 };

@@ -112,8 +112,8 @@ export default {
 					{ stateStyle += " bg_black-3";}
 					else{
 						stateStyle +=
-							"  h:bg_black-7 br_black-5";
-						stateStyle += (this.isActivatable)?" bg_black-8 a:bg_black-5 ":" bg_black-5";
+							"  h:bg_black-6 br_black-5";
+						stateStyle += (this.isActivatable)?" bg_black-4 a:bg_black-8 ":" bg_black-4";
 					}
 					break;
 					break;
