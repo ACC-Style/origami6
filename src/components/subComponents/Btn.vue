@@ -108,12 +108,13 @@ export default {
 					}
 					break;
 				case "black":
+					stateStyle = " c_black-8 h:c_black-8 ";
 					if (this.isDisabled)
-					{ stateStyle += " bg_black-3";}
+					{ stateStyle = " bg_black-2 c_black-3";}
 					else{
 						stateStyle +=
 							"  h:bg_black-6 br_black-5";
-						stateStyle += (this.isActivatable)?" bg_black-4 a:bg_black-8 ":" bg_black-4";
+						stateStyle += (this.isActivatable)?" bg_black-4 a:bg_black-8 a:c_white":" bg_black-4";
 					}
 					break;
 					break;

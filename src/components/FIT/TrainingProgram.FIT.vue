@@ -30,10 +30,10 @@
 					
 					<span
 						class="c_warning "
-						v-if="endDate == null"
-					>Missing End Date</span><span v-else>{{ timeConverter(endDate)  }}</span>
+						v-if="endDateDate == null"
+					>Missing End Date</span><span v-else>{{ endDateDate | dateStrAbv  }}</span>
 				</div>
-				<div class="statusMessage font_n2  " v-if="birthday == null" @click="onUpdateBirthday(id)">
+				<div class="statusMessage font_n2  " v-if="birthdayDate == null" @click="onUpdateBirthday(id)">
 					<span class="c_accent">Missing Birthday</span>
 				</div>
 			</div>
@@ -61,8 +61,8 @@
 					<div class="birthday flex_auto">
 						<strong>Birthday:</strong>
 						
-						<span class="c_accent " v-if="birthday == '' || birthday == null">Missing Birthday</span>
-						<span v-else>{{ dateToString(birthday, "monDayYear") }}</span>
+						<span class="c_accent " v-if="birthdayDate == '' || birthdayDate == null">Missing Birthday</span>
+						<span v-else>{{ birthdayDate | dateStrAbv }}</span>
 					</div>
 					<div class="endDate flex_auto">
 						<strong>End Date:</strong>
@@ -72,8 +72,8 @@
 						</span>
 						<span v-else>
 							
-							<span class="c_warning " v-if="endDate === '' || endDate === null">Missing End Date</span>
-							<span v-else>{{ dateToString(endDate, "monDayYear")  }}</span>
+							<span class="c_warning " v-if="endDateDate === '' || endDateDate === null">Missing End Date</span>
+							<span v-else>{{ endDateDate | dateStrAbv  }}</span>
 						</span>
 					</div>
 				</div>
@@ -87,10 +87,8 @@ import Btn from "../subComponents/Btn";
 import AddressBlock from "../subComponents/AddressBlock";
 import StatusIcon from "../subComponents/StatefullIcon";
 import TransitionExpand from "../subComponents/TransitionExpand";
-import TimeConverter from "../subComponents/TimeConverter";
 export default {
 	name: "FIT",
-	mixins:[TimeConverter],
 	components: {
 		Btn,
 		AddressBlock,
@@ -107,7 +105,7 @@ export default {
 			default: "Jacob Micheals, PHD, FACC"
 		},
 		endDate: {
-			type:[String,Number],
+			type:[String,Number,Date],
 			default: null
 		},
 		email: {
@@ -116,7 +114,7 @@ export default {
 		},
 
 		birthday: {
-			type: [String,Number],
+			type: [String,Number,Date],
 			default: null
 		},
 		address: {
@@ -142,15 +140,29 @@ export default {
 		onToggleExpand(){
 			this.isExapanded = !this.isExapanded
 		},
+		convertToDate(date){
+			return (Object.prototype.toString.call(date) === "[object Date]")? date: new Date(Number(date));
+		}
+	},
+	data() {
+		return {
+			isExapanded: false
+		};
 	},
 	computed: {
+		endDateDate(){
+			return this.convertToDate(this.endDate);
+		},
+		birthdayDate(){
+			return this.convertToDate(this.birthday);
+		},
 		statusOfRecord() {
 			let status = { state: "", message: "" };
-			if (this.birthday == "" || this.birthday == null) {
+			if (this.birthdayDate == "" || this.birthdayDate == null) {
 				status.state = "accent";
 				status.message = "missingBirthday";
 			}
-			if (this.endDate == "" || this.endDate == null) {
+			if (this.endDateDate == "" || this.endDateDate == null) {
 				status.state = "warning";
 				status.message = "missingEndDate";
 			}
@@ -160,11 +172,6 @@ export default {
 			}
 			return status;
 		}
-	},
-	data() {
-		return {
-			isExapanded: false
-		};
 	}
 };
 </script>

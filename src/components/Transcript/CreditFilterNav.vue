@@ -5,37 +5,48 @@
 			<i class="fa fas fa-question-circle"></i>
 		</span>
 		<ul
-			class="flex flex_row flex_wrap flex_nowrap:md flex_row-reverse:md text_left font_bold font_n2 font_ui ul_none"
+			class="flex flex_row flex_wrap flex_nowrap:md flex_row-reverse:md  font_bold font_n2 font_ui ul_none"
 		>
 			<li
-				class="flex_shrink w_50 w_auto:md br_1 br_solid br_white-7"
-				:class="{'active': selectedFilters.includes('None')}"
+				class="flex_shrink br_1 br_solid br_white-7 flex"
+				:class="{'active is-active': selectedFilters.includes('None')}"
 			>
-				<div
-					@click="filterReset()"
-					class="button bg_shade-3 p-x_3 p-x_4:lg p-y_3 p-y_3:lg undecorated inline-block:md h:bg_shade h:c_white c_shade-n3 block a:bg_primary a:c_white"
-				>None</div>
+				<Btn
+					@onClick="onFilterReset()"
+					:size="'medium'"
+					:shadow="false"
+					:corner="'square'"
+					
+				><span v-html="'None'"></span></Btn>
 			</li>
 			<li
-				class="flex_shrink w_50 w_auto:md br_1 br_solid br_white-7"
+				class="flex_shrink br_1 br_solid br_white-7 "
 				v-for="(credit, index) in creditTypesInDateRange"
 				:key="index+'_creditFilter'"
 			>
-				<div
-					@click="filterClick(credit.styleCode)"
-					class="button bg_shade-3 p-x_3 p-x_4:lg p-y_3 p-y_3:lg undecorated inline-block:md h:bg_shade h:c_white c_shade-n3 block a:bg_primary a:c_white"
-					:class="{['c_white bg_'+credit.styleCode]: selectedFilters.includes(credit.styleCode)}"
+				<Btn
+					@onClick="onFilterClick(credit.styleCode)"
+					:state="'black'"
+					:size="'medium'"
+					:shadow="false"
+					:corner="'square'"
+					:isActive="selectedFilters.includes(credit.styleCode)"
+					:class="{['bg_'+credit.styleCode+'-n2 a:c_white']: selectedFilters.includes(credit.styleCode)}"
 				>
-					<span class="lh_0" v-html="credit.shortName"></span>
-				</div>
+					<span v-html="credit.shortName"></span>
+				</Btn>
 			</li>
 		</ul>
 	</div>
 </template>
 
 <script>
+import Btn from "../subComponents/Btn";
 export default {
 	name: "CreditFilterNav",
+	components: {
+		Btn
+	},
 	props: {
 		creditTypesInDateRange: {
 			type: Array,
@@ -46,7 +57,7 @@ export default {
 		selectedFilters: ["None"]
 	}),
 	methods: {
-		filterClick: function (type) {
+		onFilterClick: function (type) {
 			// First purge the array if it has the default filter of "None"
 			if (this.selectedFilters.includes("None")) {
 				this.selectedFilters = [];
@@ -61,16 +72,19 @@ export default {
 
 			// If array is empty again, then default to "None"
 			if (this.selectedFilters.length === 0) {
-				this.filterReset();
+				this.onFilterReset();
 				return;
 			}
 
 			this.$emit("onUpdatefilter", this.selectedFilters);
 		},
-		filterReset: function () {
+		onFilterReset: function () {
 			this.selectedFilters = ["None"];
 			this.$emit("onUpdatefilter", this.selectedFilters);
 		}
 	}
 };
 </script>
+<style>
+	sup{line-height: 0;}
+</style>

@@ -35,7 +35,11 @@ const Template = (args, { argTypes }) => ({
 	:address ="address"
 	:pendingReview ="pendingReview"
 	:id ="id"
-	 :birthday="birthday" :endDate="endDate" @onUpdateBirthday="" @onUpdateEndeDate="" @onRemove=""/>`,
+	:birthday="birthday"
+	:endDate="endDate"
+	@onUpdateBirthday=""
+	@onUpdateEndeDate=""
+	@onRemove=""/>`,
 });
 export const FIT = Template.bind({});
 FIT.args = {
@@ -50,8 +54,11 @@ FIT.args = {
 };
 export const MissingBirthday = Template.bind({});
 MissingBirthday.args = {
-    data:fitData[0],
-    id:fitData[0].id,
+	fullName:fitData[0].fullName,  
+	email:fitData[0].email,
+	address:fitData[0].address,
+	pendingReview:fitData[0].pendingReview,
+	id:fitData[0].id,
     birthday:null,
     endDate:fitData[0].endDate,
 

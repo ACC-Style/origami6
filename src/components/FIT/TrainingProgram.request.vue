@@ -15,7 +15,7 @@
 			<div class="font_0">{{email}}</div>
 			<div class="font_n2 c_primary-n3">
 				<strong>Invitation Sent</strong>
-				{{ dateToString(dateOfRequest, "dayMonYear") }}
+				{{ dateOfRequest | dateStrAbv }}
 			</div>
 		</div>
 		<div class="flex_shrink m-l_auto self_center">
@@ -47,11 +47,10 @@
 
 <script>
 import Btn from "../subComponents/Btn";
-import TimeConverter from "../subComponents/TimeConverter"
+
 
 export default {
 	name: "FitRequest",
-	mixins:[TimeConverter],
 	components: { Btn },
 	props: {
 		id:{type: [Number,String],default:null},
@@ -60,7 +59,7 @@ export default {
 			default: "no.one@fakeemail.com"
 		},
 		dateOfRequest: {
-			type: [Number,String],
+			type: [Number,String, Date],
 			default: ""
 		}
 	},
@@ -79,7 +78,15 @@ export default {
 		},
 		onResendRequest() {
 			this.$emit("onResendRequest", this.id);
+		},
+		convertToDate(date){
+			return (Object.prototype.toString.call(date) === "[object Date]")? date: new Date(Number(date));
 		}
+	},
+	computed: {
+		dateOfRequestDate(){
+			return this.convertToDate(this.dateOfRequest);
+		},
 	},
 	data() {
 		return {

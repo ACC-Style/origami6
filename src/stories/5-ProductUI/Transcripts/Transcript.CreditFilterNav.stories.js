@@ -1,9 +1,11 @@
 import CreditFilterNav from "../../../components/Transcript/CreditFilterNav.vue";
+import Btn from "../../../components/subComponents/Btn.vue";
 import { creditTypes } from "./Data/creditTypes";
 
 export default {
 	title: "ACC/Transcript/CreditFilterNav",
-    component: CreditFilterNav,
+	component: CreditFilterNav,
+	subcomponents:{Btn},
 	parameters: {
 		docs: {
 			description: {
@@ -18,10 +20,8 @@ export default {
 
 		},
 	},
-	argTypes:{
-        onUpdatefilter:{action:'update with array'},
-        creditTypesInDateRange:{control:{type:"array"}},
-        creditTypeObject:{control:{type:"object"}},
+	argTypes:{     
+		creditTypesInDateRange:{control:{type:"array"}},
 		}
 };
 const Template = (args, { argTypes }) => ({
@@ -33,5 +33,5 @@ const Template = (args, { argTypes }) => ({
 export const Default = Template.bind({});
 Default.args = {
     creditTypesInDateRange:creditTypes,
-    creditTypeObject:creditTypes[0]
+
 };

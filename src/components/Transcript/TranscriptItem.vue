@@ -50,7 +50,7 @@
 					<div class="font_italic font_n3">
 						<div class="m-t_n3 m-b_2 print-m_0">
 							<span>Date Claimed:</span>&nbsp;
-							<span>{{activityDateClaimed | dateStr}}</span>
+							<span>{{activityDateClaimed | dateNumber}}</span>
 						</div>
 					</div>
 					<div 
@@ -100,7 +100,7 @@
 							v-html="getCreditShortName(credit)"
 						></div>
 						<div class="w_40 p-x_3 p-y_2 br-t_1 br_solid br_black-2 font_italic">
-							{{credit.creditDateClaimed | dateForCertStr}}
+							{{credit.creditDateClaimed | dateString}}
 						</div>
 						<div 
 							v-if="(isExternal && credit.certId) || (!isExternal && creditsAvailableForCert.includes(credit.type))"
@@ -403,7 +403,7 @@ export default {
 							params: {
 								creditType: creditToDownload.type,
 								activityTitle: this.activity,
-								dateClaimedStr: this.$options.filters.dateForCertStr(creditToDownload.creditDateClaimed),
+								dateClaimedStr: this.$options.filters.dateString(creditToDownload.creditDateClaimed),
 								creditAmtStr: creditToDownload.amount.toString(),
 								creditMaxAmtStr: creditToDownload.maxAmount.toString(),
 								activityFormat: this.activityFormat || "Internet Enduring Material",

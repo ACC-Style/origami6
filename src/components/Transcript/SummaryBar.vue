@@ -10,9 +10,9 @@
 					v-if="!filterStartDate && !filterEndDate"
 				>None</span>
 				<span v-else class="c_white font_bold m-l_3">
-					{{filterStartDate | dateStr}} to {{(filterEndDate || new Date()) | dateStr}}
+					{{filterStartDate | dateNumber}} to {{(filterEndDate || new Date()) | dateNumber}}
 					<!-- <span v-if="!filterEndDate">Today</span>
-					<span v-if="filterEndDate">{{filterEndDate | dateStr}}</span> -->
+					<span v-if="filterEndDate">{{filterEndDate | dateNumber}}</span> -->
 				</span>
 			</div>
 			<div class="flex_shrink p-l_4 uppercase">
