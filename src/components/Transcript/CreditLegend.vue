@@ -1,7 +1,7 @@
 <template>
-    <modal id="Legend" v-if="showModal_Legend" @close="$emit('closeLegendModal')">
+    <Modal id="Legend" v-if="showModal_Legend" @close="$emit('onCloseLegendModal')">
         <h3 slot="header" class>Credit Type Legend</h3>
-        <div slot="body">
+        <div >
             <ul class="ul_none m-b_4 lh_4">
                 <li
                     class="flex flex_row flex_nowrap"
@@ -9,10 +9,12 @@
                     :key="'legendkey_'+index"
                 >
                     <div
-                        class="br_1 br_white-3 br_solid w_30 c_white p-x_3 p-y_2 text_center font_bold"
+                        class="br_1 br_white-3 br_solid w_30 c_white p-x_3 p-y_2 text_center font_bold flex flex_column justify_center"
                         :class="['bg_'+credit.styleCode]"
-                        v-html="credit.shortName"
-                    ></div>
+                        
+                    >
+                    <div class=" " v-html="credit.shortName"></div>
+                    </div>
                     <div class="w_70 p-x_3 p-y_2 br-t_1 br-r_1 br-b_1 br_solid br_black-2">
                         <p
                             class="font_0 c_secondary-n4 lh_1 font_copy vertical-align_middle inline-block"
@@ -26,16 +28,16 @@
             slot="footer"
             class="text_right br-t_1 br_primary br_solid p_3 p-x_4 bg_secondary-5 shadow_n2 texture_light"
         >
-            <button
-                class="font_ui bg_primary h:bg_primary-n2 c_white br_none br_radius p-x_4 p-y_2 text_center inline-block font_0"
-                @click="$emit('closeLegendModal')"
-            >Close Legend</button>
+            <Btn
+                @onClick="$emit('onCloseLegendModal')"
+            >Close Legend</Btn>
         </div>
-    </modal>
+    </Modal>
 </template>
 
 <script>
-import modal from "./modal.vue";
+import Modal from "../subComponents/Modal";
+import Btn from "../subComponents/Btn";
 
 export default {
     name: "CreditLegend",
@@ -44,7 +46,7 @@ export default {
         creditTypesInDateRange: { type: Array, default: () => [] }
     },
     components: {
-        modal
+        Modal,Btn
     }
 }
 </script>

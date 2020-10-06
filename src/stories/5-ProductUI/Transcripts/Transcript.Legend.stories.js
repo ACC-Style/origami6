@@ -1,7 +1,7 @@
-import CreditLegend from "../../../components/Transcript/_hold/Transcript.CreditLegend.vue";
+import CreditLegend from "../../../components/Transcript/CreditLegend.vue";
 
 export default {
-	title: "ACC/Transcript/Hold/Legend",
+	title: "ACC/Transcript/Legend",
 	component: CreditLegend,
 	parameters: {
 		docs: {
@@ -23,11 +23,12 @@ export default {
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { CreditLegend },
-	template: `<CreditLegend :creditTypes="creditTypes"/>`,
+	template: `<CreditLegend :showModal_Legend="showModal_Legend" :creditTypesInDateRange="creditTypesInDateRange"/>`,
 });
 export const Legend = Template.bind({});
 Legend.args = {
-	creditTypes:[ {
+	showModal_Legend:true,
+	creditTypesInDateRange:[ {
 		shortName: "CME",
 		fullName: "Continuing Medical Education",
 		styleCode: "CME"
