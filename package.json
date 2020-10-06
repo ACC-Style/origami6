@@ -10,8 +10,11 @@
     "build-storybook": "build-storybook -o docs"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "core-js": "^3.6.5",
+    "lodash.clonedeep": "^4.5.0",
     "moment": "^2.29.0",
+    "v-calendar": "^1.0.8",
     "vue": "^2.6.11"
   },
   "devDependencies": {
