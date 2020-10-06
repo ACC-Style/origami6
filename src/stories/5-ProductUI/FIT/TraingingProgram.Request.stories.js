@@ -5,7 +5,7 @@ import { requestData } from "./Data/requestData.js";
 export default {
 	title: "ACC/FIT/Request",
     component: Request,
-    subcomponents:{},
+    subcomponents:{RequestList},
 	parameters: {
 		docs: {
 			description: {
