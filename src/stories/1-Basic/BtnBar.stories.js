@@ -26,8 +26,10 @@ export default {
             description:
             "Array of labels for the buttons",
         },
-        buttonDecorations: {description:
-            "Optional Object of Button props to alter the decoration of the buttons used."}
+        btnConfig: {
+			description:"Optional Object of Button props to alter the decoration of the buttons used.",
+			control:{type:'object'}
+		}
 	},
 };
 const Template = (args, { argTypes }) => ({
@@ -38,7 +40,13 @@ const Template = (args, { argTypes }) => ({
 export const Default = Template.bind({});
 Default.args = {
 	options: [{label:"Date",isActive:true},{label:"Product",isActive:false},{label:"Activity",isActive:false}],
-    buttonDecorations:{shadow:false,corner:"square",size:"medium",state:"black",
-    isActivatable:true,
-    multiselect:false}
+    btnConfig:{
+		state: "black",
+		size: "medium",
+		shadow: false,
+		corner: "square",
+		classes: "",
+		isActivatable: true,
+	},
+    multiselect:false,
 };

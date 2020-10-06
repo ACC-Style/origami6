@@ -44,6 +44,7 @@ export default {
     props: {
         showModal_Legend: { type: Boolean, default: false },
         creditTypesInDateRange: { type: Array, default: () => [] }
+        
     },
     components: {
         Modal,Btn

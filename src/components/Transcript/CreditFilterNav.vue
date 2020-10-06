@@ -13,9 +13,11 @@
 			>
 				<Btn
 					@onClick="onFilterReset()"
-					:size="'medium'"
-					:shadow="false"
-					:corner="'square'"
+					:state="'primary'"
+					:size="btnConfig.size"
+					:shadow="btnConfig.shadow"
+					:corner="btnConfig.corner"
+					:class="btnConfig.classes"
 					
 				><span v-html="'None'"></span></Btn>
 			</li>
@@ -26,12 +28,12 @@
 			>
 				<Btn
 					@onClick="onFilterClick(credit.styleCode)"
-					:state="'black'"
-					:size="'medium'"
-					:shadow="false"
-					:corner="'square'"
+					:state="btnConfig.state"
+					:size="btnConfig.size"
+					:shadow="btnConfig.shadow"
+					:corner="btnConfig.corner"
 					:isActive="selectedFilters.includes(credit.styleCode)"
-					:class="{['bg_'+credit.styleCode+'-n2 a:c_white']: selectedFilters.includes(credit.styleCode)}"
+					:class="[{['bg_'+credit.styleCode+'-n2 a:c_white']: selectedFilters.includes(credit.styleCode)},btnConfig.classes]"
 				>
 					<span v-html="credit.shortName"></span>
 				</Btn>
@@ -51,7 +53,16 @@ export default {
 		creditTypesInDateRange: {
 			type: Array,
 			default: () => []
-		}
+		},
+		btnConfig:{type:Object,default:()=>{
+            return new Object({
+				state:"black",
+				size:'',
+				shadow:false,
+				corner:"square",
+				classes:''
+            });
+        }}
 	},
 	data: () => ({
 		selectedFilters: ["None"]
