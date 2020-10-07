@@ -67,18 +67,20 @@
 							v-for="(credit, index) in credits"
 							:key="'credit_'+index"
 							:class="creditDecoration(credit.type)"
-							class="br_radius p-y_1 p-x_2 p-y_2:md p-x_3:md block inline-block:md inline-block:print m-x_2 flex_shrink text_center m-t_2 transition_2"
+							class="block inline-block:md  m-x_2 flex_shrink  m-t_2 transition_2"
 						>
-							<span v-html="getCreditShortName(credit)"></span>
-							<span class="font_bold m-l_3 p-l_3 br-l_1 br_solid br_white">{{credit.amount}}</span>
+						<Chiclets  
+						:type="getCreditShortName(credit)" :value="credit.amount" 
+						:styleCode="credit.type"
+						 />
 						</li>
 					</ul>
 				</div>
 			</div>
 		</div>
-		<modal id="creditCertSelection" v-if="showModal_CertSelection" @close="showModal_CertSelection = false" maxWidthClass="max-w_40">
+		<modal  id="creditCertSelection" v-if="showModal_CertSelection" @close="showModal_CertSelection = false" maxWidthClass="max-w_40">
 			<h4 slot="header">What type of Credit Certificate do you need to download?</h4>
-			<div slot="body">
+			<div>
 				<ul class="ul_none m-b_4 lh_4 scrollbar-mini overflow_auto scroll-window-size">
 					<li
 						class="flex flex_row flex_nowrap"
@@ -128,12 +130,12 @@
 				>Cancel</button>
 			</div>
 		</modal>
-		<modal
+		<modal 
 			v-if="showModal_ExternalActivityData"
 			@close="showModal_ExternalActivityData = false;editableObject = null;"
 		>
 			<h3 slot="header" class="w_100 max-w_40 m_auto p-t_5">Edit External Activity</h3>
-			<div slot="body" class="m-b_5 ">
+			<div class="m-b_5 ">
 				<p class="lh_2 font_n1 c_black-8 font_medium font_italic w_100 max-w_40 m_auto">Adding an External credit allows you to centralize your credits in one transcript. It should be used to add records of credits you have already claimed. Adding an External credit <strong class="font_bold c_warning">DOES NOT</strong> submit credits to any organization or any accrediting body.</p>	
 				<div class="flex flex_column font_ui w_100 max-w_40 m_auto">
 					<div class="flex_auto font_0 font_bold c_acc m-b_2 m-t_4">
@@ -280,7 +282,8 @@
 <script>
 /* eslint-disable */
 import axios from 'axios';
-import modal from "./modal.vue";
+import modal from "../subComponents/Modal";
+import Chiclets  from "../subComponents/CreditChiclet";
 import DatePicker from 'v-calendar/lib/components/date-picker.umd';
 import clonedeep from "lodash.clonedeep";
 
@@ -320,7 +323,8 @@ export default {
 	},
 	components: {
 		modal,
-		DatePicker
+		DatePicker,
+		Chiclets 
 	},
 	computed: {
 		areExternalActivityRequiredFieldsPopulated: function() {
@@ -343,8 +347,8 @@ export default {
 	methods: {
 		creditDecoration: function(type) {
 			return this.selectedCreditFilters.includes(type) || this.selectedCreditFilters.includes("None")
-				? "order_0 c_white bg_" +type +" br_solid br_1 block:print br_" +type 
-				: "order_last br_shade-4 bg_shade-5 c_shade-3 br_1 br_dashed display_none:print";
+				? "order_0 block:print" 
+				: "order_last display_none:print";
 		},
 		certDownload: function(creditToDownload) {
 			if (!creditToDownload && this.credits.length > 1) {

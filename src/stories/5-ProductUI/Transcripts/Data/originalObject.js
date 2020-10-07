@@ -11,7 +11,15 @@ export const originalObject = {
         creditDateClaimed: new Date(1555201522000),
         certId: 1354,
         certFileName: 'CertB.pdf'
-        }],
+        },{
+            id: 1,
+            type: "COP",
+            amount: 3,
+            maxAmount: 3,
+            creditDateClaimed: new Date(1555201522000),
+            certId: 1354,
+            certFileName: 'CertB.pdf'
+            }],
     vnrNumber: '',
     activityLocation: 'Washington DC',
     isExternal: false,

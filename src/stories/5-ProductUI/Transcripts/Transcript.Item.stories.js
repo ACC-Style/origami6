@@ -1,11 +1,12 @@
 import TranscriptItem from "../../../components/Transcript/TranscriptItem.vue";
+import CreditChiclet from "../../../components/subComponents/CreditChiclet.vue";
 import {originalObject} from "./Data/originalObject.js";
 import {creditTypes} from "./Data/creditTypes.js";
 
 export default {
 	title: "ACC/Transcript/Item",
     component: TranscriptItem,
-    subcomponents:{},
+    subcomponents:{CreditChiclet},
 	parameters: {
 		docs: {
 			description: {
@@ -38,7 +39,7 @@ Default.args = {
     vnrNumber:originalObject.vnrNumber,
     credits:originalObject.credits,
     activityLocation:originalObject.activityLocation,
-    selectedCreditFilters:["None"],
+    selectedCreditFilters:["CNE"],
     creditTypes:creditTypes,
     selectedSort:"Date",
     customerId:"15612166",
