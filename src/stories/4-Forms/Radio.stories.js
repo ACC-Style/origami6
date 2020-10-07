@@ -16,7 +16,8 @@ export default{
 		},
     },
     argTypes:{ ...commonArgs,
-        radioSize:{control:{type:'select', options:['tiny', 'small', 'medium', 'large']}},
+		size:{control:{type:'select', options:['tiny', 'small', 'medium', 'large']}},
+		state:{control:{type:'select', options:["","alert","requiredAlert","warning","success","info","accent","black","disabled",]}},
     }
 }
 
@@ -28,7 +29,7 @@ const Template = (args, { argTypes }) => ({
 export const Default = Template.bind({});
 Default.args = {
     inputId:"uniqueRadio",
-    radioSize:"small",
+    size:"small",
     options:[{
 		"value": 1,
 		"label": "Widowstears",
@@ -45,29 +46,30 @@ Default.args = {
 		"value": 4,
 		"label": "Mountain Crownbeard",
 		
-	  }, {
-		"value": 5,
-		"label": "Emory's Milkvetch",
+	  }],
+
+};
+
+export const StateAlert = Template.bind({});
+StateAlert.args = {
+    inputId:"uniqueRadio",
+	size:"small",
+	state:"alert",
+    options:[{
+		"value": 1,
+		"label": "Widowstears",
 		
 	  }, {
-		"value": 6,
-		"label": "Harper's Heartleaf",
+		"value": 2,
+		"label": "Pendent Silver Linden",
 		
 	  }, {
-		"value": 7,
-		"label": "Purple Naupaka",
+		"value": 3,
+		"label": "Mulberry",
 		
 	  }, {
-		"value": 8,
-		"label": "Buckwheat Milkvetch",
-		
-	  }, {
-		"value": 9,
-		"label": "Ozark Hawthorn",
-		
-	  }, {
-		"value": 10,
-		"label": "Matricary Grapefern",
+		"value": 4,
+		"label": "Mountain Crownbeard",
 		
 	  }],
 

@@ -120,7 +120,7 @@ export default {
 					styles += " c_black-3 bg_black-2 br_black-3 ";
 					break;
 				default:
-					styles += "c_black-6 bg_black-1 br_black-3 ";
+					styles += "c_black-6 bg_black-1 br_black-2 ";
 					break;
 			}
 			return styles;

@@ -48,8 +48,8 @@
                         class="shadow_n2"
 						:corner="'circle'"
 						@onClick="onButtonChange(option)"
-						:state="state == 'requiredAlert' ? 'alert' : state"
-						:size="radioSize"
+						:state="( state == 'requiredAlert' )? 'alert' : ( state == '' )? 'black': state "
+						:size="size"
 						:isActive="option.value == selected"
 						:isActivatable="true"
 						:shadow="false"
@@ -116,16 +116,16 @@ export default {
 		postLabel: { type: String, default: null },
 		defaultvalue: { type: String, default: null },
 		required: { type: Boolean, default: true },
-		radioSize: {
+		size: {
 			type: String,
 			default: "small",
 			validator: function(value) {
-				return ["tiny", "small", "medium"].indexOf(value) !== -1;
+				return ["tiny", "small", "medium","large"].indexOf(value) !== -1;
 			},
 		},
 		state: {
 			type: String,
-			default: "secondary",
+			default: "black",
 			validator: function(value) {
 				return (
 					[
@@ -136,7 +136,7 @@ export default {
 						"success",
 						"info",
 						"accent",
-						"secondary",
+						"black",
 						"disabled",
 					].indexOf(value) !== -1
 				);
@@ -236,9 +236,12 @@ export default {
 				default:
 					break;
             }
-            switch (this.radioSize) {
+            switch (this.size) {
                 case "large":
                     styles += " p-l_4 font-size_up";
+					break;
+				case "tiny":
+                    styles += " p-l_2 font-size_down";
                     break;
                 default:
                     styles += " p-l_3";
@@ -269,7 +272,7 @@ export default {
         },
         radioSizeStyles(){
             let styles = "lh_0 ";
-			 switch (this.radioSize) {
+			 switch (this.size) {
 			
 				case "tiny":
 					styles += "p-x_1 p-t_1 ";
