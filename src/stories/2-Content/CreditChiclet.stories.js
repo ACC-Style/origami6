@@ -8,7 +8,7 @@ export default {
 		docs: {
 			description: {
 				component:
-					"Simple icon block that shows the state",
+					"Credits are a combination of the short name and value with the assigned color.",
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {
@@ -65,4 +65,44 @@ Chiclets.args = {
     value:0,
     isDisabled:false,
     shadow:true
+};
+export const NoValue  = Template.bind({});
+NoValue.args = {
+    size:"medium",
+    styleCode:"CME",
+    corners:"radius",
+    showValue:false,
+    value:0,
+    isDisabled:false,
+    shadow:true
+};
+export const FilteredOut  = Template.bind({});
+FilteredOut.args = {
+    size:"medium",
+    styleCode:"CME",
+    corners:"radius",
+    showValue:true,
+    value:10,
+    isDisabled:true,
+    shadow:true
+};
+export const tiny  = Template.bind({});
+tiny.args = {
+    size:"tiny",
+    styleCode:"COP",
+    corners:"square",
+    showValue:true,
+    value:0,
+    isDisabled:false,
+    shadow:false
+};
+export const small  = Template.bind({});
+small.args = {
+    size:"small",
+    styleCode:"COP",
+    corners:"square",
+    showValue:true,
+    value:0,
+    isDisabled:false,
+    shadow:false
 };
