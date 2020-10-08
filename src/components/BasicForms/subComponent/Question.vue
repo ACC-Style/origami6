@@ -23,17 +23,9 @@
 				:icon="icon"
 				inputNameTarget="inputId"
 			/>
-			<input
-				:id="inputId"
-				:name="inputId"
-				v-on:change="onChange(text)"
-				class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3"
-				:type="inputType"
-				v-model="text"
-				required="required"
-				:class="inputStyles"
-				:disabled="state == 'disabled'"
-			/>
+            <slot name="input">
+			
+            </slot>
 			<div
 				class="br_solid br_2 br-l_0 p-y_2 font_medium flex_none p-x_4 lh_3 flex flex_column "
 				v-if="postLabel"
@@ -64,16 +56,16 @@
 </template>
 
 <script>
-import messageHolder from "../subComponents/InputMessageHolder.vue";
-import stateIcon from "../subComponents/StatefullIcon";
-import ValueIcon from "../subComponents/inputValueIcon";
+import messageHolder from "../../subComponents/InputMessageHolder.vue";
+import stateIcon from "../../subComponents/StatefullIcon";
+import ValueIcon from "../../subComponents/inputValueIcon";
 
 export default {
 	name: "inputText",
 	props: {
 		inputId:{type:String,required:true},
 		inputType:{type:String,default:"text"},
-		defaultvalue: { type: String, default: "" },
+		
 		icon: { type: String, default: null },
 		postLabel: { type: String, default: null },
 		required: { type: Boolean, default: true },
@@ -84,7 +76,6 @@ export default {
 	},
 	data() {
 		return {
-			text: this.defaultvalue,
 			inputState: this.state,
 		};
 	},
@@ -146,17 +137,7 @@ export default {
 		ValueIcon
 	},
 	methods: {
-		onChange: function(value) {
-			if (value == "" && this.required) {
-				this.state = "requiredAlert"
-				this.$emit("onChange", "");
-				this.$emit("onStateChange","requiredAlert")
-			}
-			 else {
-
-				this.$emit("onChange", value);
-			} 
-		}
+		
 	}
 };
 </script>

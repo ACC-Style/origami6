@@ -11,6 +11,11 @@
  * Released under the MIT License.
  */
 
+/*!
+ * is.js 0.8.0
+ * Author: Aras Atasaygin
+ */
+
 /**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
  * @version 1.16.1
