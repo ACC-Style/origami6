@@ -1,9 +1,11 @@
 import Btn from "../../components/subComponents/Btn.vue";
 
+
 export default {
 	title: "Basic/Button",
 	component: Btn,
 	parameters: {
+	
 		docs: {
 			description: {
 				component:
@@ -58,6 +60,10 @@ Button.args = {
 	state: "priamry",
 	size: "medium",
 };
+Button.parameters ={
+	myAddon: {
+	data: 'this data is passed to the addon',
+  },}
 
 export const DoubleBtn = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),

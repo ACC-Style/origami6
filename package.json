@@ -32,6 +32,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "react-is": "^16.13.1",
+    "storybook-readme": "^5.0.8",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
