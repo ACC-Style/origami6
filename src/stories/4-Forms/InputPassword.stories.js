@@ -30,10 +30,10 @@ export default{
 const InputPasswordTemplate = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { InputPassword },
-	template: `<InputPassword @onChange="onChange" @onStateChange="onStateChange" v-bind="$props">Password <template v-slot:successMessage>Congradulations you can follow instructions</template></InputPassword>`,
+	template: `<InputPassword @onChange="onChange" @onStateChange="onStateChange" v-bind="$props"><template v-slot:successMessage>Congradulations you can follow instructions</template></InputPassword>`,
 });
-export const Email = InputPasswordTemplate.bind({});
-Email.args = {
+export const Password = InputPasswordTemplate.bind({});
+Password.args = {
 	inputId:"uniqueInputPasswordIdBase",
 	defaultvalue:"test",
 

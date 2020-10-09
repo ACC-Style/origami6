@@ -1,8 +1,14 @@
 import TextInput from "../../components/BasicForms/Input.Text.vue";
+import Question  from "../../components/BasicForms/subComponent/Question.vue";
+import baseInputFunctions from "../../components/BasicForms/subComponent/baseInputFunctions.vue";
+import MessageHolder from "../../components/subComponents/InputMessageHolder.vue";
+import StateIcon from "../../components/subComponents/StatefullIcon";
+import ValueIcon from "../../components/subComponents/inputValueIcon";
 import { commonArgs } from "./common.argTypes.js";
 export default{
     title: "Form/Input/Text",
-    component: TextInput,
+	component: TextInput,
+	subcomponents:{Question,MessageHolder,StateIcon,ValueIcon},
     parameters: {
 		docs: {
 			description: {
@@ -16,10 +22,7 @@ export default{
 		},
     },
     argTypes:{
-		...commonArgs,
-        defaultvalue:{description:'the defualt or value of the input onload. '},
-		inputType:{control:{type:'select', options:['text','email','password','date']}}
-
+		...commonArgs
     }
 }
 

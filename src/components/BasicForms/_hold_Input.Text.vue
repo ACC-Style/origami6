@@ -2,10 +2,10 @@
 	<div class="question font_ui">
 		<label
 			:for="inputId"
-			v-bind:class="[{
-				'c_alert': inputState == 'alert'},{
-				'c_warning': inputState == 'warning'
-			}]"
+			v-bind:class="{
+				c_alert: inputState == 'alert',
+				c_warning: inputState == 'warning'
+			}"
 			class="label-holder flex font-size_up font_medium p-y_2"
 		>
 			<span class="text cell flex_shrink">
@@ -23,14 +23,21 @@
 				:icon="icon"
 				inputNameTarget="inputId"
 			/>
-            <slot name="input">
-			
-            </slot>
+			<input
+				:id="inputId"
+				:name="inputId"
+				v-on:change="onChange(text)"
+				class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3"
+				:type="inputType"
+				v-model="text"
+				required="required"
+				:class="inputStyles"
+				:disabled="state == 'disabled'"
+			/>
 			<div
 				class="br_solid br_2 br-l_0 p-y_2 font_medium flex_none p-x_4 lh_3 flex flex_column "
 				v-if="postLabel"
 				:class="inputPrePostStyles"
-				@click="onClickPostLabel"
 			>
 				{{postLabel}}
 			</div>
@@ -49,7 +56,7 @@
 		<messageHolder :state="'info'" v-if="state =='info'">
 			<slot name="infoMessage"></slot>
 		</messageHolder>
-		<messageHolder :state="'accent'" v-if="state =='accent'">
+				<messageHolder :state="'accent'" v-if="state =='accent'">
 			<slot name="accentMessage"></slot>
 		</messageHolder>
 		</div>
@@ -57,24 +64,27 @@
 </template>
 
 <script>
-import messageHolder from "../../subComponents/InputMessageHolder.vue";
-import stateIcon from "../../subComponents/StatefullIcon";
-import ValueIcon from "../../subComponents/inputValueIcon";
+import messageHolder from "../subComponents/InputMessageHolder.vue";
+import stateIcon from "../subComponents/StatefullIcon";
+import ValueIcon from "../subComponents/inputValueIcon";
 
 export default {
 	name: "inputText",
 	props: {
 		inputId:{type:String,required:true},
+		inputType:{type:String,default:"text"},
+		defaultvalue: { type: String, default: "" },
 		icon: { type: String, default: null },
 		postLabel: { type: String, default: null },
 		required: { type: Boolean, default: true },
 		state: { type: String, default: "", 
 		 validator: function (value) {
-        return ['','alert','requiredAlert','warning','success','info','disabled','accent'].indexOf(value) !== -1;
+        return ['','alert','requiredAlert','warning','success','info','accent','disabled'].indexOf(value) !== -1;
       },}
 	},
 	data() {
 		return {
+			text: this.defaultvalue,
 			inputState: this.state,
 		};
 	},
@@ -136,9 +146,17 @@ export default {
 		ValueIcon
 	},
 	methods: {
-	onClickPostLabel:function(){
-		this.$emit("onClickPostLabel");
-	}	
+		onChange: function(value) {
+			if (value == "" && this.required) {
+				this.state = "requiredAlert"
+				this.$emit("onChange", "");
+				this.$emit("onStateChange","requiredAlert")
+			}
+			 else {
+
+				this.$emit("onChange", value);
+			} 
+		}
 	}
 };
 </script>

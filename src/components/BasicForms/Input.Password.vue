@@ -3,12 +3,15 @@
 		:inputId="inputId"
 		:defaultvalue="defaultvalue"
 		:icon="icon"
-		:postLabel="postLabel"
+		:postLabel="thisPostLabel"
 		:required="required"
 		:state="thisState"
 		class="max-w_65"
+        @onClickPostLabel="onClickPostLabel"
 	 >
-		<template v-slot:default><slot name="default">Email</slot>
+		<template v-slot:default><slot name="default">
+            <small class="c_alert block">! Incomplete Component !</small>Password
+        </slot>
 		</template>
 		<template v-slot:input>
 			<input
@@ -16,14 +19,14 @@
 				:name="inputId"
 				v-on:change="onChange(value)"
 				class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3"
-				:type="inputType"
+				:type="thisInputType"
 				v-model="value"
 				required="required"
 				:class="inputStyles"
 				:disabled="thisState == 'disabled'"
 			/>
 		</template>
-		<template v-slot:alertMessage>This is not an email</template>
+		<template v-slot:alertMessage>Not Strong Enough to Be Our Password</template>
 		<template v-slot:warningMessage> <slot  name="warningMessage"></slot></template>
 		<template v-slot:successMessage> <slot  name="successMessage"></slot></template>
 		<template v-slot:infoMessage> <slot  name="infoMessage"></slot></template>
@@ -39,23 +42,27 @@ import is from 'is_js';
 		mixins:[baseInputFunctions],
 		components:{Question},
 		props:{
-			inputType:{type:String,default:"email"},
-			icon: { type: String, default:'fa-envelope' },
+			inputType:{type:String,default:"password"},
+			icon: { type: String, default:'fa-key' },
 		}
 	  ,data() {
 		  return {
+              thisInputType:this.inputType,
+              thisPostLabel:"show",
 		  }
 	  },
 	  methods: {
-		isEmail(value){
-			return is.email(value);
+        onClickPostLabel:function(){},
+		isPassword(value){
+            const regex = RegExp('^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$');
+			return regex.test(value);
 		},
 		onChange: function(value) {
 			if (value == "" && this.required) {
 				this.thisState = "requiredAlert"
 				this.$emit("onChange", "");
 				this.$emit("onStateChange","requiredAlert")
-			}else if ( !this.isEmail(value) ){
+			}else if ( !this.isPassword(value) ){
 				this.thisState = "alert";
 				this.$emit("onChange", "");
 				this.$emit("onStateChange","alert");
