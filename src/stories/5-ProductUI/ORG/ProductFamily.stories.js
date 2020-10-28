@@ -29,8 +29,8 @@ const Template = (args, { argTypes }) => ({
 	components: { ProductFamily },
 	template: `<ProductFamily class="m_4 max-w_70" v-bind="$props">ACC Product Family</ProductFamily>`,
 });
-export const Legend = Template.bind({});
-Legend.args = {
+export const Family = Template.bind({});
+Family.args = {
 	color:"primary",
 	products:[{
 		"id": 1,
