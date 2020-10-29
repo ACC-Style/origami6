@@ -1,5 +1,5 @@
 <template>
-	<article class="br_solid br_1 br_black-2 bg_black-_05 p_4 p_5:lg br_round relative max-w_30" :class="{'br_black-4':registerForEvent}">
+	<article class="br_solid br_1 br_black-2 bg_black-_05 p_4 p_5:lg br_radius relative font_copy " :class="{'br_black-4':registerForEvent}">
 		<aside data-type="date" class="float_left m-t_n4 m-t_n5:lg m-l_4:md m-l_0:lg br-t_0 br_1 br_solid br_black-2 l_4 bg_primary-5 p-x_4 p-y_4 font_0 text_center font_display c_black-7 display_none block:md">
 			<span class="block:md font_1:md font_medium lh_0">{{ month }}</span>
 			<span class="block:md font_6:md font_light lh_0">{{ dates }}</span>
@@ -8,7 +8,7 @@
 			class="absolute r_4 r_5:lg t_n1 text_center flex flex_column:md justify_end align-right font_1:md font_0 overflow_hidden transition_2"
 		>
 			<div
-				class="flex flex_row justify_end"
+				class="flex flex_row justify_end m-r_1:lg m-r_3 m-r_4 transition_2"
 				v-if="registerForEvent"
                 @mouseover="hoverRegistered = true"
 				@mouseleave="hoverRegistered = false"
@@ -25,9 +25,9 @@
 			
 		</div>
 		<header class="clear_both p-x_3:md p-t_1:md">
-            <div data-type="date" class="font_n1 font_copy font_bold display_none:md c_accent m-b_n3 m-t_3">
-                <span >{{ month }}</span>
-                <span >{{ dates }}</span>
+            <div data-type="date" class="font_0 display_none:md c_accent-2 m-b_n2 m-t_3 m-l_2 font_bold">
+               {{ month }} {{ dates }}
+         
             </div>
 			<h2 class="font_display font_5:lg c_primary m-t_4:md m-t_2 m-b_3 lh_2">{{ title }}</h2>
 		</header>
@@ -51,10 +51,10 @@
                 </span>
 			</li>
 		</ul>
-		<footer class="flex justify_around m-b_n3:md m-t_3 m-t_0:md">
-			<Btn class="flex_auto m-x_3 text_center max-w_15 " :size="'medium'" :corner="'radius'" :shadow="false" v-if="!registerForEvent" :state="'empty'"><span class="flex_grow c_primary-n1 c_primary-n3" >Learn More</span></Btn>
-			<Btn class="flex_auto m-x_3 text_center max-w_15" :size="'medium'" :corner="'radius'" :shadow="true" v-if="!registerForEvent"><span class="flex_grow">Register</span></Btn>
-			<Btn class="flex_auto m-x_3 text_center max-w_15" :size="'medium'" :corner="'radius'" :shadow="true" v-if="registerForEvent"><span class="flex_grow">Join</span></Btn>
+		<footer class="flex justify_around m-t_3 m-t_0:md">
+			<Btn class="flex_auto m-x_3 text_center max-w_10 " :size="'medium'" :corner="'radius'" :shadow="false" v-if="!registerForEvent" :state="'empty'"><span class="flex_grow c_primary-n1 c_primary-n3" >Learn More</span></Btn>
+			<Btn class="flex_auto m-x_3 text_center max-w_10" :size="'medium'" :corner="'radius'" :shadow="true" v-if="!registerForEvent"><span class="flex_grow">Register</span></Btn>
+			<Btn class="flex_auto m-x_3 text_center max-w_10" :size="'medium'" :corner="'radius'" :shadow="true" v-if="registerForEvent" @onClick="$emit('onRegister',id)"><span class="flex_grow">Join</span></Btn>
 		</footer>
 	</article>
 </template>
@@ -66,6 +66,7 @@ import moment from 'moment';
 import tz from 'moment-timezone';
 export default {
 	props: {
+        id:{type:Number},
 		startDate: { type: Date },
 		endDate: { type: Date },
 		title: { type: String },

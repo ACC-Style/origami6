@@ -1,6 +1,6 @@
 <template>
 	<article
-		class="br_radius br_1 br_black-2 br_solid font_copy  p-x_3 p_4 relative  shadow_1 m-b_4 "
+		class="br_radius br_1 br_black-2 br_solid font_copy  p-x_3 p_4 relative  shadow_1 m-b_4 bg_black-_05"
 		@click="articleURL" 
 	>
 		<div

@@ -34,12 +34,13 @@ export default {
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { Event },
-	template: `<div class="max-w_70">
+	template: `<div class="max-w_25">
 		<Event :title="title" :startDate="new Date(startDate)" :endDate="new Date(endDate)" :credits="credits" :eventType="eventType" :registerForEvent="registerForEvent"/>
 	</div>`,
 });
 export const Events = Template.bind({});
 Events.args = {
+    id:15605484,
     title:"ACC Cardiovascular Overview and Board Prep Virtual Experience",
     startDate: "2020-11-27T20:37:24Z",
     endDate: "2020-11-27T23:37:24Z",
