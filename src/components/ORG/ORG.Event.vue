@@ -71,7 +71,7 @@ export default {
 		endDate: { type: Date },
 		title: { type: String },
         credits: { type: Array, default: () => [] },
-        timezone:{type:String, default:"America/New_York"},
+        timezone:{type:String, default:'America/New_York'},
         eventType:{type:String},
         registerForEvent:{type:Boolean, default: false}
 	},

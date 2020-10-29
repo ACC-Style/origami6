@@ -28,14 +28,15 @@ export default {
 			},
         },
         startDate:{control:{type:"date"}},
-        endDate:{control:{type:"date"}}
+        endDate:{control:{type:"date"}},
+        timezone:{description:"uses moment time zone https://momentjs.com/timezone/"}
 	},
 };
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { Event },
 	template: `<div class="max-w_25">
-		<Event :title="title" :startDate="new Date(startDate)" :endDate="new Date(endDate)" :credits="credits" :eventType="eventType" :registerForEvent="registerForEvent"/>
+		<Event :title="title" :startDate="new Date(startDate)" :endDate="new Date(endDate)" :credits="credits" :eventType="eventType" :timezone="timezone" :registerForEvent="registerForEvent"/>
 	</div>`,
 });
 export const Events = Template.bind({});
@@ -46,6 +47,7 @@ Events.args = {
     endDate: "2020-11-27T23:37:24Z",
     credits: [{"id":1,"type":"CNE","value":3},{"id":2,"type":"COP","value":3}],
     eventType:"In Person Meeting",
-    registerForEvent:true
+    registerForEvent:true,
+    timezone:'America/Los_Angeles'
     
 };
