@@ -26,14 +26,16 @@ export default {
 				action:
 					"navigate page to author bio or articles from the same author",
 			},
-		}
+        },
+        startDate:{control:{type:"date"}},
+        endDate:{control:{type:"date"}}
 	},
 };
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { Event },
 	template: `<div class="max-w_70">
-		<Event :title="title" :startDate="new Date(startDate)" :endDate="new Date(endDate)" :credits="credits"/>
+		<Event :title="title" :startDate="new Date(startDate)" :endDate="new Date(endDate)" :credits="credits" :eventType="eventType" :registerForEvent="registerForEvent"/>
 	</div>`,
 });
 export const Events = Template.bind({});
@@ -42,5 +44,7 @@ Events.args = {
     startDate: "2020-11-27T20:37:24Z",
     endDate: "2020-11-27T23:37:24Z",
     credits: [{"id":1,"type":"CNE","value":3},{"id":2,"type":"COP","value":3}],
-    eventType:"In Person Meeting"
+    eventType:"In Person Meeting",
+    registerForEvent:true
+    
 };

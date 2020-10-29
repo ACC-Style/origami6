@@ -41,10 +41,20 @@
  * SOFTWARE.
  */
 
+//! Copyright (c) JS Foundation and other contributors
+
+//! github.com/moment/moment-timezone
+
+//! license : MIT
+
+//! moment-timezone.js
+
 //! moment.js
 
 //! moment.js locale configuration
 
 //! stable.js 0.1.8, https://github.com/Two-Screen/stable
+
+//! version : 0.5.31
 
 //! © 2018 Angry Bytes and contributors. MIT licensed.
