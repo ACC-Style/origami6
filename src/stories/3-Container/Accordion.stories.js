@@ -70,8 +70,8 @@ const ChildTemplate = (args, { argTypes }) => ({
 export const Child = ChildTemplate.bind({});
 Child.args = {
 	header: "Parent Header",
-	content: longText,
-	type: "parent",
+	content: shortText,
+	type: "child",
 	childHeader1:"<span>Child Header 1</span>",
 	childHeader2:"Child Header 2",
 	subContent: longText,

@@ -4,7 +4,7 @@
 		@click="onClick()"
 		:class="[buttonStyles,{' is-active active ':isActive}, 'br_'+ corner]"
 	>
-		<span class="flex">
+		<span class="flex block">
 			<slot></slot>
 		</span>
 	</button>
@@ -142,7 +142,7 @@ export default {
 					{ stateStyle += " bg_primary-4";}
 					else{
 						stateStyle += " h:bg_primary-n2 br_primary-n3";
-						stateStyle += (this.isActivatable)? " bg_primary-n3 a:bg_primary-1 ":" bg_primary-n1";
+						stateStyle += (this.isActivatable)? " bg_primary-n2 a:bg_primary-1 ":" bg_primary";
 					}
 					break;
 			}
