@@ -11,12 +11,12 @@
 		<div class="relative">
 			<aside
 				data-type="date"
-				class="float_left m-t_n4 m-t_n5:lg m-l_5:md br-t_0 br_1 br_solid br_black-4 l_4 bg_primary-5 p-x_4 p-y_4 font_0 text_center font_display c_black-7 display_none block:md z_3 shadow_overlap-light"
+				class="float_left m-t_n5  m-l_4  m-l_5:lg  br-t_0 br_1 br_solid br_black-4 l_4 bg_primary-5 p-x_4 p-y_4 font_0 text_center font_display c_black-7 z_3 shadow_overlap-light"
 			>
-				<span class="block:md font_1:md font_medium lh_0 p-x_2:lg">{{
+				<span class="block font_0 font_1:md font_medium lh_0 p-x_2:lg">{{
 					month
 				}}</span>
-				<span class="block:md font_6:md font_light lh_0 p-x_2:lg">{{
+				<span class="block font_4 font_6:md font_light lh_0 p-x_2:lg">{{
 					dates
 				}}</span>
 			</aside>
@@ -41,15 +41,9 @@
 				</div>
 			</div>
 		</div>
-		<header class="clear_both p-x_5:lg p-x_3 p-t_3 m-x_3">
-			<div
-				data-type="date"
-				class="font_0 display_none:md c_accent-2 m-b_n2 m-t_3 m-l_2 font_bold"
-			>
-				{{ month }} {{ dates }}
-			</div>
+		<header class="clear_both p-x_3 p-x_5:lg p-t_2 m-x_3">
 			<h2
-				class="font_display font_4:lg font_3:md font_2 c_primary-n1 m-t_4:md m-t_2 m-b_3 lh_1 cursor_pointer h:underline"
+				class="font_display font_4:lg font_3:md font_2 c_primary-n1 m-t_2 m-t_4:lg m-t_3:md m-b_3 lh_1 cursor_pointer h:underline"
 			>
 				{{ title }}
 			</h2>
@@ -66,8 +60,8 @@
 				><span class="m-l_2">{{ eventType }}</span>
 			</li> -->
             <li>
-				<i class="fas hourglass-half c_black-5"></i
-				><span class="m-l_2">{{ eventType }}</span>
+				<i class="fas fa-hourglass-half c_black-5"></i
+				><span class="m-l_2">{{ onDemandText }}</span>
 			</li>
 			<li>
 				<i class="fas fa-user-graduate c_black-5"></i>
@@ -144,7 +138,10 @@ export default {
 		};
 	},
 	computed: {
-        onDemandTill: function(){},
+        onDemandText: function(){
+            
+            return "On Demand Till " +  moment(this.onDemandDate).tz(this.timezone).format("MMM D z");;
+        },
 		imageURL: function (a) {
 			return "https://picsum.photos/id/1018/415/80";
 		},

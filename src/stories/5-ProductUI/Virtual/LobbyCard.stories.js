@@ -28,7 +28,8 @@ export default {
 			},
         },
         startDate:{control:{type:"date"}},
-        endDate:{control:{type:"date"}},
+		endDate:{control:{type:"date"}},
+		onDemandDate:{control:{type:"date"}},
         timezone:{description:"uses moment time zone https://momentjs.com/timezone/"}
 	},
 };
@@ -45,7 +46,7 @@ Live.args = {
     title:"ACC Cardiovascular Overview and Board Prep Virtual Experience",
     startDate: "2020-11-27T20:37:24Z",
 	endDate: "2020-11-27T23:37:24Z",
-	onDemandDate: "2020-11-27T23:37:24Z",
+	onDemandDate: "2020-12-31T23:37:24Z",
     credits: [{"id":1,"type":"CNE","value":3},{"id":2,"type":"COP","value":3}],
     eventType:"In Person Meeting",
     registerForEvent:true,
