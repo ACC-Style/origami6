@@ -1,7 +1,7 @@
 <template>
 	<article
-		class="br_radius br_1 br_black-2 br_solid font_copy  p-x_3 p_4 relative  shadow_1 m-b_4 bg_black-_05"
-		@click="articleURL" 
+		class="br_radius br_1 br_black-2 bg_black_-05 br_solid font_copy  p-x_3 p_4 relative  m-b_4 bg_black-_05"
+		@click="articleURL" :class="{ 'shadow_overlap-light': featured && (!previouslyRead && !savedInLibrary) }"
 	>
 		<div
 			class="absolute r_n1:md r_4 t_n1 t_4:md text_center flex flex_column:md justify_end align-right font_1:md font_0 overflow_hidden transition_2"
@@ -71,13 +71,13 @@
 			
 		</div>
 		<div class="flex  flex_row:md flex_column">
-				<div class="flex_none justify_around font_n2 text_left flex_row flex_column:md flex p-l_4:md p-l_3 transition_2 p-t_0" :class="{'p-t_4 m-t_2 p-t_0:md m-t_0:md ':editorsPick || featured || previouslyRead || internalSavedInLibrary }">
+				<div class="flex_none justify_around font_n2 text_left flex_row flex_column:md flex p-l_4:md p-r_3:lg p-l_3 transition_2 p-t_0" :class="{'p-t_4 m-t_2 p-t_0:md m-t_0:md ':editorsPick || featured || previouslyRead || internalSavedInLibrary }">
 					<img
 						:src="image"
 						alt=""
 						style="
-							width: clamp(75px, 10vw, 150px);
-							height: clamp(75px, 10vw, 150px);
+							width: clamp(75px, 10vw, 125px);
+							height: clamp(75px, 10vw, 125px);
 						"
                         />
 					<div class="flex_auto m-t_2:md m-l_3 m-l_0:md m-b_3 m-b_0:md">
@@ -90,17 +90,17 @@
                     </div>
 				</div>
 			<div class="flex_auto p-l_4:md p-l_3 p-r_5:md m-r_4:md">
-                <span class="c_accent-2 font_bold uppercase display_none wrap block:md"
+                <span class="c_accent-2 font_bold uppercase display_none wrap block:md font_0"
 						>{{ type }}</span>
-				<h1
+				<h2
 					data-type="title"
-					class="c_primary-n1 cursor_pointer font_3 font_5:md font_display font_medium font_regular h:underline lh_1 m-y_2"
+					class="c_primary-n1 cursor_pointer font_2 font_4:md font_display font_medium font_regular h:underline lh_1 m-y_2"
 				>
 					{{ title}}
-				</h1>
+				</h2>
 				<p
 					data-type="teaser"
-					class="font_1 lh_3 m-b_2 m-t_2 z_1 display_none block:md"
+					class="font_1 lh_2 m-b_2 m-t_2 z_1 display_none block:md max-w_50"
 				>
 					{{ snippet }}
 				</p>

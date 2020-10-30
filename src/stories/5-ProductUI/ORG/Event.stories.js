@@ -35,7 +35,7 @@ export default {
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { Event },
-	template: `<div class="max-w_25">
+	template: `<div class="max-w_20">
 		<Event :title="title" :startDate="new Date(startDate)" :endDate="new Date(endDate)" :credits="credits" :eventType="eventType" :timezone="timezone" :registerForEvent="registerForEvent"/>
 	</div>`,
 });

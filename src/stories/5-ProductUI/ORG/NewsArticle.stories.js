@@ -35,14 +35,6 @@ const Template = (args, { argTypes }) => ({
 		<NewsArticle  v-bind="article" :publishDate="new Date(article.publishDate)" :savedInLibrary="savedInLibrary" :previouslyRead="previouslyRead" :featured="featured" :editorsPick="editorsPick" />
 	</div>`,
 });
-export const Articles = Template.bind({});
-Articles.args = {
-	article: articles[0],
-	previouslyRead: false,
-	savedInLibrary: false,
-	featured: false,
-	editorsPick: false,
-};
 
 export const Saved = Template.bind({});
 Saved.args = {
@@ -78,4 +70,16 @@ EditorsPick.args = {
 	savedInLibrary: false,
 	featured: false,
 	editorsPick: true,
+};
+
+const List = (args, { argTypes }) => ({
+	props: Object.keys(argTypes),
+	components: { NewsArticle },
+	template: `<div class="max-w_60">
+		<NewsArticle v-for="(article, index) in articles" v-bind="article" :key="index" :publishDate="new Date(article.publishDate)" />
+	</div>`,
+});
+export const Articles = List.bind({});
+Articles.args = {
+	articles
 };
