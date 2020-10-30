@@ -36,7 +36,7 @@ const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { Card },
 	template: `<div class="max-w_30">
-		<Card :title="title" :startDate="new Date(startDate)" :endDate="new Date(endDate)" :credits="credits" :eventType="eventType" :timezone="timezone" :registerForEvent="registerForEvent"/>
+		<Card :title="title" :startDate="new Date(startDate)" :endDate="new Date(endDate)" :credits="credits" :eventType="eventType" :timezone="timezone" :registerForEvent="registerForEvent" :onDemandDate="onDemandDate"/>
 	</div>`,
 });
 export const Live = Template.bind({});
@@ -44,7 +44,8 @@ Live.args = {
     id:15605484,
     title:"ACC Cardiovascular Overview and Board Prep Virtual Experience",
     startDate: "2020-11-27T20:37:24Z",
-    endDate: "2020-11-27T23:37:24Z",
+	endDate: "2020-11-27T23:37:24Z",
+	onDemandDate: "2020-11-27T23:37:24Z",
     credits: [{"id":1,"type":"CNE","value":3},{"id":2,"type":"COP","value":3}],
     eventType:"In Person Meeting",
     registerForEvent:true,

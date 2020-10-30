@@ -41,7 +41,7 @@
 				</div>
 			</div>
 		</div>
-		<header class="clear_both p-x_5:lg p-x_3:md p-t_3:md">
+		<header class="clear_both p-x_5:lg p-x_3 p-t_3 m-x_3">
 			<div
 				data-type="date"
 				class="font_0 display_none:md c_accent-2 m-b_n2 m-t_3 m-l_2 font_bold"
@@ -55,14 +55,18 @@
 			</h2>
 		</header>
 		<ul
-			class="p-x_3:md m-b_4:md p-t_1 p-x_5:lg p-x_3:md  font_1:lg font_0 ul_none lh_4"
+			class=" m-x_3 m-b_4:md p-t_1 p-x_5:lg p-x_3  font_1:lg font_0 ul_none lh_4"
 		>
 			<li>
 				<i class="fas fa-clock c_black-5"></i
 				><span class="m-l_2">{{ hours }}</span>
 			</li>
-			<li>
+			<!-- <li>
 				<i class="fas fa-map-marker-alt c_black-5"></i
+				><span class="m-l_2">{{ eventType }}</span>
+			</li> -->
+            <li>
+				<i class="fas hourglass-half c_black-5"></i
 				><span class="m-l_2">{{ eventType }}</span>
 			</li>
 			<li>
@@ -80,7 +84,7 @@
 				</span>
 			</li>
 		</ul>
-		<footer class="flex justify_around m-t_3 m-t_3:md p-x_5:lg p-x_3:md p-b_4:lg p-b_3:md">
+		<footer class="flex justify_around m-t_3 m-t_3:md p-x_5:lg p-x_3 p-b_4 m-b_0">
 			<Btn
 				class="flex_auto m-x_3 text_center max-w_10"
 				:size="'medium'"
@@ -122,7 +126,8 @@ export default {
 	props: {
 		id: { type: Number },
 		startDate: { type: Date },
-		endDate: { type: Date },
+        endDate: { type: Date },
+        onDemandDate: { type: Date },
 		title: { type: String },
 		credits: { type: Array, default: () => [] },
 		timezone: { type: String, default: "America/New_York" },
@@ -139,6 +144,7 @@ export default {
 		};
 	},
 	computed: {
+        onDemandTill: function(){},
 		imageURL: function (a) {
 			return "https://picsum.photos/id/1018/415/80";
 		},
