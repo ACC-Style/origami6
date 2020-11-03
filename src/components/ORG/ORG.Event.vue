@@ -13,22 +13,7 @@
 		<div
 			class="absolute r_4 r_5:lg t_n1 text_center flex flex_column:md justify_end align-right font_1:md font_0 overflow_hidden transition_2"
 		>
-			<div
-				class="flex flex_row justify_end m-r_1:lg m-r_3 m-r_4 transition_2"
-				v-if="registerForEvent"
-				@mouseover="hoverRegistered = true"
-				@mouseleave="hoverRegistered = false"
-			>
-				<span
-					:class="{ shadow_1: hoverRegistered }"
-					class="bg_highlight h:bg_highlight-n1 flex_shrink c_white p-t_2 p-b_2 p-b_3:md p-x_3 shadow_n1 br_1 br_solid br_black-1 m-x_n1"
-				>
-					<span class="p-x_2" v-show="hoverRegistered"
-						>registered</span
-					>
-					<i class="fal fa-check-circle fa-fw"></i>
-				</span>
-			</div>
+			<TabFlag v-show="registerForEvent" :type="'registered'" class="m-r_1:lg m-r_3 m-r_4"/>
 		</div>
 		<header class="clear_both p-x_3:md p-t_1:md">
 			<div
@@ -75,12 +60,12 @@
 				:shadow="false"
 				v-if="!registerForEvent"
 				:state="'empty'"
-				><span class="flex_grow c_primary-n1 c_primary-n3"
+				><span class="flex_grow m-b_3 c_primary-n1 c_primary-n3"
 					>Learn More</span
 				></Btn
 			>
 			<Btn
-				class="flex_auto m-x_3 text_center max-w_10"
+				class="flex_auto m-x_3 m-b_3 text_center max-w_10"
 				:size="'medium'"
 				:corner="'radius'"
 				:shadow="true"
@@ -88,7 +73,7 @@
 				><span class="flex_grow">Register</span></Btn
 			>
 			<Btn
-				class="flex_auto m-x_3 text_center max-w_10"
+				class="flex_auto m-x_3 text_center max-w_10 m-b_3"
 				:size="'medium'"
 				:corner="'radius'"
 				:shadow="true"
@@ -103,6 +88,7 @@
 <script>
 import Btn from "../subComponents/Btn";
 import Credit from "../subComponents/CreditChiclet";
+import TabFlag from "../subComponents/TabFlag";
 import moment from "moment";
 import tz from "moment-timezone";
 export default {
@@ -119,10 +105,11 @@ export default {
 	components: {
 		Btn,
 		Credit,
+		TabFlag,
 	},
 	data() {
 		return {
-			hoverRegistered: false,
+			
 		};
 	},
 	computed: {

@@ -6,69 +6,10 @@
 		<div
 			class="absolute r_n1:md r_4 t_n1 t_4:md text_center flex flex_column:md justify_end align-right font_1:md font_0 overflow_hidden transition_2"
 		>
-			<transition mode="out-in" name="slide">
-			<div
-				class="flex flex_row justify_end"
-				v-if="internalSavedInLibrary"
-                @mouseover="hoverSavedInLibrary = true"
-				@mouseleave="hoverSavedInLibrary = false"
-			>
-				<span
-					:class="{ shadow_1: hoverSavedInLibrary }"
-					class="bg_highlight h:bg_highlight-n1 flex_shrink c_white p-t_2 p-b_2 p-b_3:md p-x_3 shadow_n1 br_1 br_solid br_black-1 m-x_n1"
-					>
-					<span class="p-x_2" v-show="hoverSavedInLibrary">saved</span>
-                    <i class="fal fa-bookmark fa-fw"></i>
-                    </span
-				>
-			</div>
-			</transition>
-			<div
-				class="flex flex_row justify_end transition_2"
-				v-if="featured"
-                @mouseover="hoverFeatured = true"
-				@mouseleave="hoverFeatured = false"
-			>
-				<span
-					:class="{ shadow_1: hoverFeatured }"
-					class="bg_warning h:bg_warning-n1 flex_shrink c_white p-t_2 p-b_2 p-b_3:md p-x_3 shadow_n1 br_1 br_solid br_black-1 m-x_n1"
-					>
-					<span class="p-x_2" v-show="hoverFeatured">featured</span>
-                    <i class="fal fa-star fa-fw"></i>
-                    </span
-				>
-			</div>
-			<div
-				class="flex flex_row justify_end"
-				v-if="editorsPick"
-                @mouseover="hoverEditorsPick = true"
-				@mouseleave="hoverEditorsPick = false"
-			>
-				<span
-					:class="{ shadow_1: hoverEditorsPick }"
-					class="bg_accent h:bg_accent-n1 flex_shrink c_white p-t_2 p-b_2 p-b_3:md p-x_3 shadow_n1 br_1 br_solid br_black-1 m-x_n1"
-					>
-					<span class="p-x_2" v-show="hoverEditorsPick">editor's pick</span>
-                    <i class="fal fa-user-check fa-fw"></i>
-                    </span
-				>
-			</div>
-			<div
-				class="flex flex_row justify_end"
-				v-if="previouslyRead"
-                @mouseover="hoverPreviouslyRead = true"
-				@mouseleave="hoverPreviouslyRead = false"
-			>
-				<span
-					:class="{ shadow_1: hoverPreviouslyRead }"
-					class="bg_secondary h:bg_secondary-n1 flex_shrink c_white p-t_2 p-b_2 p-b_3:md p-x_3 shadow_n1 br_1 br_solid br_black-1 m-x_n1"
-					>
-					<span class="p-x_2" v-show="hoverPreviouslyRead">read</span>
-                    <i class="fal fa-check-circle fa-fw"></i>
-                    </span
-				>
-			</div>
-			
+			<TabFlag v-if="internalSavedInLibrary" :type="'bookmarked'"/>
+			<TabFlag v-if="featured" :type="'featured'"/>
+			<TabFlag v-if="editorsPick" :type="'upvoted'" :text="'editor&rsquo;s pick'"/>
+			<TabFlag v-if="previouslyRead" :type="'read'"/>		
 		</div>
 		<div class="flex  flex_row:md flex_column">
 				<div class="flex_none justify_around font_n2 text_left flex_row flex_column:md flex p-l_4:md p-r_3:lg p-l_3 transition_2 p-t_0" :class="{'p-t_4 m-t_2 p-t_0:md m-t_0:md ':editorsPick || featured || previouslyRead || internalSavedInLibrary }">
@@ -122,7 +63,12 @@
 </template>
 
 <script>
+import TabFlag from "../subComponents/TabFlag";
+
 export default {
+	components:{
+		TabFlag
+	},
 	props: {
 		title: {
 			type: String,

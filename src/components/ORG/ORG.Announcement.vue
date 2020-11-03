@@ -21,7 +21,7 @@
 			</p>
 			<a
 				href=""
-				class="font_1:lg text_right font_bold h:c_primary-n3 c_primary expanded-click-area block"
+				class="font_1:lg text_left font_bold h:c_primary-n3 c_primary expanded-click-area block"
 				>Learn More <i class="fas fa-arrow-right p-x_2 "></i
 			></a>
 		</div>

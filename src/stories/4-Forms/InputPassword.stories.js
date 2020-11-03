@@ -7,7 +7,7 @@ import StateIcon from "../../components/subComponents/StatefullIcon";
 import ValueIcon from "../../components/subComponents/inputValueIcon";
 import { commonArgs } from "./common.argTypes.js";
 export default{
-    title: "Form/Input/Text",
+    title: "Form/Input/Password",
 	component: InputPassword,
 	subcomponents:{baseInputFunctions,Question,MessageHolder,StateIcon,ValueIcon},
     parameters: {
