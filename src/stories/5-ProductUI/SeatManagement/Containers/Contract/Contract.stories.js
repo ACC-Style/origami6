@@ -72,5 +72,5 @@ ProductBundle.args = {
     "filled": 44,
     "locked": 14,
     "requested": 30,
-    "productURL":"http://www.acc.org"
+    "productURL":"https://www.acc.org"
 };

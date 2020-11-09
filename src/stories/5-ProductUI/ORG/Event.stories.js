@@ -1,11 +1,12 @@
 import Event from "../../../components/ORG/ORG.Event.vue";
 import Credits from "../../../components/subComponents/CreditChiclet.vue";
 import Btn from "../../../components/subComponents/Btn.vue";
+import HeaderImage from "../../../components/ORG/subComponent/HeaderImage.vue";
 
 export default {
 	title: "ACC/Home/Events",
 	component: Event,
-	subcomponents: {Credits, Btn},
+	subcomponents: {HeaderImage,Credits, Btn},
 	parameters: {
 		docs: {
 			description: {
@@ -36,7 +37,14 @@ const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { Event },
 	template: `<div class="max-w_20">
-		<Event :title="title" :startDate="new Date(startDate)" :endDate="new Date(endDate)" :credits="credits" :eventType="eventType" :timezone="timezone" :registerForEvent="registerForEvent"/>
+		<Event 
+		:id="id"
+		:title="title" 
+		:startDate="new Date(startDate)" 
+		:endDate="new Date(endDate)" 
+		:credits="credits" :eventType="eventType" 
+		:timezone="timezone" :registerForEvent="registerForEvent"
+		/>
 	</div>`,
 });
 export const Events = Template.bind({});
@@ -48,6 +56,7 @@ Events.args = {
     credits: [{"id":1,"type":"CNE","value":3},{"id":2,"type":"COP","value":3}],
     eventType:"In Person Meeting",
     registerForEvent:true,
-    timezone:'America/Los_Angeles'
+	timezone:'America/Los_Angeles',
+
     
 };

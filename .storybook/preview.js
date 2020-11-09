@@ -9,6 +9,9 @@ Vue.filter("dateIsoStr", (date) => date instanceof Date ? moment(date).format("Y
 Vue.filter("dateString", (date) => date instanceof Date ? moment(date).format("MMMM D, YYYY") : "");
 Vue.filter("dateStrAbv", (date) => date instanceof Date ? moment(date).format("MMM D, YYYY") : "");
 Vue.filter("HourMinSec", (date) => date instanceof Date ? moment(date).format("h:mm:ss a") : "");
+
+import  { VueResponsiveComponents }  from 'vue-responsive-components';
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
 }

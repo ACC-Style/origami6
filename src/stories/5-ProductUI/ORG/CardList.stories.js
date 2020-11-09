@@ -2,10 +2,11 @@ import CardList from "../../../components/ORG/ORG.CardList.vue";
 import Btn from "../../../components/subComponents/Btn.vue";
 import HeaderImage from "../../../components/ORG/subComponent/HeaderImage.vue";
 import SimpleCard from "../../../components/ORG/subComponent/SimpleCard.vue";
-import {cardData3,cardData2,cardData1} from "./Data/cards.js";
+import {cardData1} from "./Data/cards.js";
+import {announcements3,announcements2,announcements1} from "./Data/announcements.js";
 
 export default {
-	title: "ACC/Home/CallToActionCards",
+	title: "ACC/Home/CardList",
     component: CardList,
     subcomponents:{Btn, SimpleCard, HeaderImage},
 	parameters: {
@@ -29,17 +30,10 @@ export default {
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { CardList },
-	template: `<div class="max-w_70"><CardList  :cards="cards" /></div>`,
+	template: `<div class="max-w_60"><CardList :cards="cards" /></div>`,
 });
-export const three = Template.bind({});
-three.args = {
-    cards:cardData3
-  };
-export const two = Template.bind({});
-two.args = {
-  cards:cardData2
-};
-export const one = Template.bind({});
-one.args = {
-    cards : cardData1
+
+export const OneCardButton = Template.bind({});
+OneCardButton.args = {
+  cards:cardData1
 };

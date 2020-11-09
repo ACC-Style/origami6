@@ -1,10 +1,10 @@
-import Card from "../../../components/Virtual/Virtual.LobbyCard.vue";
+import LobbyCard from "../../../components/Virtual/Virtual.LobbyCard.vue";
 import Credits from "../../../components/subComponents/CreditChiclet.vue";
 import Btn from "../../../components/subComponents/Btn.vue";
 
 export default {
-	title: "Virtual/Lobby/Card",
-	component: Card,
+	title: "Virtual/Lobby/LobbyCard",
+	component: LobbyCard,
 	subcomponents: {Credits, Btn},
 	parameters: {
 		docs: {
@@ -13,37 +13,44 @@ export default {
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {
-				code: `<Card class="max-w_70" v-bind="$props"/>`,
+				code: `<LobbyCard class="max-w_70" v-bind="$props"/>`,
 			},
 		},
 	},
 	argTypes: {
-		actions: {
-			onSaveToLibrary: { action: "addToLibrary" },
-			onRemoveFromLibrary: { action: "remove this from user library" },
-			onNavigateToArticle: { action: "navigate page to article" },
-			onNavigateToAuthor: {
-				action:
-					"navigate page to author bio or articles from the same author",
-			},
-        },
         startDate:{control:{type:"date"}},
 		endDate:{control:{type:"date"}},
 		onDemandDate:{control:{type:"date"}},
-        timezone:{description:"uses moment time zone https://momentjs.com/timezone/"}
+		timezone:{description:"uses moment time zone https://momentjs.com/timezone/"},
+		corner:{control:{type:"select", options:["radius", "round", "square"]}}
 	},
 };
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { Card },
+	components: { LobbyCard },
 	template: `<div class="max-w_30">
-		<Card :title="title" :startDate="new Date(startDate)" :endDate="new Date(endDate)" :credits="credits" :eventType="eventType" :timezone="timezone" :registerForEvent="registerForEvent" :onDemandDate="onDemandDate"/>
+		<LobbyCard 
+			:title="title" 
+			:startDate="new Date(startDate)" 
+			:endDate="new Date(endDate)" 
+			:onDemandDate="new Date(onDemandDate)"
+			:credits="credits" 
+			:eventType="eventType" 
+			:timezone="timezone" 
+			:registerForEvent="registerForEvent" 
+        	:imgLG="imgLG"
+        	:imgMD="imgMD"
+			:imgSM="imgSM"
+			:corner="corner"
+			:shortText="shortText"
+		/>
 	</div>`,
 });
 export const Live = Template.bind({});
 Live.args = {
     id:15605484,
-    title:"ACC Cardiovascular Overview and Board Prep Virtual Experience",
+	title:"ACC Cardiovascular Overview and Board Prep Virtual Experience",
+	shortText:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam eius quisquam, exercitationem neque explicabo animi asperiores aliquam? Eum, enim porro!",
     startDate: "2020-11-27T20:37:24Z",
 	endDate: "2020-11-27T23:37:24Z",
 	onDemandDate: "2020-12-31T23:37:24Z",
@@ -51,6 +58,9 @@ Live.args = {
     eventType:"In Person Meeting",
     registerForEvent:true,
 	timezone:'America/Los_Angeles',
-	headerImage_lg: ""
+	imgLG:"https://picsum.photos/id/1018/900/80",
+	imgMD:"https://picsum.photos/id/1018/600/80",
+	imgSM:"https://picsum.photos/id/1018/300/80",
+	corner:"radius"
     
 };

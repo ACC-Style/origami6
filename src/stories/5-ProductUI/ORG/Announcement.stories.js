@@ -1,9 +1,13 @@
-import Announcement from "../../../components/ORG/ORG.Announcement.vue";
+import CardList from "../../../components/ORG/ORG.CardList.vue";
+import Btn from "../../../components/subComponents/Btn.vue";
+import HeaderImage from "../../../components/ORG/subComponent/HeaderImage.vue";
+import SimpleCard from "../../../components/ORG/subComponent/SimpleCard.vue";
+import {announcements3,announcements2,announcements1} from "./Data/announcements.js";
 
 export default {
-	title: "ACC/Home/Announcement",
-    component: Announcement,
-    subcomponents:{},
+	title: "ACC/Home/Announcements",
+    component: CardList,
+    subcomponents:{Btn, SimpleCard, HeaderImage},
 	parameters: {
 		docs: {
 			description: {
@@ -12,7 +16,7 @@ export default {
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {
-				code: `<Announcement v-bind="$props"/>`
+				code: `<CardList v-bind="$props" />`
 			},
 
 		},
@@ -21,68 +25,21 @@ export default {
 		
 		}
 };
+
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { Announcement },
-	template: `<div class="max-w_60"><Announcement v-bind="$props" :announcements="announcements" /></div>`,
+	components: { CardList },
+	template: `<div class="max-w_60"><CardList :headerImg="true"  :cards="cards" /></div>`,
 });
 export const three = Template.bind({});
 three.args = {
-    announcements : [{
-        "id": 1,
-        "title": "mi integer ac neque duis bibendum morbi non",
-        "shortText": "Sed ante.",
-        "url": "Sickling",
-        "image_1x": "http://dummyimage.com/870x80.png/ff4444/ffffff",
-        "image_2x": "http://dummyimage.com/415x80.png/5fa2dd/ffffff",
-        "image_3x": "http://dummyimage.com/260x80.png/5fa2dd/ffffff"
-      }, {
-        "id": 2,
-        "title": "lectus in quam fringilla rhoncus mauris enim leo rhoncus",
-        "shortText": "Vivamus in felis eu sapien cursus vestibulum.",
-        "url": "Vince",
-        "image_1x": "http://dummyimage.com/870x80.png/dddddd/000000",
-        "image_2x": "http://dummyimage.com/415x80.png/cc0000/ffffff",
-        "image_3x": "http://dummyimage.com/260x80.png/cc0000/ffffff"
-      }, {
-        "id": 3,
-        "title": "habitasse platea dictumst etiam faucibus cursus urna",
-        "shortText": "Vivamus vel nulla eget eros elementum pellentesque.",
-        "url": "Farnon",
-        "image_1x": "http://dummyimage.com/870x80.png/5fa2dd/ffffff",
-        "image_2x": "http://dummyimage.com/415x80.png/ff4444/ffffff",
-        "image_3x": "http://dummyimage.com/260x80.png/dddddd/000000"
-      }]
-};
+    cards:announcements3
+  };
 export const two = Template.bind({});
 two.args = {
-    announcements : [{
-        "id": 1,
-        "title": "mi integer ac neque duis bibendum morbi non",
-        "shortText": "Sed ante.",
-        "url": "Sickling",
-        "image_1x": "http://dummyimage.com/870x80.png/ff4444/ffffff",
-        "image_2x": "http://dummyimage.com/415x80.png/5fa2dd/ffffff",
-        "image_3x": "http://dummyimage.com/260x80.png/5fa2dd/ffffff"
-      }, {
-        "id": 2,
-        "title": "lectus in quam fringilla rhoncus mauris enim leo rhoncus",
-        "shortText": "Vivamus in felis eu sapien cursus vestibulum.",
-        "url": "Vince",
-        "image_1x": "http://dummyimage.com/870x80.png/dddddd/000000",
-        "image_2x": "http://dummyimage.com/415x80.png/cc0000/ffffff",
-        "image_3x": "http://dummyimage.com/260x80.png/cc0000/ffffff"
-      }]
+  cards:announcements2
 };
 export const one = Template.bind({});
 one.args = {
-    announcements : [{
-        "id": 1,
-        "title": "mi integer ac neque duis bibendum morbi non",
-        "shortText": "Sed ante.",
-        "url": "Sickling",
-        "image_1x": "http://dummyimage.com/870x80.png/ff4444/ffffff",
-        "image_2x": "http://dummyimage.com/415x80.png/5fa2dd/ffffff",
-        "image_3x": "http://dummyimage.com/260x80.png/5fa2dd/ffffff"
-      }]
+    cards : announcements1
 };

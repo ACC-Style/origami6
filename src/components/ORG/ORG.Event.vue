@@ -60,6 +60,7 @@
 				:shadow="false"
 				v-if="!registerForEvent"
 				:state="'empty'"
+				@onClick="onLearnMore(id)"
 				><span class="flex_grow m-b_3 c_primary-n1 c_primary-n3"
 					>Learn More</span
 				></Btn
@@ -70,6 +71,7 @@
 				:corner="'radius'"
 				:shadow="true"
 				v-if="!registerForEvent"
+				@onClick="onRegister(id)"
 				><span class="flex_grow">Register</span></Btn
 			>
 			<Btn
@@ -78,7 +80,7 @@
 				:corner="'radius'"
 				:shadow="true"
 				v-if="registerForEvent"
-				@onClick="$emit('onRegister', id)"
+				@onClick="onNavigateTo(id)"
 				><span class="flex_grow">Join</span></Btn
 			>
 		</footer>
@@ -152,6 +154,17 @@ export default {
 				);
 			}
 		},
+	},
+	methods: {
+		onRegister(id){
+			this.$emit('onRegister', id)
+		},
+		onNavigateTo(id){
+			this.$emit('onNavigateTo', id)
+		},
+		onLearnMore(id){
+			this.$emit('onLearnMore', id)
+		}
 	},
 };
 </script>

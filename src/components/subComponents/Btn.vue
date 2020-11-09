@@ -119,12 +119,13 @@ export default {
 					break;
 					break;
 				case "secondary":
+					
 					if (this.isDisabled)
-					{ stateStyle += " bg_secondary-4";}
+					{ stateStyle += " bg_secondary-5 c_secondary-4";}
 					else{
 						stateStyle +=
-							"  h:bg_secondary-n1 br_secondary-n1";
-						stateStyle += (this.isActivatable)?" bg_secondary-n2 a:bg_secondary-1 ":" bg_secondary";
+							" h:bg_secondary-2 br_secondary-2 c_black";
+						stateStyle += (this.isActivatable)?" bg_secondary-4 a:bg_secondary-n1 ":" bg_secondary-4";
 					}
 					break;
 				case "none":
@@ -134,8 +135,8 @@ export default {
 					break;
 				case "empty":
 					stateStyle = this.isDisabled
-						? ""
-						: "underline h:undecorated bg_white-0";
+						? " c_black-3 "
+						: "underline h:undecorated bg_white-0 c_primary h:c_accent-n1";
 					break;
 				default:
 					if (this.isDisabled)
