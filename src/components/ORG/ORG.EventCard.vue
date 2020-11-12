@@ -5,7 +5,7 @@
 	>
 		<HeaderImage
 			class="bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_center m-x_n1 m-t_n1 flex_none"
-			v-if="(imgSM && imgMD && imgLG)"
+			v-if="headerImageExsists"
 			:class="'br-tr_' + corner + ' br-tl_' + corner"
 			:id="'CTAIMG-' + id"
 			:imgSM="imgSM"
@@ -15,7 +15,8 @@
 		<div class="relative">
 			<aside
 				data-type="date"
-				class="float_left m-t_n5 m-l_4 m-l_5:lg br-t_0 br_1 br_solid br_black-4 l_4 bg_primary-5 p-x_4 p-y_4 font_0 text_center font_display c_black-7 z_3 shadow_overlap-light"
+				class="float_left m-l_4 m-l_5:lg br-t_0 br_1 br_solid br_black-4 bg_primary-5 p-x_4 p-y_4 font_0 text_center font_display c_black-7 z_3 shadow_overlap-light"
+                :class="{'m-t_n5':headerImageExsists}"
 				v-if="!isEventFinished"
 			>
 				<span
@@ -37,19 +38,20 @@
 			</div>
 		</div>
 		<header class="clear_both p-x_3 p-x_5:lg p-t_2" :class="{'m-t_4':isEventFinished}">
-						<span class="c_accent font_n1 bold" v-if="isEventFinished">{{month}} {{dates}} {{year}}</span><h2
+						<h2
 				class="font_display font_medium font_3:lg font_2:md font_1 c_primary-n1 m-t_2 m-t_4:lg m-t_3:md m-b_3 lh_1 cursor_pointer h:underline"
 			>
 				{{ title }}
 			</h2>
 			<div data-v-5294f1c2="" class="font_ui c_accent-n1 font_medium font_n2 m-t_n2 uppercase">{{ eventType }}</div>
+            <div class="c_secondary font_n1 bold" v-if="isEventFinished">Past: {{month}} {{dates}} {{year}}</div>
 
 		</header>
-		<p class="font_0:lg font_n1 p-x_4 p-x_5:lg lh_2">
+		<p v-if="shortText" class="font_0:lg font_n1 p-x_4 p-x_5:lg lh_2 m-b_0">
 			{{ shortText }}
 		</p>
 		<ul
-			class="m-b_4:md p-t_1 p-x_5:lg p-x_3 font_n1:lg font_n2 ul_none lh_4"
+			class="m-b_4:md p-t_3 p-x_5:lg p-x_3 font_n1:lg font_n2 ul_none lh_4"
 		>
 			<li v-if="!isEventFinished">
 				<i class="fas font-size_up fa-clock c_black-5"></i
@@ -153,7 +155,7 @@ export default {
 	},
 	data() {
 		return {
-			
+			headerImageExsists:(this.imgSM && this.imgMD && this.imgLG)
 		};
 	},
 	computed: {

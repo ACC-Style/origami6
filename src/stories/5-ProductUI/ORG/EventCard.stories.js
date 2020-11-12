@@ -4,7 +4,7 @@ import Btn from "../../../components/subComponents/Btn.vue";
 import HeaderImage from "../../../components/ORG/subComponent/HeaderImage.vue";
 
 export default {
-	title: "Virtual/Lobby/EventCard",
+	title: "ACC/Home/EventCard",
 	component: EventCard,
 	subcomponents: {HeaderImage,Credits, Btn},
 	parameters: {
@@ -51,7 +51,7 @@ export const Live = Template.bind({});
 Live.args = {
     id:15605484,
 	title:"ACC Cardiovascular Overview and Board Prep Virtual Experience",
-	shortText:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam eius quisquam, exercitationem neque explicabo animi asperiores aliquam? Eum, enim porro!",
+	shortText:undefined,
     startDate: "2020-11-27T20:37:24Z",
 	endDate: "2020-11-27T23:37:24Z",
 	onDemandDate: "2020-12-31T23:37:24Z",
@@ -59,9 +59,9 @@ Live.args = {
     eventType:"In Person Meeting",
     registerForEvent:true,
 	timezone:'America/Los_Angeles',
-	imgLG:"https://picsum.photos/id/1018/900/80",
-	imgMD:"https://picsum.photos/id/1018/600/80",
-	imgSM:"https://picsum.photos/id/1018/300/80",
+	imgLG:undefined,
+	imgMD:undefined,
+	imgSM:undefined,
 	corner:"radius"
     
 };

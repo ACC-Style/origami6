@@ -8,10 +8,10 @@
 		>
 			<span
 				:class="[{ shadow_1: hover }, flagColor]"
-				class="flex_shrink p-y_2 md p-x_3 br_1 br_solid br_black-_05 m-x_n1 texture_dust"
+				class="flex_shrink p-y_2 p-x_3 br_1 br_solid br_white-2 "
 			>
 				<span class="p-x_2 m-t_1 m-b_2" v-show="hover" v-html="flagText"> </span>
-				<i class="fal fa-fw m-t_1 m-b_2" :class="flagIcon"></i>
+				<i class="fas fa-fw m-t_1 m-b_2" :class="flagIcon"></i>
 			</span>
 		</div>
 	</transition>
@@ -130,7 +130,8 @@ export default {
 						color = "secondary";
 						break;
 					case "read":
-						return 'bg_secondary-4 h:bg_secondary-5 c_secondary';
+						color = "secondary";
+						break;
 						break;
 					case "registered":
 						color = "accent";
@@ -144,7 +145,7 @@ export default {
 					default:
 						break;
 				}
-				return 'bg_' + color + ' h:bg_' + color + '-n1';
+				return 'bg_' + color + '-2 h:bg_' + color + '';
 			}
 
 		}

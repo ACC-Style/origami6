@@ -13,13 +13,13 @@
 				:headerImg="(item.imgSM && item.imgMD && item.imgLG)?true:false "
 		>
 		<h2
-					class="font_display font_4:lg font_3:md font_2 c_primary-n1 m-b_3 m-t_3"
+					class="font_display font_2:lg font_1 font_bold c_primary-n2 m-b_3 m-t_3"
 					v-html="item.title"
 				>
 					COVID-19 Hub
 				</h2>
 				<p
-					class="font_1:lg font_0 font_copy m-t_0 m-b_4 p-b_3"
+					class="font_0:md font_n1 font_copy m-t_0 m-b_4 p-b_3"
 					v-html="item.shortText"
 				>
 					Comprehensive compilation of ACC content related to COVID-19

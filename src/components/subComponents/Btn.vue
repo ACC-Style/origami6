@@ -61,16 +61,16 @@ export default {
 			let size = "";
 			switch (this.size) {
 				case "tiny":
-					size = "p-y_2 p-x_2 font_n3 font_n3:md";
+					size = "p-y_2 p-x_2 font_n3 font_n2:md";
 					break;
 				case "small":
-					size = "p-y_2 p-x_3 font_n2 font_n1:md";
+					size = "p-y_3 p-x_4 lh_1 font_n1 font_0:md";
 					break;
 				case "medium":
-					size = "p-y_3 lh_2 p-x_4 font_0 font_1:md";
+					size = "p-y_3 lh_2 p-x_4 font_1 font_2:md";
 					break;
 				case "large":
-					size = "p-y_4 p-x_5 font_1 font_3:md";
+					size = "p-y_4 p-x_5 lh_2 font_2 font_3:md";
 					break;
 				default:
 					size = "p-y_2 p-x_3 font_n1 font_0:md";

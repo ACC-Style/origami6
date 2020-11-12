@@ -38,19 +38,19 @@
 			</div>
 		</div>
 		<div
-			class="flex justified_around 
+			class="flex justified_end 
 			flec_column-reverse
 			flex_row-reverse:md p-x_4 flex_wrap m-b_4 "
 			v-if="ctaType == 'link'"
 		>
 			<div
-				class="flex-auto"
+				class="flex-auto m-r_auto"
 				v-for="(CTA, index) in cta"
 				:key="'cta_' + index"
 			>
 				<a
 					:href="CTA.url"
-					class="font_1:lg text_left font_bold h:c_primary-n3 c_primary block p-y_2 lh_2 nowrap m-r_4"
+					class="font_0:lg text_left font_bold h:c_primary-n3 c_primary block p-y_2 lh_2 nowrap m-r_4"
 					>{{ CTA.label }} <i class="fas fa-arrow-right p-x_2" v-if="index === 0"></i
 				></a>
 			</div>
