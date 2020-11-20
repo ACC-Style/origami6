@@ -29,23 +29,39 @@ export default {
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { EventCard },
-	template: `<div class="max-w_20">
-		<EventCard 
-			:title="title" 
-			:startDate="new Date(startDate)" 
-			:endDate="new Date(endDate)" 
-			:onDemandDate="new Date(onDemandDate)"
-			:credits="credits" 
-			:eventType="eventType" 
-			:timezone="timezone" 
-			:registerForEvent="registerForEvent" 
-        	:imgLG="imgLG"
-        	:imgMD="imgMD"
-			:imgSM="imgSM"
-			:corner="corner"
-			:shortText="shortText"
-		/>
-	</div>`,
+	template: `<div class="flex gap-x_5">
+
+	<EventCard 
+	:title="title" 
+	:startDate="new Date(startDate)" 
+	:endDate="new Date(endDate)" 
+	:onDemandDate="new Date(onDemandDate)"
+	:credits="credits" 
+	:eventType="eventType" 
+	:timezone="timezone" 
+	:registerForEvent="registerForEvent" 
+	:imgLG="imgLG"
+	:imgMD="imgMD"
+	:imgSM="imgSM"
+	:corner="corner"
+	:shortText="shortText"
+/>
+<EventCard 
+:title="title" 
+:startDate="new Date(startDate)" 
+:endDate="new Date(endDate)" 
+:onDemandDate="new Date(onDemandDate)"
+:credits="undefined" 
+:eventType="eventType" 
+:timezone="timezone" 
+:registerForEvent="registerForEvent" 
+:imgLG="imgLG"
+:imgMD="imgMD"
+:imgSM="imgSM"
+:corner="corner"
+:shortText="shortText"
+/>
+</div>`,
 });
 export const Live = Template.bind({});
 Live.args = {

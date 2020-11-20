@@ -5,7 +5,7 @@
 			<div class="font_n2 c_primary">{{institution}}</div>
 		</div>
 		<div class="flex_shrink actions self_center m-r_4 p-y_3" v-if="!readOnly">
-			<div class="flex_inline p_2 br_radius bg_shade-4 shadow_n2">
+			<div class="flex_inline p_2 br_radius bg_black-2 shadow_n1">
 				<Btn  :size="'small'" :state="'alert'" @onClick="onRemoveAdmin(id)"><i class="fa-times far"></i></Btn>
 			</div>
 		</div>

@@ -8,7 +8,7 @@
 		>
 			<span
 				:class="[{ shadow_1: hover }, flagColor]"
-				class="flex_shrink p-y_2 p-x_3 br_1 br_solid br_white-2 "
+				class="flex_shrink p-y_2 p-x_3 br_1 br_solid br_white-7 "
 			>
 				<span class="p-x_2 m-t_1 m-b_2" v-show="hover" v-html="flagText"> </span>
 				<i class="fas fa-fw m-t_1 m-b_2" :class="flagIcon"></i>
@@ -115,6 +115,9 @@ export default {
 				return this.color
 			}
 			else {
+
+				//  return 'bg_acc-2 h:bg_acc-n3';
+			
 				let color = "";
 				switch (this.type) {
 					case "featured":
@@ -145,7 +148,7 @@ export default {
 					default:
 						break;
 				}
-				return 'bg_' + color + '-2 h:bg_' + color + '';
+				return 'bg_' + color + '-1 h:bg_' + color + '-n3';
 			}
 
 		}

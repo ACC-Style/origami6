@@ -19,7 +19,7 @@
 			</div>
 		</div>
 		<div class="flex_shrink m-l_auto self_center">
-			<div class="flex p_2 br_radius bg_shade-4 shadow_n2">
+			<div class="flex p_2 br_radius bg_black-1 shadow_n1">
 				<div class="flex_shrink self_center p-x_1">
 					<Btn
 						:state="'secondary'"
@@ -27,16 +27,18 @@
 						:corners="'radius'"
 						:icon="false"
 						:size="'small'"
+						:shadow="false"
 						@click="onResendRequest()"
 					>Resend</Btn>
 				</div>
-				<div class="flex_shrink self_center">
+				<div class="flex_shrink self_center  p-x_1">
 					<Btn
 						:state="'alert'"
 						:corners="'radius'"
 						class=""
 						:icon="true"
 						:size="'small'"
+						:shadow="false"
 						@click="onCancelRequest()"
 					><i class="far fa-times"></i></Btn>
 				</div>
@@ -91,7 +93,6 @@ export default {
 	data() {
 		return {
 			isSelected: "false",
-			dateString: this.dateToString(this.dateOfRequest,'monDayYear')
 		};
 	}
 };

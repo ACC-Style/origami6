@@ -20,7 +20,7 @@
 				:state="statusOfRecord.state"
 			></StatusIcon>
 			<div class="flex_auto p-l_3 p-y_3 lh_2">
-				<span class="fullName">{{fullName}}</span>
+				<span class="fullName font-size_up">{{fullName}}</span>
 				<a class="block email font_n1 c_primary h:underline">{{email}}</a>
 				<div class="statusMessage font_n2  " v-if="pendingReview">
 					<span class="c_alert">Pending Review</span>
@@ -39,7 +39,7 @@
 			</div>
 
 			<div class="flex_shrink actions p-r_3 p-y_2 text_right self_center m-r_4">
-				<div class="flex_inline p_2 br_radius bg_shade-4 shadow_n2">
+				<div class="flex_inline p_2 br_radius bg_black-2 shadow_n1">
 					<Btn
 						:size="'small'"
 						:state="'alert'"
@@ -51,7 +51,7 @@
 		</div>
 		<TransitionExpand>
 			<div
-				class="shadeData br_solid p-x_4 p-y_3 br-t_1 br_shade-4 shadow_n1 texture_light"
+				class="shadeData br_solid p-x_4 p-y_3 br-t_1 br_shade-4 shadow_n1 bg_black-_05"
 				v-if="isExapanded"
 			>
 				<div class="flex">

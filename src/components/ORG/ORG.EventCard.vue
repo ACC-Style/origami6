@@ -1,6 +1,6 @@
 <template>
 	<article
-		class="br_solid br_1 br_black-2 bg_black-_05 br_radius relative font_copy br_black-3 shadow_overlap-light"
+		class="br_solid br_1 br_black-2 bg_black-_05 br_radius relative font_copy br_black-3 shadow_overlap-light flex_column flex justify_start"
 		:class="'br_' + corner"
 	>
 		<HeaderImage
@@ -28,7 +28,7 @@
 				}}</span>
 			</aside>
 			<div
-				class="absolute r_4 r_5:lg t_n1 text_center flex flex_column:md justify_end align-right font_0:md font_n1 overflow_hidden transition_2 z_2"
+				class="absolute r_4 r_5:lg t_0 text_center flex flex_column:md justify_end align-right font_1:md font_0 overflow_hidden transition_2 z_2"
 			>
 				<TabFlag
 					v-show="registerForEvent"
@@ -62,7 +62,7 @@
 				<i class="fas font-size_up fa-hourglass-half c_black-5"></i
 				><span class="m-l_2">{{ onDemandText }}</span>
 			</li>
-			<li>
+			<li v-if="credits.length > 0">
 				<i class="fas font-size_up fa-award c_black-5"></i>
 				<span class="m-l_2 m-t_n2 inline-block">
 					<Credit
@@ -78,7 +78,7 @@
 			</li>
 		</ul>
 		<footer
-			class="flex justify_around m-t_4 m-t_3:md p-x_5:lg p-x_3 p-b_4"
+			class="flex justify_around m-t_auto p-t_4 p-t_3:md p-x_5:lg p-x_3 p-b_4"
 		>
 						<Btn
 				class="flex_auto text_center max-w_10"
@@ -151,7 +151,7 @@ export default {
 		Btn,
 		Credit,
 		HeaderImage,
-		TabFlag,
+		TabFlag
 	},
 	data() {
 		return {
@@ -166,7 +166,7 @@ export default {
 		onDemandText: function () {
 			return (
 				"On Demand: Untill " +
-				moment(this.onDemandDate).tz(this.timezone).format("MMM D YYYY z")
+				moment(this.onDemandDate).tz(this.timezone).format("MMM D z")
 			);
 		},
 		year(){
@@ -184,13 +184,10 @@ export default {
 			} else {
 				return start + "-" + end;
 			}
-			return "20";
 		},
 		hours() {
 			let start = moment(this.startDate).tz(this.timezone).format("h"),
-				startMedian = moment(this.startDate)
-					.tz(this.timezone)
-					.format("a"),
+				startMedian = moment(this.startDate).tz(this.timezone).format("a"),
 				end = moment(this.endDate).tz(this.timezone).format("h"),
 				endMedian = moment(this.endDate).tz(this.timezone).format("a"),
 				timezone = moment(this.startDate).tz(this.timezone).format("z");

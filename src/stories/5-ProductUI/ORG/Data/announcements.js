@@ -2,9 +2,9 @@ export const announcements3 =[{
   "id": 1,
   "title": "magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit",
   "shortText": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
-  "imgLG": "https://dummyimage.com/900x80.png/ff4444/ffffff",
-  "imgMD": "https://dummyimage.com/600x80.png/5fa2dd/ffffff",
-  "imgSM": "https://dummyimage.com/300x80.png/5fa2dd/ffffff",
+	"imgLG":"https://picsum.photos/id/10/900/80",
+	"imgMD":"https://picsum.photos/id/10/600/80",
+	"imgSM":"https://picsum.photos/id/10/300/80",
   "ctaType": "link",
   "cta": [
     {
@@ -17,9 +17,9 @@ export const announcements3 =[{
   "id": 2,
   "title": "proin interdum mauris non ligula pellentesque ultrices phasellus",
   "shortText": "In hac habitasse platea dictumst.",
-  "imgLG": "https://dummyimage.com/900x80.png/cc0000/ffffff",
-  "imgMD": "https://dummyimage.com/600x80.png/ff4444/ffffff",
-  "imgSM": "https://dummyimage.com/300x80.png/cc0000/ffffff",
+	"imgLG":"https://picsum.photos/id/1002/900/80",
+	"imgMD":"https://picsum.photos/id/1002/600/80",
+	"imgSM":"https://picsum.photos/id/1002/300/80",
   "ctaType": "link",
   "cta": [
     {
@@ -32,9 +32,9 @@ export const announcements3 =[{
   "id": 3,
   "title": "arcu libero rutrum ac",
   "shortText": "Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
-  "imgLG": "https://dummyimage.com/900x80.png/ff4444/ffffff",
-  "imgMD": "https://dummyimage.com/600x80.png/dddddd/000000",
-  "imgSM": "https://dummyimage.com/300x80.png/cc0000/ffffff",
+	"imgLG":"https://picsum.photos/id/1016/900/80",
+	"imgMD":"https://picsum.photos/id/1016/600/80",
+	"imgSM":"https://picsum.photos/id/1016/300/80",
   "ctaType": "link",
   "cta": [
     {
