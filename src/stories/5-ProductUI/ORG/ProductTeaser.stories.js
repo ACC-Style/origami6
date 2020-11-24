@@ -26,15 +26,17 @@ const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { ProductTeaser },
 	template: `
-    <ProductTeaser 
-    :id="id"
-	:title="title" 
-    :shortText="shortText"
-	:credits="credits" 
-	:productType="productType" 
-	:purchased="purchased" 
-	:img="img"
-/>`,
+	<div class="max-w_20">
+	<ProductTeaser 
+		:id="id"
+		:title="title" 
+		:shortText="shortText"
+		:credits="credits" 
+		:productType="productType" 
+		:purchased="purchased" 
+		:img="img"
+	/>
+	</div>`,
 });
 export const List = Template.bind({});
 List.args = {

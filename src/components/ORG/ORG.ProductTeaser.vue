@@ -9,7 +9,7 @@
 				class="float_left m-l_4 m-l_5:lg bg_primary-5 z_3"
                 style="width:60px"
 			>
-            <div class="br_1 br-t_0  br_solid br_black-8  bg_cover aspect_1x1 bg-blend_multiply"
+            <div class="br_1 br-t_0  br_solid br_black-8 bg_cover aspect_1x1 bg-blend_multiply"
             :style="'background-image:url('+img+')'"></div>
 			</aside>
 			<div
@@ -22,18 +22,12 @@
 				/>
 			</div>
 		</div>
-		<header class="clear_both p-x_3 p-x_5:lg p-t_2" >
-						<h2
-				class="font_display font_medium font_3:lg font_2:md font_1 c_primary-n1 m-t_2 m-t_4:lg m-t_3:md m-b_3 lh_1 cursor_pointer h:underline"
-			>
+		<header class="clear_both p-x_3 p-t_2 font_display font_medium font_3:lg font_2:md font_1 c_primary-n1 m-t_2 m-t_4:lg m-t_3:md m-b_1 lh_1 cursor_pointer h:underline" >
 				{{ title }}
-			</h2>
-			<div data-v-5294f1c2="" class="font_ui c_accent-n1 font_medium font_n2 m-t_n2 uppercase">{{ productType }}</div>
-           
-
 		</header>
-		<p v-if="shortText" class="font_0:lg font_n1 p-x_3 p-x_4:lg lh_2 m-b_0 m-t_3">
-			{{ shortText }}
+		<p v-if="shortText" class="font_0:lg font_n1 p-x_3 lh_2 m-b_0 m-t_3">
+			<span data-v-5294f1c2="" class="font_ui c_accent-n1 font_medium font_n2 m-t_n2 uppercase block">{{ productType }}</span>
+			<span>{{ shortText }}</span>
 		</p>
 		<ul
 			class="m-b_4:md p-t_3 p-x_5:lg p-x_3 font_n1:lg font_n2 ul_none lh_4"
@@ -54,15 +48,15 @@
 			</li>
 		</ul>
 		<footer
-			class="flex justify_around m-t_auto p-t_4 p-t_3:md p-x_5:lg p-x_3 p-b_4"
+			class="flex justify_around m-t_auto p-t_4 p-t_3:md p-x_3 p-b_4"
 		>
-						<Btn
+			<Btn
 				class="flex_auto text_center max-w_10"
 				:size="'small'"
 				:corner="'radius'"
 				:shadow="false"
 				v-if="!purchased"
-				:state="'empty'"
+				:state="'empty '"
 				@onClick="onLearnMore(id)"
 				><span class="flex_grow m-b_3 c_primary-n1 c_primary-n3"
 					>Learn More</span
