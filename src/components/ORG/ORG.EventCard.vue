@@ -37,9 +37,9 @@
 				/>
 			</div>
 		</div>
-		<header class="clear_both p-x_3 p-x_5:lg p-t_2" :class="{'m-t_4':isEventFinished}">
+		<header class="clear_both p-x_3 p-x_4:md p-x_5:lg p-t_2" :class="{'m-t_4':isEventFinished}">
 						<h2
-				class="font_display font_medium font_3:lg font_2:md font_1 c_primary-n1 m-t_2 m-t_4:lg m-t_3:md m-b_3 lh_1 cursor_pointer h:underline"
+				class="font_display font_medium font_3:lg font_2:md font_1 c_primary-n1 m-t_2 m-t_4:lg m-t_3:md m-b_2 lh_1 cursor_pointer h:underline"
 			>
 				{{ title }}
 			</h2>
@@ -47,17 +47,17 @@
             <div class="c_secondary font_n1 bold" v-if="isEventFinished">Past: {{month}} {{dates}} {{year}}</div>
 
 		</header>
-		<p v-if="shortText" class="font_0:lg font_n1 p-x_4 p-x_5:lg lh_2 m-b_0">
+		<p v-if="shortText" class="font_0:lg font_n1 p-x_3 p-x_4:md p-x_5:lg lh_2 m-b_0">
 			{{ shortText }}
 		</p>
 		<ul
-			class="m-b_4:md p-t_3 p-x_5:lg p-x_3 font_n1:lg font_n2 ul_none lh_4"
+			class="m-b_4:md p-t_3p-x_3 p-x_4:md p-x_5:lg font_n1:lg font_n2 ul_none lh_4"
 		>
 			<li v-if="!isEventFinished">
 				<i class="fas font-size_up fa-clock c_black-5"></i
 				><span class="m-l_2">{{ hours }}</span>
 			</li>
-	
+
 			<li>
 				<i class="fas font-size_up fa-hourglass-half c_black-5"></i
 				><span class="m-l_2">{{ onDemandText }}</span>
@@ -81,19 +81,19 @@
 			class="flex justify_around m-t_auto p-t_4 p-t_3:md p-x_5:lg p-x_3 p-b_4"
 		>
 						<Btn
-				class="flex_auto text_center max-w_10"
+				class="flex_auto m-b_3 m-x_3 text_center max-w_10"
 				:size="'small'"
 				:corner="'radius'"
 				:shadow="false"
 				v-if="!registerForEvent"
-				:state="'empty'"
+				:state="'secondary'"
 				@onClick="onLearnMore(id)"
-				><span class="flex_grow m-b_3 c_primary-n1 c_primary-n3"
+				><span class="flex_grow "
 					>Learn More</span
 				></Btn
 			>
 			<Btn
-				class="flex_auto m-b_3 text_center max-w_10"
+				class="flex_auto m-b_2 m-x_3 text_center max-w_10"
 				:size="'small'"
 				:corner="'radius'"
 				:shadow="true"
@@ -102,7 +102,7 @@
 				><span class="flex_grow">Register</span></Btn
 			>
 			<Btn
-				class="flex_auto text_center max-w_10 m-b_3"
+				class="flex_auto text_center m-x_3 max-w_10 m-b_2"
 				:size="'small'"
 				:corner="'radius'"
 				:shadow="true"

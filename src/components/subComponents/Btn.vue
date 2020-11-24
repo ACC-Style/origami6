@@ -125,7 +125,7 @@ export default {
 					else{
 						stateStyle +=
 							" h:bg_secondary-2 br_secondary-2 c_black";
-						stateStyle += (this.isActivatable)?" bg_secondary-4 a:bg_secondary-n1 ":" bg_secondary-4";
+						stateStyle += (this.isActivatable)?" bg_secondary-4 a:bg_secondary-n1 a:c_white":" bg_secondary-4";
 					}
 					break;
 				case "none":

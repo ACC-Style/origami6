@@ -25,7 +25,7 @@
                                         <span class="c_accent-1 font_bold uppercase block wrap display_none:md"
 						>{{ type }}</span>
 					    <span data-type="date" class="block c_black-7">{{ publishDate | dateStrAbv }}</span>
-						<div class="block c_primary-n1 h:c_primary-n3 h:underline cursor_pointer " @click="toggleSavedInLibrary">
+						<div class="block c_primary-n1 h:c_primary-n3 h:underline cursor_pointer " @click.stop="toggleSavedInLibrary">
 							<span v-show="!internalSavedInLibrary">save to library</span><span v-show="internalSavedInLibrary">remove from library</span>
 						</div>
                     </div>
@@ -48,14 +48,45 @@
 
 				<div
 					data-type="authors"
-					class="block p-y_2 z_2 relative font_n1:md font_n2 text_left m-b_n3"
+					class="block p-y_2 z_2 relative font_n2:md font_n3 text_left m-b_n3"
 				>
+					<template v-for="(author, index) in authors"  >
 					<a
-						@click="authorURL(author.id)"
-                        v-for="(author, index) in authors" :key="index"
+						v-if="index<authorOverflow"
+						@click.stop="authorURL(author.id)"
+                        :key="index"
+						class="link z_3 inline-block p-x_2  h:underline cursor_pointer "
+						><i class="fa fa-user p-r_2 opacity_5"></i> {{ author.fullname }}</a
+					><a
+						v-else
+						v-show="showAuthorOverflow"
+						@click.stop="authorURL(author.id)"
+                        :key="index"
 						class="link z_3 inline-block p-x_2  h:underline cursor_pointer "
 						><i class="fa fa-user p-r_2 opacity_5"></i> {{ author.fullname }}</a
 					>
+					
+					</template>
+					<BtnToggle 
+						class="block"
+						v-if="authors.length > authorOverflow " 				
+						:state="'empty'"
+						:size="'tiny'"
+						:shadow="false"
+						:isActive="false"
+						@onDeactive="showAuthorOverflow = false"
+						@onActive="showAuthorOverflow = true"
+						
+						>
+							<template v-slot:active >
+								Show Less 
+							</template>			
+							<template v-slot:deactive>
+								Show More |  {{ authors.length - (authorOverflow ) }} hidden authors
+							</template>
+						</BtnToggle>
+					
+					
 				</div>
 			</div>
 		</div>
@@ -64,10 +95,11 @@
 
 <script>
 import TabFlag from "../subComponents/TabFlag";
+import BtnToggle from "../subComponents/BtnToggle"
 
 export default {
 	components:{
-		TabFlag
+		TabFlag, BtnToggle
 	},
 	props: {
 		title: {
@@ -93,11 +125,16 @@ export default {
 			hoverEditorsPick: false,
 			hoverPreviouslyRead: false,
 			internalSavedInLibrary: this.savedInLibrary,
+			showAuthorOverflow:false,
+			authorOverflow:4
 		};
 	},
 	computed: {},
 
 	methods: {
+		toggleAuthorOverflow(){
+			this.showAuthorOverflow = !this.showAuthorOverflow
+		},
 		toggleSavedInLibrary(){
 			this.internalSavedInLibrary = !this.internalSavedInLibrary;
 			(this.internalSavedInLibrary)?this.$emit("onSaveToLibrary"):this.$emit("onRemoveFromLibrary");
