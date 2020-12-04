@@ -1,9 +1,9 @@
 <template>
 	<div class="fits m_3">
-		<div class="flex flex_auto">
+		<div class="flex flex_auto m-b_3">
 			<h1 class="flex_auto m-y_3">Fellows In Training Program</h1>
 			<div class="flex_shrink justify_center flex flex_column">
-				<div class=""><Btn>Add Fellow</Btn></div>
+				<div class=""><Btn  :state="'primary'" :size="'medium'" @onClick="$emit('onAddFit')"><i class="far fa-plus flex_shrink p-r_3 self_center"></i> <span class="flex_auto"> Add FIT</span></Btn></div>
 			</div>
 		</div>
 		<div v-if="fits == null" class="br-t_1 br-b_1 br_solid br_black-4">
@@ -72,10 +72,23 @@
 			<template v-slot:header>
 				<h2 class="c_primary">Update Birthday</h2>
 			</template>
-			Birthday
+			Birthday form goes here
 			</Modal
 		>
-		<Modal v-if="endDateModalVisible" @onClose="closeModals">EndDate</Modal>
+		<Modal v-if="endDateModalVisible" @onClose="endDateModalVisible = false">
+						<template v-slot:header>
+				<h2 class="c_primary">Update End Date</h2>
+			</template>
+			End Date  form goes here
+
+		</Modal>
+				<Modal v-if="addFITModalVisible" @onClose="addFITModalVisible = false">
+						<template v-slot:header>
+				<h2 class="c_primary">ADD FIT</h2>
+			</template>
+			ADD FIT  form goes here
+
+		</Modal>
 	</div>
 </template>
 
@@ -104,15 +117,13 @@ export default {
 		onUpdateEndDate(fit) {
 			this.endDateModalVisible = true;
 		},
-		onCloseModals() {
-			this.modalVisibleBirthday = false;
-			this.endDateModalVisible = false;
-		},
+
 	},
 	data() {
 		return {
 			modalVisibleBirthday: false,
 			endDateModalVisible: false,
+			addFITModalVisible:false,
 		};
 	},
 };

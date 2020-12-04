@@ -41,6 +41,11 @@ const Template = (args, { argTypes }) => ({
 	@onUpdateEndeDate=""
 	@onRemove=""/>`,
 });
+const vBind = (args, { argTypes }) => ({
+	props: Object.keys(argTypes),
+	components: { Fit },
+	template: `<Fit v-bind="$props"	/>`,
+});
 export const FIT = Template.bind({});
 FIT.args = {
 	fullName:fitData[0].fullName,  
@@ -52,23 +57,23 @@ FIT.args = {
     endDate:fitData[0].endDate,
 
 };
-export const MissingBirthday = Template.bind({});
+export const MissingBirthday = vBind.bind({});
 MissingBirthday.args = {
 	fullName:fitData[0].fullName,  
 	email:fitData[0].email,
 	address:fitData[0].address,
 	pendingReview:fitData[0].pendingReview,
 	id:fitData[0].id,
-    birthday:null,
     endDate:fitData[0].endDate,
 
 };
 export const MissingEndDate = Template.bind({});
 MissingEndDate.args = {
-    data:fitData[0],
-    id:fitData[0].id,
-    birthday:fitData[0].birthday,
-    endDate:null,
+	fullName:fitData[0].fullName,  
+	email:fitData[0].email,
+	address:fitData[0].address,
+	pendingReview:false,
+	id:fitData[0].id,
 
 };
 const ListTemplate = (args, { argTypes }) => ({
