@@ -1,4 +1,4 @@
-import VueComp from "../../../components/VueComp.vue";
+import VueComp from "../../../src/components/VueComp.vue";
 
 export default {
 	title: "Transcript/Legend",

@@ -129,11 +129,3 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
-.lorem-status {
-	width: 2.5rem;
-}
-.lorem-button {
-	width: 8rem;
-}
-</style>
