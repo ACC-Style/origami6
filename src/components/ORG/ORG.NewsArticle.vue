@@ -3,7 +3,7 @@
 		class="br_radius br_1 br_black-2 bg_black_-05 br_solid  p-x_3 p_4 relative  m-b_4 bg_black-_05 font_ui"
 		@click="articleURL" :class="{ 'shadow_overlap-light': featured && (!previouslyRead && !savedInLibrary) }"
 	>
-		<div
+		<div v-show="!removeFromListSurveyVisiblity"
 			class="absolute r_n1:md r_4 t_n1 t_4:md text_center flex flex_column:md justify_end align-right font_n2:md font_n3 overflow_hidden transition_2"
 		>
 			<TabFlag v-if="internalSavedInLibrary" :type="'bookmarked'"/>
@@ -11,7 +11,7 @@
 			<TabFlag v-if="editorsPick" :type="'upvoted'" :text="'editor&rsquo;s pick'"/>
 			<TabFlag v-if="previouslyRead" :type="'read'"/>		
 		</div>
-		<div class="flex flex_row:md flex_column">
+		<div class="flex flex_row:md flex_column" v-show="!removeFromListSurveyVisiblity">
 				<div class="flex_none justify_around font_n3 font_n2:md text_left flex_row flex_column:md flex p-l_4:md p-r_3:lg p-l_3 transition_2 p-t_0" :class="{'p-t_4 m-t_2 p-t_0:md m-t_0:md ':editorsPick || featured || previouslyRead || internalSavedInLibrary }">
 					<img
 						:src="image"
@@ -27,6 +27,9 @@
 					    <span data-type="date" class="block c_black-7">{{ publishDate | dateStrAbv }}</span>
 						<div class="block c_primary-n1 h:c_primary-n3 h:underline cursor_pointer " @click.stop="toggleSavedInLibrary">
 							<span v-show="!internalSavedInLibrary">save to library</span><span v-show="internalSavedInLibrary">remove from library</span>
+						</div>
+						<div class="block c_primary-n1 h:c_primary-n3 h:underline cursor_pointer " @click.stop="showSurvey">
+							<span>hide from list</span>
 						</div>
                     </div>
 				</div>
@@ -90,16 +93,30 @@
 				</div>
 			</div>
 		</div>
+		<div class="p_4 p-t_0" v-show="removeFromListSurveyVisiblity">
+			<h2 class="font_display m-t_3 m-b_3">Why are you hiding this article?</h2>
+			<div class="m-b_3">
+				<Btn class="br_black-3 br_solid br_1 h:bg_white c_black" :state="'none'" :shadow="false" :size="'small'">Read Somewhere Else</Btn>
+				<Btn class="br_black-3 br_solid br_1 h:bg_white c_black" :state="'none'" :shadow="false" :size="'small'">Not Interested</Btn>
+				<Btn class="br_black-3 br_solid br_1 h:bg_white c_black" :state="'none'" :shadow="false" :size="'small'">Just Because</Btn>
+				<Btn class="" :state="'secondary'" :shadow="false" :size="'small'"  @onClick="hideSurvey">Cancel</Btn>
+			</div>
+			<div class="m"><label class="font_regular font_0" for="dontSomeMeAgain"><input type="checkbox" name="dontSomeMeAgain" id="dontSomeMeAgain"> Don't Ask Me Again.</label></div>
+			<div class="br-b_3 br_primary br_solid transition_3 absolute t_0 r_0" :style="countDownWidth"></div>
+			<span class="c_primary-2 absolute t_3 font_n2 uppercase r_4">removing from list</span>
+		</div>
 	</article>
 </template>
 
 <script>
 import TabFlag from "../subComponents/TabFlag";
-import BtnToggle from "../subComponents/BtnToggle"
+import BtnToggle from "../subComponents/BtnToggle";
+import Btn from "../subComponents/Btn";
 
 export default {
 	components:{
-		TabFlag, BtnToggle
+		TabFlag, BtnToggle, Btn
+
 	},
 	props: {
 		title: {
@@ -126,10 +143,20 @@ export default {
 			hoverPreviouslyRead: false,
 			internalSavedInLibrary: this.savedInLibrary,
 			showAuthorOverflow:false,
-			authorOverflow:4
+			authorOverflow:4,
+			removeFromListSurveyVisiblity:false,
+			countDown:20
 		};
 	},
-	computed: {},
+	computed: {
+		countDownWidth(){
+			let obj = new Object;
+			obj['width'] = this.countDown / 20 * 100 + '%' ;
+			return obj;
+
+		}
+
+	},
 
 	methods: {
 		toggleAuthorOverflow(){
@@ -146,7 +173,23 @@ export default {
 		,authorURL(id){
 			this.$emit("onNavigateToAuthor");
 			return "convertthistoURL"+id;
-		}
+		},
+		returnSurvey(id,answer){},
+		showSurvey(){
+			this.removeFromListSurveyVisiblity = true,
+			this.countDownTimer();
+			},
+		hideSurvey(){
+			this.removeFromListSurveyVisiblity = false,
+			this.countDown = 20},
+		countDownTimer() {
+                if(this.countDown > 0) {
+                    setTimeout(() => {
+                        this.countDown -= 1
+                        this.countDownTimer()
+                    }, 500)
+                }
+            }
 	},
 };
 </script>
