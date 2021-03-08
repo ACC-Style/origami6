@@ -1,13 +1,13 @@
 <template>
-	<div class="p_4:md font_ui relative">
-		<header class="br-b_1 br_solid br_black-1 m-b_2 p-b_2:md">
+	<div class="p_4:md font_ui relative br-b_1 br_solid br_black-3 ">
+		<header class="br-b_1 br_solid br_black-1 m-b_2 p-b_2:md flex flex_column:md flex_column-reverse relative">
 			<div
-				class="time font_n1 lh_1 block clear_fix flex relative br_solid br_black-3 br-t_1"
+				class="time font_n1 lh_1 block clear_fix flex  br_solid br_black-3 br-t_1"
 			>
 				<div
-					class="p_2 m-r_3 p-t_3 flex_shrink font_xbold c_black-7 font-size_up m-t_n1"
+					class="p_2 m-r_3 p-t_3 flex_shrink font_xbold c_black-7 font-size_up m-t_n1 w_100"
 					>
-                    <span class="c_warning p_2 p-x_3 m-t_n3 m-b_3 vertical-align_top m-l_n2 m-r_2 bg_warning c_white block inline-block:md w_100 w_auto:md" v-show="isLive && isPlayable"><i class="fas fa-video p-r_3"></i> In Progress</span>
+                    <span class="c_warning p_2 p-x_3 m-t_n3 m-b_3 vertical-align_top m-l_n2 m-r_2 bg_warning c_white block inline-block:lg w_100 w_auto:lg text_center text_left:md" v-show="isLive && isPlayable"><i class="fas fa-video p-r_3"></i> In Progress</span>
                     <span class="c_warning p-r_3" v-show="!isPlayable">(Coming Soon to On Demand)</span>
                     May 15, 12:15 PM - 1:45 PM 
 					<span
@@ -43,7 +43,7 @@
 			<div
 				class="flex flex_inline w_100 m-t_3 flex_column flex_row:md gap-y_3 p-y_0:md p-t_3 p-b_4"
 			>
-				<h2 class="flex_auto lh_1 font_3 font_display m_0 c_primary">
+				<h2 class="flex_auto lh_2 font_3 font_display m-b_0 c_primary max-w_40">
 					{{ title }}
 				</h2>
 				<aside
