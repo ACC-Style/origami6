@@ -1,20 +1,28 @@
 <template>
-	<div class="p_4:md font_ui relative br-b_1 br_solid br_black-3 ">
-		<header class="br-b_1 br_solid br_black-1 m-b_2 p-b_2:md flex flex_column:md flex_column-reverse relative">
+	<div class="p_4:md font_ui relative br-b_1 br_solid br_black-3">
+		<header
+			class="br-b_1 br_solid br_black-1 m-b_2 p-b_2:md flex flex_column:md flex_column-reverse relative"
+		>
 			<div
-				class="time font_n1 lh_1 block clear_fix flex  br_solid br_black-3 br-t_1"
+				class="time font_n1 lh_1 block clear_fix flex br_solid br_black-3 br-t_1"
 			>
 				<div
 					class="p_2 m-r_3 p-t_3 flex_shrink font_xbold c_black-7 font-size_up m-t_n1 w_100"
+				>
+					<span
+						class="c_warning p_2 p-x_3 m-t_n3 m-b_3 vertical-align_top m-l_n2 m-r_2 bg_warning c_white block inline-block:lg w_100 w_auto:lg text_center text_left:md"
+						v-show="isLive && isPlayable"
+						><i class="fas fa-video p-r_3"></i> In Progress</span
 					>
-                    <span class="c_warning p_2 p-x_3 m-t_n3 m-b_3 vertical-align_top m-l_n2 m-r_2 bg_warning c_white block inline-block:lg w_100 w_auto:lg text_center text_left:md" v-show="isLive && isPlayable"><i class="fas fa-video p-r_3"></i> In Progress</span>
-                    <span class="c_warning p-r_3" v-show="!isPlayable">(Coming Soon to On Demand)</span>
-                    May 15, 12:15 PM - 1:45 PM 
+					<span class="c_warning p-r_3" v-show="!isPlayable"
+						>(Coming Soon to On Demand)</span
+					>
+					May 15, 12:15 PM - 1:45 PM
 					<span
 						class="p-t_2 font-size_down font_bold c_primary-1 text_left display_none:md inline-block w_100"
 						>Session Format</span
-					></div
-				>
+					>
+				</div>
 				<div
 					class="m-t_n1 flex_column absolute t_0 r_0 flex_row-reverse:md flex flex_shrink self_start m-l_auto"
 				>
@@ -43,7 +51,9 @@
 			<div
 				class="flex flex_inline w_100 m-t_3 flex_column flex_row:md gap-y_3 p-y_0:md p-t_3 p-b_4"
 			>
-				<h2 class="flex_auto lh_2 font_3 font_display m-b_0 c_primary max-w_40">
+				<h2
+					class="flex_auto lh_2 font_3 font_display m-b_0 c_primary max-w_40"
+				>
 					{{ title }}
 				</h2>
 				<aside
@@ -55,7 +65,13 @@
 						:state="'secondary'"
 						><i class="fas fa-heart"></i
 					></Btn>
-                    <Btn class="m-l_2" v-show="!isPlayable" :state="'secondary'" :isDisabled="true">Watch</Btn>
+					<Btn
+						class="m-l_2"
+						v-show="!isPlayable"
+						:state="'secondary'"
+						:isDisabled="true"
+						>Watch</Btn
+					>
 					<Btn class="m-l_2" v-show="isPlayable">Watch</Btn>
 				</aside>
 			</div>
@@ -66,7 +82,7 @@
 			>
 				<li>
 					<strong
-						class="font_bold c_primary-1 m-t_3 self_center p-r_3 font_0"
+						class="font_bold c_primary-1 m-t_3 self_center:md p-r_3 font_0"
 						>Credits</strong
 					>
 				</li>
@@ -155,17 +171,15 @@
 		<main class="flex_row flex flex_wrap-reverse">
 			<div
 				class="flex_auto reading-typography font_copy w_70:lg c_black-8 lh_1 p_4 p-l_0"
-                v-html="description"
-			>
-			
-			</div>
+				v-html="description"
+			></div>
 			<div class="flex_auto flex flex_column w_30:lg p-l_5:md">
 				<strong class="font_bold c_primary-n1 m-t_3 font_0"
 					>Learning Pathway</strong
 				>
 				<ul class="ul_none font_n1 c_black-7 lh_1">
 					<li class="br-b_1 br_solid br_black-1 p-y_2">
-						{{ learningPathway }} 
+						{{ learningPathway }}
 					</li>
 				</ul>
 			</div>
@@ -190,56 +204,88 @@
 							class="flex_column flex br_black-_05 br_solid br_1 flex_auto w_70:lg"
 						>
 							<div
-								class="flex_row flex justify_start bg_black-_05"
+								class="bg_black-1 flex flex_column-reverse flex_row:md justify_start"
 							>
 								<div
-									class="font_n1 font_0:md font_1:lg p_3 p-r_4 self_center br-r_1 br_dotted br_primary w_30:lg w_40 flex_none c_accent-n2 font_xbold"
+									class="br-r_1 br_dotted:md br_none br_primary c_accent-n2 flex_none font_0:md font_1:lg font_n2 font_xbold p-r_4:lg p_3 self_center:md w_100 w_30:md"
 								>
-									12:15 PM - 1:45 PM
+									1200 PM - 1:15 PM
 								</div>
-								<div class="font_1 p_3 p-l_4 self_center lh_1">
+								<div
+									class="font_1 p_3 p-l_4:md self_center:md lh_1"
+								>
 									<strong
 										class="font_bold block font-size_down c_primary-n1"
 										>Chair</strong
 									>
 									<span class="block font-size_up c_black"
-										>Anita Deswal</span
+										>Michael R. Zile</span
 									>
 									<span
 										class="c_black-8 block font-size_down m-t_2"
-										>Bellaire, TX</span
+										>Charleston, SC</span
 									>
 								</div>
 							</div>
-							<div class="flex_row flex justify_start bg_black-1">
-								<div
-									class="font_n1 font_0:md font_1:lg p_3 p-r_4 self_center br-r_1 br_dotted br_primary w_30:lg w_40 flex_none c_accent-n2 font_xbold"
-								>
-									12:15 PM - 12:27 PM
-								</div>
-								<div class="font_1 p_3 p-l_4 self_center lh_1">
-									<strong
-										class="font_bold block font-size_down c_primary-n1"
-										>Pathophysiology of HFpEF 101</strong
-									>
-									<span class="block font-size_up c_black"
-										>Harriette G. Van Spall</span
-									>
-									<span
-										class="c_black-8 block font-size_down m-t_2"
-										>Toronto, Canada</span
-									>
-								</div>
-							</div>
-							<div
-								class="flex_row flex justify_start bg_black-_05"
+                            <div
+								class="bg_black-_05 flex flex_column-reverse flex_row:md justify_start"
 							>
 								<div
-									class="font_n1 font_0:md font_1:lg p_3 p-r_4 self_center br-r_1 br_dotted br_primary w_30:lg w_40 flex_none c_accent-n2 font_xbold"
+									class="br-r_1 br_dotted:md br_none br_primary c_accent-n2 flex_none font_0:md font_1:lg font_n2 font_xbold p-r_4:lg p_3 self_center:md w_100 w_30:md"
 								>
 									12:27 PM - 12:39 PM
 								</div>
-								<div class="font_1 p_3 p-l_4 self_center lh_1">
+								<div
+									class="font_1 p_3 p-l_4:md self_center:md lh_1"
+								>
+									<strong
+										class="font_bold block font-size_down c_primary-n1"
+										>nobis reiciendis unde</strong
+									>
+									<span class="block font-size_up c_black"
+										>Kassulke Group</span
+									>
+									<span
+										class="c_black-8 block font-size_down m-t_2"
+										>Atlanta, GA</span
+									>
+								</div>
+							</div>
+                            <div
+								class="bg_black-1 flex flex_column-reverse flex_row:md justify_start"
+							>
+								<div
+									class="br-r_1 br_dotted:md br_none br_primary c_accent-n2 flex_none font_0:md font_1:lg font_n2 font_xbold p-r_4:lg p_3 self_center:md w_100 w_30:md"
+								>
+									12:50 PM - 1:00 PM
+								</div>
+								<div
+									class="font_1 p_3 p-l_4:md self_center:md lh_1"
+								>
+									<strong
+										class="font_bold block font-size_down c_primary-n1"
+										>Denmark up Home</strong
+									>
+									<span class="block font-size_up c_black"
+										>Michael R. Zile</span
+									>
+									<span
+										class="c_black-8 block font-size_down m-t_2"
+										>Anahiton, WA</span
+									>
+								</div>
+							</div>
+                            <div
+								class="bg_black-_05 flex flex_column-reverse flex_row:md justify_start"
+							>
+								<div
+									class="br-r_1 br_dotted:md br_none br_primary c_accent-n2 flex_none font_0:md font_1:lg font_n2 font_xbold p-r_4:lg p_3 self_center:md w_100 w_30:md"
+								>
+									1:00 PM - 1:15 PM
+								</div>
+								<div
+									class="font_1 p_3 p-l_4:md self_center:md lh_1"
+								>
 									<strong
 										class="font_bold block font-size_down c_primary-n1"
 										>Essentials for Diagnosis and Work up of
@@ -254,47 +300,30 @@
 									>
 								</div>
 							</div>
-							<div class="flex_row flex justify_start bg_black-1">
-								<div
-									class="font_n1 font_0:md font_1:lg p_3 p-r_4 self_center br-r_1 br_dotted br_primary w_30:lg w_40 flex_none c_accent-n2 font_xbold"
-								>
-									12:39 PM - 12:51 PM
-								</div>
-								<div class="font_1 p_3 p-l_4 self_center lh_1">
-									<strong
-										class="font_bold block font-size_down c_primary-n1"
-										>How do I Interpret the Echo
-										Results?</strong
-									>
-									<span class="block font-size_up c_black"
-										>Jae K. Oh</span
-									>
-									<span
-										class="c_black-8 block font-size_down m-t_2"
-										>Rochester, MN</span
-									>
-								</div>
-							</div>
 						</div>
 						<div class="flex_auto p-l_5:lg p-l_4:md w_30:lg">
-							<strong
-								class="font_bold c_primary-n4 opacity_7 m-t_3"
-								>Practice Focus</strong
-							>
-							<ul class="ul_none font_n1 c_black-7 lh_1">
-								<li class="br-b_1 br_solid br_black-1 p-y_2">
-									Academic
-								</li>
-							</ul>
-							<strong
-								class="font_bold c_primary-n4 opacity_7 m-t_3"
-								>Session Type</strong
-							>
-							<ul class="ul_none font_n1 c_black-7 lh_1">
-								<li class="br-b_1 br_solid br_black-1 p-y_2">
-									Clinical Focus
-								</li>
-							</ul>
+							<div>
+                                <strong
+                                    class="font_bold c_primary-n4 opacity_7 m-t_3"
+                                    >Practice Focus</strong
+                                >
+                                <ul class="ul_none font_n1 c_black-7 lh_1 inline-block block:md">
+                                    <li class="br-b_1 br_solid br_black-1 p-y_2">
+                                        Academic
+                                    </li>
+                                </ul>
+                            </div>
+							<div>
+                                <strong
+                                    class="font_bold c_primary-n4 opacity_7 m-t_3"
+                                    >Session Type</strong
+                                >
+                                <ul class="ul_none font_n1 c_black-7 lh_1 inline-block block:md">
+                                    <li class="br-b_1 br_solid br_black-1 p-y_2">
+                                        Clinical Focus
+                                    </li>
+                                </ul>
+                            </div>
 						</div>
 					</div>
 				</div>
@@ -314,26 +343,26 @@ export default {
 			type: String,
 			default: "801. Core Knowledge in Action: What Everyone Ought To Know About HFpEF"
 		},
-        description:{type:String, default:"<p>Qui est quibusdam dicta. Maxime alias dolores laudantium sit vel natus voluptas. Quis quisquam et ut. Eveniet non eius. Qui reprehenderit molestias non cum nostrum dolor fugiat.</p>"},
+		description: { type: String, default: "<p>Qui est quibusdam dicta. Maxime alias dolores laudantium sit vel natus voluptas. Quis quisquam et ut. Eveniet non eius. Qui reprehenderit molestias non cum nostrum dolor fugiat.</p>" },
 		isLive: {
 			type: Boolean,
 			default: false
 		},
-        isPlayable:{type:Boolean,default:false},
-        valueCME: { type: Number, default: 1 },
-        valueCNE: { type: Number, default: 1 },
-        valueCOP: { type: Number, default: 1 },
-        valueMOC: { type: Number, default: 1 },
-        valueCNErx: { type: Number, default: 0 },
-        valueECME: { type: Number, default: 0 },
-        valueABPMOCII: { type: Number, default: 0 },
-        valueCPE: { type: Number, default: 0 },
-        valueIPE: { type: Number, default: 0 },
-        valuePA: { type: Number, default: 0 },
-        learningPathway:{
-            type:String,
-            default:"Heart Failure and Cardiomyopathies Pathway"
-            }
+		isPlayable: { type: Boolean, default: false },
+		valueCME: { type: Number, default: 1 },
+		valueCNE: { type: Number, default: 1 },
+		valueCOP: { type: Number, default: 1 },
+		valueMOC: { type: Number, default: 1 },
+		valueCNErx: { type: Number, default: 0 },
+		valueECME: { type: Number, default: 0 },
+		valueABPMOCII: { type: Number, default: 0 },
+		valueCPE: { type: Number, default: 0 },
+		valueIPE: { type: Number, default: 0 },
+		valuePA: { type: Number, default: 0 },
+		learningPathway: {
+			type: String,
+			default: "Heart Failure and Cardiomyopathies Pathway"
+		}
 	},
 	data() {
 		return {
@@ -345,11 +374,11 @@ export default {
 	components: {
 		Credit, Btn, TabFlag, TransitionExpand
 	},
-    methods: {
-        isValueZero: function(val) {
-            return val == 0 
-        },
-    },
+	methods: {
+		isValueZero: function (val) {
+			return val == 0
+		},
+	},
 }
 </script>
 
