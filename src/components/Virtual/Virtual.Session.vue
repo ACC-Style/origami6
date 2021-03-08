@@ -4,13 +4,16 @@
 			<div
 				class="time font_n1 lh_1 block clear_fix flex relative br_solid br_black-3 br-t_1"
 			>
-				<span
-					class="p_2 m-r_3 p-t_3 flex_shrink font_xbold c_black-7 font-size_up"
-					><span class="c_warning p-r_3" v-show="!isPlayable">(Coming Soon to On Demand)</span>May 15, 12:15 PM - 1:45 PM 
+				<div
+					class="p_2 m-r_3 p-t_3 flex_shrink font_xbold c_black-7 font-size_up m-t_n1"
+					>
+                    <span class="c_warning p_2 p-x_3 m-t_n3 m-b_3 vertical-align_top m-l_n2 m-r_2 bg_warning c_white block inline-block:md w_100 w_auto:md" v-show="isLive && isPlayable"><i class="fas fa-video p-r_3"></i> In Progress</span>
+                    <span class="c_warning p-r_3" v-show="!isPlayable">(Coming Soon to On Demand)</span>
+                    May 15, 12:15 PM - 1:45 PM 
 					<span
 						class="p-t_2 font-size_down font_bold c_primary-1 text_left display_none:md inline-block w_100"
 						>Session Format</span
-					></span
+					></div
 				>
 				<div
 					class="m-t_n1 flex_column absolute t_0 r_0 flex_row-reverse:md flex flex_shrink self_start m-l_auto"
@@ -23,14 +26,14 @@
 						:icon="'fa-heart'"
 						:color="'bg_alert'"
 					/>
-					<TabFlag
+					<!-- <TabFlag
 						v-if="(isLive && isPlayable)"
 						class=""
 						:type="''"
 						:text="'in progress'"
 						:icon="'fa-video'"
 						:color="'bg_warning'"
-					/>
+					/> -->
 					<span
 						class="p_2 p-x_3 m-r_1 flex_shrink font_bold p-x_3 bg_primary c_white display_none inline-block:md"
 						>Session Format</span
@@ -44,7 +47,7 @@
 					{{ title }}
 				</h2>
 				<aside
-					class="actions relative flex flex_shrink flex_inline gap-x_2 flex_nowrap justify_start self_start text_center self_end m_auto"
+					class="actions relative flex flex_shrink flex_inline gap-x_2 flex_nowrap justify_start self_start text_center self_end m_auto m-r_0:md"
 				>
 					<Btn
 						@onClick="faved = !faved"
