@@ -23,11 +23,23 @@ export default {
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { Session },
-	template: `<div class="max-w_70 m-auto"><Session></Session>
-	<Session></Session>
-	<Session></Session></div>`,
+	template: `<div class="max-w_70 m-auto"><Session v-bind="$props" ></Session></div>`,
 });
 export const Live = Template.bind({});
 Live.args = {
+	
+	isLive:true,	
+	description:`	<p>
+		This Core Knowledge in Action session features heart failure
+		experts who will guide attendees through the basics of
+		HF-pEF, echocardiographic assessment, screening for
+		secondary causes, and review of the
+	</p>
+	<p>
+		2017 ACC focused update on HF management. The session will
+		conclude with a knowledge check-in and question and answer
+		panel with the experts.
+	</p>`
+
         
 };
