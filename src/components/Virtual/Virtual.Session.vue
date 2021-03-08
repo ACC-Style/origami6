@@ -6,7 +6,7 @@
 			>
 				<span
 					class="p_2 m-r_3 p-t_3 flex_shrink font_xbold c_black-7 font-size_up"
-					>May 15, 12:15 PM - 1:45 PM
+					><span class="c_warning p-r_3" v-show="!isPlayable">(Coming Soon to On Demand)</span>May 15, 12:15 PM - 1:45 PM 
 					<span
 						class="p-t_2 font-size_down font_bold c_primary-1 text_left display_none:md inline-block w_100"
 						>Session Format</span
