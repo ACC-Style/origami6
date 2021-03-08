@@ -32,7 +32,8 @@ export default {
 					"read",
 					"registered",
 					"purchased",
-					"incart",''
+					"incart",
+					''
 				].indexOf(value) !== -1
 			}
 		},
@@ -166,14 +167,14 @@ export default {
 }
 
 .slide-enter-to {
-	height: 35px;
+	height: 30px;
 }
 .slide-enter-active,
 .slide-leave-active {
 	transition: all 0.25s ease-in, box-shadow 0.1s ease-out;
 }
 .slide-leave {
-	height: 35px;
+	height: 30px;
 }
 
 .slide-leave-to {

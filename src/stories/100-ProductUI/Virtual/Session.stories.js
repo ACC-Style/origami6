@@ -1,11 +1,12 @@
 import Session from "../../../components/Virtual/Virtual.Session.vue";
 import Credits from "../../../components/subComponents/CreditChiclet.vue";
 import Btn from "../../../components/subComponents/Btn.vue";
+import TabFlag from "../../../components/subComponents/TabFlag.vue";
 
 export default {
 	title: "Virtual/Program/Session",
 	component: Session,
-	subcomponents: {Credits, Btn},
+	subcomponents: {Credits, Btn, TabFlag},
 	parameters: {
 		docs: {
 			description: {
@@ -22,7 +23,9 @@ export default {
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { Session },
-	template: `<Session></Session>`,
+	template: `<div class="max-w_70 m-auto"><Session></Session>
+	<Session></Session>
+	<Session></Session></div>`,
 });
 export const Live = Template.bind({});
 Live.args = {
