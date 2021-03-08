@@ -25,7 +25,7 @@ export default {
 				action:
 					"navigate page to author bio or articles from the same author",
 			},
-		}
+		},
 	},
 };
 const Template = (args, { argTypes }) => ({
@@ -81,5 +81,5 @@ const List = (args, { argTypes }) => ({
 });
 export const Articles = List.bind({});
 Articles.args = {
-	articles
+	articles,
 };
