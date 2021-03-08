@@ -24,7 +24,7 @@
 						:color="'bg_alert'"
 					/>
 					<TabFlag
-						v-if="isLive"
+						v-if="(isLive && isPlayable)"
 						class=""
 						:type="''"
 						:text="'in progress'"
@@ -162,7 +162,7 @@
 				>
 				<ul class="ul_none font_n1 c_black-7 lh_1">
 					<li class="br-b_1 br_solid br_black-1 p-y_2">
-						{{learningPathway}} 
+						{{ learningPathway }} 
 					</li>
 				</ul>
 			</div>
@@ -190,7 +190,7 @@
 								class="flex_row flex justify_start bg_black-_05"
 							>
 								<div
-									class="font_1 p_3 p-r_4 self_center br-r_1 br_dotted br_primary w_35 flex_none c_accent-n2 font_xbold"
+									class="font_n1 font_0:md font_1:lg p_3 p-r_4 self_center br-r_1 br_dotted br_primary w_30:lg w_40 flex_none c_accent-n2 font_xbold"
 								>
 									12:15 PM - 1:45 PM
 								</div>
@@ -210,7 +210,7 @@
 							</div>
 							<div class="flex_row flex justify_start bg_black-1">
 								<div
-									class="font_1 p_3 p-r_4 self_center br-r_1 br_dotted br_primary w_35 flex_none c_accent-n2 font_xbold"
+									class="font_n1 font_0:md font_1:lg p_3 p-r_4 self_center br-r_1 br_dotted br_primary w_30:lg w_40 flex_none c_accent-n2 font_xbold"
 								>
 									12:15 PM - 12:27 PM
 								</div>
@@ -232,7 +232,7 @@
 								class="flex_row flex justify_start bg_black-_05"
 							>
 								<div
-									class="font_1 p_3 p-r_4 self_center br-r_1 br_dotted br_primary w_35 flex_none c_accent-n2 font_xbold"
+									class="font_n1 font_0:md font_1:lg p_3 p-r_4 self_center br-r_1 br_dotted br_primary w_30:lg w_40 flex_none c_accent-n2 font_xbold"
 								>
 									12:27 PM - 12:39 PM
 								</div>
@@ -253,7 +253,7 @@
 							</div>
 							<div class="flex_row flex justify_start bg_black-1">
 								<div
-									class="font_1 p_3 p-r_4 self_center br-r_1 br_dotted br_primary w_35 flex_none c_accent-n2 font_xbold"
+									class="font_n1 font_0:md font_1:lg p_3 p-r_4 self_center br-r_1 br_dotted br_primary w_30:lg w_40 flex_none c_accent-n2 font_xbold"
 								>
 									12:39 PM - 12:51 PM
 								</div>
@@ -273,7 +273,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="flex_auto p-l_5 w_30:lg">
+						<div class="flex_auto p-l_5:lg p-l_4:md w_30:lg">
 							<strong
 								class="font_bold c_primary-n4 opacity_7 m-t_3"
 								>Practice Focus</strong
@@ -327,7 +327,10 @@ export default {
         valueCPE: { type: Number, default: 0 },
         valueIPE: { type: Number, default: 0 },
         valuePA: { type: Number, default: 0 },
-        learningPathway:{type:Number,defualt:"Heart Failure and Cardiomyopathies Pathway"}
+        learningPathway:{
+            type:String,
+            default:"Heart Failure and Cardiomyopathies Pathway"
+            }
 	},
 	data() {
 		return {
