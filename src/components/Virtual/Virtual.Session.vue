@@ -182,6 +182,15 @@
 						{{ learningPathway }}
 					</li>
 				</ul>
+				<strong class="font_bold c_primary-n1 m-t_3 font_0"
+					>Channel</strong
+				>
+				<ul class="ul_none font_n1 c_black-7 lh_1">
+					<li class="br-b_1 br_solid br_black-1 p-y_2">
+						Channel Name
+					</li>
+				</ul>
+
 			</div>
 		</main>
 		<aside class="m-b_5 m-b_4:md">
