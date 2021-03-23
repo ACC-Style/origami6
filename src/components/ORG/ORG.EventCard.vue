@@ -1,6 +1,6 @@
 <template>
 	<article
-		class="br_solid br_1 br_black-2 bg_black-_05 br_radius relative font_copy br_black-3 shadow_overlap-light flex_column flex justify_start"
+		class="br_solid br_1 br_black-2 bg_black-_05 br_radius relative font_copy br_black-3 shadow_overlap-light flex_column flex justify_start flex_none w_30:md w_90"
 		:class="'br_' + corner"
 	>
 		<HeaderImage
@@ -51,7 +51,7 @@
 			{{ shortText }}
 		</p>
 		<ul
-			class="m-b_4:md p-t_3p-x_3 p-x_4:md p-x_5:lg font_n1:lg font_n2 ul_none lh_4"
+			class="m-b_4:md p-t_3 p-x_3 p-x_4:md p-x_5:lg font_n1:lg font_n2 ul_none lh_4"
 		>
 			<li v-if="!isEventFinished">
 				<i class="fas font-size_up fa-clock c_black-5"></i
