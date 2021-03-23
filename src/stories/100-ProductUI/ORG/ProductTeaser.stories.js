@@ -29,7 +29,8 @@ const Template = (args, { argTypes }) => ({
 	<div class="max-w_20">
 	<ProductTeaser 
 		:id="id"
-		:title="title" 
+		:title_1="title_1" 
+		:title_2="title_2" 
 		:shortText="shortText"
 		:credits="credits" 
 		:productType="productType" 
@@ -41,12 +42,13 @@ const Template = (args, { argTypes }) => ({
 export const List = Template.bind({});
 List.args = {
     id:15605484,
-	title:"ACCSAP",
+	title_1:"ACC",
+	title_2:"SAP",
 	shortText:"ACCSAP is ACC’s flagship self-assessment program covering the entire field of adult clinical cardiology.",
     credits: [{"id":1,"type":"CNE","value":3},{"id":2,"type":"COP","value":3}],
     productType:"self-assessment program",
     purchased:true,
 	timezone:'America/Los_Angeles',
-	img:"https://d1jkcfsixc2tqd.cloudfront.net/ACC/33a8998c-222a-4ec4-87d8-eb6d17ae9f73.png",
+	img:"https://picsum.photos/id/10/300/40/?blur",
     
 };
