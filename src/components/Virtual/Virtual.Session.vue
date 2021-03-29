@@ -1,10 +1,10 @@
 <template>
 	<div class="p_4:md font_ui relative br-b_1 br_solid br_black-3">
 		<header
-			class="br-b_1 br_solid br_black-1 m-b_2 p-b_2:md flex flex_column:md flex_column-reverse relative"
+			class="br-b_1 br_solid br_black-1 m-b_2 p-b_2:md flex flex_column relative"
 		>
 			<div
-				class="time font_n1 lh_1 block clear_fix flex br_solid br_black-3 br-t_1"
+				class="time font_n3 font_n1:lg lh_1 block clear_fix flex br_solid br_black-3 br-t_1"
 			>
 				<div
 					class="p_2 m-r_3 p-t_3 flex_shrink font_xbold c_black-7 font-size_up m-t_n1 w_100"
@@ -14,7 +14,7 @@
 						v-show="isLive && isPlayable"
 						><i class="fas fa-video p-r_3"></i> In Progress</span
 					>
-					<span class="c_warning p-r_3" v-show="!isPlayable"
+					<span class="c_warning p-r_3 block inline-block:md p-b_2 p-b_0:md" v-show="!isPlayable"
 						>(Coming Soon to On Demand)</span
 					>
 					May 15, 12:15 PM - 1:45 PM
@@ -52,7 +52,7 @@
 				class="flex flex_inline w_100 m-t_3 flex_column flex_row:md gap-y_3 p-y_0:md p-t_3 p-b_4"
 			>
 				<h2
-					class="flex_auto lh_2 font_3 font_display m-b_0 c_primary max-w_40"
+					class="flex_auto lh_1 font_3 font_display m-b_0 c_primary max-w_40 m-t_0"
 				>
 					{{ title }}
 				</h2>
@@ -78,11 +78,11 @@
 		</header>
 		<aside>
 			<ul
-				class="ul_none flex flex_inline flex_wrap flex_row flex_column clear_fix gap-x_2 gap-y_2"
+				class="ul_none flex flex_inline flex_wrap flex_row flex_column clear_fix gap-x_2 gap-y_2 font_n3 font_n1:md font_0:lg"
 			>
 				<li>
 					<strong
-						class="font_bold c_primary-1 m-t_3 self_center:md p-r_3 font_0"
+						class="font_bold c_primary-1 m-t_3 self_center:md p-r_3 "
 						>Credits</strong
 					>
 				</li>
@@ -170,22 +170,22 @@
 		</aside>
 		<main class="flex_row flex flex_wrap-reverse">
 			<div
-				class="flex_auto reading-typography font_copy w_70:lg c_black-8 lh_1 p_4 p-l_0"
+				class="flex_auto reading-typography font_copy w_70:lg c_black-8 lh_1 p_4 p-l_0 p-b_0 display_none block:md"
 				v-html="description"
 			></div>
-			<div class="flex_auto flex flex_column w_30:lg p-l_5:md">
-				<strong class="font_bold c_primary-n1 m-t_3 font_0"
+			<div class="flex_auto flex flex_column w_30:lg p-l_5:md font_n2 font_n1:lg">
+				<strong class="font_bold c_primary-n1 m-t_3 "
 					>Learning Pathway</strong
 				>
-				<ul class="ul_none font_n1 c_black-7 lh_1">
+				<ul class="ul_none font-size_down c_black-7 lh_1">
 					<li class="br-b_1 br_solid br_black-1 p-y_2">
 						{{ learningPathway }}
 					</li>
 				</ul>
-				<strong class="font_bold c_primary-n1 m-t_3 font_0"
+				<strong class="font_bold c_primary-n1 m-t_3 "
 					>Channel</strong
 				>
-				<ul class="ul_none font_n1 c_black-7 lh_1">
+				<ul class="ul_none font-size_down c_black-7 lh_1">
 					<li class="br-b_1 br_solid br_black-1 p-y_2">
 						Channel Name
 					</li>
@@ -193,9 +193,9 @@
 
 			</div>
 		</main>
-		<aside class="m-b_5 m-b_4:md">
+		<aside class="m-b_0:lg m-b_3:md m-b_2 m-t_2 m-t_2:md">
 			<a
-				class="link font-size_down c_primary-n1 block"
+				class="link c_primary-n1 block font_n1"
 				@click="extendedInfo = !extendedInfo"
 				><i
 					class="fas fa-plus transition_3"
@@ -208,6 +208,10 @@
 					v-if="extendedInfo"
 					class="block w_100 clear_both br-t_2 br_primary-3 br_dashed m-t_2 p-t_3"
 				>
+							<div
+				class="flex_auto reading-typography font_copy w_70:lg c_black-8 lh_1 font_n1 display_none:md block"
+				v-html="description"
+			></div>
 					<div class="flex flex_row:md flex_column">
 						<div
 							class="flex_column flex br_black-_05 br_solid br_1 flex_auto w_70:lg"
@@ -216,12 +220,12 @@
 								class="bg_black-1 flex flex_column-reverse flex_row:md justify_start"
 							>
 								<div
-									class="br-r_1 br_dotted:md br_none br_primary c_accent-n2 flex_none font_0:md font_1:lg font_n2 font_xbold p-r_4:lg p_3 self_center:md w_100 w_30:md"
+									class="br-r_1 br_dotted:md br_none br_primary c_accent-n4 flex_none font_0:md font_1:lg font_n2 font_xbold p-r_4:lg p-t_0 p-x_3 self_center:md w_100 w_30:md"
 								>
 									1200 PM - 1:15 PM
 								</div>
 								<div
-									class="font_1 p_3 p-l_4:md self_center:md lh_1"
+									class="font_1 p_3 p-b_0 p-b_3:md p-l_4:md self_center:md lh_1"
 								>
 									<strong
 										class="font_bold block font-size_down c_primary-n1"
@@ -237,15 +241,15 @@
 								</div>
 							</div>
                             <div
-								class="bg_black-_05 flex flex_column-reverse flex_row:md justify_start"
+								class="bg_black-_05 flex flex_column-reverse flex_row:md justify_start p-b_3"
 							>
 								<div
-									class="br-r_1 br_dotted:md br_none br_primary c_accent-n2 flex_none font_0:md font_1:lg font_n2 font_xbold p-r_4:lg p_3 self_center:md w_100 w_30:md"
+									class="br-r_1 br_dotted:md br_none br_primary c_accent-n4 flex_none font_0:md font_1:lg font_n2 font_xbold p-r_4:lg p-t_0 p-x_3 self_center:md w_100 w_30:md"
 								>
 									12:27 PM - 12:39 PM
 								</div>
 								<div
-									class="font_1 p_3 p-l_4:md self_center:md lh_1"
+									class="font_1 p_3 p-b_0 p-b_3:md p-l_4:md self_center:md lh_1"
 								>
 									<strong
 										class="font_bold block font-size_down c_primary-n1"
@@ -264,12 +268,12 @@
 								class="bg_black-1 flex flex_column-reverse flex_row:md justify_start"
 							>
 								<div
-									class="br-r_1 br_dotted:md br_none br_primary c_accent-n2 flex_none font_0:md font_1:lg font_n2 font_xbold p-r_4:lg p_3 self_center:md w_100 w_30:md"
+									class="br-r_1 br_dotted:md br_none br_primary c_accent-n4 flex_none font_0:md font_1:lg font_n2 font_xbold p-r_4:lg p-t_0 p-x_3 self_center:md w_100 w_30:md"
 								>
 									12:50 PM - 1:00 PM
 								</div>
 								<div
-									class="font_1 p_3 p-l_4:md self_center:md lh_1"
+									class="font_1 p_3 p-b_0 p-b_3:md p-l_4:md self_center:md lh_1"
 								>
 									<strong
 										class="font_bold block font-size_down c_primary-n1"
@@ -285,15 +289,15 @@
 								</div>
 							</div>
                             <div
-								class="bg_black-_05 flex flex_column-reverse flex_row:md justify_start"
+								class="bg_black-_05 flex flex_column-reverse flex_row:md justify_start p-b_3"
 							>
 								<div
-									class="br-r_1 br_dotted:md br_none br_primary c_accent-n2 flex_none font_0:md font_1:lg font_n2 font_xbold p-r_4:lg p_3 self_center:md w_100 w_30:md"
+									class="br-r_1 br_dotted:md br_none br_primary c_accent-n4 flex_none font_0:md font_1:lg font_n2 font_xbold p-r_4:lg p-t_0 p-x_3 self_center:md w_100 w_30:md"
 								>
 									1:00 PM - 1:15 PM
 								</div>
 								<div
-									class="font_1 p_3 p-l_4:md self_center:md lh_1"
+									class="font_1 p_3 p-b_0 p-b_3:md p-l_4:md self_center:md lh_1"
 								>
 									<strong
 										class="font_bold block font-size_down c_primary-n1"
@@ -311,7 +315,7 @@
 							</div>
 						</div>
 						<div class="flex_auto p-l_5:lg p-l_4:md w_30:lg">
-							<div>
+							<div class="p-x_3">
                                 <strong
                                     class="font_bold c_primary-n4 opacity_7 m-t_3"
                                     >Practice Focus</strong
@@ -322,7 +326,7 @@
                                     </li>
                                 </ul>
                             </div>
-							<div>
+							<div class="p-x_3">
                                 <strong
                                     class="font_bold c_primary-n4 opacity_7 m-t_3"
                                     >Session Type</strong
