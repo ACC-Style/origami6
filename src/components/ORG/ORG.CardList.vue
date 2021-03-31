@@ -60,7 +60,7 @@ export default {
 					styles = "";
 					break;
 				case 2:
-					styles = "gap-x_5:md gap-x_4  gap-x_4 gap-y_5:md  grid template-x_2x";
+					styles = "gap-x_5:md gap-x_4  gap-y_4 gap-y_5:md  grid template-x_2x";
 					break;
 				default:
 					styles = "gap-x_5:md gap-x_4 gap-y_5:md gap-y_4 grid template-x_3x";
@@ -74,12 +74,15 @@ export default {
 
 <style scoped>
 .template-x_3x,.template-x_2x  {
-	grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
+	grid-template-columns: repeat(auto-fill,minmax(14rem,1fr));
 }
 	
 @media screen and (min-width: 22rem){
 	.template-x_2x {
 		grid-template-columns: repeat(auto-fill,minmax(22rem,1fr));
 	}
+	.template-x_3x  {
+	grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
+}
 }
 </style>
