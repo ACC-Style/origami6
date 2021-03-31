@@ -36,6 +36,9 @@ const Template = (args, { argTypes }) => ({
 		:productType="productType" 
 		:purchased="purchased" 
 		:img="img"
+		:purchaceUrl="purchaceUrl"
+		:learnMoreUrl="learnMoreUrl"
+		:accessProductUrl="accessProductUrl"
 	/>
 	</div>`,
 });
@@ -50,5 +53,8 @@ List.args = {
     purchased:true,
 	timezone:'America/Los_Angeles',
 	img:"https://picsum.photos/id/10/300/40/?blur",
+	purchaceUrl: '#',
+	learnMoreUrl: '#',
+	accessProductUrl: '#'
     
 };

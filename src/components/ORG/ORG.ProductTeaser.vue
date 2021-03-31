@@ -96,37 +96,39 @@ import TabFlag from "../subComponents/TabFlag";
 
 export default {
 	props: {
-		id: { type: Number },
-		title_1: { type: String, default: 'Cardio' },
-		title_2: { type: String, default: 'Source' },
-		shortText: { type: String, default: '' },
-		credits: { type: Array, default: () => [] },
-		productType: { type: String },
-		purchased: { type: Boolean, default: false },
-		img: { type: String, default: undefined },
-
-	},
-	components: {
-		Btn,
-		Credit,
-		TabFlag
-	},
-	data() {
-		return {}
-	},
-	computed: {
-	},
-	methods: {
-		onPurchase(id) {
-			this.$emit('onPurchase', id)
-		},
-		onNavigateTo(id) {
-			this.$emit('onNavigateTo', id)
-		},
-		onLearnMore(id) {
-			this.$emit('onLearnMore', id)
-		}
-	},
+            id: { type: Number },
+            title_1: { type: String, default: 'Cardio' },
+            title_2: { type: String, default: 'Source' },
+            shortText: { type: String, default: '' },
+            credits: { type: Array, default: () => [] },
+            productType: { type: String },
+            purchased: { type: Boolean, default: false },
+            img: { type: String, default: undefined },
+            purchaceUrl: { type: String, default: '#' },
+            learnMoreUrl: { type: String, default: '#' },
+            accessProductUrl: { type: String, default: '#' }
+        },
+        components: {
+            Btn,
+            Credit,
+            TabFlag
+        },
+        data() {
+            return {}
+        },
+        computed: {
+        },
+        methods: {
+            onPurchase(id) {
+                parent.location = this.purchaceUrl;
+            },
+            onNavigateTo(id) {
+                parent.location = this.accessProductUrl;
+            },
+            onLearnMore(id) {
+                parent.location = this.learnMoreUrl;
+            }
+        }
 };
 </script>
 
