@@ -69,6 +69,7 @@ lockup.args = {
 
     id:"123542132",
     url:"http://www.acc.org",
+    alt:"This is for screen readers",
     imgSM: "https://picsum.photos/id/1032/400/300",
     imgMD: "https://picsum.photos/id/1032/300/600",
     imgLG: "https://picsum.photos/id/1032/300/900",

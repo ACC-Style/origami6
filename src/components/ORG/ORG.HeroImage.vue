@@ -7,6 +7,7 @@
 		ref="img"
 		:class="image.aspect"
 		@click="onNavigateTo(url)"
+		:alt="alt"
 	></div>
 </template>
 
@@ -16,6 +17,7 @@ export default {
 	props: {
 		id:{type:String, required:true},
         url:{type:String},
+		alt:{type:String,required:true,default:"This is an image"},
 		imgSM: { type: String, required: true },
 		imgMD: { type: String, required: true },
 		imgLG: { type: String, required: true },

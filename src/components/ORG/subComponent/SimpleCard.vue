@@ -33,6 +33,7 @@
 					:state="CTA.state"
 					:size="btnSize"
 					:shadow="true"
+					@click="CTA.url"
 					><span class="flex_auto">{{ CTA.label }}</span>
 				</Btn>
 			</div>
@@ -89,6 +90,7 @@ export default {
 		imgMD: { type: String, default: undefined },
 		imgLG: { type: String, default: undefined },
 		headerImg: { type: Boolean, default: false },
+		url: { type: String, default: "#" },
 	},
 	mixins: [ResponsiveMixin],
 	breakpoints: {
@@ -105,6 +107,9 @@ export default {
 		getBtnGroupHeight:function(){
 			let h = this.$refs.footer.clientHeight;
 			return h;
+		},
+		onNavigateTo(url){
+			this.$emit('onNavigateTo', url);
 		},
 	},
 	mounted() {

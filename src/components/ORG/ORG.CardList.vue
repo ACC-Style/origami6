@@ -11,6 +11,7 @@
 				:corner="corner"
 				:shadow="true"
 				:headerImg="(item.imgSM && item.imgMD && item.imgLG)?true:false "
+				:url="item.url"
 		>
 		<h2
 					class="font_display font_2:lg font_1 font_bold c_primary-n2 m-b_3 m-t_3"
@@ -43,15 +44,13 @@ export default {
 				["radius", "round", "square"].indexOf(value) !== -1;
 			},
 		},
+		url:{type:String,default:"#"},
 		shadow: { type: Boolean, default: true },
 	},
 	data() {
 		return {};
 	},
 	methods: {
-		imageURL: function (a) {
-			return a["image_" + this.imageSize + "x"];
-		},
 	},
 	computed: {	
 		gridSize: function () {
