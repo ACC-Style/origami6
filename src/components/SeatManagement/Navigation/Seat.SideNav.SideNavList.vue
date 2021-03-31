@@ -9,23 +9,25 @@
         :pageID="pageID"
         :hasChildren="hasChildren"
         :isChildActive="isChildActive"
-        @toggleClicked="toggleClicked"
+		:isExpanded="toggleOpen"
+        @onToggleClick="onToggleClick"
+		@onNavigateTo="onClick"
     />
-<TransitionExpand>
-    <ul class="ul_none p-l_4 " v-if="hasChildren  && toggleOpen" >
-        
-        <li v-for="(node, index) in nodes" :key="label+'_'+index">
-            <SideNavList             
-                :label="node.label"
-                :type="node.type"
-                :pageID="node.pageID"
-                :isActive="node.isActive"
-                :nodes="node.nodes"
-                :level="level+1"
-            ></SideNavList>
-        </li>
-    </ul>
-</TransitionExpand>
+	<TransitionExpand>
+		<ul class="ul_none p-l_4 " v-if="isToggleOpen" >      
+			<li v-for="(node, index) in nodes" :key="label+'_'+index">
+				<SideNavList             
+					:label="node.label"
+					:type="node.type"
+					:pageID="node.pageID"				
+					:nodes="node.nodes"
+					:isActive="node.isActive"
+					:toggleOpenDefault="isChildrenActive(node)"
+					:level="level+1"
+				></SideNavList>
+			</li>
+		</ul>
+	</TransitionExpand>
 </div>
 </template>
 <script>
@@ -49,9 +51,22 @@ export default {
 		nodes: { type: Array },
 		level: { type: Number, default: -1 },
         isActive: { type: Boolean, default: false },
-        toggleOpenDefault:{type:Boolean, default:true}
+        toggleOpenDefault:{type:Boolean, default:false}
 	},
 	computed: {
+		isToggleOpen(){
+			let pageLevel = ( this.level <= -1 )? true : false ;
+			let a = false
+			if ( pageLevel ){
+				a = true;
+			}
+			else if( this.toggleOpen ){
+				a = true;
+			}
+			else{
+				a = false};
+			return a;
+		},
 		navVisible: function() {
 			if (this.level < 0) {
 				return false;
@@ -76,9 +91,18 @@ export default {
 					key = "isActive";
 				return this.findVal(obj, key);
 			}
-        }
+        },
 	},
 	methods: {
+		isChildrenActive: function(node) {
+			if (node.isActive) {
+				return false;
+			} else {
+				let obj = Object.assign({}, node.nodes),
+					key = "isActive";
+				return this.findVal(obj, key);
+			}
+        },
 		findVal(object, key) {
 			var value,
 				that = this;
@@ -94,9 +118,12 @@ export default {
 			});
 			return value;
 		},
-		toggleClicked() {
+		onToggleClick() {
 			this.toggleOpen = !this.toggleOpen;
 		},
+		onClick(pageID){
+			this.$emit("onNavigateTo", pageID);
+		}
 	},
 };
 </script>

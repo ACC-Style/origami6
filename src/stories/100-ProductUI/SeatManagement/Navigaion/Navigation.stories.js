@@ -1,6 +1,6 @@
 import NavItem from "../../../../components/SeatManagement/Navigation/Seat.SideNav.NavItem.vue";
 import NavItemList from "../../../../components/SeatManagement/Navigation/Seat.SideNav.SideNavList.vue";
-import {NavUsersData,NavApplicationData} from "../Data/navigationData.js"
+import {NavUsersData,NavApplicationData,NavProgramsAndCollections} from "../Data/navigationData.js"
 
 export default {
 	title: "APPS/SeatManagment/Navigation",
@@ -22,7 +22,7 @@ export default {
 	argTypes:{
 		type:{
 			description:"", 
-				control:{type:"select",options:["groups","group","contract","contracts","profile","bundles","bundle","subbundle","admin","group-admin","user","users-all"]}
+				control:{type:"select",options:["groups","group","contract","contracts","profile","bundles","bundle","subbundle","admin","group-admin","user","users-all", "sessions", "session", "programs", "program","tags","tag","collection"]}
 			},
 		}
 };
@@ -50,4 +50,9 @@ ApplicationNavList.args = {
 export const UserNavList = ListTemplate.bind({});
 UserNavList.args = {
 	node:NavUsersData
+};
+
+export const ProgramsAndCollections = ListTemplate.bind({});
+ProgramsAndCollections.args = {
+	node:NavProgramsAndCollections
 };
