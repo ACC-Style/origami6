@@ -9,7 +9,7 @@
 				<span class="flex_auto inline-block self_center text_center"><i class="fal fa-spinner-third fa-spin"></i> </span>
 			</div>
 			<div class="flex_auto w_50 m-l_auto flex flex_row justify_end">
-				<ul class="ul_none flex flex_row self_stretch font_1">			
+				<ul class="ul_none flex flex_row self_stretch font_1 overflow_hidden">			
 					<span  class="c_black-5 flex_auto flex p_3 p-l_4">
 						<span class="self_center nowrap">
 							<i class="fal fa-spinner-third fa-spin"></i> 

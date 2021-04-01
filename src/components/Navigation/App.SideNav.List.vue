@@ -8,7 +8,7 @@
         :isActive="isActive"
         :pageID="pageID"
         :hasChildren="hasChildren"
-        :isChildActive="isChildActive"
+        :hasActiveChildren="hasActiveChildren"
 		:isExpanded="toggleOpen"
         @onToggleClick="onToggleClick"
 		@onNavigateTo="onClick"
@@ -22,7 +22,7 @@
 					:pageID="node.pageID"				
 					:nodes="node.nodes"
 					:isActive="node.isActive"
-					:toggleOpenDefault="isChildrenActive(node)"
+					:toggleOpenByDefault="toggleOpenByDefault"
 					:level="level+1"
 				></SideNavList>
 			</li>
@@ -32,13 +32,13 @@
 </template>
 <script>
 
-import NavItem from "./Seat.SideNav.NavItem.vue";
-import TransitionExpand from "../../subComponents/TransitionExpand";
+import NavItem from "./App.SideNav.Item.vue";
+import TransitionExpand from "../subComponents/TransitionExpand";
 export default {
 	name: "SideNavList",
 	data() {
 		return {
-			toggleOpen: this.toggleOpenDefault,
+			toggleOpen: this.toggleOpenByDefault,
 		};
 	},
 	components: {
@@ -47,14 +47,15 @@ export default {
 	props: {
 		label: { type: String },
 		type: { type: String },
-		pageID: { type: Number },
+		pageID: { type: [String,Number] },
 		nodes: { type: Array },
 		level: { type: Number, default: -1 },
         isActive: { type: Boolean, default: false },
-        toggleOpenDefault:{type:Boolean, default:false}
+        toggleOpenByDefault:{type:Boolean, default:false}
 	},
 	computed: {
 		isToggleOpen(){
+			// return true;
 			let pageLevel = ( this.level <= -1 )? true : false ;
 			let a = false
 			if ( pageLevel ){
@@ -83,7 +84,7 @@ export default {
 				return false;
 			}
 		},
-		isChildActive: function() {
+		hasActiveChildren: function() {
 			if (this.isActive) {
 				return false;
 			} else {

@@ -1,12 +1,11 @@
 import NavListItem from "../../../../components/Navigation/App.SideNav.Item.vue";
-import BreadCrumb from "../../../../components/Navigation/App.BreadCrumb.vue";
 import NavList from "../../../../components/Navigation/App.SideNav.List.vue";
 import {NavUsersData,NavApplicationData,NavProgramsAndCollections} from "../Data/navigationData.js"
 
 export default {
-	title: "APPS/SeatManagment/Navigation",
+	title: "APPS/SessionManager/Navigation",
     component: NavListItem,
-    subcomponents:{NavList,BreadCrumb},
+    subcomponents:{NavList},
 	parameters: {
 		docs: {
 			description: {
@@ -27,35 +26,15 @@ export default {
 			},
 		}
 };
-const Template = (args, { argTypes }) => ({
-	props: Object.keys(argTypes),
-	components: { NavListItem },
-	template: `<NavListItem :label="label" :type="type" :pageID="pageID"   />`,
-});
-export const SingleNavListItem = Template.bind({});
-SingleNavListItem.args = {
-	label:NavApplicationData.nodes[1].label,
-	type:NavApplicationData.nodes[1].type,
-	pageID:NavApplicationData.nodes[1].pageID
-};
 
 const ListTemplate = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { NavList },
 	template: `<NavList class="max-w_20" :label="node.label" :type="node.type" :pageID="node.pageID" :nodes="node.nodes"/>`,
 });
-export const ApplicationNavList = ListTemplate.bind({});
-ApplicationNavList.args = {
-	node:NavApplicationData
-};
 
 
-const BreadCrumbNav = (args, { argTypes }) => ({
-	props: Object.keys(argTypes),
-	components: { BreadCrumb },
-	template: `<BreadCrumb :label="node.label" :type="node.type" :pageID="node.pageID" :nodes="node.nodes"/>`,
-});
-export const ApplicationBreadCrumb = BreadCrumbNav.bind({});
-ApplicationBreadCrumb.args = {
-	node:NavApplicationData
+export const ProgramsAndCollections = ListTemplate.bind({});
+ProgramsAndCollections.args = {
+	node:NavProgramsAndCollections
 };

@@ -9,7 +9,7 @@
 		<div
 			data-target="hover-indicator"
 			:class="[hoverIndicatorStyles,' bg_'+ actionColor +'-5 c_'+actionColor+'-n1 br_'+actionColor+'-2 ' ]"
-			class="absolute t_0 r_0 b_0 br_1 br_solid l_auto inline-block p-x_3:md p-x_2 p-t_3 z_0 flex flex_column justify_around:md justify_start shadow_n1 transition_3"
+			class="absolute t_0 r_0 b_0 br_1 br_solid l_auto inline-block p-x_3:md p-x_2 p-t_3 z_0 flex flex_column justify_around:md justify_start shadow_n1 transition_3 shadow_overlap-light"
 		>
 			<i :class="actionIcon" class="fas fa-fw font_0:md font_n3"></i>
 		</div>

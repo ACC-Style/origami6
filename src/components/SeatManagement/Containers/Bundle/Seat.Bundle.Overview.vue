@@ -4,7 +4,7 @@
 			class=" flex flex_row:md flex_column p-y_3 p-x_4" @click="onClick(id)"
 		>
 			<div class="flex_auto">
-				<h3 class="font_3 font_display m-t_2 lh_1 m-b_0">{{ name }}</h3>
+				<h3 class="font_3 font_display font_medium m-t_2 lh_1 m-b_0">{{ name }}</h3>
 				<a
 					v-bind:href="productURL"
 					target="_blank"

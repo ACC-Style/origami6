@@ -1,9 +1,24 @@
 <template>
-	<div class="relative font_ui">
-		<div v-if="type != 'new'">
+	<div class="relative font_ui m-b_2">
+		<div v-if="type== 'headline'" class="c_primary-n2 br-b_2 br_solid br_primary-2  flex flex_row flex_nowrap" :class="[indentedStyle]" >
+			<div class="flex_auto  capitalize font_medium font_display lh_2">{{label}}</div>
+			<div
+				v-if="hasChildren"
+				class="font-size_down flex_none br_round p_2 m-r_1 br_1 br_solid br_black-0 justify_center flex h:bg_black-3 h:c_white c_black-6 transition_3"
+				@click="onToggleClick"
+				
+			>
+				<i
+					class="fas font-size_down flex_auto fa-plus fa-fw self_center "
+					:class="rotation"	style="height: 1em; width: 1em"
+				></i>
+			</div>
+			</div>
+		<Btn v-else-if="type =='new'" @onClick="onNewObject" class="lh_1 p-x_3" :state="'secondary'" :size="'tiny'" :shadow="false" :corner="'round'" ><i class="far  p-r_3 p_1" :class="iconStyle"></i> {{label}} </Btn>
+		<div v-else >
 			<div
 				:class="[activeStyle, indentedStyle]"
-				class="font_ui font_light br_round br_1 br_solid br_black-0 p-y_2 lh_0 p-x_3 h:bg_primary-4 c_black-7 h:c_balck-9 transition_1 flex flex_nowrap flex_row justify_center align_center m-b_1"
+				class="font_ui font_light br_round br_1 br_solid br_black-0 p-y_2 lh_0 p-x_3 h:bg_primary-4 c_black-7 h:c_balck-9 transition_1 flex flex_nowrap flex_row justify_center align_center "
 				@click="onNavigateTo(pageID)"
 			>
 				<i
@@ -16,7 +31,7 @@
 			</div>
 			<div
 				v-if="hasChildren"
-				class="absolute font-size_down z_3 t_1 b_1 r_1 bg_black-1 flex_none br_round p-x_2 justify_center flex br_white-0 br_solid br_1 h:bg_black-6 h:c_white c_black-6"
+				class="absolute font-size_down z_3 t_1 b_1 r_1 bg_black-1 flex_none br_round p_2 justify_center flex br_white-0 br_solid br_1 h:bg_black-3 h:c_white c_black-6 transition_3"
 				@click="onToggleClick"
 			>
 				<i
@@ -26,12 +41,13 @@
 				></i>
 			</div>
 		</div>
-		<Btn v-else @onClick="onNewObject" class="lh_1 p-x_3 m-b_2" :state="'secondary'" :size="'tiny'" :shadow="false" :corner="'round'" ><i class="far fa-plus p-r_3 p_1"></i> {{label}} </Btn>
+
+	
 	</div>
 </template>
 
 <script>
-import Btn from "../../subComponents/Btn";
+import Btn from "../subComponents/Btn";
 export default {
 	props: {
 		label: {
@@ -50,7 +66,7 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		isChildActive: {
+		hasActiveChildren: {
 			type: Boolean,
 			default: false,
 		},
@@ -59,7 +75,7 @@ export default {
 			default: false
 		},
 		pageID: {
-			type: Number,
+			type: [String,Number],
 			default: null
 		},
 		isExpanded: { type: Boolean, default: false }
@@ -99,6 +115,12 @@ export default {
 			let $returnedStyle = "";
 			$returnedStyle = "";
 			switch (this.type) {
+				case "headline":
+					$returnedStyle = "";
+					break;
+									case "new":
+					$returnedStyle = "fa-plus";
+					break;
 				case "groups":
 					$returnedStyle = "fa-ball-pile";
 					break;
@@ -167,7 +189,7 @@ export default {
 		},
 		activeStyle: function () {
 			let $returnedStyle = "black";
-			if (this.isChildActive) {
+			if (this.hasActiveChildren) {
 				$returnedStyle = " bg_black-1 br_primary-4 m-t_2 m-b_2 ";
 			} else if (this.isActive) {
 				$returnedStyle = " bg_primary-5 br_primary-4 m-t_2 m-b_2 ";

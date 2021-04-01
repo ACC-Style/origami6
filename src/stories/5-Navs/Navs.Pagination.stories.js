@@ -1,4 +1,4 @@
-import Pagination from "../../../src/components/BasicNav/BasicNav.Pagination.vue";
+import Pagination from "../../../src/components/Navigation/Pagination.vue";
 
 export default {
 	title: "Basic/Nav/Pagination",

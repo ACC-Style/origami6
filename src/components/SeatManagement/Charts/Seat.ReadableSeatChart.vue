@@ -1,14 +1,14 @@
 <template>
 	<div
 		data-target="readableSeatChart"
-		class="flex justify_between flex_column flex_row:lg font_4:lg font_2:md font_1"
+		class="flex justify_between flex_column flex_row:lg font_4:lg font_2:md font_1 font_display"
 	>
 
 		<div
 			title="filled"
 			class="flex_auto m-r_3:lg m-b_2 overflow_hidden m-b_0:lg p_3 p-l_2 c_white text_right bg_success br_black-2 br_1 br_solid"
 		>
-			<span class="lowercase lh_0 font_display font_light block">{{
+			<span class="lowercase lh_0 font_light block">{{
 				filled
 			}}</span
 			><span class="lowercase block font_n2:lg font_n3 font_medium c_white-8 float_right">Filled</span>
@@ -17,7 +17,7 @@
 			title="requested"
 			class="flex_auto m-r_3:lg m-b_2 overflow_hidden m-b_0:lg p_3 p-l_2 c_white text_right bg_warning br_black-2 br_1 br_solid"
 		>
-			<span class="lowercase lh_0 font_display font_light block">{{
+			<span class="lowercase lh_0 font_light block">{{
 				requested
 			}}</span
 			><span class="lowercase block font_n2:lg font_n3 font_medium c_white-8 float_right">requested</span>
@@ -26,7 +26,7 @@
 			title="empty"
 			class="flex_auto m-r_3:lg m-b_2 overflow_hidden m-b_0:lg p_3 p-l_2 c_white text_right bg_primary br_black-2 br_1 br_solid"
 		>
-			<span class="lowercase lh_0 font_display font_light block">{{
+			<span class="lowercase lh_0 font_light block">{{
 				empty
 			}}</span
 			><span class="lowercase block font_n2:lg font_n3 font_medium c_white-8 float_right">empty</span>
@@ -35,7 +35,7 @@
 			title="locked"
 			class="flex_auto  m-r_3:lg m-b_2 overflow_hidden m-b_0:lg p_3 p-l_2 c_white text_right bg_alert-n1 br_black-2 br_1 br_solid flex"
 		>
-			<div class="flex_auto"><span class="lowercase lh_0 font_display font_light block">{{
+			<div class="flex_auto"><span class="lowercase lh_0 font_light block">{{
 				locked
 			}}</span
 			><span class="lowercase block font_n2:lg font_n3 font_medium c_white-8 float_right">locked</span></div>
@@ -44,7 +44,7 @@
 		<div
 			class="flex_auto c_black br_1 br_solid br_black-1 bg_black-2 c_black-8  p_3 p-l_2 text_right"
 		>
-			<span class="lowercase lh_0 font_display font_light block">{{
+			<span class="lowercase lh_0 font_light block">{{
 				all
 			}}</span>
 			<span class="lowercase block font_n2:lg font_n3 font_medium c_black-8">Seats</span>

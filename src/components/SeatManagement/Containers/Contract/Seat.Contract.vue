@@ -1,7 +1,7 @@
 <template>
 	<section class="m-b_5 m-t_4">
-		<div class="flex font_display p_3 flex_column flex_row:md m-t_4 m-b_3">
-			<div class="flex_auto font_5 font_light">
+		<div class="flex font_display font_light p_3 flex_column flex_row:md m-t_4 m-b_3">
+			<div class="flex_auto font_6:lg font_4 font_light">
 				{{nickname}}
 				<i class="c_primary fa-pencil far fas font_n1 vertical-align_middle"></i>
 			</div>
@@ -10,7 +10,7 @@
 				<span class="font_2 font_3:md block">{{ id }}</span>
 			</div>
 		</div>
-		<div class="br_solid br_1 br_black-2 font_ui">
+		<div class="br_solid br_1 br_black-2 font_ui shadow_overlap-light">
 			<div class="flex flex_column-reverse flex_row:md p-y_3">
 				<div class="flex flex_auto p-y_3 m-l_4 font_n1 m-t_3 m-t_0:md">
 					<div class="flex_auto text_right text_left:md">
@@ -54,7 +54,7 @@
 				</div>
 			</div>
 			<div class="br_1 br_black-2 br_solid">
-				<ul class="ul_none m-x_n1 m-b_n1 texture_light shadow_n1">
+				<ul class="ul_none m-x_n1 m-b_n1 texture_light shadow_emboss-light overflow_hidden">
 					<transition v-for="(bundle) in bundles" :key="bundle.id">
 						<BundleOverview v-bind="bundle" />
 					</transition>

@@ -6,7 +6,7 @@
         <div v-else-if="groups.length > 0">
         		<ul
         			data-target="group-container"
-        			class="ul_none "
+        			class="ul_none overflow_hidden"
         			v-for="(group, index) in groups"
         			:key="index"
         		>
