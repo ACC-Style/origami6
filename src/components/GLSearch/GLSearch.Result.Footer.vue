@@ -1,28 +1,72 @@
 <template>
 	<footer
-		class="result-docuemnt bg_shade-5 font_n2 br-t_1 br_black-2 p-t_3 p-x_3 br_solid p-b_2"
+		class="result-docuemnt bg_secondary-5 font_n2 br-t_1 br_black-2 p-t_3 p-x_3 br_solid p-b_2"
 	>
 		<div
-			class="document-title font_slab font_0 c_shade font_n1 nowrap overflow_ellipsis"
-		>{{documentTitle}}</div>
+			class="document-title font_slab c_black-8 font_n1 nowrap overflow_ellipsis"
+		>
+			{{ documentTitle }}
+		</div>
 		<div>
-			<ul class="ul_none overflow_ellipsis flex c_shade-n2 nowrap">
+			<ul class="ul_none overflow_ellipsis flex c_black-6 nowrap">
 				<li
 					class="flex_shrink max-w_1 overflow_ellipsis inline-block vertical-align_middle"
-					v-for="(bookmark,index) in sections"
-					:key="index+'_bookmark'"
+					v-for="(crumb, index) in breadcrumb"
+					:key="'crumb_' + index"
 				>
-					<i class="fas fa-chevron-right font_n3 p_2 c_shade-1" v-if="index != 0"></i>
-					{{bookmark}}
+					<i
+						class="fas fa-chevron-right font_n3 p_2 c_black-4"
+						v-if="index != 0"
+					></i>
+					{{ crumb }}
 				</li>
-				<li class="c_primary">Recommendation</li>
+				<li class="c_primary">
+					<i
+						class="fas fa-chevron-right font_n3 p_2 c_black-4"
+						v-if="index != 0"
+					></i>
+					Recommendation
+				</li>
 			</ul>
 		</div>
-		<nav class="m-l_n2 m-b_2 flex_inline flex gap-x_2">
+		<div class="flex flex_inline flex_wrap font_n3">
+			<div
+				v-if="pointOfCare != null"
+				class="flex_inline flex_shrink flex c_black-7"
+			>
+				Point of Care:
+				<ul class="ul_none overflow_ellipsis flex c_black-6 nowrap">
+					<li
+						class="flex_shrink max-w_1 overflow_ellipsis inline-block vertical-align_middle"
+						v-for="(poc, index) in pointOfCare"
+						:key="'poc_' + index"
+					>
+						{{ poc }}
+					</li>
+				</ul>
+			</div>
+			<div v-if="conditions != null" class="display_none inline-block:md flex_shrink c_black-4">
+				<i class="fas fa-horizontal-rule fa-rotate-90"></i>
+			</div>
+			<div v-if="conditions != null" class="flex_inline flex_shrink  c_black-7 flex">
+				Conditions:
+				<ul
+					class="ul_none overflow_ellipsis flex flex_inline c_black-6 nowrap"
+				>
+					<li
+						class="flex_shrink max-w_1 overflow_ellipsis inline-block vertical-align_middle"
+						v-for="(cond, index) in conditions"
+						:key="'cond_' + index"
+					>
+						{{ cond }}
+					</li>
+				</ul>
+			</div>
+		</div>
+		<nav class="m-l_n2 m-b_2 m-t_2 flex_inline flex gap-x_2">
 			<BTN
-				v-if="docURL !=''"
+				v-if="docURL != ''"
 				:class="btnStyles"
-
 				@click="$emit('onNavigate', docURL)"
 				:state="btnState"
 				:shadow="false"
@@ -33,9 +77,8 @@
 				<span>DOC</span>
 			</BTN>
 			<BTN
-				v-if="pdfURL !=''"
+				v-if="pdfURL != ''"
 				:class="btnStyles"
-
 				@click="$emit('onNavigate', pdfURL)"
 				:state="btnState"
 				:shadow="false"
@@ -45,9 +88,8 @@
 				<span>PDF</span>
 			</BTN>
 			<BTN
-				v-if="hubULR !=''"
+				v-if="hubULR != ''"
 				:class="btnStyles"
-
 				@click="$emit('onNavigate', hubULR)"
 				:state="btnState"
 				:shadow="false"
@@ -63,67 +105,78 @@
 			<div class="flex flex_nowrap nowrap" @click="onCopy()">
 				<strong class="flex_shrink p-r_2">
 					<i class="fas fa-quote-right m-r_2"></i>&nbsp;
-					<span class="inline-block:md display_none">cite document:</span>
+					<span class="inline-block:md display_none"
+						>cite document:</span
+					>
 				</strong>
-				<span class="flex_auto overflow_ellipsis">{{documentTitle}}</span>
+				<span class="flex_auto overflow_ellipsis">{{
+					documentTitle
+				}}</span>
 			</div>
-			<div :class="copiedStyles" class=" bg_primary absolute t_0 r_0 b_0 l_0 c_white font_bold p_2 transition_5 lh_1 flex justify_center self_center vertical-align_middle"> <span class="p-t_1"><i class="fas fa-copy p-r_3"></i>Copied to Clipboard</span></div>
+			<div
+				:class="copiedStyles"
+				class="bg_primary absolute t_0 r_0 b_0 l_0 c_white font_bold p_2 transition_5 lh_1 flex justify_center self_center vertical-align_middle"
+			>
+				<span class="p-t_1"
+					><i class="fas fa-copy p-r_3"></i>Copied to Clipboard</span
+				>
+			</div>
 		</aside>
 	</footer>
 </template>
 
 <script>
 import BTN from "../subComponents/Btn";
-import { ResponsiveMixin  } from "vue-responsive-components";
+import { ResponsiveMixin } from "vue-responsive-components";
 
 export default {
 	name: "resultFooter",
 	components: {
 		BTN
 	},
-	mixins:[ResponsiveMixin],
+	mixins: [ResponsiveMixin],
 	props: {
 		documentTitle: { type: String },
 		sections: { type: Array },
 		docURL: { type: String },
 		pdfURL: { type: String },
-		hubULR: { type: String }
+		hubULR: { type: String },
+		breadcrumb: { type: Array, default: null  },
+		pointOfCare: { type: Array, default: null },
+		conditions: { type: Array, default: null },
 	},
 	data() {
 		return {
-			showCopiedFlag:false
+			showCopiedFlag: false
 		}
 	},
 	methods: {
-		onCopy(){
+		onCopy() {
 			this.showCopiedFlag = true
-			setTimeout( ()=>{ this.showCopiedFlag = false; }, 2000);
+			setTimeout(() => { this.showCopiedFlag = false; }, 2000);
 			this.$emit('onCopy');
 		},
 
 	},
-		breakpoints:{
-		sm: el=> el.width <=350,	
+	breakpoints: {
+		sm: el => el.width <= 350,
 	},
-	computed:{
-		btnState(){
-			if (this.el.is.sm) {return 'secondary'}
-			return 'none';
+	computed: {
+		btnState() {
+			if (this.el.is.sm) { return 'secondary' }
+			return 'empty';
 
-		},	btnStyles(){
-			if (this.el.is.sm) {return 'flex_auto text_center w_100 p_3'}
+		}, btnStyles() {
+			if (this.el.is.sm) { return 'flex_auto text_center w_100 p_3' }
 			return 'flex_shrink';
 
 		},
-		copiedStyles(){
-			if(!this.showCopiedFlag){ 
+		copiedStyles() {
+			if (!this.showCopiedFlag) {
 				return 'opacity_0 z_0';
-				}
+			}
 			return 'opacity_9 z_5'
 		}
 	}
 };
 </script>
-
-<style lang="scss" scoped>
-</style>

@@ -1,6 +1,6 @@
 <template>
 	<button
-		class="ease_out transition_1 f:outline_none text_center br_none inline-block w_auto font_medium"
+		class="ease_out transition_1 f:outline_none text_center br_none inline-block w_auto font_medium font_ui"
 		@click="onClick()"
 		:class="[buttonStyles,{' is-active active ':isActive}, 'br_'+ corner]"
 	>
@@ -61,7 +61,7 @@ export default {
 			let size = "";
 			switch (this.size) {
 				case "tiny":
-					size = "p-y_2 p-x_2 font_n3 font_n2:md";
+					size = "p-y_2 p-x_2 font_n3";
 					break;
 				case "small":
 					size = "p-y_3 p-x_3 lh_0 font_n1 font_0:md";

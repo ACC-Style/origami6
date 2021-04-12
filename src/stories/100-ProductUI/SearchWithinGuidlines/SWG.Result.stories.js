@@ -20,10 +20,14 @@ export default {
 		},
 	},
 	argTypes:{
-		creditTypes:{
+		cor:{
 			description:"", 
-				control:{type:"",options:[]}
+				control:{type:"select",options:["1","2","3","harm","no-benefit"]}
 			},
+			loe:{
+				description:"", 
+					control:{type:"select",options:['A', 'B-R', 'B-NR', 'C-EO','C-LD']}
+				},
 		}
 };
 const FooterTemplate = (args, { argTypes }) => ({
@@ -39,19 +43,23 @@ const RecResultTemplate = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { RecommendationResult },
 	template: `<RecommendationResult
-		v-bind='result'
 		:documentTitle ="result.gltitle"
 		:content="result.abs[0]"
 		:supportingText="result.comments[0]"
 		:references="result.refinfo"
-		:cor="result.cor"
-		:loe="result.loe"
+		:cor="cor"
+		:loe="loe"
 		:docURL="result.jacclink"
 		:pdfURL="result.pdflink"
 		:hubURL="'http://www.acc.org/'+result.hub"
+		:breadcrumb="result.sectiontitle.slice(1,-1)"
+		:pointOfCare="result.pointofcare"
+		:conditions="result.conditions"
 		/>`,
 });
 export const Recommendation = RecResultTemplate.bind({});
 Recommendation.args = {
+	cor:results[0].cor,
+	loe:results[0].loe,
 	result: results[0],
 };

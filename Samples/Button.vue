@@ -1,5 +1,5 @@
 <template>
-  <button type="button" :class="classes" @click="onClick" :style="style">{{ label }}</button>
+  <button type="button" class="font_ui" :class="classes" @click="onClick" :style="style">{{ label }}</button>
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
       type: String,
       default: 'medium',
       validator: function (value) {
-        return ['small', 'medium', 'large'].indexOf(value) !== -1;
+        return ['tiny','small', 'medium', 'large'].indexOf(value) !== -1;
       },
     },
     backgroundColor: {
