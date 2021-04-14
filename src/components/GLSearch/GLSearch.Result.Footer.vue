@@ -12,21 +12,18 @@
 				<li
 					class="flex_shrink max-w_1 overflow_ellipsis inline-block vertical-align_middle"
 					v-for="(crumb, index) in breadcrumb"
-					:key="'crumb_' + index"
+					:key="index"
 				>
-					<i
-						class="fas fa-chevron-right font_n3 p_2 c_black-4"
-						v-if="index != 0"
-					></i>
 					{{ crumb }}
-				</li>
-				<li class="c_primary">
 					<i
 						class="fas fa-chevron-right font_n3 p_2 c_black-4"
-						v-if="index != 0"
+						
 					></i>
-					Recommendation
 				</li>
+				<div class="c_primary">
+
+					Recommendation
+				</div>
 			</ul>
 		</div>
 		<div class="flex flex_inline flex_wrap font_n3">
@@ -38,7 +35,7 @@
 				<ul class="ul_none overflow_ellipsis flex c_black-6 nowrap">
 					<li
 						class="flex_shrink max-w_1 overflow_ellipsis inline-block vertical-align_middle"
-						v-for="(poc, index) in pointOfCare"
+						v-for="(poc,index) in pointOfCare"
 						:key="'poc_' + index"
 					>
 						{{ poc }}
@@ -55,8 +52,8 @@
 				>
 					<li
 						class="flex_shrink max-w_1 overflow_ellipsis inline-block vertical-align_middle"
-						v-for="(cond, index) in conditions"
-						:key="'cond_' + index"
+						v-for="cond in conditions"
+						:key="'cond_' + cond"
 					>
 						{{ cond }}
 					</li>
@@ -115,7 +112,7 @@
 			</div>
 			<div
 				:class="copiedStyles"
-				class="bg_primary absolute t_0 r_0 b_0 l_0 c_white font_bold p_2 transition_5 lh_1 flex justify_center self_center vertical-align_middle"
+				class="bg_primary absolute t_0 r_0 b_0 l_0 c_white font_bold p_2 transition_4 lh_1 flex justify_center self_center vertical-align_middle"
 			>
 				<span class="p-t_1"
 					><i class="fas fa-copy p-r_3"></i>Copied to Clipboard</span

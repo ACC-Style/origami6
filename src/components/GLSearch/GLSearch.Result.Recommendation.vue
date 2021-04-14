@@ -21,9 +21,9 @@
 			<div class="inline">{{ content }}</div>
 		</main>
 		<aside
-			class="m-x_3:md m-x_2 m-b_2 p_2 bg_black-_05 lh_3 m-b_3:md clear_both"
+			class="m-x_3:md m-x_2 m-b_2 p_2 bg_black-_05 lh_3 m-b_3:md clear_both bg_black-_05"
 		>
-			<div class="flex m_n2">
+			<div class="bg_white flex m_n2 t_0 z_1 transition_2" :class="{'shadow_overlap-light sticky':isExpanded}">
 				<div
 					@click="isExpanded = !isExpanded"
 					class="p_2 p-x_3 bg_black-2 h:bg_primary h:c_white font_n2 flex_auto"
@@ -47,7 +47,7 @@
 					<i class="fas fa-arrow-square-right p-l_4"></i>
 				</div>
 			</div>
-			<TransitionExpand>
+			<TransitionExpand :class="transition_5">
 				<div class="c_black-9 font_n1" v-if="isExpanded">
 					<section class="p-x_3">
 						<h4 class="font_0 m_0 m-y_3">Supporting Text:</h4>
