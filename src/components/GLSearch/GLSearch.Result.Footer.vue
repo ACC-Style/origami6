@@ -1,6 +1,6 @@
 <template>
 	<footer
-		class="result-docuemnt bg_secondary-5 font_n2 br-t_1 br_black-2 p-t_3 p-x_3 br_solid p-b_2"
+		class="result-docuemnt bg_secondary-5 font_n2 br-t_1 br_black-2 p-t_3 p-x_3 br_solid p-b_2 br-br_radius br-bl_radius"
 	>
 		<div
 			class="document-title font_slab c_black-8 font_n1 nowrap overflow_ellipsis"
@@ -67,7 +67,7 @@
 				@click="$emit('onNavigate', docURL)"
 				:state="btnState"
 				:shadow="false"
-				:size="'tiny'"
+				:size="btnSize"
 			>
 				<i class="fas fa-share-square m-r_2"></i>
 				<span class="display_none inline:md">FULL&nbsp;</span>
@@ -79,7 +79,7 @@
 				@click="$emit('onNavigate', pdfURL)"
 				:state="btnState"
 				:shadow="false"
-				:size="'tiny'"
+				:size="btnSize"
 			>
 				<i class="fas fa-file-pdf m-r_3"></i>
 				<span>PDF</span>
@@ -90,19 +90,19 @@
 				@click="$emit('onNavigate', hubULR)"
 				:state="btnState"
 				:shadow="false"
-				:size="'tiny'"
+				:size="btnSize"
 			>
-				<i class="fas fa-share-alt m-r_3"></i>
-				<span>HUB</span>
+				<i class="fab fa-hubspot m-r_3"></i>
+				<span>Tools</span>
 			</BTN>
 		</nav>
 		<aside
 			class="font_n2 c_black-8 bg_black-2 h:bg_black-5 h:c_white m-x_n3 m-b_n2 p_2 p-x_3 br-t_1 br_solid br_black-2 shadow_n1 relative"
 		>
 			<div class="flex flex_nowrap nowrap" @click="onCopy()">
-				<strong class="flex_shrink p-r_2">
+				<strong class="flex_none p-r_2">
 					<i class="fas fa-quote-right m-r_2"></i>&nbsp;
-					<span class="inline-block:md display_none"
+					<span class=""
 						>cite document:</span
 					>
 				</strong>
@@ -166,6 +166,11 @@ export default {
 		}, btnStyles() {
 			if (this.el.is.sm) { return 'flex_auto text_center w_100 p_3' }
 			return 'flex_shrink';
+
+		},btnSize() {
+
+			if (this.el.is.sm) { return 'small' }
+			return 'tiny';
 
 		},
 		copiedStyles() {

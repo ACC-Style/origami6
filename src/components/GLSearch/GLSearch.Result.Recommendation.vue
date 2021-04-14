@@ -1,24 +1,25 @@
 <template>
 	<article
-		class="result font_ui br_1 br_black-2 br_1 br_solid shadow_overlap-light"
+		class="result font_ui br_1 br_black-2 br_1 br_solid shadow_overlap-light br_radius overflow_hidden"
 	>
-		<header class="br-t_3 br_solid br_primary m-t_n1 m-x_n1">
+		<header class="br-t_4 br_solid br_primary m-t_n1 m-x_n1">
 			<aside class="flex relative">
 				<div class="flex_auto">
 					<span
-						class="p-y_3 block font_n2 m-x_4 p-t_4 uppercase c_primary font_bold"
+						class="p-y_3 block font_n2 m-x_4 p-t_3 uppercase c_primary font_bold"
 						>recommendation</span
 					>
 				</div>
 			</aside>
 		</header>
 		<main class="result-content p-x_4 p-b_4 font_copy font_0 lh_3">
+			<h2 class="inline float_left">{{ sectionTitle }}</h2>
 			<CorLoeChiclet
 				class="float_right m-b_2 m-t_n5 m-t_n4:md m-x_4:md m-x_0"
 				:cor="cor"
 				:loe="loe"
 			/>
-			<div class="inline">{{ content }}</div>
+			<div class="inline-block float_left clear_left m-b_3">{{ content }}</div>
 		</main>
 		<aside
 			class="m-x_3:md m-x_2 m-b_2 p_2 bg_black-_05 lh_3 m-b_3:md clear_both bg_black-_05"
@@ -47,7 +48,7 @@
 					<i class="fas fa-arrow-square-right p-l_4"></i>
 				</div>
 			</div>
-			<TransitionExpand :class="transition_5">
+			<TransitionExpand :class="transition_4">
 				<div class="c_black-9 font_n1" v-if="isExpanded">
 					<section class="p-x_3">
 						<h4 class="font_0 m_0 m-y_3">Supporting Text:</h4>
@@ -73,7 +74,7 @@
 			>
 				<div
 					@click="$emit('onRelatedRecomendation')"
-					class="p_2 p-x_3 bg_black-2 h:bg_primary h:c_white font_n2 flex_auto br-l_1 br_white-5 br_solid m-l_auto text_right"
+					class="p_2 p-x_3 bg_black-2 h:bg_primary h:c_white font_n2 flex_auto br-l_1 br_white-5 br_solid m-l_auto text_left"
 				>
 					<span class="display_none inline:md"
 						>All Recommendations from this Section</span
@@ -113,6 +114,7 @@ export default {
 	},
 	props: {
 		type: { type: String, default: "Recomendation" },
+		sectionTitle:{ type: String, default: "Title Didn't Load" },
 		content: { type: String, default: "" },
 		documentTitle: { type: String },
 		docURL: { type: String, default: "" },

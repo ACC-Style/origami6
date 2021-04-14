@@ -1,12 +1,12 @@
 <template>
 	<article
-		class="result font_ui br_1 br_black-2 br_1 br_solid shadow_overlap-light"
+		class="result font_ui br_1 br_black-2 br_1 br_solid shadow_overlap-light br_radius overflow_hidden"
 	>
-		<header class="br-t_3 br_solid br_accent m-t_n1 m-x_n1">
+		<header class="br-t_4 br_solid br_accent m-t_n1 m-x_n1">
 			<aside class="flex relative">
 				<div class="flex_auto">
 					<span
-						class="p-y_3 block font_n2 m-x_4 p-t_4 uppercase c_accent font_bold"
+						class="p-y_3 block font_n2 m-x_4 p-t_3 uppercase c_accent font_bold"
 						>section</span
 					>
 				</div>
