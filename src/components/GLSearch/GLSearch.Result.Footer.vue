@@ -112,7 +112,7 @@
 			</div>
 			<div
 				:class="copiedStyles"
-				class="bg_primary absolute t_0 r_0 b_0 l_0 c_white font_bold p_2 transition_4 lh_1 flex justify_center self_center vertical-align_middle"
+				class="bg_primary absolute t_0 r_0 b_0 l_0 c_white font_bold p_2 transition_3 lh_1 flex justify_center self_center vertical-align_middle"
 			>
 				<span class="p-t_1"
 					><i class="fas fa-copy p-r_3"></i>Copied to Clipboard</span

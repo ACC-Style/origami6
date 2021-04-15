@@ -48,7 +48,7 @@
 					<i class="fas fa-arrow-square-right p-l_4"></i>
 				</div>
 			</div>
-			<TransitionExpand :class="transition_4">
+			<TransitionExpand>
 				<div class="c_black-9 font_n1" v-if="isExpanded">
 					<section class="p-x_3">
 						<h4 class="font_0 m_0 m-y_3">Supporting Text:</h4>

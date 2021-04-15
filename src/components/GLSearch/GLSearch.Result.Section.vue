@@ -30,7 +30,7 @@
 				:class="{ 'shadow_overlap-light ': isExpanded }"
 			>
 				<div
-					class="bg_white p_2 flex justify_center align_center bg_black-_05transition_3 p_2 p-x_3 bg_black-2 h:bg_primary h:c_white font_n2 flex_auto z_3"
+					class="bg_white p_2 flex justify_center align_center bg_black-_05 transition_3 p_2 p-x_3 bg_black-2 h:bg_primary h:c_white font_n2 flex_auto z_3"
 				>
 					<i
 						class="fas fa-chevron-up transition_2 self_center"
