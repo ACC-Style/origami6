@@ -135,3 +135,19 @@ Section.args = {
 	pointOfCare:null,
 	conditions:null,
 };
+export const SectionMassiveTable = SecResultTemplate.bind({});
+SectionMassiveTable.args = {
+	cor:results[0].cor,
+	loe:results[0].loe,
+	result: results[0],
+	documentTitle:results[0].gltitle,
+	sectionTitle:results[0].itemtitle,
+	summary:results[0].summary,
+	content:sectionContent[2].results,
+	docURL:results[0].jacclink,
+	pdfURL:results[0].pdflink,
+	hubURL: 'http://www.acc.org/'+results[0].hub,
+	breadcrumb:results[0].sectiontitle.slice(1,-1),
+	pointOfCare:null,
+	conditions:null,
+};
