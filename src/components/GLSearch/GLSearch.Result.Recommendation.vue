@@ -1,8 +1,8 @@
 <template>
 	<article
-		class="result font_ui br_1 br_black-2 br_1 br_solid shadow_overlap-light br_radius overflow_hidden"
+		class="result font_ui br_1 br_black-2 br_1 br_solid shadow_overlap-light br_radius"
 	>
-		<header class="br-t_4 br_solid br_primary m-t_n1 m-x_n1">
+		<header class="br-t_4 br_solid br_primary m-t_n1 m-x_n1 br-tr_radius br-tl_radius">
 			<aside class="flex relative">
 				<div class="flex_auto">
 					<span

@@ -7,7 +7,7 @@ import '../Arches/dist/icons/css/all.min.css';
 
 
 // Guideline Search
-import '../Arches/dist/css/glsearch.min.css';
+// import '../Arches/dist/css/glsearch.min.css';
 
 import moment from 'moment';
 Vue.filter("dateNumber", (date) => date instanceof Date ? moment(date).format("MM/DD/YYYY") : "");

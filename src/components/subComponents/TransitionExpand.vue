@@ -15,7 +15,7 @@ export default {
   name: 'transitionExpand',
   data() {
     return {
-      ObjectHeight: 0,
+  
 
     }
   },
@@ -31,8 +31,7 @@ export default {
       element.style.visibility = 'hidden';
       element.style.height = 'auto';
       const height = getComputedStyle(element).height;
-      this.ObjectHeight = height;
-
+  
       element.style.width = null;
       element.style.position = null;
       element.style.visibility = null;
