@@ -5,7 +5,7 @@
 		:class="[{ 'shadow_overlap-light': shadow }, 'br_' + corner]"
 	>
 		<HeaderImage
-			class="bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_center m-x_n1 m-t_n1 flex_none"
+			class="bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 flex_none"
 			:class="'br-tr_' + corner + ' br-tl_' + corner"
 			:id="'CTAIMG-' + id"
 			v-if="headerImg"

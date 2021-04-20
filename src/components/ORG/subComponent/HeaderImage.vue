@@ -2,7 +2,7 @@
 	<div
 		:style="'background-image: url(' + image.url + ')'"
 		data-name="img-header"
-		class="br-tr_radius br-tl_radius bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_center m-x_n1 m-t_n1 expand-br_1"
+		class="br-tr_radius br-tl_radius bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 expand-br_1"
 		:id="id"
 		ref="img"
 		:class="image.aspect"
