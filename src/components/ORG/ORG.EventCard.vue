@@ -21,7 +21,7 @@
 			>
 				<span
 					class="block font_n1 font_0:md font_medium lh_0 p-x_2:lg"
-					>{{ month }}</span
+					>{{ startMonth }}<span v-if="startMonth != endMonth">- {{ endMonth }}</span></span
 				>
 				<span class="block font_2 font_4:md font_light lh_0 p-x_2:lg">{{
 					dates
@@ -44,7 +44,7 @@
 				{{ title }}
 			</h2>
 			<div data-v-5294f1c2="" class="font_ui c_accent-n1 font_medium font_n2 m-t_n2 uppercase">{{ eventType }}</div>
-            <div class="c_secondary font_n1 bold" v-if="isEventFinished">Past: {{month}} {{dates}} {{year}}</div>
+            <div class="c_secondary font_n1 bold" v-if="isEventFinished">Past: {{startMonth}} {{dates}} {{year}}</div>
 
 		</header>
 		<p v-if="shortText" class="font_0:lg font_n1 p-x_3 p-x_4:md p-x_5:lg lh_2 m-b_0">
@@ -53,23 +53,24 @@
 		<ul
 			class="m-b_4:md p-t_3 p-x_3 p-x_4:md p-x_5:lg font_n1:lg font_n2 ul_none lh_4"
 		>
-			<li v-if="!isEventFinished">
-				<i class="fas font-size_up fa-clock c_black-5"></i
-				><span class="m-l_2">{{ hours }}</span>
+			<li v-if="!isEventFinished" class="flex flex_row">
+				<i class="fas font-size_up  flex_none p-r_3 self_center fa-clock c_black-5"></i
+				><span class="m-l_2 flex_auto inline-block self_start">{{ hours }}</span>
 			</li>
 
-			<li>
-				<i class="fas font-size_up fa-hourglass-half c_black-5"></i
-				><span class="m-l_2">{{ onDemandText }}</span>
+			<li class="flex flex_row m-t_2">
+				<i class="fas font-size_up  flex_none p-r_3 self_center fa-hourglass-half c_black-5"></i
+				><span class="m-l_2 flex_auto inline-block self_start">{{ onDemandText }}</span>
 			</li>
-			<li v-if="credits.length > 0">
-				<i class="fas font-size_up fa-award c_black-5"></i>
-				<span class="m-l_2 m-t_n2 inline-block">
+			<li v-if="credits.length > 0" class="flex flex_row m-t_3">
+				<i class="fas font-size_up  flex_none p-r_3 self_start fa-award c_black-5"></i>
+				<span class="flex flex_auto flex_row flex_wrap gap-x_2 gap-y_2 inline-block justify_start self_start m-l_2 m-t_n2">
 					<Credit
-						class="m-r_3"
+						class=""
 						:type="credit.type"
 						:value="credit.value"
 						:styleCode="credit.type"
+						:showValue="false"
 						:size="'tiny'"
 						v-for="(credit, index) in credits"
 						:key="index"
@@ -78,10 +79,10 @@
 			</li>
 		</ul>
 		<footer
-			class="flex justify_around m-t_auto p-t_4 p-t_3:md p-x_5:lg p-x_3 p-b_4"
+			class="flex justify_around m-t_auto gap-x_3 p-t_4 p-t_3:md p-x_5:lg p-x_3 p-b_4"
 		>
-						<Btn
-				class="flex_auto m-b_3 m-x_3 text_center max-w_10"
+			<Btn
+				class="flex_auto text_center max-w_20 m-b_2"
 				:size="'small'"
 				:corner="'radius'"
 				:shadow="false"
@@ -93,7 +94,7 @@
 				></Btn
 			>
 			<Btn
-				class="flex_auto m-b_2 m-x_3 text_center max-w_10"
+				class="flex_auto text_center max-w_20 m-b_2"
 				:size="'small'"
 				:corner="'radius'"
 				:shadow="true"
@@ -102,7 +103,7 @@
 				><span class="flex_grow">Register</span></Btn
 			>
 			<Btn
-				class="flex_auto text_center m-x_3 max-w_10 m-b_2"
+				class="flex_auto text_center max-w_20 m-b_2"
 				:size="'small'"
 				:corner="'radius'"
 				:shadow="true"
@@ -173,8 +174,11 @@ export default {
 			return moment(this.onDemandDate).tz(this.timezone).format("YYYY")
 			;
 		},
-		month() {
+		startMonth() {
 			return moment(this.startDate).tz(this.timezone).format("MMM");
+		},
+		endMonth() {
+			return moment(this.endDate).tz(this.timezone).format("MMM");
 		},
 		dates() {
 			let start = moment(this.startDate).tz(this.timezone).format("D");

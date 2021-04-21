@@ -45,6 +45,7 @@
 						:type="credit.type"
 						:value="credit.value"
 						:styleCode="credit.type"
+						:showValue="false"
 						:size="'tiny'"
 						v-for="(credit, index) in credits"
 						:key="index"
