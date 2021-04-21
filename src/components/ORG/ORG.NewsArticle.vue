@@ -14,6 +14,8 @@
 		<div class="flex flex_row:md flex_column" v-show="!removeFromListSurveyVisiblity">
 				<div class="flex_none justify_around font_n3 font_n2:md text_left flex_row flex_column:md flex p-l_4:md p-r_3:lg p-l_3 transition_2 p-t_0" :class="{'p-t_4 m-t_2 p-t_0:md m-t_0:md ':editorsPick || featured || previouslyRead || internalSavedInLibrary }">
 					<img
+					 	@click="articleURL" 
+						 class="cursor_pointer"
 						:src="image"
 						alt=""
 						style="
