@@ -1,6 +1,6 @@
 <template>
 <section class="family font_ui font_1 ">
-    <header class="text_center w_100 font_4 font_xbold  font_display c_acc m-b_4">
+    <header class=" w_100 font_4 font_xbold  font_display c_acc m-b_4">
         <slot></slot>
     </header>
     <div class="family-gallery flex flex_column flex_row:md p_3 p-x_4 p_4:md bg_black-_05 shadow_emboss-light br_radius">

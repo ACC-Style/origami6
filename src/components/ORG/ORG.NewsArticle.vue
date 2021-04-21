@@ -1,7 +1,7 @@
 <template>
 	<article
-		class="br_radius br_1 br_black-2 bg_black_-05 br_solid  p-x_3 p_4 relative  m-b_4 bg_black-_05 font_ui"
-		@click="articleURL" :class="{ 'shadow_overlap-light': featured && (!previouslyRead && !savedInLibrary) }"
+		class="br_radius br_1 br_black-2 bg_black_-05 br_solid  p-x_3 p_4 relative m-b_4 font_ui"
+		:class="{ 'shadow_overlap-light': featured && (!previouslyRead && !savedInLibrary) }"
 	>
 		<div v-show="!removeFromListSurveyVisiblity"
 			class="absolute r_n1:md r_4 t_n1 t_4:md text_center flex flex_column:md justify_end align-right font_n2:md font_n3 overflow_hidden transition_2"
@@ -34,11 +34,12 @@
                     </div>
 				</div>
 			<div class="flex_auto p-l_4:md p-l_3 p-r_5:md m-r_4:md">
-                <span class="c_accent-2 font_bold uppercase display_none wrap block:md font_n1"
+            <div @click="articleURL" class="relative cursor_pointer">
+				<span class="c_accent-2 font_bold uppercase display_none wrap block:md font_n1"
 						>{{ type }}</span>
 				<h2
 					data-type="title"
-					class="c_primary-n2 cursor_pointer font_1 font_3:md font_display font_medium  h:underline lh_1 m-y_2"
+					class="c_primary-n2 cursor_pointer font_1 font_3:md font_display font_medium  h:underline lh_1 m-y_2 expanded-click-area"
 				>
 					{{ title}}
 				</h2>
@@ -48,7 +49,7 @@
 				>
 					{{ snippet }}
 				</p>
-
+				</div>
 				<div
 					data-type="authors"
 					class="block p-y_2 z_2 relative font_n2:md font_n3 text_left m-b_n3"
