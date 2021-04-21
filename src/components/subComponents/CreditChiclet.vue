@@ -95,13 +95,13 @@ export default {
 			switch (this.size) {
 				case "large":
 					styles +=
-						"font-size_up lh_2 p-y_2 p-y_3:md p-x_3 p-x_4:md ";
+						"font-size_up lh_2 p-y_2 p-y_3:md p-x_3 p-x_4:md gap-x_3";
 					break;
 				case "small":
-					styles += "font-size_down lh_1 p-y_2 p-x_2";
+					styles += "font-size_down lh_1 p-y_2 p-x_2 gap-x_2";
 					break;
 				case "tiny":
-					styles += "font-size_down lh_0 p-y_2 p-x_2";
+					styles += "font-size_down lh_0 p-y_2 p-x_2 gap-x_1";
 					break;
 				default:
 					styles += "p-y_1 p-x_2 p-y_2:md p-x_3:md lh_2";

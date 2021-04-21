@@ -5,7 +5,7 @@
 		<header class="relative">
 			<div class="">
 				<div
-					class="br_1 br-t_0 br_solid br_black-4 bg_cover font_4 h_lh_2 text-shadow_black-1 font_display p_3 c_white bg-blend_multiply"
+					class="br_1 br-t_0 br_solid br_black-4 bg_cover font_4 h_lh_2 text-shadow_black-1 font_display p_3 c_white bg-blend_multiply bg_left"
 					:style="'background-image:url(' + img + ');'"
 				>
 				<span class="uppercase font_xbold">{{title_1}}</span>
@@ -37,11 +37,11 @@
 		<ul
 			class="m-b_3:md m-b_2:md p-t_3 p-x_4:lg p-x_3 font_n1:lg font_n2 ul_none lh_3"
 		>
-			<li v-if="credits.length > 0">
-				<i class="fas font-size_up fa-award c_black-5"></i>
-				<span class="m-l_2 m-t_n2 inline-block">
+			<li class="flex flex_row" v-if="credits.length > 0">
+				<i class="fas font-size_up fa-award c_black-5 flex_none p-r_3"></i>
+				<span class="flex flex_auto flex_row flex_wrap gap-x_2 gap-y_2 inline-block justify_start m-l_2 m-t_n2">
 					<Credit
-						class="m-r_3"
+						class=""
 						:type="credit.type"
 						:value="credit.value"
 						:styleCode="credit.type"
