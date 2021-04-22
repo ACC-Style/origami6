@@ -5,7 +5,7 @@
 		<header class="relative">
 			<div class="">
 				<div
-					class="br_1 br-t_0 br_solid br_black-4 bg_cover font_4 h_lh_2 text-shadow_black-1 font_display p_3 c_white bg-blend_multiply bg_left"
+					class="br_1 br-t_0 br_solid br_black-4 bg_cover font_4 h_lh_2 text-shadow_black-1 font_display p_3 c_white bg-blend_multiply bg_right"
 					:style="'background-image:url(' + img + ');'"
 				>
 				<span class="uppercase font_xbold">{{title_1}}</span>

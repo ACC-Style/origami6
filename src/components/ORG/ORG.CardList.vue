@@ -60,10 +60,10 @@ export default {
 					styles = "";
 					break;
 				case 2:
-					styles = "gap-x_5:md gap-x_4  gap-y_4 gap-y_5:md  grid template-x_2x";
+					styles = "gap-x_3  gap-y_3 gap-x_4:md gap-y_4:md grid template-x_2x";
 					break;
 				default:
-					styles = "gap-x_5:md gap-x_4 gap-y_5:md gap-y_4 grid template-x_3x";
+					styles = "gap-x_3 gap-y_3 gap-x_4:md gap-y_4:md grid template-x_3x";
 					break;
 			}
 			return styles;

@@ -60,7 +60,9 @@
 
 			<li class="flex flex_row m-t_2">
 				<i class="fas font-size_up  flex_none p-r_3 self_center fa-hourglass-half c_black-5"></i
-				><span class="m-l_2 flex_auto inline-block self_start">{{ onDemandText }}</span>
+				><span class="m-l_2 flex_auto inline-block self_start lh_1">
+					<span class="font-size_down block opacity_6">On Demand Untill:</span>
+					{{ onDemandText }}</span>
 			</li>
 			<li v-if="credits.length > 0" class="flex flex_row m-t_3">
 				<i class="fas font-size_up  flex_none p-r_3 self_start fa-award c_black-5"></i>
@@ -166,7 +168,6 @@ export default {
 		},
 		onDemandText: function () {
 			return (
-				"On Demand: Untill " +
 				moment(this.onDemandDate).tz(this.timezone).format("MMM D z")
 			);
 		},

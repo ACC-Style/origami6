@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="inline-block br_1"
+		class="inline-block br_1 bg_shade-n2 c_shade-3"
 		:class="['br_' + corners, fontColorStyle, backgroundStyles]"
 	>
 		<div class="flex flex_nowrap" :class="sizeStyles">

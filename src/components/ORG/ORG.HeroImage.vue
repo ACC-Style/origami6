@@ -3,7 +3,7 @@
 		:style="'background-image: url(' + image.url + ')'"
 		data-name="img-header"
 		:id="id"
-		class="bg_cover bg_no-repeat"
+		class="bg_cover bg_no-repeat bg_left"
 		ref="img"
 		:class="image.aspect"
 		@click="onNavigateTo(url)"
@@ -49,9 +49,6 @@ export default {
 			if (this.el.is.lg) {
 				obj.url = this.imgLG;
 				obj.aspect = "aspect_hero-lg";
-			}
-			else{
-				
 			}
 			return obj;
 		},
