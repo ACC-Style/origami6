@@ -17,7 +17,7 @@
 					<span class="c_warning p-r_3 block inline-block:md p-b_2 p-b_0:md" v-show="!isPlayable"
 						>(Coming Soon to On Demand)</span
 					>
-					May 15, 12:15 PM - 1:45 PM
+					{{ startTime }} - {{ endTime }}
 					<span
 						class="p-t_2 font-size_down font_bold c_primary-1 text_left display_none:md inline-block w_100"
 						>Session Format</span
@@ -217,102 +217,37 @@
 							class="flex_column flex br_black-_05 br_solid br_1 flex_auto w_70:lg"
 						>
 							<div
-								class="bg_black-1 flex flex_column-reverse flex_row:md justify_start"
+							v-for="(presentation, index) in presentations_list"
+							:key="index"
+								class="bg_black-1 flex flex_column-reverse flex_row:md justify_start m-b_3"
 							>
 								<div
-									class="br-r_1 br_dotted:md br_none br_primary c_accent-n4 flex_none font_0:md font_1:lg font_n2 font_xbold p-r_4:lg p-t_0 p-x_3 self_center:md w_100 w_30:md"
+									class="br-r_1 br_dotted:md br_none br_primary c_accent-n4 flex_none font_0:md font_1:lg font_n2 font_xbold p-r_4:lg p-t_0 p-x_3 w_100 w_30:md"
 								>
-									1200 PM - 1:15 PM
+									{{ setTimeSpan(index) }}
 								</div>
 								<div
-									class="font_1 p_3 p-b_0 p-b_3:md p-l_4:md self_center:md lh_1"
+									class="font_1 p_3 p-b_0 p-b_3:md p-l_4:md lh_1"
 								>
 									<strong
-										class="font_bold block font-size_down c_primary-n1"
-										>Chair</strong
+										class="font_bold block font-size_up c_primary-n1"
+										>{{presentation.name}}</strong
 									>
-									<span class="block font-size_up c_black"
-										>Michael R. Zile</span
-									>
-									<span
-										class="c_black-8 block font-size_down m-t_2"
-										>Charleston, SC</span
-									>
-								</div>
-							</div>
-                            <div
-								class="bg_black-_05 flex flex_column-reverse flex_row:md justify_start p-b_3"
-							>
-								<div
-									class="br-r_1 br_dotted:md br_none br_primary c_accent-n4 flex_none font_0:md font_1:lg font_n2 font_xbold p-r_4:lg p-t_0 p-x_3 self_center:md w_100 w_30:md"
-								>
-									12:27 PM - 12:39 PM
-								</div>
-								<div
-									class="font_1 p_3 p-b_0 p-b_3:md p-l_4:md self_center:md lh_1"
-								>
-									<strong
-										class="font_bold block font-size_down c_primary-n1"
-										>nobis reiciendis unde</strong
-									>
-									<span class="block font-size_up c_black"
-										>Kassulke Group</span
+									<div v-for="(author,index) in presentation.author" :key="'author_'+index" class="m-b_3 m-t_2">
+										<span class="block font-size_down c_black font_medium underline h:underline"
+										>{{author.full_name}}</span
 									>
 									<span
-										class="c_black-8 block font-size_down m-t_2"
-										>Atlanta, GA</span
-									>
+										class="c_black-8 block font-size_down m-t_2 font_light font_italic lh_1"
+										><span>{{author.location.city}},</span>
+										<span v-if="author.location.state">{{author.location.state}}</span>
+										<span v-else>{{author.location.country}}</span>
+										</span
+									></div>
+									<a href="" class="link font_n2 c_primary"><i class="fas fa-file-archive p-r_3"></i>Download Session Files</a>
 								</div>
 							</div>
-                            <div
-								class="bg_black-1 flex flex_column-reverse flex_row:md justify_start"
-							>
-								<div
-									class="br-r_1 br_dotted:md br_none br_primary c_accent-n4 flex_none font_0:md font_1:lg font_n2 font_xbold p-r_4:lg p-t_0 p-x_3 self_center:md w_100 w_30:md"
-								>
-									12:50 PM - 1:00 PM
-								</div>
-								<div
-									class="font_1 p_3 p-b_0 p-b_3:md p-l_4:md self_center:md lh_1"
-								>
-									<strong
-										class="font_bold block font-size_down c_primary-n1"
-										>Denmark up Home</strong
-									>
-									<span class="block font-size_up c_black"
-										>Michael R. Zile</span
-									>
-									<span
-										class="c_black-8 block font-size_down m-t_2"
-										>Anahiton, WA</span
-									>
-								</div>
-							</div>
-                            <div
-								class="bg_black-_05 flex flex_column-reverse flex_row:md justify_start p-b_3"
-							>
-								<div
-									class="br-r_1 br_dotted:md br_none br_primary c_accent-n4 flex_none font_0:md font_1:lg font_n2 font_xbold p-r_4:lg p-t_0 p-x_3 self_center:md w_100 w_30:md"
-								>
-									1:00 PM - 1:15 PM
-								</div>
-								<div
-									class="font_1 p_3 p-b_0 p-b_3:md p-l_4:md self_center:md lh_1"
-								>
-									<strong
-										class="font_bold block font-size_down c_primary-n1"
-										>Essentials for Diagnosis and Work up of
-										HFpEF</strong
-									>
-									<span class="block font-size_up c_black"
-										>Michael R. Zile</span
-									>
-									<span
-										class="c_black-8 block font-size_down m-t_2"
-										>Charleston, SC</span
-									>
-								</div>
-							</div>
+                     
 						</div>
 						<div class="flex_auto p-l_5:lg p-l_4:md w_30:lg">
 							<div class="p-x_3">
@@ -350,6 +285,8 @@ import Btn from "../subComponents/Btn";
 import Credit from "../subComponents/CreditChiclet";
 import TabFlag from "../subComponents/TabFlag";
 import TransitionExpand from "../subComponents/TransitionExpand";
+import moment from "moment";
+import tz from "moment-timezone";
 export default {
 	props: {
 		title: {
@@ -361,6 +298,8 @@ export default {
 			type: Boolean,
 			default: false
 		},
+		startDate:{type:Date},
+		endDate:{type:Date},
 		isPlayable: { type: Boolean, default: false },
 		valueCME: { type: Number, default: 1 },
 		valueCNE: { type: Number, default: 1 },
@@ -372,25 +311,54 @@ export default {
 		valueCPE: { type: Number, default: 0 },
 		valueIPE: { type: Number, default: 0 },
 		valuePA: { type: Number, default: 0 },
+		timezone: { type: String, default: "America/New_York" },
 		learningPathway: {
 			type: String,
 			default: "Heart Failure and Cardiomyopathies Pathway"
-		}
+		},
+		presentations:{type:Array,default:()=>[]}
 	},
 	data() {
 		return {
 			showValue: true,
 			faved: false,
 			extendedInfo: false,
+			presentations_list:this.presentations
 		}
 	},
 	components: {
 		Credit, Btn, TabFlag, TransitionExpand
 	},
+	computed: {
+		startTime:function(){
+			return(
+				moment(this.startDate).tz(this.timezone).format('MMMM DD, h:m a')
+			) ;
+		},
+		endTime:function(){
+			return(
+				moment(this.endDate).tz(this.timezone).format('h:m a')
+			) ;
+		},
+	},
 	methods: {
+		addMinutes:function(date, minutes){
+			return new Date(date.getTime() + minutes*60000);
+		},
 		isValueZero: function (val) {
 			return val == 0
 		},
+		setTimeSpan:function(i){
+			if( i === 0 ){
+				this.presentations_list[i].startTime = moment( this.startDate );
+				this.presentations_list[i].endTime = moment(this.presentations_list[i].startTime).add(this.presentations_list[i].duration_minutes,'minutes')
+				
+			}else{
+				this.presentations_list[i].startTime = this.presentations_list[ i - 1 ].endTime;
+				this.presentations_list[i].endTime = moment(this.presentations_list[ i ].startTime).add( this.presentations_list[i].duration_minutes,'minutes')
+			}
+			return this.presentations_list[i].startTime.format('h:mm a') +" - "+ this.presentations_list[i].endTime.format('h:mm a')
+		}
 	},
 }
 </script>
