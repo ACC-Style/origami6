@@ -244,7 +244,7 @@
 										<span v-else>{{author.location.country}}</span>
 										</span
 									></div>
-									<a href="" class="link font_n2 c_primary"><i class="fas fa-file-archive p-r_3"></i>Download Session Files</a>
+									<a v-if="presentation.attachement.length>0" :href="presentation.attachement" class="link font_n2 c_primary"><i class="fas fa-file-archive p-r_3"></i>Download Session Files</a>
 								</div>
 							</div>
                      

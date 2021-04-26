@@ -47,15 +47,14 @@ Live.args = {
 	presentations: [
 		{
 			id: 1,
-			name: "Sign of Leo, The (Signe du lion, Le)",
+			name: "Panel Chairs",
 			duration_minutes: 15,
-			attachement:
-				"http://surveymonkey.com/etiam.html?ut=nisi&mauris=at&eget=nibh&massa=in&tempor=hac&convallis=habitasse&nulla=platea&neque=dictumst&libero=aliquam&convallis=augue&eget=quam&eleifend=sollicitudin&luctus=vitae&ultricies=consectetuer&eu=eget&nibh=rutrum&quisque=at&id=lorem&justo=integer&sit=tincidunt&amet=ante&sapien=vel&dignissim=ipsum&vestibulum=praesent&vestibulum=blandit&ante=lacinia&ipsum=erat&primis=vestibulum&in=sed&faucibus=magna&orci=at&luctus=nunc&et=commodo&ultrices=placerat&posuere=praesent&cubilia=blandit&curae=nam&nulla=nulla&dapibus=integer&dolor=pede&vel=justo&est=lacinia&donec=eget&odio=tincidunt&justo=eget",
+			attachement: "",
 			author: [
 				{
-					full_name: "Idalia Comi",
+					full_name: "Dr. Valentin Fuster",
 					id: "0820168548",
-					location: { city: "Ganjur", state: null, country: "Indonesia" },
+					location: { city: "New York", state: "New York", country: "USA" },
 				},
 				{
 					full_name: "Daisey Janway",
