@@ -14,7 +14,7 @@
             <transition name="slide" mode="out-in">
             <article v-for="product in selectedProduct"  :key="product.id" class=" flex_auto self_center p_3:md relative transition_2"  >
                 <div class="flex flex_column flex_row:lg">
-                    <div class="aspect_3x2 bg_left max-w_30 bg_contain bg_no-repeat flex_none m_4:md m-b_3 self_center w_25:lg w_100" :style="'background-image:url('+product.logo+')'">
+                    <div class="aspect_3x2 bg_left max-w_20 bg_contain bg_no-repeat flex_none m_4:md m-b_3 self_center w_25:lg w_100" :style="'background-image:url('+product.logo+')'">
                     
                     </div>
                     <div class="flex_auto w_100 w_75:lg p-r_3:md p_4:md">

@@ -8,13 +8,9 @@ export default {
 	component: Session,
 	subcomponents: { Credits, Btn, TabFlag },
 	parameters: {
-		argTypes: {
-			startDate: { control: { type: "date" } },
-			endDate: { control: { type: "date" } },
-		},
 		docs: {
 			description: {
-				component: "Simple icon block that shows the state",
+				component: "The presentation block for sessions in the Program",
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {
@@ -22,17 +18,21 @@ export default {
 			},
 		},
 	},
+	argTypes: {
+		startDate: { control: { type: "date" } },
+		endDate: { control: { type: "date" } },
+	},
 };
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { Session },
-	template: `<div class="max-w_70 m-auto"><Session v-bind="$props" :startDate="startDate" :endDate="endDate" ></Session></div>`,
+	template: `<div class="max-w_70 m-auto"><Session v-bind="$props" :startDate="new Date(startDate)" :endDate="new Date(endDate)" ></Session></div>`,
 });
 export const Live = Template.bind({});
 Live.args = {
 	isLive: true,
-	startDate: new Date("2014-03-09 01:59:00"),
-	endDate: new Date("2014-03-09 02:59:00"),
+	startDate: "2021-04-09 01:59:00",
+	endDate: "2021-04-30 02:59:00",
 	description: `	<p>
 		This Core Knowledge in Action session features heart failure
 		experts who will guide attendees through the basics of

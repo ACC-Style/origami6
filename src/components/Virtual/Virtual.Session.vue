@@ -11,7 +11,7 @@
 				>
 					<span
 						class="c_warning p_2 p-x_3 m-t_n3 m-b_3 vertical-align_top m-l_n2 m-r_2 bg_warning c_white block inline-block:lg w_100 w_auto:lg text_center text_left:md"
-						v-show="isLive && isPlayable"
+						v-show="isLive && isPlayable && !isBeforeStart && !isAfterEnd"
 						><i class="fas fa-video p-r_3"></i> In Progress</span
 					>
 					<span class="c_warning p-r_3 block inline-block:md p-b_2 p-b_0:md" v-show="!isPlayable"
@@ -67,12 +67,19 @@
 					></Btn>
 					<Btn
 						class="m-l_2"
-						v-show="!isPlayable"
+						v-show="isBeforeStart"
+						:state="'secondary'"
+						:isDisabled="true"
+						>Upcoming</Btn
+					>
+					<Btn
+						class="m-l_2"
+						v-show="!isPlayable && isAfterEnd"
 						:state="'secondary'"
 						:isDisabled="true"
 						>Watch</Btn
 					>
-					<Btn class="m-l_2" v-show="isPlayable">Watch</Btn>
+					<Btn class="m-l_2" v-show="(!isBeforeStart && !isAfterEnd)  || (isAfterEnd && isPlayable)">Watch</Btn>
 				</aside>
 			</div>
 		</header>
@@ -323,7 +330,8 @@ export default {
 			showValue: true,
 			faved: false,
 			extendedInfo: false,
-			presentations_list:this.presentations
+			presentations_list:this.presentations,
+
 		}
 	},
 	components: {
@@ -339,6 +347,14 @@ export default {
 			return(
 				moment(this.endDate).tz(this.timezone).format('h:m a')
 			) ;
+		},
+		isBeforeStart:function(){
+			let now = Date.now();
+				return moment(this.startDate).isAfter(now);
+		},
+		isAfterEnd:function(){
+			let now = Date.now();
+				return moment(this.endDate).isBefore(now);
 		},
 	},
 	methods: {
