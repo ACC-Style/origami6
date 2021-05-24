@@ -1,6 +1,6 @@
 <template>
 	<div class="input flex user-select_none relative h:bg_black-1 br_radius">
-		<div class="flex_none p-l_3 p-r_3 self_center">
+		<div class="flex_none p-l_3 p-r_3 self_center" :class="{ 'cursor_not-allowed': excluded }">
 			<input
 				type="checkbox"
 				:name="'check' + id"
@@ -8,15 +8,16 @@
 				:disabled="excluded"
 				@change="$emit('input', $event.target.checked)"
                 class="font-size_up"
+                :class="{ 'cursor_not-allowed': excluded }"
 			/>
 		</div>
-		<div class="flex_auto self_center p-l_2">
+		<div class="flex_auto self_center p-l_2"  :class="{ 'cursor_not-allowed': excluded }">
 			<label
 				:for="'check' + id"
 				class="font-size_up lh_2"
-				:class="{ 'line-through': excluded }"
+				
 			>
-				<span class="font_regular p-y_2 inline-block p-y_1:md">
+				<span class="font_regular p-y_2 inline-block p-y_1:md" :class="{ 'line-through cursor_not-allowed': excluded }">
                     {{ label }}
                     <small
 					class="flex_auto p-l_2 font_light opacity_6 c_accent-n2"
@@ -26,7 +27,7 @@
 			</label>
 		</div>
 		<div
-			class="flex_none m-l_auto self_stretech justify_center flex flex_column relative p_2 p_0:md h:bg_white"
+			class="flex_none m-l_auto self_stretech justify_center flex flex_column relative p_2 p-y_0:md h:bg_white"
 			:class="{ 'bg_white': excludeToggleHover }"
 			@mouseenter="excludeToggleHover = true"
 			@mouseleave="excludeToggleHover = false"
@@ -37,7 +38,7 @@
 				class="p_3 c_primary bg_white absolute t_n3 vertical-align_middle b_n3 r_4 nowrap self_center justify_center flex flex_column"
 				v-show="excludeToggleHover"
 				>{{ excludeToggleLabel }}</span
-			><i class="fas" :class="excludeToggleStyles"></i>
+			><i class="fas p-r_2" :class="excludeToggleStyles"></i>
 		</div>
 	</div>
 </template>
