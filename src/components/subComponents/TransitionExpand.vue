@@ -13,6 +13,9 @@
 <script>
 export default {
   name: 'transitionExpand',
+  props:{
+    
+  },
   data() {
     return {
   

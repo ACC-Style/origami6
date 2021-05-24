@@ -1,72 +1,123 @@
 <template>
-	<section class="font_ui font_0">
-		<header class="flex">
-			<div class="flex_auto p-l_0 lh_1 font-size_up">
-				<slot>Slot Header Space</slot>       
+	<section class="font_ui">
+		<header class="flex font-size_up">
+			<div class="flex_auto  self_center p-l_0 lh_1 font-size_up font_medium">
+				<slot>Slot Header Space</slot>
 			</div>
 			<div
-				class="flex_none toggle opacity_5 h:opacity lh_1 font-size_down t_n2 r_n2 text_right m-l_auto user-select_none"
+				class="flex_none self_center  c_primary-n2 h:c_primary-n3 toggle opacity_5 h:opacity lh_1 font-size_down t_n2 r_n2 text_right m-l_auto user-select_none"
 				@click="toggleContentExpand()"
 			>
-				<i class="fa p_3" :class="toggle.class"></i>{{ toggle.label }}
+				{{ toggle.label }}
+				<i class="fa p_3 transition_3 fa-plus" :class="toggle.class"></i>
 			</div>
 		</header>
-		<ul
-			class="p-y_3 ul_none br-t_1 br_primary-4"
-			v-if="contentExpanded"
-			:class="{ br_solid: contentExpanded }"
-		>
-			<li class="m_0" v-for="(facet, index) in facets" :key="'facet_'+index"><FacetCheckMark v-bind="facet" /></li>
-		</ul>
+		<transitionExpand>
+			<main class="p_1" >
+				<ul v-show="contentExpanded"
+					:class="{ br_solid: contentExpanded }"
+					class="p-y_3 ul_none br-t_1 br-b_1 br_primary-3 transition_3"
+				>
+					<li
+						class="m-y_2"
+						v-for="(facet, index) in facetsList"
+						:key="'facet_' + index"
+					>
+						<FacetCheckMark
+							v-bind="facet"
+							v-model="facet.checked"
+							@onExcludeToggle="facet.excluded = $event"
+							:excluded="facet.excluded"
+							:canExcludeFacets="canExcludeFacets"
+						/>
+					</li>
+				</ul>
+			</main>
+		</transitionExpand>
 		<footer
-			class="text_center font-size_down c_primary-n1 br-t_1 br_solid br_priamry-4 p-t_3"
-			v-if="contentExpanded"
+			class="text_center font-size_down c_primary-n1 p-t_3"
+			v-if="
+				contentExpanded &&
+				(disabledChangeFunction.min || disabledChangeFunction.max)
+			"
 		>
-			<span href="" class="link h:underline h:black">less</span
+			<span
+				@click="changeMaxCount(-stepChange)"
+				class=""
+				:class="changeStyles(disabledChangeFunction.min)"
+				>less</span
 			><span class="c_primary"> | </span
-			><span href="" class="link h:underline h:black">more</span>
+			><span
+				@click="changeMaxCount(stepChange)"
+				class="link h:underline h:black"
+				:class="[changeStyles(disabledChangeFunction.max)]"
+				>more</span
+			>
 		</footer>
 	</section>
 </template>
 
+
 <script>
 import FacetCheckMark from './Coveo.Facet.Checkmark.vue';
+import transitionExpand from "../subComponents/TransitionExpand.vue";
 export default {
 	components: {
-		FacetCheckMark,
+		FacetCheckMark,transitionExpand
 	},
 	props: {
 		facets: { type: Array, default: () => { { } } },
-		isFacetExcludable: {
+		canExcludeFacets: {
 			type: Boolean,
 			default: true
+		},
+		maxCount: {
+			type: Number,
+			default: 10
+		},
+		stepChange: {
+			type: Number,
+			default: 10
 		},
 	},
 	data() {
 		return {
 
-			contentExpanded: true
+			contentExpanded: true,
+			maxFacetCount: this.maxCount
 		}
 	},
 	computed: {
+		facetsList() {
+			return this.facets.slice(0, this.maxFacetCount);
+		},
 		toggle() {
 			let array = new Array;
-			array["class"] = this.contentExpanded ? "fa-minus" : "fa-plus";
+			array["class"] = this.contentExpanded ? "rotate-135" : "";
 			array["label"] = this.contentExpanded ? "collapse" : "expand";
 			return array;
+		},
+		disabledChangeFunction() {
+			let maxCount = this.facets.length, minCount = this.maxCount, currentCount = this.facetsList.length;
+			let min = (currentCount <= minCount) ? false : true;
+			let max = (currentCount >= maxCount) ? false : true;
+			return { 'min': min, 'max': max };
 		}
 	},
 	methods: {
+		changeMaxCount(countChange) {
+			this.maxFacetCount = Math.max(this.maxFacetCount + countChange, this.maxCount);
+		},
 		toggleContentExpand() {
 			this.contentExpanded = !this.contentExpanded
+		},
+		changeStyles(state) {
+			if (state == true) {
+				return "link h:underline h:black cursor_pointer"
+			}
+			return "cursor_not-allowed c_black-3"
 		}
+
 	},
 }
 </script>
-
-<style scoped>
-.user-select_none {
-	user-select: none;
-}
-
-</style>
