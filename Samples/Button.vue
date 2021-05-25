@@ -1,5 +1,5 @@
 <template>
-  <button type="button" class="font_ui" :class="classes" @click="onClick" :style="style">{{ label }}</button>
+  <button type="button" class="font_ui" :class="classes" @click="onClick" :style="style" v-bind:disabled="isDisabled">{{ label }}</button>
 </template>
 
 <script>
@@ -27,6 +27,10 @@ export default {
     backgroundColor: {
       type: String,
     },
+    isDisabled:{
+      type:Boolean,
+      default:false
+    }
   },
 
   computed: {

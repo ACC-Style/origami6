@@ -1,12 +1,12 @@
 <template>
-	<span>
-	<Btn v-show="compIsActive" @onClick="onClick()" :size="size" :state="state" :corner="corner" :isDisabled="isDisabled" :shadow="shadow" :isActivatable="true" :isActive="true">
+	<div class="inline-block">
+	<Btn v-show="componentIsActive" @onClick="onClick()" :size="size" :state="activeState" :corner="corner" :isDisabled="isDisabled" :shadow="shadow" :shape="shape" :class="[{'shadow_emboss-light':insetShadow},'active-button']" >
 		<slot class="" name="active">ON</slot>
 	</Btn>
-	<Btn v-show="!compIsActive" @onClick="onClick()" :size="size" :state="state" :corner="corner" :isDisabled="isDisabled" :shadow="shadow" :isActivatable="true" :isActive="false">
-		<slot class="" name="deactive" >OFF</slot>
+	<Btn v-show="!componentIsActive" @onClick="onClick()" :size="size" :state="notActiveState" :corner="corner" :isDisabled="isDisabled" :shadow="shadow" :shape="shape" :class="[{'shadow_emboss-light':insetShadow},'not-active-button']" >
+		<slot class="" name="notActive" >OFF</slot>
 	</Btn>
-	</span>
+	</div>
 </template>
 <script>
 import Btn from "./Btn.vue";
@@ -15,25 +15,36 @@ export default {
 	components: { Btn },
 	props: {
 		size: { type: String },
-		state: { type: String },
+		activeState: { type: String,
+				default:'primary' },
+		notActiveState: { type: String,
+				default:'secondary' },
 		corner: { type: String },
 		isDisabled: { type: Boolean },
 		shadow: { type: Boolean },
-		isActive:{ type: Boolean, default:false }
+		insetShadow: { type: Boolean },
+		isActive:{ type: Boolean, default:false },
+		shape:{
+			type:String,
+			default:'button',
+			validator: function (value) {
+				return ['button','circle','square','switch'].indexOf(value) !== -1;
+			},
+			}
 	},
 	data() {
 		return {
-			compIsActive: this.isActive
+			componentIsActive: this.isActive
 		}
 	},
 	methods: {
 		onClick() {
 			if (!this.isDisabled) {
-				this.compIsActive = !this.compIsActive;
-				this.compIsActive
-					? this.$emit("onActive")
-					: this.$emit("onDeactive");
-				this.$emit("onClick");
+				this.componentIsActive = !this.componentIsActive;
+				this.componentIsActive
+					? this.$emit("onClick",{'isActive':true})
+					: this.$emit("onClick",{'isActive':false});
+				
 			}
 		}
 	},

@@ -14,7 +14,7 @@ export default {
 			actions: { argTypesRegex: "^on.*" },
 			source: {
 				code:
-					'<btn @onClick="onClick" @onActive="onActive" @onDeactive="onDeactive" v-bind="$props"><span v-html="label"/></btn>',
+					'<btn @onClick="onClick" v-bind="$props"><span v-html="label"/></btn>',
 			},
 		},
 	},
@@ -39,10 +39,10 @@ export default {
 			},
 		},
 		size: {
-			control: { type: "select", options: ["small", "medium", "large"] },
+			control: { type: "select", options: ["tiny","small", "medium", "large"] },
 		},
 		corner: {
-			control: { type: "select", options: ["square", "radius", "round"] },
+			control: { type: "select", options: ["square", "radius", "round","circle"] },
 		},
 	},
 };
@@ -51,13 +51,13 @@ const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { Btn },
 	template:
-		'<btn @onClick="onClick" @onActive="onActive" @onDeactive="onDeactive" v-bind="$props"><span v-html="label"/></btn>',
+		'<btn @onClick="onClick" v-bind="$props"><span v-html="label"/></btn>',
 });
 
 export const Button = Template.bind({});
 Button.args = {
 	label: "Button",
-	state: "priamry",
+	state: "primary",
 	size: "medium",
 };
 Button.parameters ={
@@ -69,17 +69,17 @@ export const DoubleBtn = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { Btn },
 	template:
-    `<div><Btn class="m-x_2" @onClick="onClick" @onActive="onActive" @onDeactive="onDeactive" v-bind="$props" :state="state" > Secondary Btn </Btn><Btn class="m-x_2" @onClick="onClick" @onActive="onActive" @onDeactive="onDeactive" v-bind="$props" :state="'primary'" :shadow="true">Primary Btn </Btn></div>`,
+    `<div><Btn class="m-x_2" @onClick="onClick"  v-bind="$props" :state="state" > Secondary Btn </Btn><Btn class="m-x_2" @onClick="onClick"  v-bind="$props" :state="'primary'" :shadow="true">Primary Btn </Btn></div>`,
 });
-export const DoubleButton = DoubleBtn.bind({});
-DoubleButton.parameters = {
+
+DoubleBtn.parameters = {
 	docs: {
 		description: {
 			story: "Simple Double Button",
 		},
 	},
 };
-DoubleButton.args = {
+DoubleBtn.args = {
 
   state: "secondary",
   shadow:true,
