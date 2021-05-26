@@ -69,9 +69,11 @@
 				:shadow="false"
 				:size="btnSize"
 			>
-				<i class="fas fa-share-square m-r_2"></i>
+				<span class="flex nowrap">
+					<i class="fas fa-share-square m-r_2"></i>
 				<span class="display_none inline:md">FULL&nbsp;</span>
 				<span>DOC</span>
+				</span>
 			</BTN>
 			<BTN
 				v-if="pdfURL != ''"
@@ -81,8 +83,10 @@
 				:shadow="false"
 				:size="btnSize"
 			>
-				<i class="fas fa-file-pdf m-r_3"></i>
+				<span class="flex nowrap">
+					<i class="fas fa-file-pdf m-r_3"></i>
 				<span>PDF</span>
+				</span>
 			</BTN>
 			<BTN
 				v-if="hubULR != ''"
@@ -92,8 +96,10 @@
 				:shadow="false"
 				:size="btnSize"
 			>
-				<i class="fab fa-hubspot m-r_3"></i>
+				<span class="flex nowrap">
+					<i class="fab fa-hubspot m-r_3"></i>
 				<span>Tools</span>
+				</span>
 			</BTN>
 		</nav>
 		<aside
@@ -162,13 +168,12 @@ export default {
 		btnState() {
 			if (this.el.is.sm) { return 'secondary' }
 			return 'empty';
-
-		}, btnStyles() {
-			if (this.el.is.sm) { return 'flex_auto text_center w_100 p_3' }
+		}, 
+		btnStyles() {
+			if (this.el.is.sm) { return 'flex_auto text_center w_100 p_3:md' }
 			return 'flex_shrink';
-
-		},btnSize() {
-
+		},
+		btnSize() {
 			if (this.el.is.sm) { return 'small' }
 			return 'tiny';
 

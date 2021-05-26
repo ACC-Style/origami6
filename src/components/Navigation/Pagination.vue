@@ -1,16 +1,18 @@
 <template>
-	<nav aria-label="Pagination" class="br_solid br_primary br-t_3 br_0 relative">
-		<ul class="pagination flex ul_none justify_end">
+	<nav aria-label="Pagination" class="br_solid br_black-3 br_1 relative">
+		<ul class="pagination flex flex_row ul_none justify_center">
 			<li class="p-x_3 font_bold p-y_2 m-r_auto absolute relative:md b_n5 b_0:md p-b_3 font_n2 font_n1:md">
 				<slot>
 					<span class="show-for-sr display_none">You're on page</span> Page Number: {{ currentPage }} of {{totalPages}}
 				</slot>
 				
 			</li>
-			<li class="pagination-previous" v-if="currentPage > 1">
-				<Btn :shadow="false" :corner="'square'" :size="'small'" @onClick="onPrevPage()">
-				<i class="fas fa-arrow-left p-r_3"></i>
-				<span class="show-for-sr display_none inline:md">Prev</span>
+			<li class="pagination-previous " v-if="currentPage > 1">
+				<Btn :shadow="false" :corner="'square'" :size="'small'" :state="'none'" @onClick="onPrevPage()" :class="'br_1 br_solid br_1 bg_white h:bg_black-3'">
+				<div class="flex flex_row nowrap">
+					<i class="fas fa-arrow-left p-r_3"></i>
+					<span class="show-for-sr display_none inline:md">Prev</span>
+				</div>
 				</Btn>
 			</li>
 			<li v-if=" currentPage < pageRange[0] ">
