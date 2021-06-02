@@ -1,13 +1,13 @@
 <template>
-	<nav aria-label="Pagination" class="">
+	<nav aria-label="Pagination" class="flex flex_row justify_center">
 		<ul class="pagination flex flex_row ul_none justify_center br_solid br_black-3 br_1 relative">
-			<!-- <li class="p-x_3 font_bold p-y_2 m-r_auto absolute relative:md b_n5 b_0:md p-b_3 font_n2 font_n1:md">
+			<!-- <li class="flex" class="p-x_3 font_bold p-y_2 m-r_auto absolute relative:md b_n5 b_0:md p-b_3 font_n2 font_n1:md">
 				<slot>
 					<span class="show-for-sr display_none">You're on page</span> Page Number: {{ currentPage }} of {{totalPages}}
 				</slot>
 				
 			</li> -->
-			<li class="pagination-previous " v-if="currentPage > 1">
+			<li class="flex pagination-previous " v-if="currentPage > 1">
 				<Btn :shadow="false" :corner="'square'" :size="size" :state="'none'" @onClick="onPrevPage()" :class="buttonClassOverride">
 				<div class="flex flex_row nowrap">
 					<i class="fas fa-arrow-left p-r_3"></i>
@@ -15,27 +15,27 @@
 				</div>
 				</Btn>
 			</li>
-			<li v-if=" currentPage < pageRange[0] ">
+			<li class="flex" v-if=" currentPage < pageRange[0] ">
 				<Btn :shadow="false" :corner="'square'" :size="size" :state="'none'" :class="buttonClassOverride" @onClick="onGoToPage(currentPage)" ><i class="fas fa-caret-left opacity_5 p-r_2"></i><span class="font_bold">{{currentPage}}</span>
 				</Btn>
 			</li>
-			<li  v-if="pageRange[0] > 1">
+			<li class="flex"  v-if="pageRange[0] > 1">
 				<Btn :shadow="false" :corner="'square'" :size="size" :state="'none'" :class="buttonClassOverride"  @onClick="shiftPageRangeDown()" ><i class="fas  fa-ellipsis-h left"></i>
 				</Btn>
 			</li>
-			<li v-for="(page, index) in pageRange" v-bind:key="index">
+			<li class="flex" v-for="(page, index) in pageRange" v-bind:key="index">
 				<Btn :shadow="false" :corner="'square'" :size="size" :class="buttonClassOverride"  @onClick="onGoToPage(page)" :state="currentPageCheck(page)" >{{page}}
 				</Btn>
 			</li>
-			<li v-if=" pageRange[pageRange.length - 1 ]+ 1 < totalPages ">
+			<li class="flex" v-if=" pageRange[pageRange.length - 1 ]+ 1 < totalPages ">
 				<Btn :shadow="false" :corner="'square'" :size="size" :state="'none'" :class="buttonClassOverride"  @onClick="shiftPageRangeUp()" ><i class="fas  fa-ellipsis-h right"></i>
 				</Btn>
 			</li>
-			<li v-if=" currentPage > pageRange[pageRange.length - 1] ">
+			<li class="flex" v-if=" currentPage > pageRange[pageRange.length - 1] ">
 				<Btn :shadow="false" :corner="'square'" :size="size" :state="currentPageCheck(currentPage)" @onClick="onGoToPage(currentPage)" ><span class="font_bold">{{currentPage}} </span>
 				</Btn>
 			</li>
-			<li class="pagination-next">
+			<li class="flex pagination-next">
 				<Btn :shadow="false" :corner="'square'" :size="size" :state="'none'" :class="buttonClassOverride"  @onClick="onNextPage()" aria-label="Next Page">
 					<div class="flex flex_row nowrap">
 						<span class="show-for-sr display_none inline:md">Next</span>
@@ -55,7 +55,7 @@ export default {
 		currentPage:{default:3, type:Number},
 		totalPages: {default:50, type:Number},
 		listSize:{ default:5, type:Number},
-		size:{default:"small", type:Number}
+		size:{default:"tiny", type:String}
 	},
 	computed: {
 		pageRange: function() {
@@ -79,7 +79,7 @@ export default {
 	},
 	methods: {
 		currentPageCheck(page){
-			return (page == this.currentPage)?'primary':'none';
+			return (page == this.currentPage)? 'primary' : 'none';
 		},
 		shiftPageRangeUp: function() { 
 			this.min = this.min + this.listSize;
