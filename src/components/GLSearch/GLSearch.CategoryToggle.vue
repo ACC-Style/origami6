@@ -8,7 +8,7 @@
 			class="flex_shrink p_3"
 			:class="[
 				{
-					'bg_black-1 br_radius order_0':
+					'bg_black-2 br_radius order_0':
 						category.value == 'recommendation',
 				},
 				{ order_2: category.value != 'recommendation' },
@@ -20,7 +20,7 @@
 			>
 				<SwitchToggle
 					class="self_center:lg self_start"
-					:size="swithcSize"
+					:size="switchSize"
 					:activeState="category.activeState"
 					:insetShadow="true"
 					:notActiveState="category.notActiveState"
@@ -31,17 +31,17 @@
 				<Btn
                     @onClick="$emit('onModalOpen')"
 					class="m-t_3 m-t_0:lg m-l_4:lg"
-					:state="'secondary'"
+					:state="'black'"
 					:shadow="true"
 					:size="buttonSize"
 					:isDisabled="!recIsActive"
-					>Recommendation Filters</Btn
+					>SHOW FILTERS</Btn
 				>
 			</div>
 			<div v-else>
 				<SwitchToggle
 					class="self_center"
-					:size="swithcSize"
+					:size="switchSize"
 					:activeState="category.activeState"
 					:insetShadow="true"
 					:notActiveState="category.notActiveState"
@@ -62,7 +62,7 @@ export default {
 		SwitchToggle, Btn
 	},
 	props: {
-		swithcSize: { type: String, default: "small" }, 
+		switchSize: { type: String, default: "small" }, 
         buttonSize: { type: String, default: "small" },
 		categories: {
 			type: Array,

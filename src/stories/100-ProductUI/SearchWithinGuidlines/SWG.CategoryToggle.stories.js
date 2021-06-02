@@ -26,14 +26,15 @@ export default {
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { CategoryToggle },
-	template: `<CategoryToggle :size="size" :categories="categories" @onClick="onClick($event)" @onModalOpen="onModalOpen()"/>`,
+	template: `<CategoryToggle :switchSize="switchSize" :buttonSize="buttonSize" :categories="categories" @onClick="onClick($event)" @onModalOpen="onModalOpen()"/>`,
 });
 export const CategoryFilter = Template.bind({});
 CategoryFilter.args = {
-	size:'tiny',
+	buttonSize:'tiny',
+	switchSize:'tiny',
     categories: [
-            {label:"Sections", value:'section', activeState:"success", notActiveState: "secondary"},
-            {label:"Tables & Figures", value:'table', activeState:"highlight", notActiveState: "secondary"},
-            {label:"Recommendation", value:'recommendation', activeState:"primary", notActiveState: "secondary"},
+            {label:"Sections", value:'section', activeState:"success", notActiveState: "black"},
+            {label:"Tables & Figures", value:'table', activeState:"highlight", notActiveState: "black"},
+            {label:"Recommendation", value:'recommendation', activeState:"primary", notActiveState: "black"},
             ]
 };

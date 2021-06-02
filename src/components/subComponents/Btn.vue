@@ -6,11 +6,11 @@
 		v-bind:disabled="isDisabled"
 	>
 		<div
-			class="flex block justify_center"
+			class="flex block justify_center flex_column"
 			:class="buttonSize"
 			
 		>
-			<div class="flex_auto self_center flex_column flex justify_center"  v-bind:style="aspect_ratio"><slot ></slot></div>
+			<div class="flex_auto self_center justify_center flex"  v-bind:style="aspect_ratio"><slot ></slot></div>
 		</div>
 	</button>
 </template>
@@ -65,8 +65,8 @@ export default {
 			}}
 			if(this.shape == 'switch'){
 				return {
-				width: '2.5em',
-				height: '1em'
+				width: '2.75em',
+				height: 'auto'
 			}}
 			return {};
 
@@ -97,16 +97,16 @@ export default {
 				default:
 					switch (this.size) {
 						case "tiny":
-							size = "p_2 lh_0 font_n3 font_bold";
+							size = "p_2 lh_0 font_n2 font_bold";
 							break;
 						case "small":
 							size = "p_3 lh_0 font_n1 font_0:md";
 							break;
 						case "medium":
-							size = "p_3 lh_0 font_1 font_2:md";
+							size = "p_3 lh_0 font_2 font_3:md";
 							break;
 						case "large":
-							size = "p_4 lh_0 font_3 font_4:md";
+							size = "p_3 lh_0 font_4 font_5:md";
 							break;
 						default:
 							size = "p_3 lh_0 font_n1 font_0:md";
@@ -158,12 +158,12 @@ export default {
 					}
 					break;
 				case "black":
-					stateStyle = " c_black-8 h:c_black-8 ";
+					stateStyle = " c_white-8 h:c_white-9 ";
 					if (this.isDisabled) { stateStyle = " bg_black-2 c_black-3"; }
 					else {
 						stateStyle +=
-							"  h:bg_black-6 br_black-5";
-						stateStyle += (this.isActivatable) ? " bg_black-4 " : " bg_black-4";
+							"  h:bg_black-7 br_black-5";
+						stateStyle += (this.isActivatable) ? " bg_black-5 " : " bg_black-5";
 					}
 					break;
 				case "secondary":

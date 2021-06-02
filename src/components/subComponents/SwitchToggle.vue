@@ -12,10 +12,10 @@
 			:insetShadow="insetShadow"
 		>
 			<template v-slot:active
-				><span v-html="switchHandle.activeLabel"
+				><span class="flex flex_row justify_end w_100" v-html="switchHandle.activeLabel"
 			/></template>
 			<template v-slot:notActive
-				><span v-html="switchHandle.notActiveLabel"
+				><span class="flex flex_row justify_start w_100" v-html="switchHandle.notActiveLabel"
 			/></template>
 		</BtnToggle>
 		<div class="flex_auto self_center p-l_3:lg p-l_2 lh_0"><slot></slot></div>
@@ -94,31 +94,31 @@ export default {
 			let offset = { active: "", notActive: "" };
 			switch (this.size) {
 				case "tiny":
-					offset.active = " m-r_n3 m-l_3 m-t_1 ";
-					offset.notActive = " m-l_n3 m-r_3 m-t_1 ";
+					offset.active = "vertical-align_middle self_center";
+					offset.notActive = "vertical-align_middle self_center";
 					break;
 				case "small":
-					offset.active = " m-r_n3 m-l_4 ";
-					offset.notActive = " m-l_n3 m-r_4 ";
+					offset.active = "vertical-align_middle self_center";
+					offset.notActive = "vertical-align_middle self_center";
 					break;
 				case "large":
-					offset.active = " m-r_n5 p-r_3 m-l_5  m-y_n3";
-					offset.notActive = " m-l_n5 p-l_3 m-r_5 m-y_n3 ";
+					offset.active = "vertical-align_middle self_center";
+					offset.notActive = "vertical-align_middle self_center";
 					break;
 				default:
-					offset.active = " m-r_n4 m-l_4 ";
-					offset.notActive = " m-l_n4  m-r_4 ";
+					offset.active = "vertical-align_middle self_center";
+					offset.notActive = "vertical-align_middle self_center";
 					break;
 			}
 			return {
 				activeLabel:
-					'<i class="fas fa-fw font-size_up' +
+					'<i class="fas fa-fw font-size_up ' +
 					offset.active +
 					" " +
 					icon.active +
 					'"></i>',
 				notActiveLabel:
-					'<i class="fas fa-fw font-size_up' +
+					'<i class="fas fa-fw font-size_up ' +
 					offset.notActive +
 					" " +
 					icon.notActive +

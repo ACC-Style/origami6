@@ -1,9 +1,9 @@
 <template>
 	<div class="inline-block">
-	<Btn v-show="componentIsActive" @onClick="onClick()" :size="size" :state="activeState" :corner="corner" :isDisabled="isDisabled" :shadow="shadow" :shape="shape" :class="[{'shadow_emboss-light':insetShadow},'active-button']" >
+	<Btn v-show="componentIsActive" @onClick="onClick()" :size="size" :state="activeState" :corner="corner" :isDisabled="isDisabled" :shadow="shadow" :shape="shape" :class="[{'shadow_emboss-light text-shadow_black-1':insetShadow},'active-button']" >
 		<slot class="" name="active">ON</slot>
 	</Btn>
-	<Btn v-show="!componentIsActive" @onClick="onClick()" :size="size" :state="notActiveState" :corner="corner" :isDisabled="isDisabled" :shadow="shadow" :shape="shape" :class="[{'shadow_emboss-light':insetShadow},'not-active-button']" >
+	<Btn v-show="!componentIsActive" @onClick="onClick()" :size="size" :state="notActiveState" :corner="corner" :isDisabled="isDisabled" :shadow="shadow" :shape="shape" :class="[{'shadow_emboss-light text-shadow_black-1':insetShadow},'not-active-button']" >
 		<slot class="" name="notActive" >OFF</slot>
 	</Btn>
 	</div>
