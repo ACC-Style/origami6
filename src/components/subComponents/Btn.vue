@@ -4,6 +4,7 @@
 		@click="onClick()"
 		:class="[buttonColors, 'br_' + corner, { p_0: shape != 'button' }]"
 		v-bind:disabled="isDisabled"
+		style="min-height:unset"
 	>
 		<div
 			class="flex block justify_center flex_column"
