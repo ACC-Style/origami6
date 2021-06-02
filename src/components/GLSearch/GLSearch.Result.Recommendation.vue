@@ -1,6 +1,6 @@
 <template>
 	<article
-		class="result font_ui br_1 br_black-2 br_1 br_solid shadow_overlap-light br_radius"
+		class="result font_ui br_1 br_black-2 br_1 br_solid shadow_overlap-light br_radius relative"
 	>
 		<header class="br-t_4 br_solid br_primary m-t_n1 m-x_n1 br-tr_radius br-tl_radius">
 			<aside class="flex relative">
@@ -15,7 +15,7 @@
 		<main class="result-content p-x_4 p-b_4 font_copy font_0 lh_3">
 			<h2 class="inline float_left">{{ sectionTitle }}</h2>
 			<CorLoeChiclet
-				class="float_right m-b_2 m-t_n5 m-t_n4:md m-x_4:md m-x_0"
+				class="float_right m-x_0 m-b_2 m-t_n5:md  m-l_4:md  absolute relative:md font_n3 font_n1:md font_0:lg t_3 r_3"
 				:cor="cor"
 				:loe="loe"
 			/>
@@ -51,13 +51,13 @@
 			<TransitionExpand>
 				<div class="c_black-9 font_n1" v-if="isExpanded">
 					<section class="p-x_3">
-						<h4 class="font_0 m_0 m-y_3">Supporting Text:</h4>
+						<h4 class="font_0 m_0 m-t_4 m-b_3 font_medium">Supporting Text:</h4>
 						<p class="lh_3" v-html="supportingText">
 							supporting text here
 						</p>
 					</section>
 					<section class="p-x_3">
-						<h4 class="font_0 m_0 m-y_3">References:</h4>
+						<h4 class="font_0 m_0 m-t_4 m-b_3 font_medium">References:</h4>
 						<ul class="ul_none">
 							<li
 								class="m-b_2 br-t_1 br_dotted br_primary-2 m-t_2 p-t_2 h:underline undecorated c_primary-n1 hc_primary-n3"

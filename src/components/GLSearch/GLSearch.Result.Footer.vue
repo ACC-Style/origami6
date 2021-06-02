@@ -103,7 +103,7 @@
 			</BTN>
 		</nav>
 		<aside
-			class="font_n2 c_black-8 bg_black-2 h:bg_black-5 h:c_white m-x_n3 m-b_n2 p_2 p-x_3 br-t_1 br_solid br_black-2 shadow_n1 relative"
+			class="font_n2 c_black-8 bg_black-2 h:bg_black-5 h:c_white m-x_n3 m-b_n2 p_2 p-x_3 br-t_1 br_solid br_black-2 shadow_n1 relative br-br_radius br-bl_radius "
 		>
 			<div class="flex flex_nowrap nowrap" @click="onCopy()">
 				<strong class="flex_none p-r_2">
@@ -118,7 +118,7 @@
 			</div>
 			<div
 				:class="copiedStyles"
-				class="bg_primary absolute t_0 r_0 b_0 l_0 c_white font_bold p_2 transition_3 lh_1 flex justify_center self_center vertical-align_middle"
+				class="bg_primary absolute t_0 r_0 b_0 l_0 c_white font_bold p_2 transition_3 lh_1 flex justify_center self_center vertical-align_middle br-br_radius br-bl_radius br_solid br_primary br_1 br-t_0 m-b_n1 m-x_n1"
 			>
 				<span class="p-t_1"
 					><i class="fas fa-copy p-r_3"></i>Copied to Clipboard</span

@@ -1,41 +1,60 @@
 <template>
-	<article class="result font_ui br_1 br_black-2 br_1 br_solid shadow_1">
-		<header class="br-t_3 br_solid br_primary m-t_n1 m-x_n1">
+	<article
+		class="result font_ui br_1 br_black-2 br_1 br_solid shadow_overlap-light br_radius bg_white"
+	>
+		<header class="br-t_4 br_solid br_highlight m-t_n1 m-x_n1  br-tr_radius br-tl_radius">
 			<aside class="flex relative">
 				<div class="flex_auto">
 					<span
-						class="p-y_3 block font_n2 m-x_4 p-t_4 uppercase c_primary font_bold"
-					>tables &amp; figures</span>
+						class="p-y_3 block font_n2 m-x_4 p-t_3 uppercase c_highlight font_bold"
+						>Table &amp; Figures</span
+					>
 				</div>
 			</aside>
 		</header>
-		<main class="result-content p-x_4 p-b_4 font_copy font_0 lh_3">
-			<div class="inline-block font_1 font_slab c_acc">{{title}}</div>
-			<div class="block:md font_n1 overflow_scroll scrollbar-mini w_100 display_none" v-html="content"></div>
-			<div class="block display_none:md texture_light br_radius p_4 text_center shadow_n1">
-				<h2 class="m-y_3">
-					<i class="fas fa-table font_5"></i> Table Results Are Not Rendered In this View
-				</h2>
-				<p class="font_0">
-					Table results are not mobile friendly. It is best to veiw this content on a tablet or desktop. You can pop this table onto a new tab but you will have to scroll.
+		<main class="result-content p-x_4 p-b_4 font_copy font_0 lh_3 relative">
+			<h2>{{ sectionTitle }}</h2>
+			<TransitionExpand>
+				
+				<div class="block swg-result" v-if="isExpanded">
+					<div v-html="summary" v-if="!el.is.lg"></div>
+					<div v-html="content">
+						<LoadingText />
+					</div>
+				</div>
+			</TransitionExpand>
+			<TransitionExpand>
+				<div v-html="summary" v-if="!isExpanded"></div>
+			</TransitionExpand>
+			<div
+				@click="isExpandedBoolean = !isExpandedBoolean"
+				class="bg_white b_3 l_0 r_0 sticky"
+				:class="{ 'shadow_overlap-light ': isExpanded }"
+			>
+				<div
+					class="bg_white p_2 flex justify_center align_center bg_black-_05 transition_3 p_2 p-x_3 bg_black-2 h:bg_primary h:c_white font_n2 flex_auto z_3"
+					v-if="el.is.lg"
+				>
 					<i
-						class="far fa-thumbs-down"
-					></i>
-				</p>
-				<BTN class="br_radius shadow_2 br_solid br_2 br_white" :state="'shade'" :size="'large'">
-					Expand Table On A New Tab
-					<i class="fas fa-external-link-square"></i>
-				</BTN>
+						class="fas fa-chevron-up transition_2 self_center"
+						:class="rotation"
+					></i
+					><span v-if="isExpanded" class="p-l_3" 
+						>Collapse Content</span
+					><span v-else class="p-l_3">Expand Content</span>
+				</div>
 			</div>
 		</main>
-
 		<ResultFooter
 			:sections="sections"
 			:documentTitle="documentTitle"
-			:DOCurl="DOCurl"
-			:PDFurl="PDFurl"
-			:HUBurl="HUBurl"
-			@navigate="$emit('navigate')"
+			:docURL="docURL"
+			:pdfURL="pdfURL"
+			:hubURL="hubURL"
+			:breadcrumb="breadcrumb"
+			:pointOfCare="pointOfCare"
+			:conditions="conditions"
+			@onNavigate="$emit('onNavigate')"
 		/>
 	</article>
 </template>
@@ -43,73 +62,64 @@
 <script>
 import BTN from "../subComponents/Btn";
 import ResultFooter from "./GLSearch.Result.Footer";
+import TransitionExpand from "../subComponents/TransitionExpand";
+import LoadingText from "../subComponents/LoadingText";
+import { ResponsiveMixin } from "vue-responsive-components";
+
 export default {
 	name: "SearchResultTable",
 	components: {
-		BTN,
-		ResultFooter
+				BTN,
+		ResultFooter,
+		TransitionExpand, LoadingText
+	},
+	mixins: [ResponsiveMixin],
+	breakpoints: {
+		sm: (el) => el.width <= 480,
+		md: (el) => el.width <= 768 && el.width > 480,
+		lg: (el) => el.width > 768,
 	},
 	props: {
-		type: { type: String },
-		title: { type: String },
-		content: { type: String },
+		type: { type: String, default: "Recomendation" },
+		summary: { type: String, default: "summary didn't load" },
+		content: { type: String, default: "" },
 		documentTitle: { type: String },
-		DOCurl: { type: String },
-		PDFurl: { type: String },
-		HUBurl: { type: String },
-		sections: { type: Array }
+		docURL: { type: String, default: "" },
+		pdfURL: { type: String, default: "" },
+		hubURL: { type: String, default: "" },
+		sections: { type: Array },
+		loe: { type: String },
+		cor: { type: String },
+		pointOfCare: { type: Array, default: null },
+		conditions: { type: Array, default: null },
+		breadcrumb: { type: Array },
+		sectionTitle: { type: String }
 	},
 	data() {
 		return {
-			showExtra: false
+			isExpandedBoolean: false
 		};
 	},
 	computed: {
-		loeStyle() {
-			return "bg_cor-IIB";
+		rotation() {
+			return (!this.isExpanded) ? "rotation_180" : "rotation_0";
 		},
-		corStyle() {
-			return "bg_loe-A";
+		isExpanded(){
+			if(this.el.is.lg){
+				return this.isExpandedBoolean;
+			}
+			return true;
+			
 		}
 	}
 };
 </script>
 
-<style lang="css">
-.inline-table-caption {
-	font-size: 10px;
+<style scoped>
+.rotation_0 {
+	transform: rotate(0deg);
 }
-
-table {
-	margin: 0 auto;
-}
-
-/* Default Table Style */
-table {
-	color: #333;
-	background: white;
-	border: 1px solid grey;
-	border-collapse: collapse;
-}
-table thead th,
-table tfoot th {
-	color: #777;
-	background: rgba(0, 0, 0, 0.1);
-	font-size: 0.8em;
-}
-table caption {
-	padding: 0.5em;
-}
-table th,
-table td {
-	padding: 0.5em;
-	border: 1px solid lightgrey;
-}
-.inline-reference {
-	font-size: 0.75em;
-	padding: 0.5em;
-	display: inline-block;
-	color: #198dae;
-	text-decoration: underline;
+.rotation_180 {
+	transform: rotate(180deg);
 }
 </style>

@@ -1,3 +1,14 @@
+// Retrieve image
+// https://www.stage.acc.org/wapi/GuidelinesHelper/retrieve?relativePath=07351097%2FS0735109710X00110%2FS0735109710007151%2Fgr28.jpg
+// Autosuggest
+// https://www.stage.acc.org/wapi/GuidelinesHelper/AutoSuggest?term=heart
+// Search (TAB: Recommendations, Section, Tables & Figures)
+// https://www.stage.acc.org/wapi/GuidelinesHelper/SearchResult?filters=section&filters=table&filters=image&filters=recommendations&page=1&rows=10&term=heart
+// Retrieve (Detail of each search item and need section id as input)
+// https://www.stage.acc.org/wapi/GuidelinesHelper/retrieve?eid=1-s2.0-S0735109717413064&sectionid=hl0007917
+// Related Recommendations
+// https://www.stage.acc.org/wapi/GuidelinesHelper/Relatedrecommendations?page=1&rows=100&term=7.9.1.1+Congenital+Long+QT+Syndrome
+
 export const results = [
 	{
 		eid: "1-s2.0-S0735109718368463",
@@ -484,6 +495,214 @@ export const results = [
 		url: "",
 	},
 ];
+export const resultSection = [
+	{
+		"eid": "1-s2.0-S0735109718368463",
+		"itemtitle": "Coronary Anomalies",
+		"itemtitleFormatted": "<span>Coronary Anomalies</span>",
+		"summary": "Coronary abnormalities are among the most common congenital cardiovascular anomalies, surpassing in prevalence nearly all others combined. Coronary anomalies include anomalous aortic origin of a coronary artery (AAOCA), coronary fistula, and myoca...",
+		"contenttype": [
+			"PG",
+			"JL"
+		],
+		"pubdate": "1554163200000",
+		"sectiontitle": [
+			"JACC (Journal of the American College of Cardiology)",
+			"2018 AHA/ACC Guideline for the Management of Adults With Congenital Heart Disease",
+			"4 Specific Lesions",
+			"4.4 Complex Lesions",
+			"4.4.7 Coronary Anomalies"
+		],
+		"doi": "10.1016/j.jacc.2018.08.1029",
+		"subtype": "section",
+		"sectionid": [
+			"hl0009869"
+		],
+		"sectiontitleformatted": [
+			"<span>JACC (Journal of the American College of Cardiology)</span>",
+			"<span>2018 AHA/ACC Guideline for the Management of Adults With Congenital Heart Disease</span>",
+			"<span>4 Specific Lesions</span>",
+			"<span>4.4 Complex Lesions</span>",
+			"<span>4.4.7 Coronary Anomalies</span>"
+		],
+		"refimage": null,
+		"caption": null,
+		"loe": null,
+		"cor": null,
+		"abs": [],
+		"comments": [],
+		"pointofcare": null,
+		"conditions": null,
+		"refinfo": null,
+		"vol": "73",
+		"issue": "12",
+		"pages": "e81-e192",
+		"coverdatetext": "02 April 2019",
+		"coverdatestart": "2019-04-02",
+		"statustype": "S300",
+		"citation": "J Am Coll Cardiol. 2019 Apr 2;73(12):e81-e192",
+		"hub": "/Guidelines/Hubs/Congenital-Heart-Disease",
+		"jacclink": "http://www.onlinejacc.org/content/73/12/e81#sec7.4.7",
+		"pdflink": "http://www.onlinejacc.org/content/73/12/e81.full.pdf",
+		"gltitle": "Adults with Congenital Heart Disease",
+		"url": ""
+	}
+];
+export const resultImage = [
+	{
+		"eid": "1-s2.0-S073510971838985X-gr3",
+		"itemtitle": "2018 ACC/AHA/HRS Guideline on the Evaluation and Management of Patients With Bradycardia and Cardiac Conduction Delay",
+		"itemtitleFormatted": "<span>2018 ACC/AHA/HRS Guideline on the Evaluation and Management of Patients With Bradycardia and Cardiac Conduction Delay</span>",
+		"summary": "Initial Evaluation of Suspected Atrioventricular Block AlgorithmColors correspond to Class of Recommendation in Table 2. *Targeted Advanced Imaging—Magnetic Resonance Imaging (MRI): Amyloidosis, myocarditis, hemochromatosis, sarcoidosis, CHD, sinu...",
+		"contenttype": ["IM"],
+		"pubdate": null,
+		"sectiontitle": [
+			"JACC (Journal of the American College of Cardiology)",
+			"2018 ACC/AHA/HRS Guideline on the Evaluation and Management of Patients With Bradycardia and Cardiac Conduction Delay",
+			"Figure 3"
+		],
+		"doi": "10.1016/j.jacc.2018.10.044",
+		"subtype": "publication",
+		"sectionid": ["hl0000045"],
+		"sectiontitleformatted": [
+			"<span>JACC (Journal of the American College of Cardiology)</span>",
+			"<span>2018 ACC/AHA/HRS Guideline on the Evaluation and Management of Patients With Bradycardia and Cardiac Conduction Delay</span>",
+			"<span>Figure 3</span>"
+		],
+		"refimage": [
+			"07351097/S07351097XXXXXXXX/S073510971838985X/gr3-t.gif",
+			"07351097/S07351097XXXXXXXX/S073510971838985X/gr3.jpg",
+		],
+		"caption": [
+			"Initial Evaluation of Suspected Atrioventricular Block AlgorithmColors correspond to Class of Recommendation in Table 2. *Targeted Advanced Imaging—Magnetic Resonance Imaging (MRI): Amyloidosis, myocarditis, hemochromatosis, sarcoidosis, CHD, sinus of Valsalva aneurysm, aortic dissection, arrhythmogenic right ventricular cardiomyopathy; fluoro-deoxy-glucose (fludeoxyglucose)-positron emission tomography (FDG PET): sarcoidosis; 99m technetium pyrophosphate (Tc PYP) or 99m technetium 3,3-diphosphono-1,2-propanodicarboxylic acid (TC-DPD): Transthyretin (TTR) amyloidosis; cardiac computed tomography (CT): CHD, sinus of Valsalva aneurysm, aortic dissection, arrhythmogenic right ventricular cardiomyopathy; echo longitudinal strain: Amyloidosis; transesophageal echocardiogram (TEE): Endocarditis, sinus of Valsalva aneurysm, aortic dissection, CHD.†Refer to Section 6.4., Figure 7. ‡The atrioventricular node is more likely the site of block with second-degree Mobitz type I atrioventricular block and a narrow QRS complex or severe first-degree atrioventricular block (>0.30 s) with a narrow QRS complex.AV indicates atrioventricular; ACHD, adult congenital heart disease; CHD, congenital heart disease; and CM, cardiomyopathy."
+		],
+		"loe": null,
+		"cor": null,
+		"abs": [],
+		"comments": [],
+		"pointofcare": null,
+		"conditions": null,
+		"refinfo": null,
+		"vol": null,
+		"issue": null,
+		"pages": null,
+		"coverdatetext": null,
+		"coverdatestart": null,
+		"statustype": "S100",
+		"citation": "J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2018.10.044",
+		"hub": "/Guidelines/Hubs/Bradycardia-and-Cardiac-Conduction-Delay",
+		"jacclink": "http://www.onlinejacc.org/content/74/7/e51#fig3",
+		"pdflink": "http://www.onlinejacc.org/content/74/7/e51.full.pdf",
+		"gltitle": "Bradycardia and Cardiac Conduction Delay",
+		"url": ""
+	}
+];
+
+export const resultRecomendation = [
+	{
+		eid: "71-s2.0-VA-SCD-7.9.1.1-8",
+		itemtitle: "7.9.1.1 Congenital Long QT Syndrome",
+		itemtitleFormatted: "<span>7.9.1.1 Congenital Long QT Syndrome</span>",
+		summary:
+			"In patients with long QT syndrome, QT-prolonging medications are potentially harmful. The risk of adverse events increases in patients with long QT syndrome with prolongation of the QTc >500 ms (S7.9.1.1-2,S7.9.1.1-12,S7.9.1.1-26,S7.9.1.1-35,S7.9....",
+		contenttype: ["ACCG"],
+		pubdate: null,
+		sectiontitle: [
+			"JACC (Journal of the American College of Cardiology)",
+			"7 Ongoing Management of VA and SCD Risk Related to Specific Disease States",
+			"7.9 Cardiac Channelopathies",
+			"7.9.1 Specific Cardiac Channelopathy Syndromes",
+			"7.9.1.1 Congenital Long QT Syndrome",
+		],
+		doi: "10.1016/j.jacc.2017.10.054",
+		subtype: "publication",
+		sectionid: null,
+		sectiontitleformatted: [
+			"<span>JACC (Journal of the American College of Cardiology)</span>",
+			"<span>7 Ongoing Management of VA and SCD Risk Related to Specific Disease States</span>",
+			"<span>7.9 Cardiac Channelopathies</span>",
+			"<span>7.9.1 Specific Cardiac Channelopathy Syndromes</span>",
+			"<span>7.9.1.1 Congenital Long QT Syndrome</span>",
+		],
+		refimage: null,
+		caption: null,
+		loe: "B-NR",
+		cor: "3: Harm",
+		abs: [
+			"In patients with long QT syndrome, QT-prolonging medications are potentially harmful.",
+		],
+		comments: [
+			"The risk of adverse events increases in patients with long QT syndrome with prolongation of the QTc &gt;500 ms (S7.9.1.1-2,S7.9.1.1-12,S7.9.1.1-26,S7.9.1.1-35,S7.9.1.1-41,S7.9.1.1-58). QT-prolonging medications (www.crediblemeds.org) (S7.9.1.1-59) should not be used in patients with long QT syndrome unless there is no suitable alternative; careful monitoring of the QTc during therapy is recommended, with consideration for discontinuing therapy with marked QTc prolongation. Concurrent use of stimulant or nonstimulant attention deficit/hyperactivity medications was associated with an increased risk of syncope/cardiac arrest in long QT syndrome, particularly males, in 1 study (S7.9.1.1-34), but it did not appear to be associated with increased risk in another retrospective study (S7.9.1.1-60). Episodes of torsades de pointes can be precipitated by exposure to a QT prolonging medication, or hypokalemia induced by diuretics or gastrointestinal illness. Attention to maintaining normal potassium and magnesium balance when medications or situations that promote depletion are encountered is an important component of management. Rare case reports exist of fever prolonging the QT interval in patients with long QT syndrome type 2; fever should be reduced with antipyretics (S7.9.1.1-61)(Table 10).",
+		],
+		pointofcare: ["Treatment"],
+		conditions: ["Ventricular Arrythmias-Sudden Cardiac Death"],
+		refinfo: null,
+		vol: "72",
+		issue: "14",
+		pages: "e91",
+		coverdatetext: null,
+		coverdatestart: "2018-10-02",
+		statustype: "S300",
+		citation: "J Am Coll Cardiol. 2018 Oct 2;72(14):e91",
+		hub: "/Guidelines/Hubs/Ventricular-Arrhythmias",
+		jacclink: "http://www.onlinejacc.org/content/72/14/e91",
+		pdflink: "http://www.onlinejacc.org/content/72/14/e91.full.pdf",
+		gltitle:
+			"Ventricular Arrhythmias and the Prevention of Sudden Cardiac Death",
+		url: "",
+	},
+];
+
+
+export const resultTable = [
+	{
+		"eid": "1-s2.0-S0735109720377962-hl0000833",
+		"itemtitle": "Structure of Primary and Comprehensive Valve Centers",
+		"itemtitleFormatted": "<span>Structure of Primary and Comprehensive Valve Centers</span>",
+		"summary": "Table 11 Structure of Primary and Comprehensive Valve Centers Comprehensive (Level I) Valve Center Primary (Level II) Valve Center Interventional procedures ∗ TAVI–transfemoral TAVI–transfemoral Percutaneous aortic valve balloon dilation Percutane...",
+		"contenttype": [
+			"PG",
+			"JL"
+		],
+		"pubdate": null,
+		"sectiontitle": [
+			"JACC (Journal of the American College of Cardiology)",
+			"2020 ACC/AHA Guideline for the Management of Patients With Valvular Heart Disease",
+			"Structure of Primary and Comprehensive Valve Centers"
+		],
+		"doi": "10.1016/j.jacc.2020.11.018",
+		"subtype": "table",
+		"sectionid": [
+			"hl0000833"
+		],
+		"sectiontitleformatted": [
+			"<span>JACC (Journal of the American College of Cardiology)</span>",
+			"<span>2020 ACC/AHA Guideline for the Management of Patients With Valvular Heart Disease</span>",
+			"<span>Structure of Primary and Comprehensive Valve Centers</span>"
+		],
+		"refimage": null,
+		"caption": null,
+		"loe": null,
+		"cor": null,
+		"abs": [],
+		"comments": [],
+		"pointofcare": null,
+		"conditions": null,
+		"refinfo": null,
+		"vol": null,
+		"issue": null,
+		"pages": null,
+		"coverdatetext": null,
+		"coverdatestart": null,
+		"statustype": "S200",
+		"citation": "J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2020.11.018",
+		"hub": "/Guidelines/Hubs/Valvular-Heart-Disease",
+		"jacclink": "https://www.jacc.org/doi/10.1016/j.jacc.2020.11.018",
+		"pdflink": "https://www.jacc.org/doi/pdf/10.1016/j.jacc.2020.11.018",
+		"gltitle": "Valvular Heart Disease",
+		"url": ""
+	},
+]
 
 export const sectionContent = [
 	{
