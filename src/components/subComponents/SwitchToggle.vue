@@ -1,21 +1,25 @@
 <template>
-	<BtnToggle
-		@onClick="$emit('onClick', $event)"
-		:size="size"
-		:shape="shape"
-		:corner="corner"
-		:activeState="activeState"
-		:notActiveState="notActiveState"
-		:shadow="shadow"
-		:insetShadow="insetShadow"
-	>
-		<template v-slot:active
-			><span v-html="switchHandle.activeLabel"
-		/></template>
-		<template v-slot:notActive
-			><span v-html="switchHandle.notActiveLabel"
-		/></template>
-	</BtnToggle>
+	<div class="flex flex_row flex_nowrap">
+		<BtnToggle
+			class="flex_none"
+			@onClick="$emit('onClick', $event)"
+			:size="size"
+			:shape="shape"
+			:corner="corner"
+			:activeState="activeState"
+			:notActiveState="notActiveState"
+			:shadow="shadow"
+			:insetShadow="insetShadow"
+		>
+			<template v-slot:active
+				><span v-html="switchHandle.activeLabel"
+			/></template>
+			<template v-slot:notActive
+				><span v-html="switchHandle.notActiveLabel"
+			/></template>
+		</BtnToggle>
+		<div class="flex_auto self_center p-l_3:lg p-l_2 lh_0"><slot></slot></div>
+	</div>
 </template>
 
 <script>
@@ -46,6 +50,23 @@ export default {
 		};
 	},
 	computed: {
+		switchLabel() {
+			let style ="";
+			switch (this.size) {
+				case 'tiny':
+					style = "font_n2";
+					break;
+				case 'small':
+					style = "font-size_down";
+					break;
+				case 'large':
+					style = "font-size_up";
+					break;
+				default:
+					break;
+			}
+			return style;
+		},
 		switchHandle() {
 			let icon = { active: "", notActive: "" };
             if(!this.activeIcon || !this.notActiveIcon ){

@@ -149,6 +149,14 @@ export default {
 						stateStyle += (this.isActivatable) ? " bg_success-n4  " : " bg_success-n1";
 					}
 					break;
+				case "highlight":
+					if (this.isDisabled) { stateStyle += " bg_highlight-4"; }
+					else {
+						stateStyle +=
+							"  h:bg_highlight-n3 br_highlight-n3";
+						stateStyle += (this.isActivatable) ? " bg_highlight-n4  " : " bg_highlight-n1";
+					}
+					break;
 				case "black":
 					stateStyle = " c_black-8 h:c_black-8 ";
 					if (this.isDisabled) { stateStyle = " bg_black-2 c_black-3"; }
