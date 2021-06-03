@@ -1,4 +1,4 @@
-import InputPassword from "../../components/BasicForms/Input.Password.vue";
+import InputEmail from "../../components/BasicForms/Input.Email.vue";
 
 import Question  from "../../components/BasicForms/subComponent/Question.vue";
 import baseInputFunctions from "../../components/BasicForms/subComponent/baseInputFunctions.vue";
@@ -8,7 +8,7 @@ import ValueIcon from "../../components/subComponents/inputValueIcon";
 import { commonArgs } from "./common.argTypes.js";
 export default{
     title: "Form/Input/Email",
-	component: InputPassword,
+	component: InputEmail,
 	subcomponents:{baseInputFunctions,Question,MessageHolder,StateIcon,ValueIcon},
     parameters: {
 		docs: {
@@ -18,7 +18,7 @@ export default{
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {
-				code: `<InputPassword @onChange="onChange" @onStateChange="onStateChange" v-bind="$props"/>`
+				code: `<InputEmail @onChange="onChange" @onStateChange="onStateChange" v-bind="$props"/>`
 			},
 		},
     },
@@ -27,14 +27,14 @@ export default{
     }
 }
 
-const InputPasswordTemplate = (args, { argTypes }) => ({
+const InputEmailTemplate = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { InputPassword },
-	template: `<InputPassword @onChange="onChange" @onStateChange="onStateChange" v-bind="$props">Password <template v-slot:successMessage>Congradulations you can follow instructions</template></InputPassword>`,
+	components: { InputEmail },
+	template: `<div><small class="c_alert block">! Incomplete Component !</small><InputEmail @onChange="onChange" @onStateChange="onStateChange" v-bind="$props">Email <template v-slot:successMessage>Congradulations you can follow instructions</template></InputEmail></div>`,
 });
-export const Email = InputPasswordTemplate.bind({});
+export const Email = InputEmailTemplate.bind({});
 Email.args = {
-	inputId:"uniqueInputPasswordIdBase",
+	inputId:"uniqueInputEmailIdBase",
 	defaultvalue:"test",
 
 };

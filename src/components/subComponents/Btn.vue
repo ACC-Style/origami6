@@ -125,6 +125,14 @@ export default {
 			let stateStyle = "";
 			stateStyle += " c_white h:c_white";
 			switch (this.state) {
+								case "accent":
+					if (this.isDisabled) { stateStyle += " bg_accent-4"; }
+					else {
+						stateStyle +=
+							"  h:bg_accent-n3 br_accent-n3";
+						stateStyle += (this.isActivatable) ? " bg_accent-n4  " : " bg_accent-n1";
+					}
+					break;
 				case "alert":
 					if (this.isDisabled) { stateStyle += " bg_alert-4"; }
 					else {
@@ -163,8 +171,8 @@ export default {
 					if (this.isDisabled) { stateStyle = " bg_black-2 c_black-3"; }
 					else {
 						stateStyle +=
-							"  h:bg_black-7 br_black-5";
-						stateStyle += (this.isActivatable) ? " bg_black-5 " : " bg_black-5";
+							"  h:bg_black-6 br_black-5";
+						stateStyle += (this.isActivatable) ? " bg_black-8 " : " bg_black-4";
 					}
 					break;
 				case "secondary":
@@ -184,7 +192,7 @@ export default {
 				case "empty":
 					stateStyle = this.isDisabled
 						? " c_black-3 "
-						: "underline h:undecorated bg_white-0 c_primary h:c_accent-n1";
+						: "h:underline undecorated bg_white-0 c_primary h:c_accent-n1";
 					break;
 				default:
 					if (this.isDisabled) { stateStyle += " bg_primary-4"; }

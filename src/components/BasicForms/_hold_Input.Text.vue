@@ -73,7 +73,7 @@ export default {
 	props: {
 		inputId:{type:String,required:true},
 		inputType:{type:String,default:"text"},
-		defaultvalue: { type: String, default: "" },
+		defaultValue: { type: String, default: "" },
 		icon: { type: String, default: null },
 		postLabel: { type: String, default: null },
 		required: { type: Boolean, default: true },
@@ -84,7 +84,7 @@ export default {
 	},
 	data() {
 		return {
-			text: this.defaultvalue,
+			text: this.defaultValue,
 			inputState: this.state,
 		};
 	},

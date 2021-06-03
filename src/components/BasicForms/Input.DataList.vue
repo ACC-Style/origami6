@@ -92,7 +92,7 @@ export default {
 	},
 	data() {
 		return {
-			text: this.defaultvalue,
+			text: this.defaultValue,
 			inputState: this.state,
 		};
 	},

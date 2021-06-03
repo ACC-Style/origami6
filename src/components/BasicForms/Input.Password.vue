@@ -1,7 +1,7 @@
 <template>
 	<Question 
 		:inputId="inputId"
-		:defaultvalue="defaultvalue"
+		:defaultValue="defaultValue"
 		:icon="icon"
 		:postLabel="thisPostLabel"
 		:required="required"

@@ -114,7 +114,7 @@ export default {
 		options: { type: Array, default: null },
 		icon: { type: String, default: null },
 		postLabel: { type: String, default: null },
-		defaultvalue: { type: String, default: null },
+		defaultValue: { type: String, default: null },
 		required: { type: Boolean, default: true },
 		size: {
 			type: String,

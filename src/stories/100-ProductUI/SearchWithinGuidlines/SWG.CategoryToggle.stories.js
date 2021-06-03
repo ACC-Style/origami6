@@ -1,6 +1,6 @@
 import CategoryToggle from  "../../../../src/components/GLSearch/GLSearch.CategoryToggle.vue";
 export default {
-	title: "Apps/GuidelineSearch/UI",
+	title: "Apps/GuidelineSearch",
     component: CategoryToggle,
     subcomponents:{},
 	parameters: {
@@ -26,7 +26,7 @@ export default {
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { CategoryToggle },
-	template: `<CategoryToggle :switchSize="switchSize" :buttonSize="buttonSize" :categories="categories" @onClick="onClick($event)" @onModalOpen="onModalOpen()"/>`,
+	template: `<CategoryToggle :switchSize="switchSize" :buttonSize="buttonSize" :categories="categories" @onClick="onClick($event)" @onModalOpen="onModalOpen($event)"/>`,
 });
 export const CategoryFilter = Template.bind({});
 CategoryFilter.args = {
