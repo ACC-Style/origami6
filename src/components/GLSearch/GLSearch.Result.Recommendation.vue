@@ -19,7 +19,7 @@
 				:cor="cor"
 				:loe="loe"
 			/>
-			<div class="inline-block float_left clear_left m-b_3">{{ content }}</div>
+			<div class="inline-block float_left clear_left m-b_3" v-html="content"></div>
 		</main>
 		<aside
 			class="m-x_3:md m-x_2 m-b_2 p_2 bg_black-_05 lh_3 m-b_3:md clear_both bg_black-_05"

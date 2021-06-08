@@ -59,7 +59,7 @@
 
 
 <script>
-import FacetCheckMark from './Coveo.Facet.Checkmark.vue';
+import FacetCheckMark from './Coveo.Facet.CheckMarks.vue';
 import transitionExpand from "../subComponents/TransitionExpand.vue";
 export default {
 	components: {
@@ -79,11 +79,15 @@ export default {
 			type: Number,
 			default: 10
 		},
+		contentExpandedDefault:{
+			type:Boolean,
+			default:false
+		}
 	},
 	data() {
 		return {
 
-			contentExpanded: true,
+			contentExpanded: this.contentExpandedDefault,
 			maxFacetCount: this.maxCount
 		}
 	},

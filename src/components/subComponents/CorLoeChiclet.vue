@@ -34,7 +34,7 @@ export default {
 			type: String,
 			default: "harm",
 			validator: function (value) {
-				return ['1', '2', '3', 'harm', 'no-benefit'].indexOf(value) !== -1;
+				return ['1', '2a','2b', '3', 'harm', 'no-benefit'].indexOf(value) !== -1;
 			},
 		},
 	},
@@ -46,9 +46,13 @@ export default {
 					cor.label = '1';
 					cor.value = 'I';
 					break;
-				case "2":
-					cor.label = '2';
-					cor.value = 'II';
+				case "2b":
+					cor.label = '2b';
+					cor.value = 'IIB';
+					break;
+				case "2a":
+					cor.label = '2A';
+					cor.value = 'IIA';
 					break;
 				case "3":
 					cor.label = '3';

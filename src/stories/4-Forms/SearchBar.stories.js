@@ -31,7 +31,7 @@ const SearchBarTemplate = (args, { argTypes }) => ({
 export const SearchBarInput = SearchBarTemplate.bind({});
 SearchBarInput.args = {
 	inputId:"uniqueSearchBarIdBase",
-	defaultValue:"",
+	value:"",
     placeholder:"Search",
 
 };

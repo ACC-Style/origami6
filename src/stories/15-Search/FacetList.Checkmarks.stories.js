@@ -1,8 +1,8 @@
-import FacetCheckmarks from "../../../src/components/Coveo/Coveo.FacetList.Checkmarks.vue";
+import FacetCheckMarks from "../../../src/components/Coveo/Coveo.FacetList.CheckMarks.vue";
 
 export default {
 	title: "Coveo/FacetList",
-    component: FacetCheckmarks,
+    component: FacetCheckMarks,
     subcomponents:{},
 	parameters: {
 		docs: {
@@ -12,7 +12,7 @@ export default {
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {
-				code: `<FacetCheckmarks v-bind="$props">Slot Header Label</FacetCheckmarks>`
+				code: `<FacetCheckMarks v-bind="$props">Slot Header Label</FacetCheckMarks>`
 			},
 
 		},
@@ -26,8 +26,8 @@ export default {
 };
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { FacetCheckmarks },
-	template: `<FacetCheckmarks :class="decoration" :facets="facets" :maxCount="maxCount" :stepChange="stepChange" :canExcludeFacets="canExcludeFacets" >Drugs Generic </FacetCheckmarks>`,
+	components: { FacetCheckMarks },
+	template: `<FacetCheckMarks :class="decoration" :facets="facets" :maxCount="maxCount" :stepChange="stepChange" :canExcludeFacets="canExcludeFacets" >Drugs Generic </FacetCheckMarks>`,
 });
 export const Checkmarks = Template.bind({});
 Checkmarks.args = {

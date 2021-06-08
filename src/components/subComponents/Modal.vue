@@ -1,9 +1,10 @@
 <template>
 	<transition name="modal">
-		<div class="modal-mask z_5 bg_black-5 fixed t_0 l_0 r_0 b_0">
-			<div class="modal-wrapper p_4">
+		<div  class="modal modal-fade modal-mask z_5 bg_black-5 fixed t_0 l_0 r_0 b_0">
+			<div class="modal-wrapper h_100 absolute m_auto overflow_auto p_4  t_0 l_0 r_0 b_0" @onClick="onClose" >
 				<div
-					class="modal-container shadow_3 max-w_3 m_auto p-x_4 p-y_3 font_ui transition bg_white relative br_solid br-t_3 br_primary-n1"
+					class="modal-container max-w_40 shadow_3 max-w_3 m_auto p-x_4 p-y_3 font_ui transition bg_white relative br_solid br-t_3 br_primary-n1"
+					:class="'br_' + corner"
 				>
 					<btn
 						:size="'small'"
@@ -14,16 +15,16 @@
 					>
 						<i class="fas fa-times"></i>
 					</btn>
-					<div class="font_1 font_display m-x_2 m-x_3:md m-y_2 m-y_4 modal-header">
+					<div class="font_3 font_bold font_display m-x_2 m-x_3:md m-y_2 m-y_4:md modal-header p-y_2 p-y_4:lg">
 						<slot name="header">default header</slot>
 					</div>
 
-					<div class="modal-body font_0 m-x_2 m-x_3:md">
+					<div class="modal-body font_0 m-x_2 m-x_3:md p-x_0">
 						<slot name="default">default body</slot>
 					</div>
-					<div class="modal-footer m-x_n4 m-b_n3 ">
+					<div class="modal-footer p-x_0  m-b_n3 ">
 						<slot name="footer" class="">
-							<div class="p-x_2 p-x_3:md p-x_4:lg p-b_4 clear_fix"><Btn class="float_right "
+							<div class="p-x_2 p-x_3:md p-x_4:lg clear_fix"><Btn class="float_right "
 								@onClick="onClose" :state="'secondary'"
 							>Cancel</Btn></div>
 						</slot>
@@ -37,6 +38,16 @@
 <script>
 import Btn from "./Btn";
 export default {
+	props:{
+		id:{type:String, default:"ModalDefault"},
+			corner: {
+			type: String,
+			default: "radius",
+			validator: function (value) {
+				return ['radius', 'round', 'square','circle'].indexOf(value) !== -1;
+			},
+		},
+	},
 	components:{Btn},
 	methods: {
 		onClose(){

@@ -1,9 +1,9 @@
 <template>
 	<transition name="modal">
-		<div class="modal-mask z_5 bg_black-5 fixed t_0 l_0 r_0 b_0">
-			<div class="modal-wrapper p_4">
+		<div class="modal-mask modal-fade z_5 bg_black-5 fixed t_0 l_0 r_0 b_0">
+			<div class="modal-wrapper p_4 modal-dialog" role="document">
 				<div
-					class="modal-container shadow_3 m_auto p-x_4 p-y_3 font_ui transition bg_white relative br_solid br-t_3 br_primary"
+					class="modal-container modal-content shadow_3 m_auto p-x_4 p-y_3 font_ui transition bg_white relative br_solid br-t_3 br_primary"
                     :class="maxWidthClass"
 				>
 					<button

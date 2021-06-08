@@ -2,7 +2,7 @@ import RecommendationResult from "../../../../src/components/GLSearch/GLSearch.R
 import TableResult from "../../../../src/components/GLSearch/GLSearch.Result.Table.vue";
 import SectionResult from "../../../../src/components/GLSearch/GLSearch.Result.Section.vue";
 import ResultFooter from "../../../../src/components/GLSearch/GLSearch.Result.Footer.vue";
-import {results,sectionContent,resultTable} from "./Data/dataResultReturn.js";
+import {results,resultRecommendation,sectionContent,resultTable} from "./Data/dataResultReturn.js";
 
 export default {
 	title: "Apps/GuidelineSearch/Result",
@@ -84,20 +84,20 @@ const RecResultTemplate = (args, { argTypes }) => ({
 });
 export const Recommendation = RecResultTemplate.bind({});
 Recommendation.args = {
-	cor:results[1].cor,
-	loe:results[1].loe,
-	result: results[1],
-	documentTitle:results[1].gltitle,
-	sectionTitle:results[1].itemtitle,
-	content:results[1].abs[0],
-	docURL:results[1].jacclink,
-	pdfURL:results[1].pdflink,
-	hubURL: 'http://www.acc.org/'+results[1].hub,
-	breadcrumb:results[1].sectiontitle.slice(1,-1),
-	pointOfCare:results[1].pointofcare,
-	conditions:results[1].conditions,
-	references:results[1].refinfo,
-	supportingText:results[1].comments[0],
+	cor:resultRecommendation[0].cor,
+	loe:resultRecommendation[0].loe,
+	result: resultRecommendation[0],
+	documentTitle:resultRecommendation[0].gltitle,
+	sectionTitle:resultRecommendation[0].itemtitle,
+	content:resultRecommendation[0].abs[0],
+	docURL:resultRecommendation[0].jacclink,
+	pdfURL:resultRecommendation[0].pdflink,
+	hubURL: 'http://www.acc.org/'+resultRecommendation[0].hub,
+	breadcrumb:resultRecommendation[0].sectiontitle.slice(0,-0),
+	pointOfCare:resultRecommendation[0].pointofcare,
+	conditions:resultRecommendation[0].conditions,
+	references:resultRecommendation[0].refinfo,
+	supportingText:resultRecommendation[0].comments[0],
 };
 
 const SecResultTemplate = (args, { argTypes }) => ({

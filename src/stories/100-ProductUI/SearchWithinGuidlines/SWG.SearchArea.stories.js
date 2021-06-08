@@ -1,12 +1,17 @@
 import CategoryToggle from  "../../../../src/components/GLSearch/GLSearch.CategoryToggle.vue";
 import SearchBar from "../../../../src/components/BasicForms/Input.SearchBar.vue";
 import Btn from "../../../../src/components/subComponents/Btn.vue";
+import Modal from "../../../../src/components/subComponents/Modal.vue";
+import ListLoader from "../../../../src/components/subComponents/ListLoader.vue";
+import FacetCheckMarks from "../../../../src/components/Coveo/Coveo.FacetList.CheckMarks.vue";
+import RecommendationResult from "../../../../src/components/GLSearch/GLSearch.Result.Recommendation.vue";
 import baseInputFunctions from "../../../../src/components/BasicForms/subComponent/baseInputFunctions.vue";
+import {resultRecommendation} from "./Data/dataResultReturn.js";
 import { commonArgs } from "../../4-Forms/common.argTypes";
 export default {
 	title: "Apps/GuidelineSearch",
     component: CategoryToggle,
-    subcomponents:{baseInputFunctions,SearchBar},
+    subcomponents:{baseInputFunctions,SearchBar,Modal,FacetCheckMarks,ListLoader,RecommendationResult},
 	parameters: {
 		docs: {
 			description: {
@@ -31,28 +36,53 @@ export default {
 };
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { CategoryToggle,SearchBar,Btn },
-	template: `<div class="p_4 p_3:lg bg_black-1">
-    <div class="flex flex_inline m-b_3 font_2:lg font_0">
-    <a class="h:underline undecorated c_primary-n2">
-        <i class="fas fa-arrow-alt-left p-r_2"></i> Back
-    </a>
-    <div class="br-l_2 br_black-4 br_solid p-l_4 m-l_3 vertical-align_middle "> Search
-    <span class="display_none inline:md">within ACC Guidelines</span>
+	components: { CategoryToggle,SearchBar,Btn,Modal,FacetCheckMarks,ListLoader,RecommendationResult },
+	template: `
+    <div class="max-w_70 m-x_auto">
+       <div class="p-x_4 p-b_3 p-t_3 bg_black-1">
+        <div class="flex flex_inline m-b_3 font_2:lg font_0">
+        <a class="h:underline undecorated c_primary-n2">
+            <i class="fas fa-arrow-alt-left p-r_2"></i> Back
+        </a>
+        <div class="br-l_2 br_black-4 br_solid p-l_4 m-l_3 vertical-align_middle "> Search
+        <span class="display_none inline:md">within ACC Guidelines</span>
+        </div>
     </div>
-</div>
-    <SearchBar @onChange="onChange"  @onSearch="onSearch"    :inputId="inputId" :defaultValue="defaultValue" :placeholder="placeholder" />
-    <div class="font_n1 p_2 display_none block:md"><ul class="ul_none flex flex_inline">
-        <li class="font_bold c_black-7">Related Searches</li>
-        <li><a class="link c_primary p-x_2">AFIB complications</a><span class="c_black-5">,</span></li>
-        </ul>
+        <SearchBar @onChange="onChange"  @onSearch="onSearch" :inputId="inputId" :value="defaultValue" :placeholder="placeholder" />
+        <div class="font_n1 p_2 display_none block:md"><ul class="ul_none flex flex_inline">
+            <li class="font_bold c_black-7">Related Searches</li>
+            <li  v-for="(term, index) in searchTerms" :key="'desktopSearchTerms_'+index" class="link c_primary p-x_2 h:underline cursor" @click="$emit('onClick', term)">{{ term }}<span v-if="index < searchTerms.length" class="c_black-5">,</span></li>
+            </ul>
+        </div>
+        <div class="p_2:md display_none:md">
+            <Btn :state="'empty'" :size="'small'" @onClick="relatedSearchModalVisible = true" class="m-x_n3">
+                View Related Searches
+            </Btn>
+        </div>
+        <CategoryToggle class="m-t_3 m-b_2" :switchSize="switchSize" :buttonSize="buttonSize" :categories="categories" @onClick="onClick" @onModalOpen="filterModalVisible = true"/>
+       </div>
+        <ListLoader :list="list" class="p-y_4 p-x_3">
+        <template v-slot:listLoaded >
+        <RecommendationResult class="m-b_4" v-bind="list[0]"/>
+        <RecommendationResult class="m-b_4" v-bind="list[1]"/>
+        <RecommendationResult class="m-b_4" v-bind="list[2]"/>
+        </template>
+        </ListLoader>
+        <Modal id="FilterModal" v-if="filterModalVisible"  @onClose="filterModalVisible = false" class="bg_black-1"> 
+            <template v-slot:header><h3  class="font_3 font_bold font_display">Filters</h3></template>
+            <FacetCheckMarks :class="facetDecoration" :facets="facets" :maxCount="maxCount" :stepChange="stepChange" :canExcludeFacets="canExcludeFacets" >Point of Care </FacetCheckMarks>
+            <FacetCheckMarks :class="facetDecoration" :facets="facets" :maxCount="maxCount" :stepChange="stepChange" :canExcludeFacets="canExcludeFacets" >Conditions </FacetCheckMarks>
+            <FacetCheckMarks :class="facetDecoration" :facets="facets" :maxCount="maxCount" :stepChange="stepChange" :canExcludeFacets="canExcludeFacets" >Class of Recommendation </FacetCheckMarks>
+            <FacetCheckMarks :class="facetDecoration" :facets="facets" :maxCount="maxCount" :stepChange="stepChange" :canExcludeFacets="canExcludeFacets" >Level of Evidence </FacetCheckMarks>
+        </Modal>
+        <Modal v-if="relatedSearchModalVisible" @onClose="relatedSearchModalVisible = false" class="bg_black-1">
+            <template :class="font_3 font_bold font_display" v-slot:header>Related Search</template>
+            <ul class="ul_none">
+                <li v-for="(term, index) in searchTerms" :key="'mobileSearchTerms_'+index"  class="flex flex_inline m-b_3 h:bg_primary-5 br_radius bg_white shadow_overlap-light p_3 flex" @click="$emit('onClick', term)"><span>{{ term }}</span><i class="far fa-search self_center m-l_auto"></i></li>
+            </ul>
+        </Modal>
     </div>
-    <div class="p_2:md display_none:md">
-        <Btn :state="'empty'" :size="'small'" @onClick="onModalOpen" class="m-x_n3">
-            View Related Searches
-        </Btn>
-    </div>
-    <CategoryToggle class="m-t_3" :switchSize="switchSize" :buttonSize="buttonSize" :categories="categories" @onClick="onClick" @onModalOpen="onModalOpen"/></div>`,
+    `,
 });
 export const SearchArea = Template.bind({});
 SearchArea.args = {
@@ -61,9 +91,155 @@ SearchArea.args = {
     placeholder:"Search",
 	buttonSize:'tiny',
 	switchSize:'tiny',
+    filterModalVisible: false,
+    relatedSearchModalVisible: false,
+    searchTerms:['afib symptoms','afib treatments','afib complications'],
+    list:[{
+        cor:resultRecommendation[0].cor,
+        loe:resultRecommendation[0].loe,
+        result: resultRecommendation[0],
+        documentTitle:resultRecommendation[0].gltitle,
+        sectionTitle:resultRecommendation[0].itemtitle,
+        content:resultRecommendation[0].abs[0],
+        docURL:resultRecommendation[0].jacclink,
+        pdfURL:resultRecommendation[0].pdflink,
+        hubURL: 'http://www.acc.org/'+resultRecommendation[0].hub,
+        breadcrumb:resultRecommendation[0].sectiontitle.slice(0,-0),
+        pointOfCare:resultRecommendation[0].pointofcare,
+        conditions:resultRecommendation[0].conditions,
+        references:resultRecommendation[0].refinfo,
+        supportingText:resultRecommendation[0].comments[0],
+    },
+    {
+        cor:resultRecommendation[1].cor,
+        loe:resultRecommendation[1].loe,
+        result: resultRecommendation[1],
+        documentTitle:resultRecommendation[1].gltitle,
+        sectionTitle:resultRecommendation[1].itemtitle,
+        content:resultRecommendation[1].abs[1],
+        docURL:resultRecommendation[1].jacclink,
+        pdfURL:resultRecommendation[1].pdflink,
+        hubURL: 'http://www.acc.org/'+resultRecommendation[1].hub,
+        breadcrumb:resultRecommendation[1].sectiontitle.slice(0,-0),
+        pointOfCare:resultRecommendation[1].pointofcare,
+        conditions:resultRecommendation[1].conditions,
+        references:resultRecommendation[1].refinfo,
+        supportingText:resultRecommendation[1].comments[1],
+    },
+    {
+        cor:resultRecommendation[0].cor,
+        loe:resultRecommendation[0].loe,
+        result: resultRecommendation[0],
+        documentTitle:resultRecommendation[0].gltitle,
+        sectionTitle:resultRecommendation[0].itemtitle,
+        content:resultRecommendation[0].abs[0],
+        docURL:resultRecommendation[0].jacclink,
+        pdfURL:resultRecommendation[0].pdflink,
+        hubURL: 'http://www.acc.org/'+resultRecommendation[0].hub,
+        breadcrumb:resultRecommendation[0].sectiontitle.slice(0,-0),
+        pointOfCare:resultRecommendation[0].pointofcare,
+        conditions:resultRecommendation[0].conditions,
+        references:resultRecommendation[0].refinfo,
+        supportingText:resultRecommendation[0].comments[0],
+    }],
     categories: [
-            {label:"Sections", value:'section', activeState:"success", notActiveState: "black"},
-            {label:"Tables & Figures", value:'table', activeState:"highlight", notActiveState: "black"},
-            {label:"Recommendation", value:'recommendation', activeState:"primary", notActiveState: "black"},
-            ]
+        {label:"Sections", value:'section', activeState:"success", notActiveState: "black"},
+        {label:"Tables & Figures", value:'table', activeState:"highlight", notActiveState: "black"},
+        {label:"Recommendation", value:'recommendation', activeState:"primary", notActiveState: "black"},
+            ],
+        canExcludeFacets:false,
+        maxCount:10,
+        facetDecoration:'p-x_4 p-y_3 shadow_overlap-light br_solid br_black-3 br_1 br_radius w_auto font_n1 m-b_3 ',
+        stepChange:5,
+        facets:[{
+                  "id": 1,
+                  "label": "gemifloxacin mesylate",
+                  "resultCount": 71,
+                  "excluded":false,
+                  "checked":false
+                }, {
+                  "id": 2,
+                  "label": "Warfarin Sodium",
+                  "resultCount": 99,
+                  "excluded":false,
+                  "checked":false
+                }, {
+                  "id": 3,
+                  "label": "Enoxaparin Sodium",
+                  "resultCount": 55,
+                  "excluded":false,
+                  "checked":false
+                }, {
+                  "id": 4,
+                  "label": "oxycodone hydrochloride",
+                  "resultCount": 91,
+                  "excluded":false,
+                  "checked":false
+                }, {
+                  "id": 5,
+                  "label": "Desmopressin Acetate",
+                  "resultCount": 98,
+                  "excluded":false,
+                  "checked":false
+                }, {
+                  "id": 6,
+                  "label": "Clemastine fumarate",
+                  "resultCount": 38,
+                  "excluded":false,
+                  "checked":false
+                }, {
+                  "id": 7,
+                  "label": "cocoa butter, phenylephrine hcl",
+                  "resultCount": 26,
+                  "excluded":false,
+                  "checked":false
+                }, {
+                  "id": 8,
+                  "label": "liothyronine sodium, LEVOTHYROXINE SODIUM",
+                  "resultCount": 90,
+                  "excluded":false,
+                  "checked":false
+                }, {
+                  "id": 9,
+                  "label": "risperidone",
+                  "resultCount": 39,
+                  "excluded":false,
+                  "checked":false
+                }, {
+                  "id": 10,
+                  "label": "TRICLOSAN",
+                  "resultCount": 58,
+                  "excluded":false,
+                  "checked":false
+                }, {
+                  "id": 11,
+                  "label": "acetaminophen",
+                  "resultCount": 27,
+                  "excluded":false,
+                  "checked":false
+                }, {
+                  "id": 12,
+                  "label": "Benzethonium chloride",
+                  "resultCount": 35,
+                  "excluded":false,
+                  "checked":false
+                }, {
+                  "id": 13,
+                  "label": "Tamsulosin hydrochloride",
+                  "resultCount": 64,
+                  "excluded":false,
+                  "checked":false
+                }, {
+                  "id": 14,
+                  "label": "Carbamide Peroxide",
+                  "resultCount": 5
+          ,
+          "excluded":false,
+          "checked":false      }, {
+                  "id": 15,
+                  "label": "Nicotine Polacrilex",
+                  "resultCount": 55,
+                  "excluded":false,
+                  "checked":false
+                }]
 };
