@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style scoped>
-.aspect_hero-sm{padding-top:120%}
+.aspect_hero-sm{padding-top:133%}
 .aspect_hero-md{padding-top:50%}
 .aspect_hero-lg{padding-top:30%}
 

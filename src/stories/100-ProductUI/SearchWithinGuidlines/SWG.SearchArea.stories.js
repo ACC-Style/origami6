@@ -6,12 +6,13 @@ import ListLoader from "../../../../src/components/subComponents/ListLoader.vue"
 import FacetCheckMarks from "../../../../src/components/Coveo/Coveo.FacetList.CheckMarks.vue";
 import RecommendationResult from "../../../../src/components/GLSearch/GLSearch.Result.Recommendation.vue";
 import baseInputFunctions from "../../../../src/components/BasicForms/subComponent/baseInputFunctions.vue";
+import Pagination from "../../../../src/components/Navigation/Pagination.vue";
 import {resultRecommendation} from "./Data/dataResultReturn.js";
 import { commonArgs } from "../../4-Forms/common.argTypes";
 export default {
 	title: "Apps/GuidelineSearch",
     component: CategoryToggle,
-    subcomponents:{baseInputFunctions,SearchBar,Modal,FacetCheckMarks,ListLoader,RecommendationResult},
+    subcomponents:{baseInputFunctions,SearchBar,Modal,FacetCheckMarks,ListLoader,RecommendationResult,Pagination},
 	parameters: {
 		docs: {
 			description: {
@@ -36,7 +37,7 @@ export default {
 };
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { CategoryToggle,SearchBar,Btn,Modal,FacetCheckMarks,ListLoader,RecommendationResult },
+	components: { CategoryToggle,SearchBar,Btn,Modal,FacetCheckMarks,ListLoader,RecommendationResult,Pagination },
 	template: `
     <div class="max-w_70 m-x_auto">
        <div class="p-x_4 p-b_3 p-t_3 bg_black-1">
@@ -61,6 +62,13 @@ const Template = (args, { argTypes }) => ({
         </div>
         <CategoryToggle class="m-t_3 m-b_2" :switchSize="switchSize" :buttonSize="buttonSize" :categories="categories" @onClick="onClick" @onModalOpen="filterModalVisible = true"/>
        </div>
+       <div class="flex flex_inline gap-x_2 flex_wrap font_n1 p-t_2 p-x_4 opacity_7">
+            <span>788 results for "</span> <span class="font_bold c_acc">afib</span>
+            <span>" showing:</span>
+            <span class="br_round p-x_3 p-x_2 bg_primary-5 c_primary-n2 font_bold"><span class="font_xbold c_primary-n4 p-r_2">285</span> Recommendations,</span>
+            <span class="br_round p-x_3 p-x_2 bg_accent-5 c_accent-n2 font_bold"><span class="font_xbold c_accent-n4 p-r_2">386</span> Sections,</span>
+            <span class="br_round p-x_3 p-x_2 bg_highlight-5 c_highlight-n2 font_bold"><span class="font_xbold c_highlight-n4 p-r_2">117</span> Tables &amp; Figures</span>
+        </div>
         <ListLoader :list="list" class="p-y_4 p-x_3">
         <template v-slot:listLoaded >
         <RecommendationResult class="m-b_4" v-bind="list[0]"/>
@@ -68,6 +76,7 @@ const Template = (args, { argTypes }) => ({
         <RecommendationResult class="m-b_4" v-bind="list[2]"/>
         </template>
         </ListLoader>
+        <Pagination/>
         <Modal id="FilterModal" v-if="filterModalVisible"  @onClose="filterModalVisible = false" class="bg_black-1"> 
             <template v-slot:header><h3  class="font_3 font_bold font_display">Filters</h3></template>
             <FacetCheckMarks :class="facetDecoration" :facets="facets" :maxCount="maxCount" :stepChange="stepChange" :canExcludeFacets="canExcludeFacets" >Point of Care </FacetCheckMarks>
