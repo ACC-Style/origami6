@@ -75,7 +75,7 @@ const Template = (args, { argTypes }) => ({
         <RecommendationResult class="m-b_4" v-bind="list[1]"/>
         <RecommendationResult class="m-b_4" v-bind="list[2]"/>
         </template>
-        </ListLoader>
+        </ListLoader> 
         <Pagination/>
         <Modal id="FilterModal" v-if="filterModalVisible"  @onClose="filterModalVisible = false" class="bg_black-1"> 
             <template v-slot:header><h3  class="font_3 font_bold font_display">Filters</h3></template>
