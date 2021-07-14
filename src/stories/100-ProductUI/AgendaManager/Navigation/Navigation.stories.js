@@ -1,6 +1,6 @@
 import NavListItem from "../../../../components/Navigation/App.SideNav.Item.vue";
 import NavList from "../../../../components/Navigation/App.SideNav.List.vue";
-import {NavUsersData,NavApplicationData,NavProgramsAndCollections} from "../Data/navigationData.js"
+import {NavProgramsAndCollections} from "../Data/navigationData.js"
 
 export default {
 	title: "APPS/SessionManager/Navigation",

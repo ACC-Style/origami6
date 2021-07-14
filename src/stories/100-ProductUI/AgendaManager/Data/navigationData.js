@@ -3,11 +3,13 @@ export const NavProgramsAndCollections = {
 	type: "",
 	pageID: -1,
 	nodes: [
+		{ label: "Programs", type: "headline" },
 		{
-			label: "All Programs",
+			label: "Programs",
 			type: "programs",
-			pageID: 1351,nodes: [{label: "Active Programs",
-			type: "headline",},
+			pageID: 1351,
+			nodes: [
+				{ label: "Recently Modified", type: "headline" },
 				{
 					label: "ACC 2021",
 					type: "program",
@@ -43,50 +45,91 @@ export const NavProgramsAndCollections = {
 						},
 					],
 				},
-                {
-                    label: "New Program",
-                    type: "new",
-                    pageID: 1351,
-                }
+				{
+					label: "New Program",
+					type: "new",
+					pageID: 1351,
+				},
 			],
 		},
 		{
-			label: "Library & Tags",
+			label: "Sessions",
 			type: "headline",
-
-		},{
-            label: "All Sessions",
-            type: "sessions",
-            pageID: 1351,
-        },
-        {
-            label: "New Session",
-            type: "new",
-        },{
-            label: "All Tags",
-            type: "tags",
-            pageID: 1351,
-            nodes: [
-                {
-                    label: "Learning Pathway",
-                    type: "tag",
-                    pageID: 1351,
-                },
-                {
-                    label: "Session Format",
-                    type: "tag",
-                    pageID: 1351,
-                },
-                {
-                    label: "Session Type",
-                    type: "tag",
-                    pageID: 1351,
-                },
-            ],
-        },
-        {
-            label: "New Tag",
-            type: "new",
-        },
+		},
+		{
+			label: "Sessions",
+			type: "sessions",
+			pageID: 1351,
+			nodes: [
+				{
+					label: "Recently Modified",
+					type: "headline",
+				},
+				{
+					label: "Bungul fuga illo odio.",
+					type: "session",
+					pageID: 1351,
+				},
+				{
+					label:
+						"Atque molestias repellendus vel sit perspiciatis modi.",
+					type: "session",
+					pageID: 2500,
+				},
+			],
+		},
+		{
+			label: "New Session",
+			type: "new",
+		},
+		{
+			label: "Elements Library",
+			type: "headline",
+		},
+		{
+			label: "Presentations",
+			type: "presentations",
+			pageID: 1351,
+		},
+		{
+			label: "New Presentation",
+			type: "new",
+		},
+		{
+			label: "Tags",
+			type: "tags",
+			pageID: 1351,
+			nodes: [
+				{
+					label: "Learning Pathway",
+					type: "tag",
+					pageID: 1351,
+				},
+				{
+					label: "Session Format",
+					type: "tag",
+					pageID: 1351,
+				},
+				{
+					label: "Session Type",
+					type: "tag",
+					pageID: 1351,
+				},
+			],
+		},
+		{
+			label: "New Tag",
+			type: "new",
+		},
+		{
+			label: "Attachments",
+			type: "attachments",
+			pageID: 1351,
+		},
+		{
+			label: "Faculty & Authors",
+			type: "user",
+			pageID: 1351,
+		},
 	],
 };

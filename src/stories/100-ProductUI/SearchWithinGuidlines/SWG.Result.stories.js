@@ -2,12 +2,13 @@ import RecommendationResult from "../../../../src/components/GLSearch/GLSearch.R
 import TableResult from "../../../../src/components/GLSearch/GLSearch.Result.Table.vue";
 import SectionResult from "../../../../src/components/GLSearch/GLSearch.Result.Section.vue";
 import ResultFooter from "../../../../src/components/GLSearch/GLSearch.Result.Footer.vue";
-import {results,resultRecommendation,sectionContent,resultTable} from "./Data/dataResultReturn.js";
+import ResultContainer from "../../../../src/components/GLSearch/GLSearch.Result.Container.vue";
+import {results,resultRecommendation,sectionContent,resultTable,amendments} from "./Data/dataResultReturn.js";
 
 export default {
 	title: "Apps/GuidelineSearch/Result",
     component: RecommendationResult,
-    subcomponents:{ResultFooter},
+	subcomponents:{ResultFooter,ResultContainer},
 	parameters: {
 		docs: {
 			description: {
@@ -32,41 +33,13 @@ export default {
 				},
 		}
 };
-const FooterTemplate = (args, { argTypes }) => ({
-	props: Object.keys(argTypes),
-	components: { ResultFooter },
-	template: `<ResultFooter
-	:documentTitle ="documentTitle"
-	:docURL="docURL"
-	:pdfURL="pdfURL"
-	:hubURL="hubURL"
-	:breadcrumb="breadcrumb"
-	:pointOfCare="pointOfCare"
-	:conditions="conditions"
-	/>`,
-});
-export const Footer = FooterTemplate.bind({});
-Footer.args = {
-	cor:results[0].cor,
-	loe:results[0].loe,
-	result: results[0],
-	documentTitle:results[0].gltitle,
-	sectionTitle:results[0].sectiontitle.pop(),
-	content:results[0].abs[0],
-	docUR:results[0].jacclink,
-	pdfUR:results[0].pdflink,
-	hubURL: 'http://www.acc.org/'+results[0].hub,
-	breadcrumb:results[0].sectiontitle.slice(1,-1),
-	pointOfCare:results[0].pointofcare,
-	conditions:results[0].conditions,
-	references:results[0].refinfo,
-	supportingText:results[0].comments[0],
-};
+
 
 const RecResultTemplate = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { RecommendationResult },
 	template: `<RecommendationResult  class="max-w_70 m-x_auto"
+		:eid="eid"	
 		:documentTitle ="documentTitle"
 		:content="content"
 		:supportingText="supportingText"
@@ -80,10 +53,12 @@ const RecResultTemplate = (args, { argTypes }) => ({
 		:pointOfCare="pointOfCare"
 		:conditions="conditions"
 		:sectionTitle="sectionTitle"
+		:amendments="amendments"
 		/>`,
 });
 export const Recommendation = RecResultTemplate.bind({});
 Recommendation.args = {
+	eid:resultRecommendation[0].eid,
 	cor:resultRecommendation[0].cor,
 	loe:resultRecommendation[0].loe,
 	result: resultRecommendation[0],
@@ -98,13 +73,15 @@ Recommendation.args = {
 	conditions:resultRecommendation[0].conditions,
 	references:resultRecommendation[0].refinfo,
 	supportingText:resultRecommendation[0].comments[0],
+	amendments:null,
 };
 
 const SecResultTemplate = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { SectionResult },
 	template: `<SectionResult class="max-w_70 m-x_auto"
-		:documentTitle ="documentTitle"
+	:eid="eid"	
+	:documentTitle ="documentTitle"
 		:content="content"
 		:supportingText="supportingText"
 		:references="references"
@@ -118,11 +95,13 @@ const SecResultTemplate = (args, { argTypes }) => ({
 		:conditions="conditions"
 		:sectionTitle="sectionTitle"
 		:summary="summary"
+		:amendments="amendments"
 		/>`,
 });
 
 export const Section = SecResultTemplate.bind({});
 Section.args = {
+	eid:results[0].eid,
 	cor:results[0].cor,
 	loe:results[0].loe,
 	result: results[0],
@@ -136,12 +115,14 @@ Section.args = {
 	breadcrumb:results[0].sectiontitle.slice(1,-1),
 	pointOfCare:null,
 	conditions:null,
+	amendments:amendments,
 };
 
 const TableResultTemplate = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { TableResult },
 	template: `<TableResult class="max-w_70 m-x_auto"
+		:eid="eid"
 		:documentTitle ="documentTitle"
 		:content="content"
 		:supportingText="supportingText"
@@ -152,10 +133,12 @@ const TableResultTemplate = (args, { argTypes }) => ({
 		:breadcrumb="breadcrumb"
 		:sectionTitle="sectionTitle"
 		:summary="summary"
+		:amendments="amendments"
 		/>`,
 });
 export const Table = TableResultTemplate.bind({});
 Table.args = {
+	eid: resultTable[0].eid,
 	result: resultTable[0],
 	documentTitle:resultTable[0].gltitle,
 	sectionTitle:resultTable[0].itemtitle,
@@ -165,5 +148,41 @@ Table.args = {
 	pdfURL:resultTable[0].pdflink,
 	hubURL: 'http://www.acc.org/'+results[0].hub,
 	breadcrumb:resultTable[0].sectiontitle.slice(1,-1),
+	amendments:amendments,
 
+};
+
+const FooterTemplate = (args, { argTypes }) => ({
+	props: Object.keys(argTypes),
+	components: { ResultFooter },
+	template: `<ResultFooter
+	:eid="eid"
+	:documentTitle ="documentTitle"
+	:docURL="docURL"
+	:pdfURL="pdfURL"
+	:hubURL="hubURL"
+	:breadcrumb="breadcrumb"
+	:pointOfCare="pointOfCare"
+	:conditions="conditions"
+	:amendments="amendments"
+	/>`,
+});
+export const Footer = FooterTemplate.bind({});
+Footer.args = {
+	eid:results[0].eid,
+	cor:results[0].cor,
+	loe:results[0].loe,
+	result: results[0],
+	documentTitle:results[0].gltitle,
+	sectionTitle:results[0].sectiontitle.pop(),
+	content:results[0].abs[0],
+	docUR:results[0].jacclink,
+	pdfUR:results[0].pdflink,
+	hubURL: 'http://www.acc.org/'+results[0].hub,
+	breadcrumb:results[0].sectiontitle.slice(1,-1),
+	pointOfCare:results[0].pointofcare,
+	conditions:results[0].conditions,
+	references:results[0].refinfo,
+	supportingText:results[0].comments[0],
+	amendments:amendments,
 };

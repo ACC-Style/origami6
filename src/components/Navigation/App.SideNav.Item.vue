@@ -166,6 +166,12 @@ export default {
 				case "program":
 					$returnedStyle = "fa-cubes";
 					break;
+				case "presentations":
+					$returnedStyle = "fa-vector-square";
+					break;
+				case "attachments":
+					$returnedStyle = "fa-archive";
+					break;
 				case "collection":
 					$returnedStyle = "fa-cube";
 					break;

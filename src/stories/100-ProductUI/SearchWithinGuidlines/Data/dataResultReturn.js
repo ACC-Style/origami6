@@ -8,6 +8,23 @@
 // https://www.stage.acc.org/wapi/GuidelinesHelper/retrieve?eid=1-s2.0-S0735109717413064&sectionid=hl0007917
 // Related Recommendations
 // https://www.stage.acc.org/wapi/GuidelinesHelper/Relatedrecommendations?page=1&rows=100&term=7.9.1.1+Congenital+Long+QT+Syndrome
+export const amendments = [{
+	doi: "10.1016/j.jacc.2018.08.002",
+	eid: "1-s2.0-S0735109718368463",
+	coverdatestart: "2018-10-02",
+	gltitle: "Adults with Congenital Heart Disease",
+},{
+	doi: "10.1016/j.jacc.2017.10.054",
+	eid: "71-s2.0-VA-SCD-7.9.1.1-1",
+	coverdatestart: "2017-09-12",
+	gltitle:
+			"Ventricular Arrhythmias and the Prevention of Sudden Cardiac Death",
+},{
+	doi: "10.1016/j.jacc.2020.11.018",
+	eid: "1-s2.0-S0735109720377962-hl0000833",
+	coverdatestart: "2016-04-08",
+	gltitle: "Valvular Heart Disease",
+}];
 
 export const results = [
 	{
@@ -25,6 +42,7 @@ export const results = [
 			"4.4 Complex Lesions",
 			"4.4.7 Coronary Anomalies",
 		],
+		
 		doi: "10.1016/j.jacc.2018.08.1029",
 		subtype: "section",
 		sectionid: ["hl0009869"],
@@ -1235,7 +1253,7 @@ export const resultTable = [
 		"issue": null,
 		"pages": null,
 		"coverdatetext": null,
-		"coverdatestart": null,
+		"coverdatestart": "2016-04-08",
 		"statustype": "S200",
 		"citation": "J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2020.11.018",
 		"hub": "/Guidelines/Hubs/Valvular-Heart-Disease",

@@ -1,17 +1,18 @@
 <template>
-	<article
-		class="result font_ui br_1 br_black-2 br_1 br_solid shadow_overlap-light br_radius relative"
-	>
-		<header class="br-t_4 br_solid br_primary m-t_n1 m-x_n1 br-tr_radius br-tl_radius">
-			<aside class="flex relative">
-				<div class="flex_auto">
-					<span
-						class="p-y_3 block font_n2 m-x_4 p-t_3 uppercase c_primary font_bold"
-						>recommendation</span
-					>
-				</div>
-			</aside>
-		</header>
+	<ResultContainer
+		:eid="eid"
+		:type="type"
+		:sections="sections"
+		:documentTitle="documentTitle"
+		:docURL="docURL"
+		:pdfURL="pdfURL"
+		:hubURL="hubURL"
+		:breadcrumb="breadcrumb"
+		:pointOfCare="pointOfCare"
+		:conditions="conditions"			
+		:amendments="amendments"
+		@onNavigate="$emit('onNavigate')"
+		>
 		<main class="result-content p-x_4 p-b_4 font_copy font_0 lh_3">
 			<h2 class="inline float_left">{{ sectionTitle }}</h2>
 			<CorLoeChiclet
@@ -84,23 +85,13 @@
 				</div>
 			</div>
 		</aside>
-		<ResultFooter
-			:sections="sections"
-			:documentTitle="documentTitle"
-			:docURL="docURL"
-			:pdfURL="pdfURL"
-			:hubURL="hubURL"
-			:breadcrumb="breadcrumb"
-			:pointOfCare="pointOfCare"
-			:conditions="conditions"
-			@onNavigate="$emit('onNavigate')"
-		/>
-	</article>
+		
+	</ResultContainer>
 </template>
 
 <script>
 import BTN from "../subComponents/Btn";
-import ResultFooter from "./GLSearch.Result.Footer";
+import ResultContainer from "./GLSearch.Result.Container";
 import TransitionExpand from "../subComponents/TransitionExpand";
 import CorLoeChiclet from "../subComponents/CorLoeChiclet";
 
@@ -108,7 +99,7 @@ export default {
 	name: "SearchResultRec",
 	components: {
 		BTN,
-		ResultFooter,
+		ResultContainer,
 		TransitionExpand,
 		CorLoeChiclet
 	},
@@ -121,10 +112,12 @@ export default {
 		pdfURL: { type: String, default: "" },
 		hubURL: { type: String, default: "" },
 		sections: { type: Array },
+		eid: { type: String },
 		loe: { type: String },
 		cor: { type: String },
 		pointOfCare: { type: Array, default: null },
 		conditions: { type: Array, default: null },
+		amendments: { type: Array, default: null },
 		supportingText: { type: String, default: "missing supporting text" },
 		references: { type: Array },
 		breadcrumb: { type: Array }
