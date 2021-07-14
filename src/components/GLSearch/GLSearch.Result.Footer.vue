@@ -114,7 +114,7 @@
 		</main>
 		<aside class="bg_black-2 c_black shadow_n1" v-if="amendments != null">
 			<header class="font_bold font_display p-x_3 p-y_2">
-				Amendments:
+				Change History:
 			</header>
 			<ul class="ul_none overflow_ellipsis flex flex_column nowrap">
 				<li
@@ -123,7 +123,7 @@
 					v-for="(amend, index) in amendments"
 					:key="'amend_' + index"
 				>
-					<i class="far fa-check flex_shrink p-x_2 p-y_2" v-if="eid == amend.eid"></i>
+					<i class="far fa-arrow-alt-right flex_shrink p-x_2 p-y_2" v-if="eid == amend.eid"></i>
 					<span class="flex_auto"
 						>{{ amend.gltitle }} |
 						<em class="font_italic"
