@@ -1,10 +1,9 @@
 import HoverContainer from "../../../../components/AdvancedContainers/hoverContainer.vue";
-import Channel from "../../../../components/AgendaManagement/channel.vue";
-
+import SessionListItem from "../../../../components/AgendaManagement/Agenda.SessionListItem.vue";
 
 export default {
-	title: "APPS/SessionManager/Channel",
-    component: Channel,
+	title: "APPS/SessionManager/SessionListItem",
+    component: SessionListItem,
     subcomponents:{HoverContainer},
 	parameters: {
 		docs: {
@@ -14,7 +13,7 @@ export default {
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {
-				code: `<Channel />`
+				code: `<SessionListItem />`
 			},
 
 		},
@@ -29,11 +28,12 @@ export default {
 
 const ListTemplate = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { Channel },
-	template: `<Channel/>`,
+	components: { SessionListItem },
+	template: `<SessionListItem/>`,
 });
 
 
-export const channelItem = ListTemplate.bind({});
-channelItem.args = {
+export const SessionItem = ListTemplate.bind({});
+SessionItem.args = {
 };
+

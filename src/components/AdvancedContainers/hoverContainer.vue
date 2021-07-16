@@ -1,6 +1,6 @@
 <template>
 	<section
-		class="relative font_ui z_1 br_radius"
+		class="relative font_ui z_1 br_square"
 		@mouseenter="isHovered = true;"
 		@mouseleave="isHovered = false;"
 		@click="onClick()"
@@ -9,12 +9,12 @@
 		<div
 			data-target="hover-indicator"
 			:class="[hoverIndicatorStyles,' bg_'+ actionColor +'-5 c_'+actionColor+'-n1 br_'+actionColor+'-2 ' ]"
-			class="absolute t_0 r_0 b_0 br_radius br_1 br_solid l_auto inline-block p-x_3:md p-x_2 p-t_3 z_0 p-l_5 flex flex_column justify_around:md justify_start shadow_n1 transition_3 "
+			class="absolute t_0 r_0 b_0 br_square br_1 br_solid l_auto inline-block p-x_3:md p-x_2 p-t_3 z_0 p-l_5 flex flex_column justify_around:md justify_start shadow_n1 transition_3 "
 		>
 			<i :class="actionIcon" class="fas fa-fw font_0:md font_n3"></i>
 		</div>
 		<div
-			class="shadow_overlap-light br_solid br_radius br_black-2 br_1 transition_1 z_2 m-r_5:md m-r_4 m-r_0:touch transition_3"
+			class="shadow_overlap-light br_solid br_square br_black-2 br_1 transition_1 z_2 m-r_5:md m-r_4 m-r_0:touch transition_3"
 			:class="hoverDataStyles"
 		>
 			<slot></slot>

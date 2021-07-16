@@ -1,9 +1,10 @@
 <template>
 	<div class="flex justify_center" :class="areaStyle">
 		<i
-			class="fas text_center flex_auto self_center lh_0"
+			class="fa fas text_center flex_auto self_center lh_0" v-if="showIcon"
 			:class="iconStyle"
 		></i>
+		<span v-if="showIcon" style="width:1px; height:1px;"></span>
 	</div>
 </template>
 
@@ -11,6 +12,7 @@
 export default {
 	name: "statefullIcon",
 	props: {
+		showIcon: {type:Boolean, default:true},
 		state: {
 			type: String,
 			default: "",
@@ -36,13 +38,13 @@ export default {
 			let classes = "";
 			switch (this.state) {
 				case "alert":
-					classes = "fa-times";
+					classes = "fa-exclamation-triangle";
 					break;
 				case "success":
 					classes = "fa-check";
 					break;
 				case "warning":
-					classes = "fa-exclamation-triangle";
+					classes = "fa-exclamation-circle";
 					break;
 				case "info":
 					classes = "fa-info-circle";

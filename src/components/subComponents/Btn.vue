@@ -78,7 +78,7 @@ export default {
 				case 'button':
 					switch (this.size) {
 						case "tiny":
-							size = "p-y_2 p-x_2 font_n3 font_bold";
+							size = "p-y_1 p-x_2 font_n3 font_bold";
 							break;
 						case "small":
 							size = "p-y_3 p-x_3 lh_0 font_n1 font_0:md";
