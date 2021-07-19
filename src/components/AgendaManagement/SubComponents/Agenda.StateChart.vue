@@ -1,12 +1,12 @@
 <template>
 	<div
-		data-target="readableSeatChart"
+		data-target="readableSeatdata"
 		class="flex justify_between flex_inline gap-x_3 gap-y_3 font_ui flex_wrap"
 	>
 		<div
 			class="flex_auto br_1 br_solid br_black-1 c_white-8 p_3 p-b_2 text_right"
 			:class="'bg_' + block.color"
-			v-for="(block, index) in chart"
+			v-for="(block, index) in chartData"
 			:key="'block' + index"
 		>
 			<div class="flex flex-row">
@@ -18,7 +18,7 @@
 				block.label
 			}}</span>
 				</div>
-				<div class="flex_none br-l_3 br_solid br_white-4 m-l_3 p_3 p-r_0 flex flex_column justify_center" v-if="block.color == 'alert'">
+				<div class="flex_none br-l_2 br_solid br_white-4 m-l_3 p_3 p-r_0 flex flex_column justify_center" v-if="block.color == 'alert'">
 					<i class="fas fa-exclamation-triangle font_0 self_center"></i>
 				</div>
 			</div>
@@ -42,25 +42,9 @@ export default {
 	props: {
 		showAll: { type: Boolean, default: true },
 		allLabel:{ type: String, default: 'All' },
-		chart: {
+		chartData: {
 			type: Array,
-			default: () => [
-				{
-					color: "success",
-					label: "completed",
-					count: 85,
-				},
-				{
-					color: "warning",
-					label: "incomplete",
-					count: 9,
-				},
-				{
-					color: "alert",
-					label: "missing",
-					count: 8,
-				},
-			],
+			default: () => [],
 		},
 	},
 	data() {
@@ -73,9 +57,9 @@ export default {
 	},
 	computed: {
 		allcount: function () {
-			if (this.chart.length > 0) {
+			if (this.chartData.length > 0) {
 				console.log();
-				return this.sum(this.chart, "count");
+				return this.sum(this.chartData, "count");
 			} else {
 				return 0;
 			}

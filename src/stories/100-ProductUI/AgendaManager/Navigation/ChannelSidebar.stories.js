@@ -1,10 +1,11 @@
-import ChanelChart from "../../../../components/AgendaManagement/SubComponents/Agenda.ChannelChart.vue";
+import StateChart from "../../../../components/AgendaManagement/SubComponents/Agenda.StateChart.vue";
 import UserEmailSimple from "../../../../components/subComponents/User/User.EmailListItem.vue";
 import Btn from "../../../../components/subComponents/Btn.vue";
+
 import {programChart,creditList} from "../Data/charts.js";
 export default {
-	title: "APPS/SessionManager/Channel/Sidebar",
-    component: ChanelChart,
+	title: "APPS/SessionManager/Channel/Layout",
+    component: StateChart,
     subcomponents:{UserEmailSimple,Btn},
 	parameters: {
 		docs: {
@@ -65,13 +66,13 @@ const emailList = [{
   }];
 
 
-const ListTemplate = (args, { argTypes }) => ({
+const SideBarTemplate = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { ChanelChart, UserEmailSimple, Btn },
+	components: { StateChart, UserEmailSimple, Btn },
 	template: `
         <div class="max-w_20 font_0">
           <h3 class="font_display font-size_up-2">Overview</h3>
-            <ChanelChart :chart="chart" :allLabel="'all sessions'" :allColor="'black'"  class="m-b_5" />
+            <StateChart :chartData="chartData" :allLabel="'all sessions'" :allColor="'black'"  class="m-b_5" />
             <h3 class="font_display font-size_up-2">
               <i class="far fa-fa-users-crown"></i>
               Editorial Staff
@@ -98,10 +99,11 @@ const ListTemplate = (args, { argTypes }) => ({
 });
 
 
-export const ChannelSidebar = ListTemplate.bind({});
-ChannelSidebar.args = {
-    chart:programChart,
+export const Sidebar = SideBarTemplate.bind({});
+Sidebar.args = {
+    chartData:programChart,
     emails:emailList,
     creditList:creditList
 };
+
 

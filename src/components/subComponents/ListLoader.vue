@@ -22,11 +22,10 @@
 					You have return no results please check your spelling or try different search keywords and filters.
 				</p>
                 </article>
-
             </slot>
         </div>
         <div v-else >
-            <slot  name="listLoaded"></slot>
+            <slot name="listLoaded"></slot>
         </div>
     </div>
 </template>

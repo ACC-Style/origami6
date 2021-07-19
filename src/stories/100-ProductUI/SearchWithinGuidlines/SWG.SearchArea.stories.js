@@ -10,7 +10,7 @@ import Pagination from "../../../../src/components/Navigation/Pagination.vue";
 import {resultRecommendation} from "./Data/dataResultReturn.js";
 import { commonArgs } from "../../4-Forms/common.argTypes";
 export default {
-	title: "Apps/GuidelineSearch",
+	title: "Apps/GuidelineSearch/Search",
     component: CategoryToggle,
     subcomponents:{baseInputFunctions,SearchBar,Modal,FacetCheckMarks,ListLoader,RecommendationResult,Pagination},
 	parameters: {

@@ -1,6 +1,6 @@
 import CategoryToggle from  "../../../../src/components/GLSearch/GLSearch.CategoryToggle.vue";
 export default {
-	title: "Apps/GuidelineSearch",
+	title: "Apps/GuidelineSearch/Filter",
     component: CategoryToggle,
     subcomponents:{},
 	parameters: {

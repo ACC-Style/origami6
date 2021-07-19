@@ -47,7 +47,11 @@ export default {
 		actionLabel: {
 			type: String,
 			default: "navigate to"
-		}
+		},
+		actionTask: {
+			type: String,
+			default: "navigateTo"
+			}
 
 	},
 
@@ -59,7 +63,7 @@ export default {
 	methods: {
 		onClick() {
 			if (!this.isDisabled) {
-				this.$emit("click");
+				this.$emit("onClick",this.actionTask);
 			}
 		},
 	},
