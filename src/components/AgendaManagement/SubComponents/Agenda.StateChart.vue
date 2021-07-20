@@ -5,7 +5,7 @@
 	>
 		<div
 			class="flex_auto br_1 br_solid br_black-1 c_white-8 p_3 p-b_2 text_right"
-			:class="'bg_' + block.color"
+			:class="['bg_' + block.color+'-n2',{'opacity_3': block.count==0}]"
 			v-for="(block, index) in chartData"
 			:key="'block' + index"
 		>

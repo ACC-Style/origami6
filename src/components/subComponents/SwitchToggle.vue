@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex_row flex_nowrap">
+	<div class="flex flex_row flex_nowrap relative">
 		<BtnToggle
 			class="flex_none"
 			@onClick="$emit('onClick', $event)"
@@ -10,12 +10,13 @@
 			:notActiveState="notActiveState"
 			:shadow="shadow"
 			:insetShadow="insetShadow"
+			:isActive="isActive"
 		>
 			<template v-slot:active
-				><span class="flex flex_row justify_end w_100" v-html="switchHandle.activeLabel"
+				><span class="flex flex_row justify_start w_100" v-html="switchHandle.activeLabel"
 			/></template>
 			<template v-slot:notActive
-				><span class="flex flex_row justify_start w_100" v-html="switchHandle.notActiveLabel"
+				><span class="flex flex_row justify_end w_100" v-html="switchHandle.notActiveLabel"
 			/></template>
 		</BtnToggle>
 		<div class="flex_auto self_center p-l_3:lg p-l_2 lh_0"><slot></slot></div>
@@ -37,11 +38,12 @@ export default {
 				return ["round", "square", "radius"].indexOf(value) !== -1;
 			},
 		},
-		activeState: { type: String },
-		notActiveState: { type: String },
+		activeState: { type: String , default: "secondary" },
+		notActiveState: { type: String, default:"secondary" },
         activeIcon:{type:String, default:null},
         notActiveIcon:{type:String, default:null},
 		insetShadow: { type: Boolean, default: false },
+		isActive: { type: Boolean, default: false },
 	},
 	data() {
 		return {

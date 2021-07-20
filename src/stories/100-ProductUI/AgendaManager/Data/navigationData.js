@@ -1,30 +1,36 @@
 export const NavProgramsAndCollections = {
-	label: "Root",
-	type: "",
+	label: "Home",
+	type: "home",
 	pageID: -1,
 	nodes: [
-		{ label: "Programs", type: "headline" },
 		{
-			label: "Programs",
-			type: "programs",
+			label: "Programs & Channels",
+			type: "headline",
 			pageID: 1351,
 			nodes: [
-				{ label: "Recently Modified", type: "headline" },
+				
+				{
+					label: "All Programs",
+					type: "program",
+					pageID: 1351
+				},
+				{ label: "Recently Modified", type: "sub-headline" },
 				{
 					label: "ACC 2021",
 					type: "program",
 					pageID: 1351,
+					
 					nodes: [
 						{
 							label: "Featured Sessions",
 							type: "collection",
-							pageID: 1351,
+							pageID: 1351,isActive: true,
 						},
 						{
 							label: "Pathway Collections",
 							type: "collection",
 							pageID: 1351,
-							isActive: true,
+							
 						},
 					],
 				},
@@ -44,26 +50,22 @@ export const NavProgramsAndCollections = {
 							pageID: 251,
 						},
 					],
-				},
-				{
+				}
+			],
+		},
+		{
 					label: "New Program",
 					type: "new",
 					pageID: 1351,
 				},
-			],
-		},
 		{
 			label: "Sessions",
 			type: "headline",
-		},
-		{
-			label: "Sessions",
-			type: "sessions",
 			pageID: 1351,
 			nodes: [
 				{
 					label: "Recently Modified",
-					type: "headline",
+					type: "sub-headline",
 				},
 				{
 					label: "Bungul fuga illo odio.",
@@ -100,6 +102,7 @@ export const NavProgramsAndCollections = {
 			type: "tags",
 			pageID: 1351,
 			nodes: [
+				{ label: "Recently Modified", type: "sub-headline" },
 				{
 					label: "Learning Pathway",
 					type: "tag",
@@ -127,9 +130,24 @@ export const NavProgramsAndCollections = {
 			pageID: 1351,
 		},
 		{
-			label: "Faculty & Authors",
-			type: "user",
+			label: "Users",
+			type: "headline",
 			pageID: 1351,
+			nodes: [
+				{
+					label: "Faculty & Authors",
+					type: "user",
+					pageID: 1351,
+				},				{
+					label: "Admins",
+					type: "admin",
+					pageID: 1351,
+				},
+			]
+		},		{
+			label: "New User",
+			type: "new",
 		},
+		
 	],
 };

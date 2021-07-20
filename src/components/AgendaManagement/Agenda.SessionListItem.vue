@@ -2,23 +2,23 @@
 	<HoverContainer
 		:actionIcon="actionIcon"
 		:actionColor="actionColor"
-		:actionLabel="'edit channel'"
+		:actionLabel="'edit session'"
+		:actionTask="actionTask"
+		@onclick="$emit('onClick', $event)"
 	>
 		<div class="flex flex_row:md flex_column flex relative" @mouseenter="
 						() => {
 							actionColor = actionColorDefault;
 							actionIcon = actionIconDefault;
+							actionTask = actionTaskDefault;
 						}
 					">
-			<StatefullIcon :showIcon="false" :state="state" class="flex_none p_2 m_n1 m-r_0" />
+			<StatefullIcon :showIcon="true" :state="(state == 'success')?'shade':state" :icon="'far fa-kaaba'" class="flex_none p_2 m_n1 m-r_0" />
 			<div class="flex_auto p-y_3 p-l_4 p-r_4:md p-r_5">
-				<h3 class="c_primary m_0 font_2 font_display">
-					<span class="block">
-						<!-- <i class="fas fa-cube p-r_2 c_black-4"></i> -->
-						<span class="font_bold">{{sessionId}}. </span>{{sessionTitle}}
-						<span class="display_none inline-block:md"
-							><i class="far fa-pencil-alt p-l_3"></i></span
-					></span>
+				<h3 class="c_primary m_0 p_y_2 lh_1 font-size_up font_display">
+						<span class="font_bold">{{sessionId}}. </span>
+						{{label}}				
+		
 				</h3>
 				<div class="flex flex_inline flex_wrap">
 					<div
@@ -30,22 +30,22 @@
 						>
 							<li>
 								<strong class="font_bold c_black-6 p-r_2 lh_1">state</strong>
-								<span class="font_regular lh_1" :class="[{'c_alert-n1': state == 'alert'}]">{{stateLabel}}</span>
+								<span class="font_regular lh_1" :class="[{'c_alert-n1': state == 'alert'},{'c_warning-n1': state == 'warning'},{'c_black-8': state == 'success'}]">{{stateLabel}}</span>
 							</li>
 							<li>
 								<strong class="font_bold c_black-6 p-l_4 p-r_2 lh_1">active time:</strong>
-								<span class="font_regular lh_1">{{activeTime}}</span>
+								<span class="font_regular lh_1">{{activeDate}} @ {{activeTime}}</span>
 							</li>
 							<li class="">
 								<strong class="font_bold c_black-6 p-l_4 p-r_2 lh_1">credits</strong>
 								<span
 									class="font_regular lh_1"
 									v-for="(credit, index) in credits"
-									:key="credit"
+									:key="'credit_'+index"
 								>
 									<span v-if="index > 0" class="c_black-6 p-r_2"
 										>,</span
-									>{{credit}}
+									><span v-html="credit.label"></span>
 								</span>
 							</li>
 						</ul>
@@ -84,7 +84,7 @@
 						:shadow="false"
 						:size="'tiny'"
 						:corner="'square'"
-						><i class="far fa-times"></i
+						><i class="far fa-times self_center"></i
 					></Btn>
 				</li>
 			</ul>
@@ -98,24 +98,35 @@ import StatefullIcon from "../subComponents/StatefullIcon.vue";
 import Btn from "../subComponents/Btn.vue";
 export default {
 	props: {
+		id:{type:String,default:'-1'},
 		sessionId:{type:Number,default:0},
-		sessionTitle:{type:String, default:'missing label'},
+		label:{type:String, default:'missing label'},
 		state:{type:String, default:'alert'},
 		stateLabel:{type:String, default:'missing source'},
-		activeTime:{type:String, default:new Date().toDateString()},
+		activeTime:{type:[String,Date]},
+		activeDate:{type:[String,Date]},
 		credits: { type: Array, default: () => ["cme", "cne"] },
 		actionColorDefault: { type: String, default: "primary" },
 		actionIconDefault: { type: String, default: "fa-pencil-alt" },
+		actionTaskDefault:{
+			type:String,
+			default:'edit',
+			validator: function (value) {
+				return ['edit', 'delete','navigateTo'].indexOf(value) !== -1;
+			}
+		}
 	},
 	data() {
 		return {
 			actionIcon: this.actionColorDefault,
 			actionColor: this.actionColorDefault,
+			actionTask: this.actionTaskDefault,
 		};
 	},
 	mounted() {
 		this.actionIcon = this.actionColorDefault;
 		this.actionColor = this.actionColorDefault;
+		this.actionTask = this.actionTaskDefault;
 	},
 	components: { HoverContainer, Btn, StatefullIcon },
 };

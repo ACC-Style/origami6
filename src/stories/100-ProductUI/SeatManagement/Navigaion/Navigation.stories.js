@@ -50,12 +50,12 @@ ApplicationNavList.args = {
 };
 
 
-const BreadCrumbNav = (args, { argTypes }) => ({
+const BreadCrumbTemplate = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { BreadCrumb },
 	template: `<BreadCrumb :label="node.label" :type="node.type" :pageID="node.pageID" :nodes="node.nodes"/>`,
 });
-export const ApplicationBreadCrumb = BreadCrumbNav.bind({});
-ApplicationBreadCrumb.args = {
+export const BreadCrumbNav = BreadCrumbTemplate.bind({});
+BreadCrumbNav.args = {
 	node:NavApplicationData
 };

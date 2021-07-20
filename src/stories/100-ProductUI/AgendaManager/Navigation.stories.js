@@ -1,11 +1,12 @@
-import NavListItem from "../../../../components/Navigation/App.SideNav.Item.vue";
-import NavList from "../../../../components/Navigation/App.SideNav.List.vue";
-import {NavProgramsAndCollections} from "../Data/navigationData.js"
+import NavListItem from "../../../components/Navigation/App.SideNav.Item.vue";
+import BreadCrumb from "../../../components/Navigation/App.BreadCrumb.vue";
+import NavList from "../../../components/Navigation/App.SideNav.List.vue";
+import {NavProgramsAndCollections} from "./Data/navigationData.js"
 
 export default {
 	title: "APPS/SessionManager/Navigation",
     component: NavListItem,
-    subcomponents:{NavList},
+    subcomponents:{NavList,BreadCrumb},
 	parameters: {
 		docs: {
 			description: {
@@ -36,5 +37,15 @@ const ListTemplate = (args, { argTypes }) => ({
 
 export const ProgramsAndCollections = ListTemplate.bind({});
 ProgramsAndCollections.args = {
+	node:NavProgramsAndCollections
+};
+
+const BreadCrumbTemplate = (args, { argTypes }) => ({
+	props: Object.keys(argTypes),
+	components: { BreadCrumb },
+	template: `<BreadCrumb :label="node.label" :type="node.type" :pageID="node.pageID" :nodes="node.nodes"/>`,
+});
+export const BreadCrumbNav = BreadCrumbTemplate.bind({});
+BreadCrumbNav.args = {
 	node:NavProgramsAndCollections
 };

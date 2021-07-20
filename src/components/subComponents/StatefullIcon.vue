@@ -13,6 +13,7 @@ export default {
 	name: "statefullIcon",
 	props: {
 		showIcon: {type:Boolean, default:true},
+		icon: {type:String, default:""},
 		state: {
 			type: String,
 			default: "",
@@ -36,6 +37,7 @@ export default {
 	computed: {
 		iconStyle() {
 			let classes = "";
+			if (this.icon === "") {
 			switch (this.state) {
 				case "alert":
 					classes = "fa-exclamation-triangle";
@@ -57,6 +59,9 @@ export default {
 					break;
 				default:
 					break;
+			}}
+			else{
+				classes = this.icon;
 			}
 			return classes;
 		},
@@ -73,13 +78,13 @@ export default {
 					state += " c_white bg_success-n2 ";
 					break;
 				case "shade":
-					state += " c_black bg_shade-3 ";
+					state += " c_black-5 bg_black-2 ";
 					break;
 				case "disabled":
 					state += " c_black bg_shade-3 ";
 					break;
 				case "secondary":
-					state += " c_black bg_secondary-3 ";
+					state += " c_secondary-n3 bg_secondary-3 ";
 					break;
 				case "info":
 					state += " c_black bg_info-3 ";

@@ -1,8 +1,8 @@
-import StateChart from "../../../../components/AgendaManagement/SubComponents/Agenda.StateChart.vue";
-import UserEmailSimple from "../../../../components/subComponents/User/User.EmailListItem.vue";
-import Btn from "../../../../components/subComponents/Btn.vue";
+import StateChart from "../../../components/AgendaManagement/SubComponents/Agenda.StateChart.vue";
+import UserEmailSimple from "../../../components/subComponents/User/User.EmailListItem.vue";
+import Btn from "../../../components/subComponents/Btn.vue";
 
-import {programChart,creditList} from "../Data/charts.js";
+import {programChart,creditList} from "./Data/charts.js";
 export default {
 	title: "APPS/SessionManager/Channel/Layout",
     component: StateChart,

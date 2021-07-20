@@ -6,9 +6,11 @@
 				@click="onNavigateTo(pageID)"
 			>
 				<i
+					v-if="type != 'headline'"
 					class="fal m-l_1 fa-fw m-r_3 flex_none self_center c_primary font-size_up"
 					:class="iconStyle"
 				></i>
+				<span v-else class="flex_none self_center font-size_up m-r_3"></span>
 				<span class="font_regular flex_auto self_center">{{
 					label
 				}}</span>

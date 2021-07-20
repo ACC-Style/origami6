@@ -10,7 +10,7 @@
 			</div>
 			<div
 				v-if="hasChildren"
-				class="font-size_down flex_none br_round p_2 m-r_1 br_1 br_solid br_black-0 justify_center flex h:bg_black-3 h:c_white c_black-6 transition_3"
+				class="font-size_down flex_none br_round p_2 m-r_1 br_1 br_solid br_black-0 justify_center flex h:bg_black-3 h:c_white c_black-6 transition_2"
 				@click="onToggleClick"
 			>
 				<i
@@ -18,6 +18,15 @@
 					:class="rotation"
 					style="height: 1em; width: 1em;"
 				></i>
+			</div>
+		</div>
+		<div
+			v-else-if="type == 'sub-headline'"
+			class="c_primary-n4 flex flex_row flex_nowrap"
+			:class="[indentedStyle]"
+		>
+			<div class="flex_auto capitalize font_medium font_display lh_2">
+				{{ label }}
 			</div>
 		</div>
 		<Btn
@@ -46,11 +55,11 @@
 			</div>
 			<div
 				v-if="hasChildren"
-				class="absolute font-size_down z_3 t_1 b_1 r_1 bg_black-1 flex_none br_round p_2 justify_center flex br_white-0 br_solid br_1 h:bg_black-3 h:c_white c_black-6 transition_3"
+				class="absolute font-size_down z_3 t_1 b_1 r_1 bg_black-1 flex_none br_round p_2 justify_center flex br_white-0 br_solid br_1 h:bg_black-3 h:c_white c_black-6 transition_2"
 				@click="onToggleClick"
 			>
 				<i
-					class="fas font-size_down flex_auto fa-plus fa-fw self_center transition_3"
+					class="fas font-size_down flex_auto fa-plus fa-fw self_center transition_2"
 					:class="rotation"
 					style="height: 1em; width: 1em;"
 				></i>
