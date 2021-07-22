@@ -8,18 +8,20 @@
 // https://www.stage.acc.org/wapi/GuidelinesHelper/retrieve?eid=1-s2.0-S0735109717413064&sectionid=hl0007917
 // Related Recommendations
 // https://www.stage.acc.org/wapi/GuidelinesHelper/Relatedrecommendations?page=1&rows=100&term=7.9.1.1+Congenital+Long+QT+Syndrome
+
+//https://www.acc.org/wapi/GuidelinesHelper/SearchResult?filters=table&page=1&rows=10&term=heart
 export const amendments = [{
 	doi: "10.1016/j.jacc.2018.08.002",
 	eid: "1-s2.0-S0735109718368463",
 	coverdatestart: "2018-10-02",
 	gltitle: "Adults with Congenital Heart Disease",
-},{
+}, {
 	doi: "10.1016/j.jacc.2017.10.054",
 	eid: "71-s2.0-VA-SCD-7.9.1.1-1",
 	coverdatestart: "2017-09-12",
 	gltitle:
-			"Ventricular Arrhythmias and the Prevention of Sudden Cardiac Death",
-},{
+		"Ventricular Arrhythmias and the Prevention of Sudden Cardiac Death",
+}, {
 	doi: "10.1016/j.jacc.2020.11.018",
 	eid: "1-s2.0-S0735109720377962-hl0000833",
 	coverdatestart: "2016-04-08",
@@ -27,6 +29,71 @@ export const amendments = [{
 }];
 
 export const results = [
+	{
+		"eid": "1-s2.0-S0735109717307933-hl0000358",
+		"itemtitle": "Historical Characteristics Associated With Increased Probability of Cardiac and Noncardiac Causes of Syncope (60,67–75)",
+		"itemtitleFormatted": "<span>Historical Characteristics Associated With Increased Probability of Cardiac and Noncardiac Causes of Syncope (60,67–75)</span>",
+		"amendments": [{
+			doi: "10.1016/j.jacc.2017.03.003",
+			eid: "1-s2.0-S0735109717307933-hl0000358",
+			coverdatestart: "2018-10-02",
+			gltitle: "Syncope",
+		}, {
+			doi: "10.1016/j.jacc.2017.10.054",
+			eid: "71-s2.0-VA-SCD-7.9.1.1-1",
+			coverdatestart: "2017-09-12",
+			gltitle:
+				"Ventricular Arrhythmias and the Prevention of Sudden Cardiac Death",
+		}, {
+			doi: "10.1016/j.jacc.2020.11.018",
+			eid: "1-s2.0-S0735109720377962-hl0000833",
+			coverdatestart: "2016-04-08",
+			gltitle: "Valvular Heart Disease",
+		}],
+		"summary": "Table 4 Historical Characteristics Associated With Increased Probability of Cardiac and Noncardiac Causes of Syncope (60,67–75) More Often Associated With Cardiac Causes of Syncope ▪ Older age (&gt;60 y) ▪ Male sex ▪ Presence of known ischemic hea...",
+		"results": "<div id=\"tbl4\" class=\"table\"><div class=\"inline-table-label\">Table 4</div><div class=\"inline-table-caption\">Historical Characteristics Associated With Increased Probability of Cardiac and Noncardiac Causes of Syncope <a class=\"inline-reference\" href=\"#bib60\">(60</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib67\">67</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib68\">68</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib69\">69</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib70\">70</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib71\">71</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib72\">72</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib73\">73</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib74\">74</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib75\">75</a></div><div><table id=\"hl0000363\"><thead><tr><th id=\"hl0000367\" scope=\"col\" class=\"table-align-\"  >More Often Associated With Cardiac Causes of Syncope</th></tr></thead><tbody><tr><td id=\"hl0000370\" class=\"table-align-\"  ><ul id=\"hl0000371\"><li id=\"hl0000372\"><span class=\"list-item-label\">▪</span><p id=\"hl0000374\">Older age (&gt;60 y)</p></li></ul></td></tr><tr><td id=\"hl0000376\" class=\"table-align-\"  ><ul id=\"hl0000377\"><li id=\"hl0000378\"><span class=\"list-item-label\">▪</span><p id=\"hl0000380\">Male sex</p></li></ul></td></tr><tr><td id=\"hl0000382\" class=\"table-align-\"  ><ul id=\"hl0000383\"><li id=\"hl0000384\"><span class=\"list-item-label\">▪</span><p id=\"hl0000386\">Presence of known ischemic heart disease, structural heart disease, previous arrhythmias, or reduced ventricular function</p></li></ul></td></tr><tr><td id=\"hl0000388\" class=\"table-align-\"  ><ul id=\"hl0000389\"><li id=\"hl0000390\"><span class=\"list-item-label\">▪</span><p id=\"hl0000392\">Brief prodrome, such as palpitations, or sudden loss of consciousness without prodrome</p></li></ul></td></tr><tr><td id=\"hl0000394\" class=\"table-align-\"  ><ul id=\"hl0000395\"><li id=\"hl0000396\"><span class=\"list-item-label\">▪</span><p id=\"hl0000398\">Syncope during exertion</p></li></ul></td></tr><tr><td id=\"hl0000400\" class=\"table-align-\"  ><ul id=\"hl0000401\"><li id=\"hl0000402\"><span class=\"list-item-label\">▪</span><p id=\"hl0000404\">Syncope in the supine position</p></li></ul></td></tr><tr><td id=\"hl0000406\" class=\"table-align-\"  ><ul id=\"hl0000407\"><li id=\"hl0000408\"><span class=\"list-item-label\">▪</span><p id=\"hl0000410\">Low number of syncope episodes (1 or 2)</p></li></ul></td></tr><tr><td id=\"hl0000412\" class=\"table-align-\"  ><ul id=\"hl0000413\"><li id=\"hl0000414\"><span class=\"list-item-label\">▪</span><p id=\"hl0000416\">Abnormal cardiac examination</p></li></ul></td></tr><tr><td id=\"hl0000418\" class=\"table-align-\"  ><ul id=\"hl0000419\"><li id=\"hl0000420\"><span class=\"list-item-label\">▪</span><p id=\"hl0000422\">Family history of inheritable conditions or premature SCD (&lt;50 y of age)</p></li></ul></td></tr><tr><td id=\"hl0000424\" class=\"table-align-\"  ><ul id=\"hl0000425\"><li id=\"hl0000426\"><span class=\"list-item-label\">▪</span><p id=\"hl0000428\">Presence of known congenital heart disease</p></li></ul></td></tr></tbody></table></div><div><table id=\"hl0000429\"><thead><tr><th id=\"hl0000433\" scope=\"col\" class=\"table-align-\"  >More Often Associated With Noncardiac Causes of Syncope</th></tr></thead><tbody><tr><td id=\"hl0000436\" class=\"table-align-\"  ><ul id=\"hl0000437\"><li id=\"hl0000438\"><span class=\"list-item-label\">▪</span><p id=\"hl0000440\">Younger age</p></li></ul></td></tr><tr><td id=\"hl0000442\" class=\"table-align-\"  ><ul id=\"hl0000443\"><li id=\"hl0000444\"><span class=\"list-item-label\">▪</span><p id=\"hl0000446\">No known cardiac disease</p></li></ul></td></tr><tr><td id=\"hl0000448\" class=\"table-align-\"  ><ul id=\"hl0000449\"><li id=\"hl0000450\"><span class=\"list-item-label\">▪</span><p id=\"hl0000452\">Syncope only in the standing position</p></li></ul></td></tr><tr><td id=\"hl0000454\" class=\"table-align-\"  ><ul id=\"hl0000455\"><li id=\"hl0000456\"><span class=\"list-item-label\">▪</span><p id=\"hl0000458\">Positional change from supine or sitting to standing</p></li></ul></td></tr><tr><td id=\"hl0000460\" class=\"table-align-\"  ><ul id=\"hl0000461\"><li id=\"hl0000462\"><span class=\"list-item-label\">▪</span><p id=\"hl0000464\">Presence of prodrome: nausea, vomiting, feeling warmth</p></li></ul></td></tr><tr><td id=\"hl0000466\" class=\"table-align-\"  ><ul id=\"hl0000467\"><li id=\"hl0000468\"><span class=\"list-item-label\">▪</span><p id=\"hl0000470\">Presence of specific triggers: dehydration, pain, distressful stimulus, medical environment</p></li></ul></td></tr><tr><td id=\"hl0000472\" class=\"table-align-\"  ><ul id=\"hl0000473\"><li id=\"hl0000474\"><span class=\"list-item-label\">▪</span><p id=\"hl0000476\">Situational triggers: cough, laugh, micturition, defecation, deglutition</p></li></ul></td></tr><tr><td id=\"hl0000478\" class=\"table-align-\"  ><ul id=\"hl0000479\"><li id=\"hl0000480\"><span class=\"list-item-label\">▪</span><p id=\"hl0000482\">Frequent recurrence and prolonged history of syncope with similar characteristics</p></li></ul></td></tr></tbody></table></div><div class=\"inline-table-caption\">SCD indicates sudden cardiac death.</div></div>",
+		"contenttype": [
+			"PG",
+			"JL"
+		],
+		"pubdate": "1501545600000",
+		"sectiontitle": [
+			"JACC (Journal of the American College of Cardiology)",
+			"2017 ACC/AHA/HRS Guideline for the Evaluation and Management of Patients With Syncope",
+			"Historical Characteristics Associated With Increased Probability of Cardiac and Noncardiac Causes of Syncope (60,67–75)"
+		],
+		"doi": "10.1016/j.jacc.2017.03.003",
+		"subtype": "table",
+		"sectionid": [
+			"hl0000358"
+		],
+		"sectiontitleformatted": [
+			"<span>JACC (Journal of the American College of Cardiology)</span>",
+			"<span>2017 ACC/AHA/HRS Guideline for the Evaluation and Management of Patients With Syncope</span>",
+			"<span>Historical Characteristics Associated With Increased Probability of Cardiac and Noncardiac Causes of Syncope (60,67–75)</span>"
+		],
+		"refimage": null,
+		"caption": null,
+		"loe": null,
+		"cor": null,
+		"abs": [],
+		"comments": [],
+		"pointofcare": null,
+		"conditions": null,
+		"refinfo": null,
+		"vol": "70",
+		"issue": "5",
+		"pages": "e39-e110",
+		"coverdatetext": "01 August 2017",
+		"coverdatestart": "2017-08-01",
+		"statustype": "S300",
+		"citation": "J Am Coll Cardiol. 2017 Aug 1;70(5):e39-e110",
+		"hub": "/Guidelines/Hubs/Syncope",
+		"jacclink": "http://www.onlinejacc.org/content/70/5/e39",
+		"pdflink": "http://www.onlinejacc.org/content/accj/70/5/e39.full.pdf",
+		"gltitle": "Syncope",
+		"url": ""
+	},
 	{
 		eid: "1-s2.0-S0735109718368463",
 		itemtitle: "Coronary Anomalies",
@@ -42,7 +109,7 @@ export const results = [
 			"4.4 Complex Lesions",
 			"4.4.7 Coronary Anomalies",
 		],
-		
+
 		doi: "10.1016/j.jacc.2018.08.1029",
 		subtype: "section",
 		sectionid: ["hl0009869"],
@@ -74,179 +141,13 @@ export const results = [
 		pdflink: "http://www.onlinejacc.org/content/73/12/e81.full.pdf",
 		gltitle: "Adults with Congenital Heart Disease",
 		url: "",
-	},
-	{
-		eid: "71-s2.0-VA-SCD-7.9.1.1-1",
-		itemtitle: "7.9.1.1 Congenital Long QT Syndrome",
-		itemtitleFormatted: "<span>7.9.1.1 Congenital Long QT Syndrome</span>",
-		summary:
-			"In patients with long QT syndrome with a resting QTc greater than 470 ms, a beta blocker is recommended. Beta blockers reduce adverse cardiac events for long QT syndrome type 1 (Figure 10) (>95%), long QT syndrome type 2 (Figure 11) (>75%), and fe...",
-		contenttype: ["ACCG"],
-		pubdate: null,
-		sectiontitle: [
-			"JACC (Journal of the American College of Cardiology)",
-			"7 Ongoing Management of VA and SCD Risk Related to Specific Disease States",
-			"7.9 Cardiac Channelopathies",
-			"7.9.1 Specific Cardiac Channelopathy Syndromes",
-			"7.9.1.1 Congenital Long QT Syndrome",
-		],
-		doi: "10.1016/j.jacc.2017.10.054",
-		subtype: "publication",
-		sectionid: null,
-		sectiontitleformatted: [
-			"<span>JACC (Journal of the American College of Cardiology)</span>",
-			"<span>7 Ongoing Management of VA and SCD Risk Related to Specific Disease States</span>",
-			"<span>7.9 Cardiac Channelopathies</span>",
-			"<span>7.9.1 Specific Cardiac Channelopathy Syndromes</span>",
-			"<span>7.9.1.1 Congenital Long QT Syndrome</span>",
-		],
-		refimage: null,
-		caption: null,
-		loe: "B-NR",
-		cor: "1",
-		abs: [
-			"In patients with long QT syndrome with a resting QTc greater than 470 ms, a beta blocker is recommended.",
-		],
-		comments: [
-			"Beta blockers reduce adverse cardiac events for long QT syndrome type 1 (Figure 10) (&gt;95%), long QT syndrome type 2 (Figure 11) (&gt;75%), and females with long QT syndrome type 3 (Figure 12) by &gt;60% (S7.9.1.1-1-S7.9.1.1-5). There are limited data regarding efficacy of beta blockers in males with long QT syndrome type 3 (S7.9.1.1-3,S7.9.1.1-35,S7.9.1.1-36) but, in selected patients, beta blockers can be protective against SCA (S7.9.1.1-36,S7.9.1.1-37). Several observational studies have reported effectiveness for risk reduction in long QT syndrome with propranolol, atenolol, and nadolol with appropriate dosing (S7.9.1.1-26,S7.9.1.1-28,S7.9.1.1-38-S7.9.1.1-40), while metoprolol appears less effective (S7.9.1.1-41). RCTs to assess comparative efficacy of specific beta blockers are unavailable, although many centers favor the use of nadolol. For long QT syndrome type 1, 1 study reported atenolol reduced risk of VA while nadolol was not associated with risk reduction (S7.9.1.1-2). For long QT syndrome type 2, nadolol was reported to show superior efficacy (S7.9.1.1-1,S7.9.1.1-2). Patients receiving a beta blocker should undergo ongoing monitoring to assess changes in QTc over time, and adequacy of beta blockade with exertion (S7.9.1.1-26,S7.9.1.1-28).",
-		],
-		pointofcare: ["Treatment"],
-		conditions: ["Ventricular Arrythmias-Sudden Cardiac Death"],
-		refinfo: [
-			'<reference id="bib766" doi="10.1016/j.jacc.2010.07.038">Abu-Zeitone A., Peterson D.R., Polonsky B., et al. (2014) Efficacy of different beta-blockers in the treatment of long QT syndrome. J Am Coll Cardiol 64:1352-1358.</reference>',
-			'<reference id="bib767" doi="10.1161/CIRCGENETICS.111.961102">Goldenberg I., Bradley J., Moss A., et al. (2010) Beta-blocker efficacy in high-risk patients with the congenital long-QT syndrome types 1 and 2: implications for patient management. J Cardiovasc Electrophysiol 21:893-901.</reference>',
-			'<reference id="bib768" doi="10.1016/j.jacc.2011.08.064">Moss A.J., Zareba W., Hall W.J., et al. (2000) Effectiveness and limitations of beta-blocker therapy in congenital long-QT syndrome. Circulation 101:616-623.</reference>',
-			'<reference id="bib769" doi="10.1161/01.CIR.0000020013.73106.D8">Sauer A.J., Moss A.J., McNitt S., et al. (2007) Long QT syndrome in adults. J Am Coll Cardiol 49:329-337.</reference>',
-			'<reference id="bib770" doi="10.1161/CIRCULATIONAHA.116.021823">Vincent G.M., Schwartz P.J., Denjoy I., et al. (2009) High efficacy of beta-blockers in long-QT syndrome type 1: contribution of noncompliance and QT-prolonging drugs to the occurrence of beta-blocker treatment "failures" Circulation 119:215-221.</reference>',
-		],
-		vol: "72",
-		issue: "14",
-		pages: "e91",
-		coverdatetext: null,
-		coverdatestart: "2018-10-02",
-		statustype: "S300",
-		citation: "J Am Coll Cardiol. 2018 Oct 2;72(14):e91",
-		hub: "/Guidelines/Hubs/Ventricular-Arrhythmias",
-		jacclink: "http://www.onlinejacc.org/content/72/14/e91",
-		pdflink: "http://www.onlinejacc.org/content/72/14/e91.full.pdf",
-		gltitle:
-			"Ventricular Arrhythmias and the Prevention of Sudden Cardiac Death",
-		url: "",
-	},
-	{
-		eid: "71-s2.0-VA-SCD-7.9.1.1-3",
-		itemtitle: "7.9.1.1 Congenital Long QT Syndrome",
-		itemtitleFormatted: "<span>7.9.1.1 Congenital Long QT Syndrome</span>",
-		summary:
-			"In patients with long QT syndrome and recurrent appropriate ICD shocks despite maximum tolerated doses of a beta blocker, intensification of medical therapy with additional medications (guided by consideration of according to the particular long Q...",
-		contenttype: ["ACCG"],
-		pubdate: null,
-		sectiontitle: [
-			"JACC (Journal of the American College of Cardiology)",
-			"7 Ongoing Management of VA and SCD Risk Related to Specific Disease States",
-			"7.9 Cardiac Channelopathies",
-			"7.9.1 Specific Cardiac Channelopathy Syndromes",
-			"7.9.1.1 Congenital Long QT Syndrome",
-		],
-		doi: "10.1016/j.jacc.2017.10.054",
-		subtype: "publication",
-		sectionid: null,
-		sectiontitleformatted: [
-			"<span>JACC (Journal of the American College of Cardiology)</span>",
-			"<span>7 Ongoing Management of VA and SCD Risk Related to Specific Disease States</span>",
-			"<span>7.9 Cardiac Channelopathies</span>",
-			"<span>7.9.1 Specific Cardiac Channelopathy Syndromes</span>",
-			"<span>7.9.1.1 Congenital Long QT Syndrome</span>",
-		],
-		refimage: null,
-		caption: null,
-		loe: "B-NR",
-		cor: "1",
-		abs: [
-			"In patients with long QT syndrome and recurrent appropriate ICD shocks despite maximum tolerated doses of a beta blocker, intensification of medical therapy with additional medications (guided by consideration of according to the particular long QT syndrome type) or left cardiac sympathetic denervation, is recommended.",
-		],
-		comments: [
-			"Mexiletine is an additional medication that can be used in patients with long QT syndrome and recurrent ICD shocks. Left cardiac sympathetic denervation is associated with a reduction the number of appropriate ICD shocks and VA burden (S7.9.1.1-13-S7.9.1.1-16). Reduction of the QTc to &lt;500 ms after left cardiac sympathetic denervation has been correlated with reduced risk of recurrent ICD shocks and frequency of symptoms (S7.9.1.1-16,S7.9.1.1-52); however, SCD or SCA is reported in 3% to 10% of patients (S7.9.1.1-15,S7.9.1.1-16,S7.9.1.1-48,S7.9.1.1-50). Although arrhythmia burden is often reduced, up to 27% of high-risk patients experience at least 1 recurrence (S7.9.1.1-13,S7.9.1.1-14,S7.9.1.1-48). Patient outcomes are improved if the left cardiac sympathetic denervation is performed in centers with surgical expertise in this procedure. Use of additional medications is guided by long QT syndrome type. In long QT syndrome type 3, ranolazine, mexiletine, and flecainide shorten the QTc and have been used to reduce recurrent arrhythmias (S7.9.1.1-6,S7.9.1.1-7,S7.9.1.1-10).",
-		],
-		pointofcare: ["Treatment"],
-		conditions: ["Ventricular Arrythmias-Sudden Cardiac Death"],
-		refinfo: null,
-		vol: "72",
-		issue: "14",
-		pages: "e91",
-		coverdatetext: null,
-		coverdatestart: "2018-10-02",
-		statustype: "S300",
-		citation: "J Am Coll Cardiol. 2018 Oct 2;72(14):e91",
-		hub: "/Guidelines/Hubs/Ventricular-Arrhythmias",
-		jacclink: "http://www.onlinejacc.org/content/72/14/e91",
-		pdflink: "http://www.onlinejacc.org/content/72/14/e91.full.pdf",
-		gltitle:
-			"Ventricular Arrhythmias and the Prevention of Sudden Cardiac Death",
-		url: "",
-	},
-	{
-		eid: "71-s2.0-VA-SCD-7.9.1.1-4",
-		itemtitle: "7.9.1.1 Congenital Long QT Syndrome",
-		itemtitleFormatted: "<span>7.9.1.1 Congenital Long QT Syndrome</span>",
-		summary:
-			"In patients with clinically diagnosed long QT syndrome, genetic counseling and genetic testing are recommended. Genetic testing for disease-causing mutations in long QT syndrome offers important diagnostic, prognostic, and therapeutic information ...",
-		contenttype: ["ACCG"],
-		pubdate: null,
-		sectiontitle: [
-			"JACC (Journal of the American College of Cardiology)",
-			"7 Ongoing Management of VA and SCD Risk Related to Specific Disease States",
-			"7.9 Cardiac Channelopathies",
-			"7.9.1 Specific Cardiac Channelopathy Syndromes",
-			"7.9.1.1 Congenital Long QT Syndrome",
-		],
-		doi: "10.1016/j.jacc.2017.10.054",
-		subtype: "publication",
-		sectionid: null,
-		sectiontitleformatted: [
-			"<span>JACC (Journal of the American College of Cardiology)</span>",
-			"<span>7 Ongoing Management of VA and SCD Risk Related to Specific Disease States</span>",
-			"<span>7.9 Cardiac Channelopathies</span>",
-			"<span>7.9.1 Specific Cardiac Channelopathy Syndromes</span>",
-			"<span>7.9.1.1 Congenital Long QT Syndrome</span>",
-		],
-		refimage: null,
-		caption: null,
-		loe: "B-NR",
-		cor: "1",
-		abs: [
-			"In patients with clinically diagnosed long QT syndrome, genetic counseling and genetic testing are recommended.",
-		],
-		comments: [
-			"Genetic testing for disease-causing mutations in long QT syndrome offers important diagnostic, prognostic, and therapeutic information in addition to the clinical evaluation, and a positive test can facilitate establishing risk for family members. The yield of genetic testing in long QT syndrome phenotype-positive patients is 50% to 86%, with the higher range present in patients with marked QT prolongation or positive family history of SCD (S7.9.1.1-17,S7.9.1.1-21,S7.9.1.1-53). A negative genetic test does not exclude the diagnosis of long QT syndrome, which relies on the clinical evaluation. In asymptomatic patients with otherwise unexplained prolonged QTc ≥480 ms on serial ECGs, genetic testing may help confirm the diagnosis and supplement prognostic information in addition to clinical symptoms and QTc duration (S7.9.1.1-5,S7.9.1.1-18-S7.9.1.1-20,S7.9.1.1-30,S7.9.1.1-35,S7.9.1.1-54-S7.9.1.1-56).",
-		],
-		pointofcare: ["Diagnosis"],
-		conditions: ["Ventricular Arrythmias-Sudden Cardiac Death"],
-		refinfo: [
-			'<reference id="bib782" doi="10.1161/hc1102.105288">Bai R., Napolitano C., Bloise R., et al. (2009) Yield of genetic screening in inherited cardiac channelopathies: how to prioritize access to genetic testing. Circ Arrhythm Electrophysiol 2:6-15.</reference>',
-			'<reference id="bib783" doi="10.1001/jama.296.10.1249">Costa J., Lopes C.M., Barsheshet A., et al. (2012) Combined assessment of sex- and mutation-specific information for risk stratification in type 1 long QT syndrome. Heart Rhythm 9:892-898.</reference>',
-			'<reference id="bib784" doi="10.1001/jama.292.11.1341">Kim J.A., Lopes C.M., Moss A.J., et al. (2010) Trigger-specific risk factors and response to therapy in long QT syndrome type 2. Heart Rhythm 7:1797-1805.</reference>',
-			'<reference id="bib785" doi="10.1056/NEJMoa022147">Migdalovich D., Moss A.J., Lopes C.M., et al. (2011) Mutation and gender-specific risk in type 2 long QT syndrome: implications for risk stratification for life-threatening cardiac events in patients with long QT syndrome. Heart Rhythm 8:1537-1543.</reference>',
-			'<reference id="bib786" doi="10.1016/j.jacc.2009.05.029">Tester D.J., Will M.L., Haglund C.M., et al. (2006) Effect of clinical phenotype on yield of long QT syndrome genetic testing. J Am Coll Cardiol 47:764-768.</reference>',
-		],
-		vol: "72",
-		issue: "14",
-		pages: "e91",
-		coverdatetext: null,
-		coverdatestart: "2018-10-02",
-		statustype: "S300",
-		citation: "J Am Coll Cardiol. 2018 Oct 2;72(14):e91",
-		hub: "/Guidelines/Hubs/Ventricular-Arrhythmias",
-		jacclink: "http://www.onlinejacc.org/content/72/14/e91",
-		pdflink: "http://www.onlinejacc.org/content/72/14/e91.full.pdf",
-		gltitle:
-			"Ventricular Arrhythmias and the Prevention of Sudden Cardiac Death",
-		url: "",
+		results : "<section id=\"hl0006474\"><a id=\"sec7\"></a><section id=\"hl0008811\"><a id=\"sec7.4\"></a><section id=\"hl0009869\"><a id=\"sec7.4.7\"></a><a id=\"sectitle0465\"></a><h3 id=\"hl0009871\"><span class=\"section-label\">4.4.7</span>&nbsp;Coronary Anomalies</h3><p id=\"hl0009872\">Coronary abnormalities are among the most common congenital cardiovascular anomalies, surpassing in prevalence nearly all others combined. Coronary anomalies include anomalous aortic origin of a coronary artery (AAOCA), coronary fistula, and myocardial bridge. Many congenital coronary abnormalities have a benign outcome. In contrast, natural history studies of anomalous coronary artery from the PA (particularly anomalous left coronary artery from the PA) suggest poor outcome in untreated patients; similar natural history studies are lacking regarding untreated patients with AAOCA, but other evidence raises concern. See  and  for a diagnostic and treatment algorithm for AAOCA. </p><div id=\"tbl34\" class=\"table\"><div class=\"inline-table-label\">Table 34</div><div class=\"inline-table-caption\">Factors That May Relate to the Clinical Importance of AAOCA and Risk of SCD</div><div><table id=\"hl0002855\"><tbody><tr><td id=\"hl0002860\" class=\"table-align-\"  >Age</td><td id=\"hl0002861\" class=\"table-align-\"  >AAOCA is more commonly invoked as the cause of SCD in patients &lt;35 y of age than in patients &gt;35 y of age, in whom atherosclerotic coronary disease becomes a more prevalent cause. However, death has been attributed to AAOCA in patients of all ages; there does not seem to be an age beyond which the AAOCA may not be relevant, even in the setting of atherosclerotic coronary disease and other concomitant conditions <a class=\"inline-reference\" href=\"#bib816\">[1]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib817\">[2]</a>. </td></tr><tr><td id=\"hl0002864\" class=\"table-align-\"  >Anatomy of coronary ostium and proximal coronary course</td><td id=\"hl0002865\" class=\"table-align-\"  >Slit-like/fish-mouth-shaped orifice, acute angle takeoff, intramural course, interarterial course and hypoplasia of the proximal coronary artery have all been proposed as reasons for symptoms, ischemia and SCD in patients with AAOCA. The slit-like orifice is more commonly seen in anomalous right coronary artery arising from the left sinus. Each of these anatomic findings offers a pathophysiological mechanism for intermittent ischemia, particularly at times of high cardiac output and/or increased aortic wall tension, such as during exercise <a class=\"inline-reference\" href=\"#bib821\">[1]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib824\">[2]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib825\">[3]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib826\">[4]</a>. </td></tr><tr><td id=\"hl0002868\" class=\"table-align-\"  >Anomalous origin</td><td id=\"hl0002869\" class=\"table-align-\"  >Left coronary artery arising from the right cusp is less common than the right coronary artery arising from the left cusp but is more often found in autopsy series of SCD <a class=\"inline-reference\" href=\"#bib816\">[1]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib818\">[2]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib830\">[3]</a>. This suggests that anomalous origin of the left coronary artery from the right cusp is more likely to cause SCD than anomalous origin of the right coronary artery from the left cusp. This may be due either to anatomic features that make anomalous aortic origin of the left coronary artery prone to coronary compromise or because a larger proportion of myocardium is supplied by the left coronary artery, or both. </td></tr><tr><td id=\"hl0002872\" class=\"table-align-\"  >Exercise</td><td id=\"hl0002873\" class=\"table-align-\"  >Autopsy series suggest a most patients die during, or in close temporal association with, exercise <a class=\"inline-reference\" href=\"#bib818\">[1]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib819\">[2]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib820\">[3]</a>. </td></tr><tr><td id=\"hl0002876\" class=\"table-align-\"  >Ischemia</td><td id=\"hl0002877\" class=\"table-align-\"  >Autopsy series demonstrate myocardial fibrosis in a significant number of patients whose deaths were attributed to AAOCA, particularly in patients with anomalous left coronary artery arising from the right cusp <a class=\"inline-reference\" href=\"#bib820\">(S4.4.7-5)</a>. Surgical series describe patients with ischemia or MI before surgical repair in the absence of other CAD, suggesting a relation of the coronary anomaly to the ischemia <a class=\"inline-reference\" href=\"#bib831\">(S4.4.7-16)</a>. This suggests that had perfusion imaging been obtained before SCD, ischemia would have been found in such patients <a class=\"inline-reference\" href=\"#bib832\">[1]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib833\">[2]</a>. However, other data indicate that a normal stress test does not preclude a SCD event, with the proviso that most of those studies used only stress ECG, rather than the more sensitive and specific modalities of nuclear perfusion imaging or stress echocardiography. In addition, postoperative studies have shown that ischemia may be found after surgical repair in the distribution not supplied by the abnormal coronary artery and may not persist on repeat testing <a class=\"inline-reference\" href=\"#bib834\">(S4.4.7-19)</a>. </td></tr><tr><td id=\"hl0002883\" class=\"table-align-\"  >Symptoms</td><td id=\"hl0002884\" class=\"table-align-\"  >In autopsy and surgical series, a significant number of patients reported cardiovascular symptoms, including before SCD events <a class=\"inline-reference\" href=\"#bib819\">[1]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib822\">[2]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib823\">[3]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib835\">[4]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib836\">[5]</a>. Symptoms are more commonly reported in patients in whom the left coronary artery arises from the right sinus. Surgical series have described improvement in symptoms after surgical repair <a class=\"inline-reference\" href=\"#bib818\">[1]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib819\">[2]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib820\">[3]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib821\">[4]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib822\">[5]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib823\">[6]</a>. </td></tr></tbody></table></div><div class=\"inline-table-caption\">AAOCA indicates anomalous aortic origin of the coronary artery; CAD, coronary artery disease; ECG, electrocardiogram; MI, myocardial infarction; and SCD, sudden cardiac death.</div></div><div class=\"inline-image figure\" id=\"fig5\"><figure><figcaption class=\"inline-image-label\">Figure 5</figcaption><img src=\"//\" alt=\"\" data-eid=\"1-s2.0-S0735109718368463\" data-locator=\"gr5\" data-attachment-filename=\"07351097/S0735109718X00187/S0735109718368463/gr5-t.gif\" /><div class=\"caption-holder\"><div class=\"inline-image-caption\">Anomalous Aortic Origin of the Coronary Artery</div><div class=\"inline-image-caption\">*Surgical intervention to involve unroofing or coronary revascularization for patients with concomitant fixed obstruction.</div></div></figure></div><p id=\"hl0009877\">Assessment of the risk of SCD in patients with AAOCA and of the role of AAOCA in causing ischemia or symptoms is difficult because available data do not adequately capture the clinical spectrum of these anomalies. Autopsy series are available that help describe the anomalies found in patients who suffered SCD contrasted to other causes of death <a class=\"inline-reference\" href=\"#bib816\">[1]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib817\">[2]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib818\">[3]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib819\">[4]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib820\">[5]</a>. There are surgical case series that describe findings before operation, operative anatomy and postoperative course <a class=\"inline-reference\" href=\"#bib817\">[1]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib820\">[2]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib821\">[3]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib822\">[4]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib823\">[5]</a>. There are imaging studies describing the anatomy and potential pathophysiological abnormalities associated with AAOCA <a class=\"inline-reference\" href=\"#bib822\">[1]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib824\">[2]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib825\">[3]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib826\">[4]</a>. There are surgical series describing improvement in symptoms after operation <a class=\"inline-reference\" href=\"#bib821\">[1]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib822\">[2]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib823\">[3]</a>. There are surveys and registries that describe the heterogeneous management strategies applied to AAOCA <a class=\"inline-reference\" href=\"#bib827\">[1]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib828\">[2]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib829\">[3]</a>. What is lacking are data proving that any particular management strategy prevents SCD. As a consequence, decisions regarding whether surgery is necessary or exercise restriction or medical therapy might be beneficial are all based on synthesizing limited data and applying to an individual patient. Clinicians commonly extrapolate to assist in medical decision-making, but the consequences of being “wrong” for a young patient with AAOCA may be perceived to be greater than for many other conditions. Consequently, there is often a clinical urge to seek a reason to do something like surgical repair, because the available data do not identify clinical features that provide reassurance that a patient is at low risk of cardiovascular events. Unfortunately, evidence demonstrating that surgical repair ameliorates SCD risk, derived from large enough cohorts followed over a sufficient period of time, is not available. </p><section id=\"hl0009883\"><a id=\"sec7.4.7.1\"></a><a id=\"sectitle0470\"></a><h3 id=\"hl0009885\"><span class=\"section-label\">4.4.7.1</span>&nbsp;Anomalous Coronary Artery Evaluation</h3><div id=\"undtbl46\" class=\"table\"><div class=\"inline-table-caption\">Recommendations for Anomalous Coronary Artery Evaluation</div><div class=\"inline-table-caption\">Referenced studies that support recommendations are summarized in <a id=\"hl0009892\" href=\"http://jaccjacc.acc.org/Clinical_Document/ACHD_Guideline_ES-FT_Data_Supplements_08-02-18.pdf\" target=\"_blank\">Online Data Supplement 51</a>. </div><div><table id=\"hl0009893\"><thead><tr><th id=\"hl0009899\" scope=\"col\" class=\"table-align-\"  >COR</th><th id=\"hl0009900\" scope=\"col\" class=\"table-align-\"  >LOE</th><th id=\"hl0009901\" scope=\"col\" class=\"table-align-\"  >Recommendations</th></tr></thead><tbody><tr><td id=\"hl0009904\" class=\"table-align-center\" colspan=\"3\" >Diagnostic</td></tr><tr><td id=\"hl0009906\" class=\"table-align-\"  ><b>I</b></td><td id=\"hl0009908\" class=\"table-align-\"  ><b>C-LD</b></td><td id=\"hl0009910\" class=\"table-align-\"  ><ul id=\"hl0009911\"><li id=\"hl0009912\"><span class=\"list-item-label\">1.</span><p id=\"hl0009914\"><b>Coronary angiography, using catheterization, CT, or CMR, is recommended for evaluation of anomalous coronary artery</b><a class=\"inline-reference\" href=\"#bib837\"><b>[1]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib838\"><b>[2]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib839\"><b>[3]</b></a><b>.</b></p></li></ul></td></tr><tr><td id=\"hl0009920\" class=\"table-align-\"  ><b>I</b></td><td id=\"hl0009922\" class=\"table-align-\"  ><b>C-LD</b></td><td id=\"hl0009924\" class=\"table-align-\"  ><ul id=\"hl0009925\"><li id=\"hl0009926\"><span class=\"list-item-label\">2.</span><p id=\"hl0009928\"><b>Anatomic and physiological evaluation should be performed in patients with anomalous aortic origin of the left coronary from the right sinus and/or right coronary from the left sinus</b><a class=\"inline-reference\" href=\"#bib840\"><b>[1]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib841\"><b>[2]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib842\"><b>[3]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib843\"><b>[4]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib844\"><b>[5]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib845\"><b>[6]</b></a><b>.</b></p></li></ul></td></tr></tbody></table></div></div><p id=\"hl0009933\"><b>Recommendation-Specific Supportive Text</b></p><ul id=\"hl0009935\"><li id=\"hl0009936\"><span class=\"list-item-label\">1.</span><p id=\"hl0009938\">CTA, CMR, and catheterization can all delineate the proximal course of the coronary artery and relationship to other structures. CTA is generally preferred because it has superior spatial and temporal resolution, although CMR may also provide adequate delineation of the relationship of the coronary artery to the aorta, PA and other structures, including whether the proximal course appears to be intramural. Coronary angiography by catheterization can be helpful when there is concern about stenosis in the coronary artery or when concomitant hemodynamic evaluation for shunt assessment or intravascular ultrasonography/flow evaluation is needed.</p></li><li id=\"hl0009939\"><span class=\"list-item-label\">2.</span><p id=\"hl0009941\">Assessment of AAOCA is enhanced when the precise anatomy and physiological impact of the coronary artery anomaly are understood. As described in , the specific anomalous origin, anatomy of the orifice and proximal vessel and presence of ischemia may all influence the clinical course and thus the management options. Understanding these issues as precisely as possible will better inform clinical decisions. </p></li></ul></section><section id=\"hl0009943\"><a id=\"sec7.4.7.2\"></a><a id=\"sectitle0475\"></a><h3 id=\"hl0009945\"><span class=\"section-label\">4.4.7.2</span>&nbsp;Anomalous Aortic Origin of Coronary Artery</h3><div id=\"undtbl47\" class=\"table\"><div class=\"inline-table-caption\">Recommendations for Anomalous Aortic Origin of Coronary Artery</div><div class=\"inline-table-caption\">Referenced studies that support recommendations are summarized in <a id=\"hl0009952\" href=\"http://jaccjacc.acc.org/Clinical_Document/ACHD_Guideline_ES-FT_Data_Supplements_08-02-18.pdf\" target=\"_blank\">Online Data Supplement 51</a>. </div><div><table id=\"hl0009953\"><thead><tr><th id=\"hl0009959\" scope=\"col\" class=\"table-align-\"  >COR</th><th id=\"hl0009960\" scope=\"col\" class=\"table-align-\"  >LOE</th><th id=\"hl0009961\" scope=\"col\" class=\"table-align-\"  >Recommendations</th></tr></thead><tbody><tr><td id=\"hl0009964\" class=\"table-align-center\" colspan=\"3\" >Therapeutic</td></tr><tr><td id=\"hl0009966\" class=\"table-align-\"  ><b>I</b></td><td id=\"hl0009968\" class=\"table-align-\"  ><b>B-NR</b></td><td id=\"hl0009970\" class=\"table-align-\"  ><ul id=\"hl0009971\"><li id=\"hl0009972\"><span class=\"list-item-label\">1.</span><p id=\"hl0009974\"><b>Surgery is recommended for AAOCA from the left sinus or AAOCA from the right sinus for symptoms or diagnostic evidence consistent with coronary ischemia attributable to the anomalous coronary artery</b><a class=\"inline-reference\" href=\"#bib846\"><b>[1]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib847\"><b>[2]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib848\"><b>[3]</b></a><b>.</b></p></li></ul></td></tr><tr><td id=\"hl0009980\" class=\"table-align-\"  ><b>IIa</b></td><td id=\"hl0009982\" class=\"table-align-\"  ><b>C-LD</b></td><td id=\"hl0009984\" class=\"table-align-\"  ><ul id=\"hl0009985\"><li id=\"hl0009986\"><span class=\"list-item-label\">2.</span><p id=\"hl0009988\"><b>Surgery is reasonable for anomalous aortic origin of the left coronary artery from the right sinus in the absence of symptoms or ischemia</b><a class=\"inline-reference\" href=\"#bib849\"><b>[1]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib850\"><b>[2]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib851\"><b>[3]</b></a><b>.</b></p></li></ul></td></tr><tr><td id=\"hl0009994\" class=\"table-align-\"  ><b>IIa</b></td><td id=\"hl0009996\" class=\"table-align-\"  ><b>C-EO</b></td><td id=\"hl0009998\" class=\"table-align-\"  ><ul id=\"hl0009999\"><li id=\"hl0010000\"><span class=\"list-item-label\">3.</span><p id=\"hl0010002\"><b>Surgery for AAOCA is reasonable in the setting of ventricular arrhythmias.</b></p></li></ul></td></tr><tr><td id=\"hl0010005\" class=\"table-align-\"  ><b>IIb</b></td><td id=\"hl0010007\" class=\"table-align-\"  ><b>B-NR</b></td><td id=\"hl0010009\" class=\"table-align-\"  ><ul id=\"hl0010010\"><li id=\"hl0010011\"><span class=\"list-item-label\">4.</span><p id=\"hl0010013\"><b>Surgery or continued observation may be reasonable for asymptomatic patients with an anomalous left coronary artery arising from the right sinus or right coronary artery arising from the left sinus without ischemia or anatomic or physiological evaluation suggesting potential for compromise of coronary perfusion (e.g., intramural course, fish-mouth-shaped orifice, acute angle)</b><a class=\"inline-reference\" href=\"#bib849\"><b>[1]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib850\"><b>[2]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib851\"><b>[3]</b></a><b>.</b></p></li></ul></td></tr></tbody></table></div></div><p id=\"hl0010018\"><b>Recommendation-Specific Supportive Text</b></p><ul id=\"hl0010020\"><li id=\"hl0010021\"><span class=\"list-item-label\">1.</span><p id=\"hl0010023\">In patients with symptoms related to AAOCA, repair of the anomaly should alleviate symptoms. In autopsy and surgical series, cardiac symptoms are more common in patients with a left coronary artery arising from the right coronary cusp. In autopsy studies of patients who died because of an anomalous coronary artery, fibrosis is a common finding, suggesting that ischemia preceded the terminal event. However, there are patients in whom a SCD event occurred despite normal stress ECG, and consequently absence of ischemia is not reassuring. Autopsy series show that many patients whose death is attributed to anomalous coronary arteries are young, thus management of patients should take age into account, with heightened concern about the risk of sudden death in younger patients <a class=\"inline-reference\" href=\"#bib852\">[1]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib853\">[2]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib854\">[3]</a>. </p></li><li id=\"hl0010025\"><span class=\"list-item-label\">2.</span><p id=\"hl0010027\">Anomalous left coronary from the right sinus is less common than anomalous right coronary from the left sinus <a class=\"inline-reference\" href=\"#bib855\">(S4.4.7.2-10)</a>, but anomalous left coronary artery from the right is more commonly found in autopsy series of athletes and military recruits who had nontraumatic death than right coronary from the left sinus <a class=\"inline-reference\" href=\"#bib846\">[1]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib856\">[2]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib857\">[3]</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib858\">[4]</a>. The overrepresentation of the anomalous left coronary from the right sinus suggests a higher risk of SCD, particular at extremes of exertion and in patients &lt;35 years of age. </p><p id=\"hl0010030\">There are some anatomic features that are thought to be associated with increased risk of compromise of coronary flow and/or SCD, including a fish-mouth-shaped or slit-like orifice, or intramural course <a class=\"inline-reference\" href=\"#bib859\">(S4.4.7.2-14)</a>, although the slit-like orifice is more commonly encountered in a right coronary arising from the left cusp. It is difficult to quantitate the absolute risk of SCD associated with anomalous aortic origin of the left coronary from the right sinus, and data demonstrating that surgery ameliorates the SCD risk have not been published. Until studies suggest otherwise, limited data and expert consensus suggest that it is reasonable that adults with this malformation should undergo surgical unroofing unless there are extenuating circumstances that would make surgery high risk. </p></li><li id=\"hl0010032\"><span class=\"list-item-label\">3.</span><p id=\"hl0010034\">In patients with ventricular arrhythmias presumed related to ischemia caused by anomalous origin of a coronary artery, repair is an option to alleviate the ischemia and presumably mitigate the recurrence of ventricular arrhythmias. However, care should be individualized, as there may be other factors (e.g., CAD, cardiomyopathy, residual ischemia) contributing to ventricular arrhythmias that warrant continued vigilance and additional therapy.</p></li><li id=\"hl0010035\"><span class=\"list-item-label\">4.</span><p id=\"hl0010037\">Anomalous aortic origin of the right coronary from the left sinus is more common than anomalous aortic origin of the left coronary from the right sinus. The risk of SCD with the former malformation is difficult to quantitate. There is some physiological rationale to believe that asymptomatic patients without evidence of compromised blood flow would benefit from unroofing, but there are not data to demonstrate that surgical interventions alter the risk of SCD. Thus, watchful waiting may be an appropriate course as well, particularly for a patient with an anomalous right coronary arising from the left sinus.</p></li></ul></section><section id=\"hl0010038\"><a id=\"sec7.4.7.3\"></a><a id=\"sectitle0480\"></a><h3 id=\"hl0010040\"><span class=\"section-label\">4.4.7.3</span>&nbsp;Anomalous Coronary Artery Arising From the PA</h3><div id=\"undtbl48\" class=\"table\"><div class=\"inline-table-caption\">Recommendations for Anomalous Coronary Artery Arising From the PA</div><div class=\"inline-table-caption\">Referenced studies that support recommendations are summarized in <a id=\"hl0010047\" href=\"http://jaccjacc.acc.org/Clinical_Document/ACHD_Guideline_ES-FT_Data_Supplements_08-02-18.pdf\" target=\"_blank\">Online Data Supplement 51</a>. </div><div><table id=\"hl0010048\"><thead><tr><th id=\"hl0010054\" scope=\"col\" class=\"table-align-\"  >COR</th><th id=\"hl0010055\" scope=\"col\" class=\"table-align-\"  >LOE</th><th id=\"hl0010056\" scope=\"col\" class=\"table-align-\"  >Recommendations</th></tr></thead><tbody><tr><td id=\"hl0010059\" class=\"table-align-center\" colspan=\"3\" >Therapeutic</td></tr><tr><td id=\"hl0010061\" class=\"table-align-\"  ><b>I</b></td><td id=\"hl0010063\" class=\"table-align-\"  ><b>B-NR</b></td><td id=\"hl0010065\" class=\"table-align-\"  ><ul id=\"hl0010066\"><li id=\"hl0010067\"><span class=\"list-item-label\">1.</span><p id=\"hl0010069\"><b>Surgery is recommended for anomalous left coronary artery from the PA</b><a class=\"inline-reference\" href=\"#bib860\"><b>[1]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib861\"><b>[2]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib862\"><b>[3]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib863\"><b>[4]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib864\"><b>[5]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib865\"><b>[6]</b></a>,&nbsp;<a class=\"inline-reference\" href=\"#bib866\"><b>[7]</b></a><b>.</b></p></li></ul></td></tr><tr><td id=\"hl0010075\" class=\"table-align-\"  ><b>I</b></td><td id=\"hl0010077\" class=\"table-align-\"  ><b>C-EO</b></td><td id=\"hl0010079\" class=\"table-align-\"  ><ul id=\"hl0010080\"><li id=\"hl0010081\"><span class=\"list-item-label\">2.</span><p id=\"hl0010083\"><b>In a symptomatic adult with anomalous right coronary artery from the PA with symptoms attributed to the anomalous coronary, surgery is recommended.</b></p></li></ul></td></tr><tr><td id=\"hl0010086\" class=\"table-align-\"  ><b>IIa</b></td><td id=\"hl0010088\" class=\"table-align-\"  ><b>C-EO</b></td><td id=\"hl0010090\" class=\"table-align-\"  ><ul id=\"hl0010091\"><li id=\"hl0010092\"><span class=\"list-item-label\">3.</span><p id=\"hl0010094\"><b>Surgery for anomalous right coronary artery from the PA is reasonable in an asymptomatic adult with ventricular dysfunction or with myocardial ischemia attributed to anomalous right coronary artery from the PA.</b></p></li></ul></td></tr></tbody></table></div></div><p id=\"hl0010096\"><b>Recommendation-Specific Supportive Text</b></p><ul id=\"hl0010098\"><li id=\"hl0010099\"><span class=\"list-item-label\">1.</span><p id=\"hl0010101\">Surgery can include reimplantation of the left coronary artery directly into the aorta with or without an interposition graft. Ligation or closure of the left coronary artery at the level of the PA with coronary artery bypass grafting can also be performed, usually using the left internal mammary artery anastomosed to the left anterior descending.</p></li><li id=\"hl0010102\"><span class=\"list-item-label\">2.</span><p id=\"hl0010104\">Surgery can include reimplantation of the right coronary artery directly into the aorta with or without an interposition graft. Ligation or closure of the right coronary artery at the level of the PA with coronary artery bypass grafting can also be performed, usually using the right internal mammary artery anastomosed to the right coronary or posterior descending coronary artery.</p></li><li id=\"hl0010105\"><span class=\"list-item-label\">3.</span><p id=\"hl0010107\">Surgery to alleviate ischemia or ventricular dysfunction is reasonable if the anomalous coronary artery is thought to be the cause. Surgery can include reimplantation of the right coronary artery directly into the aorta with or without an interposition graft. Ligation or closure of the right coronary artery at the level of the PA with coronary artery bypass grafting can also be performed, usually using the right internal mammary artery anastomosed to the right coronary or posterior descending coronary artery.</p></li></ul></section></section></section></section>"
 	},
 	{
 		eid: "71-s2.0-VA-SCD-7.9.1.1-2",
 		itemtitle: "7.9.1.1 Congenital Long QT Syndrome",
-		itemtitleFormatted: "<span>7.9.1.1 Congenital Long QT Syndrome</span>",
+		itemtitleFormatted:
+			"<span>7.9.1.1 Congenital Long QT Syndrome</span>",
 		summary:
 			"In high-risk patients with symptomatic long QT syndrome in whom a beta blocker is ineffective or not tolerated, intensification of therapy with additional medications (guided by consideration of the particular long QT syndrome type), left cardiac ...",
 		contenttype: ["ACCG"],
@@ -289,229 +190,177 @@ export const results = [
 		statustype: "S300",
 		citation: "J Am Coll Cardiol. 2018 Oct 2;72(14):e91",
 		hub: "/Guidelines/Hubs/Ventricular-Arrhythmias",
-		jacclink: "http://www.onlinejacc.org/content/72/14/e91",
+		jacclink: "http://www.onlinejacc.org/content/72/14/e91#sec10.9.1.1",
 		pdflink: "http://www.onlinejacc.org/content/72/14/e91.full.pdf",
 		gltitle:
 			"Ventricular Arrhythmias and the Prevention of Sudden Cardiac Death",
 		url: "",
 	},
 	{
-		eid: "71-s2.0-VA-SCD-7.9.1.1-5",
-		itemtitle: "7.9.1.1 Congenital Long QT Syndrome",
-		itemtitleFormatted: "<span>7.9.1.1 Congenital Long QT Syndrome</span>",
+		eid: "71-s2.0-HCM2020-8.3-2",
+		itemtitle:
+			"8.3. Management of Patients With HCM and Atrial Fibrillation",
+		itemtitleFormatted:
+			"<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>",
 		summary:
-			"In patients with suspected long QT syndrome, ambulatory electrocardiographic monitoring, recording the ECG lying and immediately on standing, and/or exercise treadmill testing can be useful for establishing a diagnosis and monitoring the response ...",
+			"In patients with HCM and subclinical AF detected by internal or external cardiac device or monitor of >24 hours' duration for a given episode, anticoagulation is recommended with DOAC as first-line option and vitamin K antagonists as second-line o...",
 		contenttype: ["ACCG"],
 		pubdate: null,
 		sectiontitle: [
-			"JACC (Journal of the American College of Cardiology)",
-			"7 Ongoing Management of VA and SCD Risk Related to Specific Disease States",
-			"7.9 Cardiac Channelopathies",
-			"7.9.1 Specific Cardiac Channelopathy Syndromes",
-			"7.9.1.1 Congenital Long QT Syndrome",
+			"8. Management of HCM",
+			"8.3. Management of Patients With HCM and Atrial Fibrillation",
 		],
-		doi: "10.1016/j.jacc.2017.10.054",
+		doi: "10.1016/j.jacc.2020.08.045",
 		subtype: "publication",
 		sectionid: null,
 		sectiontitleformatted: [
-			"<span>JACC (Journal of the American College of Cardiology)</span>",
-			"<span>7 Ongoing Management of VA and SCD Risk Related to Specific Disease States</span>",
-			"<span>7.9 Cardiac Channelopathies</span>",
-			"<span>7.9.1 Specific Cardiac Channelopathy Syndromes</span>",
-			"<span>7.9.1.1 Congenital Long QT Syndrome</span>",
+			"<span>8. Management of HCM</span>",
+			"<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>",
 		],
 		refimage: null,
 		caption: null,
-		loe: "B-NR",
-		cor: "2a",
+		loe: "C-LD",
+		cor: "1",
 		abs: [
-			"In patients with suspected long QT syndrome, ambulatory electrocardiographic monitoring, recording the ECG lying and immediately on standing, and/or exercise treadmill testing can be useful for establishing a diagnosis and monitoring the response to therapy.",
+			"In patients with HCM and subclinical AF detected by internal or external cardiac device or monitor of &gt;24 hours&#39; duration for a given episode, anticoagulation is recommended with DOAC as first-line option and vitamin K antagonists as second-line option, independent of CHA<sub>2</sub>DS<sub>2</sub>-VASc score.",
 		],
 		comments: [
-			"In a prospective, observational study of patients with suspected long QT syndrome, patients with a history of syncope or cardiac arrest and either an affected first-degree relative or a borderline or prolonged QTc interval underwent exercise treadmill testing and bicycle exercise, with ECGs recorded before, during, and after exercise, as well as in different positions (S7.9.1.1-27). long QT syndrome was confirmed by genetic testing in all affected individuals. Among patients with borderline-to-normal resting QTc intervals, prolongation of the 4-minute recovery QTc ≥445 ms had high sensitivity for correctly identifying patients with long QT syndrome (S7.9.1.1-27). A study in younger patients demonstrated QTc prolongation &gt;460 ms at 7 minutes of recovery predicted long QT syndrome type 1 or long QT syndrome type 2 patients versus controls (S7.9.1.1-23). In a study using burst bicycle exercise, patients with latent long QT syndrome had a significantly greater increase in QTc with exercise than either controls or those with QTc prolongation at baseline (S7.9.1.1-24). These findings can be useful in establishing whether long QT syndrome is present. Monitoring adequacy of beta-blocker therapy using exercise testing can be beneficial, particularly in school-aged patients (S7.9.1.1-26,S7.9.1.1-28). Beta-blocker therapy may be associated with a decrease in supine and peak exercise QTc, with the exception of long QT syndrome type 1 patients with C-loop mutations (S7.9.1.1-25).",
+			"AF, commonly observed in patients with HCM, is associated with significant morbidity, impaired quality of life, and substantial stroke risk. Therapy includes prevention of thromboembolic events and controlling symptoms. Traditional stroke risk scoring systems used in the general population are not predictive in patients with HCM. Vitamin K antagonists are effective for stroke prevention, and recent studies support the use of DOACs as well. In view of the substantial stroke risk, periodic AF surveillance would allow for early intervention with anticoagulants in high-risk patients. Asymptomatic AF detected by cardiac devices or monitors also increases risk of stroke, so the decision to anticoagulate should take into considerations the duration of episodes as well as underlying risk factors. When a rhythm control strategy is needed, a number of antiarrhythmic drugs have been shown to be safe and effective, allowing for individualization according to underlying substrate and patient preference. Catheter ablation is also an important option, although the procedure is less effective than in the general population, and there is a more frequent need of repeat procedures and concomitant use of antiarrhythmic drugs. Surgical AF ablation, often with atrial appendage removal, is a potential rhythm management option in patients undergoing surgical myectomy. Surgical AF ablation or maze is not frequently pursued as an isolated surgical indication. Other supraventricular arrhythmias and atrial flutter are likely not increased in incidence in patients with HCM, and treatment is usually similar to populations without HCM.<br /> <br /> Similar to patients without HCM, subclinical or asymptomatic AF (SCAF) is detected by cardiac devices in patients with HCM as well. SCAF was reported in 16 of 30 patients with HCM (53%) after a median follow-up of 595 days (7). Device-detected AF was identified in 29 out of 114 patients with HCM (25%), resulting in an annualized incidence of 4%/year (6). In patients without HCM, SCAF has been associated with an increased risk of thromboembolism, albeit lower than risk described for clinical AF (8). Considerable debate exists regarding the AF duration threshold for initiating anticoagulation in SCAF because the duration used to define and quantify AF varied significantly between different studies. Nevertheless, the data increasingly show that longer duration episodes are associated with greatest risk. An ASSERT (Atrial Fibrillation Reduction Atrial Pacing Trial) substudy suggested only episodes &gt;24 hours were associated with increased risk (15). Also influencing risk are the total AF burden (11) and the presence of traditional risk factors, whereas very short episodes lasting a few seconds do not appear to increase risk (16, 17). When making the diagnosis of device-detected AF, review of stored intracardiac electrograms is essential to exclude artifact or false-positives.",
 		],
-		pointofcare: ["Diagnosis", "Follow-up"],
-		conditions: ["Ventricular Arrythmias-Sudden Cardiac Death"],
+		pointofcare: ["Treatment"],
+		conditions: ["Hypertrophic Cardiomyopathy", "Atrial Fibrillation"],
 		refinfo: [
-			'<reference id="bib787" doi="">Adler A., van der Werf C., Postema P.G., et al. (2012) The phenomenon of "QT stunning": The abnormal QT prolongation provoked by standing persists even as the heart rate returns to normal in patients with long QT syndrome. Heart Rhythm 9:901-908.</reference>',
-			'<reference id="bib788" doi="">Aziz P.F., Wieand T.S., Ganley J., et al. (2011) Genotype- and mutation site-specific QT adaptation during exercise, recovery, and postural changes in children with long-QT syndrome. Circ Arrhythm Electrophysiol 4:867-873.</reference>',
-			'<reference id="bib789" doi="10.1016/j.jacc.2011.03.038">Chattha I.S., Sy R.W., Yee R., et al. (2010) Utility of the recovery electrocardiogram after exercise: a novel indicator for the diagnosis and genotyping of long QT syndrome? Heart Rhythm 7:906-911.</reference>',
-			'<reference id="bib790" doi="10.1016/j.jacc.2014.10.043">Laksman Z.W., Hamilton R.M., Chockalingam P., et al. (2013) Mutation location effect on severity of phenotype during exercise testing in type 1 long-QT syndrome: impact of transmembrane and C-loop location. J Cardiovasc Electrophysiol 24:1015-1020.</reference>',
-			'<reference id="bib791" doi="10.1016/j.jacc.2013.09.078">Moltedo J.M., Kim J.J., Friedman R.A., et al. (2011) Use of a cardioselective beta-blocker for pediatric patients with prolonged QT syndrome. Pediatr Cardiol 32:63-66.</reference>',
-			'<reference id="bib792" doi="10.1093/europace/euv301">Sy R.W., van der Werf C., Chattha I.S., et al. (2011) Derivation and validation of a simple exercise-based algorithm for prediction of genetic testing in relatives of LQTS probands. Circulation 124:2187-2194.</reference>',
-			'<reference id="bib793" doi="10.1016/j.jacc.2007.05.042">Villain E., Denjoy I., Lupoglazoff J.M., et al. (2004) Low incidence of cardiac events with beta-blocking therapy in children with long QT syndrome. Eur Heart J 25:1405-1411.</reference>',
-			'<reference id="bib794" doi="10.1016/j.hrthm.2010.08.023">Viskin S., Postema P.G., Bhuiyan Z.A., et al. (2010) The response of the QT interval to the brief tachycardia provoked by standing: a bedside test for diagnosing long QT syndrome. J Am Coll Cardiol 55:1955-1961.</reference>',
+			'<reference id="bib1" doi="">Quality AfHRa. The CAHPS Ambulatory Care Improvement Guide: Practical Strategies for Improving Patient Experience. Available at: https://www.ahrq.gov/cahps/quality-improvement/improvement-guide/6-strategies-for-improving/communication/strategy6i-shared-decisionmaking.html. Accessed: October 7.</reference>',
+			'<reference id="bib6" doi="">Guadagnoli E, Ward P. Patient participation in decision-making. Soc Sci Med. 1998;47:329-39.</reference>',
+			'<reference id="bib7" doi="">Legare F, Adekpedjou R, Stacey D, et al. Interventions for increasing the use of shared decision making by healthcare professionals. Cochrane Database Syst Rev. 2018;7:CD006732.</reference>',
+			'<reference id="bib8" doi="">Kim LK, Swaminathan RV, Looser P, et al. Hospital volume outcomes after septal myectomy and alcohol septal ablation for treatment of obstructive hypertrophic cardiomyopathy: US nationwide inpatient database, 2003-2011. JAMA Cardiol. 2016;1:324-32.</reference>',
 		],
-		vol: "72",
-		issue: "14",
-		pages: "e91",
+		vol: null,
+		issue: null,
+		pages: null,
 		coverdatetext: null,
-		coverdatestart: "2018-10-02",
-		statustype: "S300",
-		citation: "J Am Coll Cardiol. 2018 Oct 2;72(14):e91",
-		hub: "/Guidelines/Hubs/Ventricular-Arrhythmias",
-		jacclink: "http://www.onlinejacc.org/content/72/14/e91",
-		pdflink: "http://www.onlinejacc.org/content/72/14/e91.full.pdf",
-		gltitle:
-			"Ventricular Arrhythmias and the Prevention of Sudden Cardiac Death",
+		coverdatestart: null,
+		statustype: null,
+		citation:
+			"J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2020.08.045",
+		hub: "/Guidelines/Hubs/Hypertrophic-Cardiomyopathy",
+		jacclink:
+			"https://www.jacc.org/doi/10.1016/j.jacc.2020.08.045#sec19.3",
+		pdflink: "https://www.jacc.org/doi/pdf/10.1016/j.jacc.2020.08.045",
+		gltitle: "Hypertrophic Cardiomyopathy",
 		url: "",
 	},
 	{
-		eid: "71-s2.0-VA-SCD-7.9.1.1-6",
-		itemtitle: "7.9.1.1 Congenital Long QT Syndrome",
-		itemtitleFormatted: "<span>7.9.1.1 Congenital Long QT Syndrome</span>",
+		eid: "71-s2.0-PERIOP-2.4.1-1",
+		itemtitle: "2.4.1. Aortic Stenosis: Recommendation",
+		itemtitleFormatted:
+			"<span>2.4.1. Aortic Stenosis: Recommendation</span>",
 		summary:
-			"In asymptomatic patients with long QT syndrome and a resting QTc less than 470 ms, chronic therapy with a beta blocker is reasonable. Approximately 10% to 36% of genotype-positive patients with long QT syndrome have QTc intervals ≤440 ms, most com...",
+			"Elevated-risk elective noncardiac surgery with appropriate intraoperative and postoperative hemodynamic monitoring is reasonable to perform in patients with asymptomatic severe aortic stenosis. In the Original Cardiac Risk Index, severe AS was ass...",
 		contenttype: ["ACCG"],
 		pubdate: null,
 		sectiontitle: [
 			"JACC (Journal of the American College of Cardiology)",
-			"7 Ongoing Management of VA and SCD Risk Related to Specific Disease States",
-			"7.9 Cardiac Channelopathies",
-			"7.9.1 Specific Cardiac Channelopathy Syndromes",
-			"7.9.1.1 Congenital Long QT Syndrome",
+			"2 Clinical Risk Factors",
+			"2.4. Valvular Heart Disease: Recommendations",
+			"2.4.1. Aortic Stenosis: Recommendation",
 		],
-		doi: "10.1016/j.jacc.2017.10.054",
+		doi: "10.1016/j.jacc.2014.07.944",
 		subtype: "publication",
 		sectionid: null,
 		sectiontitleformatted: [
 			"<span>JACC (Journal of the American College of Cardiology)</span>",
-			"<span>7 Ongoing Management of VA and SCD Risk Related to Specific Disease States</span>",
-			"<span>7.9 Cardiac Channelopathies</span>",
-			"<span>7.9.1 Specific Cardiac Channelopathy Syndromes</span>",
-			"<span>7.9.1.1 Congenital Long QT Syndrome</span>",
+			"<span>2 Clinical Risk Factors</span>",
+			"<span>2.4. Valvular Heart Disease: Recommendations</span>",
+			"<span>2.4.1. Aortic Stenosis: Recommendation</span>",
 		],
 		refimage: null,
 		caption: null,
-		loe: "B-NR",
+		loe: "B",
 		cor: "2a",
 		abs: [
-			"In asymptomatic patients with long QT syndrome and a resting QTc less than 470 ms, chronic therapy with a beta blocker is reasonable.",
+			"Elevated-risk elective noncardiac surgery with appropriate intraoperative and postoperative hemodynamic monitoring is reasonable to perform in patients with asymptomatic severe aortic stenosis.",
 		],
 		comments: [
-			"Approximately 10% to 36% of genotype-positive patients with long QT syndrome have QTc intervals ≤440 ms, most commonly patients with long QT syndrome type 1 (S7.9.1.1-31,S7.9.1.1-35). Patients with long QT syndrome and normal QTc have a lower risk of VA and SCD compared to those with prolonged QTc (S7.9.1.1-35), but still have an increased risk of SCA or SCD compared with genotype-negative, age- and sex-matched general patients (S7.9.1.1-31). Beta blockers reduce the risk of adverse cardiac events substantially (S7.9.1.1-1-S7.9.1.1-5,S7.9.1.1-30,S7.9.1.1-36,S7.9.1.1-38,S7.9.1.1-41,S7.9.1.1-57). During the periods of highest risk in the first 3 decades of life (S7.9.1.1-11,S7.9.1.1-18), treatment with a beta blocker may reduce risk of SCA (S7.9.1.1-26,S7.9.1.1-28,S7.9.1.1-36,S7.9.1.1-38). Changes in QTc occur over time, particularly during puberty and during and after pregnancy, indicating the need for assessment of QTc on ECG annually or with medication changes, and assessing medication efficacy with exercise testing as feasible. Asymptomatic adult (male) long QT syndrome patients with normal QTc intervals may choose to decline beta-blocker therapy (S7.9.1.1-11,S7.9.1.1-34).",
+			"In the Original Cardiac Risk Index, severe AS was associated with a perioperative mortality rate of 13%, compared with 1.6% in patients without AS (48). The mechanism of MACE in patients with AS likely arises from the anesthetic agents and surgical stress that lead to an unfavorable hemodynamic state. The occurrence of hypotension and tachycardia can result in decreased coronary perfusion pressure, development of arrhythmias or ischemia, myocardial injury, cardiac failure, and death.<br /> <br /> With the recent advances in anesthetic and surgical approaches, the cardiac risk in patients with significant AS undergoing noncardiac surgery has declined. In a single, tertiary-center study, patients with moderate AS (aortic valve area: 1.0 cm&#178; to 1.5 cm&#178;) or severe AS (aortic valve area &lt;1.0 cm&#178;) undergoing nonemergency noncardiac surgery had a 30-day mortality rate of 2.1%, compared with 1.0% in propensity score-matched patients without AS (p=0.036) (75). Postoperative MI was more frequent in patients with AS than in patients without AS (3.0% versus 1.1%; p=0.001). Patients with AS had worse primary outcomes (defined as composite of 30-day mortality and postoperative MI) than did patients without AS (4.4% versus 1.7%; p=0.002 for patients with moderate AS; 5.7% versus 2.7%; p=0.02 for patients with severe AS). Predictors of 30-day death and postoperative MI in patients with moderate or severe AS include high-risk surgery (odds ratio [OR]: 7.3; 95% CI: 2.6 to 20.6), symptomatic severe AS (OR: 2.7; 95% CI: 1.1 to 7.5), coexisting moderate or severe mitral regurgitation (MR) (OR: 9.8; 95% CI: 3.1 to 20.4), and pre-existing CAD (OR: 2.7; 95% CI: 1.1 to 6.2).<br /> <br /> For patients who meet indications for aortic valve replacement (AVR) before noncardiac surgery but are considered high risk or ineligible for surgical AVR, options include proceeding with noncardiac surgery with invasive hemodynamic monitoring and optimization of loading conditions, percutaneous aortic balloon dilation as a bridging strategy, and transcatheter aortic valve replacement (TAVR). Percutaneous aortic balloon dilation can be performed with acceptable procedural safety, with the mortality rate being 2% to 3% and the stroke rate being 1% to 2% (76-78,84). However, recurrence and mortality rates approach 50% by 6 months after the procedure. Single-center, small case series from more than 25 years ago reported the use of percutaneous aortic balloon dilation in patients with severe AS before noncardiac surgery (79-81). Although the results were acceptable, there were no comparison groups or long-term follow-up. The PARTNER (Placement of Aortic Transcatheter Valves) RCT demonstrated that TAVR has superior outcomes for patients who are not eligible for surgical AVR (1-year mortality rate: 30.7% for TAVR versus 50.7% for standard therapy) and similar efficacy for patients who are at high risk for surgical AVR (1-year mortality rate: 24.2% for TAVR versus 26.8% for surgical AVR) (82,83). However, there are no data for the efficacy or safety of TAVR for patients with AS who are undergoing noncardiac surgery.",
 		],
 		pointofcare: ["Treatment"],
-		conditions: ["Ventricular Arrythmias-Sudden Cardiac Death"],
-		refinfo: null,
-		vol: "72",
-		issue: "14",
-		pages: "e91",
+		conditions: [
+			"Perioperative CV Eval for NonCV Surgery",
+			"Valvular Heart Disease",
+		],
+		refinfo: [
+			'<reference id="bib47" doi="10.1016/j.archger.2007.10.007">Dasgupta M., Rolfson D.B., Stolee P., et al. (2009) Frailty is associated with postoperative complications in older adults with medical problems. Arch Gerontol Geriatr 48:78-83.</reference>',
+			'<reference id="bib74" doi="10.1186/cc10098">Gevaert S., Van B.Y., Bouchez S., et al. (2011) Acute and critically ill peripartum cardiomyopathy and "bridge to" therapeutic options: a single center experience with intra-aortic balloon pump, extra corporeal membrane oxygenation and continuous-flow left ventricular assist devices. Crit Care 15:R93.</reference>',
+			'<reference id="bib75" doi="10.1161/CIRCOUTCOMES.111.000091">Agarwal S., Rajamanickam A., Bajaj N.S., et al. (2013) Impact of aortic stenosis on postoperative outcomes after noncardiac surgeries. Circ Cardiovasc Qual Outcomes 6:193-200.</reference>',
+			'<reference id="bib76" doi="">Ben-Dor I., Pichard A.D., Satler L.F., et al. (2010) Complications and outcome of balloon aortic valvuloplasty in high-risk or inoperable patients. J Am Coll Cardiol Intv 3:1150-1156.</reference>',
+			'<reference id="bib77" doi="10.1002/ccd.24534">Khawaja M.Z., Sohal M., Valli H., et al. (2013) Standalone balloon aortic valvuloplasty: indications and outcomes from the UK in the transcatheter valve era. Catheter Cardiovasc Interv 81:366-373.</reference>',
+			'<reference id="bib78" doi="10.1002/ccd.24784">Feldman T. (2013) Balloon aortic valvuloplasty: still under-developed after two decades of use. Catheter Cardiovasc Interv 81:374-375.</reference>',
+			'<reference id="bib79" doi="10.1016/S0025-6196(12)61746-7">Hayes S.N., Holmes D.R., Nishimura R.A., et al. (1989) Palliative percutaneous aortic balloon valvuloplasty before noncardiac operations and invasive diagnostic procedures. Mayo Clin Proc 64:753-757.</reference>',
+			'<reference id="bib80" doi="10.1016/0735-1097(89)90258-1">Roth R.B., Palacios I.F., Block P.C. (1989) Percutaneous aortic balloon valvuloplasty: its role in the management of patients with aortic stenosis requiring major noncardiac surgery. J Am Coll Cardiol 13:1039-1041.</reference>',
+			'<reference id="bib81" doi="10.1016/0002-9149(88)90284-6">Levine M.J., Berman A.D., Safian R.D., et al. (1988) Palliation of valvular aortic stenosis by balloon valvuloplasty as preoperative preparation for noncardiac surgery. Am J Cardiol 62:1309-1310.</reference>',
+			'<reference id="bib82" doi="10.1056/NEJMoa1008232">Leon M.B., Smith C.R., Mack M., et al. (2010) Transcatheter aortic-valve implantation for aortic stenosis in patients who cannot undergo surgery. N Engl J Med 363:1597-1607.</reference>',
+			'<reference id="bib83" doi="10.1056/NEJMoa1103510">Smith C.R., Leon M.B., Mack M.J., et al. (2011) Transcatheter versus surgical aortic-valve replacement in high-risk patients. N Engl J Med 364:2187-2198.</reference>',
+		],
+		vol: "64",
+		issue: "22",
+		pages: "e77",
 		coverdatetext: null,
-		coverdatestart: "2018-10-02",
+		coverdatestart: "2014-12-09",
 		statustype: "S300",
-		citation: "J Am Coll Cardiol. 2018 Oct 2;72(14):e91",
-		hub: "/Guidelines/Hubs/Ventricular-Arrhythmias",
-		jacclink: "http://www.onlinejacc.org/content/72/14/e91",
-		pdflink: "http://www.onlinejacc.org/content/72/14/e91.full.pdf",
+		citation: "J Am Coll Cardiol. 2014 Dec 9;64(22):e77",
+		hub: "/Guidelines/Hubs/Perioperative-Cardiovascular-Evaluation",
+		jacclink: "http://www.onlinejacc.org/content/64/22/e77#sec5.4.1",
+		pdflink: "http://www.onlinejacc.org/content/64/22/e77.full.pdf",
 		gltitle:
-			"Ventricular Arrhythmias and the Prevention of Sudden Cardiac Death",
+			"Perioperative Cardiovascular Evaluation and Care For Noncardiac Surgery",
 		url: "",
 	},
 	{
-		eid: "71-s2.0-VA-SCD-7.9.1.1-7",
-		itemtitle: "7.9.1.1 Congenital Long QT Syndrome",
-		itemtitleFormatted: "<span>7.9.1.1 Congenital Long QT Syndrome</span>",
+		eid: "1-s2.0-S0735109720377962-hl0000160",
+		itemtitle: "Associated Guidelines and Related References",
+		itemtitleFormatted:
+			"<span>Associated Guidelines and Related References</span>",
 		summary:
-			"In asymptomatic patients with long QT syndrome and a resting QTc greater than 500 ms while receiving a beta blocker, intensification of therapy with medications (guided by consideration of the particular long QT syndrome type), left cardiac sympat...",
-		contenttype: ["ACCG"],
+			"Table 1 Associated Guidelines and Related References Title Organization Publication Year (Reference) Recommendations for Evaluation of the Severity of Native Valvular Regurgitation With Two-Dimensional and Doppler Echocardiography ASE 2017 ( 5) Eu...",
+		contenttype: ["PG", "JL"],
 		pubdate: null,
 		sectiontitle: [
 			"JACC (Journal of the American College of Cardiology)",
-			"7 Ongoing Management of VA and SCD Risk Related to Specific Disease States",
-			"7.9 Cardiac Channelopathies",
-			"7.9.1 Specific Cardiac Channelopathy Syndromes",
-			"7.9.1.1 Congenital Long QT Syndrome",
+			"2020 ACC/AHA Guideline for the Management of Patients With Valvular Heart Disease",
+			"Associated Guidelines and Related References",
 		],
-		doi: "10.1016/j.jacc.2017.10.054",
-		subtype: "publication",
-		sectionid: null,
+		doi: "10.1016/j.jacc.2020.11.018",
+		subtype: "table",
+		sectionid: ["hl0000160"],
 		sectiontitleformatted: [
 			"<span>JACC (Journal of the American College of Cardiology)</span>",
-			"<span>7 Ongoing Management of VA and SCD Risk Related to Specific Disease States</span>",
-			"<span>7.9 Cardiac Channelopathies</span>",
-			"<span>7.9.1 Specific Cardiac Channelopathy Syndromes</span>",
-			"<span>7.9.1.1 Congenital Long QT Syndrome</span>",
+			"<span>2020 ACC/AHA Guideline for the Management of Patients With Valvular Heart Disease</span>",
+			"<span>Associated Guidelines and Related References</span>",
 		],
 		refimage: null,
 		caption: null,
-		loe: "B-NR",
-		cor: "2b",
-		abs: [
-			"In asymptomatic patients with long QT syndrome and a resting QTc greater than 500 ms while receiving a beta blocker, intensification of therapy with medications (guided by consideration of the particular long QT syndrome type), left cardiac sympathetic denervation or an ICD may be considered.",
-		],
-		comments: [
-			"The risk of adverse cardiac events from VA is influenced by the patient&#39;s resting QTc interval, age, sex, and long QT syndrome genotype/mutation. For asymptomatic males with long QT syndrome, the risk of cardiac events is highest in childhood (S7.9.1.1-2,S7.9.1.1-8,S7.9.1.1-11,S7.9.1.1-30), during a time when medication compliance is challenging. Young women with LQT2 and QTc &gt;500 ms are at increased risk of SCA (S7.9.1.1-2,S7.9.1.1-11,S7.9.1.1-18-S7.9.1.1-20,S7.9.1.1-30,S7.9.1.1-35) especially in the 9 months postpartum, and may be candidates for primary prevention ICD placement or use of a wearable cardioverter-defibrillator (S7.9.1.1-30).",
-		],
-		pointofcare: ["Treatment"],
-		conditions: ["Ventricular Arrythmias-Sudden Cardiac Death"],
+		loe: null,
+		cor: null,
+		abs: [],
+		comments: [],
+		pointofcare: null,
+		conditions: null,
 		refinfo: null,
-		vol: "72",
-		issue: "14",
-		pages: "e91",
+		vol: null,
+		issue: null,
+		pages: null,
 		coverdatetext: null,
-		coverdatestart: "2018-10-02",
-		statustype: "S300",
-		citation: "J Am Coll Cardiol. 2018 Oct 2;72(14):e91",
-		hub: "/Guidelines/Hubs/Ventricular-Arrhythmias",
-		jacclink: "http://www.onlinejacc.org/content/72/14/e91",
-		pdflink: "http://www.onlinejacc.org/content/72/14/e91.full.pdf",
-		gltitle:
-			"Ventricular Arrhythmias and the Prevention of Sudden Cardiac Death",
-		url: "",
-	},
-	{
-		eid: "71-s2.0-VA-SCD-7.9.1.1-8",
-		itemtitle: "7.9.1.1 Congenital Long QT Syndrome",
-		itemtitleFormatted: "<span>7.9.1.1 Congenital Long QT Syndrome</span>",
-		summary:
-			"In patients with long QT syndrome, QT-prolonging medications are potentially harmful. The risk of adverse events increases in patients with long QT syndrome with prolongation of the QTc >500 ms (S7.9.1.1-2,S7.9.1.1-12,S7.9.1.1-26,S7.9.1.1-35,S7.9....",
-		contenttype: ["ACCG"],
-		pubdate: null,
-		sectiontitle: [
-			"JACC (Journal of the American College of Cardiology)",
-			"7 Ongoing Management of VA and SCD Risk Related to Specific Disease States",
-			"7.9 Cardiac Channelopathies",
-			"7.9.1 Specific Cardiac Channelopathy Syndromes",
-			"7.9.1.1 Congenital Long QT Syndrome",
-		],
-		doi: "10.1016/j.jacc.2017.10.054",
-		subtype: "publication",
-		sectionid: null,
-		sectiontitleformatted: [
-			"<span>JACC (Journal of the American College of Cardiology)</span>",
-			"<span>7 Ongoing Management of VA and SCD Risk Related to Specific Disease States</span>",
-			"<span>7.9 Cardiac Channelopathies</span>",
-			"<span>7.9.1 Specific Cardiac Channelopathy Syndromes</span>",
-			"<span>7.9.1.1 Congenital Long QT Syndrome</span>",
-		],
-		refimage: null,
-		caption: null,
-		loe: "B-NR",
-		cor: "3: Harm",
-		abs: [
-			"In patients with long QT syndrome, QT-prolonging medications are potentially harmful.",
-		],
-		comments: [
-			"The risk of adverse events increases in patients with long QT syndrome with prolongation of the QTc &gt;500 ms (S7.9.1.1-2,S7.9.1.1-12,S7.9.1.1-26,S7.9.1.1-35,S7.9.1.1-41,S7.9.1.1-58). QT-prolonging medications (www.crediblemeds.org) (S7.9.1.1-59) should not be used in patients with long QT syndrome unless there is no suitable alternative; careful monitoring of the QTc during therapy is recommended, with consideration for discontinuing therapy with marked QTc prolongation. Concurrent use of stimulant or nonstimulant attention deficit/hyperactivity medications was associated with an increased risk of syncope/cardiac arrest in long QT syndrome, particularly males, in 1 study (S7.9.1.1-34), but it did not appear to be associated with increased risk in another retrospective study (S7.9.1.1-60). Episodes of torsades de pointes can be precipitated by exposure to a QT prolonging medication, or hypokalemia induced by diuretics or gastrointestinal illness. Attention to maintaining normal potassium and magnesium balance when medications or situations that promote depletion are encountered is an important component of management. Rare case reports exist of fever prolonging the QT interval in patients with long QT syndrome type 2; fever should be reduced with antipyretics (S7.9.1.1-61)(Table 10).",
-		],
-		pointofcare: ["Treatment"],
-		conditions: ["Ventricular Arrythmias-Sudden Cardiac Death"],
-		refinfo: null,
-		vol: "72",
-		issue: "14",
-		pages: "e91",
-		coverdatetext: null,
-		coverdatestart: "2018-10-02",
-		statustype: "S300",
-		citation: "J Am Coll Cardiol. 2018 Oct 2;72(14):e91",
-		hub: "/Guidelines/Hubs/Ventricular-Arrhythmias",
-		jacclink: "http://www.onlinejacc.org/content/72/14/e91",
-		pdflink: "http://www.onlinejacc.org/content/72/14/e91.full.pdf",
-		gltitle:
-			"Ventricular Arrhythmias and the Prevention of Sudden Cardiac Death",
-		url: "",
-	},
+		coverdatestart: null,
+		statustype: "S200",
+		citation:
+			"J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2020.11.018",
+		hub: "/Guidelines/Hubs/Valvular-Heart-Disease",
+		jacclink: "https://www.jacc.org/doi/10.1016/j.jacc.2020.11.018",
+		pdflink: "https://www.jacc.org/doi/pdf/10.1016/j.jacc.2020.11.018",
+		gltitle: "Valvular Heart Disease",
+		url: "","results":"<div id=\"tbl1\" class=\"table\"><div class=\"inline-table-label\">Table 1</div><div class=\"inline-table-caption\">Associated Guidelines and Related References</div><div><table id=\"hl0000164\"><thead><tr><th id=\"hl0000170\" scope=\"col\" class=\"table-align-\"  >Title</th><th id=\"hl0000171\" scope=\"col\" class=\"table-align-\"  >Organization</th><th id=\"hl0000172\" scope=\"col\" class=\"table-align-\"  >Publication Year (Reference)</th></tr></thead><tbody><tr><td id=\"hl0000175\" class=\"table-align-\"  >Recommendations for Evaluation of the Severity of Native Valvular Regurgitation With Two-Dimensional and Doppler Echocardiography</td><td id=\"hl0000176\" class=\"table-align-center\"  >ASE</td><td id=\"hl0000177\" class=\"table-align-center\"  >2017 (<a class=\"inline-reference\" href=\"#bib12\">5</a>) </td></tr><tr><td id=\"hl0000180\" class=\"table-align-\"  >European Association of Echocardiography Recommendations for the Assessment of Valvular Regurgitation, Part 2: Mitral and Tricuspid Regurgitation (Native Valve Disease)</td><td id=\"hl0000181\" class=\"table-align-center\"  >EAE</td><td id=\"hl0000182\" class=\"table-align-center\"  >2010 (<a class=\"inline-reference\" href=\"#bib13\">6</a>) </td></tr><tr><td id=\"hl0000185\" class=\"table-align-\"  >Guidelines for the Management of Patients With Atrial Fibrillation</td><td id=\"hl0000186\" class=\"table-align-center\"  >ACC/AHA/ESC</td><td id=\"hl0000187\" class=\"table-align-center\"  >2006, 2008, 2019 (<a class=\"inline-reference\" href=\"#bib14\">7</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib15\">8</a>,&nbsp;<a class=\"inline-reference\" href=\"#bib16\">9</a>) </td></tr><tr><td id=\"hl0000190\" class=\"table-align-\"  >Guidelines for the Management of Adults With Congenital Heart Disease</td><td id=\"hl0000191\" class=\"table-align-center\"  >ACC/AHA</td><td id=\"hl0000192\" class=\"table-align-center\"  >2018 (<a class=\"inline-reference\" href=\"#bib17\">10</a>) </td></tr><tr><td id=\"hl0000195\" class=\"table-align-\"  >Echocardiographic Assessment of Valve Stenosis: EAE/ASE Recommendations for Clinical Practice</td><td id=\"hl0000196\" class=\"table-align-center\"  >EAE/ASE</td><td id=\"hl0000197\" class=\"table-align-center\"  >2009 (<a class=\"inline-reference\" href=\"#bib18\">11</a>) </td></tr><tr><td id=\"hl0000200\" class=\"table-align-\"  >Recommendations on the Echocardiographic Assessment of Aortic Valve Stenosis: A Focused Update from the European Association of Cardiovascular Imaging and the American Society of Echocardiography</td><td id=\"hl0000201\" class=\"table-align-center\"  >EACI/ASE</td><td id=\"hl0000202\" class=\"table-align-center\"  >2017 (<a class=\"inline-reference\" href=\"#bib19\">12</a>) </td></tr><tr><td id=\"hl0000205\" class=\"table-align-\"  >Guidelines for the Evaluation of Valvular Regurgitation After Percutaneous Valve Repair or Replacement: A Report from the American Society of Echocardiography</td><td id=\"hl0000206\" class=\"table-align-center\"  >ASE</td><td id=\"hl0000207\" class=\"table-align-center\"  >2019 (<a class=\"inline-reference\" href=\"#bib20\">13</a>) </td></tr><tr><td id=\"hl0000210\" class=\"table-align-\"  >Recommendations for Evaluation of Prosthetic Valves With Echocardiography and Doppler Ultrasound</td><td id=\"hl0000211\" class=\"table-align-center\"  >ASE</td><td id=\"hl0000212\" class=\"table-align-center\"  >2009 (<a class=\"inline-reference\" href=\"#bib21\">14</a>) </td></tr><tr><td id=\"hl0000215\" class=\"table-align-\"  >Guideline for the Diagnosis and Treatment of Hypertrophic Cardiomyopathy</td><td id=\"hl0000216\" class=\"table-align-center\"  >ACCF/AHA</td><td id=\"hl0000217\" class=\"table-align-center\"  >2011 (<a class=\"inline-reference\" href=\"#bib22\">15</a>) <br>2020 (<a class=\"inline-reference\" href=\"#bib23\">16</a>) </td></tr><tr><td id=\"hl0000222\" class=\"table-align-\"  >Guidelines on the Management of Cardiovascular Diseases During Pregnancy</td><td id=\"hl0000223\" class=\"table-align-center\"  >ESC</td><td id=\"hl0000224\" class=\"table-align-center\"  >2011, 2018 (<a class=\"inline-reference\" href=\"#bib24\">17</a>, <a class=\"inline-reference\" href=\"#bib25\">18</a>) </td></tr><tr><td id=\"hl0000228\" class=\"table-align-\"  >Antithrombotic and Thrombolytic Therapy for Valvular Disease: Antithrombotic Therapy and Prevention of Thrombosis</td><td id=\"hl0000229\" class=\"table-align-center\"  >ACCP</td><td id=\"hl0000230\" class=\"table-align-center\"  >2012 (<a class=\"inline-reference\" href=\"#bib26\">19</a>) </td></tr><tr><td id=\"hl0000233\" class=\"table-align-\"  >Guidelines on the Management of Valvular Heart Disease</td><td id=\"hl0000234\" class=\"table-align-center\"  >ESC/EACTS</td><td id=\"hl0000235\" class=\"table-align-center\"  >2012 (<a class=\"inline-reference\" href=\"#bib27\">20</a>) 2017 (<a class=\"inline-reference\" href=\"#bib28\">21</a>) </td></tr><tr><td id=\"hl0000239\" class=\"table-align-\"  >Guideline for the Management of Heart Failure</td><td id=\"hl0000240\" class=\"table-align-center\"  >ACCF/AHA</td><td id=\"hl0000241\" class=\"table-align-center\"  >2017 (<a class=\"inline-reference\" href=\"#bib29\">22</a>) </td></tr></tbody></table></div><div class=\"inline-table-caption\">ACC indicates American College of Cardiology; ACCF, American College of Cardiology Foundation; ACCP, American College of Chest Physicians; AHA, American Heart Association; ASE, American Society of Echocardiography; EACI, European Association of Cardiovascular Imaging; EACTS, European Association of Cardio Thoracic Surgery; EAE, European Association of Echocardiography; and ESC, European Society of Cardiology.</div></div>"
+	}
 ];
 export const resultSection = [
 	{
@@ -618,598 +467,599 @@ export const resultImage = [
 
 export const resultRecommendation = [
 
-        {
-            "eid": "71-s2.0-HCM2020-8.3-2",
-            "itemtitle": "8.3. Management of Patients With HCM and Atrial Fibrillation",
-            "itemtitleFormatted": "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>",
-            "summary": "In patients with HCM and subclinical AF detected by internal or external cardiac device or monitor of >24 hours' duration for a given episode, anticoagulation is recommended with DOAC as first-line option and vitamin K antagonists as second-line o...",
-            "contenttype": [
-                "ACCG"
-            ],
-            "pubdate": null,
-            "sectiontitle": [
-                "8. Management of HCM",
-                "8.3. Management of Patients With HCM and Atrial Fibrillation"
-            ],
-            "doi": "10.1016/j.jacc.2020.08.045",
-            "subtype": "publication",
-            "sectionid": null,
-            "sectiontitleformatted": [
-                "<span>8. Management of HCM</span>",
-                "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>"
-            ],
-            "refimage": null,
-            "caption": null,
-            "loe": "C-LD",
-            "cor": "1",
-            "abs": [
-                "In patients with HCM and subclinical AF detected by internal or external cardiac device or monitor of &gt;24 hours&#39; duration for a given episode, anticoagulation is recommended with DOAC as first-line option and vitamin K antagonists as second-line option, independent of CHA<sub>2</sub>DS<sub>2</sub>-VASc score."
-            ],
-            "comments": [
-                "AF, commonly observed in patients with HCM, is associated with significant morbidity, impaired quality of life, and substantial stroke risk. Therapy includes prevention of thromboembolic events and controlling symptoms. Traditional stroke risk scoring systems used in the general population are not predictive in patients with HCM. Vitamin K antagonists are effective for stroke prevention, and recent studies support the use of DOACs as well. In view of the substantial stroke risk, periodic AF surveillance would allow for early intervention with anticoagulants in high-risk patients. Asymptomatic AF detected by cardiac devices or monitors also increases risk of stroke, so the decision to anticoagulate should take into considerations the duration of episodes as well as underlying risk factors. When a rhythm control strategy is needed, a number of antiarrhythmic drugs have been shown to be safe and effective, allowing for individualization according to underlying substrate and patient preference. Catheter ablation is also an important option, although the procedure is less effective than in the general population, and there is a more frequent need of repeat procedures and concomitant use of antiarrhythmic drugs. Surgical AF ablation, often with atrial appendage removal, is a potential rhythm management option in patients undergoing surgical myectomy. Surgical AF ablation or maze is not frequently pursued as an isolated surgical indication. Other supraventricular arrhythmias and atrial flutter are likely not increased in incidence in patients with HCM, and treatment is usually similar to populations without HCM.<br /> <br /> Similar to patients without HCM, subclinical or asymptomatic AF (SCAF) is detected by cardiac devices in patients with HCM as well. SCAF was reported in 16 of 30 patients with HCM (53%) after a median follow-up of 595 days (7). Device-detected AF was identified in 29 out of 114 patients with HCM (25%), resulting in an annualized incidence of 4%/year (6). In patients without HCM, SCAF has been associated with an increased risk of thromboembolism, albeit lower than risk described for clinical AF (8). Considerable debate exists regarding the AF duration threshold for initiating anticoagulation in SCAF because the duration used to define and quantify AF varied significantly between different studies. Nevertheless, the data increasingly show that longer duration episodes are associated with greatest risk. An ASSERT (Atrial Fibrillation Reduction Atrial Pacing Trial) substudy suggested only episodes &gt;24 hours were associated with increased risk (15). Also influencing risk are the total AF burden (11) and the presence of traditional risk factors, whereas very short episodes lasting a few seconds do not appear to increase risk (16, 17). When making the diagnosis of device-detected AF, review of stored intracardiac electrograms is essential to exclude artifact or false-positives."
-            ],
-            "pointofcare": [
-                "Treatment"
-            ],
-            "conditions": [
-                "Hypertrophic Cardiomyopathy",
-                "Atrial Fibrillation"
-            ],
-            "refinfo": [
-                "<reference id=\"bib1\" doi=\"\">Quality AfHRa. The CAHPS Ambulatory Care Improvement Guide: Practical Strategies for Improving Patient Experience. Available at: https://www.ahrq.gov/cahps/quality-improvement/improvement-guide/6-strategies-for-improving/communication/strategy6i-shared-decisionmaking.html. Accessed: October 7.</reference>",
-                "<reference id=\"bib6\" doi=\"\">Guadagnoli E, Ward P. Patient participation in decision-making. Soc Sci Med. 1998;47:329-39.</reference>",
-                "<reference id=\"bib7\" doi=\"\">Legare F, Adekpedjou R, Stacey D, et al. Interventions for increasing the use of shared decision making by healthcare professionals. Cochrane Database Syst Rev. 2018;7:CD006732.</reference>",
-                "<reference id=\"bib8\" doi=\"\">Kim LK, Swaminathan RV, Looser P, et al. Hospital volume outcomes after septal myectomy and alcohol septal ablation for treatment of obstructive hypertrophic cardiomyopathy: US nationwide inpatient database, 2003-2011. JAMA Cardiol. 2016;1:324-32.</reference>"
-            ],
-            "vol": null,
-            "issue": null,
-            "pages": null,
-            "coverdatetext": null,
-            "coverdatestart": null,
-            "statustype": null,
-            "citation": "J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2020.08.045",
-            "hub": "/Guidelines/Hubs/Hypertrophic-Cardiomyopathy",
-            "jacclink": "https://www.jacc.org/doi/10.1016/j.jacc.2020.08.045#sec19.3",
-            "pdflink": "https://www.jacc.org/doi/pdf/10.1016/j.jacc.2020.08.045",
-            "gltitle": "Hypertrophic Cardiomyopathy",
-            "url": ""
-        },
-        {
-            "eid": "71-s2.0-HCM2020-8.3-4",
-            "itemtitle": "8.3. Management of Patients With HCM and Atrial Fibrillation",
-            "itemtitleFormatted": "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>",
-            "summary": "In patients with HCM and subclinical AF detected by internal or external device or monitor, of >5 minutes' but 24 hours increased stroke risk (15), other evidence suggests that shorter duration episodes may pose risk in patients with traditional r...",
-            "contenttype": [
-                "ACCG"
-            ],
-            "pubdate": null,
-            "sectiontitle": [
-                "8. Management of HCM",
-                "8.3. Management of Patients With HCM and Atrial Fibrillation"
-            ],
-            "doi": "10.1016/j.jacc.2020.08.045",
-            "subtype": "publication",
-            "sectionid": null,
-            "sectiontitleformatted": [
-                "<span>8. Management of HCM</span>",
-                "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>"
-            ],
-            "refimage": null,
-            "caption": null,
-            "loe": "C-LD",
-            "cor": "2a",
-            "abs": [
-                "In patients with HCM and subclinical AF detected by internal or external device or monitor, of &gt;5 minutes&#39; but &lt;24 hours&#39; duration for a given episode, anticoagulation with DOAC as first-line option and vitamin K antagonists as second-line option can be beneficial, taking into consideration duration of AF episodes, total AF burden, underlying risk factors, and bleeding risk."
-            ],
-            "comments": [
-                "AF, commonly observed in patients with HCM, is associated with significant morbidity, impaired quality of life, and substantial stroke risk. Therapy includes prevention of thromboembolic events and controlling symptoms. Traditional stroke risk scoring systems used in the general population are not predictive in patients with HCM. Vitamin K antagonists are effective for stroke prevention, and recent studies support the use of DOACs as well. In view of the substantial stroke risk, periodic AF surveillance would allow for early intervention with anticoagulants in high-risk patients. Asymptomatic AF detected by cardiac devices or monitors also increases risk of stroke, so the decision to anticoagulate should take into considerations the duration of episodes as well as underlying risk factors. When a rhythm control strategy is needed, a number of antiarrhythmic drugs have been shown to be safe and effective, allowing for individualization according to underlying substrate and patient preference. Catheter ablation is also an important option, although the procedure is less effective than in the general population, and there is a more frequent need of repeat procedures and concomitant use of antiarrhythmic drugs. Surgical AF ablation, often with atrial appendage removal, is a potential rhythm management option in patients undergoing surgical myectomy. Surgical AF ablation or maze is not frequently pursued as an isolated surgical indication. Other supraventricular arrhythmias and atrial flutter are likely not increased in incidence in patients with HCM, and treatment is usually similar to populations without HCM.<br /> <br /> SCAF is often observed in patients with HCM and implanted cardiac devices (6, 7) and has been associated with an increased risk of thromboembolism (8). Yet, the minimum duration of SCAF that confers increased risk has not been precisely defined, because there appears to be a gradient of risk depending on underlying substrate. Although ASSERT data suggested only episodes &gt;24 hours increased stroke risk (15), other evidence suggests that shorter duration episodes may pose risk in patients with traditional risks factors (16). In ASSERT, the absolute stroke risk increased with increasing CHADS<sub>2</sub> score, reaching a rate of 3.78 per year in those with score &gt;2 (18). Botto stratified risk according to AF duration and CHADS<sub>2</sub> score, with a CHADS<sub>2</sub> score of 1 increasing the risk only if AF duration was &gt;24 hours, whereas for CHADS<sub>2</sub> &gt;2, episodes &gt;5 minutes increased risk (19). Similar risk stratification is unavailable in HCM, yet risk factors for stroke in the population with HCM have been identified and include advancing age, previous embolic events, NYHA functional class, left atrial diameter, vascular disease, and maximal LV wall thickness (30). When very short AF duration is observed, continued surveillance should be maintained as the burden of AF is likely to progress."
-            ],
-            "pointofcare": [
-                "Treatment"
-            ],
-            "conditions": [
-                "Hypertrophic Cardiomyopathy",
-                "Atrial Fibrillation"
-            ],
-            "refinfo": [
-                "<reference id=\"bib1\" doi=\"\">Quality AfHRa. The CAHPS Ambulatory Care Improvement Guide: Practical Strategies for Improving Patient Experience. Available at: https://www.ahrq.gov/cahps/quality-improvement/improvement-guide/6-strategies-for-improving/communication/strategy6i-shared-decisionmaking.html. Accessed: October 7.</reference>",
-                "<reference id=\"bib6\" doi=\"\">Guadagnoli E, Ward P. Patient participation in decision-making. Soc Sci Med. 1998;47:329-39.</reference>",
-                "<reference id=\"bib7\" doi=\"\">Legare F, Adekpedjou R, Stacey D, et al. Interventions for increasing the use of shared decision making by healthcare professionals. Cochrane Database Syst Rev. 2018;7:CD006732.</reference>",
-                "<reference id=\"bib8\" doi=\"\">Kim LK, Swaminathan RV, Looser P, et al. Hospital volume outcomes after septal myectomy and alcohol septal ablation for treatment of obstructive hypertrophic cardiomyopathy: US nationwide inpatient database, 2003-2011. JAMA Cardiol. 2016;1:324-32.</reference>",
-                "<reference id=\"bib11\" doi=\"\">Maron BJ, Nishimura RA, Maron MS. Shared decision-making in HCM. Nat Rev Cardiol. 2017;14:125-6.</reference>"
-            ],
-            "vol": null,
-            "issue": null,
-            "pages": null,
-            "coverdatetext": null,
-            "coverdatestart": null,
-            "statustype": null,
-            "citation": "J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2020.08.045",
-            "hub": "/Guidelines/Hubs/Hypertrophic-Cardiomyopathy",
-            "jacclink": "https://www.jacc.org/doi/10.1016/j.jacc.2020.08.045#sec19.3",
-            "pdflink": "https://www.jacc.org/doi/pdf/10.1016/j.jacc.2020.08.045",
-            "gltitle": "Hypertrophic Cardiomyopathy",
-            "url": ""
-        },
-        {
-            "eid": "71-s2.0-HCM2020-8.3-5",
-            "itemtitle": "8.3. Management of Patients With HCM and Atrial Fibrillation",
-            "itemtitleFormatted": "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>",
-            "summary": "In patients with HCM and poorly tolerated AF, a rhythm control strategy with cardioversion or antiarrhythmic drugs can be beneficial with the choice of an agent according to AF symptom severity, patient preferences, and comorbid conditions. AF, co...",
-            "contenttype": [
-                "ACCG"
-            ],
-            "pubdate": null,
-            "sectiontitle": [
-                "8. Management of HCM",
-                "8.3. Management of Patients With HCM and Atrial Fibrillation"
-            ],
-            "doi": "10.1016/j.jacc.2020.08.045",
-            "subtype": "publication",
-            "sectionid": null,
-            "sectiontitleformatted": [
-                "<span>8. Management of HCM</span>",
-                "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>"
-            ],
-            "refimage": null,
-            "caption": null,
-            "loe": "B-NR",
-            "cor": "2a",
-            "abs": [
-                "In patients with HCM and poorly tolerated AF, a rhythm control strategy with cardioversion or antiarrhythmic drugs can be beneficial with the choice of an agent according to AF symptom severity, patient preferences, and comorbid conditions."
-            ],
-            "comments": [
-                "AF, commonly observed in patients with HCM, is associated with significant morbidity, impaired quality of life, and substantial stroke risk. Therapy includes prevention of thromboembolic events and controlling symptoms. Traditional stroke risk scoring systems used in the general population are not predictive in patients with HCM. Vitamin K antagonists are effective for stroke prevention, and recent studies support the use of DOACs as well. In view of the substantial stroke risk, periodic AF surveillance would allow for early intervention with anticoagulants in high-risk patients. Asymptomatic AF detected by cardiac devices or monitors also increases risk of stroke, so the decision to anticoagulate should take into considerations the duration of episodes as well as underlying risk factors. When a rhythm control strategy is needed, a number of antiarrhythmic drugs have been shown to be safe and effective, allowing for individualization according to underlying substrate and patient preference. Catheter ablation is also an important option, although the procedure is less effective than in the general population, and there is a more frequent need of repeat procedures and concomitant use of antiarrhythmic drugs. Surgical AF ablation, often with atrial appendage removal, is a potential rhythm management option in patients undergoing surgical myectomy. Surgical AF ablation or maze is not frequently pursued as an isolated surgical indication. Other supraventricular arrhythmias and atrial flutter are likely not increased in incidence in patients with HCM, and treatment is usually similar to populations without HCM.<br /> <br /> Recent studies suggest that with current therapies, AF in patients with HCM can be managed effectively, leading to low morbidity and mortality compared with historical controls (9, 10). In general, drug selection for rhythm control in patients with HCM is based on extrapolation from studies of the AF population at large. Yet, reports suggest several drugs are safe and effective in a population with HCM. Amiodarone has been used over many years and is generally deemed a favored option (10, 20). Disopyramide has been safely prescribed for reduction of LVOTO, but its efficacy in AF is not well established (21, 31). Data on NYHA class IC antiarrhythmic agents are limited because of concerns regarding their use in patients with structural heart disease. When used, therapy with class IC agents is safest in the presence of an ICD (10). Class III agents have been used as well. A recent report in 25 patients with HCM showed dofetilide to be well tolerated and facilitated AF management (13). Sotalol has also been shown to be safe and is commonly used in pediatric patients as well, either in oral or intravenous forms (23, 32-34). The U.S. Food and Drug Administration-mandated safety precautions should be adopted when prescribing antiarrhythmic drugs."
-            ],
-            "pointofcare": [
-                "Treatment"
-            ],
-            "conditions": [
-                "Hypertrophic Cardiomyopathy",
-                "Atrial Fibrillation"
-            ],
-            "refinfo": [
-                "<reference id=\"bib10\" doi=\"\">Sorajja P, Ommen SR, Holmes DR, Jr., et al. Survival after alcohol septal ablation for obstructive hypertrophic cardiomyopathy. Circulation. 2012;126:2374-80.</reference>",
-                "<reference id=\"bib12\" doi=\"\">Chambers JB, Prendergast B, Iung B, et al. Standards defining a 'Heart Valve Centre': ESC Working Group on Valvular Heart Disease and European Association for Cardiothoracic Surgery Viewpoint. European heart journal. 2017;38:2177-83.</reference>",
-                "<reference id=\"bib13\" doi=\"\">Semsarian C, Ingles J, Maron MS, et al. New perspectives on the prevalence of hypertrophic cardiomyopathy. Journal of the American College of Cardiology. 2015;65:1249-54.</reference>",
-                "<reference id=\"bib14\" doi=\"\">Maron BJ, Ommen SR, Semsarian C, et al. Hypertrophic cardiomyopathy: present and future, with translation into contemporary cardiovascular medicine. J Am Coll Cardiol. 2014;64:83-99.</reference>",
-                "<reference id=\"bib15\" doi=\"\">Ommen SR, Maron BJ, Olivotto I, et al. Long-term effects of surgical septal myectomy on survival in patients with obstructive hypertrophic cardiomyopathy. J Am Coll Cardiol. 2005;46:470-6.</reference>",
-                "<reference id=\"bib16\" doi=\"\">Desai MY, Bhonsale A, Smedira NG, et al. Predictors of long-term outcomes in symptomatic hypertrophic obstructive cardiomyopathy patients undergoing surgical relief of left ventricular outflow tract obstruction. Circulation. 2013;128:209-16.</reference>",
-                "<reference id=\"bib17\" doi=\"\">Lim KK, Maron BJ, Knight BP. Successful catheter ablation of hemodynamically unstable monomorphic ventricular tachycardia in a patient with hypertrophic cardiomyopathy and apical aneurysm. Journal of cardiovascular electrophysiology. 2009;20:445-7.</reference>",
-                "<reference id=\"bib18\" doi=\"\">Dukkipati SR, d'Avila A, Soejima K, et al. Long-term outcomes of combined epicardial and endocardial ablation of monomorphic ventricular tachycardia related to hypertrophic cardiomyopathy. Circulation Arrhythmia and electrophysiology. 2011;4:185-94.</reference>",
-                "<reference id=\"bib19\" doi=\"\">Rowin EJ, Maron BJ, Abt P, et al. Impact of advanced therapies for improving survival to heart transplant in patients with hypertrophic cardiomyopathy. Am J Cardiol. 2018;121:986-96.</reference>",
-                "<reference id=\"bib20\" doi=\"\">Pasqualucci D, Fornaro A, Castelli G, et al. Clinical spectrum, therapeutic options, and outcome of advanced heart failure in hypertrophic cardiomyopathy. Circ Heart Fail. 2015;8:1014-21.</reference>",
-                "<reference id=\"bib21\" doi=\"\">Nishimura RA, O'Gara PT, Bavaria JE, et al. 2019 AATS/ACC/ASE/SCAI/STS Expert Consensus Systems of Care Document: A Proposal to Optimize Care for Patients With Valvular Heart Disease: A Joint Report of the American Association for Thoracic Surgery, American College of Cardiology, American Society of Echocardiography, Society for Cardiovascular Angiography and Interventions, and Society of Thoracic Surgeons. J Am Coll Cardiol. 2019;73:2609-35.</reference>",
-                "<reference id=\"bib22\" doi=\"\">Polanco AR, D'Angelo A, Shea N, et al. Impact of Septal Myectomy Volume on Mitral-Valve Replacement Rate in Hypertrophic Cardiomyopathy Patients. Cardiology. 2020;145:161-7.</reference>",
-                "<reference id=\"bib23\" doi=\"\">Holst KA, Hanson KT, Ommen SR, et al. Septal myectomy in hypertrophic cardiomyopathy: national outcomes of concomitant mitral surgery. Mayo Clin Proc. 2019;94:66-73.</reference>",
-                "<reference id=\"bib24\" doi=\"\">Maron BJ, Maron MS, Semsarian C. Genetics of hypertrophic cardiomyopathy after 20 years: clinical perspectives. J Am Coll Cardiol. 2012;60:705-15.</reference>"
-            ],
-            "vol": null,
-            "issue": null,
-            "pages": null,
-            "coverdatetext": null,
-            "coverdatestart": null,
-            "statustype": null,
-            "citation": "J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2020.08.045",
-            "hub": "/Guidelines/Hubs/Hypertrophic-Cardiomyopathy",
-            "jacclink": "https://www.jacc.org/doi/10.1016/j.jacc.2020.08.045#sec19.3",
-            "pdflink": "https://www.jacc.org/doi/pdf/10.1016/j.jacc.2020.08.045",
-            "gltitle": "Hypertrophic Cardiomyopathy",
-            "url": ""
-        },
-        {
-            "eid": "71-s2.0-AF-7.4-7",
-            "itemtitle": "7.4 AF complicating ACS",
-            "itemtitleFormatted": "<span>7.4 AF complicating ACS</span>",
-            "summary": "In patients with AF at increased risk of stroke (based on CHA2DS2-VASc risk score of 2 or greater) who have undergone PCI with stenting for ACS, double therapy with a P2Y12 inhibitor (clopidogrel) and dabigatran 150 mg twice daily is reasonable to...",
-            "contenttype": [
-                "ACCG"
-            ],
-            "pubdate": null,
-            "sectiontitle": [
-                "JACC (Journal of the American College of Cardiology)",
-                "7 Specific Patient Groups and AF",
-                "7.4 AF complicating ACS"
-            ],
-            "doi": "10.1016/j.jacc.2019.01.011",
-            "subtype": "publication",
-            "sectionid": null,
-            "sectiontitleformatted": [
-                "<span>JACC (Journal of the American College of Cardiology)</span>",
-                "<span>7 Specific Patient Groups and AF</span>",
-                "<span>7.4 AF complicating ACS</span>"
-            ],
-            "refimage": null,
-            "caption": null,
-            "loe": "B-R",
-            "cor": "2a",
-            "abs": [
-                "In patients with AF at increased risk of stroke (based on CHA<sub>2</sub>DS<sub>2</sub>-VASc risk score of 2 or greater) who have undergone PCI with stenting for ACS, double therapy with a P2Y12 inhibitor (clopidogrel) and dabigatran 150 mg twice daily is reasonable to reduce the risk of bleeding as compared with triple therapy."
-            ],
-            "comments": [
-                "RE-DUAL PCI was an international, multicenter, randomized open-label trial of 2,725 patients with nonvalvular AF who had undergone PCI with stenting. Patients were randomized to receive 1 of 3 treatments: double therapy with dabigatran (110 mg twice daily) plus either clopidogrel or ticagrelor (110-mg dual-therapy group), double therapy with dabigatran (150 mg twice daily) plus either clopidogrel or ticagrelor (150-mg dual-therapy group), or triple therapy with warfarin plus aspirin (≤100 mg daily) and either clopidogrel or ticagrelor (triple-therapy group). The incidence of major or clinically relevant nonmajor bleeding was higher in the triple-therapy group than in the 110-mg dual-therapy group and the 150-mg dual-therapy group. In addition, the 2 dual-therapy groups combined were noninferior to the triple-therapy group with regard to the composite efficacy endpoint of thromboembolic events (MI, stroke, or systemic embolism), death, or unplanned revascularization. Clopidogrel was the most common P2Y12 inhibitor used (88%). Notably, the study was not powered to evaluate risk of stent thrombosis or systemic thromboembolism (S7.4-1).<br /> <br /> In aggregate, the data to date on comparisons of double versus triple therapy demonstrate that double therapy significantly reduces the risk of bleeding without a signal of harm with regard to stent thrombosis in clinical trials that enrolled both patients with stable ischemic disease and patients with ACS. With regard to the antithrombotic dosages studied, only the RE-DUAL PCI trial and WOEST trials studied antithrombotic dosages known to reduce the risk of systemic thromboembolism (S7.4-1, S7.4-3). The ongoing AUGUSTUS (A Study of Apixaban in Patients With Atrial Fibrillation, not Caused by a Heart Valve Problem, who are at Risk for Thrombosis due to Having had a Recent Coronary Event, Such as a Heart Attack or a Procedure to Open the Vessels of the Heart) trial is an open-label 2x2 factorial RCT to evaluate the safety of apixaban versus vitamin K antagonist and aspirin versus aspirin placebo in patients with AF and ACS or PCI (S7.4-24). The ENTRUST-AF-PCI (Edoxaban Treatment Versus Vitamin K Antagonist in Patients With Atrial Fibrillation Undergoing Percutaneous Coronary Intervention) is an ongoing trial evaluating edoxaban treatment versus vitamin K antagonist treatment in patients with AF undergoing PCI (S7.4-25). These trials will provide further evidence on treatment approaches designed to mitigate bleeding while reducing the risks of stent thrombosis and systemic thromboembolism."
-            ],
-            "pointofcare": [
-                "Treatment",
-                "Follow-up"
-            ],
-            "conditions": [
-                "STEMI",
-                "NonSTEMI",
-                "Atrial Fibrillation"
-            ],
-            "refinfo": [
-                "<reference id=\"bibfu133\" doi=\"10.1056/NEJMoa1708454\">Cannon CP, Bhatt DL, Oldgren J, et al. Dual antithrombotic therapy with dabigatran after PCI in atrial fibrillation. N Engl J Med. 2017;377:1513-24.</reference>"
-            ],
-            "vol": "74",
-            "issue": "1",
-            "pages": "104",
-            "coverdatetext": null,
-            "coverdatestart": "2019-07-09",
-            "statustype": "S300",
-            "citation": "J Am Coll Cardiol. 2019 Jul 9;74(1):104",
-            "hub": "/Guidelines/Hubs/Atrial-Fibrillation",
-            "jacclink": "http://www.onlinejacc.org/content/74/1/104#sec7.4",
-            "pdflink": "http://www.onlinejacc.org/content/74/1/104.full.pdf",
-            "gltitle": "Atrial Fibrillation (Focused Update)",
-            "url": ""
-        },
-        {
-            "eid": "71-s2.0-HCM2020-8.3-6",
-            "itemtitle": "8.3. Management of Patients With HCM and Atrial Fibrillation",
-            "itemtitleFormatted": "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>",
-            "summary": "In patients with HCM and symptomatic AF, as part of a AF rhythm control strategy, catheter ablation for AF can be effective when drug therapy is ineffective, contraindicated, or not the patient's preference. AF, commonly observed in patients with ...",
-            "contenttype": [
-                "ACCG"
-            ],
-            "pubdate": null,
-            "sectiontitle": [
-                "8. Management of HCM",
-                "8.3. Management of Patients With HCM and Atrial Fibrillation"
-            ],
-            "doi": "10.1016/j.jacc.2020.08.045",
-            "subtype": "publication",
-            "sectionid": null,
-            "sectiontitleformatted": [
-                "<span>8. Management of HCM</span>",
-                "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>"
-            ],
-            "refimage": null,
-            "caption": null,
-            "loe": "B-NR",
-            "cor": "2a",
-            "abs": [
-                "In patients with HCM and symptomatic AF, as part of a AF rhythm control strategy, catheter ablation for AF can be effective when drug therapy is ineffective, contraindicated, or not the patient&#39;s preference."
-            ],
-            "comments": [
-                "AF, commonly observed in patients with HCM, is associated with significant morbidity, impaired quality of life, and substantial stroke risk. Therapy includes prevention of thromboembolic events and controlling symptoms. Traditional stroke risk scoring systems used in the general population are not predictive in patients with HCM. Vitamin K antagonists are effective for stroke prevention, and recent studies support the use of DOACs as well. In view of the substantial stroke risk, periodic AF surveillance would allow for early intervention with anticoagulants in high-risk patients. Asymptomatic AF detected by cardiac devices or monitors also increases risk of stroke, so the decision to anticoagulate should take into considerations the duration of episodes as well as underlying risk factors. When a rhythm control strategy is needed, a number of antiarrhythmic drugs have been shown to be safe and effective, allowing for individualization according to underlying substrate and patient preference. Catheter ablation is also an important option, although the procedure is less effective than in the general population, and there is a more frequent need of repeat procedures and concomitant use of antiarrhythmic drugs. Surgical AF ablation, often with atrial appendage removal, is a potential rhythm management option in patients undergoing surgical myectomy. Surgical AF ablation or maze is not frequently pursued as an isolated surgical indication. Other supraventricular arrhythmias and atrial flutter are likely not increased in incidence in patients with HCM, and treatment is usually similar to populations without HCM.<br /> <br /> Catheter ablation plays an important role in the management of AF and typical atrial flutter. Although no RCTs exist in this area, a number of meta-analyses have been published in patients with HCM undergoing catheter ablation for drug refractory AF, including one that compared catheter ablation between patients with HCM versus a cohort without HCM (12, 25). In general, the procedure is safe and remains an important tool. However, the results seem less favorable compared with patients without HCM, with a 2-fold higher risk of relapse, more frequent need of repeat procedures, and higher use of concomitant antiarrhythmic drugs. This is attributed to the fact that patients with HCM have a greater degree of electrophysiologic and structural remodeling than the population without HCM (25). Contributing factors for atrial remodeling include LVOTO, diastolic impairment, MR, and other factors. It can be postulated that aggressive intervention in the earlier stages of disease would be more effective, but this is unproven, and ongoing remodeling is expected. With that in mind, some authors have suggested the need for a more extensive ablation approach, with linear lesions and ablation of triggers not associated with the pulmonary veins often required to improve the long-term durability of the procedure (26)."
-            ],
-            "pointofcare": [
-                "Treatment"
-            ],
-            "conditions": [
-                "Hypertrophic Cardiomyopathy",
-                "Atrial Fibrillation"
-            ],
-            "refinfo": [
-                "<reference id=\"bib12\" doi=\"\">Chambers JB, Prendergast B, Iung B, et al. Standards defining a 'Heart Valve Centre': ESC Working Group on Valvular Heart Disease and European Association for Cardiothoracic Surgery Viewpoint. European heart journal. 2017;38:2177-83.</reference>",
-                "<reference id=\"bib25\" doi=\"\">Ingles J, Yeates L, Semsarian C. The emerging role of the cardiac genetic counselor. Heart Rhythm. 2011;8:1958-62.</reference>",
-                "<reference id=\"bib26\" doi=\"\">Ahmad F, McNally EM, Ackerman MJ, et al. Establishment of Specialized Clinical Cardiovascular Genetics Programs: Recognizing the Need and Meeting Standards: A Scientific Statement From the American Heart Association. Circ Genom Precis Med. 2019;HCG0000000000000054.</reference>"
-            ],
-            "vol": null,
-            "issue": null,
-            "pages": null,
-            "coverdatetext": null,
-            "coverdatestart": null,
-            "statustype": null,
-            "citation": "J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2020.08.045",
-            "hub": "/Guidelines/Hubs/Hypertrophic-Cardiomyopathy",
-            "jacclink": "https://www.jacc.org/doi/10.1016/j.jacc.2020.08.045#sec19.3",
-            "pdflink": "https://www.jacc.org/doi/pdf/10.1016/j.jacc.2020.08.045",
-            "gltitle": "Hypertrophic Cardiomyopathy",
-            "url": ""
-        },
-        {
-            "eid": "71-s2.0-HCM2020-8.3-7",
-            "itemtitle": "8.3. Management of Patients With HCM and Atrial Fibrillation",
-            "itemtitleFormatted": "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>",
-            "summary": "In patients with HCM and AF who require surgical myectomy, concomitant surgical AF ablation procedure can be beneficial for AF rhythm control. AF, commonly observed in patients with HCM, is associated with significant morbidity, impaired quality o...",
-            "contenttype": [
-                "ACCG"
-            ],
-            "pubdate": null,
-            "sectiontitle": [
-                "8. Management of HCM",
-                "8.3. Management of Patients With HCM and Atrial Fibrillation"
-            ],
-            "doi": "10.1016/j.jacc.2020.08.045",
-            "subtype": "publication",
-            "sectionid": null,
-            "sectiontitleformatted": [
-                "<span>8. Management of HCM</span>",
-                "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>"
-            ],
-            "refimage": null,
-            "caption": null,
-            "loe": "B-NR",
-            "cor": "2a",
-            "abs": [
-                "In patients with HCM and AF who require surgical myectomy, concomitant surgical AF ablation procedure can be beneficial for AF rhythm control."
-            ],
-            "comments": [
-                "AF, commonly observed in patients with HCM, is associated with significant morbidity, impaired quality of life, and substantial stroke risk. Therapy includes prevention of thromboembolic events and controlling symptoms. Traditional stroke risk scoring systems used in the general population are not predictive in patients with HCM. Vitamin K antagonists are effective for stroke prevention, and recent studies support the use of DOACs as well. In view of the substantial stroke risk, periodic AF surveillance would allow for early intervention with anticoagulants in high-risk patients. Asymptomatic AF detected by cardiac devices or monitors also increases risk of stroke, so the decision to anticoagulate should take into considerations the duration of episodes as well as underlying risk factors. When a rhythm control strategy is needed, a number of antiarrhythmic drugs have been shown to be safe and effective, allowing for individualization according to underlying substrate and patient preference. Catheter ablation is also an important option, although the procedure is less effective than in the general population, and there is a more frequent need of repeat procedures and concomitant use of antiarrhythmic drugs. Surgical AF ablation, often with atrial appendage removal, is a potential rhythm management option in patients undergoing surgical myectomy. Surgical AF ablation or maze is not frequently pursued as an isolated surgical indication. Other supraventricular arrhythmias and atrial flutter are likely not increased in incidence in patients with HCM, and treatment is usually similar to populations without HCM.<br /> <br /> AF in patients with HCM is often poorly tolerated; therefore, aggressive rhythm control strategies are at times required. In view of the lower success rate of catheter ablation in HCM compared with the general AF population, surgical AF ablation is a potential rhythm management option, especially in patients already undergoing open heart surgery for a surgical myectomy. In combination with surgical relief of the LVOT gradient and MR, which can limit or even reverse negative atrial remodeling, concomitant surgical AF ablation may be successful in decreasing AF burden. Several studies have reported satisfactory midterm efficacy, yet these reports universally include a small number of patients, and the durability of the procedure appears to decrease with time (27, 29). In a recent study that represents the largest series of patients with AF treated surgically, freedom from AF recurrence at 1 year was 44% for ablation patients (n=49) and 75% with the maze procedure (n=72) (P&lt;0.001) (10). In this study, with concomitant surgical ablation, freedom from AF at 3 years was 70%, left atrial size being a predictor of recurrence (10). Data on the stand-alone surgical AF ablation are scant but have been reported in a limited number of patients."
-            ],
-            "pointofcare": [
-                "Treatment"
-            ],
-            "conditions": [
-                "Hypertrophic Cardiomyopathy",
-                "Atrial Fibrillation"
-            ],
-            "refinfo": [
-                "<reference id=\"bib10\" doi=\"\">Sorajja P, Ommen SR, Holmes DR, Jr., et al. Survival after alcohol septal ablation for obstructive hypertrophic cardiomyopathy. Circulation. 2012;126:2374-80.</reference>",
-                "<reference id=\"bib13\" doi=\"\">Semsarian C, Ingles J, Maron MS, et al. New perspectives on the prevalence of hypertrophic cardiomyopathy. Journal of the American College of Cardiology. 2015;65:1249-54.</reference>",
-                "<reference id=\"bib27\" doi=\"\">van Velzen HG, Schinkel AFL, Baart SJ, et al. Outcomes of Contemporary Family Screening in Hypertrophic Cardiomyopathy. Circ Genom Precis Med. 2018;11:e001896.</reference>",
-                "<reference id=\"bib28\" doi=\"\">Ranthe MF, Carstensen L, Oyen N, et al. Risk of Cardiomyopathy in Younger Persons With a Family History of Death from Cardiomyopathy: A Nationwide Family Study in a Cohort of 3.9 Million Persons. Circulation. 2015;132:1013-9.</reference>",
-                "<reference id=\"bib29\" doi=\"\">Lafreniere-Roula M, Bolkier Y, Zahavich L, et al. Family screening for hypertrophic cardiomyopathy: Is it time to change practice guidelines? Eur Heart J. 2019;40:3672-81.</reference>"
-            ],
-            "vol": null,
-            "issue": null,
-            "pages": null,
-            "coverdatetext": null,
-            "coverdatestart": null,
-            "statustype": null,
-            "citation": "J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2020.08.045",
-            "hub": "/Guidelines/Hubs/Hypertrophic-Cardiomyopathy",
-            "jacclink": "https://www.jacc.org/doi/10.1016/j.jacc.2020.08.045#sec19.3",
-            "pdflink": "https://www.jacc.org/doi/pdf/10.1016/j.jacc.2020.08.045",
-            "gltitle": "Hypertrophic Cardiomyopathy",
-            "url": ""
-        },
-        {
-            "eid": "71-s2.0-HCM2020-8.3-1",
-            "itemtitle": "8.3. Management of Patients With HCM and Atrial Fibrillation",
-            "itemtitleFormatted": "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>",
-            "summary": "In patients with HCM and clinical AF, anticoagulation is recommended with direct-acting oral anticoagulants (DOAC) as first-line option and vitamin K antagonists as second-line option, independent of CHA2DS2-VASc score. AF, commonly observed in pa...",
-            "contenttype": [
-                "ACCG"
-            ],
-            "pubdate": null,
-            "sectiontitle": [
-                "8. Management of HCM",
-                "8.3. Management of Patients With HCM and Atrial Fibrillation"
-            ],
-            "doi": "10.1016/j.jacc.2020.08.045",
-            "subtype": "publication",
-            "sectionid": null,
-            "sectiontitleformatted": [
-                "<span>8. Management of HCM</span>",
-                "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>"
-            ],
-            "refimage": null,
-            "caption": null,
-            "loe": "B-NR",
-            "cor": "1",
-            "abs": [
-                "In patients with HCM and clinical AF, anticoagulation is recommended with direct-acting oral anticoagulants (DOAC) as first-line option and vitamin K antagonists as second-line option, independent of CHA<sub>2</sub>DS<sub>2</sub>-VASc score."
-            ],
-            "comments": [
-                "AF, commonly observed in patients with HCM, is associated with significant morbidity, impaired quality of life, and substantial stroke risk. Therapy includes prevention of thromboembolic events and controlling symptoms. Traditional stroke risk scoring systems used in the general population are not predictive in patients with HCM. Vitamin K antagonists are effective for stroke prevention, and recent studies support the use of DOACs as well. In view of the substantial stroke risk, periodic AF surveillance would allow for early intervention with anticoagulants in high-risk patients. Asymptomatic AF detected by cardiac devices or monitors also increases risk of stroke, so the decision to anticoagulate should take into considerations the duration of episodes as well as underlying risk factors. When a rhythm control strategy is needed, a number of antiarrhythmic drugs have been shown to be safe and effective, allowing for individualization according to underlying substrate and patient preference. Catheter ablation is also an important option, although the procedure is less effective than in the general population, and there is a more frequent need of repeat procedures and concomitant use of antiarrhythmic drugs. Surgical AF ablation, often with atrial appendage removal, is a potential rhythm management option in patients undergoing surgical myectomy. Surgical AF ablation or maze is not frequently pursued as an isolated surgical indication. Other supraventricular arrhythmias and atrial flutter are likely not increased in incidence in patients with HCM, and treatment is usually similar to populations without HCM.<br /> <br /> Clinical AF is AF that causes symptoms for which patients seek medical attention. Although there are no RCTs, the risk of systemic embolization is high in patients with HCM with AF. A meta-analysis that included 33 studies and 7,381 patients revealed an overall prevalence of thromboembolism in patients with HCM with AF of 27.09% and incidence of 3.75 per 100 patients) (1). The stroke risk is independent of CHA<sub>2</sub>DS<sub>2</sub>-VASc score (30), with a significant number of strokes observed in patients with a score of 0. A number of studies have shown that anticoagulation, particularly warfarin with target international normalized ratio 2 to 3, reduces the stroke risk in this population (2, 30), whereas more recent publications have shown DOACs to be at least as effective as warfarin, with additional advantages reported, such as improved patient satisfaction and long-term outcomes (3-5). Although left atrial appendage occlusion devices have been evaluated in populations, the number of patients with HCM in these trials was limited. Thus, the role of left atrial appendage occlusion devices in HCM remains untested. The recommendations for anticoagulation of patients with atrial flutter are the same as those for patients with AF (14)."
-            ],
-            "pointofcare": [
-                "Treatment"
-            ],
-            "conditions": [
-                "Hypertrophic Cardiomyopathy",
-                "Atrial Fibrillation"
-            ],
-            "refinfo": [
-                "<reference id=\"bib1\" doi=\"\">Quality AfHRa. The CAHPS Ambulatory Care Improvement Guide: Practical Strategies for Improving Patient Experience. Available at: https://www.ahrq.gov/cahps/quality-improvement/improvement-guide/6-strategies-for-improving/communication/strategy6i-shared-decisionmaking.html. Accessed: October 7.</reference>",
-                "<reference id=\"bib2\" doi=\"\">Quality AfHRa. AHRQ Health Literacy Universal Precautions Toolkit. Available at: Accessed: January 1.</reference>",
-                "<reference id=\"bib3\" doi=\"\">Greenfield S, Kaplan SH, Ware JE, Jr., et al. Patients' participation in medical care: effects on blood sugar control and quality of life in diabetes. J Gen Intern Med. 1988;3:448-57.</reference>",
-                "<reference id=\"bib4\" doi=\"\">Greenfield S, Kaplan S, Ware JE, Jr. Expanding patient involvement in care. Effects on patient outcomes. Ann Intern Med. 1985;102:520-8.</reference>",
-                "<reference id=\"bib5\" doi=\"\">Kaplan SH, Greenfield S, Ware JE, Jr. Assessing the effects of physician-patient interactions on the outcomes of chronic disease. Med Care. 1989;27:S110-27.</reference>"
-            ],
-            "vol": null,
-            "issue": null,
-            "pages": null,
-            "coverdatetext": null,
-            "coverdatestart": null,
-            "statustype": null,
-            "citation": "J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2020.08.045",
-            "hub": "/Guidelines/Hubs/Hypertrophic-Cardiomyopathy",
-            "jacclink": "https://www.jacc.org/doi/10.1016/j.jacc.2020.08.045#sec19.3",
-            "pdflink": "https://www.jacc.org/doi/pdf/10.1016/j.jacc.2020.08.045",
-            "gltitle": "Hypertrophic Cardiomyopathy",
-            "url": ""
-        },
-        {
-            "eid": "71-s2.0-HCM2020-8.3-3",
-            "itemtitle": "8.3. Management of Patients With HCM and Atrial Fibrillation",
-            "itemtitleFormatted": "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>",
-            "summary": "In patients with AF in whom rate control strategy is planned, either beta-blockers, verapamil, or diltiazem are recommended, with the choice of agents according to patient preferences and comorbid conditions. AF, commonly observed in patients with...",
-            "contenttype": [
-                "ACCG"
-            ],
-            "pubdate": null,
-            "sectiontitle": [
-                "8. Management of HCM",
-                "8.3. Management of Patients With HCM and Atrial Fibrillation"
-            ],
-            "doi": "10.1016/j.jacc.2020.08.045",
-            "subtype": "publication",
-            "sectionid": null,
-            "sectiontitleformatted": [
-                "<span>8. Management of HCM</span>",
-                "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>"
-            ],
-            "refimage": null,
-            "caption": null,
-            "loe": "C-LD",
-            "cor": "1",
-            "abs": [
-                "In patients with AF in whom rate control strategy is planned, either beta-blockers, verapamil, or diltiazem are recommended, with the choice of agents according to patient preferences and comorbid conditions."
-            ],
-            "comments": [
-                "AF, commonly observed in patients with HCM, is associated with significant morbidity, impaired quality of life, and substantial stroke risk. Therapy includes prevention of thromboembolic events and controlling symptoms. Traditional stroke risk scoring systems used in the general population are not predictive in patients with HCM. Vitamin K antagonists are effective for stroke prevention, and recent studies support the use of DOACs as well. In view of the substantial stroke risk, periodic AF surveillance would allow for early intervention with anticoagulants in high-risk patients. Asymptomatic AF detected by cardiac devices or monitors also increases risk of stroke, so the decision to anticoagulate should take into considerations the duration of episodes as well as underlying risk factors. When a rhythm control strategy is needed, a number of antiarrhythmic drugs have been shown to be safe and effective, allowing for individualization according to underlying substrate and patient preference. Catheter ablation is also an important option, although the procedure is less effective than in the general population, and there is a more frequent need of repeat procedures and concomitant use of antiarrhythmic drugs. Surgical AF ablation, often with atrial appendage removal, is a potential rhythm management option in patients undergoing surgical myectomy. Surgical AF ablation or maze is not frequently pursued as an isolated surgical indication. Other supraventricular arrhythmias and atrial flutter are likely not increased in incidence in patients with HCM, and treatment is usually similar to populations without HCM.<br /> <br /> Given the poor tolerance of AF in patients with HCM, a rhythm-control strategy is often preferred, because more recent data support improved outcomes with a rhythm-control strategy compared with historical controls (9, 10). For those patients for whom a rate-control strategy is chosen (e.g., because of patient choice, antiarrhythmic drug failure, or intolerance), a non-dihydropyridine calcium channel blocker, a beta-blocker, or a combination of the two is preferable. There is a theoretical concern that digoxin could exacerbate LVOTO attributable to a positive inotropic effect. However, in the absence of a gradient, digoxin is a potential option although data on efficacy in this population are lacking. The choice of medication should be individually determined according to age, underlying substrate, and comorbidities, as well as severity of symptoms. Dose adjustments are based on the balance between adequate rate control versus side effects, including excessive bradycardia. In patients with hypotension, dyspnea at rest and very high resting gradients (e.g., &gt;100 mm Hg), verapamil should be avoided. Atrioventricular node ablation with pacemaker implantation can be a last option in refractory cases."
-            ],
-            "pointofcare": [
-                "Treatment"
-            ],
-            "conditions": [
-                "Hypertrophic Cardiomyopathy",
-                "Atrial Fibrillation"
-            ],
-            "refinfo": [
-                "<reference id=\"bib9\" doi=\"\">Panaich SS, Badheka AO, Chothani A, et al. Results of ventricular septal myectomy and hypertrophic cardiomyopathy (from Nationwide Inpatient Sample [1998-2010]). Am J Cardiol. 2014;114:1390-5.</reference>",
-                "<reference id=\"bib10\" doi=\"\">Sorajja P, Ommen SR, Holmes DR, Jr., et al. Survival after alcohol septal ablation for obstructive hypertrophic cardiomyopathy. Circulation. 2012;126:2374-80.</reference>"
-            ],
-            "vol": null,
-            "issue": null,
-            "pages": null,
-            "coverdatetext": null,
-            "coverdatestart": null,
-            "statustype": null,
-            "citation": "J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2020.08.045",
-            "hub": "/Guidelines/Hubs/Hypertrophic-Cardiomyopathy",
-            "jacclink": "https://www.jacc.org/doi/10.1016/j.jacc.2020.08.045#sec19.3",
-            "pdflink": "https://www.jacc.org/doi/pdf/10.1016/j.jacc.2020.08.045",
-            "gltitle": "Hypertrophic Cardiomyopathy",
-            "url": ""
-        },
-        {
-            "eid": "71-s2.0-BRADY-8.1.2.2-3",
-            "itemtitle": "8.1.2.2. Surgery for Atrial Fibrillation",
-            "itemtitleFormatted": "<span>8.1.2.2. Surgery for Atrial Fibrillation</span>",
-            "summary": "In patients undergoing surgery for AF who will likely require future CRT or ventricular pacing, intraoperative placement of a permanent epicardial left ventricular lead may be considered. AF is present in 30% to 50% of patients undergoing valve su...",
-            "contenttype": [
-                "ACCG"
-            ],
-            "pubdate": null,
-            "sectiontitle": [
-                "JACC (Journal of the American College of Cardiology)",
-                "8. Special Populations",
-                "8.1. Perioperative Management",
-                "8.1.1. Patients at Risk for Bradycardia During Noncardiac Surgery or Procedures",
-                "8.1.2.2. Surgery for Atrial Fibrillation"
-            ],
-            "doi": "10.1016/j.jacc.2018.10.044",
-            "subtype": "publication",
-            "sectionid": null,
-            "sectiontitleformatted": [
-                "<span>JACC (Journal of the American College of Cardiology)</span>",
-                "<span>8. Special Populations</span>",
-                "<span>8.1. Perioperative Management</span>",
-                "<span>8.1.1. Patients at Risk for Bradycardia During Noncardiac Surgery or Procedures</span>",
-                "<span>8.1.2.2. Surgery for Atrial Fibrillation</span>"
-            ],
-            "refimage": null,
-            "caption": null,
-            "loe": "C-EO",
-            "cor": "2b",
-            "abs": [
-                "In patients undergoing surgery for AF who will likely require future CRT or ventricular pacing, intraoperative placement of a permanent epicardial left ventricular lead may be considered."
-            ],
-            "comments": [
-                "AF is present in 30% to 50% of patients undergoing valve surgery and is associated with reduced survival and increased risk of stroke (S8.1.2.2-2). Successful surgical correction of AF is associated with improved patient survival compared with patients who have recurrent AF (S8.1.2.2-5). Up to 65% of patients undergoing mitral surgery with AF undergo surgery directed toward management of AF (S8.1.2.2-6). A recent single center study found reported that 11% of patients undergoing a Cox Maze IV procedure in addition to mitral valve surgery required postoperative PPM implantation (S8.1.2.2-4).<br /> <br /> The data on whether surgery for AF is associated with an increased risk for postoperative bradycardia and PPM implant are mixed, in part caused by the significant evolution in the lesion set and surgical technique (S8.1.2.2-1--S8.1.2.2-4). An analysis of the STS registry and an RCT found that adding ablation for AF was associated with an increased likelihood of PPM implantation (S8.1.2.2-1, S8.1.2.2-2). However, a meta-analysis of 16 RCTs found no difference in need for permanent pacer in patients randomized to additional surgery for AF (OR: 0.88; 95% CI: 0.51--1.51; p=0.64) (S8.1.2.2-3). <br /> <br /> Surgical left ventricular lead placement is performed as a stand-alone procedure when placement via coronary sinus is unsuccessful (S8.1.2.2-7). If a patient has an indication for cardiac resynchronization before cardiac surgery, an epicardial placement of a left ventricular lead at the time of surgery for AF may offer future benefit without significant risk of harm. In addition, placement of a nonapical, lateral epicardial lead will allow more pacing options if the patient undergoes a future atrioventricular nodal ablation. Although traditionally considered a contraindication, it may be that MRI can be performed safely in selected patients with abandoned leads under the auspices of specialized protocols (S8.1.2.2-8--S8.1.2.2-10). At the time of a future CRT procedure the operator can implant a coronary sinus lead or use the capped epicardial lead if necessary."
-            ],
-            "pointofcare": [
-                "Treatment",
-                "Follow-up"
-            ],
-            "conditions": [
-                "Atrial Fibrillation",
-                "Perioperative CV Eval for NonCV Surgery",
-                "Bradycardia",
-                "Heart Failure"
-            ],
-            "refinfo": [
-                "<reference id=\"bib795\" doi=\"10.1016/j.athoracsur.2004.10.041\"> Navia JL, Atik FA, Grimm RA, et al. Minimally invasive left ventricular epicardial lead placement: surgical techniques for heart failure resynchronization therapy. Ann Thorac Surg. 2005;79:1536-44; discussion-44.</reference>",
-                "<reference id=\"bib796\" doi=\"\"> Kusumoto FM, Schoenfeld MH, Wilkoff BL, et al. 2017 HRS expert consensus statement on cardiovascular implantable electronic device lead management and extraction. Heart Rhythm. 2017;14:e503-51.</reference>",
-                "<reference id=\"bib797\" doi=\"10.1016/j.hrthm.2017.04.025\"> Indik JH, Gimbel JR, Abe H, et al. 2017 HRS expert consensus statement on magnetic resonance imaging and radiation exposure in patients with cardiovascular implantable electronic devices. Heart Rhythm. 2017;14:e97-153.</reference>",
-                "<reference id=\"bib798\" doi=\"\"> Padmanabhan D, Kella DK, Mehta R, et al. Safety of magnetic resonance imaging in patients with legacy pacemakers and defibrillators and abandoned leads. Heart Rhythm. 2018;15:228-33.</reference>"
-            ],
-            "vol": "74",
-            "issue": "7",
-            "pages": "e51",
-            "coverdatetext": null,
-            "coverdatestart": "2019-08-20",
-            "statustype": "S300",
-            "citation": "J Am Coll Cardiol. 2019 Aug 20;74(7):e51",
-            "hub": "/Guidelines/Hubs/Bradycardia-and-Cardiac-Conduction-Delay",
-            "jacclink": "http://www.onlinejacc.org/content/74/7/e51#sec12.1.2.2",
-            "pdflink": "http://www.onlinejacc.org/content/74/7/e51.full.pdf",
-            "gltitle": "Bradycardia and Cardiac Conduction Delay",
-            "url": ""
-        },
-        {
-            "eid": "71-s2.0-AF-6.1.1-1",
-            "itemtitle": "6.1.1 Prevention of Thromboembolism: Recommendations",
-            "itemtitleFormatted": "<span>6.1.1 Prevention of Thromboembolism: Recommendations</span>",
-            "summary": "For patients with AF or atrial flutter of 48 hours' duration or longer, or when the duration of AF is unknown, anticoagulation with warfarin (INR 2.0 to 3.0), a factor Xa inhibitor, or direct thrombin inhibitor is recommended for at least 3 weeks ...",
-            "contenttype": [
-                "ACCG"
-            ],
-            "pubdate": null,
-            "sectiontitle": [
-                "JACC (Journal of the American College of Cardiology)",
-                "6 Rhythm Control",
-                "6.1 Electrical and Pharmacological Cardioversion of AF and Atrial Flutter",
-                "6.1.1 Prevention of Thromboembolism: Recommendations"
-            ],
-            "doi": "10.1016/j.jacc.2019.01.011",
-            "subtype": "publication",
-            "sectionid": null,
-            "sectiontitleformatted": [
-                "<span>JACC (Journal of the American College of Cardiology)</span>",
-                "<span>6 Rhythm Control</span>",
-                "<span>6.1 Electrical and Pharmacological Cardioversion of AF and Atrial Flutter</span>",
-                "<span>6.1.1 Prevention of Thromboembolism: Recommendations</span>"
-            ],
-            "refimage": null,
-            "caption": null,
-            "loe": "B-R",
-            "cor": "1",
-            "abs": [
-                "For patients with AF or atrial flutter of 48 hours&#39; duration or longer, or when the duration of AF is unknown, anticoagulation with warfarin (INR 2.0 to 3.0), a factor Xa inhibitor, or direct thrombin inhibitor is recommended for at least 3 weeks before and at least 4 weeks after cardioversion, regardless of the CHA<sub>2</sub>DS<sub>2</sub>-VASc score or the method (electrical or pharmacological) used to restore sinus rhythm."
-            ],
-            "comments": [
-                "Three prospective RCTs have evaluated the safety and efficacy of newly initiated factor Xa inhibitors (rivaroxaban and apixaban) for cardioversion as an alternative to warfarin (S6.1.1-7, S6.1.1-8, S6.1.1-17). In addition, retrospective analyses have been performed on the subset of patients undergoing cardioversion within the context of the larger randomized trials that compared each of the FDA-approved NOACs with warfarin for thromboembolism prevention with AF. The results were consistent and support the assertion that NOACs are an effective and safe alternative to warfarin for patients undergoing cardioversion. An alternative to waiting 3 weeks before cardioversion is to perform transesophageal echocardiography to exclude thrombus (see separate recommendation in this section). The decision about long-term anticoagulant therapy (beyond 4 weeks) is based on the thromboembolic risk profile (Section 4) and bleeding risk profile. The &quot;48-hour rule&quot; has also been questioned, because delay to cardioversion of 12 hours or longer from symptom onset was associated with a greater risk of thromboembolic complications compared to cardioversion of less than 12 hours (1.1% versus 0.3%) (S6.1.1-18) and the risk of thromboembolic complications with cardioversion of 12 hour or longer increases substantially in patients &gt;75 years of age and in women (S6.1.1-19)."
-            ],
-            "pointofcare": [
-                "Treatment"
-            ],
-            "conditions": [
-                "Atrial Fibrillation",
-                "Prevention"
-            ],
-            "refinfo": [
-                "<reference id=\"bibfu107\" doi=\"10.1016/S0735-1097(02)02052-1\">Gallagher MM, Hennessy BJ, Edvardsson N, et al. Embolic complications of direct current cardioversion of atrial arrhythmias: association with low intensity of anticoagulation at the time of cardioversion. J Am Coll Cardiol. 2002;40:926-33.</reference>",
-                "<reference id=\"bibfu108\" doi=\"10.1067/mhj.2000.106648\">Jaber WA, Prior DL, Thamilarasan M, et al. Efficacy of anticoagulation in resolving left atrial and left atrial appendage thrombi: a transesophageal echocardiographic study. Am Heart J. 2000;140:150-6.</reference>",
-                "<reference id=\"bibfu109\" doi=\"10.1378/chest.11-2304\">You JJ, Singer DE, Howard PA, et al. Antithrombotic therapy for atrial fibrillation: antithrombotic therapy and prevention of thrombosis, 9th ed: American College of Chest Physicians evidence-based clinical practice guidelines. Chest. 2012;141:e531S-e575S.</reference>",
-                "<reference id=\"bibfu110\" doi=\"10.1161/CIRCULATIONAHA.110.977546\">Nagarakanti R, Ezekowitz MD, Oldgren J, et al. Dabigatran versus warfarin in patients with atrial fibrillation: an analysis of patients undergoing cardioversion. Circulation. 2011;123:131-6.</reference>",
-                "<reference id=\"bibfu111\" doi=\"10.1016/j.jacc.2013.02.025\">Piccini JP, Stevens SR, Lokhnygina Y, et al. Outcomes after cardioversion and atrial fibrillation ablation in patients treated with rivaroxaban and warfarin in the ROCKET AF trial. J Am Coll Cardiol. 2013;61:1998-2006.</reference>",
-                "<reference id=\"bibfu112\" doi=\"10.1016/j.jacc.2013.09.062\">Flaker G, Lopes RD, Al-Khatib SM, et al. Efficacy and safety of apixaban in patients after cardioversion for atrial fibrillation: insights from the ARISTOTLE Trial (Apixaban for Reduction in Stroke and Other Thromboembolic Events in Atrial Fibrillation). J Am Coll Cardiol. 2014;63:1082-7.</reference>",
-                "<reference id=\"bibfu113\" doi=\"10.1093/eurheartj/ehu367\">Cappato R, Ezekowitz MD, Klein AL, et al. Rivaroxaban vs. vitamin K antagonists for cardioversion in atrial fibrillation. Eur Heart J. 2014;35:3346-55.</reference>",
-                "<reference id=\"bibfu114\" doi=\"\">Goette A, Merino JL, Ezekowitz MD, et al. Edoxaban versus enoxaparin-warfarin in patients undergoing cardioversion of atrial fibrillation (ENSURE-AF): a randomised, open-label, phase 3b trial. Lancet. 2016;388:1995-2003.</reference>",
-                "<reference id=\"bibfu115\" doi=\"\">Pallisgaard JL, Lindhardt TB, Hansen ML, et al. Cardioversion and risk of adverse events with dabigatran versus warfarin-a nationwide cohort study. PLoS ONE. 2015;10:e0141377.</reference>",
-                "<reference id=\"bibfu116\" doi=\"\">Plitt A, Ezekowitz MD, De Caterina R, et al. Cardioversion of atrial fibrillation in ENGAGE AF-TIMI 48. Clin Cardiol. 2016;39:345-6.</reference>",
-                "<reference id=\"bibfu117\" doi=\"\">Dentali F, Botto GL, Gianni M, et al. Efficacy and safety of direct oral anticoagulants in patients undergoing cardioversion for atrial fibrillation: a systematic review and meta-analysis of the literature. Int J Cardiol. 2015;185:72-7.</reference>",
-                "<reference id=\"bibfu118\" doi=\"\">Ezekowitz MD, Pollack CV Jr, Halperin JL, et al. Apixaban compared to heparin/vitamin K antagonist in patients with atrial fibrillation scheduled for cardioversion: the EMANATE trial. Eur Heart J. 2018;39:2959-71.</reference>"
-            ],
-            "vol": "74",
-            "issue": "1",
-            "pages": "104",
-            "coverdatetext": null,
-            "coverdatestart": "2019-07-09",
-            "statustype": "S300",
-            "citation": "J Am Coll Cardiol. 2019 Jul 9;74(1):104",
-            "hub": "/Guidelines/Hubs/Atrial-Fibrillation",
-            "jacclink": "http://www.onlinejacc.org/content/74/1/104#sec6.1.1",
-            "pdflink": "http://www.onlinejacc.org/content/74/1/104.full.pdf",
-            "gltitle": "Atrial Fibrillation (Focused Update)",
-            "url": ""
-        }
+	{
+		"eid": "71-s2.0-HCM2020-8.3-2",
+		"itemtitle": "8.3. Management of Patients With HCM and Atrial Fibrillation",
+		"itemtitleFormatted": "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>",
+		"summary": "In patients with HCM and subclinical AF detected by internal or external cardiac device or monitor of >24 hours' duration for a given episode, anticoagulation is recommended with DOAC as first-line option and vitamin K antagonists as second-line o...",
+		"contenttype": [
+			"ACCG"
+		],
+		"pubdate": null,
+		"sectiontitle": [
+			"8. Management of HCM",
+			"8.3. Management of Patients With HCM and Atrial Fibrillation"
+		],
+		"doi": "10.1016/j.jacc.2020.08.045",
+		"subtype": "publication",
+		"sectionid": null,
+		"sectiontitleformatted": [
+			"<span>8. Management of HCM</span>",
+			"<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>"
+		],
+		"refimage": null,
+		"caption": null,
+		"loe": "C-LD",
+		"cor": "1",
+		"abs": [
+			"In patients with HCM and subclinical AF detected by internal or external cardiac device or monitor of &gt;24 hours&#39; duration for a given episode, anticoagulation is recommended with DOAC as first-line option and vitamin K antagonists as second-line option, independent of CHA<sub>2</sub>DS<sub>2</sub>-VASc score."
+		],
+		"comments": [
+			"AF, commonly observed in patients with HCM, is associated with significant morbidity, impaired quality of life, and substantial stroke risk. Therapy includes prevention of thromboembolic events and controlling symptoms. Traditional stroke risk scoring systems used in the general population are not predictive in patients with HCM. Vitamin K antagonists are effective for stroke prevention, and recent studies support the use of DOACs as well. In view of the substantial stroke risk, periodic AF surveillance would allow for early intervention with anticoagulants in high-risk patients. Asymptomatic AF detected by cardiac devices or monitors also increases risk of stroke, so the decision to anticoagulate should take into considerations the duration of episodes as well as underlying risk factors. When a rhythm control strategy is needed, a number of antiarrhythmic drugs have been shown to be safe and effective, allowing for individualization according to underlying substrate and patient preference. Catheter ablation is also an important option, although the procedure is less effective than in the general population, and there is a more frequent need of repeat procedures and concomitant use of antiarrhythmic drugs. Surgical AF ablation, often with atrial appendage removal, is a potential rhythm management option in patients undergoing surgical myectomy. Surgical AF ablation or maze is not frequently pursued as an isolated surgical indication. Other supraventricular arrhythmias and atrial flutter are likely not increased in incidence in patients with HCM, and treatment is usually similar to populations without HCM.<br /> <br /> Similar to patients without HCM, subclinical or asymptomatic AF (SCAF) is detected by cardiac devices in patients with HCM as well. SCAF was reported in 16 of 30 patients with HCM (53%) after a median follow-up of 595 days (7). Device-detected AF was identified in 29 out of 114 patients with HCM (25%), resulting in an annualized incidence of 4%/year (6). In patients without HCM, SCAF has been associated with an increased risk of thromboembolism, albeit lower than risk described for clinical AF (8). Considerable debate exists regarding the AF duration threshold for initiating anticoagulation in SCAF because the duration used to define and quantify AF varied significantly between different studies. Nevertheless, the data increasingly show that longer duration episodes are associated with greatest risk. An ASSERT (Atrial Fibrillation Reduction Atrial Pacing Trial) substudy suggested only episodes &gt;24 hours were associated with increased risk (15). Also influencing risk are the total AF burden (11) and the presence of traditional risk factors, whereas very short episodes lasting a few seconds do not appear to increase risk (16, 17). When making the diagnosis of device-detected AF, review of stored intracardiac electrograms is essential to exclude artifact or false-positives."
+		],
+		"pointofcare": [
+			"Treatment"
+		],
+		"conditions": [
+			"Hypertrophic Cardiomyopathy",
+			"Atrial Fibrillation"
+		],
+		"refinfo": [
+			"<reference id=\"bib1\" doi=\"\">Quality AfHRa. The CAHPS Ambulatory Care Improvement Guide: Practical Strategies for Improving Patient Experience. Available at: https://www.ahrq.gov/cahps/quality-improvement/improvement-guide/6-strategies-for-improving/communication/strategy6i-shared-decisionmaking.html. Accessed: October 7.</reference>",
+			"<reference id=\"bib6\" doi=\"\">Guadagnoli E, Ward P. Patient participation in decision-making. Soc Sci Med. 1998;47:329-39.</reference>",
+			"<reference id=\"bib7\" doi=\"\">Legare F, Adekpedjou R, Stacey D, et al. Interventions for increasing the use of shared decision making by healthcare professionals. Cochrane Database Syst Rev. 2018;7:CD006732.</reference>",
+			"<reference id=\"bib8\" doi=\"\">Kim LK, Swaminathan RV, Looser P, et al. Hospital volume outcomes after septal myectomy and alcohol septal ablation for treatment of obstructive hypertrophic cardiomyopathy: US nationwide inpatient database, 2003-2011. JAMA Cardiol. 2016;1:324-32.</reference>"
+		],
+		"vol": null,
+		"issue": null,
+		"pages": null,
+		"coverdatetext": null,
+		"coverdatestart": null,
+		"statustype": null,
+		"citation": "J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2020.08.045",
+		"hub": "/Guidelines/Hubs/Hypertrophic-Cardiomyopathy",
+		"jacclink": "https://www.jacc.org/doi/10.1016/j.jacc.2020.08.045#sec19.3",
+		"pdflink": "https://www.jacc.org/doi/pdf/10.1016/j.jacc.2020.08.045",
+		"gltitle": "Hypertrophic Cardiomyopathy",
+		"url": ""
+	},
+	{
+		"eid": "71-s2.0-HCM2020-8.3-4",
+		"itemtitle": "8.3. Management of Patients With HCM and Atrial Fibrillation",
+		"itemtitleFormatted": "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>",
+		"summary": "In patients with HCM and subclinical AF detected by internal or external device or monitor, of >5 minutes' but 24 hours increased stroke risk (15), other evidence suggests that shorter duration episodes may pose risk in patients with traditional r...",
+		"contenttype": [
+			"ACCG"
+		],
+		"pubdate": null,
+		"sectiontitle": [
+			"8. Management of HCM",
+			"8.3. Management of Patients With HCM and Atrial Fibrillation"
+		],
+		"doi": "10.1016/j.jacc.2020.08.045",
+		"subtype": "publication",
+		"sectionid": null,
+		"sectiontitleformatted": [
+			"<span>8. Management of HCM</span>",
+			"<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>"
+		],
+		"refimage": null,
+		"caption": null,
+		"loe": "C-LD",
+		"cor": "2a",
+		"abs": [
+			"In patients with HCM and subclinical AF detected by internal or external device or monitor, of &gt;5 minutes&#39; but &lt;24 hours&#39; duration for a given episode, anticoagulation with DOAC as first-line option and vitamin K antagonists as second-line option can be beneficial, taking into consideration duration of AF episodes, total AF burden, underlying risk factors, and bleeding risk."
+		],
+		"comments": [
+			"AF, commonly observed in patients with HCM, is associated with significant morbidity, impaired quality of life, and substantial stroke risk. Therapy includes prevention of thromboembolic events and controlling symptoms. Traditional stroke risk scoring systems used in the general population are not predictive in patients with HCM. Vitamin K antagonists are effective for stroke prevention, and recent studies support the use of DOACs as well. In view of the substantial stroke risk, periodic AF surveillance would allow for early intervention with anticoagulants in high-risk patients. Asymptomatic AF detected by cardiac devices or monitors also increases risk of stroke, so the decision to anticoagulate should take into considerations the duration of episodes as well as underlying risk factors. When a rhythm control strategy is needed, a number of antiarrhythmic drugs have been shown to be safe and effective, allowing for individualization according to underlying substrate and patient preference. Catheter ablation is also an important option, although the procedure is less effective than in the general population, and there is a more frequent need of repeat procedures and concomitant use of antiarrhythmic drugs. Surgical AF ablation, often with atrial appendage removal, is a potential rhythm management option in patients undergoing surgical myectomy. Surgical AF ablation or maze is not frequently pursued as an isolated surgical indication. Other supraventricular arrhythmias and atrial flutter are likely not increased in incidence in patients with HCM, and treatment is usually similar to populations without HCM.<br /> <br /> SCAF is often observed in patients with HCM and implanted cardiac devices (6, 7) and has been associated with an increased risk of thromboembolism (8). Yet, the minimum duration of SCAF that confers increased risk has not been precisely defined, because there appears to be a gradient of risk depending on underlying substrate. Although ASSERT data suggested only episodes &gt;24 hours increased stroke risk (15), other evidence suggests that shorter duration episodes may pose risk in patients with traditional risks factors (16). In ASSERT, the absolute stroke risk increased with increasing CHADS<sub>2</sub> score, reaching a rate of 3.78 per year in those with score &gt;2 (18). Botto stratified risk according to AF duration and CHADS<sub>2</sub> score, with a CHADS<sub>2</sub> score of 1 increasing the risk only if AF duration was &gt;24 hours, whereas for CHADS<sub>2</sub> &gt;2, episodes &gt;5 minutes increased risk (19). Similar risk stratification is unavailable in HCM, yet risk factors for stroke in the population with HCM have been identified and include advancing age, previous embolic events, NYHA functional class, left atrial diameter, vascular disease, and maximal LV wall thickness (30). When very short AF duration is observed, continued surveillance should be maintained as the burden of AF is likely to progress."
+		],
+		"pointofcare": [
+			"Treatment"
+		],
+		"conditions": [
+			"Hypertrophic Cardiomyopathy",
+			"Atrial Fibrillation"
+		],
+		"refinfo": [
+			"<reference id=\"bib1\" doi=\"\">Quality AfHRa. The CAHPS Ambulatory Care Improvement Guide: Practical Strategies for Improving Patient Experience. Available at: https://www.ahrq.gov/cahps/quality-improvement/improvement-guide/6-strategies-for-improving/communication/strategy6i-shared-decisionmaking.html. Accessed: October 7.</reference>",
+			"<reference id=\"bib6\" doi=\"\">Guadagnoli E, Ward P. Patient participation in decision-making. Soc Sci Med. 1998;47:329-39.</reference>",
+			"<reference id=\"bib7\" doi=\"\">Legare F, Adekpedjou R, Stacey D, et al. Interventions for increasing the use of shared decision making by healthcare professionals. Cochrane Database Syst Rev. 2018;7:CD006732.</reference>",
+			"<reference id=\"bib8\" doi=\"\">Kim LK, Swaminathan RV, Looser P, et al. Hospital volume outcomes after septal myectomy and alcohol septal ablation for treatment of obstructive hypertrophic cardiomyopathy: US nationwide inpatient database, 2003-2011. JAMA Cardiol. 2016;1:324-32.</reference>",
+			"<reference id=\"bib11\" doi=\"\">Maron BJ, Nishimura RA, Maron MS. Shared decision-making in HCM. Nat Rev Cardiol. 2017;14:125-6.</reference>"
+		],
+		"vol": null,
+		"issue": null,
+		"pages": null,
+		"coverdatetext": null,
+		"coverdatestart": null,
+		"statustype": null,
+		"citation": "J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2020.08.045",
+		"hub": "/Guidelines/Hubs/Hypertrophic-Cardiomyopathy",
+		"jacclink": "https://www.jacc.org/doi/10.1016/j.jacc.2020.08.045#sec19.3",
+		"pdflink": "https://www.jacc.org/doi/pdf/10.1016/j.jacc.2020.08.045",
+		"gltitle": "Hypertrophic Cardiomyopathy",
+		"url": ""
+	},
+	{
+		"eid": "71-s2.0-HCM2020-8.3-5",
+		"itemtitle": "8.3. Management of Patients With HCM and Atrial Fibrillation",
+		"itemtitleFormatted": "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>",
+		"summary": "In patients with HCM and poorly tolerated AF, a rhythm control strategy with cardioversion or antiarrhythmic drugs can be beneficial with the choice of an agent according to AF symptom severity, patient preferences, and comorbid conditions. AF, co...",
+		"contenttype": [
+			"ACCG"
+		],
+		"pubdate": null,
+		"sectiontitle": [
+			"8. Management of HCM",
+			"8.3. Management of Patients With HCM and Atrial Fibrillation"
+		],
+		"doi": "10.1016/j.jacc.2020.08.045",
+		"subtype": "publication",
+		"sectionid": null,
+		"sectiontitleformatted": [
+			"<span>8. Management of HCM</span>",
+			"<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>"
+		],
+		"refimage": null,
+		"caption": null,
+		"loe": "B-NR",
+		"cor": "2a",
+		"abs": [
+			"In patients with HCM and poorly tolerated AF, a rhythm control strategy with cardioversion or antiarrhythmic drugs can be beneficial with the choice of an agent according to AF symptom severity, patient preferences, and comorbid conditions."
+		],
+		"comments": [
+			"AF, commonly observed in patients with HCM, is associated with significant morbidity, impaired quality of life, and substantial stroke risk. Therapy includes prevention of thromboembolic events and controlling symptoms. Traditional stroke risk scoring systems used in the general population are not predictive in patients with HCM. Vitamin K antagonists are effective for stroke prevention, and recent studies support the use of DOACs as well. In view of the substantial stroke risk, periodic AF surveillance would allow for early intervention with anticoagulants in high-risk patients. Asymptomatic AF detected by cardiac devices or monitors also increases risk of stroke, so the decision to anticoagulate should take into considerations the duration of episodes as well as underlying risk factors. When a rhythm control strategy is needed, a number of antiarrhythmic drugs have been shown to be safe and effective, allowing for individualization according to underlying substrate and patient preference. Catheter ablation is also an important option, although the procedure is less effective than in the general population, and there is a more frequent need of repeat procedures and concomitant use of antiarrhythmic drugs. Surgical AF ablation, often with atrial appendage removal, is a potential rhythm management option in patients undergoing surgical myectomy. Surgical AF ablation or maze is not frequently pursued as an isolated surgical indication. Other supraventricular arrhythmias and atrial flutter are likely not increased in incidence in patients with HCM, and treatment is usually similar to populations without HCM.<br /> <br /> Recent studies suggest that with current therapies, AF in patients with HCM can be managed effectively, leading to low morbidity and mortality compared with historical controls (9, 10). In general, drug selection for rhythm control in patients with HCM is based on extrapolation from studies of the AF population at large. Yet, reports suggest several drugs are safe and effective in a population with HCM. Amiodarone has been used over many years and is generally deemed a favored option (10, 20). Disopyramide has been safely prescribed for reduction of LVOTO, but its efficacy in AF is not well established (21, 31). Data on NYHA class IC antiarrhythmic agents are limited because of concerns regarding their use in patients with structural heart disease. When used, therapy with class IC agents is safest in the presence of an ICD (10). Class III agents have been used as well. A recent report in 25 patients with HCM showed dofetilide to be well tolerated and facilitated AF management (13). Sotalol has also been shown to be safe and is commonly used in pediatric patients as well, either in oral or intravenous forms (23, 32-34). The U.S. Food and Drug Administration-mandated safety precautions should be adopted when prescribing antiarrhythmic drugs."
+		],
+		"pointofcare": [
+			"Treatment"
+		],
+		"conditions": [
+			"Hypertrophic Cardiomyopathy",
+			"Atrial Fibrillation"
+		],
+		"refinfo": [
+			"<reference id=\"bib10\" doi=\"\">Sorajja P, Ommen SR, Holmes DR, Jr., et al. Survival after alcohol septal ablation for obstructive hypertrophic cardiomyopathy. Circulation. 2012;126:2374-80.</reference>",
+			"<reference id=\"bib12\" doi=\"\">Chambers JB, Prendergast B, Iung B, et al. Standards defining a 'Heart Valve Centre': ESC Working Group on Valvular Heart Disease and European Association for Cardiothoracic Surgery Viewpoint. European heart journal. 2017;38:2177-83.</reference>",
+			"<reference id=\"bib13\" doi=\"\">Semsarian C, Ingles J, Maron MS, et al. New perspectives on the prevalence of hypertrophic cardiomyopathy. Journal of the American College of Cardiology. 2015;65:1249-54.</reference>",
+			"<reference id=\"bib14\" doi=\"\">Maron BJ, Ommen SR, Semsarian C, et al. Hypertrophic cardiomyopathy: present and future, with translation into contemporary cardiovascular medicine. J Am Coll Cardiol. 2014;64:83-99.</reference>",
+			"<reference id=\"bib15\" doi=\"\">Ommen SR, Maron BJ, Olivotto I, et al. Long-term effects of surgical septal myectomy on survival in patients with obstructive hypertrophic cardiomyopathy. J Am Coll Cardiol. 2005;46:470-6.</reference>",
+			"<reference id=\"bib16\" doi=\"\">Desai MY, Bhonsale A, Smedira NG, et al. Predictors of long-term outcomes in symptomatic hypertrophic obstructive cardiomyopathy patients undergoing surgical relief of left ventricular outflow tract obstruction. Circulation. 2013;128:209-16.</reference>",
+			"<reference id=\"bib17\" doi=\"\">Lim KK, Maron BJ, Knight BP. Successful catheter ablation of hemodynamically unstable monomorphic ventricular tachycardia in a patient with hypertrophic cardiomyopathy and apical aneurysm. Journal of cardiovascular electrophysiology. 2009;20:445-7.</reference>",
+			"<reference id=\"bib18\" doi=\"\">Dukkipati SR, d'Avila A, Soejima K, et al. Long-term outcomes of combined epicardial and endocardial ablation of monomorphic ventricular tachycardia related to hypertrophic cardiomyopathy. Circulation Arrhythmia and electrophysiology. 2011;4:185-94.</reference>",
+			"<reference id=\"bib19\" doi=\"\">Rowin EJ, Maron BJ, Abt P, et al. Impact of advanced therapies for improving survival to heart transplant in patients with hypertrophic cardiomyopathy. Am J Cardiol. 2018;121:986-96.</reference>",
+			"<reference id=\"bib20\" doi=\"\">Pasqualucci D, Fornaro A, Castelli G, et al. Clinical spectrum, therapeutic options, and outcome of advanced heart failure in hypertrophic cardiomyopathy. Circ Heart Fail. 2015;8:1014-21.</reference>",
+			"<reference id=\"bib21\" doi=\"\">Nishimura RA, O'Gara PT, Bavaria JE, et al. 2019 AATS/ACC/ASE/SCAI/STS Expert Consensus Systems of Care Document: A Proposal to Optimize Care for Patients With Valvular Heart Disease: A Joint Report of the American Association for Thoracic Surgery, American College of Cardiology, American Society of Echocardiography, Society for Cardiovascular Angiography and Interventions, and Society of Thoracic Surgeons. J Am Coll Cardiol. 2019;73:2609-35.</reference>",
+			"<reference id=\"bib22\" doi=\"\">Polanco AR, D'Angelo A, Shea N, et al. Impact of Septal Myectomy Volume on Mitral-Valve Replacement Rate in Hypertrophic Cardiomyopathy Patients. Cardiology. 2020;145:161-7.</reference>",
+			"<reference id=\"bib23\" doi=\"\">Holst KA, Hanson KT, Ommen SR, et al. Septal myectomy in hypertrophic cardiomyopathy: national outcomes of concomitant mitral surgery. Mayo Clin Proc. 2019;94:66-73.</reference>",
+			"<reference id=\"bib24\" doi=\"\">Maron BJ, Maron MS, Semsarian C. Genetics of hypertrophic cardiomyopathy after 20 years: clinical perspectives. J Am Coll Cardiol. 2012;60:705-15.</reference>"
+		],
+		"vol": null,
+		"issue": null,
+		"pages": null,
+		"coverdatetext": null,
+		"coverdatestart": null,
+		"statustype": null,
+		"citation": "J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2020.08.045",
+		"hub": "/Guidelines/Hubs/Hypertrophic-Cardiomyopathy",
+		"jacclink": "https://www.jacc.org/doi/10.1016/j.jacc.2020.08.045#sec19.3",
+		"pdflink": "https://www.jacc.org/doi/pdf/10.1016/j.jacc.2020.08.045",
+		"gltitle": "Hypertrophic Cardiomyopathy",
+		"url": ""
+	},
+	{
+		"eid": "71-s2.0-AF-7.4-7",
+		"itemtitle": "7.4 AF complicating ACS",
+		"itemtitleFormatted": "<span>7.4 AF complicating ACS</span>",
+		"summary": "In patients with AF at increased risk of stroke (based on CHA2DS2-VASc risk score of 2 or greater) who have undergone PCI with stenting for ACS, double therapy with a P2Y12 inhibitor (clopidogrel) and dabigatran 150 mg twice daily is reasonable to...",
+		"contenttype": [
+			"ACCG"
+		],
+		"pubdate": null,
+		"sectiontitle": [
+			"JACC (Journal of the American College of Cardiology)",
+			"7 Specific Patient Groups and AF",
+			"7.4 AF complicating ACS"
+		],
+		"doi": "10.1016/j.jacc.2019.01.011",
+		"subtype": "publication",
+		"sectionid": null,
+		"sectiontitleformatted": [
+			"<span>JACC (Journal of the American College of Cardiology)</span>",
+			"<span>7 Specific Patient Groups and AF</span>",
+			"<span>7.4 AF complicating ACS</span>"
+		],
+		"refimage": null,
+		"caption": null,
+		"loe": "B-R",
+		"cor": "2a",
+		"abs": [
+			"In patients with AF at increased risk of stroke (based on CHA<sub>2</sub>DS<sub>2</sub>-VASc risk score of 2 or greater) who have undergone PCI with stenting for ACS, double therapy with a P2Y12 inhibitor (clopidogrel) and dabigatran 150 mg twice daily is reasonable to reduce the risk of bleeding as compared with triple therapy."
+		],
+		"comments": [
+			"RE-DUAL PCI was an international, multicenter, randomized open-label trial of 2,725 patients with nonvalvular AF who had undergone PCI with stenting. Patients were randomized to receive 1 of 3 treatments: double therapy with dabigatran (110 mg twice daily) plus either clopidogrel or ticagrelor (110-mg dual-therapy group), double therapy with dabigatran (150 mg twice daily) plus either clopidogrel or ticagrelor (150-mg dual-therapy group), or triple therapy with warfarin plus aspirin (≤100 mg daily) and either clopidogrel or ticagrelor (triple-therapy group). The incidence of major or clinically relevant nonmajor bleeding was higher in the triple-therapy group than in the 110-mg dual-therapy group and the 150-mg dual-therapy group. In addition, the 2 dual-therapy groups combined were noninferior to the triple-therapy group with regard to the composite efficacy endpoint of thromboembolic events (MI, stroke, or systemic embolism), death, or unplanned revascularization. Clopidogrel was the most common P2Y12 inhibitor used (88%). Notably, the study was not powered to evaluate risk of stent thrombosis or systemic thromboembolism (S7.4-1).<br /> <br /> In aggregate, the data to date on comparisons of double versus triple therapy demonstrate that double therapy significantly reduces the risk of bleeding without a signal of harm with regard to stent thrombosis in clinical trials that enrolled both patients with stable ischemic disease and patients with ACS. With regard to the antithrombotic dosages studied, only the RE-DUAL PCI trial and WOEST trials studied antithrombotic dosages known to reduce the risk of systemic thromboembolism (S7.4-1, S7.4-3). The ongoing AUGUSTUS (A Study of Apixaban in Patients With Atrial Fibrillation, not Caused by a Heart Valve Problem, who are at Risk for Thrombosis due to Having had a Recent Coronary Event, Such as a Heart Attack or a Procedure to Open the Vessels of the Heart) trial is an open-label 2x2 factorial RCT to evaluate the safety of apixaban versus vitamin K antagonist and aspirin versus aspirin placebo in patients with AF and ACS or PCI (S7.4-24). The ENTRUST-AF-PCI (Edoxaban Treatment Versus Vitamin K Antagonist in Patients With Atrial Fibrillation Undergoing Percutaneous Coronary Intervention) is an ongoing trial evaluating edoxaban treatment versus vitamin K antagonist treatment in patients with AF undergoing PCI (S7.4-25). These trials will provide further evidence on treatment approaches designed to mitigate bleeding while reducing the risks of stent thrombosis and systemic thromboembolism."
+		],
+		"pointofcare": [
+			"Treatment",
+			"Follow-up"
+		],
+		"conditions": [
+			"STEMI",
+			"NonSTEMI",
+			"Atrial Fibrillation"
+		],
+		"refinfo": [
+			"<reference id=\"bibfu133\" doi=\"10.1056/NEJMoa1708454\">Cannon CP, Bhatt DL, Oldgren J, et al. Dual antithrombotic therapy with dabigatran after PCI in atrial fibrillation. N Engl J Med. 2017;377:1513-24.</reference>"
+		],
+		"vol": "74",
+		"issue": "1",
+		"pages": "104",
+		"coverdatetext": null,
+		"coverdatestart": "2019-07-09",
+		"statustype": "S300",
+		"citation": "J Am Coll Cardiol. 2019 Jul 9;74(1):104",
+		"hub": "/Guidelines/Hubs/Atrial-Fibrillation",
+		"jacclink": "http://www.onlinejacc.org/content/74/1/104#sec7.4",
+		"pdflink": "http://www.onlinejacc.org/content/74/1/104.full.pdf",
+		"gltitle": "Atrial Fibrillation (Focused Update)",
+		"url": ""
+	},
+	{
+		"eid": "71-s2.0-HCM2020-8.3-6",
+		"itemtitle": "8.3. Management of Patients With HCM and Atrial Fibrillation",
+		"itemtitleFormatted": "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>",
+		"summary": "In patients with HCM and symptomatic AF, as part of a AF rhythm control strategy, catheter ablation for AF can be effective when drug therapy is ineffective, contraindicated, or not the patient's preference. AF, commonly observed in patients with ...",
+		"contenttype": [
+			"ACCG"
+		],
+		"pubdate": null,
+		"sectiontitle": [
+			"8. Management of HCM",
+			"8.3. Management of Patients With HCM and Atrial Fibrillation"
+		],
+		"doi": "10.1016/j.jacc.2020.08.045",
+		"subtype": "publication",
+		"sectionid": null,
+		"sectiontitleformatted": [
+			"<span>8. Management of HCM</span>",
+			"<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>"
+		],
+		"refimage": null,
+		"caption": null,
+		"loe": "B-NR",
+		"cor": "2a",
+		"abs": [
+			"In patients with HCM and symptomatic AF, as part of a AF rhythm control strategy, catheter ablation for AF can be effective when drug therapy is ineffective, contraindicated, or not the patient&#39;s preference."
+		],
+		"comments": [
+			"AF, commonly observed in patients with HCM, is associated with significant morbidity, impaired quality of life, and substantial stroke risk. Therapy includes prevention of thromboembolic events and controlling symptoms. Traditional stroke risk scoring systems used in the general population are not predictive in patients with HCM. Vitamin K antagonists are effective for stroke prevention, and recent studies support the use of DOACs as well. In view of the substantial stroke risk, periodic AF surveillance would allow for early intervention with anticoagulants in high-risk patients. Asymptomatic AF detected by cardiac devices or monitors also increases risk of stroke, so the decision to anticoagulate should take into considerations the duration of episodes as well as underlying risk factors. When a rhythm control strategy is needed, a number of antiarrhythmic drugs have been shown to be safe and effective, allowing for individualization according to underlying substrate and patient preference. Catheter ablation is also an important option, although the procedure is less effective than in the general population, and there is a more frequent need of repeat procedures and concomitant use of antiarrhythmic drugs. Surgical AF ablation, often with atrial appendage removal, is a potential rhythm management option in patients undergoing surgical myectomy. Surgical AF ablation or maze is not frequently pursued as an isolated surgical indication. Other supraventricular arrhythmias and atrial flutter are likely not increased in incidence in patients with HCM, and treatment is usually similar to populations without HCM.<br /> <br /> Catheter ablation plays an important role in the management of AF and typical atrial flutter. Although no RCTs exist in this area, a number of meta-analyses have been published in patients with HCM undergoing catheter ablation for drug refractory AF, including one that compared catheter ablation between patients with HCM versus a cohort without HCM (12, 25). In general, the procedure is safe and remains an important tool. However, the results seem less favorable compared with patients without HCM, with a 2-fold higher risk of relapse, more frequent need of repeat procedures, and higher use of concomitant antiarrhythmic drugs. This is attributed to the fact that patients with HCM have a greater degree of electrophysiologic and structural remodeling than the population without HCM (25). Contributing factors for atrial remodeling include LVOTO, diastolic impairment, MR, and other factors. It can be postulated that aggressive intervention in the earlier stages of disease would be more effective, but this is unproven, and ongoing remodeling is expected. With that in mind, some authors have suggested the need for a more extensive ablation approach, with linear lesions and ablation of triggers not associated with the pulmonary veins often required to improve the long-term durability of the procedure (26)."
+		],
+		"pointofcare": [
+			"Treatment"
+		],
+		"conditions": [
+			"Hypertrophic Cardiomyopathy",
+			"Atrial Fibrillation"
+		],
+		"refinfo": [
+			"<reference id=\"bib12\" doi=\"\">Chambers JB, Prendergast B, Iung B, et al. Standards defining a 'Heart Valve Centre': ESC Working Group on Valvular Heart Disease and European Association for Cardiothoracic Surgery Viewpoint. European heart journal. 2017;38:2177-83.</reference>",
+			"<reference id=\"bib25\" doi=\"\">Ingles J, Yeates L, Semsarian C. The emerging role of the cardiac genetic counselor. Heart Rhythm. 2011;8:1958-62.</reference>",
+			"<reference id=\"bib26\" doi=\"\">Ahmad F, McNally EM, Ackerman MJ, et al. Establishment of Specialized Clinical Cardiovascular Genetics Programs: Recognizing the Need and Meeting Standards: A Scientific Statement From the American Heart Association. Circ Genom Precis Med. 2019;HCG0000000000000054.</reference>"
+		],
+		"vol": null,
+		"issue": null,
+		"pages": null,
+		"coverdatetext": null,
+		"coverdatestart": null,
+		"statustype": null,
+		"citation": "J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2020.08.045",
+		"hub": "/Guidelines/Hubs/Hypertrophic-Cardiomyopathy",
+		"jacclink": "https://www.jacc.org/doi/10.1016/j.jacc.2020.08.045#sec19.3",
+		"pdflink": "https://www.jacc.org/doi/pdf/10.1016/j.jacc.2020.08.045",
+		"gltitle": "Hypertrophic Cardiomyopathy",
+		"url": ""
+	},
+	{
+		"eid": "71-s2.0-HCM2020-8.3-7",
+		"itemtitle": "8.3. Management of Patients With HCM and Atrial Fibrillation",
+		"itemtitleFormatted": "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>",
+		"summary": "In patients with HCM and AF who require surgical myectomy, concomitant surgical AF ablation procedure can be beneficial for AF rhythm control. AF, commonly observed in patients with HCM, is associated with significant morbidity, impaired quality o...",
+		"contenttype": [
+			"ACCG"
+		],
+		"pubdate": null,
+		"sectiontitle": [
+			"8. Management of HCM",
+			"8.3. Management of Patients With HCM and Atrial Fibrillation"
+		],
+		"doi": "10.1016/j.jacc.2020.08.045",
+		"subtype": "publication",
+		"sectionid": null,
+		"sectiontitleformatted": [
+			"<span>8. Management of HCM</span>",
+			"<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>"
+		],
+		"refimage": null,
+		"caption": null,
+		"loe": "B-NR",
+		"cor": "2a",
+		"abs": [
+			"In patients with HCM and AF who require surgical myectomy, concomitant surgical AF ablation procedure can be beneficial for AF rhythm control."
+		],
+		"comments": [
+			"AF, commonly observed in patients with HCM, is associated with significant morbidity, impaired quality of life, and substantial stroke risk. Therapy includes prevention of thromboembolic events and controlling symptoms. Traditional stroke risk scoring systems used in the general population are not predictive in patients with HCM. Vitamin K antagonists are effective for stroke prevention, and recent studies support the use of DOACs as well. In view of the substantial stroke risk, periodic AF surveillance would allow for early intervention with anticoagulants in high-risk patients. Asymptomatic AF detected by cardiac devices or monitors also increases risk of stroke, so the decision to anticoagulate should take into considerations the duration of episodes as well as underlying risk factors. When a rhythm control strategy is needed, a number of antiarrhythmic drugs have been shown to be safe and effective, allowing for individualization according to underlying substrate and patient preference. Catheter ablation is also an important option, although the procedure is less effective than in the general population, and there is a more frequent need of repeat procedures and concomitant use of antiarrhythmic drugs. Surgical AF ablation, often with atrial appendage removal, is a potential rhythm management option in patients undergoing surgical myectomy. Surgical AF ablation or maze is not frequently pursued as an isolated surgical indication. Other supraventricular arrhythmias and atrial flutter are likely not increased in incidence in patients with HCM, and treatment is usually similar to populations without HCM.<br /> <br /> AF in patients with HCM is often poorly tolerated; therefore, aggressive rhythm control strategies are at times required. In view of the lower success rate of catheter ablation in HCM compared with the general AF population, surgical AF ablation is a potential rhythm management option, especially in patients already undergoing open heart surgery for a surgical myectomy. In combination with surgical relief of the LVOT gradient and MR, which can limit or even reverse negative atrial remodeling, concomitant surgical AF ablation may be successful in decreasing AF burden. Several studies have reported satisfactory midterm efficacy, yet these reports universally include a small number of patients, and the durability of the procedure appears to decrease with time (27, 29). In a recent study that represents the largest series of patients with AF treated surgically, freedom from AF recurrence at 1 year was 44% for ablation patients (n=49) and 75% with the maze procedure (n=72) (P&lt;0.001) (10). In this study, with concomitant surgical ablation, freedom from AF at 3 years was 70%, left atrial size being a predictor of recurrence (10). Data on the stand-alone surgical AF ablation are scant but have been reported in a limited number of patients."
+		],
+		"pointofcare": [
+			"Treatment"
+		],
+		"conditions": [
+			"Hypertrophic Cardiomyopathy",
+			"Atrial Fibrillation"
+		],
+		"refinfo": [
+			"<reference id=\"bib10\" doi=\"\">Sorajja P, Ommen SR, Holmes DR, Jr., et al. Survival after alcohol septal ablation for obstructive hypertrophic cardiomyopathy. Circulation. 2012;126:2374-80.</reference>",
+			"<reference id=\"bib13\" doi=\"\">Semsarian C, Ingles J, Maron MS, et al. New perspectives on the prevalence of hypertrophic cardiomyopathy. Journal of the American College of Cardiology. 2015;65:1249-54.</reference>",
+			"<reference id=\"bib27\" doi=\"\">van Velzen HG, Schinkel AFL, Baart SJ, et al. Outcomes of Contemporary Family Screening in Hypertrophic Cardiomyopathy. Circ Genom Precis Med. 2018;11:e001896.</reference>",
+			"<reference id=\"bib28\" doi=\"\">Ranthe MF, Carstensen L, Oyen N, et al. Risk of Cardiomyopathy in Younger Persons With a Family History of Death from Cardiomyopathy: A Nationwide Family Study in a Cohort of 3.9 Million Persons. Circulation. 2015;132:1013-9.</reference>",
+			"<reference id=\"bib29\" doi=\"\">Lafreniere-Roula M, Bolkier Y, Zahavich L, et al. Family screening for hypertrophic cardiomyopathy: Is it time to change practice guidelines? Eur Heart J. 2019;40:3672-81.</reference>"
+		],
+		"vol": null,
+		"issue": null,
+		"pages": null,
+		"coverdatetext": null,
+		"coverdatestart": null,
+		"statustype": null,
+		"citation": "J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2020.08.045",
+		"hub": "/Guidelines/Hubs/Hypertrophic-Cardiomyopathy",
+		"jacclink": "https://www.jacc.org/doi/10.1016/j.jacc.2020.08.045#sec19.3",
+		"pdflink": "https://www.jacc.org/doi/pdf/10.1016/j.jacc.2020.08.045",
+		"gltitle": "Hypertrophic Cardiomyopathy",
+		"url": ""
+	},
+	{
+		"eid": "71-s2.0-HCM2020-8.3-1",
+		"itemtitle": "8.3. Management of Patients With HCM and Atrial Fibrillation",
+		"itemtitleFormatted": "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>",
+		"summary": "In patients with HCM and clinical AF, anticoagulation is recommended with direct-acting oral anticoagulants (DOAC) as first-line option and vitamin K antagonists as second-line option, independent of CHA2DS2-VASc score. AF, commonly observed in pa...",
+		"contenttype": [
+			"ACCG"
+		],
+		"pubdate": null,
+		"sectiontitle": [
+			"8. Management of HCM",
+			"8.3. Management of Patients With HCM and Atrial Fibrillation"
+		],
+		"doi": "10.1016/j.jacc.2020.08.045",
+		"subtype": "publication",
+		"sectionid": null,
+		"sectiontitleformatted": [
+			"<span>8. Management of HCM</span>",
+			"<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>"
+		],
+		"refimage": null,
+		"caption": null,
+		"loe": "B-NR",
+		"cor": "1",
+		"abs": [
+			"In patients with HCM and clinical AF, anticoagulation is recommended with direct-acting oral anticoagulants (DOAC) as first-line option and vitamin K antagonists as second-line option, independent of CHA<sub>2</sub>DS<sub>2</sub>-VASc score."
+		],
+		"comments": [
+			"AF, commonly observed in patients with HCM, is associated with significant morbidity, impaired quality of life, and substantial stroke risk. Therapy includes prevention of thromboembolic events and controlling symptoms. Traditional stroke risk scoring systems used in the general population are not predictive in patients with HCM. Vitamin K antagonists are effective for stroke prevention, and recent studies support the use of DOACs as well. In view of the substantial stroke risk, periodic AF surveillance would allow for early intervention with anticoagulants in high-risk patients. Asymptomatic AF detected by cardiac devices or monitors also increases risk of stroke, so the decision to anticoagulate should take into considerations the duration of episodes as well as underlying risk factors. When a rhythm control strategy is needed, a number of antiarrhythmic drugs have been shown to be safe and effective, allowing for individualization according to underlying substrate and patient preference. Catheter ablation is also an important option, although the procedure is less effective than in the general population, and there is a more frequent need of repeat procedures and concomitant use of antiarrhythmic drugs. Surgical AF ablation, often with atrial appendage removal, is a potential rhythm management option in patients undergoing surgical myectomy. Surgical AF ablation or maze is not frequently pursued as an isolated surgical indication. Other supraventricular arrhythmias and atrial flutter are likely not increased in incidence in patients with HCM, and treatment is usually similar to populations without HCM.<br /> <br /> Clinical AF is AF that causes symptoms for which patients seek medical attention. Although there are no RCTs, the risk of systemic embolization is high in patients with HCM with AF. A meta-analysis that included 33 studies and 7,381 patients revealed an overall prevalence of thromboembolism in patients with HCM with AF of 27.09% and incidence of 3.75 per 100 patients) (1). The stroke risk is independent of CHA<sub>2</sub>DS<sub>2</sub>-VASc score (30), with a significant number of strokes observed in patients with a score of 0. A number of studies have shown that anticoagulation, particularly warfarin with target international normalized ratio 2 to 3, reduces the stroke risk in this population (2, 30), whereas more recent publications have shown DOACs to be at least as effective as warfarin, with additional advantages reported, such as improved patient satisfaction and long-term outcomes (3-5). Although left atrial appendage occlusion devices have been evaluated in populations, the number of patients with HCM in these trials was limited. Thus, the role of left atrial appendage occlusion devices in HCM remains untested. The recommendations for anticoagulation of patients with atrial flutter are the same as those for patients with AF (14)."
+		],
+		"pointofcare": [
+			"Treatment"
+		],
+		"conditions": [
+			"Hypertrophic Cardiomyopathy",
+			"Atrial Fibrillation"
+		],
+		"refinfo": [
+			"<reference id=\"bib1\" doi=\"\">Quality AfHRa. The CAHPS Ambulatory Care Improvement Guide: Practical Strategies for Improving Patient Experience. Available at: https://www.ahrq.gov/cahps/quality-improvement/improvement-guide/6-strategies-for-improving/communication/strategy6i-shared-decisionmaking.html. Accessed: October 7.</reference>",
+			"<reference id=\"bib2\" doi=\"\">Quality AfHRa. AHRQ Health Literacy Universal Precautions Toolkit. Available at: Accessed: January 1.</reference>",
+			"<reference id=\"bib3\" doi=\"\">Greenfield S, Kaplan SH, Ware JE, Jr., et al. Patients' participation in medical care: effects on blood sugar control and quality of life in diabetes. J Gen Intern Med. 1988;3:448-57.</reference>",
+			"<reference id=\"bib4\" doi=\"\">Greenfield S, Kaplan S, Ware JE, Jr. Expanding patient involvement in care. Effects on patient outcomes. Ann Intern Med. 1985;102:520-8.</reference>",
+			"<reference id=\"bib5\" doi=\"\">Kaplan SH, Greenfield S, Ware JE, Jr. Assessing the effects of physician-patient interactions on the outcomes of chronic disease. Med Care. 1989;27:S110-27.</reference>"
+		],
+		"vol": null,
+		"issue": null,
+		"pages": null,
+		"coverdatetext": null,
+		"coverdatestart": null,
+		"statustype": null,
+		"citation": "J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2020.08.045",
+		"hub": "/Guidelines/Hubs/Hypertrophic-Cardiomyopathy",
+		"jacclink": "https://www.jacc.org/doi/10.1016/j.jacc.2020.08.045#sec19.3",
+		"pdflink": "https://www.jacc.org/doi/pdf/10.1016/j.jacc.2020.08.045",
+		"gltitle": "Hypertrophic Cardiomyopathy",
+		"url": ""
+	},
+	{
+		"eid": "71-s2.0-HCM2020-8.3-3",
+		"itemtitle": "8.3. Management of Patients With HCM and Atrial Fibrillation",
+		"itemtitleFormatted": "<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>",
+		"summary": "In patients with AF in whom rate control strategy is planned, either beta-blockers, verapamil, or diltiazem are recommended, with the choice of agents according to patient preferences and comorbid conditions. AF, commonly observed in patients with...",
+		"contenttype": [
+			"ACCG"
+		],
+		"pubdate": null,
+		"sectiontitle": [
+			"8. Management of HCM",
+			"8.3. Management of Patients With HCM and Atrial Fibrillation"
+		],
+		"doi": "10.1016/j.jacc.2020.08.045",
+		"subtype": "publication",
+		"sectionid": null,
+		"sectiontitleformatted": [
+			"<span>8. Management of HCM</span>",
+			"<span>8.3. Management of Patients With HCM and Atrial Fibrillation</span>"
+		],
+		"refimage": null,
+		"caption": null,
+		"loe": "C-LD",
+		"cor": "1",
+		"abs": [
+			"In patients with AF in whom rate control strategy is planned, either beta-blockers, verapamil, or diltiazem are recommended, with the choice of agents according to patient preferences and comorbid conditions."
+		],
+		"comments": [
+			"AF, commonly observed in patients with HCM, is associated with significant morbidity, impaired quality of life, and substantial stroke risk. Therapy includes prevention of thromboembolic events and controlling symptoms. Traditional stroke risk scoring systems used in the general population are not predictive in patients with HCM. Vitamin K antagonists are effective for stroke prevention, and recent studies support the use of DOACs as well. In view of the substantial stroke risk, periodic AF surveillance would allow for early intervention with anticoagulants in high-risk patients. Asymptomatic AF detected by cardiac devices or monitors also increases risk of stroke, so the decision to anticoagulate should take into considerations the duration of episodes as well as underlying risk factors. When a rhythm control strategy is needed, a number of antiarrhythmic drugs have been shown to be safe and effective, allowing for individualization according to underlying substrate and patient preference. Catheter ablation is also an important option, although the procedure is less effective than in the general population, and there is a more frequent need of repeat procedures and concomitant use of antiarrhythmic drugs. Surgical AF ablation, often with atrial appendage removal, is a potential rhythm management option in patients undergoing surgical myectomy. Surgical AF ablation or maze is not frequently pursued as an isolated surgical indication. Other supraventricular arrhythmias and atrial flutter are likely not increased in incidence in patients with HCM, and treatment is usually similar to populations without HCM.<br /> <br /> Given the poor tolerance of AF in patients with HCM, a rhythm-control strategy is often preferred, because more recent data support improved outcomes with a rhythm-control strategy compared with historical controls (9, 10). For those patients for whom a rate-control strategy is chosen (e.g., because of patient choice, antiarrhythmic drug failure, or intolerance), a non-dihydropyridine calcium channel blocker, a beta-blocker, or a combination of the two is preferable. There is a theoretical concern that digoxin could exacerbate LVOTO attributable to a positive inotropic effect. However, in the absence of a gradient, digoxin is a potential option although data on efficacy in this population are lacking. The choice of medication should be individually determined according to age, underlying substrate, and comorbidities, as well as severity of symptoms. Dose adjustments are based on the balance between adequate rate control versus side effects, including excessive bradycardia. In patients with hypotension, dyspnea at rest and very high resting gradients (e.g., &gt;100 mm Hg), verapamil should be avoided. Atrioventricular node ablation with pacemaker implantation can be a last option in refractory cases."
+		],
+		"pointofcare": [
+			"Treatment"
+		],
+		"conditions": [
+			"Hypertrophic Cardiomyopathy",
+			"Atrial Fibrillation"
+		],
+		"refinfo": [
+			"<reference id=\"bib9\" doi=\"\">Panaich SS, Badheka AO, Chothani A, et al. Results of ventricular septal myectomy and hypertrophic cardiomyopathy (from Nationwide Inpatient Sample [1998-2010]). Am J Cardiol. 2014;114:1390-5.</reference>",
+			"<reference id=\"bib10\" doi=\"\">Sorajja P, Ommen SR, Holmes DR, Jr., et al. Survival after alcohol septal ablation for obstructive hypertrophic cardiomyopathy. Circulation. 2012;126:2374-80.</reference>"
+		],
+		"vol": null,
+		"issue": null,
+		"pages": null,
+		"coverdatetext": null,
+		"coverdatestart": null,
+		"statustype": null,
+		"citation": "J Am Coll Cardiol. 0001 Jan 1. doi: 10.1016/j.jacc.2020.08.045",
+		"hub": "/Guidelines/Hubs/Hypertrophic-Cardiomyopathy",
+		"jacclink": "https://www.jacc.org/doi/10.1016/j.jacc.2020.08.045#sec19.3",
+		"pdflink": "https://www.jacc.org/doi/pdf/10.1016/j.jacc.2020.08.045",
+		"gltitle": "Hypertrophic Cardiomyopathy",
+		"url": ""
+	},
+	{
+		"eid": "71-s2.0-BRADY-8.1.2.2-3",
+		"itemtitle": "8.1.2.2. Surgery for Atrial Fibrillation",
+		"itemtitleFormatted": "<span>8.1.2.2. Surgery for Atrial Fibrillation</span>",
+		"summary": "In patients undergoing surgery for AF who will likely require future CRT or ventricular pacing, intraoperative placement of a permanent epicardial left ventricular lead may be considered. AF is present in 30% to 50% of patients undergoing valve su...",
+		"contenttype": [
+			"ACCG"
+		],
+		"pubdate": null,
+		"sectiontitle": [
+			"JACC (Journal of the American College of Cardiology)",
+			"8. Special Populations",
+			"8.1. Perioperative Management",
+			"8.1.1. Patients at Risk for Bradycardia During Noncardiac Surgery or Procedures",
+			"8.1.2.2. Surgery for Atrial Fibrillation"
+		],
+		"doi": "10.1016/j.jacc.2018.10.044",
+		"subtype": "publication",
+		"sectionid": null,
+		"sectiontitleformatted": [
+			"<span>JACC (Journal of the American College of Cardiology)</span>",
+			"<span>8. Special Populations</span>",
+			"<span>8.1. Perioperative Management</span>",
+			"<span>8.1.1. Patients at Risk for Bradycardia During Noncardiac Surgery or Procedures</span>",
+			"<span>8.1.2.2. Surgery for Atrial Fibrillation</span>"
+		],
+		"refimage": null,
+		"caption": null,
+		"loe": "C-EO",
+		"cor": "2b",
+		"abs": [
+			"In patients undergoing surgery for AF who will likely require future CRT or ventricular pacing, intraoperative placement of a permanent epicardial left ventricular lead may be considered."
+		],
+		"comments": [
+			"AF is present in 30% to 50% of patients undergoing valve surgery and is associated with reduced survival and increased risk of stroke (S8.1.2.2-2). Successful surgical correction of AF is associated with improved patient survival compared with patients who have recurrent AF (S8.1.2.2-5). Up to 65% of patients undergoing mitral surgery with AF undergo surgery directed toward management of AF (S8.1.2.2-6). A recent single center study found reported that 11% of patients undergoing a Cox Maze IV procedure in addition to mitral valve surgery required postoperative PPM implantation (S8.1.2.2-4).<br /> <br /> The data on whether surgery for AF is associated with an increased risk for postoperative bradycardia and PPM implant are mixed, in part caused by the significant evolution in the lesion set and surgical technique (S8.1.2.2-1--S8.1.2.2-4). An analysis of the STS registry and an RCT found that adding ablation for AF was associated with an increased likelihood of PPM implantation (S8.1.2.2-1, S8.1.2.2-2). However, a meta-analysis of 16 RCTs found no difference in need for permanent pacer in patients randomized to additional surgery for AF (OR: 0.88; 95% CI: 0.51--1.51; p=0.64) (S8.1.2.2-3). <br /> <br /> Surgical left ventricular lead placement is performed as a stand-alone procedure when placement via coronary sinus is unsuccessful (S8.1.2.2-7). If a patient has an indication for cardiac resynchronization before cardiac surgery, an epicardial placement of a left ventricular lead at the time of surgery for AF may offer future benefit without significant risk of harm. In addition, placement of a nonapical, lateral epicardial lead will allow more pacing options if the patient undergoes a future atrioventricular nodal ablation. Although traditionally considered a contraindication, it may be that MRI can be performed safely in selected patients with abandoned leads under the auspices of specialized protocols (S8.1.2.2-8--S8.1.2.2-10). At the time of a future CRT procedure the operator can implant a coronary sinus lead or use the capped epicardial lead if necessary."
+		],
+		"pointofcare": [
+			"Treatment",
+			"Follow-up"
+		],
+		"conditions": [
+			"Atrial Fibrillation",
+			"Perioperative CV Eval for NonCV Surgery",
+			"Bradycardia",
+			"Heart Failure"
+		],
+		"refinfo": [
+			"<reference id=\"bib795\" doi=\"10.1016/j.athoracsur.2004.10.041\"> Navia JL, Atik FA, Grimm RA, et al. Minimally invasive left ventricular epicardial lead placement: surgical techniques for heart failure resynchronization therapy. Ann Thorac Surg. 2005;79:1536-44; discussion-44.</reference>",
+			"<reference id=\"bib796\" doi=\"\"> Kusumoto FM, Schoenfeld MH, Wilkoff BL, et al. 2017 HRS expert consensus statement on cardiovascular implantable electronic device lead management and extraction. Heart Rhythm. 2017;14:e503-51.</reference>",
+			"<reference id=\"bib797\" doi=\"10.1016/j.hrthm.2017.04.025\"> Indik JH, Gimbel JR, Abe H, et al. 2017 HRS expert consensus statement on magnetic resonance imaging and radiation exposure in patients with cardiovascular implantable electronic devices. Heart Rhythm. 2017;14:e97-153.</reference>",
+			"<reference id=\"bib798\" doi=\"\"> Padmanabhan D, Kella DK, Mehta R, et al. Safety of magnetic resonance imaging in patients with legacy pacemakers and defibrillators and abandoned leads. Heart Rhythm. 2018;15:228-33.</reference>"
+		],
+		"vol": "74",
+		"issue": "7",
+		"pages": "e51",
+		"coverdatetext": null,
+		"coverdatestart": "2019-08-20",
+		"statustype": "S300",
+		"citation": "J Am Coll Cardiol. 2019 Aug 20;74(7):e51",
+		"hub": "/Guidelines/Hubs/Bradycardia-and-Cardiac-Conduction-Delay",
+		"jacclink": "http://www.onlinejacc.org/content/74/7/e51#sec12.1.2.2",
+		"pdflink": "http://www.onlinejacc.org/content/74/7/e51.full.pdf",
+		"gltitle": "Bradycardia and Cardiac Conduction Delay",
+		"url": ""
+	},
+	{
+		"eid": "71-s2.0-AF-6.1.1-1",
+		"itemtitle": "6.1.1 Prevention of Thromboembolism: Recommendations",
+		"itemtitleFormatted": "<span>6.1.1 Prevention of Thromboembolism: Recommendations</span>",
+		"summary": "For patients with AF or atrial flutter of 48 hours' duration or longer, or when the duration of AF is unknown, anticoagulation with warfarin (INR 2.0 to 3.0), a factor Xa inhibitor, or direct thrombin inhibitor is recommended for at least 3 weeks ...",
+		"contenttype": [
+			"ACCG"
+		],
+		"pubdate": null,
+		"sectiontitle": [
+			"JACC (Journal of the American College of Cardiology)",
+			"6 Rhythm Control",
+			"6.1 Electrical and Pharmacological Cardioversion of AF and Atrial Flutter",
+			"6.1.1 Prevention of Thromboembolism: Recommendations"
+		],
+		"doi": "10.1016/j.jacc.2019.01.011",
+		"subtype": "publication",
+		"sectionid": null,
+		"sectiontitleformatted": [
+			"<span>JACC (Journal of the American College of Cardiology)</span>",
+			"<span>6 Rhythm Control</span>",
+			"<span>6.1 Electrical and Pharmacological Cardioversion of AF and Atrial Flutter</span>",
+			"<span>6.1.1 Prevention of Thromboembolism: Recommendations</span>"
+		],
+		"refimage": null,
+		"caption": null,
+		"loe": "B-R",
+		"cor": "1",
+		"abs": [
+			"For patients with AF or atrial flutter of 48 hours&#39; duration or longer, or when the duration of AF is unknown, anticoagulation with warfarin (INR 2.0 to 3.0), a factor Xa inhibitor, or direct thrombin inhibitor is recommended for at least 3 weeks before and at least 4 weeks after cardioversion, regardless of the CHA<sub>2</sub>DS<sub>2</sub>-VASc score or the method (electrical or pharmacological) used to restore sinus rhythm."
+		],
+		"comments": [
+			"Three prospective RCTs have evaluated the safety and efficacy of newly initiated factor Xa inhibitors (rivaroxaban and apixaban) for cardioversion as an alternative to warfarin (S6.1.1-7, S6.1.1-8, S6.1.1-17). In addition, retrospective analyses have been performed on the subset of patients undergoing cardioversion within the context of the larger randomized trials that compared each of the FDA-approved NOACs with warfarin for thromboembolism prevention with AF. The results were consistent and support the assertion that NOACs are an effective and safe alternative to warfarin for patients undergoing cardioversion. An alternative to waiting 3 weeks before cardioversion is to perform transesophageal echocardiography to exclude thrombus (see separate recommendation in this section). The decision about long-term anticoagulant therapy (beyond 4 weeks) is based on the thromboembolic risk profile (Section 4) and bleeding risk profile. The &quot;48-hour rule&quot; has also been questioned, because delay to cardioversion of 12 hours or longer from symptom onset was associated with a greater risk of thromboembolic complications compared to cardioversion of less than 12 hours (1.1% versus 0.3%) (S6.1.1-18) and the risk of thromboembolic complications with cardioversion of 12 hour or longer increases substantially in patients &gt;75 years of age and in women (S6.1.1-19)."
+		],
+		"pointofcare": [
+			"Treatment"
+		],
+		"conditions": [
+			"Atrial Fibrillation",
+			"Prevention"
+		],
+		"refinfo": [
+			"<reference id=\"bibfu107\" doi=\"10.1016/S0735-1097(02)02052-1\">Gallagher MM, Hennessy BJ, Edvardsson N, et al. Embolic complications of direct current cardioversion of atrial arrhythmias: association with low intensity of anticoagulation at the time of cardioversion. J Am Coll Cardiol. 2002;40:926-33.</reference>",
+			"<reference id=\"bibfu108\" doi=\"10.1067/mhj.2000.106648\">Jaber WA, Prior DL, Thamilarasan M, et al. Efficacy of anticoagulation in resolving left atrial and left atrial appendage thrombi: a transesophageal echocardiographic study. Am Heart J. 2000;140:150-6.</reference>",
+			"<reference id=\"bibfu109\" doi=\"10.1378/chest.11-2304\">You JJ, Singer DE, Howard PA, et al. Antithrombotic therapy for atrial fibrillation: antithrombotic therapy and prevention of thrombosis, 9th ed: American College of Chest Physicians evidence-based clinical practice guidelines. Chest. 2012;141:e531S-e575S.</reference>",
+			"<reference id=\"bibfu110\" doi=\"10.1161/CIRCULATIONAHA.110.977546\">Nagarakanti R, Ezekowitz MD, Oldgren J, et al. Dabigatran versus warfarin in patients with atrial fibrillation: an analysis of patients undergoing cardioversion. Circulation. 2011;123:131-6.</reference>",
+			"<reference id=\"bibfu111\" doi=\"10.1016/j.jacc.2013.02.025\">Piccini JP, Stevens SR, Lokhnygina Y, et al. Outcomes after cardioversion and atrial fibrillation ablation in patients treated with rivaroxaban and warfarin in the ROCKET AF trial. J Am Coll Cardiol. 2013;61:1998-2006.</reference>",
+			"<reference id=\"bibfu112\" doi=\"10.1016/j.jacc.2013.09.062\">Flaker G, Lopes RD, Al-Khatib SM, et al. Efficacy and safety of apixaban in patients after cardioversion for atrial fibrillation: insights from the ARISTOTLE Trial (Apixaban for Reduction in Stroke and Other Thromboembolic Events in Atrial Fibrillation). J Am Coll Cardiol. 2014;63:1082-7.</reference>",
+			"<reference id=\"bibfu113\" doi=\"10.1093/eurheartj/ehu367\">Cappato R, Ezekowitz MD, Klein AL, et al. Rivaroxaban vs. vitamin K antagonists for cardioversion in atrial fibrillation. Eur Heart J. 2014;35:3346-55.</reference>",
+			"<reference id=\"bibfu114\" doi=\"\">Goette A, Merino JL, Ezekowitz MD, et al. Edoxaban versus enoxaparin-warfarin in patients undergoing cardioversion of atrial fibrillation (ENSURE-AF): a randomised, open-label, phase 3b trial. Lancet. 2016;388:1995-2003.</reference>",
+			"<reference id=\"bibfu115\" doi=\"\">Pallisgaard JL, Lindhardt TB, Hansen ML, et al. Cardioversion and risk of adverse events with dabigatran versus warfarin-a nationwide cohort study. PLoS ONE. 2015;10:e0141377.</reference>",
+			"<reference id=\"bibfu116\" doi=\"\">Plitt A, Ezekowitz MD, De Caterina R, et al. Cardioversion of atrial fibrillation in ENGAGE AF-TIMI 48. Clin Cardiol. 2016;39:345-6.</reference>",
+			"<reference id=\"bibfu117\" doi=\"\">Dentali F, Botto GL, Gianni M, et al. Efficacy and safety of direct oral anticoagulants in patients undergoing cardioversion for atrial fibrillation: a systematic review and meta-analysis of the literature. Int J Cardiol. 2015;185:72-7.</reference>",
+			"<reference id=\"bibfu118\" doi=\"\">Ezekowitz MD, Pollack CV Jr, Halperin JL, et al. Apixaban compared to heparin/vitamin K antagonist in patients with atrial fibrillation scheduled for cardioversion: the EMANATE trial. Eur Heart J. 2018;39:2959-71.</reference>"
+		],
+		"vol": "74",
+		"issue": "1",
+		"pages": "104",
+		"coverdatetext": null,
+		"coverdatestart": "2019-07-09",
+		"statustype": "S300",
+		"citation": "J Am Coll Cardiol. 2019 Jul 9;74(1):104",
+		"hub": "/Guidelines/Hubs/Atrial-Fibrillation",
+		"jacclink": "http://www.onlinejacc.org/content/74/1/104#sec6.1.1",
+		"pdflink": "http://www.onlinejacc.org/content/74/1/104.full.pdf",
+		"gltitle": "Atrial Fibrillation (Focused Update)",
+		"url": ""
+	}
+
 
 ];
 

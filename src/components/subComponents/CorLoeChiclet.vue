@@ -27,26 +27,26 @@ export default {
 			type: String,
 			default: "C",
 			validator: function (value) {
-				return ['A', 'B-R', 'B-NR', 'C-EO','C-LD'].indexOf(value) !== -1;
+				return ['A', 'B','B-R', 'B-NR', 'C-EO','C-LD'].indexOf(value) !== -1;
 			},
 		},
 		cor: {
 			type: String,
 			default: "harm",
 			validator: function (value) {
-				return ['1', '2a','2b', '3', 'harm', 'no-benefit'].indexOf(value) !== -1;
+				return ['1', '2a','2b', '3', '3: Harm', 'no-benefit'].indexOf(value) !== -1;
 			},
 		},
 	},
 	computed: {
 		coreComputed() {
 			let cor = { label: "", value: '' };
-			switch (this.cor) {
+			switch (this.cor.toLowerCase()) {
 				case "1":
 					cor.label = '1';
 					cor.value = 'I';
 					break;
-				case "2b":
+				case "b":
 					cor.label = '2b';
 					cor.value = 'IIB';
 					break;
@@ -58,7 +58,7 @@ export default {
 					cor.label = '3';
 					cor.value = 'III';
 					break;
-				case "harm":
+				case "3: harm":
 					cor.label = '3: Harm';
 					cor.value = 'III-HARM';
 					break;
@@ -72,10 +72,13 @@ export default {
 			return cor;
 		},
 		loeStyle() {
-			return "bg_loe-" + this.loe;
+			let post = (this.loe == 'B')?'-BR':'';
+			return "bg_loe-" + this.loe + post;
 		},
 		corStyle() {
-			return "bg_cor-" + this.coreComputed.value;
+			let background = "bg_cor-" + this.coreComputed.value;
+			let fontcolor = (this.coreComputed.value == 'III-NOBENEFIT' || this.coreComputed.value == 'III-HARM' )?'c_white': 'c_black';
+			return background + ' ' + fontcolor;
 		}
 	}
 

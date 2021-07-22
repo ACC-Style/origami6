@@ -7,19 +7,24 @@
 		@onclick="$emit('onClick', $event)"
 	>
 		<div class="flex flex_row:md flex_column flex relative"  @mouseenter="
-						() => {
-							actionColor = actionColorDefault;
-							actionIcon = actionIconDefault;
-							actionTask = actionTaskDefault;
-						}
-					">
-					<StatefullIcon :showIcon="true" :state="state" :icon="'far fa-cube'" class="flex_none p_2 m_n1 m-r_0" />
+            () => {
+                actionColor = actionColorDefault;
+                actionIcon = actionIconDefault;
+                actionTask = actionTaskDefault;
+            }
+            ">
+			<StatefullIcon :showIcon="true" :state="state" :icon="'far fa-cubes'" class="flex_none p_2 m_n1 m-r_0" />
 			<div class="flex_none w_40:lg p-y_3 p-l_4 p-r_4:md p-r_5">
-				<h3 class="c_primary m_0 font-size_up p-y_2 lh_1 font_display">{{ label }}
+				<h3 class="c_primary m_0 font-size_up-1 p-y_2 lh_1 font_display">{{ label }}
 
 				</h3>
-				<small class="c_black-7 font-size_down-2 block m-l_1">{{
-					releaseMode
+				<small class="c_black-7 font-size_down-1 block m-l_1"><strong>Dates: </strong>{{
+					startDate
+				}} - {{
+					endDate
+				}}</small>
+                <small class="c_black-7 font-size_down-1 block m-l_1"><strong>Type: </strong>{{
+					type
 				}}</small>
 			</div>
 			<div
@@ -143,11 +148,9 @@ export default {
 	name: "ChannelListItem",
 	props: {
 		label: { type: String, default: 'Label is Missing' },
-		releaseMode: {
-			type: String,
-			default: 'Scheduled',
-			validator: function (value) { return ['Scheduled', 'On Demand'].indexOf(value) !== -1; }
-		},
+		startDate: { type: String, default: 'Start Date is Missing' },
+        endDate: { type: String, default: 'End Date is Missing' },
+        type: { type: String, default: 'undefined' },
 		credits: { type: Array, default: () => [] },
 		chartData: { type: Array, default: () => [] },
 		actionColorDefault: { type: String, default: 'accent' },
@@ -167,7 +170,7 @@ export default {
 			actionTask: this.actionTaskDefault,
 		};
 	},
-	computed:{
+    computed:{
         state:function(){
             if(this.chartData.length == 0){ return 'shade';}         
             let chartState = this.chartData.reduce((prev, curr) => {

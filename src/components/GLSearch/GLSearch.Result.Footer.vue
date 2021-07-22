@@ -6,7 +6,7 @@
 			<div
 				class="document-title font_slab c_black-8 font_n1 nowrap overflow_ellipsis p-x_3 p-y_2"
 			>
-				{{ documentTitle }}
+				{{ gltitle }}
 			</div>
 			<div>
 				<ul
@@ -14,13 +14,12 @@
 				>
 					<li
 						class="flex_shrink max-w_1 overflow_ellipsis inline-block vertical-align_middle"
-						v-for="(crumb, index) in breadcrumb"
-						:key="index"
+						v-for="(crumb, index) in sectiontitleformatted"
+						:key="index" 
 
 					>
-
-						{{ crumb }}
-						<i
+						<span v-html='crumb' v-if="index>0"></span>
+						<i v-if="index>0"
 							class="fas fa-chevron-right font_n3 p_2 c_black-4"
 						></i>
 					</li>
@@ -29,14 +28,14 @@
 			</div>
 			<div class="flex flex_inline flex_wrap font_n3 p-x_3">
 				<div
-					v-if="pointOfCare != null"
+					v-if="pointofcare != null"
 					class="flex_inline flex_shrink flex c_black-7"
 				>
 					<strong>Point of Care:</strong>
 					<ul class="ul_none overflow_ellipsis flex c_black-6 nowrap">
 						<li
 							class="flex_shrink max-w_1 overflow_ellipsis inline-block vertical-align_middle m-l_2"
-							v-for="(poc, index) in pointOfCare"
+							v-for="(poc, index) in pointofcare"
 							:key="'poc_' + index"
 						>
 							<span class="m-r_2 inline" v-if="index!=0">,</span>
@@ -45,7 +44,7 @@
 					</ul>
 				</div>
 				<div
-					v-if="conditions != null"
+					v-if="conditions != null || pointofcare != null"
 					class="display_none inline-block:md flex_shrink c_black-4"
 				>
 					<i class="fas fa-horizontal-rule fa-rotate-90"></i>
@@ -71,9 +70,9 @@
 			</div>
 			<nav class="p-y_2 flex_inline flex gap-x_2">
 				<BTN
-					v-if="docURL != ''"
+					v-if="jacclink != ''"
 					:class="btnStyles"
-					@click="$emit('onNavigate', docURL)"
+					@click="$emit('onNavigate', jacclink)"
 					:state="btnState"
 					:shadow="false"
 					:size="btnSize"
@@ -85,9 +84,9 @@
 					</span>
 				</BTN>
 				<BTN
-					v-if="pdfURL != ''"
+					v-if="pdflink != ''"
 					:class="btnStyles"
-					@click="$emit('onNavigate', pdfURL)"
+					@click="$emit('onNavigate', pdflink)"
 					:state="btnState"
 					:shadow="false"
 					:size="btnSize"
@@ -98,9 +97,9 @@
 					</span>
 				</BTN>
 				<BTN
-					v-if="hubULR != ''"
+					v-if="hub != ''"
 					:class="btnStyles"
-					@click="$emit('onNavigate', hubULR)"
+					@click="$emit('onNavigate', hub)"
 					:state="btnState"
 					:shadow="false"
 					:size="btnSize"
@@ -146,7 +145,7 @@
 					<span class="">cite document:</span>
 				</strong>
 				<span class="flex_auto overflow_ellipsis">{{
-					documentTitle
+					gltitle
 				}}</span>
 			</div>
 			<div
@@ -173,13 +172,12 @@ export default {
 	mixins: [ResponsiveMixin],
 	props: {
 		eid: { type: String },
-		documentTitle: { type: String },
-		sections: { type: Array },
-		docURL: { type: String },
-		pdfURL: { type: String },
-		hubULR: { type: String },
-		breadcrumb: { type: Array, default: null },
-		pointOfCare: { type: Array, default: null },
+		gltitle: { type: String },
+		sectiontitleformatted: { type: Array },
+		jacclink: { type: String },
+		pdflink: { type: String },
+		hub: { type: String },
+		pointofcare: { type: Array, default: null },
 		conditions: { type: Array, default: null },
 		amendments: { type: Array, default: null },
 	},

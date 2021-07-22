@@ -2,29 +2,27 @@
 	<ResultContainer
 		:eid="eid"
 		:type="type"
-		:sections="sections"
-		:documentTitle="documentTitle"
-		:docURL="docURL"
-		:pdfURL="pdfURL"
-		:hubURL="hubURL"
-		:breadcrumb="breadcrumb"
-		:pointOfCare="pointOfCare"
+		:sectiontitleformatted="sectiontitleformatted"
+		:gltitle="gltitle"
+		:jacclink="jacclink"
+		:pdflink="pdflink"
+		:hub="hub"
+		:pointofcare="pointofcare"
 		:conditions="conditions"
 		:amendments="amendments"
 		@onNavigate="$emit('onNavigate')"
 	>
 		<main class="result-content p-x_4 p-b_4 font_copy font_0 lh_3 relative">
-			<h2>{{ sectionTitle }}</h2>
-			<TransitionExpand>
-				<div class="block swg-result" v-if="isExpanded">
-					<div v-html="summary" v-if="!el.is.lg"></div>
-					<div v-html="content">
-						<LoadingText />
-					</div>
+			<h2 v-html="itemtitleFormatted"></h2>
+			<div class="block swg-result" v-if="!isExpanded">
+				<div v-if="!el.is.lg"><div class="inline-block float_left clear_left m-b_3" v-html="results" ></div>
 				</div>
-			</TransitionExpand>
+				<div  v-if="el.is.lg" v-html="summary">
+					<LoadingText />
+				</div>
+			</div>
 			<TransitionExpand>
-				<div v-html="summary" v-if="!isExpanded"></div>
+				<div v-html="results" class='swg-result' v-if="isExpanded"></div>
 			</TransitionExpand>
 			<div
 				@click="isExpandedBoolean = !isExpandedBoolean"
@@ -71,21 +69,20 @@ export default {
 	},
 	props: {
 		type: { type: String, default: "Table" },
-		summary: { type: String, default: "summary didn't load" },
-		content: { type: String, default: "" },
-		documentTitle: { type: String },
-		docURL: { type: String, default: "" },
-		pdfURL: { type: String, default: "" },
-		hubURL: { type: String, default: "" },
-		sections: { type: Array },
+		summary: { type:  String, default: "Summary Didn't Load"},
+		results: { type: String, default: "" },
+		gltitle: { type: String },
+		jacclink: { type: String, default: "" },
+		pdflink: { type: String, default: "" },
+		hub: { type: String, default: "" },
 		eid: { type: String },
 		loe: { type: String },
 		cor: { type: String },
-		pointOfCare: { type: Array, default: null },
+		pointofcare: { type: Array, default: null },
 		conditions: { type: Array, default: null },
 		amendments: { type: Array, default: null },
-		breadcrumb: { type: Array },
-		sectionTitle: { type: String },
+		itemtitleFormatted: { type: String },
+		sectiontitleformatted: { type: Array },
 	},
 	data() {
 		return {

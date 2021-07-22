@@ -5,14 +5,14 @@
 	>
 		<div
 			class="flex_auto br_1 br_solid br_black-1 c_white-8 p_3 p-b_2 text_right"
-			:class="['bg_' + block.color+'-n2',{'opacity_3': block.count==0}]"
+			:class="['bg_' + block.color+'-n2',{'opacity_3':  (block.count==0 || block.count == null) }]"
 			v-for="(block, index) in chartData"
 			:key="'block' + index"
 		>
 			<div class="flex flex-row">
 				<div class="flex_auto">
 					<span class="lowercase lh_0 font_light block font-size_up-2">
-				{{ block.count }}
+				{{ block.count || 0}}
 			</span>
 			<span class="lowercase block font-size_down-1 font_bold c_white-7">{{
 				block.label

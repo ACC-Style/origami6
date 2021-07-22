@@ -27,6 +27,7 @@ export default {
 						"accent",
 						"disabled",
 						"secondary",
+						"shade",
 						"primary",
 						"",
 					].indexOf(value) !== -1

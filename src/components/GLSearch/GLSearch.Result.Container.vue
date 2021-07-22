@@ -15,13 +15,12 @@
         <slot></slot>
 		<ResultFooter
         :eid="eid"
-			:sections="sections"
-			:documentTitle="documentTitle"
-			:docURL="docURL"
-			:pdfURL="pdfURL"
-			:hubURL="hubURL"
-			:breadcrumb="breadcrumb"
-			:pointOfCare="pointOfCare"
+			:sectiontitleformatted="sectiontitleformatted"
+			:gltitle="gltitle"
+			:jacclink="jacclink"
+			:pdflink="pdflink"
+			:hub="hub"
+			:pointofcare="pointofcare"
 			:conditions="conditions"
 			:amendments="amendments"
 			@onNavigate="$emit('onNavigate')"
@@ -43,19 +42,16 @@ export default {
 		type: { type: String, default: "Recomendation" },
 		sectionTitle:{ type: String, default: "Title Didn't Load" },
 		content: { type: String, default: "" },
-		documentTitle: { type: String },
-		docURL: { type: String, default: "" },
-		pdfURL: { type: String, default: "" },
-		hubURL: { type: String, default: "" },
-		sections: { type: Array },
+		gltitle: { type: String },
+		jacclink: { type: String, default: "" },
+		pdflink: { type: String, default: "" },
+		hub: { type: String, default: "" },
+		sectiontitleformatted: { type: Array },
 		loe: { type: String },
 		cor: { type: String },
-		pointOfCare: { type: Array, default: null },
+		pointofcare: { type: Array, default: null },
 		conditions: { type: Array, default: null },
-		amendments: { type: Array, default: null },
-		supportingText: { type: String, default: "missing supporting text" },
-		references: { type: Array },
-		breadcrumb: { type: Array }
+		amendments: { type: Array, default: null }
 	},
 
 	computed: {

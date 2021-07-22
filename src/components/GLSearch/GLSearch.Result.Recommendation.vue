@@ -2,25 +2,24 @@
 	<ResultContainer
 		:eid="eid"
 		:type="type"
-		:sections="sections"
-		:documentTitle="documentTitle"
-		:docURL="docURL"
-		:pdfURL="pdfURL"
-		:hubURL="hubURL"
-		:breadcrumb="breadcrumb"
-		:pointOfCare="pointOfCare"
+		:sectiontitleformatted="sectiontitleformatted"
+		:gltitle="gltitle"
+		:jacclink="jacclink"
+		:pdflink="pdflink"
+		:hub="hub"
+		:pointofcare="pointofcare"
 		:conditions="conditions"			
 		:amendments="amendments"
 		@onNavigate="$emit('onNavigate')"
 		>
 		<main class="result-content p-x_4 p-b_4 font_copy font_0 lh_3">
-			<h2 class="inline float_left">{{ sectionTitle }}</h2>
+			<h2 class="inline float_left">{{ itemtitle }}</h2>
 			<CorLoeChiclet
 				class="float_right m-x_0 m-b_2 m-t_n5:md  m-l_4:md  absolute relative:md font_n3 font_n1:md font_0:lg t_3 r_3"
 				:cor="cor"
 				:loe="loe"
 			/>
-			<div class="inline-block float_left clear_left m-b_3" v-html="content"></div>
+			<div class="inline-block float_left clear_left m-b_3" v-for="(ab,index) in abs" :key="'ab_'+index" v-html="ab"></div>
 		</main>
 		<aside
 			class="m-x_3:md m-x_2 m-b_2 p_2 bg_black-_05 lh_3 m-b_3:md clear_both bg_black-_05"
@@ -53,16 +52,21 @@
 				<div class="c_black-9 font_n1" v-if="isExpanded">
 					<section class="p-x_3">
 						<h4 class="font_0 m_0 m-t_4 m-b_3 font_medium">Supporting Text:</h4>
-						<p class="lh_3" v-html="supportingText">
-							supporting text here
-						</p>
+						<ul class="ul_none">
+							<li
+								class="m-b_2 br-t_1 br_dotted br_primary-2 m-t_2 p-t_2"
+								v-for="(comment, index) in comments"
+								:key="'comment_' + index"
+								v-html="comment"
+							></li>
+						</ul>
 					</section>
-					<section class="p-x_3">
+					<section class="p-x_3" v-if="refinfo">
 						<h4 class="font_0 m_0 m-t_4 m-b_3 font_medium">References:</h4>
 						<ul class="ul_none">
 							<li
-								class="m-b_2 br-t_1 br_dotted br_primary-2 m-t_2 p-t_2 h:underline undecorated c_primary-n1 hc_primary-n3"
-								v-for="(ref, index) in references"
+								class="m-b_2 br-t_1 br_dotted br_primary-2 m-t_2 p-t_2 h:underline undecorated c_primary-n1 h:c_primary-n3"
+								v-for="(ref, index) in refinfo"
 								:key="'ref_' + index"
 								v-html="ref"
 							></li>
@@ -105,22 +109,21 @@ export default {
 	},
 	props: {
 		type: { type: String, default: "Recomendation" },
-		sectionTitle:{ type: String, default: "Title Didn't Load" },
-		content: { type: String, default: "" },
-		documentTitle: { type: String },
-		docURL: { type: String, default: "" },
-		pdfURL: { type: String, default: "" },
-		hubURL: { type: String, default: "" },
-		sections: { type: Array },
+		itemtitle:{ type: String, default: "Title Didn't Load" },
+		abs: { type: Array, default:()=>[ "Summary (abs) Didn't Load" ]},
+		gltitle: { type: String },
+		jacclink: { type: String, default: "" },
+		pdflink: { type: String, default: "" },
+		hub: { type: String, default: "" },
+		sectiontitleformatted: { type: Array },
 		eid: { type: String },
 		loe: { type: String },
 		cor: { type: String },
-		pointOfCare: { type: Array, default: null },
+		pointofcare: { type: Array, default: null },
 		conditions: { type: Array, default: null },
 		amendments: { type: Array, default: null },
-		supportingText: { type: String, default: "missing supporting text" },
-		references: { type: Array },
-		breadcrumb: { type: Array }
+		comments: { type: Array, default:()=>["No supporting text"]  },
+		refinfo: { type: Array }
 	},
 	data() {
 		return {
