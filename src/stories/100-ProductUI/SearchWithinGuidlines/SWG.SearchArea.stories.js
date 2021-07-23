@@ -4,17 +4,15 @@ import Btn from "../../../../src/components/subComponents/Btn.vue";
 import Modal from "../../../../src/components/subComponents/Modal.vue";
 import ListLoader from "../../../../src/components/subComponents/ListLoader.vue";
 import FacetCheckMarks from "../../../../src/components/Coveo/Coveo.FacetList.CheckMarks.vue";
-import RecommendationResult from "../../../../src/components/GLSearch/GLSearch.Result.Recommendation.vue";
-import TableResult from "../../../../src/components/GLSearch/GLSearch.Result.Table.vue";
-import SectionResult from "../../../../src/components/GLSearch/GLSearch.Result.Section.vue";
+import Result from "../../../../src/components/GLSearch/GLSearch.Result.vue";
 import baseInputFunctions from "../../../../src/components/BasicForms/subComponent/baseInputFunctions.vue";
 import Pagination from "../../../../src/components/Navigation/Pagination.vue";
-import {resultRecommendation, results} from "./Data/dataResultReturn.js";
-import { commonArgs } from "../../4-Forms/common.argTypes";
+import {results} from "./Data/dataResultReturn.js";
+import {commonArgs } from "../../4-Forms/common.argTypes";
 export default {
 	title: "Apps/GuidelineSearch/Search",
     component: CategoryToggle,
-    subcomponents:{baseInputFunctions,SearchBar,Modal,FacetCheckMarks,ListLoader,RecommendationResult,Pagination,TableResult,SectionResult},
+    subcomponents:{baseInputFunctions,SearchBar,Modal,FacetCheckMarks,ListLoader,Result,Pagination},
 	parameters: {
 		docs: {
 			description: {
@@ -55,13 +53,11 @@ export default {
     <span class="br_round p-x_3 p-x_2 bg_highlight-5 c_highlight-n2 font_bold"><span class="font_xbold c_highlight-n4 p-r_2">117</span> Tables &amp; Figures</span>
   </div>
   <ListLoader :list="list" class="p-y_4 p-x_3">
-  <template v-slot:listLoaded >
-        <div v-for="(item, index) in list" class="flex flex_inline p-x_2 p-y_2 p-b_2">
-          <RecommendationResult class="m-b_4" v-bind="item" v-if="item.subtype =='recommendation'"/>
-          <TableResult class="m-b_4" v-bind="item" v-if="item.subtype =='table'"/>
-          <SectionResult class="m-b_4" v-bind="item" v-if="item.subtype =='section'"/>
-        </div>
-  </template>
+    <template v-slot:listLoaded >
+      <div v-for="(item, index) in list">
+        <Result class="m-b_4" v-bind="item"  />
+      </div>
+    </template>
   </ListLoader> 
   <Pagination/>
   <Modal id="FilterModal" v-if="filterModalVisible"  @onClose="filterModalVisible = false" class="bg_black-1"> 
@@ -92,7 +88,7 @@ export default {
 };
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { CategoryToggle,SearchBar,Btn,Modal,FacetCheckMarks,ListLoader,RecommendationResult,Pagination,TableResult,SectionResult },
+	components: { CategoryToggle,SearchBar,Btn,Modal,FacetCheckMarks,ListLoader,Result,Pagination },
 	template: `
     <div class="max-w_70 m-x_auto">
        <div class="p-x_4 p-b_3 p-t_3 bg_black-1">
@@ -127,9 +123,7 @@ const Template = (args, { argTypes }) => ({
         <ListLoader :list="list" class="p-y_4 p-x_3">
           <template v-slot:listLoaded >
                 <div v-for="(item, index) in list">
-                  <RecommendationResult class="m-b_4" v-bind="item" v-if="item.subtype =='publication'" />
-                  <TableResult class="m-b_4" v-bind="item" v-if="item.subtype =='table'" />
-                  <SectionResult class="m-b_4" v-bind="item" v-if="item.subtype =='section'" />
+                  <Result class="m-b_4" v-bind="item"  />
                 </div>
           </template>
         </ListLoader> 

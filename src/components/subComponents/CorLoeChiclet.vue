@@ -27,14 +27,14 @@ export default {
 			type: String,
 			default: "C",
 			validator: function (value) {
-				return ['A', 'B','B-R', 'B-NR', 'C-EO','C-LD'].indexOf(value) !== -1;
+				return ['A', 'B','B-R', 'B-NR', 'C-EO','C-LD'].indexOf(value.toUpperCase()) !== -1;
 			},
 		},
 		cor: {
 			type: String,
 			default: "harm",
 			validator: function (value) {
-				return ['1', '2a','2b', '3', '3: Harm', 'no-benefit'].indexOf(value) !== -1;
+				return ['1', '2a','2b', '3', '3: harm', 'no-benefit'].indexOf(value.toLowerCase()) !== -1;
 			},
 		},
 	},
@@ -72,8 +72,8 @@ export default {
 			return cor;
 		},
 		loeStyle() {
-			let post = (this.loe == 'B')?'-BR':'';
-			return "bg_loe-" + this.loe + post;
+			let post = (this.loe.toUpperCase() == 'B')?'-BR':'';
+			return "bg_loe-" + this.loe.toUpperCase() + post;
 		},
 		corStyle() {
 			let background = "bg_cor-" + this.coreComputed.value;

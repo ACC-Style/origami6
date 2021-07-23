@@ -39,7 +39,7 @@ export default {
 	},
 	props: {
         eid: { type: String },
-		type: { type: String, default: "Recomendation" },
+		subtype: { type: String, default: "recommendation" },
 		sectionTitle:{ type: String, default: "Title Didn't Load" },
 		content: { type: String, default: "" },
 		gltitle: { type: String },
@@ -57,16 +57,20 @@ export default {
 	computed: {
         headerAssets() {
             let color,label;
-            switch(this.type) {
-                case "Recomendation":
+            switch(this.subtype) {
+                case "recommendation":
                     color = "primary";
                     label = "Recommendation";
                     break;
-                case "Table":
+				case "publication":
+                    color = "primary";
+                    label = "Recommendation";
+                    break;
+                case "table":
                     color = "highlight";
                     label = "Table &amp; Figures";
                     break;
-                case "Section":
+                case "section":
                     color = "accent";
                     label = "Section";
                     break;
