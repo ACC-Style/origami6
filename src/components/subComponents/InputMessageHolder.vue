@@ -27,7 +27,7 @@ export default {
 		Icon
 	},
 	props: {
-		state: ""
+		state: {type:String,default:''}
 	}
 };
 </script>

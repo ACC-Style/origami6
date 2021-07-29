@@ -9,7 +9,7 @@
 		@onNavigateTo="onClick"
     />
     <i class="fal fa-chevron-left c_primary-n2 m-x_3 self_baseline font-size_down"  v-if="hasActiveChildren && hasChildren"></i>
-    <SideNavList 
+    <Breadcrumb 
         v-for="(node, index) in nodes" :key="label+'_'+index"          
         :label="node.label"
         :type="node.type"
@@ -17,22 +17,22 @@
         :nodes="node.nodes"
         :isActive="node.isActive"
         :level="level+1"
-    ></SideNavList>
+    ></Breadcrumb>
 
 </div>
 </template>
 <script>
 
 import BreadCrumbItem from "./App.BreadCrumb.Item.vue";
-import TransitionExpand from "../subComponents/TransitionExpand";
+
 export default {
-	name: "SideNavList",
+	name: "Breadcrumb",
 	data() {
 		return {
 		};
 	},
 	components: {
-		BreadCrumbItem,TransitionExpand
+		BreadCrumbItem
 	},
 	props: {
 		label: { type: String },

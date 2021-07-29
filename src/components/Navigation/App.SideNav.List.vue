@@ -12,6 +12,7 @@
 		:isExpanded="toggleOpen"
         @onToggleClick="onToggleClick"
 		@onNavigateTo="onClick"
+		@onNewObject="$emit('onNewObject',$event)"
     />
 	<TransitionExpand>
 		<ul class="ul_none p-l_4 " v-if="isToggleOpen" >      
@@ -65,7 +66,7 @@ export default {
 				a = true;
 			}
 			else{
-				a = false};
+				a = false}
 			return a;
 		},
 		navVisible: function() {

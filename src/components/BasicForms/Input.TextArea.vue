@@ -10,7 +10,7 @@
 	>
 		<template v-slot:default><slot name="default">Email</slot> </template>
 		<template v-slot:input>
-			<input
+			<textarea
 				:id="inputId"
 				:name="inputId"
 				v-on:change="onChange(value)"

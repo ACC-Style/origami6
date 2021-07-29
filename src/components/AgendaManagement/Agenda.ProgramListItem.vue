@@ -4,7 +4,7 @@
 		:actionColor="actionColor"
 		:actionLabel="'edit channel'"
 		:actionTask="actionTask"
-		@onclick="$emit('onClick', $event)"
+		@onClick="$emit('onClick', $event)"
 	>
 		<div class="flex flex_row:md flex_column flex relative"  @mouseenter="
             () => {
@@ -14,7 +14,7 @@
             }
             ">
 			<StatefullIcon :showIcon="true" :state="state" :icon="'far fa-cubes'" class="flex_none p_2 m_n1 m-r_0" />
-			<div class="flex_none w_40:lg p-y_3 p-l_4 p-r_4:md p-r_5">
+			<div class="flex_none w_40:lg p-y_3 p-l_4 p-r_4:md p-r_5 text_left">
 				<h3 class="c_primary m_0 font-size_up-1 p-y_2 lh_1 font_display">{{ label }}
 
 				</h3>
@@ -145,7 +145,7 @@ import StateChart from "./SubComponents/Agenda.StateChart.vue";
 import StatefullIcon from "../subComponents/StatefullIcon.vue";
 import Btn from "../subComponents/Btn.vue";
 export default {
-	name: "ChannelListItem",
+	name: "ProgramListItem",
 	props: {
 		label: { type: String, default: 'Label is Missing' },
 		startDate: { type: String, default: 'Start Date is Missing' },

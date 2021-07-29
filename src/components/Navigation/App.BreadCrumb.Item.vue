@@ -16,14 +16,12 @@
 				}}</span>
 			</div>
 		</div>
-
-	
 	</div>
 </template>
 
 <script>
-import Btn from "../subComponents/Btn";
 export default {
+	name:"breadcrumbItem",
 	props: {
 		label: {
 			type: String,
@@ -44,31 +42,9 @@ export default {
 			thisIsExpaneded: this.isExpanded,
 		}
 	},
-	components:{
-		Btn
-	},
 	computed: {
 		rotation() {
 			return (this.isExpanded) ? "rotation_135" : "rotation_0";
-		},
-		indentedStyle() {
-			let $returnedStyle = "";
-			switch (this.level) {
-				case 1:
-					$returnedStyle = "";
-					break;
-				case 2:
-					$returnedStyle = "";
-					break;
-				case 2:
-					$returnedStyle = "";
-					break;
-
-				default:
-					$returnedStyle = "";
-					break;
-			}
-			return $returnedStyle;
 		},
 		iconStyle: function () {
 			let $returnedStyle = "";
@@ -162,15 +138,10 @@ export default {
 		},
 	},
 	methods: {
-		onToggleClick() {
-			this.$emit("onToggleClick");
-		},
+
 		onNavigateTo(pageID) {
-			this.$emit("onClick");
+			this.$emit("onClick",pageID);
 			// In here mutate the store and cause the page to reroute. 
-		},
-		onNewObject(){		
-			this.$emit("onNewObject");
 		}
 	},
 };

@@ -31,7 +31,7 @@
 		</div>
 		<Btn
 			v-else-if="type == 'new'"
-			@onClick="onNewObject"
+			@onClick="onNewObject(label)"
 			class="lh_1 p-x_3"
 			:state="'secondary'"
 			:size="'tiny'"
@@ -69,8 +69,9 @@
 </template>
 
 <script>
-import Btn from "../subComponents/Btn";
+import Btn from "../subComponents/Btn"
 export default {
+	name:"sideListItem",
 	props: {
 		label: {
 			type: String,
@@ -123,7 +124,7 @@ export default {
 				case 2:
 					$returnedStyle = "";
 					break;
-				case 2:
+				case 3:
 					$returnedStyle = "";
 					break;
 
@@ -232,14 +233,14 @@ export default {
 			this.$emit("onToggleClick");
 		},
 		onNavigateTo(pageID) {
-			this.$emit("onClick");
+			this.$emit("onClick",pageID);
 			// In here mutate the store and cause the page to reroute.
 		},
-		onNewObject() {
-			this.$emit("onNewObject");
+		onNewObject(label) {
+			this.$emit("onNewObject",label);
 		},
 	},
-};
+}
 </script>
 
 <style scoped>
