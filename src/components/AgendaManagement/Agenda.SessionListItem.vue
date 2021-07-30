@@ -57,6 +57,29 @@
 				class="ul_none flex_none m-l_auto flex flex_row-reverse self_stretch font_0 align_center"
 			>
 				<li
+					class="align_center self_center display_none:md"
+					@mouseenter="
+						() => {
+							actionColor = 'primary';
+							actionIcon = ' fa-pencil ';
+						}
+					"
+					@mouseleave="
+						() => {
+							actionColor = actionColorDefault;
+							actionIcon = actionIconDefault;
+						}
+					"
+				>
+					<Btn
+						class="bg_white h:bg_black-3 z_2 m-r_4 m-y_0:md m-y_3"
+						:state="'none'"
+						:shadow="false"
+						:size="'small'"
+						>Edit <i class="p-l_3 far fa-pencil"></i
+					></Btn>
+				</li>
+				<li
 					class="align_center self_center"
 					@mouseenter="
 						() => {
@@ -72,19 +95,11 @@
 					"
 				>
 					<Btn
-						class="bg_white h:bg_black-3 z_2 m-r_4 m-y_0:md m-y_3 display_none inline-block:md"
+						class="bg_white h:bg_black-3 z_2 m-r_4 m-y_0:md m-y_3"
 						:state="'none'"
 						:shadow="false"
 						:size="'small'"
 						>Remove <i class="p-l_3 far fa-times"></i
-					></Btn>
-					<Btn
-						class="z_2 absolute t_0 r_3 inline-block display_none:md"
-						:state="'alert'"
-						:shadow="false"
-						:size="'tiny'"
-						:corner="'square'"
-						><i class="far fa-times self_center"></i
 					></Btn>
 				</li>
 			</ul>

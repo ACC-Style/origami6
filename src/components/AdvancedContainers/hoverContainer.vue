@@ -14,7 +14,7 @@
 			<i :class="actionIcon" class="fas fa-fw font_0:md font_n3"></i>
 		</div>
 		<div
-			class="shadow_overlap-light br_solid br_square br_black-2 br_1 transition_1 z_2 m-r_5:md m-r_4 m-r_0:touch transition_3"
+			class="shadow_overlap-light br_solid br_square br_black-2 br_1 transition_1 z_2 m-r_5:md m-r_4:md transition_3"
 			:class="hoverDataStyles"
 		>
 			<slot></slot>
@@ -90,20 +90,8 @@ export default {
 		hoverIndicatorStyles: function () {
 			return this.hoverEffect
 				? "r_0:md r_0  h:bg_" + this.actionColor + "-3 h:c_priamry-n3"
-				: "r_5:md r_4";
+				: "r_5:md r_0";
 		},
 	},
 };
 </script>
-
-<style scoped>
-
-@media (hover: none) {
-	.m-r_0\:touch {
-		margin-right: 0 !important;
-	}
-	.block\:touch {
-		display: block !important;
-	}
-}
-</style>

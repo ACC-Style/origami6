@@ -87,6 +87,7 @@
 					align_center
 				"
 			>
+
 				<li
 					class="align_center self_center"
 					@mouseenter="
@@ -111,24 +112,43 @@
 							z_2
 							m-r_4
 							m-y_0:md m-y_3
-							display_none
-							inline-block:md
-						"
+							"
 						:state="'none'"
 						:shadow="false"
 						:size="'small'"
 						>Remove <i class="p-l_3 far fa-times"></i
 					></Btn>
-					<Btn
-						class="z_2 absolute t_0 r_3 display_none:md"
-						:state="'alert'"
-						:shadow="false"
-						:size="'tiny'"
-						:corner="'square'"
-						:shape="'square'"
-						><i class="far fa-times"></i
-					></Btn>
 				</li>
+							<li
+					class="align_center self_center"
+					@mouseenter="
+						() => {
+							actionColor = 'primary';
+							actionIcon = ' fa-pencil ';
+							actionTask = 'edit';
+						}
+					"
+					@mouseleave="
+						() => {
+							actionColor = actionColorDefault;
+							actionIcon = actionIconDefault;
+							actionTask = actionTaskDefault;
+						}
+					"
+				>
+			<Btn
+						class="
+							bg_white
+							h:bg_black-3
+							z_2
+							m-r_4
+							m-y_0:md m-y_3 display_none:md
+							"
+						:state="'none'"
+						:shadow="false"
+						:size="'small'"
+						>Edit <i class="p-l_3 far fa-pencil"></i
+					></Btn></li>
 			</ul>
 		</div>
 	</HoverContainer>

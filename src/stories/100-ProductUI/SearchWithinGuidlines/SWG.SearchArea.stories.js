@@ -55,7 +55,7 @@ export default {
   <ListLoader :list="list" class="p-y_4 p-x_3">
     <template v-slot:listLoaded >
       <div v-for="(item, index) in list">
-        <Result class="m-b_4" v-bind="item"  />
+        <Result class="m-b_4" v-bind="item"/>
       </div>
     </template>
   </ListLoader> 
