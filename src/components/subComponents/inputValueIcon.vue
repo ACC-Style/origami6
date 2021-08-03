@@ -1,6 +1,6 @@
 <template>
 	<label
-		class="value-space br_solid br_2 p_3 texture_light"
+		class="value-space br_solid br_2 p_3 p-y_0 texture_light flex_column flex justify_center"
 		:for="inputNameTarget"
 		:class="areaStyle"
 	>
@@ -39,10 +39,10 @@ export default {
 					styles += "bg_accent-n2 c_accent-n3 br_accent";
 					break;
 				case "disabled":
-					styles+=" c_black-3 bg_black-2 br_black-3"
+					styles+=" c_black-3 bg_black-1 br_black-2"
 					break;
 				default:
-					styles += "c_black-7 bg_black-1 br_black-3";
+					styles += "c_black-6 bg_black-_05 br_black-2";
 					break;
 			}
 			return styles;

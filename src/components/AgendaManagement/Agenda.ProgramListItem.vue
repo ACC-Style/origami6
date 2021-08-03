@@ -6,7 +6,7 @@
 		:actionTask="actionTask"
 		@onClick="$emit('onClick', $event)"
 	>
-		<div class="flex flex_row:md flex_column flex relative"  @mouseenter="
+		<div class="flex flex_row:lg flex_column flex relative"  @mouseenter="
             () => {
                 actionColor = actionColorDefault;
                 actionIcon = actionIconDefault;
@@ -14,7 +14,7 @@
             }
             ">
 			<StatefullIcon :showIcon="true" :state="state" :icon="'far fa-cubes'" class="flex_none p_2 m_n1 m-r_0" />
-			<div class="flex_none w_40:lg p-y_3 p-l_4 p-r_4:md p-r_5 text_left">
+			<div class="flex_none w_40:lg p-y_3 p-l_4 p-r_4:lg p-r_5 text_left">
 				<h3 class="c_primary m_0 font-size_up-1 p-y_2 lh_1 font_display">{{ label }}
 
 				</h3>
@@ -32,11 +32,11 @@
 					flex_none
 					w_5:lg
 					p-y_3
-					flex flex_column:md flex_inline
+					flex flex_column:lg flex_inline
 					self_stretch
 					font_0
-					align_center:md
-					justify_start:md
+					align_center:lg
+					justify_start:lg
 					font-size_down-1
 				"
 			>
@@ -48,20 +48,20 @@
 						c_black-8
 						p-l_4
 						lh_1
-						m-b_2:md
+						m-b_2:lg
 					"
 					>credits</strong
 				>
 				<ul
 					class="
 						ul_none
-						m-l_auto:md
+						m-l_auto:lg
 						flex 
 						self_stretch
 						justify_end
 						flex_wrap
 						flex_row
-						flex_column:md
+						flex_column:lg
 						c_primary
 						p-l_3
 					"
@@ -72,14 +72,14 @@
 						v-for="(credit, index) in credits"
 						:key="'credit_' + index"
 					>
-						<span v-if="index > 0" class="c_black-6 p-x_2 display_none:md">,</span
+						<span v-if="index > 0" class="c_black-6 p-x_2 display_none:lg">,</span
 						><span v-html="credit.label">~</span>
 					</li>
 				</ul>
 			</div>
 			<StateChart
 				:chartData="chartData"
-				class="p_3 p-x_4 flex_auto w_40:md font_1"
+				class="p_3 p-x_4 flex_auto w_40:lg font_1"
 			/>
 			<ul
 				class="
@@ -93,7 +93,7 @@
 				"
 			>
 				<li
-					class="align_center self_center display_none:md"
+					class="align_center self_center display_none:lg"
 					@mouseenter="
 						() => {
 							actionColor = 'primary';
@@ -115,7 +115,7 @@
 							h:bg_black-3
 							z_2
 							m-r_4
-							m-y_0:md m-y_3
+							m-y_0:lg m-y_3
 						"
 						:state="'none'"
 						:shadow="false"
@@ -146,7 +146,7 @@
 							h:bg_black-3
 							z_2
 							m-r_4
-							m-y_0:md m-y_3
+							m-y_0:lg m-y_3
 						"
 						:state="'none'"
 						:shadow="false"

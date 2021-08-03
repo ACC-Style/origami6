@@ -104,7 +104,7 @@ import messageHolder from "../subComponents/InputMessageHolder.vue";
 import Btn from "../subComponents/Btn";
 
 export default {
-	name: "inputRaido",
+	name: "inputRadio",
 	components: {
 		messageHolder,
 		Btn,

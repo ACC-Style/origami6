@@ -1,16 +1,16 @@
 <template>
 	<div class="question font_ui">
 		<label
-			:for="inputId"
+			:for="'input_'+id"
 			v-bind:class="[
 				{
-					c_alert: inputState == 'alert',
+					c_alert: state == 'alert',
 				},
 				{
-					c_warning: inputState == 'warning',
+					c_warning: state == 'warning',
 				},
 			]"
-			class="label-holder flex font-size_up font_medium p-y_2"
+			class="label-holder flex font-size_up font_display font_medium p-y_2"
 		>
 			<span class="text cell flex_shrink">
 				<slot name="default"></slot>
@@ -22,10 +22,10 @@
 		<div class="input-holder flex self_end">
 			<ValueIcon
 				v-if="icon"
-				class="flex_shrink"
+				class="flex_none p-x_3 p-y_0"
 				:state="state"
 				:icon="icon"
-				inputNameTarget="inputId"
+				inputNameTarget="id"
 			/>
 			<slot name="input"> </slot>
 			<div
@@ -77,20 +77,19 @@ import ValueIcon from "../../subComponents/inputValueIcon";
 export default {
 	name: "inputText",
 	props: {
-		inputId: { type: String, required: true },
+		id: { type: [String,Number, null]},
 		icon: { type: String, default: null },
 		postLabel: { type: String, default: null },
 		required: { type: Boolean, default: true },
 		state: {
 			type: String, default: "",
-			validator: function (value) {
-				return ['', 'alert', 'requiredAlert', 'warning', 'success', 'info', 'disabled', 'accent'].indexOf(value) !== -1;
+			validator: function (state) {
+				return ['', 'alert', 'requiredAlert', 'warning', 'success', 'info', 'disabled', 'accent'].indexOf(state) !== -1;
 			},
 		}
 	},
 	data() {
 		return {
-			inputState: this.state,
 		};
 	},
 	computed: {
