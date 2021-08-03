@@ -1,42 +1,25 @@
 <template>
-	<Question
+	<QuestionFieldSet
 		:id="id"
 		:icon="icon"
 		:postLabel="postLabel"
 		:required="required"
 		:state="thisState"
-		class="max-w_65"
 	>
 		<template v-slot:default
 			><slot name="default">Checkboxes</slot>
 		</template>
+		<template v-slot:legend><slot name="legend">Select All</slot></template>
 		<template v-slot:input>
-			<fieldset class="question font_ui" :class="fieldsetStyles">
-				<div
-					class="flex flex_row nowrap justify_start"
-					v-for="(label, index) in checkboxes"
-					:key="'checkbox' + id + index"
-				>
-				
-
-					<label
-						class=""
-						:for="type + index"
-						:class="LabelStyles"
-					>					<input
-						type="checkbox"
-                        :name="type + index"
-						:id="type + index"
-						v-model="value"
-                        :value="label"
+			<div class="grid template-x_15 gap-x_3 gap-y_3">
+					<InputCheckBox
+						v-for="(checkbox, index) in value"
+						:key="'checkbox' + id + index"
+						v-model="value[index]"
 						:required="required"
-						class="inline-block p-r_3"
 						:disabled="state == 'disabled'"
-					/>
-						<span class="self_middle p-l_3">{{ label }}</span>
-					</label>
-				</div>
-			</fieldset>
+					></InputCheckBox>
+			</div>
 		</template>
 		<template v-slot:alertMessage>This is not an email</template>
 		<template v-slot:warningMessage>
@@ -52,18 +35,19 @@
 			<slot name="accentMessage"></slot
 		></template>
 		<template v-slot:hint> <slot name="hint"></slot></template>
-	</Question>
+	</QuestionFieldSet>
 </template>
 
 <script>
-import Question from "./subComponent/Question";
+import QuestionFieldSet from "./subComponent/Question.FieldSet.vue";
 import baseInputFunctions from "./subComponent/baseInputFunctions.vue";
+import InputCheckBox from "./Input.Checkbox.vue";
 
 export default {
 	name: "inputCheckboxes",
 	mixins: [baseInputFunctions],
 	components: {
-		Question
+		QuestionFieldSet, InputCheckBox
 	},
 	props: {
 		type: { type: String, default: 'type' },
@@ -221,10 +205,6 @@ export default {
 	},
 
 	methods: {
-		onButtonChange: function (i) {
-			this.selected = i.value;
-			this.onChange(i);
-		},
 		onChange: function (value) {
 			if (value == "" && this.required) {
 				this.state = "requiredAlert";

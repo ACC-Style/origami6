@@ -1,7 +1,8 @@
 <template>
 	<div class="question font_ui">
-		<label v-if="hasLabel"
-			:for="'input_'+id"
+		<label
+			v-if="hasLabel"
+			:for="'input_' + id"
 			:class="[
 				{
 					c_alert: state == 'alert',
@@ -10,7 +11,13 @@
 					c_warning: state == 'warning',
 				},
 			]"
-			class="label-holder flex font-size_up font_display font_medium p-y_2"
+			class="
+				label-holder
+				flex
+				font-size_up
+				font_display font_medium
+				p-y_2
+			"
 		>
 			<span class="text cell flex_shrink">
 				<slot name="default"></slot>
@@ -19,33 +26,46 @@
 				<i class="fas fa-asterisk c_warning vertical-align_top"></i>
 			</span>
 		</label>
-		<div class="input-holder flex self_end">
-			<ValueIcon
-				v-if="icon"
-				class="flex_none p-x_3 p-y_0"
-				:state="state"
-				:icon="icon"
-				inputNameTarget="id"
-			/>
-			<slot name="input"> </slot>
-			<div
+		<fieldset
+			class="
+				flex flex_row:md
+				gap-x_4
+				flex_wrap
+				br_solid br_radius br_2
+				p-b_4
+				relative
+			"
+			:class="fieldSetCSS.borderColor"
+		>
+			<legend
+				v-if="hasLegend"
 				class="
-					br_solid br_2
-					br-l_0
-					p-y_2
-					font_medium
-					flex_none
+					absolute
+					r_auto
+					w_auto
+					t_n3
+					m-t_n2
+					p-x_3
+					l_2
+					lh_0
+					font-size_down
+					bg_white
 					p-x_4
-					lh_3
-					flex flex_column
+					font_ui font_medium
 				"
-				v-if="postLabel"
-				:class="inputPrePostStyles"
-				@click="onClickPostLabel"
+				:class="fieldSetCSS.fontColor"
 			>
-				{{ postLabel }}
-			</div>
-		</div>
+				<ValueIcon
+					v-if="icon"
+					class="flex_none p-x_3 p-y_0"
+					:state="state"
+					:icon="icon"
+					inputNameTarget="id"
+				/><slot name="legend">Legend Slot</slot>
+			</legend>
+			<slot name="input"> </slot>
+			<span class="opacity_7 font_italic"><slot name="hint"></slot></span>
+		</fieldset>
 		<div class="font-size_down">
 			<messageHolder :state="'alert'" v-if="state == 'requiredAlert'"
 				>This input is required.</messageHolder
@@ -65,7 +85,6 @@
 			<messageHolder :state="'accent'" v-if="state == 'accent'">
 				<slot name="accentMessage"></slot>
 			</messageHolder>
-			<span class="opacity_7 font_italic"><slot name="hint"></slot></span>
 		</div>
 	</div>
 </template>
@@ -75,9 +94,9 @@ import messageHolder from "../../subComponents/InputMessageHolder.vue";
 import ValueIcon from "../../subComponents/inputValueIcon";
 
 export default {
-	name: "inputText",
+	name: "QuestionFieldSet",
 	props: {
-		id: { type: [String,Number, null]},
+		id: { type: [String, Number, null] },
 		icon: { type: String, default: null },
 		postLabel: { type: String, default: null },
 		required: { type: Boolean, default: true },
@@ -93,13 +112,6 @@ export default {
 		};
 	},
 	computed: {
-		hasLabel() {
-			console.log();
-			if (this.$slots.default == undefined) {
-				return false;
-			}
-			return this.$slots.default[0].text.length > 0;
-		},
 		inputPrePostStyles() {
 			let styles = "";
 			switch (this.state) {
@@ -148,6 +160,29 @@ export default {
 			}
 
 			return styles;
+		},
+		hasLabel() {
+			console.log();
+			if (this.$slots.default == undefined) {
+				return false;
+			}
+			return this.$slots.default[0].text.length > 0;
+		},
+		hasLegend() {
+			console.log();
+			if (this.$slots.legend == undefined) {
+				return false;
+			}
+			return this.$slots.legend[0].text.length > 0;
+		},
+		fieldSetCSS() {
+			let css = { fontColor: "c_black-7", borderColor: "br_black-2" };
+			if (this.state !== "") {
+				css.fontColor = "c_" + this.state + '-n2';
+				css.borderColor = "br_" + this.state;
+
+			}
+			return css;
 		}
 	},
 	components: {

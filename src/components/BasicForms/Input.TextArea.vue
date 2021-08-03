@@ -5,7 +5,6 @@
 		:postLabel="postLabel"
 		:required="required"
 		:state="thisState"
-		class="max-w_65"
 	>
 		<template v-slot:default><slot name="default">Email</slot> </template>
 		<template v-slot:input>
