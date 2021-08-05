@@ -92,7 +92,7 @@ export default {
 						default:
 							size = "p-y_2 p-x_3 font_n1 font_0:md";
 							break;
-					};
+					}
 					break;
 
 				default:
@@ -112,13 +112,13 @@ export default {
 						default:
 							size = "p_3 lh_0 font_n1 font_0:md";
 							break;
-					};
+					}
 					break;
 			}
 			let disabledStyle = "";
 			if (this.isDisabled) {
 				disabledStyle += "cursor_not-allowed ";
-			};
+			}
 			return size + " " + disabledStyle;
 		},
 		buttonColors() {

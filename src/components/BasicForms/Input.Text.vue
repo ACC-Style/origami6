@@ -15,6 +15,7 @@
 				:type="type"
 				:value="value"
 				:required="required"
+				:placeholder="placeholder"
 				:class="inputStyles"
 				:disabled="thisState == 'disabled'"
 				@change="onChange($event)"
