@@ -14,9 +14,9 @@ export const creditTypes = [{
     styleCode: "CE"
 },
 {
-    shortName: "MOC&nbsp;II",
+    shortName: "MOC&nbsp;III",
     fullName: "ABIM MOC Part II",
-    styleCode: "MOCII"
+    styleCode: "MOCIII"
 },
 {
     shortName: "MOC&nbsp;IV",
@@ -40,7 +40,7 @@ export const creditTypes = [{
 },
 {
     shortName: "CPE",
-    fullName: "Continuing Pharamacy Education",
+    fullName: "Continuing Pharmacy Education",
     styleCode: "CPE"
 },
 {

@@ -1,9 +1,9 @@
 <template>
 	<div class="inline-block">
-	<Btn v-show="componentIsActive" @onClick="onClick()" :size="size" :state="activeState" :corner="corner" :isDisabled="isDisabled" :shadow="shadow" :shape="shape" :class="[{'shadow_emboss-light text-shadow_black-1':insetShadow},'active-button']" >
+	<Btn v-show="value" @onClick='onClick(false)' :size="size" :state="activeState" :corner="corner" :isDisabled="isDisabled" :shadow="shadow" :shape="shape" :class="[{'shadow_emboss-light text-shadow_black-1':insetShadow},'active-button']" >
 		<slot class="" name="active">ON</slot>
 	</Btn>
-	<Btn v-show="!componentIsActive" @onClick="onClick()" :size="size" :state="notActiveState" :corner="corner" :isDisabled="isDisabled" :shadow="shadow" :shape="shape" :class="[{'shadow_emboss-light text-shadow_black-1':insetShadow},'not-active-button']" >
+	<Btn v-show="!value" @onClick='onClick(true)' :size="size" :state="notActiveState" :corner="corner" :isDisabled="isDisabled" :shadow="shadow" :shape="shape" :class="[{'shadow_emboss-light text-shadow_black-1':insetShadow},'not-active-button']" >
 		<slot class="" name="notActive" >OFF</slot>
 	</Btn>
 	</div>
@@ -23,7 +23,7 @@ export default {
 		isDisabled: { type: Boolean },
 		shadow: { type: Boolean },
 		insetShadow: { type: Boolean },
-		isActive:{ type: Boolean, default:false },
+		value:{ type: Boolean, default:false },
 		shape:{
 			type:String,
 			default:'button',
@@ -34,17 +34,16 @@ export default {
 	},
 	data() {
 		return {
-			componentIsActive: this.isActive
+
 		}
 	},
+	computed: {
+
+	},
 	methods: {
-		onClick() {
+		onClick(inputResponse) {
 			if (!this.isDisabled) {
-				this.componentIsActive = !this.componentIsActive;
-				this.componentIsActive
-					? this.$emit("onClick",{'isActive':true})
-					: this.$emit("onClick",{'isActive':false});
-				
+				this.$emit("input",inputResponse)				
 			}
 		}
 	},

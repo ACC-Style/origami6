@@ -75,7 +75,7 @@ import messageHolder from "../../subComponents/InputMessageHolder.vue";
 import ValueIcon from "../../subComponents/inputValueIcon";
 
 export default {
-	name: "inputText",
+	name: "Question",
 	props: {
 		id: { type: [String,Number, null]},
 		icon: { type: String, default: null },

@@ -13,12 +13,11 @@
 				:name="'input_'+id"
 				class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3"
 				:type="type"
-				v-bind:value="value"
-				v-on:input="$emit('input', $event.target.value)"
+				:value="value"
 				:required="required"
 				:class="inputStyles"
 				:disabled="thisState == 'disabled'"
-				v-on:change="onChange()"
+				@change="onChange($event)"
 			/>
 		</template>
 		<template v-slot:alertMessage>This is not an email</template>
@@ -46,17 +45,16 @@ export default {
 	mixins: [baseInputFunctions],
 	components: { Question },
 	methods:{
-		onChange: function() {
+		onChange: function(event) {
 			if (this.value == "" && this.required) {
 				this.thisState = "requiredAlert"
-				this.$emit("onChange", "");
 				this.$emit("onStateChange","requiredAlert")
 			}else {
 				this.thisState = "";
-				this.$emit("onChange", this.value);
 				this.$emit("onStateChange","")
 
 			} 
+			this.$emit('input',event.target.value)
 		}
 	}
 };

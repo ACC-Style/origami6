@@ -1,8 +1,7 @@
 <template>
 	<div class="flex flex_row flex_nowrap relative">
 		<BtnToggle
-			class="flex_none"
-			@onClick="$emit('onClick', $event)"
+			class="flex_none"		
 			:size="size"
 			:shape="shape"
 			:corner="corner"
@@ -10,7 +9,8 @@
 			:notActiveState="notActiveState"
 			:shadow="shadow"
 			:insetShadow="insetShadow"
-			:isActive="isActive"
+			v-bind:value="value"
+			@input="$emit('input',$event)"
 		>
 			<template v-slot:active
 				><span class="flex flex_row justify_start w_100" v-html="switchHandle.activeLabel"
@@ -34,8 +34,8 @@ export default {
 		corner: {
 			type: String,
 			default: "round",
-			validator: function (value) {
-				return ["round", "square", "radius"].indexOf(value) !== -1;
+			validator: function (corner) {
+				return ["round", "square", "radius"].indexOf(corner) !== -1;
 			},
 		},
 		activeState: { type: String , default: "secondary" },
@@ -43,14 +43,16 @@ export default {
         activeIcon:{type:String, default:null},
         notActiveIcon:{type:String, default:null},
 		insetShadow: { type: Boolean, default: false },
-		isActive: { type: Boolean, default: false },
+		value: { type: Boolean},
 	},
 	data() {
 		return {
 			shape: "switch",
 			shadow: false,
+			
 		};
 	},
+
 	computed: {
 		switchLabel() {
 			let style ="";
