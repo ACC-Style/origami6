@@ -25,7 +25,7 @@
 				class="flex_none p-x_3 p-y_0"
 				:state="state"
 				:icon="icon"
-				inputNameTarget="id"
+				:inputNameTarget="'input_'+id"
 			/>
 			<slot name="input"> </slot>
 			<div
@@ -90,6 +90,7 @@ export default {
 	},
 	data() {
 		return {
+
 		};
 	},
 	computed: {

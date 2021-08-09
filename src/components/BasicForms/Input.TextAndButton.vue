@@ -43,14 +43,11 @@
 					<Btn
 						class="br-tl_square br-bl_square"
 						:shadow="false"
-						:isDisabled="
-							thisState == 'disabled' || inputValue == ''
-						"
 						:state="btnState"
 						:size="btnSize"
 						@onClick="onSearch(inputValue)"
 					>
-						<i
+						<slot name='buttonLabel'><i
 							class="
 								far
 								fa fa-search
@@ -60,8 +57,8 @@
 							"
 						></i>
 						<span class="display_none inline:md font_bold"
-							>{{ actionLabel }}</span
-						>
+							>Search</span
+						></slot>
 					</Btn>
 				</div>
 		</template>
@@ -89,7 +86,7 @@ export default {
 	mixins: [baseInputFunctions],
 	components: { Btn,Question },
 	props: {
-		actionLabel: { type: String, default: 'Search' },
+
 	},
 	data() {
 		return {
