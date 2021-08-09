@@ -1,9 +1,11 @@
-import RadioInput from "../../components/BasicForms/Input.Radio.vue";
+import RadioButton from "../../components/BasicForms/subComponent/Sub.RadioButton.vue";
+import RadioButtons from "../../components/BasicForms/Input.RadioButtons.vue";
 import { commonArgs } from "./common.argTypes.js";
-export default{
-    title: "Form/Input/Radio",
-    component: RadioInput,
-    parameters: {
+export default {
+	title: "Form/Input/Radio",
+	component: RadioButtons,
+	subcomponents: { RadioButton },
+	parameters: {
 		docs: {
 			description: {
 				component:
@@ -11,66 +13,56 @@ export default{
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {
-				code: `<RadioInput @onChange="onChange" @onStateChange="onStateChange" v-bind="$props"/>`
+				code: `<RadioButtons @onChange="onChange" v-bind="$props"/>`
 			},
 		},
-    },
-    argTypes:{ ...commonArgs,
-		size:{control:{type:'select', options:['tiny', 'small', 'medium', 'large']}},
-		state:{control:{type:'select', options:["","alert","requiredAlert","warning","success","info","accent","black","disabled",]}},
-    }
+	},
+	argTypes: {
+		...commonArgs,
+		state: { control: { type: 'select', options: ["", "alert", "requiredAlert", "warning", "success", "info", "accent", "black", "disabled",] } },
+		picked: { control:{type:'object'}},
+	}
 }
+const options =  [{
+	"value": 1,
+	"label": "Widowstears"
 
+}, {
+	"value": 2,
+	"label": "Pendent Silver Linden"
+
+}, {
+	"value": 3,
+	"label": "Mulberry"
+
+}, {
+	"value": 4,
+	"label": "Mountain Crownbeard"
+
+}, {
+	"value": 5,
+	"label": "Daisy"
+
+}];
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { RadioInput },
-	template: `<RadioInput @onChange="onChange" @onStateChange="onStateChange" v-bind="$props" :options="options">Pick Your Favorite Plant <template v-slot:successMessage>Congradulations you can follow instructions</template></RadioInput>`,
+	components: { RadioButtons },
+	template: `<RadioButtons :state="state" :inputId="inputId" v-bind:options="options" v-model="picked">Pick Your Favorite Plant <template v-slot:alertMessage>this seems to be wrong</template></RadioButtons>`,
 });
 export const Default = Template.bind({});
 Default.args = {
-    inputId:"uniqueRadio",
-    size:"small",
-    options:[{
-		"value": 1,
-		"label": "Widowstears",
-		
-	  }, {
-		"value": 2,
-		"label": "Pendent Silver Linden",
-		
-	  }, {
-		"value": 3,
-		"label": "Mulberry",
-		
-	  }, {
-		"value": 4,
-		"label": "Mountain Crownbeard",
-		
-	  }],
+	inputId: "uniqueRadio",
+	state:"",
+	picked: {"value": 1,
+	"label": "Widowstears"},
+	options:options,
 
 };
 
 export const StateAlert = Template.bind({});
 StateAlert.args = {
-    inputId:"uniqueRadio",
-	size:"small",
-	state:"alert",
-    options:[{
-		"value": 1,
-		"label": "Widowstears",
-		
-	  }, {
-		"value": 2,
-		"label": "Pendent Silver Linden",
-		
-	  }, {
-		"value": 3,
-		"label": "Mulberry",
-		
-	  }, {
-		"value": 4,
-		"label": "Mountain Crownbeard",
-		
-	  }],
+	inputId: "uniqueRadio",
+	state: "alert",
+	options: options,
 
 };

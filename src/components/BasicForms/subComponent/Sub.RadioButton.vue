@@ -50,17 +50,16 @@
 </template>
 
 <script>
-import baseInputFunctions from "./subComponent/baseInputFunctions.vue";
-import messageHolder from "../subComponents/InputMessageHolder.vue";
+import baseInputFunctions from "./baseInputFunctions.vue";
+import messageHolder from "../../subComponents/InputMessageHolder.vue";
 
 export default {
-	name: "Checkbox",
+	name: "RadioBox",
 	mixins: [baseInputFunctions],
 	components: {messageHolder
 	},
 	props: {
-        value:{type:Object,default:()=>{ return {'label': false}}
-        },
+        value:{type:Object,default:()=>{ return {'label': 'checkbox Label','value':'checkbox Value'}}},
 		index:{type:Number,default:0},
         type:{type:String,default:"checkbox"},
         required:{type:Boolean,default:false},
@@ -182,7 +181,7 @@ export default {
 	},
 	methods: {
 		onInput: function () {
-            this.$emit("input", this.index);
+            this.$emit("input", this.value);
 		},
 	},
 };

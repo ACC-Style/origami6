@@ -9,22 +9,23 @@
 		<template v-slot:default
 			><slot name="default">Checkboxes</slot>
 		</template>
-		<template v-slot:legend><slot name="legend">Select All</slot></template>
+		<template v-slot:legend><slot name="legend">Select One</slot></template>
 		<template v-slot:input>
-			<div class="grid template-x_15 gap-x_3 gap-y_3">
+			<div class="grid  gap-x_3 gap-y_3" :class="templateClasses">
 				<InputRadioBox
-					:name="name"
-					v-for="(checkbox, index) in value"
+					v-for="(checkbox, index) in options"
 					:key="'checkbox' + id + index"
-					:value="value[index]"
+					v-bind:value="checkbox"
 					@input="onChange($event)"
+					:name="name"
 					:required="required"
 					:disabled="state == 'disabled'"
 					:index="index"
 				></InputRadioBox>
 			</div>
 		</template>
-		<template v-slot:alertMessage>This is not an email</template>
+		<template v-slot:alertMessage><slot name="alertMessage"></slot
+		></template>
 		<template v-slot:warningMessage>
 			<slot name="warningMessage"></slot
 		></template>
@@ -44,27 +45,32 @@
 <script>
 import QuestionFieldSet from "./subComponent/Question.FieldSet.vue";
 import baseInputFunctions from "./subComponent/baseInputFunctions.vue";
-import InputRadioBox from "./Input.RadioButton.vue";
+import InputRadioBox from "./subComponent/Sub.RadioButton.vue";
 
 export default {
-	name: "InputRadioBoxes",
+	name: "RadioBoxes",
 	mixins: [baseInputFunctions],
 	components: {
 		QuestionFieldSet, InputRadioBox
 	},
 	props: {
 		type: { type: String, default: 'type' },
-		value: { type: Array },
+		options: { type: Array },
+		value:{type:Object},
 		name: { type: String, default: 'radio' },
 	},
 	data() {
 		return {
-			selected: -1,
 			inputState: this.state,
 			radioName: (this.name == 'radio' || !this.name) ? 'radio_' + this.inputId : this.name,
 		};
 	},
 	computed: {
+		templateClasses() {
+			let classes = 'template-x_20';
+			if( this.options<=4){classes = 'template-x_30'}
+			return classes;
+		},
 		inputPrePostStyles() {
 			let styles = "";
 			switch (this.state) {
@@ -209,29 +215,11 @@ export default {
 		}
 	},
 	mounted() {
-		this.value.forEach((checkbox, index) => {
-			if (checkbox['selected']) { 
-				this.selected = index;
-				}
-		})
+
 	},
 	methods: {
 		onChange: function (radioIndex) {
-			this.selected = radioIndex;
-			this.value.forEach((checkbox, index) => {
-				if( index == radioIndex) {
-					checkbox['selected'] = true;
-					return;
-				}
-				checkbox['selected'] = false
-				
-			});
-			if (radioIndex == "" && this.required) {
-				this.state = "requiredAlert";
-				this.$emit("onStateChange", "requiredAlert");
-			} else {
-				this.$emit("input", this.value);
-			}
+			this.$emit("input", radioIndex);
 		},
 	},
 };

@@ -15,42 +15,23 @@
 					:name="'input_' + id"
 					class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3"
 					:type="type"
-					v-bind:value="value"
-					v-on:input="$emit('input', $event.target.value)"
+					v-model="value"
 					:required="required"
 					:class="inputStyles"
 					:disabled="thisState == 'disabled'"
-					v-if="!Array.isArray(options)"
 				>
+					<option  selected disabled hidden  value="none">{{ placeholder }}</option>
 					<option
-						v-for="(value, label) in options"
-						:value="value"
-						v-html="label"
-						:key="'option_' + value"
-					></option>
-				</select>
-				<select
-					:id="'input_' + id"
-					:name="'input_' + id"
-					class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3"
-					:type="type"
-					v-bind:value="value"
-					v-on:input="$emit('input', $event.target.value)"
-					:required="required"
-					:class="inputStyles"
-					:disabled="thisState == 'disabled'"
-					v-if="Array.isArray(options)"
-				>
-					<option
-						v-for="label in options"
-						:value="label"
-						v-html="label"
-						:key="'option_' + label"
+						v-for="(option,index) in options"
+						:value="option.value"
+						v-html="option.label"
+						:key="'option_' + index"
 					></option>
 				</select>
 			</div>
 		</template>
-		<template v-slot:alertMessage>This is not an email</template>
+		<template v-slot:alertMessage><slot name="alertMessage"></slot
+		></template>
 		<template v-slot:warningMessage>
 			<slot name="warningMessage"></slot
 		></template>
@@ -65,82 +46,6 @@
 		></template>
 		<template v-slot:hint> <slot name="hint"></slot></template>
 	</Question>
-
-	<!-- <div class="question font_ui">
-		<label
-			:for="inputId"
-			v-bind:class="{
-				'c_alert-n2': inputState == 'alert',
-				'c_warning-n2': inputState == 'warning',
-			}"
-			class="label-holder flex font-size_up font_medium p-y_2"
-		>
-			<span class="text cell flex_shrink">
-				<slot name="default"></slot>
-			</span>
-			<span v-if="required" class="required-holder flex_shrink font_n5">
-				<i class="fas fa-asterisk c_warning vertical-align_top"></i>
-			</span>
-		</label>
-		<div class="input-holder flex self_end">
-			<ValueIcon
-				v-if="icon"
-				class="flex_shrink"
-				:state="(state == 'requiredAlert')?'alert':state"
-				:icon="icon"
-				inputNameTarget="inputId"
-			/>
-			<div class="select-wrapper flex flex_auto relative">
-				<select
-					ref="selectHTML"
-					v-model="selected"
-					:id="inputId"
-					:name="inputId"
-					v-on:change="onChange()"
-					class="p-l_4 lh_3 flex_auto p-y_2 br_solid br_2"
-					:required="required"
-					:class="inputStyles"
-					:disabled="state == 'disabled'"
-				>
-					<option disabled value="">select one</option>
-					<option
-						v-for="(op, index) in options"
-						:key="'option_' + index"
-						:value="op.value"
-						:label="op.label"
-
-					/>
-				</select>
-			</div>
-			<div
-				class="br_solid br_2 br-l_0 p-y_2 font_medium flex_none p-x_4 lh_3 flex flex_column "
-				v-if="postLabel"
-				:class="inputPrePostStyles"
-			>
-				{{ postLabel }}
-			</div>
-		</div>
-		<div class="font-size_down">
-			<messageHolder :state="'alert'" v-if="state == 'requiredAlert'"
-			>This input is required.</messageHolder
-		>
-		<messageHolder :state="'alert'" v-if="state == 'alert'">
-			<slot name="alertMessage"></slot>
-		</messageHolder>
-		<messageHolder :state="'warning'" v-if="state == 'warning'">
-			<slot name="warningMessage"></slot>
-		</messageHolder>
-		<messageHolder :state="'success'" v-if="state == 'success'">
-			<slot name="successMessage"></slot>
-		</messageHolder>
-		<messageHolder :state="'info'" v-if="state == 'info'">
-			<slot name="infoMessage"></slot>
-		</messageHolder>
-		<messageHolder :state="'accent'" v-if="state == 'accent'">
-			<slot name="accentMessage"></slot>
-		</messageHolder>
-		</div>
-	</div> -->
 </template>
 
 <script>
@@ -150,8 +55,13 @@ import baseInputFunctions from "./subComponent/baseInputFunctions.vue";
 export default {
 	name: "inputSelect",
 	props: {
-		options: { type: [Object, Array] },
+		options: { type: [Array] },
+		value: { default:'none'},
+		placeholder:{default: 'Please Select One'}
 	},
+	data: () => ({
+		
+	}),
 	mixins: [baseInputFunctions],
 	components: { Question },
 };
@@ -199,10 +109,11 @@ select {
 
 /* style the items (options), including the selected item: */
 .select-items div,.select-selected {
-  color: #ffffff;
+  color: currentColor;
   padding: 8px 16px;
   border: 1px solid transparent;
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
 }
+
 </style>
