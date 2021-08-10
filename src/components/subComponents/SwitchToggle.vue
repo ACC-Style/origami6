@@ -9,7 +9,7 @@
 			:notActiveState="notActiveState"
 			:shadow="shadow"
 			:insetShadow="insetShadow"
-			v-bind:value="value"
+			:value="value"
 			@input="$emit('input',$event)"
 		>
 			<template v-slot:active
@@ -19,7 +19,7 @@
 				><span class="flex flex_row justify_end w_100" v-html="switchHandle.notActiveLabel"
 			/></template>
 		</BtnToggle>
-		<div class="flex_auto self_center p-l_3:lg p-l_2 lh_0"><slot></slot></div>
+		<div class="flex_auto self_center p-l_3:lg p-l_2 lh_0"><slot name="default"></slot></div>
 	</div>
 </template>
 

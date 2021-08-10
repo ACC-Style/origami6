@@ -37,13 +37,13 @@
 					flex_none
 					p-x_4
 					lh_3
-					flex flex_column
+					self_strech
 				"
 				v-if="postLabel"
 				:class="inputPrePostStyles"
 				@click="onClickPostLabel"
+				v-html="postLabel"
 			>
-				{{ postLabel }}
 			</div>
 		</div>
 		<div class="font-size_down">

@@ -27,8 +27,8 @@ export default {
 		shape:{
 			type:String,
 			default:'button',
-			validator: function (value) {
-				return ['button','circle','square','switch'].indexOf(value) !== -1;
+			validator: function (shape) {
+				return ['button','circle','square','switch'].indexOf(shape) !== -1;
 			},
 			}
 	},
@@ -43,7 +43,7 @@ export default {
 	methods: {
 		onClick(inputResponse) {
 			if (!this.isDisabled) {
-				this.$emit("input",inputResponse)				
+				this.$emit("input",inputResponse);				
 			}
 		}
 	},
