@@ -20,9 +20,9 @@
 				br_solid br_shade-4
 			"
 		>
-			<i class="far fa-exclamation-triangle p-r_3"></i><slot name="header">Nothing has loaded.</slot>
+			<i class="far fa-exclamation-triangle p-r_3" v-show="icon"></i><slot name="header">Nothing has loaded.</slot>
              
-			<i class="far fa-exclamation-triangle p-l_3"></i>
+			<i class="far fa-exclamation-triangle p-l_3" v-show="icon"></i>
 		</h1>
 		<p class="font_0 p-y_3 lh_3 text_center">
 			<slot name="default"> There is nothing here.  Try another search or adding something to this area. </slot>
@@ -36,7 +36,10 @@
 
 <script>
 export default {
-	name: "ListEmptyCard"
+	name: "ListEmptyCard",
+	props: {
+		icon: {type:Boolean, default:true}
+	}
     }
 </script>
 
