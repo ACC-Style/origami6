@@ -48,7 +48,6 @@ export default {
 	methods:{
 		onChange: function(event) {
 			if (this.value == "" && this.required) {
-				this.thisState = "requiredAlert"
 				this.$emit("onStateChange","requiredAlert")
 			}else {
 				this.thisState = "";

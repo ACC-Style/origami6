@@ -21,13 +21,13 @@
 							br-tl_radius
 							br-bl_radius
 							bg_white"
-				:type="type"
-				:value="inputValue"
-				:required="required"
-				:placeholder="placeholder"
-				:class="inputStyles"
-				:disabled="thisState == 'disabled'"
-				@change="onChange($event)"
+						:type="type"
+						:value="inputValue"
+						:required="required"
+						:placeholder="placeholder"
+						:class="inputStyles"
+						:disabled="thisState == 'disabled'"
+						@input="onChange($event)"
 			/>
 					<Btn
 						v-show="inputValue != null && inputValue.length > 0"
@@ -99,6 +99,7 @@ export default {
 	},
 	methods: {
 		onChange(event) {
+			this.inputValue = event.target.value;
 			this.$emit('input',event.target.value);
 		},
 		onSearch(inputValue) {

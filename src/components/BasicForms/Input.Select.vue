@@ -15,16 +15,17 @@
 					:name="'input_' + id"
 					class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3"
 					:type="type"
-					v-model="value"
+					v-bind:value="value"
+					@input="$emit('input',$event.target.value)"
 					:required="required"
 					:class="inputStyles"
 					:disabled="thisState == 'disabled'"
 				>
-					<option  selected disabled hidden  value="none">{{ placeholder }}</option>
+					<option disabled hidden  value="none">{{ placeholder }}</option>
 					<option
 						v-for="(option,index) in options"
-						:value="option.value"
-						v-html="option.label"
+						:value="optionValue(option)"
+						v-html="optionLabel(option)"
 						:key="'option_' + index"
 					></option>
 				</select>
@@ -64,6 +65,30 @@ export default {
 	}),
 	mixins: [baseInputFunctions],
 	components: { Question },
+	methods: { 
+		optionLabel: function(option) {
+			if(typeof option === 'string') {
+				return option;
+			}
+			if("label" in option){
+				return option.label;
+			}
+			if("value" in option){
+				return option.value;
+			}
+			return option[0];
+		},
+
+		optionValue: function(option) {
+			if(typeof option === 'string') {
+				return option;
+			}
+			if("value" in option){
+				return option.value;
+			}
+			return option[0]
+		}
+	},
 };
 </script>
 
