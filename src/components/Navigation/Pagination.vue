@@ -1,12 +1,6 @@
 <template>
-	<nav aria-label="Pagination" class="flex flex_row justify_center">
-		<ul class="pagination flex flex_row ul_none justify_center br_solid br_black-3 br_1 relative">
-			<!-- <li class="flex" class="p-x_3 font_bold p-y_2 m-r_auto absolute relative:md b_n5 b_0:md p-b_3 font_n2 font_n1:md">
-				<slot>
-					<span class="show-for-sr display_none">You're on page</span> Page Number: {{ currentPage }} of {{totalPages}}
-				</slot>
-				
-			</li> -->
+	<nav aria-label="Pagination" class="inline-block">
+		<ul class="pagination flex flex_row ul_none justify_strech relative">
 			<li class="flex pagination-previous " v-if="currentPage > 1">
 				<Btn :shadow="false" :corner="'square'" :size="size" :state="'none'" @onClick="onPrevPage()" :class="buttonClassOverride">
 				<div class="flex flex_row nowrap">

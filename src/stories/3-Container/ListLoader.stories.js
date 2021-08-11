@@ -41,7 +41,7 @@ const Template = (args, { argTypes }) => ({
             Your list is null and isn't even an array.
         </template>
         <template v-slot:listEmpty>
-            <ListEmptyCard :icon='false'>
+            <ListEmptyCard :icon='icon'>
                 Your List is Empty Here
             </ListEmptyCard>
         </template>
@@ -57,14 +57,22 @@ const Template = (args, { argTypes }) => ({
 export const Loading = Template.bind({});
 Loading.args = {
 	list: listNull,
+	icon: false,
 };
 
 export const Empty = Template.bind({});
 Empty.args = {
 	list: listEmpty,
+	icon: false,
 };
 
+export const EmptyWithIcon = Template.bind({});
+EmptyWithIcon.args = {
+	list: listEmpty,
+	icon: true,
+};
 export const ListWithItems = Template.bind({});
 ListWithItems.args = {
 	list: listLoaded,
+	icon: false,
 };

@@ -23,7 +23,7 @@ export const parameters = {
   options: {
     storySort: {
       method:'alphabetical',
-      order: ['Introduction','Basic','Container','Content','Form',['Question','Basic','Advanced'],'*'],
+      order: ['Introduction','Basic','Navigation','Container','Content','Form',['Question','Basic','Advanced'],'*'],
     }
   },
 }

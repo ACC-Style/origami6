@@ -41,3 +41,10 @@ Default.args = {
     currentPage:51,
     totalPages:100
 };
+export const small = Template.bind({});
+small.args = {
+    listSize:5,
+    currentPage:51,
+    totalPages:100,
+	size:'small'
+};
