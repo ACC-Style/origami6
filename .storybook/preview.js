@@ -20,4 +20,10 @@ import  { VueResponsiveComponents }  from 'vue-responsive-components';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
+  options: {
+    storySort: {
+      method:'alphabetical',
+      order: ['Introduction','Basic','Container','Content','Form',['Question','Basic','Advanced'],'*'],
+    }
+  },
 }

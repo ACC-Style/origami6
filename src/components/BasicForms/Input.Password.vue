@@ -1,84 +1,112 @@
 <template>
-	<Question 
-		:inputId="inputId"
-		:defaultValue="defaultValue"
+	<Question
+		:id="id"
 		:icon="icon"
-		:postLabel="thisPostLabel"
+		:postLabel="postLabel"
 		:required="required"
 		:state="thisState"
-		class="max-w_65"
-        @onClickPostLabel="onClickPostLabel"
-	 >
-		<template v-slot:default><slot name="default">
-            <small class="c_alert block">! Incomplete Component !</small>Password
-        </slot>
+	>
+		<template v-slot:default>
+			<slot name="default">
+				Password
+			</slot>
 		</template>
 		<template v-slot:input>
-			<input
-				:id="inputId"
-				:name="inputId"
-				v-on:change="onChange(value)"
-				class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3"
-				:type="thisInputType"
-				v-model="value"
-				required="required"
-				:class="inputStyles"
-				:disabled="thisState == 'disabled'"
-			/>
+			<div class="relative flex flex_grow">
+				<input
+					:id="'input_'+id"
+					:name="'input_'+id"
+					class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3"
+					:type="thisInputType"
+					@input="onChange(value)"
+					:value="value"
+					:required="required"
+					:class="inputStyles"
+					:disabled="thisState == 'disabled'"
+				/>
+				<Btn
+					
+					class=""
+					state="secondary"
+					:shadow="false"
+					corner="square"
+					size="small"
+					@onClick="showHideToggle()"
+				>
+					<i class="far fa self_center" :class="showHideIcon"></i>
+				</Btn>
+			</div>
 		</template>
-		<template v-slot:alertMessage>Not Strong Enough to Be Our Password</template>
-		<template v-slot:warningMessage> <slot  name="warningMessage"></slot></template>
-		<template v-slot:successMessage> <slot  name="successMessage"></slot></template>
-		<template v-slot:infoMessage> <slot  name="infoMessage"></slot></template>
-		<template v-slot:accentMessage> <slot  name="accentMessage"></slot></template>
+		<template v-slot:alertMessage
+			>Not Strong Enough to Be Our Password</template
+		>
+		<template v-slot:warningMessage>
+			<slot name="warningMessage"></slot
+		></template>
+		<template v-slot:successMessage>
+			<slot name="successMessage"></slot
+		></template>
+		<template v-slot:infoMessage>
+			<slot name="infoMessage"></slot
+		></template>
+		<template v-slot:accentMessage>
+			<slot name="accentMessage"></slot
+		></template>
+		<template v-slot:hint>
+			<a class="link w_100 text_right">forgot password</a>	
+		</template>
 	</Question>
 </template>
 
 <script>
-import Question from "./subComponent/Question";
-import baseInputFunctions from "./subComponent/baseInputFunctions.vue"
-import is from 'is_js';
-	export default {
-		mixins:[baseInputFunctions],
-		components:{Question},
-		props:{
-			inputType:{type:String,default:"password"},
-			icon: { type: String, default:'fa-key' },
+import Question from "./subComponent/Question.vue";
+import baseInputFunctions from "./subComponent/baseInputFunctions.vue";
+import Btn from "../subComponents/Btn.vue";
+export default {
+	mixins: [baseInputFunctions],
+	components: { Question,Btn },
+	props: {
+		inputType: { type: String, default: "password" },
+		icon: { type: String, default: "fa-key" },
+		forgotPasswordURL: { type: String, default: "https://www.acc.org/ForgotPassword" },
+	},
+	data() {
+		return {
+			isMasked: true,
+		};
+	},
+	computed: {
+		showHideIcon: function() {
+			let icon = (this.isMasked)? "fa-eye": "fa-eye-slash";
+			return icon;
+		},
+		thisInputType:function(){
+			let type = (this.isMasked)? "password": "text";
+			return type;
 		}
-	  ,data() {
-		  return {
-              thisInputType:this.inputType,
-              thisPostLabel:"show",
-		  }
-	  },
-	  methods: {
-        onClickPostLabel:function(){},
-		isPassword(value){
-            const regex = RegExp('^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$');
+	},
+	methods: {
+		showHideToggle: function () {
+			this.isMasked = !this.isMasked;
+		},
+		isPassword() {
+			const regex = RegExp('^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$');
 			return regex.test(value);
 		},
-		onChange: function(value) {
+		onChange: function (value) {
 			if (value == "" && this.required) {
-				this.thisState = "requiredAlert"
-				this.$emit("onChange", "");
-				this.$emit("onStateChange","requiredAlert")
-			}else if ( !this.isPassword(value) ){
-				this.thisState = "alert";
-				this.$emit("onChange", "");
-				this.$emit("onStateChange","alert");
-				} else {
-				this.thisState = "";
-				this.$emit("onChange", value);
-				this.$emit("onStateChange","")
-
-			} 
-		}
-	},computed: {
-		
+				this.$emit("input", "");
+				this.$emit("onStateChange", "requiredAlert");
+			} else if (!this.isPassword(value)) {
+				this.$emit("input", "");
+				this.$emit("onStateChange", "alert");
+			} else {
+				this.$emit("input", value);
+				this.$emit("onStateChange", "");
+			}
+		},
 	},
-	}
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

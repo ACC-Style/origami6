@@ -74,8 +74,8 @@
 
 <script>
 import messageHolder from "../subComponents/InputMessageHolder.vue";
-import stateIcon from "../subComponents/StatefullIcon";
-import ValueIcon from "../subComponents/inputValueIcon";
+import StateIcon from "../subComponents/StateIcon.vue";
+import ValueIcon from "../subComponents/inputValueIcon.vue";
 
 export default {
 	name: "inputText",
@@ -150,7 +150,7 @@ export default {
 	},
 	components: {
 		messageHolder,
-		stateIcon,
+		StateIcon,
 		ValueIcon
 	},
 	methods: {

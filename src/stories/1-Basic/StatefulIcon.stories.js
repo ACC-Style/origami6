@@ -1,8 +1,8 @@
-import StatefullIcon from "../../components/subComponents/StatefullIcon.vue";
+import StateIcon from "../../components/subComponents/StateIcon.vue";
 
 export default{
-    title: "Basic/StatefullIcon",
-    component: StatefullIcon,
+    title: "Basic/StateIcon",
+    component: StateIcon,
     parameters: {
 		docs: {
 			description: {
@@ -11,7 +11,7 @@ export default{
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {
-				code: `<StatefullIcon :state="$props"/>`
+				code: `<StateIcon :state="$props"/>`
 			},
 		},
     },
@@ -23,11 +23,11 @@ export default{
 
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { StatefullIcon },
+	components: { StateIcon },
 	template: ` <div>
-    <StatefullIcon class="font_5 m_3" :state="state" style="width:100px;height:100px" />
-    <StatefullIcon class="font_3 m_3" :state="state" style="width:calc(100px - 2rem);height:calc(100px - 2rem)" />
-    <StatefullIcon class="font_1 m_3" :state="state" style="width:calc(100px - 4rem);height:calc(100px - 4rem)" />
+    <StateIcon class="font_5 m_3" :state="state" style="width:100px;height:100px" />
+    <StateIcon class="font_3 m_3" :state="state" style="width:calc(100px - 2rem);height:calc(100px - 2rem)" />
+    <StateIcon class="font_1 m_3" :state="state" style="width:calc(100px - 4rem);height:calc(100px - 4rem)" />
  </div>`,
 });
 export const alert = Template.bind({});

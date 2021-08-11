@@ -13,7 +13,7 @@
 							actionTask = actionTaskDefault;
 						}
 					">
-					<StatefullIcon :showIcon="true" :state="state" :icon="'far fa-cube'" class="flex_none p_2 m_n1 m-r_0" />
+					<StateIcon :showIcon="true" :state="state" :icon="'far fa-cube'" class="flex_none p_2 m_n1 m-r_0" />
 			<div class="flex_none w_40:lg p-y_3 p-l_4 p-r_4:md p-r_5">
 				<h3 class="c_primary m_0 font-size_up p-y_2 lh_1 font_display">{{ label }}
 
@@ -157,7 +157,7 @@
 <script>
 import HoverContainer from "../AdvancedContainers/hoverContainer.vue";
 import StateChart from "./SubComponents/Agenda.StateChart.vue";
-import StatefullIcon from "../subComponents/StatefullIcon.vue";
+import StateIcon from "../subComponents/StateIcon.vue";
 import Btn from "../subComponents/Btn.vue";
 export default {
 	name: "ChannelListItem",
@@ -209,7 +209,7 @@ export default {
         }
 
     },
-	components: { HoverContainer, Btn, StateChart,StatefullIcon },
+	components: { HoverContainer, Btn, StateChart,StateIcon },
 	mounted() {
 		this.actionIcon = this.actionColorDefault;
 		this.actionColor = this.actionColorDefault;

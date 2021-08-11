@@ -41,7 +41,7 @@
 						<span class="block text_right">{{date_lastPayment}}</span>
 						<strong class="font_n2 opacity_5 uppercase lh_0 block text_right">Last Payment</strong>
 					</div>
-					<StatefullIcon class="font_1 shadow_n1 flex_none m-l_4 p-x_3" :state="'success'" />
+					<StateIcon class="font_1 shadow_n1 flex_none m-l_4 p-x_3" :state="'success'" />
 				</div>
 				<div
 					class="flex_auto flex m-t_3 m-t_0:md font_2 c_shade-n5 shadow_1 m-x_4 bg_shade-5 br_1 br_solid br_black-2"
@@ -50,7 +50,7 @@
 						<span class="block text_right">{{date_paymentDue}}</span>
 						<strong class="font_n2 opacity_5 uppercase lh_0 block text_right">Next Payment</strong>
 					</div>
-					<StatefullIcon class="font_1 shadow_n1 flex_none p-x_3" :state="'info'" />
+					<StateIcon class="font_1 shadow_n1 flex_none p-x_3" :state="'info'" />
 				</div>
 			</div>
 			<div class="br_1 br_black-2 br_solid">
@@ -65,12 +65,12 @@
 </template>
 
 <script>
-import StatefullIcon from "../../../subComponents/StatefullIcon.vue";
+import StateIcon from "../../../subComponents/StateIcon.vue";
 import BundleOverview from "../Bundle/Seat.Bundle.Overview.vue";
 
 export default {
 	components: {
-		StatefullIcon,BundleOverview
+		StateIcon,BundleOverview
 
 	},
 	data() {

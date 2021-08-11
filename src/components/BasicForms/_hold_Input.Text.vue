@@ -65,7 +65,7 @@
 
 <script>
 import messageHolder from "../subComponents/InputMessageHolder.vue";
-import stateIcon from "../subComponents/StatefullIcon";
+import stateIcon from "../subComponents/StateIcon";
 import ValueIcon from "../subComponents/inputValueIcon";
 
 export default {

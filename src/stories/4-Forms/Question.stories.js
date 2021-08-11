@@ -1,19 +1,18 @@
 import TextInput from "../../components/BasicForms/Input.Text.vue";
 import Question  from "../../components/BasicForms/subComponent/Question.vue";
-import baseInputFunctions from "../../components/BasicForms/subComponent/baseInputFunctions.vue";
 import MessageHolder from "../../components/subComponents/InputMessageHolder.vue";
 import StateIcon from "../../components/subComponents/StateIcon";
 import ValueIcon from "../../components/subComponents/inputValueIcon";
 import { commonArgs } from "./common.argTypes.js";
 export default{
-    title: "Form/Basic/Text",
-	component: TextInput,
-	subcomponents:{Question,MessageHolder,StateIcon,ValueIcon},
+    title: "Form/Question",
+	component: Question,
+	subcomponents:{TextInput,MessageHolder,StateIcon,ValueIcon},
     parameters: {
 		docs: {
 			description: {
 				component:
-					"Simple Text Form with simple validations",
+					"All Basic Inputs are wrapped in a containing component called a question it controls the state decorations and holds labels and hints.",
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {

@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import Icon from "./StatefullIcon.vue";
+import Icon from "./StateIcon.vue";
 export default {
 	name: "inputMessageHolder",
 	components: {

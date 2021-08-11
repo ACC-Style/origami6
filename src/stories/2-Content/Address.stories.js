@@ -1,6 +1,6 @@
 import AddressBlock from "../../components/subComponents/AddressBlock.vue";
 export default {
-  title: 'Content/Address',
+  title: 'Content',
   component: AddressBlock,
   parameters: {
     docs: { 
@@ -22,8 +22,8 @@ const Template = (args, { argTypes }) => ({
   template: '<AddressBlock v-bind="$props"/>',
 });
 
-export const Base = Template.bind({});
-Base.args = {
+export const Address = Template.bind({});
+Address.args = {
 	institution: "American College of Cardiology",
 	street_1: "1000 Beacher Street",
 	street_2: "Apt 543",

@@ -3,7 +3,7 @@ import { commonArgs } from "./common.argTypes.js";
 
 
 export default{
-    title: "Form/Input/DataList",
+    title: "Form/Basic/DataList",
     component: DataListInput,
     parameters: {
 		docs: {

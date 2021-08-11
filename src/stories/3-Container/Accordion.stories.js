@@ -10,7 +10,8 @@ export default {
                 component:
 					"Collapse content under the headline of this container",
 			},
-			sorce: {
+			actions: { argTypesRegex: "^on.*" },
+			source: {
 				code: `<Accordion @onClick="onClick"  @onExpand="onExpand" @onCollapse="onCollapse"  v-bind="$props">
                 <template v-slot:header><div v-html="header"/></template>
                 <template v-slot:content><div v-html="content"/></template>
@@ -37,11 +38,16 @@ export default {
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { Accordion },
-	template: `<Accordion @onClick="onClick" @onExpand="onExpand" @onCollapse="onCollapse" v-bind="$props">
-    <template v-slot:header><div v-html="header"/></template>
-<template v-slot:content><div v-html="content"/></template>
-            </Accordion>
-                `,
+	template: `
+	<Accordion 
+	@onClick="onClick" 
+	@onExpand="onExpand" 
+	@onCollapse="onCollapse" 
+	v-bind="$props">
+		<template v-slot:header><div v-html="header"/></template>
+		<template v-slot:content><div v-html="content"/></template>
+	</Accordion>
+    `,
 });
 
 export const Parent = Template.bind({});

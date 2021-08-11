@@ -2,7 +2,7 @@ import RadioButton from "../../components/BasicForms/subComponent/Sub.RadioButto
 import RadioButtons from "../../components/BasicForms/Input.RadioButtons.vue";
 import { commonArgs } from "./common.argTypes.js";
 export default {
-	title: "Form/Input/Radio",
+	title: "Form/Basic/Radio",
 	component: RadioButtons,
 	subcomponents: { RadioButton },
 	parameters: {

@@ -54,7 +54,7 @@
 							>Last Payment</strong
 						>
 					</div>
-					<StatefullIcon
+					<StateIcon
 						class="font_1 shadow_n1 flex_none m-l_4 p-x_3"
 						:state="state"
 					/>
@@ -73,7 +73,7 @@
 							>Next Payment</strong
 						>
 					</div>
-					<StatefullIcon
+					<StateIcon
 						class="font_1 shadow_n1 flex_none p-x_3"
 						:state="state"
 					/>
@@ -100,12 +100,12 @@
 </template>
 
 <script>
-import StatefullIcon from "../../../subComponents/StatefullIcon.vue";
+import StateIcon from "../../../subComponents/StateIcon.vue";
 import MicroChartLoading from "../../Charts/Seat.MicroSeatChart.Loading.vue";
 import LoadingText from "../../../subComponents/LoadingText.vue";
 export default {
 	components: {
-		MicroChartLoading,LoadingText,StatefullIcon
+		MicroChartLoading,LoadingText,StateIcon
 	},
 	data() {
 		return {

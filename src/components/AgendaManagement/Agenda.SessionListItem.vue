@@ -13,7 +13,7 @@
 							actionTask = actionTaskDefault;
 						}
 					">
-			<StatefullIcon :showIcon="true" :state="(state == 'success')?'shade':state" :icon="'far fa-kaaba'" class="flex_none p_2 m_n1 m-r_0" />
+			<StateIcon :showIcon="true" :state="(state == 'success')?'shade':state" :icon="'far fa-kaaba'" class="flex_none p_2 m_n1 m-r_0" />
 			<div class="flex_auto p-y_3 p-l_4 p-r_4:md p-r_5">
 				<h3 class="c_primary m_0 p_y_2 lh_1 font-size_up font_display">
 						<span class="font_bold">{{sessionId}}. </span>
@@ -109,7 +109,7 @@
 
 <script>
 import HoverContainer from "../AdvancedContainers/hoverContainer.vue";
-import StatefullIcon from "../subComponents/StatefullIcon.vue";
+import StateIcon from "../subComponents/StateIcon.vue";
 import Btn from "../subComponents/Btn.vue";
 export default {
 	props: {
@@ -143,7 +143,7 @@ export default {
 		this.actionColor = this.actionColorDefault;
 		this.actionTask = this.actionTaskDefault;
 	},
-	components: { HoverContainer, Btn, StatefullIcon },
+	components: { HoverContainer, Btn, StateIcon },
 };
 </script>
 

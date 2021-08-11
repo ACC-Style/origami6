@@ -1,13 +1,13 @@
-import InputEmail from "../../components/BasicForms/Input.Email.vue";
+import InputEmail from "../../../components/BasicForms/Input.Email.vue";
 
-import Question  from "../../components/BasicForms/subComponent/Question.vue";
-import baseInputFunctions from "../../components/BasicForms/subComponent/baseInputFunctions.vue";
-import MessageHolder from "../../components/subComponents/InputMessageHolder.vue";
-import StateIcon from "../../components/subComponents/StatefullIcon";
-import ValueIcon from "../../components/subComponents/inputValueIcon";
-import { commonArgs } from "./common.argTypes.js";
+import Question  from "../../../components/BasicForms/subComponent/Question.vue";
+import baseInputFunctions from "../../../components/BasicForms/subComponent/baseInputFunctions.vue";
+import MessageHolder from "../../../components/subComponents/InputMessageHolder.vue";
+import StateIcon from "../../../components/subComponents/StateIcon";
+import ValueIcon from "../../../components/subComponents/inputValueIcon";
+import { commonArgs } from "./../common.argTypes.js";
 export default{
-    title: "Form/Input/Email",
+    title: "Form/Advanced/Email",
 	component: InputEmail,
 	subcomponents:{baseInputFunctions,Question,MessageHolder,StateIcon,ValueIcon},
     parameters: {

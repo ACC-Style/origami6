@@ -1,9 +1,9 @@
-import SearchBar from "../../components/BasicForms/Input.SearchBar.vue";
-import baseInputFunctions from "../../components/BasicForms/subComponent/baseInputFunctions.vue";
-import MessageHolder from "../../components/subComponents/InputMessageHolder.vue";
-import { commonArgs } from "./common.argTypes.js";
+import SearchBar from "../../../components/BasicForms/Input.SearchBar.vue";
+import baseInputFunctions from "../../../components/BasicForms/subComponent/baseInputFunctions.vue";
+import MessageHolder from "../../../components/subComponents/InputMessageHolder.vue";
+import { commonArgs } from "./../common.argTypes.js";
 export default{
-    title: "Form",
+    title: "Form/Advanced",
 	component: SearchBar,
 	subcomponents:{baseInputFunctions,MessageHolder},
     parameters: {

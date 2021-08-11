@@ -131,7 +131,7 @@
 <script>
 import Btn from "../subComponents/Btn";
 import AddressBlock from "../subComponents/AddressBlock";
-import StatusIcon from "../subComponents/StatefullIcon";
+import StatusIcon from "../subComponents/StateIcon";
 import TransitionExpand from "../subComponents/TransitionExpand";
 import moment from "moment";
 export default {

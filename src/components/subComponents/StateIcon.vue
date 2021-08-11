@@ -10,7 +10,7 @@
 
 <script>
 export default {
-	name: "statefullIcon",
+	name: "StateIcon",
 	props: {
 		showIcon: {type:Boolean, default:true},
 		icon: {type:String, default:""},

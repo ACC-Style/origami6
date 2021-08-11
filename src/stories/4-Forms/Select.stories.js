@@ -1,7 +1,7 @@
 import SelectInput from "../../components/BasicForms/Input.Select.vue";
 import { commonArgs } from "./common.argTypes.js";
 export default{
-    title: "Form/Input/Select",
+    title: "Form/Basic/Select",
     component: SelectInput,
     parameters: {
 		docs: {
