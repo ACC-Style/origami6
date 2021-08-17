@@ -5,6 +5,7 @@
 		:postLabel="postLabel"
 		:required="required"
 		:state="thisState"
+		@onClickPostLabel="$emit('onClickPostLabel')"
 	>
 		<template v-slot:default><slot name="default"></slot></template>
 		<template v-slot:input>
@@ -21,7 +22,8 @@
 				@change="onChange($event)"
 			/>
 		</template>
-		<template v-slot:alertMessage>This is not an email</template>
+		<template v-slot:alertMessage><slot name="alertMessage"></slot
+		></template>
 		<template v-slot:warningMessage>
 			<slot name="warningMessage"></slot
 		></template>

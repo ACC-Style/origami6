@@ -10,50 +10,47 @@
 		<template v-slot:input>
 				<div class="relative flex flex_grow">
 					<input
-						:id="'input_'+id"
-						:name="'input_'+id"
-						class="br_2
-						p-y_2
-						br_solid
-						flex_auto
-						p-l_4
-						lh_3
-						br-tl_radius
-						br-bl_radius
-						bg_white"
-						:class="[{'disabled':isTextDisabled},inputStyles]"
+                        :id="'input_'+id"
+                        :name="'input_'+id"
+                        class="br_2
+							p-y_2
+							br_solid
+							flex_auto
+							p-l_4
+							lh_3
+							br-tl_radius
+							br-bl_radius
+							bg_white"
 						:type="type"
-						:value="value"
-						@input="$emit('input', $event.target.value)"
-						@change="$emit('input', $event.target.value)"					
+						:value="inputValue"
 						:required="required"
 						:placeholder="placeholder"
-
-						:disabled="thisState == 'disabled' || isTextDisabled"
-						:ref="'input_'+id"
-						
+						:class="inputStyles"
+						:disabled="thisState == 'disabled'"
+						@input="onChange($event)"
 			/>
 					<Btn
-						v-show="value != null && value.length > 0"
+						v-show="inputValue != null && inputValue.length > 0"
 						class="absolute t_0 b_0 r_0"
 						:state="'empty'"
 						:shadow="false"
-						@onClick="deleteValue()"
+						@onClick="inputValue = ''"
 					>
 						<i class="far fa fa-times self_center"></i>
 					</Btn>
-					<slot name='autoSuggestHolder'></slot>
 				</div>
 				<div class="flex flex_shrink">
 					<Btn
 						class="br-tl_square br-bl_square"
 						:shadow="false"
+						:isDisabled="
+							thisState == 'disabled' || inputValue == ''
+						"
 						:state="btnState"
-						:size="size"
-						@onClick="onClick(value)"
-						:isDisabled="thisState == 'disabled' || isBtnDisabled"
+						:size="btnSize"
+						@onClick="onSearch(inputValue)"
 					>
-						<slot name='btnLabel'><i
+						<i
 							class="
 								far
 								fa fa-search
@@ -63,8 +60,8 @@
 							"
 						></i>
 						<span class="display_none inline:md font_bold"
-							>Search</span
-						></slot>
+							>{{ actionLabel }}</span
+						>
 					</Btn>
 				</div>
 		</template>
@@ -92,24 +89,25 @@ export default {
 	mixins: [baseInputFunctions],
 	components: { Btn,Question },
 	props: {
-		isTextDisabled:{type:Boolean,default:false},
-		isBtnDisabled:{type:Boolean,default:false},
-		value:{default:''},
-		size: {default:''}
+		actionLabel: { type: String, default: 'Search' },
 	},
 	data() {
 		return {
+			thisInputType: this.inputType,
+            inputValue: this.value,
 		}
 	},
 	methods: {
-		onClick(value) {
-			this.$emit("onClick", value);
+		onChange(event) {
+			this.inputValue = event.target.value;
+			this.$emit('input',event.target.value);
 		},
-		deleteValue() {			
-			this.$refs['input_'+this.id].value = "";
-			this.$emit("input", "");
-
+		onSearch(inputValue) {
+			this.$emit("onSearch", inputValue);
 		}
+	},
+	computed: {
+
 	},
 }
 </script>

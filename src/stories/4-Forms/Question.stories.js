@@ -1,86 +1,102 @@
 import TextInput from "../../components/BasicForms/Input.Text.vue";
-import Question  from "../../components/BasicForms/subComponent/Question.vue";
+import Question from "../../components/BasicForms/subComponent/Question.vue";
 import MessageHolder from "../../components/subComponents/InputMessageHolder.vue";
 import StateIcon from "../../components/subComponents/StateIcon";
 import ValueIcon from "../../components/subComponents/inputValueIcon";
-import { commonArgs } from "./common.argTypes.js";
-export default{
-    title: "Form/Question",
+import { commonArgTypes,commonArgs } from "./common.argTypes.js";
+export default {
+	title: "Form/Question",
 	component: Question,
-	subcomponents:{TextInput,MessageHolder,StateIcon,ValueIcon},
-    parameters: {
+	subcomponents: { TextInput, MessageHolder, StateIcon, ValueIcon },
+	parameters: {
 		docs: {
 			description: {
 				component:
-					"All Basic Inputs are wrapped in a containing component called a question it controls the state decorations and holds labels and hints.",
+					"All Basic Inputs are wrapped in a containing component called a 'Question' it controls the state decorations, labels, icon and value decorators and messages.",
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {
-				code: `<TextInput @onChange="onChange" @onStateChange="onStateChange" v-bind="$props"/>`
+				code: `
+				<TextInput :icon="icon" :state="state" :postLabel="postLabel" required="required" @onClickPostLabel="action('onClickPostLabel')">
+					<template v-slot:default>Default Slot Text</template>
+					<template v-slot:alertMessage>This is alert message</template>
+					<template v-slot:warningMessage>Warning Will Robinson</template>
+					<template v-slot:successMessage>Congratulations you can follow instructions</template>			
+					<template v-slot:hint>this could be useful</template>
+				</TextInput>
+				`,
 			},
 		},
-    },
-    argTypes:{
-		...commonArgs
-    }
-}
+	},
+	argTypes: {
+		...commonArgTypes,
+
+	},
+	args: {
+		...commonArgs,
+	},
+};
 
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { TextInput },
-	template: `<TextInput 
-	:inputId="inputId"
-	:type="type"
-	:state="state"
-	@onStateChange="onStateChange" 
-	:value="''">
-	{{label}}
-	<template v-slot:successMessage>Congratulations you can follow instructions</template>
+	template: `<TextInput :value="''" :icon="icon" :state="state" :postLabel="postLabel" :required="required" @onClickPostLabel="onClickPostLabel">
+		<template v-slot:default >{{ defaultSlot }}</template>
+		<template v-slot:requiredAlertMessage >{{requiredAlertMessage}}</template>
+		<template v-slot:alertMessage >{{alertMessage}}</template>
+		<template v-slot:warningMessage >{{warningMessage}}</template>
+		<template v-slot:successMessage >{{successMessage}}</template>
+		<template v-slot:accentMessage >{{accentMessage}}</template>
+		<template v-slot:infoMessage >{{infoMessage}}</template>			
+		<template v-slot:hint >{{ hint }}</template>
 	</TextInput>`,
 });
+
 export const Default = Template.bind({});
 Default.args = {
-	label:"Basic Text",
-	inputId:"BasicText",
-
+	required: false,
 };
-export const Number = Template.bind({});
-Number.args = {
-	label:"Basic Number",
-	inputId:"uniqueTextInputIdNumber",
-	type:'number'
 
+export const required = Template.bind({});
+required.args = {
+	required: true,
 };
-export const Date = Template.bind({});
-Date.args = {
-	label:"Basic Date",
-	inputId:"uniqueTextInputIdNumber",
-	type:'date'
-
+export const requiredAlert = Template.bind({});
+requiredAlert.args = {
+	state: "requiredAlert",
 };
-export const Time = Template.bind({});
-Time.args = {
-	label:"Basic Time",
-	inputId:"uniqueTextInputIdNumber",
-	type:'time'
+export const alert = Template.bind({});
+alert.args = {
+	state: "alert",
+};
 
+export const warning = Template.bind({});
+warning.args = {
+	state: "warning",
 };
 
 export const Success = Template.bind({});
 Success.args = {
-	inputId:"uniqueTextInputIdSuccess",
-	state:"success"
+	state: "success",
+};
+export const info = Template.bind({});
+info.args = {
+	state: "info",
+};
+export const accent = Template.bind({});
+accent.args = {
+	state: "accent",
 };
 
 export const IconDecorated = Template.bind({});
 IconDecorated.args = {
-	inputId:"uniqueTextInputIdIcon",
-	icon:"fa-user"
-
+	icon: "fa-user",
+};
+export const hint = Template.bind({});
+hint.args = {
+	hint: "Use the hint slot to add a hint to the input",
 };
 export const PostLabelInput = Template.bind({});
 PostLabelInput.args = {
-	inputId:"uniqueTextInputIdPostLabel",
-	postLabel:"mg/ml"
-
+	postLabel: "mg/ml",
 };

@@ -50,7 +50,7 @@ export default {
 				return ["parent", "child", "grandchild"].indexOf(value) !== -1;
 			},
 		},
-			internalIsExpaned:{type:Boolean,default:false}
+		internalIsExpanded:{type:Boolean,default:false}
 	},
 	data() {
 		return {

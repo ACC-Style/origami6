@@ -50,8 +50,8 @@ const Template = (args, { argTypes }) => ({
     `,
 });
 
-export const Parent = Template.bind({});
-Parent.args = {
+export const Default = Template.bind({});
+Default.args = {
 	header: "Parent Header",
 	content: longText,
 	type: "parent",
@@ -61,11 +61,11 @@ const ChildTemplate = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { Accordion },
 	template: `
-		<Accordion @onClick="onClick" @onExpand="onExpand" @onCollapse="onCollapse" :type="'parent'" :internalIsExpaned="internalIsExpanedVar" >
+		<Accordion @onClick="onClick" @onExpand="onExpand" @onCollapse="onCollapse" :type="'parent'" :internalIsExpanded="internalIsExpandedVar" >
     		<template v-slot:header>Parent Header with Children</template>
 			<template v-slot:content>
 				<div v-html="subContent"/>
-				<Accordion class="m-t_4" @onClick="onClick" @onExpand="internalIsExpanedVar=true" :type="'child'" @onCollapse="internalIsExpanedVar=false" > 
+				<Accordion class="m-t_4" @onClick="onClick" @onExpand="internalIsExpandedVar=true" :type="'child'" @onCollapse="internalIsExpandedVar=false" > 
 				<template v-slot:header><div v-html="childHeader1"/></template>
 				<template v-slot:content><div v-html="content" /></template>
 				</Accordion>
@@ -81,7 +81,7 @@ Child.args = {
 	childHeader1:"<span>Child Header 1</span>",
 	childHeader2:"Child Header 2",
 	subContent: longText,
-	internalIsExpanedVar:false
+	internalIsExpandedVar:false
 
 }
 

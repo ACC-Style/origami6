@@ -48,7 +48,7 @@
 		</div>
 		<div class="font-size_down">
 			<messageHolder :state="'alert'" v-if="state == 'requiredAlert'"
-				>This input is required.</messageHolder
+				><slot name="requiredAlertMessage">This input is required.</slot> </messageHolder
 			>
 			<messageHolder :state="'alert'" v-if="state == 'alert'">
 				<slot name="alertMessage"></slot>

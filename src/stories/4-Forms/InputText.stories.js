@@ -4,7 +4,7 @@ import baseInputFunctions from "../../components/BasicForms/subComponent/baseInp
 import MessageHolder from "../../components/subComponents/InputMessageHolder.vue";
 import StateIcon from "../../components/subComponents/StateIcon";
 import ValueIcon from "../../components/subComponents/inputValueIcon";
-import { commonArgs } from "./common.argTypes.js";
+import { commonArgTypes,commonArgs } from "./common.argTypes.js";
 export default{
     title: "Form/Basic/Text",
 	component: TextInput,
@@ -22,66 +22,56 @@ export default{
 		},
     },
     argTypes:{
+		...commonArgTypes
+    },args:{
 		...commonArgs
-    }
+	}
 }
 
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { TextInput },
 	template: `<TextInput 
+	
 	:inputId="inputId"
 	:type="type"
-	:state="state"
+	:value="''" :icon="icon" :state="state" :postLabel="postLabel" :required="required"
 	@onStateChange="onStateChange" 
 	:value="''">
-	{{label}}
-	<template v-slot:successMessage>Congratulations you can follow instructions</template>
+	<template v-slot:default >{{ defaultSlot }}</template>
+		<template v-slot:requiredAlertMessage >{{requiredAlertMessage}}</template>
+		<template v-slot:alertMessage >{{alertMessage}}</template>
+		<template v-slot:warningMessage >{{warningMessage}}</template>
+		<template v-slot:successMessage >{{successMessage}}</template>
+		<template v-slot:accentMessage >{{accentMessage}}</template>
+		<template v-slot:infoMessage >{{infoMessage}}</template>			
+		<template v-slot:hint >{{ hint }}</template>
 	</TextInput>`,
 });
-export const Default = Template.bind({});
-Default.args = {
-	label:"Basic Text",
+export const Text = Template.bind({});
+Text.args = {
+	defaultSlot:"Basic Text",
 	inputId:"BasicText",
 
 };
 export const Number = Template.bind({});
 Number.args = {
-	label:"Basic Number",
+	defaultSlot:"Basic Number",
 	inputId:"uniqueTextInputIdNumber",
 	type:'number'
 
 };
 export const Date = Template.bind({});
 Date.args = {
-	label:"Basic Date",
+	defaultSlot:"Basic Date",
 	inputId:"uniqueTextInputIdNumber",
 	type:'date'
 
 };
 export const Time = Template.bind({});
 Time.args = {
-	label:"Basic Time",
+	defaultSlot:"Basic Time",
 	inputId:"uniqueTextInputIdNumber",
 	type:'time'
-
-};
-
-export const Success = Template.bind({});
-Success.args = {
-	inputId:"uniqueTextInputIdSuccess",
-	state:"success"
-};
-
-export const IconDecorated = Template.bind({});
-IconDecorated.args = {
-	inputId:"uniqueTextInputIdIcon",
-	icon:"fa-user"
-
-};
-export const PostLabelInput = Template.bind({});
-PostLabelInput.args = {
-	inputId:"uniqueTextInputIdPostLabel",
-	postLabel:"mg/ml"
 
 };

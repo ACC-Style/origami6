@@ -2,7 +2,7 @@ import Accordion from "../../components/BasicContainer/Accordion.vue";
 import {shortText, longText} from "../lorem/text.js";
 
 export default {
-	title: "Container/Accordion",
+	title: "Container/Accordion/BootstrapOnly",
 	component: Accordion,
 	parameters: {
         docs: { 
@@ -58,6 +58,6 @@ const Template = (args, { argTypes }) => ({
  `,
 });
 
-export const NoVue = Template.bind({});
-NoVue.args = {shortText:shortText}
+export const Default = Template.bind({});
+Default.args = {shortText:shortText}
   

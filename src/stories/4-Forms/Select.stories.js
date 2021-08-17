@@ -18,7 +18,9 @@ export default{
     argTypes:{
 		...commonArgs,
 		selected: { control:{type:'text'}},
-		options:{ control:{type:'array'}}
+		options:{ control:{type:'array'}},
+		value: { control:{type:'number', min:0, max:10}},
+
 	},
 }
 const options= [{
@@ -65,21 +67,28 @@ const options= [{
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { SelectInput },
-	template: `<SelectInput  v-bind="$props" :state="state" v-model="selected">Select Plant<template v-slot:alertMessage>Congratulations you cannot follow instructions</template></SelectInput>`,
+	template: `<SelectInput  v-bind="$props" :state="state" :value="value">
+		<template v-slot:default >{{ defaultSlot }}</template>
+		<template v-slot:requiredAlertMessage >{{requiredAlertMessage}}</template>
+		<template v-slot:alertMessage >{{alertMessage}}</template>
+		<template v-slot:warningMessage >{{warningMessage}}</template>
+		<template v-slot:successMessage >{{successMessage}}</template>
+		<template v-slot:accentMessage >{{accentMessage}}</template>
+		<template v-slot:infoMessage >{{infoMessage}}</template>			
+		<template v-slot:hint >{{ hint }}</template>
+	</SelectInput>`,
 });
-export const Default = Template.bind({});
-Default.args = {
-	inputId:"uniqueSelectInputIdBase",
-	selected: 1,
+export const NoSelection = Template.bind({});
+NoSelection.args = {
+	value: 'none',
+	defaultSlot: 'Select Plant',
 	options:options,
-	state:''
 
 };
-export const Alert = Template.bind({});
-Alert.args = {
-	inputId:"uniqueSelectInputIdBase",
-	selected: 1,
+export const DefaultSelection = Template.bind({});
+DefaultSelection.args = {
+	value: 1,
+	defaultSlot: 'Select Plant',
 	options:options,
-	state:'alert'
 
 };
