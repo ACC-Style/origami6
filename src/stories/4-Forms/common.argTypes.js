@@ -15,7 +15,7 @@ export const commonArgTypes = {
 			],
 		},
 	},
-	required:{ control: { type: "boolean", label: "Required" } },
+	required: { control: { type: "boolean", label: "Required" } },
 	state: {
 		control: {
 			type: "select",
@@ -32,22 +32,50 @@ export const commonArgTypes = {
 		},
 	},
 	type: {
-		control: { type: "select", options: ["text", "email", "password","number","date",'time'] },
+		control: {
+			type: "select",
+			options: ["text", "email", "password", "number", "date", "time"],
+		},
 	},
-	postLabel:{type: "string", control: { label: "Post Label", type: "text" }},
-	// event
-	onClickPostLabel: { action: "post label clicked" },
-	// slots
-	default: { type: "string", control: { type: "text"}, meta_description: "slot content", },
-	hint: { type: "string", control: { type: "text"}, meta_description: "slot content", },
-	alertMessage: { control: { type: "text", }, meta_description: "slot content", },
-	successMessage: { control: { type: "text", }, meta_description: "slot content", },
-	warningMessage: { control: { type: "text", }, meta_description: "slot content", },
-	accentMessage: { control: { type: "text", }, meta_description: "slot content", },
-	infoMessage: { control: { type: "text", }, meta_description: "slot content", },
-
+	postLabel: {
+		type: "string",
+		control: { label: "Post Label", type: "text" },
+	},
+	onClickPostLabel: { action: "onClickPostLabel" },
+	defaultSlot: {
+		type: "string",
+		control: { type: "text",meta_description: "slot content" },
+		
+	},
+	hint: { type: "string",
+	control: { type: "text" }, meta_description: "hint content" },
+	alertMessage: {
+		type: "string",
+		control: { type: "text",meta_description: "slot content" },
+		
+	},
+	successMessage: {
+		type: "string",
+		control: { type: "text",meta_description: "slot content" },
+		
+	},
+	warningMessage: {
+		type: "string",
+		control: { type: "text",meta_description: "slot content" },
+		
+	},
+	accentMessage: {
+		type: "string",
+		control: { type: "text",meta_description: "slot content" },
+		
+	},
+	infoMessage: {
+		type: "string",
+		control: { type: "text",meta_description: "slot content" },
+		
+	},
 };
-export const commonArgs={
+export const commonArgs = {
 	inputId: null,
 	icon: "",
 	state: "",
@@ -59,5 +87,5 @@ export const commonArgs={
 	warningMessage: "Warning Will Robinson",
 	successMessage: "Congratulations you can follow instructions",
 	infoMessage: "This is some info about your value",
-	accentMessage: "This is a note about the value entered"
-}
+	accentMessage: "This is a note about the value entered",
+};

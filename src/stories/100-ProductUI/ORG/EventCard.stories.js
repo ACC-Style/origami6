@@ -1,4 +1,5 @@
 import EventCard from "../../../components/ORG/ORG.EventCard.vue";
+import EventListCarousel from "../../../components/ORG/ORG.EventList.Carousel.vue";
 import Credits from "../../../components/subComponents/CreditChiclet.vue";
 import Btn from "../../../components/subComponents/Btn.vue";
 import HeaderImage from "../../../components/ORG/subComponent/HeaderImage.vue";
@@ -6,7 +7,7 @@ import HeaderImage from "../../../components/ORG/subComponent/HeaderImage.vue";
 export default {
 	title: "ACC/Home/EventCard",
 	component: EventCard,
-	subcomponents: {HeaderImage,Credits, Btn},
+	subcomponents: {EventListCarousel,HeaderImage,Credits, Btn},
 	parameters: {
 		docs: {
 			description: {
@@ -105,3 +106,74 @@ Live.args = {
 	corner:"radius"
     
 };
+const CarouselTemplate = (args, { argTypes }) => ({
+	props: Object.keys(argTypes),
+	components: { EventListCarousel },
+	template: `<EventListCarousel :events="events"></EventListCarousel>`,
+});
+export const Carousel = CarouselTemplate.bind({});
+	Carousel.args = {
+		events:[{
+			id:15605484,
+			title:"ACC Cardiovascular Overview and Board Prep Virtual Experience",
+			shortText:"Est et nostrum dolorum excepturi.",
+			startDate: new Date("2020-11-27T20:37:24Z"),
+			endDate: new Date("2020-11-27T23:37:24Z"),
+			onDemandDate: new Date("2020-12-31T23:37:24Z"),
+			credits: [{"id":1,"type":"CNE","value":3},{"id":2,"type":"COP","value":3}],
+			timezone:'America/Los_Angeles',
+			eventType:"In Person Meeting",
+			registerForEvent:true,
+			imgSM:"https://picsum.photos/id/1018/300/80",
+			imgMD:"https://picsum.photos/id/1018/600/80",
+			imgLG:"https://picsum.photos/id/1018/900/80",
+			imgXL:"https://picsum.photos/id/1018/1200/80",
+		},{
+			id:15605484,
+			title:"ACC Cardiovascular Overview and Board Prep Virtual Experience",
+			shortText:"Est et nostrum dolorum excepturi.",
+			startDate: new Date("2020-11-27T20:37:24Z"),
+			endDate: new Date("2020-11-27T23:37:24Z"),
+			onDemandDate: new Date("2020-12-31T23:37:24Z"),
+			credits: [{"id":1,"type":"CNE","value":3},{"id":2,"type":"COP","value":3}],
+			timezone:'America/Los_Angeles',
+			eventType:"In Person Meeting",
+			registerForEvent:true,
+			imgSM:"https://picsum.photos/id/1018/300/80",
+			imgMD:"https://picsum.photos/id/1018/600/80",
+			imgLG:"https://picsum.photos/id/1018/900/80",
+			imgXL:"https://picsum.photos/id/1018/1200/80",
+		},{
+			id:15605484,
+			title:"ACC Cardiovascular Overview and Board Prep Virtual Experience",
+			shortText:"Est et nostrum dolorum excepturi.",
+			startDate: new Date("2020-11-27T20:37:24Z"),
+			endDate: new Date("2020-11-27T23:37:24Z"),
+			onDemandDate: new Date("2020-12-31T23:37:24Z"),
+			credits: [{"id":1,"type":"CNE","value":3},{"id":2,"type":"COP","value":3}],
+			timezone:'America/Los_Angeles',
+			eventType:"In Person Meeting",
+			registerForEvent:true,
+			imgSM:"https://picsum.photos/id/1018/300/80",
+			imgMD:"https://picsum.photos/id/1018/600/80",
+			imgLG:"https://picsum.photos/id/1018/900/80",
+			imgXL:"https://picsum.photos/id/1018/1200/80",
+		},{
+			id:15605484,
+			title:"ACC Cardiovascular Overview and Board Prep Virtual Experience",
+			shortText:"Est et nostrum dolorum excepturi.",
+			startDate: new Date("2020-11-27T20:37:24Z"),
+			endDate: new Date("2020-11-27T23:37:24Z"),
+			onDemandDate: new Date("2020-12-31T23:37:24Z"),
+			credits: [{"id":1,"type":"CNE","value":3},{"id":2,"type":"COP","value":3}],
+			timezone:'America/Los_Angeles',
+			eventType:"In Person Meeting",
+			registerForEvent:true,
+			imgSM:"https://picsum.photos/id/1018/300/80",
+			imgMD:"https://picsum.photos/id/1018/600/80",
+			imgLG:"https://picsum.photos/id/1018/900/80",
+			imgXL:"https://picsum.photos/id/1018/1200/80",
+		}]
+		
+		
+	};

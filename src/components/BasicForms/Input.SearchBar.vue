@@ -9,10 +9,13 @@
         :isTextDisabled="isTextDisabled"
 		v-model="dataValue"
 		@onClick="onClick($event)"
+		@onClickPostLabel="$emit('onClickPostLabel')"
 	>
 		<template v-slot:default><slot name="default"></slot></template>
-        <template v-slot:btnLabel><slot name="default">{{btnLabel}}</slot></template>
-		<template v-slot:alertMessage>This is not an email</template>
+        <template v-slot:btnLabel><slot name="btnLabel">{{btnLabel}}</slot></template>
+		 <template v-slot:autoSuggestHolder><slot name="autoSuggestHolder"></slot></template>
+		<template v-slot:alertMessage><slot name="alertMessage"></slot
+		></template>
 		<template v-slot:warningMessage>
 			<slot name="warningMessage"></slot
 		></template>

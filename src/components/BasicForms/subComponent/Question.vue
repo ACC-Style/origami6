@@ -95,7 +95,6 @@ export default {
 	},
 	computed: {
 		hasLabel() {
-			console.log();
 			if (this.$slots.default == undefined) {
 				return false;
 			}

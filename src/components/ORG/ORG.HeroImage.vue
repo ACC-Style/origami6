@@ -12,26 +12,29 @@
 </template>
 
 <script>
-import { ResponsiveMixin  } from "vue-responsive-components";
+import { ResponsiveMixin } from "vue-responsive-components";
 export default {
+	mixins: [ResponsiveMixin],
 	props: {
-		id:{type:String, required:true},
-        url:{type:String},
-		alt:{type:String,required:true,default:"This is an image"},
-		imgSM: { type: String, required: true },
-		imgMD: { type: String, required: true },
-		imgLG: { type: String, required: true },
+		id: { type: String, required: true },
+		url: { type: String, default:"https://www.acc.org" },
+		alt: { type: String, default: "This is an image" },
+		imgSM: { type: String, default:"https://picsum.photos/id/1032/400/300" },
+		imgMD: { type: String, default:"https://picsum.photos/id/1032/300/600" },
+		imgLG: { type: String, default:"https://picsum.photos/id/1032/300/900" },
+		imgXL: { type: String, default:"https://picsum.photos/id/1032/300/1200" },
 	},
-	mixins:[ResponsiveMixin],
-	breakpoints:{
-		sm: el=> el.width <=350,
-		md: el=> el.width <=650 && el.width>350,
-		lg: el=> el.width >=650,		
+	breakpoints: {
+		sm: el => el.width < 480,
+		md: el => el.width >= 480 && el.width <= 767,
+		lg: el => el.width >= 768 && el.width <= 1024,
+		xl: el => el.width >= 1025 && el.width <= 1200,
+		xxl: el => el.width >= 1201
 	},
 	methods: {
-		onNavigateTo(url){
-			if(this.url != ''){
-			this.$emit('onNavigateTo', url);
+		onNavigateTo(url) {
+			if (this.url != '') {
+				this.$emit('onNavigateTo', url);
 			}
 		},
 	},
@@ -50,6 +53,10 @@ export default {
 				obj.url = this.imgLG;
 				obj.aspect = "aspect_hero-lg";
 			}
+			if (this.el.is.xl || this.el.is.xxl) {
+				obj.url = this.imgXL;
+				obj.aspect = "aspect_hero-xl";
+			}
 			return obj;
 		},
 	},
@@ -57,10 +64,18 @@ export default {
 </script>
 
 <style scoped>
-.aspect_hero-sm{padding-top:133%}
-.aspect_hero-md{padding-top:50%}
-.aspect_hero-lg{padding-top:30%}
-
+.aspect_hero-sm {
+	padding-top: 133%;
+}
+.aspect_hero-md {
+	padding-top: 40%;
+}
+.aspect_hero-lg {
+	padding-top: 30%;
+}
+.aspect_hero-xl {
+	padding-top: 25%;
+}
 
 .expand-br_1 {
 	width: calc(100% + 2px) !important;

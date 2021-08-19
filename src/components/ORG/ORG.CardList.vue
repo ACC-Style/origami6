@@ -5,6 +5,7 @@
 				:imgSM="item.imgSM"
 				:imgMD="item.imgMD"
 				:imgLG="item.imgLG"
+				:imgXL="item.imgXL"
 				:id="index +'_card'"
 				:cta="item.cta"
 				:ctaType="item.ctaType"

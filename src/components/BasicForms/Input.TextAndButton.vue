@@ -5,6 +5,7 @@
 		:postLabel="postLabel"
 		:required="required"
 		:state="thisState"
+		@onClickPostLabel="$emit('onClickPostLabel')"
 	>
 		<template v-slot:default><slot name="default"></slot></template>
 		<template v-slot:input>
@@ -42,7 +43,11 @@
 					>
 						<i class="far fa fa-times self_center"></i>
 					</Btn>
-					<slot name='autoSuggestHolder'></slot>
+					<div class="absolute b_0 r_0 l_0 z_3"><div class="relative">
+							<slot name='autoSuggestHolder'></slot>
+						</div>
+					</div>
+					
 				</div>
 				<div class="flex flex_shrink">
 					<Btn
@@ -68,7 +73,8 @@
 					</Btn>
 				</div>
 		</template>
-		<template v-slot:alertMessage>This is not an email</template>
+		<template v-slot:alertMessage><slot name="alertMessage"></slot
+		></template>
 		<template v-slot:warningMessage>
 			<slot name="warningMessage"></slot
 		></template>
@@ -95,11 +101,14 @@ export default {
 		isTextDisabled:{type:Boolean,default:false},
 		isBtnDisabled:{type:Boolean,default:false},
 		value:{default:''},
-		size: {default:''}
+		size: {default:''},
 	},
 	data() {
 		return {
 		}
+	},
+	computed: {
+
 	},
 	methods: {
 		onClick(value) {

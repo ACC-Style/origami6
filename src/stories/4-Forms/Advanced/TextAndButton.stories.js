@@ -1,7 +1,7 @@
 import TextAndButton from "../../../components/BasicForms/Input.TextAndButton.vue";
 import baseInputFunctions from "../../../components/BasicForms/subComponent/baseInputFunctions.vue";
 import MessageHolder from "../../../components/subComponents/InputMessageHolder.vue";
-import { commonArgs } from "./../common.argTypes.js";
+import { commonArgs,commonArgTypes } from "./../common.argTypes.js";
 export default{
     title: "Form/Advanced",
 	component: TextAndButton,
@@ -14,16 +14,18 @@ export default{
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {
-				code: `<TextAndButton @onClick="onClick"  v-bind="$props"/>`
+				code: `<TextAndButton @onClick="onClick" v-bind="$props"/>`
 			},
 		},
     },
     argTypes:{
-		...commonArgs,
-        value:{ control:{type: "text"}},
-        isTextDisabled:{control:{type: "boolean"}},
-        isBtnDisabled:{control:{type: "boolean"}},
-        btnLabel: { control: { type: "text", }, meta_description: "slot content", },
+		...commonArgTypes,
+        value:          { control:{type: "text"}},
+        isTextDisabled: {control:{type: "boolean"}},
+        isBtnDisabled:  {control:{type: "boolean"}},
+        btnLabel:       { type:'string',control: { type: "text" , meta_description: "slot content"}},
+        autoSuggestHolder:{ type:'string',control: { type: "text" , meta_description: "slot content"}},
+
     }
 }
 
@@ -34,7 +36,8 @@ const TextAndButtonTemplate = (args, { argTypes }) => ({
     <TextAndButton @onClick="onClick" v-model='value' v-bind="$props" >
         <template v-slot:default >{{ defaultSlot }}</template>
         <template slot="btnLabel">{{btnLabel}}</template>
-        <template v-slot:requiredAlertMessage >{{requiredAlertMessage}}</template>
+        <template slot="autoSuggestHolder"><div class="absolute t_n1 r_0 l_0 ">{{autoSuggestHolder}}
+        </div></template>
         <template v-slot:alertMessage >{{alertMessage}}</template>
         <template v-slot:warningMessage >{{warningMessage}}</template>
         <template v-slot:successMessage >{{successMessage}}</template>

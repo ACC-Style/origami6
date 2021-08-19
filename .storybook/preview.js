@@ -17,6 +17,7 @@ Vue.filter("dateStrAbv", (date) => date instanceof Date ? moment(date).format("M
 Vue.filter("HourMinSec", (date) => date instanceof Date ? moment(date).format("h:mm:ss a") : "");
 import tz from 'moment-timezone';
 import  { VueResponsiveComponents }  from 'vue-responsive-components';
+import carousel from 'vue-owl-carousel';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

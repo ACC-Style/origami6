@@ -12,6 +12,7 @@
 			:imgSM="imgSM"
 			:imgMD="imgMD"
 			:imgLG="imgLG"
+			:imgXL="imgXL"
 		/>
 		<div data-name="content" class="p-t_4:lg p-t_3 p-x_4 flex_grow">
 			<slot></slot>
@@ -62,11 +63,12 @@
 </template>
 
 <script>
-import HeaderImage from "./HeaderImage";
+import HeaderImage from "./HeaderImage.vue";
 import Btn from "../../subComponents/Btn";
 import { ResponsiveMixin } from "vue-responsive-components";
-
+import ResponsiveBreakpoints from "../../Helpers/Breakpoint.vue"
 export default {
+	mixins: [ResponsiveBreakpoints, ResponsiveMixin],
 	components: { HeaderImage, Btn },
 	props: {
 		id: { type: String },
@@ -86,17 +88,19 @@ export default {
 			},
 		},
 		shadow: { type: Boolean, default: true },
-		imgSM: { type: String, default: undefined },
-		imgMD: { type: String, default: undefined },
-		imgLG: { type: String, default: undefined },
+		imgSM: { type: String},
+		imgMD: { type: String},
+		imgLG: { type: String},
+		imgXL: { type: String},
 		headerImg: { type: Boolean, default: false },
 		url: { type: String, default: "#" },
 	},
-	mixins: [ResponsiveMixin],
 	breakpoints: {
-		sm: (el) => el.width <= 350,
-		md: (el) => el.width <= 650 && el.width > 350,
-		lg: (el) => el.width >= 650,
+		sm: el => el.width < 480,
+		md: el => el.width >= 480 && el.width <= 767,
+		lg: el => el.width >= 768 && el.width <= 1024,
+		xl: el => el.width >= 1025 && el.width <= 1200,
+		xxl: el => el.width >= 1201
 	},
 	data() {
 		return {
@@ -124,7 +128,7 @@ export default {
 
 		btnSize: function () {
 			let size = "";
-			if (this.el.is.lg) {
+			if (this.el.is.lg || this.el.is.xl) {
 				size = "large";
 			} else {
 				size = "medium";

@@ -1,6 +1,6 @@
 <template>
 	<article
-		class="br_solid br_1 br_black-2 bg_black-_05 br_radius relative font_copy br_black-3 shadow_overlap-light flex_column flex justify_start flex_none w_30:md w_90"
+		class="br_solid br_1 br_black-2 bg_black-_05 br_radius relative font_copy br_black-3 shadow_overlap-light flex_column flex justify_start m-x_3"
 		:class="'br_' + corner"
 	>
 		<HeaderImage
@@ -128,7 +128,9 @@ import HeaderImage from "../ORG/subComponent/HeaderImage";
 import moment from "moment";
 import tz from "moment-timezone";
 export default {
+	name:"EventCard",
 	props: {
+		
 		id: { type: Number },
 		title: { type: String, default:'' },
 		shortText: { type: String, default:'' },
@@ -142,6 +144,7 @@ export default {
 		imgSM: { type: String, default: undefined },
 		imgMD: { type: String, default: undefined },
 		imgLG: { type: String, default: undefined },
+		imgXL: { type: String, default: undefined },
 		corner: {
 			type: String,
 			default: "radius",
