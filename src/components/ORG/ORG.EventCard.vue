@@ -1,6 +1,6 @@
 <template>
 	<article
-		class="br_solid br_1 br_black-2 bg_black-_05 br_radius relative font_copy br_black-3 shadow_overlap-light flex_column flex justify_start m-x_3"
+		class="br_solid br_1 br_black-2 bg_black-_05 br_radius relative font_copy br_black-3 shadow_overlap-light flex_column flex justify_start m-x_3 m-b_3"
 		:class="'br_' + corner"
 	>
 		<HeaderImage
@@ -28,7 +28,7 @@
 				}}</span>
 			</aside>
 			<div
-				class="absolute r_4 r_5:lg t_0 text_center flex flex_column:md justify_end align-right font_1:md font_0 overflow_hidden transition_2 z_2"
+				class="absolute r_4 r_5:lg t_0 text_center flex flex_column:md justify_end align-right font_0:md font_n1 overflow_hidden transition_2 z_2"
 			>
 				<TabFlag
 					v-show="registerForEvent"
@@ -39,15 +39,15 @@
 		</div>
 		<header class="clear_both p-x_3 p-x_4:md p-x_5:lg p-t_2" :class="{'m-t_4':isEventFinished}">
 						<h2
-				class="font_display font_medium font_3:lg font_2:md font_1 c_primary-n1 m-t_2 m-t_4:lg m-t_3:md m-b_2 lh_1 cursor_pointer h:underline"
+				class="font_display font_medium font_3:lg font_2:md font_1 c_primary-n1 m-t_2 m-t_4:lg m-t_3:md m-b_2 lh_1 cursor_pointer h:underline p-t_3"
 			>
 				{{ title }}
 			</h2>
-			<div data-v-5294f1c2="" class="font_ui c_accent-n1 font_medium font_n2 m-t_n2 uppercase">{{ eventType }}</div>
-            <div class="c_secondary font_n1 bold" v-if="isEventFinished">Past: {{startMonth}} {{dates}} {{year}}</div>
+			<div class="font_ui c_accent-n1 font_medium font_n2 uppercase">{{ eventType }}</div>
+            <div class="c_secondary font_n2 bold" v-if="isEventFinished">Past: {{startMonth}} {{dates}} {{year}}</div>
 
 		</header>
-		<p v-if="shortText" class="font_0:lg font_n1 p-x_3 p-x_4:md p-x_5:lg lh_2 m-b_0">
+		<p v-if="shortText" class="font_0:lg font_n1 p-x_3 p-x_4:md p-x_5:lg lh_2 m-t_2 m-b_0">
 			{{ shortText }}
 		</p>
 		<ul
@@ -61,7 +61,7 @@
 			<li class="flex flex_row m-t_2">
 				<i class="fas font-size_up  flex_none p-r_3 self_center fa-hourglass-half c_black-5"></i
 				><span class="m-l_2 flex_auto inline-block self_start lh_1">
-					<span class="font-size_down block opacity_6">On Demand Untill:</span>
+					<span class="block opacity_6">On Demand Untill:</span>
 					{{ onDemandText }}</span>
 			</li>
 			<li v-if="credits.length > 0" class="flex flex_row m-t_3">

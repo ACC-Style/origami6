@@ -66,7 +66,9 @@ export default {
 	},
 	methods: {
 		responsiveOption(maxNumberofCards ) {
-			return  {items: this.cards.length >= maxNumberofCards ? maxNumberofCards : this.cards.length} ; 
+			return  {
+				items: this.cards.length >= maxNumberofCards ? maxNumberofCards : this.cards.length};
+				margin: maxNumberofCards >= 2 ? 8 : 0; 
 			}
 	
 	},

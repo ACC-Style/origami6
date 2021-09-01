@@ -80,14 +80,13 @@
 						:size="'tiny'"
 						:shadow="false"
 						:isActive="false"
-						@onDeactive="showAuthorOverflow = false"
-						@onActive="showAuthorOverflow = true"
+						v-model="showAuthorOverflow"
 						
 						>
 							<template v-slot:active >
 								Show Less 
 							</template>			
-							<template v-slot:deactive>
+							<template v-slot:notActive>
 								Show More |  {{ authors.length - (authorOverflow ) }} hidden authors
 							</template>
 						</BtnToggle>
@@ -99,10 +98,10 @@
 		<div class="p_4 p-t_0" v-show="removeFromListSurveyVisiblity">
 			<h2 class="font_display m-t_3 m-b_3">Why are you hiding this article?</h2>
 			<div class="m-b_3">
+				<Btn class="" :state="'primary'" :shadow="false" :size="'small'"  @onClick="hideSurvey">Don't Remove</Btn>
 				<Btn class="br_black-3 br_solid br_1 h:bg_white c_black" :state="'none'" :shadow="false" :size="'small'">Read Somewhere Else</Btn>
 				<Btn class="br_black-3 br_solid br_1 h:bg_white c_black" :state="'none'" :shadow="false" :size="'small'">Not Interested</Btn>
 				<Btn class="br_black-3 br_solid br_1 h:bg_white c_black" :state="'none'" :shadow="false" :size="'small'">Just Because</Btn>
-				<Btn class="" :state="'secondary'" :shadow="false" :size="'small'"  @onClick="hideSurvey">Cancel</Btn>
 			</div>
 			<div class="m"><label class="font_regular font_0" for="dontSomeMeAgain"><input type="checkbox" name="dontSomeMeAgain" id="dontSomeMeAgain"> Don't Ask Me Again.</label></div>
 			<div class="br-b_3 br_primary br_solid transition_3 absolute t_0 r_0" :style="countDownWidth"></div>

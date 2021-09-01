@@ -1,7 +1,7 @@
 <template>
 	<div
 		data-label="item"
-		class="m-x_2 br_1 br_solid br_black-2 bg_black-_05 relative m-b_4 flex flex_column justify_between"
+		class="m-x_3 br_1 br_solid br_black-2 bg_black-_05 relative m-b_3 flex flex_column justify_between"
 		:class="[{ 'shadow_overlap-light': shadow }, 'br_' + corner]"
 	>
 		<HeaderImage
@@ -42,7 +42,7 @@
 		<div
 			class="flex justified_end 
 			flec_column-reverse
-			flex_row-reverse:md p-x_4 flex_wrap m-b_4 "
+			flex_row-reverse:md p-x_4 flex_wrap m-b_3 "
 			v-if="ctaType == 'link'"
 		>
 			<div
