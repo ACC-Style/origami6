@@ -17,6 +17,7 @@
 					 	@click="articleURL" 
 						 class="cursor_pointer"
 						:src="image"
+						loading="lazy"
 						alt=""
 						style="
 							width: clamp(75px, 10vw, 125px);
