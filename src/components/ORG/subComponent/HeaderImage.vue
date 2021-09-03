@@ -17,8 +17,10 @@
 		:class="image.aspect"
 	></div>
 </template>
-// TODO: This should be shifted to using an image tag inside of the div and using src set and lazy loading to improve overall performance on the web and reduce page to load for low bandwidth devices.
+
 <script>
+// TODO: This should be shifted to using an image tag inside of the div and using src set and lazy loading to improve overall performance on the web and reduce page to load for low bandwidth devices. https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
+
 import { ResponsiveMixin } from "vue-responsive-components";
 import  ResponsiveBreakpoints  from "../../Helpers/Breakpoint"
 
