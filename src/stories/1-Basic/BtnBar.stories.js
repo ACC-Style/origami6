@@ -9,7 +9,7 @@ export default {
 		docs: {
 			description: {
 				component:
-					"A block area that shows the totals of credits and the amount that has be accumlated over time.",
+					"A block area that shows the totals of credits and the amount that has be accumulated over time.",
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {
