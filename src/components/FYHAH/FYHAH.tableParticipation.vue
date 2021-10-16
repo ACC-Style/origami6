@@ -41,8 +41,8 @@
 					</div>
 					<div
 						class="font_bold w_30:md flex_shrink p_3:md p-x_3 font_1 font_0:md"
+						:html="metric.value"
 					>
-						{{ metric.value }}
 					</div>
 					<div
 						class="c_primary-n4 font_n1 w_40:md flex_auto p-x_3 p_3:md"

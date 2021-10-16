@@ -96,7 +96,7 @@ Live.args = {
 		},
 		{
 			id: 3,
-			name: "Trippin'",
+			name: "Trippin",
 			duration_minutes: 10,
 			attachement:
 				"http://1688.com/nisi/venenatis/tristique/fusce/congue.html?amet=in&justo=libero&morbi=ut&ut=massa&odio=volutpat&cras=convallis&mi=morbi&pede=odio&malesuada=odio&in=elementum",
