@@ -3,8 +3,8 @@
 		<div  class="modal modal-fade modal-mask z_5 bg_black-5 fixed t_0 l_0 r_0 b_0">
 			<div class="modal-wrapper h_100 absolute m_auto overflow_auto p_4  t_0 l_0 r_0 b_0" @onClick="onClose" >
 				<div
-					class="modal-container max-w_40 shadow_3 max-w_3 m_auto p-x_4 p-y_3 font_ui transition bg_white relative br_solid br-t_3 br_primary-n1"
-					:class="'br_' + corner"
+					class="modal-container  shadow_3 max-w_3 m_auto p-x_4 p-y_3 font_ui transition bg_white relative br_solid br-t_3 br_primary-n1"
+					:class="'br_' + corner +' '+ maxWidthClasses"
 				>
 					<btn
 						:size="'small'"
@@ -26,7 +26,7 @@
 						<slot name="footer" class="">
 							<div class="p-x_2 p-x_3:md p-x_4:lg clear_fix"><Btn class="float_right "
 								@onClick="onClose" :state="'secondary'"
-							>Cancel</Btn></div>
+							>{{cancelText}}</Btn></div>
 						</slot>
 					</div>
 				</div>
@@ -39,6 +39,14 @@
 import Btn from "./Btn";
 export default {
 	props:{
+		cancelText: {
+			type: String,
+			default: 'Cancel'
+		},
+		maxWidthClasses: {
+			type: String,
+			default: 'max-w_40'
+		},
 		id:{type:String, default:"ModalDefault"},
 			corner: {
 			type: String,
