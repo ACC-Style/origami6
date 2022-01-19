@@ -22,6 +22,7 @@ export default {
 		areaStyle() {
 			let styles = "";
 			switch (this.state) {
+				case "requiredAlert":
 				case "alert":
 					styles += " bg_alert-3 c_alert-n3 br_alert-n1 ";
 					break;

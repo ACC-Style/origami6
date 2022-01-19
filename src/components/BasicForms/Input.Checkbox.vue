@@ -75,6 +75,7 @@ export default {
 	},
 	computed: {
 		inputPrePostStyles() {
+			console.log(this);
 			let styles = "";
 			switch (this.inputState) {
 				case "requiredAlert":

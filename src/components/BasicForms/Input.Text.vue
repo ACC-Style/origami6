@@ -22,6 +22,8 @@
 				@change="onChange($event)"
 			/>
 		</template>
+		<template v-slot:requiredAlertMessage><slot name="requiredAlertMessage"></slot
+		></template>
 		<template v-slot:alertMessage><slot name="alertMessage"></slot
 		></template>
 		<template v-slot:warningMessage>

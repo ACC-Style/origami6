@@ -23,7 +23,8 @@
 				:disabled="thisState == 'disabled'"
 			/>
 		</template>
-		<template v-slot:alertMessage>This is not an email</template>
+		<template v-slot:requiredAlertMessage><slot name="requiredAlertMessage"></slot></template>
+		<template v-slot:alertMessage> <slot  name="alertMessage">This is not a valid email.</slot></template>
 		<template v-slot:warningMessage> <slot  name="warningMessage"></slot></template>
 		<template v-slot:successMessage> <slot  name="successMessage"></slot></template>
 		<template v-slot:infoMessage> <slot  name="infoMessage"></slot></template>

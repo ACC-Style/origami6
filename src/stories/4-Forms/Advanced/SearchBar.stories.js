@@ -3,7 +3,7 @@ import baseInputFunctions from "../../../components/BasicForms/subComponent/base
 import MessageHolder from "../../../components/subComponents/InputMessageHolder.vue";
 import { commonArgs } from "./../common.argTypes.js";
 export default{
-    title: "Form/Advanced",
+    title: "Form/Advanced/SearchBar",
 	component: SearchBar,
 	subcomponents:{baseInputFunctions,MessageHolder},
     parameters: {

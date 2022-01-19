@@ -26,7 +26,7 @@
 				/>
 				<Btn
 					
-					class=""
+					:class="areaStyle"
 					state="secondary"
 					:shadow="false"
 					corner="square"
@@ -37,6 +37,8 @@
 				</Btn>
 			</div>
 		</template>
+		<template v-slot:requiredAlertMessage><slot name="requiredAlertMessage"></slot
+		></template>
 		<template v-slot:alertMessage
 			>Not Strong Enough to Be Our Password</template
 		>
@@ -52,9 +54,10 @@
 		<template v-slot:accentMessage>
 			<slot name="accentMessage"></slot
 		></template>
-		<template v-slot:hint>
+		<template v-slot:hint> <slot name="hint"></slot></template>
+		<!--<template v-slot:hint>
 			<a class="link w_100 text_right">forgot password</a>	
-		</template>
+		</template>-->
 	</Question>
 </template>
 
@@ -83,6 +86,22 @@ export default {
 		thisInputType:function(){
 			let type = (this.isMasked)? "password": "text";
 			return type;
+		},
+		areaStyle() {
+			let styles = "";
+			switch (this.state) {
+				case "requiredAlert":
+				case "alert":
+					styles += " bg_alert-3 c_alert-n3 br_alert-n1 ";
+					break;
+				case "warning":
+					styles += " bg_warning-3  c_warning-n3 br_warning-n1 ";
+					break;
+				//trimmed cases
+				default:
+					break;
+			}
+			return styles;
 		}
 	},
 	methods: {
@@ -91,7 +110,7 @@ export default {
 		},
 		isPassword() {
 			const regex = RegExp('^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$');
-			return regex.test(value);
+			return regex.test(this.value);
 		},
 		onChange: function (value) {
 			if (value == "" && this.required) {
