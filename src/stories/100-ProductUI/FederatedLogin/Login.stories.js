@@ -50,7 +50,7 @@ export default {
 									<i class="far fa-exclamation-triangle"></i>
 								</div>
 								<div class="flex_auto p_4 p-y_2 self_center">
-									<p>This is a generic alert message. Use this to display errors and warnings.</p>
+									<p>The username or password you have entered is incorrect. Please try again.</p>
 								</div>
 							</div>
 						</div>
@@ -137,7 +137,7 @@ const Template = (args, { argTypes }) => ({
 								<i class="far fa-exclamation-triangle"></i>
 							</div>
 							<div class="flex_auto p_4 p-y_2 self_center">
-								<p>This is a generic alert message. Use this to display errors and warnings.</p>
+								<p>The username or password you have entered is incorrect. Please try again.</p>
 							</div>
 						</div>
 					</div>
@@ -163,13 +163,13 @@ const Template = (args, { argTypes }) => ({
 					</div>
 					
 					<div class="m-b_4">
-						<CheckboxInput :value="checkboxValue"></CheckboxInput>
+						<CheckboxInput v-model="checkboxValue"></CheckboxInput>
 					</div>
 
 					<div class="text_center">
 						<Btn v-bind="$props">
 							<span class="p-r_3">Log In</span>
-							<i v-if="loading" id="btnSpinner" class="spinner fa fa-spinner fa-spin"></i>
+							<i v-if="loading" id="btnSpinner" class="spinner fa fa-spinner fa-spin self_center"></i>
 						</Btn>
 					</div>
 

@@ -7,10 +7,13 @@
 					c_alert: state == 'alert',
 				},
 				{
+					c_alert: state == 'requiredAlert',
+				},
+				{
 					c_warning: state == 'warning',
 				},
 			]"
-			class="label-holder flex font-size_up font_display font_medium p-y_2"
+			class="label-holder flex font-size_up-1 font_display font_medium p-y_2"
 		>
 			<span class="text cell flex_shrink">
 				<slot name="default"></slot>
@@ -65,7 +68,7 @@
 			<messageHolder :state="'accent'" v-if="state == 'accent'">
 				<slot name="accentMessage"></slot>
 			</messageHolder>
-			<span class="opacity_7 font_italic"><slot name="hint"></slot></span>
+			<span class="opacity_7 font_italic m-t_2 block"><slot name="hint"></slot></span>
 		</div>
 	</div>
 </template>

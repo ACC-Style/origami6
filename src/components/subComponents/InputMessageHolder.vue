@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="message-holder font-size_down "
+		class="message-holder "
 		v-bind:class="{
             '': state != '',
             'c_alert-n1': state == 'alert', 

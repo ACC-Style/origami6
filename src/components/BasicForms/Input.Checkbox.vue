@@ -58,7 +58,7 @@ export default {
 	components: {messageHolder
 	},
 	props: {
-        value:{type:Object,default:()=>{ return {'label': false}}
+        value:{type:Object,default:()=>{ return {'label': 'Checkbox Label'}}
         },
         type:{type:String,default:"checkbox"},
         required:{type:Boolean,default:false},
