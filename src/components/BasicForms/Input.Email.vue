@@ -1,7 +1,6 @@
 <template>
 	<Question 
 		:inputId="inputId"
-		:defaultValue="defaultValue"
 		:icon="icon"
 		:postLabel="postLabel"
 		:required="required"
@@ -14,11 +13,11 @@
 			<input
 				:id="inputId"
 				:name="inputId"
-				v-on:change="onChange(value)"
+				@change="onChange($event)"
 				class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3 br-bl_square br-tl_square"
 				:type="inputType"
-				v-model="value"
-				required="required"
+				:value="value"
+				:required="required"
 				:class="inputStyles"
 				:disabled="thisState == 'disabled'"
 			/>
@@ -42,34 +41,43 @@ import is from 'is_js';
 		props:{
 			inputType:{type:String,default:"email"},
 			icon: { type: String, default:'fa-envelope' },
-		}
-	  ,data() {
+		},
+	  data() {
 		  return {
+			  
 		  }
 	  },
 	  methods: {
 		isEmail(value){
 			return is.email(value);
 		},
-		onChange: function(value) {
-			if (value == "" && this.required) {
-				this.thisState = "requiredAlert"
-				this.$emit("onChange", "");
+		onChange: function(event) {
+			if (this.value == "" && this.required) {
 				this.$emit("onStateChange","requiredAlert")
-			}else if ( !this.isEmail(value) ){
-				this.thisState = "alert";
-				this.$emit("onChange", "");
-				this.$emit("onStateChange","alert");
-				} else {
+			}else {
 				this.thisState = "";
-				this.$emit("onChange", value);
 				this.$emit("onStateChange","")
 
 			} 
+			this.$emit('input',event.target.value)
 		}
-	},computed: {
-		
-	},
+		// onChange: function(value) {
+		// 	if (value == "" && this.required) {
+		// 		this.thisState = "requiredAlert"
+		// 		this.$emit("onChange", "");
+		// 		this.$emit("onStateChange","requiredAlert")
+		// 	}else if ( !this.isEmail(value) ){
+		// 		this.thisState = "alert";
+		// 		this.$emit("onChange", "");
+		// 		this.$emit("onStateChange","alert");
+		// 		} else {
+		// 		this.thisState = "";
+		// 		this.$emit("onChange", value);
+		// 		this.$emit("onStateChange","")
+
+		// 	} 
+		// }
+	  }
 	}
 </script>
 

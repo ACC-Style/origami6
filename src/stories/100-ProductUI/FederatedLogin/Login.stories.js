@@ -118,6 +118,9 @@ const Template = (args, { argTypes }) => ({
 	}),
 	computed: {
 		isDisabled() {
+			if (this.loading || this.state == "requiredAlert"){
+				return true;
+			}
 			if (this.usernameValue && this.passwordValue) {
 				return this.usernameValue.length <= 0 || this.passwordValue.length <= 0;
 			}
@@ -231,14 +234,14 @@ export const Loading = Template.bind({});
 Loading.args = {
 	...InitialForm.args,
 	loading: true,
-	isDisabled: true
+	//isDisabled: true
 };
 
 export const ErrorRequired = Template.bind({});
 ErrorRequired.args = {
 	...InitialForm.args,
 	state: "requiredAlert",
-	isDisabled: true
+	//isDisabled: true
 };
 
 export const Notifications = Template.bind({});

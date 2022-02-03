@@ -1,4 +1,4 @@
-import RadioButtons from "../../../components/BasicForms/Input.RadioLogin.vue";
+import RadioButtons from "../../../components/ORG/FederatedLogin/Input.RadioLogin.vue";
 import transitionExpand from "../../../components/subComponents/TransitionExpand.vue";
 
 import { commonArgs } from "../../4-Forms/common.argTypes.js";
@@ -14,7 +14,32 @@ export default {
             },
             actions: { argTypesRegex: "^on.*" },
             source: {
-                code: `<p>Source Code TBD</p>`
+                code: `
+                <div class="p_4 max-w_50 m_auto">
+                <h1 class="c_acc font_6 text_center">Verify Account Status</h1>
+        
+                <form id="formForgotUsername" class="p_4">
+                    <fieldset>
+                        <RadioButtons :state="state" :inputId="inputId" v-bind:options="options" v-model="picked" radioclasses=" p_4 bg_black-2 br_solid br_radius br_1 br_black-2">
+                            <template v-slot:default>We want to make sure you don't already have an ACC account. Please click the option that applies to you to continue:</template>
+                        </RadioButtons>
+                    </fieldset>
+                    <transitionExpand v-for="(item, index) in options" :key="'item_'+index">
+                        <div v-html="item.content" v-if="picked.value==item.value"></div>
+                    </transitionExpand>
+                </form>
+        
+                <hr>
+        
+                <div class="p_4 font_1 max-w_50 m_auto">
+                    <p><b>Have questions or need assistance?</b> Please contact ACC Member Care</p>
+                    <ul class="ul_none p-l_5">
+                        <li><i class="fa fa-phone"></i> <a href="tel:+18002534636">1-800-253-4636, ext. 5603</a> (Toll Free U.S. &amp; Canada)</li>
+                        <li><i class="fa fa-phone"></i> <a href="tel:2023756000">202-375-6000, ext. 5603</a> (International)</li>
+                        <li><i class="fa fa-envelope"></i> <a href="mailto:membercare@acc.org">membercare@acc.org</a></li>
+                    </ul>
+                </div>
+            </div>`
             },
         },
     },
@@ -55,6 +80,9 @@ const options = [
 const Template = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { RadioButtons, transitionExpand },
+    data: () => ({
+		picked: "",
+	}),
     template: `<div class="p_4 max-w_50 m_auto">
         <h1 class="c_acc font_6 text_center">Verify Account Status</h1>
 
@@ -85,6 +113,5 @@ export const Default = Template.bind({});
 Default.args = {
     inputId: "uniqueRadio",
 	state:"",
-	picked: {"value": 1},
 	options:options
 };

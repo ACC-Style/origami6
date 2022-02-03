@@ -1,5 +1,5 @@
 <template>
-	<div class="grid  gap-x_3 gap-y_3">
+	<div class="grid gap-x_3 gap-y_4">
 		<InputRadioBox
 			v-for="(checkbox, index) in options"
 			:key="'checkbox' + id + index"
@@ -16,8 +16,8 @@
 
 <script>
 
-import baseInputFunctions from "./subComponent/baseInputFunctions.vue";
-import InputRadioBox from "./subComponent/Sub.RadioButton.vue";
+import baseInputFunctions from "../../BasicForms/subComponent/baseInputFunctions.vue";
+import InputRadioBox from "../../BasicForms/subComponent/Sub.RadioButton.vue";
 
 export default {
 	name: "RadioBoxes",
