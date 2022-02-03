@@ -16,7 +16,7 @@
 				<input
 					:id="'input_'+id"
 					:name="'input_'+id"
-					class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3"
+					class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3 br_square"
 					:type="thisInputType"
 					@input="onChange(value)"
 					:value="value"
@@ -88,7 +88,7 @@ export default {
 			return type;
 		},
 		areaStyle() {
-			let styles = "";
+			let styles = "br-tr_radius br-br_radius";
 			switch (this.state) {
 				case "requiredAlert":
 				case "alert":

@@ -25,7 +25,7 @@
 		<div class="input-holder flex self_end">
 			<ValueIcon
 				v-if="icon"
-				class="flex_none p-x_3 p-y_0"
+				class="flex_none p-x_3 p-y_0 br-tl_radius br-bl_radius"
 				:state="state"
 				:icon="icon"
 				:inputNameTarget="'input_'+id"

@@ -145,7 +145,7 @@ const Template = (args, { argTypes }) => ({
 
 				<fieldset class="max-w_30 m_auto">
 					<div class="m-b_4">
-						<TextInput :inputId="'username'" :type="'text'" :value="''" :required="requiredUsername" :placeholder="placeholderUsername" :state="state">
+						<TextInput :inputId="'username'" :type="'text'" v-model="usernameValue" :required="requiredUsername" :placeholder="placeholderUsername" :state="state">
 							<template v-slot:default >{{ defaultSlotUsername }}</template>
 							<template v-slot:requiredAlertMessage >{{ requiredAlertMessageUsername }}</template>
 						</TextInput>
@@ -153,7 +153,7 @@ const Template = (args, { argTypes }) => ({
 					</div>
 
 					<div class="m-b_3">
-						<InputPassword :inputId="'password'" v-model:value="passwordValue" :required="requiredPassword" :placeholder="placeholderPassword" :state="state">
+						<InputPassword :inputId="'password'" v-model="passwordValue" :required="requiredPassword" :placeholder="placeholderPassword" :state="state">
 							<template v-slot:default >{{ defaultSlotPassword }}</template>
 							<template v-slot:requiredAlertMessage >{{ requiredAlertMessagePassword }}</template>
 							<template v-slot:hint >{{ hintPassword }}</template>
@@ -167,7 +167,7 @@ const Template = (args, { argTypes }) => ({
 					</div>
 
 					<div class="text_center">
-						<Btn v-bind="$props">
+						<Btn :isDisabled="usernameValue.length <= 0 || passwordValue.length <= 0">
 							<span class="p-r_3">Log In</span>
 							<i v-if="loading" id="btnSpinner" class="spinner fa fa-spinner fa-spin self_center"></i>
 						</Btn>
@@ -190,13 +190,14 @@ InitialForm.args = {
 	requiredAlertMessageUsername: "An email or username is required.",
 	requiredUsername: true,
 	placeholderUsername: "Username",
+	usernameValue: "",
 	//input password,
 	requiredPassword: true,
 	placeholderPassword: "Password",
 	defaultSlotPassword: "Password",
 	requiredAlertMessagePassword: "Please enter a password.",
 	hintPassword: "At least 7 characters with at least 1 number and 1 letter.",
-	passwordValue: "something",
+	passwordValue: "pass123",
 	//btn
 	size: "medium",
 	//remember me

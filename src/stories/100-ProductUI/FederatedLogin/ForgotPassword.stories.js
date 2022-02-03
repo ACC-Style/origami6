@@ -82,7 +82,7 @@ const Template = (args, { argTypes }) => ({
                     <div class="text_center">
                         <Btn :size="size" v-bind="$props">
                             <span class="p-r_3">Submit</span>
-                            <i v-if="loading" id="btnSpinner" class="spinner fa fa-spinner fa-spin lh_0"></i>
+                            <i v-if="loading" id="btnSpinner" class="spinner fa fa-spinner fa-spin self_center"></i>
                         </Btn>
                     </div>
                 </fieldset>

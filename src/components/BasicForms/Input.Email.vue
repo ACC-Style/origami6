@@ -15,7 +15,7 @@
 				:id="inputId"
 				:name="inputId"
 				v-on:change="onChange(value)"
-				class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3"
+				class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3 br-bl_square br-tl_square"
 				:type="inputType"
 				v-model="value"
 				required="required"
