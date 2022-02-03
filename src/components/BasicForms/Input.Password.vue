@@ -18,7 +18,8 @@
 					:name="'input_'+id"
 					class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3 br_square"
 					:type="thisInputType"
-					@input="onChange(value)"
+					
+					@change="onChange($event)"
 					:value="value"
 					:required="required"
 					:class="inputStyles"
@@ -112,18 +113,30 @@ export default {
 			const regex = RegExp('^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$');
 			return regex.test(this.value);
 		},
-		onChange: function (value) {
-			if (value == "" && this.required) {
-				this.$emit("input", "");
-				this.$emit("onStateChange", "requiredAlert");
-			} else if (!this.isPassword(value)) {
-				this.$emit("input", "");
-				this.$emit("onStateChange", "alert");
-			} else {
-				this.$emit("input", value);
-				this.$emit("onStateChange", "");
-			}
-		},
+		onChange: function(event) {
+			if (this.value == "" && this.required) {
+				this.$emit("onStateChange","requiredAlert")
+			}else {
+				this.thisState = "";
+				this.$emit("onStateChange","")
+
+			} 
+			this.$emit('input',event.target.value)
+		}
+		// onChange: function (value) {
+		// 	if (value == "" && this.required) {
+		// 		this.$emit("input", "");
+		// 		this.$emit("onStateChange", "requiredAlert");
+		// 	} 
+		// else if (!this.isPassword(value)) {
+		// 	this.$emit("input", "");
+		// 	this.$emit("onStateChange", "alert");
+		// }
+		// 	 else {
+		// 		 this.$emit("onStateChange", "");
+		// 	}
+		// 		this.$emit("input", value);
+		// },
 	},
 };
 </script>

@@ -97,12 +97,33 @@ export default {
 		},
 	},
     argTypes:{
-		...commonArgs
+		...commonArgs,
+		loading: {
+			control: {
+				type: "boolean",
+				options: [
+					"true",
+					"false",
+				],
+			},
+		},
     }
 };
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { TextInput, Btn, CheckboxInput , InputPassword },
+	data:()=>({
+		usernameValue: "",
+		passwordValue: "",
+	}),
+	computed:{
+		isDisabled(){
+			if(this.usernameValue && this.passwordValue){
+				return this.usernameValue.length <= 0  || this.passwordValue.length <= 0;
+			}
+			return true;
+		}
+	},
 	template: `
 		<div class="p_4 max-w_50 m_auto">
     		<h1 class="c_acc font_6 text_center">Log In To Your Account</h1>
@@ -167,7 +188,7 @@ const Template = (args, { argTypes }) => ({
 					</div>
 
 					<div class="text_center">
-						<Btn :isDisabled="usernameValue.length <= 0 || passwordValue.length <= 0">
+						<Btn :isDisabled="isDisabled">
 							<span class="p-r_3">Log In</span>
 							<i v-if="loading" id="btnSpinner" class="spinner fa fa-spinner fa-spin self_center"></i>
 						</Btn>
@@ -190,14 +211,13 @@ InitialForm.args = {
 	requiredAlertMessageUsername: "An email or username is required.",
 	requiredUsername: true,
 	placeholderUsername: "Username",
-	usernameValue: "",
+	
 	//input password,
 	requiredPassword: true,
 	placeholderPassword: "Password",
 	defaultSlotPassword: "Password",
 	requiredAlertMessagePassword: "Please enter a password.",
 	hintPassword: "At least 7 characters with at least 1 number and 1 letter.",
-	passwordValue: "pass123",
 	//btn
 	size: "medium",
 	//remember me

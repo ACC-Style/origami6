@@ -19,6 +19,7 @@
 				:placeholder="placeholder"
 				:class="inputStyles"
 				:disabled="thisState == 'disabled'"
+				
 				@change="onChange($event)"
 			/>
 		</template>
