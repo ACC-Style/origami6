@@ -1,50 +1,21 @@
 <template>
-	<QuestionFieldSet
-		:id="id"
-		:icon="icon"
-		:postLabel="postLabel"
-		:required="required"
-		:state="thisState"
-	>
-		<template v-slot:default
-			><slot name="default">Checkboxes</slot>
-		</template>
-		<template v-slot:legend><slot name="legend"></slot></template>
-		<template v-slot:input>
-			<div class="grid  gap-x_3 gap-y_3">
-				<InputRadioBox
-					v-for="(checkbox, index) in options"
-					:key="'checkbox' + id + index"
-					v-bind:value="checkbox"
-					@input="onChange($event)"
-					:name="name"
-					:required="required"
-					:disabled="state == 'disabled'"
-					:index="index"
-                    :class="radioclasses"
-				></InputRadioBox>
-			</div>
-		</template>
-		<template v-slot:alertMessage><slot name="alertMessage"></slot
-		></template>
-		<template v-slot:warningMessage>
-			<slot name="warningMessage"></slot
-		></template>
-		<template v-slot:successMessage>
-			<slot name="successMessage"></slot
-		></template>
-		<template v-slot:infoMessage>
-			<slot name="infoMessage"></slot
-		></template>
-		<template v-slot:accentMessage>
-			<slot name="accentMessage"></slot
-		></template>
-		<template v-slot:hint> <slot name="hint"></slot></template>
-	</QuestionFieldSet>
+	<div class="grid  gap-x_3 gap-y_3">
+		<InputRadioBox
+			v-for="(checkbox, index) in options"
+			:key="'checkbox' + id + index"
+			v-bind:value="checkbox"
+			@input="onChange($event)"
+			:name="name"
+			:required="required"
+			:disabled="state == 'disabled'"
+			:index="index"
+			:class="radioclasses"
+		></InputRadioBox>
+	</div>
 </template>
 
 <script>
-import QuestionFieldSet from "./subComponent/Question.FieldSet.vue";
+
 import baseInputFunctions from "./subComponent/baseInputFunctions.vue";
 import InputRadioBox from "./subComponent/Sub.RadioButton.vue";
 
@@ -52,7 +23,7 @@ export default {
 	name: "RadioBoxes",
 	mixins: [baseInputFunctions],
 	components: {
-		QuestionFieldSet, InputRadioBox
+		InputRadioBox
 	},
 	props: {
 		type: { type: String, default: 'type' },
