@@ -52,10 +52,10 @@ export default {
 	},
 	methods: {
 		onClick() {
-			if (!this.isDisabled) {
-				this.$emit("onClick");
-			}else{
+			if (this.isDisabled) {
 				this.$emit("onClickDisabled");
+			}else{
+				this.$emit("onClick");
 			}
 		}
 	},
