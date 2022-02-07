@@ -79,7 +79,7 @@ export default {
 								<CheckboxInput v-model="checkboxValue"></CheckboxInput>
 							</div>
 
-							<div class="text_center">
+							<div class="text_center" @click="onDisabledClick()">
 								<Btn :isDisabled="isDisabled">
 									<span class="p-r_3">Log In</span>
 									<i v-if="loading" id="btnSpinner" class="spinner fa fa-spinner fa-spin self_center"></i>
@@ -127,6 +127,17 @@ const Template = (args, { argTypes }) => ({
 			return true;
 		}
 	},
+	methods:{
+		onDisabledCheck(eventTargetDOM){ 
+			if(eventTargetDOM == 'all' || eventTargetDOM == 'username'){
+				if(this.usernameValue == ''){ this.usernameState = 'requiredAlert'; }else{ this.usernameState = ''; }
+			}
+			if(eventTargetDOM == 'all' || eventTargetDOM == 'password'){
+				if(this.passwordValue == ''){ this.passwordState = 'requiredAlert'; }else{ this.passwordState = '';}
+			}
+
+		},
+	},
 	template: `
 		<div class="p_4 max-w_50 m_auto">
     		<h1 class="c_acc font_6 text_center">Log In To Your Account</h1>
@@ -169,7 +180,7 @@ const Template = (args, { argTypes }) => ({
 
 				<fieldset class="max-w_30 m_auto">
 					<div class="m-b_4">
-						<TextInput :inputId="'username'" :type="'text'" v-model="usernameValue" :required="requiredUsername" :placeholder="placeholderUsername" :state="state">
+						<TextInput :inputId="'username'" :type="'text'" v-model="usernameValue" :required="requiredUsername" :placeholder="placeholderUsername" :state="usernameState" @input="onDisabledCheck('username')">
 							<template v-slot:default >{{ defaultSlotUsername }}</template>
 							<template v-slot:requiredAlertMessage >{{ requiredAlertMessageUsername }}</template>
 						</TextInput>
@@ -177,7 +188,7 @@ const Template = (args, { argTypes }) => ({
 					</div>
 
 					<div class="m-b_3">
-						<InputPassword :inputId="'password'" v-model="passwordValue" :required="requiredPassword" :placeholder="placeholderPassword" :state="state">
+						<InputPassword :inputId="'password'" v-model="passwordValue" :required="requiredPassword" :placeholder="placeholderPassword" :state="passwordState" @input="onDisabledCheck('password')">
 							<template v-slot:default >{{ defaultSlotPassword }}</template>
 							<template v-slot:requiredAlertMessage >{{ requiredAlertMessagePassword }}</template>
 							<template v-slot:hint >{{ hintPassword }}</template>
@@ -190,7 +201,7 @@ const Template = (args, { argTypes }) => ({
 						<CheckboxInput v-model="checkboxValue"></CheckboxInput>
 					</div>
 
-					<div class="text_center">
+					<div class="text_center" @click="onDisabledCheck('all')">
 						<Btn :isDisabled="isDisabled">
 							<span class="p-r_3">Log In</span>
 							<i v-if="loading" id="btnSpinner" class="spinner fa fa-spinner fa-spin self_center"></i>
@@ -221,6 +232,8 @@ InitialForm.args = {
 	defaultSlotPassword: "Password",
 	requiredAlertMessagePassword: "Please enter a password.",
 	hintPassword: "At least 7 characters with at least 1 number and 1 letter.",
+	passwordState:  "",
+	usernameState: "",
 	//btn
 	size: "medium",
 	//remember me
@@ -240,7 +253,8 @@ Loading.args = {
 export const ErrorRequired = Template.bind({});
 ErrorRequired.args = {
 	...InitialForm.args,
-	state: "requiredAlert",
+	passwordState:  "requiredAlert",
+	usernameState: "requiredAlert",
 	//isDisabled: true
 };
 
