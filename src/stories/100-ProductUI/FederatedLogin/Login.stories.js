@@ -225,7 +225,6 @@ InitialForm.args = {
 	requiredAlertMessageUsername: "An email or username is required.",
 	requiredUsername: true,
 	placeholderUsername: "Username",
-
 	//input password,
 	requiredPassword: true,
 	placeholderPassword: "Password",
@@ -238,16 +237,15 @@ InitialForm.args = {
 	size: "medium",
 	//remember me
 	checkboxValue: {
-		label: "Remember Password"
+		label: "Remember Password",
+		selected: true
 	}
-
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
 	...InitialForm.args,
 	loading: true,
-	//isDisabled: true
 };
 
 export const ErrorRequired = Template.bind({});
@@ -255,7 +253,6 @@ ErrorRequired.args = {
 	...InitialForm.args,
 	passwordState:  "requiredAlert",
 	usernameState: "requiredAlert",
-	//isDisabled: true
 };
 
 export const Notifications = Template.bind({});

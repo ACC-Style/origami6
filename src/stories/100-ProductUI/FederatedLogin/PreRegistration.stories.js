@@ -19,7 +19,7 @@ export default {
                 <h1 class="c_acc font_6 text_center">Verify Account Status</h1>
         
                 <form id="formForgotUsername" class="p_4">
-                    <fieldset>
+                    <fieldset class="m_0">
                         <RadioButtons :state="state" :inputId="inputId" v-bind:options="options" v-model="picked" radioclasses=" p_4 bg_black-2 br_solid br_radius br_1 br_black-2">
                             <template v-slot:default>We want to make sure you don't already have an ACC account. Please click the option that applies to you to continue:</template>
                         </RadioButtons>
