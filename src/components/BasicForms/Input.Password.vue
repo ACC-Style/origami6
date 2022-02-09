@@ -18,7 +18,7 @@
 					:name="'input_'+id"
 					class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3 br_square"
 					:type="thisInputType"
-					
+					:placeholder="placeholder"
 					@change="onChange($event)"
 					:value="value"
 					:required="required"
