@@ -19,8 +19,7 @@
 				:placeholder="placeholder"
 				:class="inputStyles"
 				:disabled="thisState == 'disabled'"
-				
-				@change="onChange($event)"
+				@input="onChange($event)"
 			/>
 		</template>
 		<template v-slot:requiredAlertMessage><slot name="requiredAlertMessage"></slot

@@ -135,7 +135,6 @@ const Template = (args, { argTypes }) => ({
 			if(eventTargetDOM == 'all' || eventTargetDOM == 'password'){
 				if(this.passwordValue == ''){ this.passwordState = 'requiredAlert'; }else{ this.passwordState = '';}
 			}
-
 		},
 	},
 	template: `
@@ -188,26 +187,22 @@ const Template = (args, { argTypes }) => ({
 					</div>
 
 					<div class="m-b_3">
-						<InputPassword :inputId="'password'" v-model="passwordValue" :required="requiredPassword" :placeholder="placeholderPassword" :state="passwordState" @input="onDisabledCheck('password')">
+						<InputPassword :inputId="'password'" v-model="passwordValue" :required="requiredPassword" :placeholder="placeholderPassword" :state="passwordState" @input="onDisabledCheck('password')" @change="onDisabledCheck('password')">
 							<template v-slot:default >{{ defaultSlotPassword }}</template>
 							<template v-slot:requiredAlertMessage >{{ requiredAlertMessagePassword }}</template>
 							<template v-slot:hint >{{ hintPassword }}</template>
 						</InputPassword>
-						
 						<a href="/ForgotPassword">Forgot Password?</a>
 					</div>
-					
 					<div class="m-b_4">
 						<CheckboxInput v-model="checkboxValue"></CheckboxInput>
 					</div>
-
 					<div class="text_center" @click="onDisabledCheck('all')">
 						<Btn :isDisabled="isDisabled">
 							<span class="p-r_3">Log In</span>
 							<i v-if="loading" id="btnSpinner" class="spinner fa fa-spinner fa-spin self_center"></i>
 						</Btn>
 					</div>
-
 				</fieldset>
 				<p class="text_center">
 					<a href="/preregistration?returnUrl=https://www.acc.org/">Create Free Account</a>
