@@ -19,7 +19,7 @@
 				:placeholder="placeholder"
 				:class="inputStyles"
 				:disabled="thisState == 'disabled'"
-				@input="onChange($event)"
+				@input="onInput($event)"
 			/>
 		</template>
 		<template v-slot:requiredAlertMessage><slot name="requiredAlertMessage"></slot
@@ -50,7 +50,7 @@ export default {
 	mixins: [baseInputFunctions],
 	components: { Question },
 	methods:{
-		onChange: function(event) {
+		onInput: function(event) {
 			if (this.value == "" && this.required) {
 				this.$emit("onStateChange","requiredAlert")
 			}else {

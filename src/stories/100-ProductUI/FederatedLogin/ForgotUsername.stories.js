@@ -29,7 +29,8 @@ const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { InputEmail, Btn },
 	data: () => ({
-		emailValue: ""
+		emailValue: "",
+		emailState: "",
 	}),
 	computed: {
 		isDisabled() {
@@ -42,6 +43,13 @@ const Template = (args, { argTypes }) => ({
 			return true;
 		}
 	},
+	methods:{
+		onDisabledCheck(eventTargetDOM){ 
+			if(eventTargetDOM == 'all' || eventTargetDOM == 'email'){
+				if(this.emailValue == ''){ this.emailState = 'requiredAlert'; }else{ this.emailState = ''; }
+			}
+		},
+	},
 	template: `
 		<div class="p_4 max-w_50 m_auto">
 			<div class="text_center">
@@ -53,12 +61,12 @@ const Template = (args, { argTypes }) => ({
 			<form id="formForgotUsername" class="p_4 max-w_30 m_auto">
 				<fieldset>
 					<div class="m-b_4">
-						<InputEmail :inputId="'email'" :type="'email'" v-model="emailValue" :required="requiredEmail" :placeholder="placeholderEmail" :state="state">
+						<InputEmail :inputId="'email'" :type="'email'" v-model="emailValue" :required="requiredEmail" :placeholder="placeholderEmail" :state="emailState" @input="onDisabledCheck('email')">
 							<template v-slot:default >{{ defaultSlotEmail }}</template>
 							<template v-slot:requiredAlertMessage >{{ requiredAlertMessageEmail }}</template>
 						</InputEmail>
 					</div>
-					<div class="text_center">
+					<div class="text_center" @click="onDisabledCheck('all')">
 						<Btn :size="size" :isDisabled="isDisabled">
 							<span class="p-r_3">Submit Email</span>
 							<i v-if="loading" id="btnSpinner" class="spinner fa fa-spinner fa-spin self_center"></i>
@@ -102,7 +110,7 @@ Loading.args = {
 export const ErrorRequired = Template.bind({});
 ErrorRequired.args = {
 	...InitialForm.args,
-	state: "requiredAlert",
+	emailState: "requiredAlert",
 	//isDisabled: true
 };
 

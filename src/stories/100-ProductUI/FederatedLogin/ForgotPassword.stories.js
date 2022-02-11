@@ -28,7 +28,8 @@ const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { TextInput, Btn },
     data: () => ({
-		usernameValue: ""
+		usernameValue: "",
+		usernameState: ""
 	}),
 	computed: {
 		isDisabled() {
@@ -41,6 +42,13 @@ const Template = (args, { argTypes }) => ({
 			return true;
 		}
 	},
+	methods:{
+		onDisabledCheck(eventTargetDOM){ 
+			if(eventTargetDOM == 'all' || eventTargetDOM == 'username'){
+				if(this.usernameValue == ''){ this.usernameState = 'requiredAlert'; }else{ this.usernameState = ''; }
+			}
+		},
+	},
 	template: `
         <div class="p_4 max-w_50 m_auto">
             <div class="text_center">
@@ -52,12 +60,12 @@ const Template = (args, { argTypes }) => ({
             <form id="formForgotPassword" class="p_4 max-w_30 m_auto">
                 <fieldset>
                     <div class="m-b_4">
-                        <TextInput :inputId="'username'" :type="'text'" v-model="usernameValue" :required="requiredUsername" :placeholder="placeholderUsername" :state="state">
+                        <TextInput :inputId="'username'" :type="'text'" v-model="usernameValue" :required="requiredUsername" :placeholder="placeholderUsername" :state="usernameState" @input="onDisabledCheck('username')">
 							<template v-slot:default >{{ defaultSlotUsername }}</template>
 							<template v-slot:requiredAlertMessage >{{ requiredAlertMessageUsername }}</template>
 						</TextInput>
                     </div>
-                    <div class="text_center">
+                    <div class="text_center" @click="onDisabledCheck('all')">
                         <Btn :size="size" :isDisabled="isDisabled">
                             <span class="p-r_3">Submit</span>
                             <i v-if="loading" id="btnSpinner" class="spinner fa fa-spinner fa-spin self_center"></i>
@@ -101,7 +109,7 @@ Loading.args = {
 export const ErrorRequired = Template.bind({});
 ErrorRequired.args = {
 	...InitialForm.args,
-	state: "requiredAlert",
+	usernameState: "requiredAlert",
 	//isDisabled: true
 };
 

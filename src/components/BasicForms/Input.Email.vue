@@ -13,7 +13,7 @@
 			<input
 				:id="inputId"
 				:name="inputId"
-				@change="onChange($event)"
+				@input="onInput($event)"
 				class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3 br-bl_square br-tl_square"
 				:type="inputType"
 				:value="value"
@@ -51,7 +51,7 @@ import is from 'is_js';
 		isEmail(value){
 			return is.email(value);
 		},
-		onChange: function(event) {
+		onInput: function(event) {
 			if (this.value == "" && this.required) {
 				this.$emit("onStateChange","requiredAlert")
 			}else {

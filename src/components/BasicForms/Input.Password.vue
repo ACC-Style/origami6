@@ -18,7 +18,7 @@
 					:name="'input_'+id"
 					class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3 br_square"
 					:type="thisInputType"
-					@input="onChange($event)"
+					@input="onInput($event)"
 					:placeholder="placeholder"
 					:value="value"
 					:required="required"
@@ -113,7 +113,7 @@ export default {
 			const regex = RegExp('^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$');
 			return regex.test(this.value);
 		},
-		onChange: function(event) {
+		onInput: function(event) {
 			if (this.value == "" && this.required) {
 				this.$emit("onStateChange","requiredAlert")
 			}else {
