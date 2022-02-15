@@ -15,8 +15,7 @@ export default{
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {
-				code: `
-				TBD`
+				code: `https://github.com/ACC-Style/origami6/blob/master/src/stories/100-ProductUI/FederatedLogin/ForgotUsername.stories.js`
 			},
 		},
     },
@@ -114,7 +113,6 @@ InitialForm.args = {
 export const Loading = Template.bind({});
 Loading.args = {
 	...InitialForm.args,
-	//isDisabled: true,
 	loading: true
 };
 
@@ -122,6 +120,5 @@ export const ErrorRequired = Template.bind({});
 ErrorRequired.args = {
 	...InitialForm.args,
 	emailState: "requiredAlert",
-	//isDisabled: true
 };
 
