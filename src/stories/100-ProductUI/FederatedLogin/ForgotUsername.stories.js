@@ -34,7 +34,7 @@ const Template = (args, { argTypes }) => ({
 	}),
 	computed: {
 		isDisabled() {
-			if (this.loading || this.state == "requiredAlert"){
+			if (this.loading || this.emailState == "requiredAlert"){
 				return true;
 			}
 			if (this.emailValue) {
@@ -49,6 +49,11 @@ const Template = (args, { argTypes }) => ({
 				if(this.emailValue == ''){ this.emailState = 'requiredAlert'; }else{ this.emailState = ''; }
 			}
 		},
+		updateState(b) {
+			console.log("passed state = " + b);
+			this.emailState = b;
+			console.log("current email state = " + this.emailState);
+		}
 	},
 	template: `
 		<div class="p_4 max-w_50 m_auto">
@@ -58,12 +63,13 @@ const Template = (args, { argTypes }) => ({
 				<p>Enter your email address to verify your identity and retrieve your username.</p>
 			</div>
 
-			<form id="formForgotUsername" class="p_4 max-w_30 m_auto">
+			<form id="formForgotUsername" class="p_4 max-w_30 m_auto" novalidate>
 				<fieldset>
 					<div class="m-b_4">
-						<InputEmail :inputId="'email'" :type="'email'" v-model="emailValue" :required="requiredEmail" :placeholder="placeholderEmail" :state="emailState" @input="onDisabledCheck('email')">
+						<InputEmail :inputId="'email'" :type="'email'" v-model="emailValue" :required="requiredEmail" :placeholder="placeholderEmail" :state="emailState" @onStateChange="updateState">
 							<template v-slot:default >{{ defaultSlotEmail }}</template>
 							<template v-slot:requiredAlertMessage >{{ requiredAlertMessageEmail }}</template>
+							<template v-slot:alertMessage >{{ alertMessageEmail }}</template>
 						</InputEmail>
 					</div>
 					<div class="text_center" @click="onDisabledCheck('all')">
@@ -95,7 +101,8 @@ InitialForm.args = {
 	requiredEmail: true,
 	placeholderEmail: "Email",
 	defaultSlotEmail: "Enter your email address",
-	requiredAlertMessageEmail: "Please enter a valid email address.",
+	requiredAlertMessageEmail: "Email is required.",
+	alertMessageEmail: "Please enter a valid email address.",
 	//btn
 	size: "medium"
 };

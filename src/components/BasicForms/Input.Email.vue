@@ -52,31 +52,18 @@ import is from 'is_js';
 			return is.email(value);
 		},
 		onInput: function(event) {
-			if (this.value == "" && this.required) {
+			if ( event.target.value == "" &&  event.target.required) {
 				this.$emit("onStateChange","requiredAlert")
-			}else {
+			}
+			else if ( (!this.isEmail(event.target.value)) ) {
+				this.$emit("onStateChange","alert");
+			} else {
 				this.thisState = "";
 				this.$emit("onStateChange","")
-
-			} 
+			}
 			this.$emit('input',event.target.value)
 		}
-		// onChange: function(value) {
-		// 	if (value == "" && this.required) {
-		// 		this.thisState = "requiredAlert"
-		// 		this.$emit("onChange", "");
-		// 		this.$emit("onStateChange","requiredAlert")
-		// 	}else if ( !this.isEmail(value) ){
-		// 		this.thisState = "alert";
-		// 		this.$emit("onChange", "");
-		// 		this.$emit("onStateChange","alert");
-		// 		} else {
-		// 		this.thisState = "";
-		// 		this.$emit("onChange", value);
-		// 		this.$emit("onStateChange","")
 
-		// 	} 
-		// }
 	  }
 	}
 </script>
