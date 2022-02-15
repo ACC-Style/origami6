@@ -34,7 +34,7 @@ const Template = (args, { argTypes }) => ({
 	}),
 	computed: {
 		isDisabled() {
-			if (this.loading || this.emailState == "requiredAlert"){
+			if (this.loading || this.emailState == "requiredAlert" || this.emailState == "alert"){
 				return true;
 			}
 			if (this.emailValue) {
@@ -45,14 +45,18 @@ const Template = (args, { argTypes }) => ({
 	},
 	methods:{
 		onDisabledCheck(eventTargetDOM){ 
-			if(eventTargetDOM == 'all' || eventTargetDOM == 'email'){
-				if(this.emailValue == ''){ this.emailState = 'requiredAlert'; }else{ this.emailState = ''; }
+			if( this.emailValue == '' ) { 
+				this.emailState = 'requiredAlert';
 			}
+			/*else {
+				this.emailState = ''; 
+			}*/
 		},
 		updateState(b) {
-			console.log("passed state = " + b);
 			this.emailState = b;
-			console.log("current email state = " + this.emailState);
+		},
+		onSubmit(){
+			console.log('stop submit and do this instead');
 		}
 	},
 	template: `
@@ -63,7 +67,7 @@ const Template = (args, { argTypes }) => ({
 				<p>Enter your email address to verify your identity and retrieve your username.</p>
 			</div>
 
-			<form id="formForgotUsername" class="p_4 max-w_30 m_auto" novalidate>
+			<form id="formForgotUsername" class="p_4 max-w_30 m_auto" novalidate v-on:submit.prevent="onSubmit">
 				<fieldset>
 					<div class="m-b_4">
 						<InputEmail :inputId="'email'" :type="'email'" v-model="emailValue" :required="requiredEmail" :placeholder="placeholderEmail" :state="emailState" @onStateChange="updateState">
