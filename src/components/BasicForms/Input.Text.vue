@@ -51,13 +51,12 @@ export default {
 	components: { Question },
 	methods:{
 		onInput: function(event) {
-			if (this.value == "" && this.required) {
-				this.$emit("onStateChange","requiredAlert")
-			}else {
+			if ( event.target.value == "" &&  event.target.required) {
+				this.$emit("onStateChange" , { state: "requiredAlert" , target: event.target } )
+			} else {
 				this.thisState = "";
-				this.$emit("onStateChange","")
-
-			} 
+				this.$emit("onStateChange" , { state: "" , target: event.target } )
+			}
 			this.$emit('input',event.target.value)
 		}
 	}

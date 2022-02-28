@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import Question from "./subComponent/Question";
+import Question from "./subComponent/Question.vue";
 import baseInputFunctions from "./subComponent/baseInputFunctions.vue"
 import is from 'is_js';
 	export default {

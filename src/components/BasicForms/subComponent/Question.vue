@@ -13,7 +13,7 @@
 					c_warning: state == 'warning',
 				},
 			]"
-			class="label-holder flex font-size_up-1 font_display font_medium p-y_2"
+			class="label-holder flex font-size_up-1 font_display font_medium p-y_2 lh_1"
 		>
 			<span class="text cell flex_shrink">
 				<slot name="default"></slot>
