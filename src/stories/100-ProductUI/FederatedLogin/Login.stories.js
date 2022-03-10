@@ -115,6 +115,11 @@ const Template = (args, { argTypes }) => ({
 	data: () => ({
 		usernameValue: "",
 		passwordValue: "",
+		//remember me
+		checkboxValue: {
+			label: "Remember Password",
+			selected: true
+		}
 	}),
 	computed: {
 		isDisabled() {
@@ -234,12 +239,7 @@ InitialForm.args = {
 	passwordState:  "",
 	usernameState: "",
 	//btn
-	size: "medium",
-	//remember me
-	checkboxValue: {
-		label: "Remember Password",
-		selected: true
-	}
+	size: "medium"
 };
 
 export const Loading = Template.bind({});

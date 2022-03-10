@@ -7,7 +7,7 @@
 			:name="'checkbox_'+checkboxLabelCodeSafe" 
 			:id="'checkbox_'+checkboxLabelCodeSafe" 
 			:checked="checkboxValue"
-            @change="onInput($event.target.checked)"
+            @change="onInput('selected', $event.target.checked)"
 			:required="required"
 			class="inline-block p-r_3 self_center"
 			:disabled="state == 'disabled'"
@@ -75,7 +75,6 @@ export default {
 	},
 	computed: {
 		inputPrePostStyles() {
-			console.log(this);
 			let styles = "";
 			switch (this.inputState) {
 				case "requiredAlert":
@@ -179,18 +178,17 @@ export default {
 		}
 	},
 	methods: {
-		onInput: function (inputResponse) {
-            
-			if (inputResponse=== false && this.required) {
+		onInput: function (key, inputResponse) {
+			if (inputResponse === false && this.required) {
 				this.inputState = "requiredAlert";
 				this.$emit("onStateChange", "requiredAlert");
-               
 			}else{
                 this.inputState = "";
                 this.$emit("onStateChange", "");
             } 
-            this.value['selected'] = inputResponse;
-            this.$emit("input",this.value);
+            //this.value['selected'] = inputResponse;
+            //this.$emit("input",this.value);
+			this.$emit('input', { ...this.value, [key]: inputResponse })
 		},
 	},
 };
