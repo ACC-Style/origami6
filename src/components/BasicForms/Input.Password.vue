@@ -40,9 +40,9 @@
 		</template>
 		<template v-slot:requiredAlertMessage><slot name="requiredAlertMessage"></slot
 		></template>
-		<template v-slot:alertMessage
-			>Not Strong Enough to Be Our Password</template
-		>
+		<template v-slot:alertMessage>
+			<slot name="alertMessage"></slot>
+		</template>
 		<template v-slot:warningMessage>
 			<slot name="warningMessage"></slot
 		></template>
@@ -117,7 +117,6 @@ export default {
 			if (this.value == "" && this.required) {
 				this.$emit("onStateChange","requiredAlert")
 			}else {
-				this.thisState = "";
 				this.$emit("onStateChange","")
 
 			} 
