@@ -19,6 +19,7 @@
 					class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3 br_square"
 					:type="thisInputType"
 					@input="onInput($event)"
+					@keydown.space.prevent
 					:placeholder="placeholder"
 					:value="value"
 					:required="required"
@@ -26,13 +27,14 @@
 					:disabled="thisState == 'disabled'"
 				/>
 				<Btn
-					
 					:class="areaStyle"
 					state="secondary"
 					:shadow="false"
 					corner="square"
 					size="small"
+					type="button"
 					@onClick="showHideToggle()"
+
 				>
 					<i class="far fa self_center" :class="showHideIcon"></i>
 				</Btn>
@@ -116,26 +118,11 @@ export default {
 		onInput: function(event) {
 			if (this.value == "" && this.required) {
 				this.$emit("onStateChange","requiredAlert")
-			}else {
+			} else {
 				this.$emit("onStateChange","")
-
 			} 
-			this.$emit('input',event.target.value)
+			this.$emit('input',event.target.value);
 		}
-		// onChange: function (value) {
-		// 	if (value == "" && this.required) {
-		// 		this.$emit("input", "");
-		// 		this.$emit("onStateChange", "requiredAlert");
-		// 	} 
-		// else if (!this.isPassword(value)) {
-		// 	this.$emit("input", "");
-		// 	this.$emit("onStateChange", "alert");
-		// }
-		// 	 else {
-		// 		 this.$emit("onStateChange", "");
-		// 	}
-		// 		this.$emit("input", value);
-		// },
 	},
 };
 </script>

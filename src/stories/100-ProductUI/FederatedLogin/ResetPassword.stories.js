@@ -44,27 +44,55 @@ const Template = (args, { argTypes }) => ({
 		pwd2Value: "",
         pwd2State: "",
 		pwdCheck: {
-			pwd1: "",
 			hasCharMin: false,
 			hasNum: false,
 			hasLetter: false
 		}
 	}),
 	computed: {
-		isDisabled() {
-			console.log('isDisabled');
-			return true;
+		isDisabled: function () {
+			//NOTE: This is a heavy handed implementation. If you need to use states that should not block submission, I recommend using a string filter to determine if any alert type states exist and if so, then disable the button.
+			if ( this.pwd1State !== "" || this.pwd2State !== "") {
+				return true;
+			}
+			return this.pwd1Value.length <= 0 || this.pwd2Value.length <= 0;
 		}
 	},
 	methods:{
 		checkPassword: function (a) {
-			this.pwdCheck.pwd1 = a;
-			this.pwdCheck.hasCharMin = this.characterMin(a,7);
-			this.pwdCheck.hasNum = this.containsNumber(a);
-			this.pwdCheck.hasLetter = this.containsLetter(a);
+			if(a == "") {
+				this.pwd1State = 'requiredAlert';
+				return false;
+			} else {
+				this.pwd1State = '';
+			}
+
+			const trimmed = a.replace(/\s/g, "");
+			this.pwd1Value = trimmed;
+
+			this.pwdCheck.hasCharMin = this.characterMin(trimmed,7);
+			this.pwdCheck.hasNum = this.containsNumber(trimmed);
+			this.pwdCheck.hasLetter = this.containsLetter(trimmed);
+
+			if( this.pwdCheck.hasCharMin == false || this.pwdCheck.hasNum == false || this.pwdCheck.hasLetter == false) {
+				this.pwd1State = 'alert';
+			}
+
+			this.confirmPassword(this.pwd2Value);
+			
 		},
 		confirmPassword: function (a) {
-			if(this.matchPasswords(this.pwd1Value , a) == false){
+			if(a == "") {
+				this.pwd2State = 'requiredAlert';
+				return false;
+			} else {
+				this.pwd2State = '';
+			}
+
+			const trimmed = a.replace(/\s/g, "");
+			this.pwd2Value = trimmed;
+
+			if(this.matchPasswords(this.pwd1Value , trimmed) == false){
 				this.pwd2State = "alert";
 			} else {
 				this.pwd2State = "";
@@ -72,8 +100,12 @@ const Template = (args, { argTypes }) => ({
 		},
 		onDisabledCheck: function(e) { 
 			if(this.pwd1Value == ''){ this.pwd1State = 'requiredAlert'; }
-			if(this.pwd2Value == ''){ this.pwd2State = 'alert'; }
-		},
+			if(this.pwd2Value == ''){ this.pwd2State = 'requiredAlert'; }
+			//Probably a more graceful way to do this
+			if( this.pwdCheck.hasCharMin == false || this.pwdCheck.hasNum == false || this.pwdCheck.hasLetter == false) {
+				this.pwd1State = 'alert';
+			}
+		}
 	},
 	template: `
 		<div class="p_4 max-w_50 m_auto">
@@ -89,7 +121,8 @@ const Template = (args, { argTypes }) => ({
 					<div class="m-b_4">
                         <InputPassword :inputId="'pwd1'" v-model="pwd1Value" :required="pwd1Required" :state="pwd1State" @input="checkPassword">
                             <template v-slot:default >{{ defaultSlotPwd1 }}</template>
-                            <template v-slot:requiredAlertMessage >{{ requiredAlertMessagePwd1 }}</template>
+                            <template v-slot:requiredAlertMessage >{{ requiredAlertSlotPwd1 }}</template>
+							<template v-slot:alertMessage >{{ alertSlotPwd1 }}</template>
                         </InputPassword>
 
 						<!-- Conditionals -->
@@ -102,8 +135,8 @@ const Template = (args, { argTypes }) => ({
                     <div class="m-b_4">
                         <InputPassword :inputId="'pwd2'" v-model="pwd2Value" :required="pwd2Required" :state="pwd2State" @input="confirmPassword">
                             <template v-slot:default >{{ defaultSlotPwd2 }}</template>
-                            <template v-slot:requiredAlertMessage >{{ requiredAlertMessagePwd2 }}</template>
-							<template v-slot:alertMessage >{{ alertPwdMismatch }}</template>
+                            <template v-slot:requiredAlertMessage >{{ requiredAlertSlotPwd2 }}</template>
+							<template v-slot:alertMessage >{{ alertSlotPwd2 }}</template>
                         </InputPassword>
 					</div>
 				
@@ -125,33 +158,19 @@ InitialForm.args = {
 	//password1
 	pwd1Required: true,
     defaultSlotPwd1: "New Password",
-	requiredAlertMessagePwd1: "Please enter a new password.",
+	requiredAlertSlotPwd1: "Please enter new password.",
+	alertSlotPwd1: "Password conditions not met.",
     //password2
 	pwd2Required: true,
     defaultSlotPwd2: "Confirm Password",
-	requiredAlertMessagePwd2: "Please confirm your new password.",
-	alertPwdMismatch: "Passwords do not match.",
+	requiredAlertSlotPwd2: "Please confirm your new password.",
+	alertSlotPwd2: "Password does not match. Please try again.",
 	//btn
 	size: "medium"
 };
 
-/*
 export const Loading = Template.bind({});
 Loading.args = {
 	...InitialForm.args,
 	loading: true,
 };
-
-export const ErrorRequired = Template.bind({});
-ErrorRequired.args = {
-	...InitialForm.args,
-	pwdState:  "requiredAlert",
-	usernameState: "requiredAlert",
-};
-
-export const Notifications = Template.bind({});
-Notifications.args = {
-	...InitialForm.args,
-	notify: true
-};
-*/
