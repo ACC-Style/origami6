@@ -16,7 +16,7 @@ export default {
 			},
 			actions: { argTypesRegex: '^on.*' },
 			source: {
-				code: `TBD`
+				code: `Please view Github.`
 			},
 
 		},
