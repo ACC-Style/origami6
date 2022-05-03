@@ -60,28 +60,16 @@ const Template = (args, { argTypes }) => ({
 	}),
     template: `<div class="p_4 max-w_50 m_auto">
         <h1 class="c_acc font_6 text_center">Verify Account Status</h1>
-
         <form id="formForgotUsername" class="p_4">
-            <fieldset>
+            <fieldset class="p_0 p-b_3">
                 <RadioButtons :state="state" :inputId="inputId" v-bind:options="options" v-model="picked" radioclasses=" p_4 bg_black-2 br_solid br_radius br_1 br_black-2">
                     <template v-slot:default>We want to make sure you don't already have an ACC account. Please click the option that applies to you to continue:</template>
                 </RadioButtons>
             </fieldset>
             <transitionExpand v-for="(item, index) in options" :key="'item_'+index">
-                <div v-html="item.content" v-if="picked.value==item.value"></div>
+                <div v-html="item.content" v-if="picked.value==item.value" class="m-x_4"></div>
             </transitionExpand>
         </form>
-
-        <hr>
-
-        <div class="p_4 font_1 max-w_50 m_auto">
-            <p><b>Have questions or need assistance?</b> Please contact ACC Member Care</p>
-            <ul class="ul_none p-l_5">
-                <li><i class="fa fa-phone"></i> <a href="tel:+18002534636">1-800-253-4636, ext. 5603</a> (Toll Free U.S. &amp; Canada)</li>
-                <li><i class="fa fa-phone"></i> <a href="tel:2023756000">202-375-6000, ext. 5603</a> (International)</li>
-                <li><i class="fa fa-envelope"></i> <a href="mailto:membercare@acc.org">membercare@acc.org</a></li>
-            </ul>
-        </div>
     </div>`,
 });
 export const Default = Template.bind({});
