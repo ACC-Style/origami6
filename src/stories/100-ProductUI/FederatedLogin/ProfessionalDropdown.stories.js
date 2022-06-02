@@ -1,4 +1,4 @@
-import TextAndButton from "../../../components/BasicForms/Input.TextAndButton.vue";
+import Btn from "../../../components/subComponents/Btn.vue";
 import Modal from "../../../components/subComponents/Modal.vue";
 
 import { commonArgs } from "../../4-Forms/common.argTypes.js";
@@ -7,8 +7,8 @@ import { professionalData } from "./Data/ProfessionalData.js";
 
 export default{
     title: "Apps/FederatedLogin/ProfessionalDropdown",
-	component: TextAndButton,
-	subcomponents:{ Modal },
+	component: Modal,
+	subcomponents:{ Btn },
     parameters: {
 		docs: {
 			description: {
@@ -28,76 +28,73 @@ export default{
 
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { TextAndButton, Modal },
+	components: { Modal, Btn },
 	data(){
 		return {
-			modalVisible: false,
 			professions: professionalData,
-			subTypeGroupA: [],
-			subTypeGroupB: [],
-			selectedType: null,
+			modalVisible: false,
 			selectedGroupA: null,
-			selectedGroupB: null
+			selectedGroupB: null,
+			selectedGroupC: null,
+			subcatB: [],
+			subcatC: [],
 		}
 	},
 	methods: {
-		getSubType(i, group){
-			if(group === "a"){
-				//console.log('a',i);
-				this.subTypeGroupA = professionalData[i].Subcategories;
-				this.selectedType = i;
-			}
-			if(group === "b") {
-				//console.log('b',i);
-				this.selectedGroupA = i;
-				const groupB = professionalData[this.selectedType].Subcategories[i].Subcategories;
-				if(groupB && groupB.length){
-					this.subTypeGroupB = groupB;
-				} else {
+		onSelectCategory(i, group){
+			switch(group) {
+				case 'a':
+					this.selectedGroupA = i;
 					this.selectedGroupB = null;
-					this.setProfession()
-				}
-				//this.subTypeGroupB = professionalData[this.selectedType].Subcategories[i].Subcategories;
-				//console.log("group b" , this.subTypeGroupB);
+					this.selectedGroupC = null;
+					this.subcatB = [];
+					this.subcatC = [];
+					this.subcatB = this.professions[i].Subcategories;
+					break;
+				case 'b':
+					this.selectedGroupB = i;
+					this.selectedGroupC = null;
+					this.subcatC = [];
+					if(this.subcatB[i].hasOwnProperty('Subcategories')){
+						this.subcatC = this.subcatB[i].Subcategories;
+					} else {
+						this.modalVisible = false;
+					}
+					break;
+				case 'c':
+					this.selectedGroupC = i;
+					this.modalVisible = false;
+					break;
 			}
-		},
-		setProfession(i){
-			if(i){
-				this.selectedGroupB = i;
-			}
-
-			console.log("in setProfession", this.selectedType , this.selectedGroupA , this.selectedGroupB);
-			this.modalVisible = false;
+		console.log(this.selectedGroupA, this.selectedGroupB, this.selectedGroupC);
 		}
 	},
 	template: `
 		<div>
-			<TextAndButton @onClick="modalVisible = true" v-model='value' v-bind="$props">
-				<template slot="btnLabel">{{btnLabel}}</template>
-			</TextAndButton>
-			<p id="prof_breadcrumbs">
-				<span id="type">Type</span><i class="far fa-angle-right m-x_3"></i>
-				<span id="groupA">groupA</span><i class="far fa-angle-right m-x_3"></i>
-				<span id="groupB">groupB</span>
+			<Btn class="m-r_4 p_0" @onClick="modalVisible = true"><span>Select</span></Btn>
+			<p id="prof_breadcrumbs" class="inline">
+				<span id="type" v-if="this.selectedGroupA !== null">{{ professions[selectedGroupA].Name }}</span>
+				<span id="groupA" v-if="this.selectedGroupB !== null"><i class="far fa-angle-right m-x_3 font_bold c_primary"></i>{{ subcatB[selectedGroupB].Name }}</span>
+				<span id="groupB" v-if="this.selectedGroupC !== null"><i class="far fa-angle-right m-x_3 font_bold c_primary"></i>{{ subcatC[selectedGroupC].Name }}</span>
 			</p>
 			<Modal v-if="modalVisible" @onClose="modalVisible = false" class="bg_black-1">
 				<template :class="font_3 font_bold font_display" v-slot:header>Select Your Professional Type:</template>
-				<div>
-					<span class="block bg_primary p_3">I'm a...</span>
-					<ul class="ul_none p_3">
-						<li v-for="(prof, index) in professions" :key="'professionalCategory'+index" @click="getSubType(index, 'a')">{{ prof["Name"] }}</li>
+				<div class="br_2 br_acc br_solid">
+					<span class="block bg_acc p_3 c_white font_bold">I'm a...</span>
+					<ul class="ul_none">
+						<li class="c_black-8 h:c_black-9 h:bg_primary-3 p-x_3 p-y_2" :class="(index == selectedGroupA) && 'bg_primary-3'" v-for="(prof, index) in professions" :key="'groupa'+index" @click="onSelectCategory(index, 'a')"><i class="far fa-arrow-circle-right m-r_3"></i>{{ prof["Name"] }}</li>
 					</ul>
 				</div>
-				<div v-if="this.subTypeGroupA.length">
-					<span class="block bg_primary p_3">I'm a...</span>
-					<ul class="ul_none p_3">
-						<li v-for="(prof, index) in this.subTypeGroupA" :key="'groupA'+index" @click="getSubType(index, 'b')">{{ prof["Name"] }}</li>
+				<div v-if="this.subcatB.length" class="br_2 br_acc br_solid">
+					<span class="block bg_acc p_3 c_white font_bold">I'm a...</span>
+					<ul class="ul_none">
+						<li class="c_black-8 h:c_black-9 h:bg_primary-3 p-x_3 p-y_2" :class="(index == selectedGroupB) && 'bg_primary-3'" v-for="(prof, index) in this.subcatB" :key="'groupb'+index" @click="onSelectCategory(index, 'b')"><i class="far fa-arrow-circle-right m-r_3"></i>{{ prof["Name"] }}</li>
 					</ul>
 				</div>
-				<div v-if="this.subTypeGroupB.length">
-					<span class="block bg_primary p_3">I'm a...</span>
-					<ul class="ul_none p_3">
-						<li v-for="(prof, index) in this.subTypeGroupB" :key="'groupB'+index" @click="setProfession(index)">{{ prof["Name"] }}</li>
+				<div v-if="this.subcatC.length" class="br_2 br_acc br_solid">
+					<span class="block bg_acc p_3 c_white font_bold">I'm a...</span>
+					<ul class="ul_none">
+						<li class="c_black-8 h:c_black-9 h:bg_primary-3 p-x_3 p-y_2" :class="(index == selectedGroupC) && 'bg_primary-3'" v-for="(prof, index) in this.subcatC" :key="'groupc'+index" @click="onSelectCategory(index, 'c')"><i class="far fa-arrow-circle-right m-r_3"></i>{{ prof["Name"] }}</li>
 					</ul>
 				</div>
 			</Modal>
