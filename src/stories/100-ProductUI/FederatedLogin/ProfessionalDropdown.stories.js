@@ -17,7 +17,7 @@ export default{
 			},
 			actions: { argTypesRegex: "^on.*" },
 			source: {
-				code: `<p>Source Code TBD</p>`
+				code: `<a href="https://github.com/ACC-Style/origami6/blob/master/src/stories/100-ProductUI/FederatedLogin/ProfessionalDropdown.stories.js" target="_blank">Github</a>`
 			},
 		},
     },
