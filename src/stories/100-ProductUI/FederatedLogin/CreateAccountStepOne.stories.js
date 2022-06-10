@@ -96,40 +96,36 @@ const Template = (args, { argTypes }) => ({
 		}
 	},
 	template: `
-        <div class="p_4 max-w_50 m_auto">
+        <div class="p_4:md max-w_50 m_auto">
             <div>
                 <h1 class="c_acc font_6 text_center">Create Free Account</h1>
                 <p>Please note that creating a free ACC account does not make you a member of the ACC or give you access to member-only content, but it does allow you to register for events, purchase ACC products, and use promo codes for discounts.</p>
             </div>
 
             <form id="formForgotPassword" class="m_auto" novalidate v-on:submit.prevent="onSubmit">
-                <fieldset>
-					<div class="grid gap_4 grid-col_2">
-						<TextInput class="m-b_4" :inputId="'firstname'" :type="'text'" v-model="firstnameValue" :required=true :placeholder="'First Name'" :state="firstnameState" @onStateChange="updateInputState">
-							<template v-slot:default>First Name</template>
-							<template v-slot:requiredAlertMessage>First Name is required.</template>
-						</TextInput>
-						<TextInput class="m-b_4" :inputId="'lastname'" :type="'text'" v-model="lastnameValue" :required=true :placeholder="'Last Name'" :state="lastnameState" @onStateChange="updateInputState">
-							<template v-slot:default>Last Name</template>
-							<template v-slot:requiredAlertMessage>Last Name is required.</template>
-						</TextInput>
-						<InputEmail class="m-b_4" :inputId="'email'" :type="'email'" v-model="emailValue" :required=true :placeholder="'Email'" :state="emailState" @onStateChange="updateEmailState">
-							<template v-slot:default>Email</template>
-							<template v-slot:requiredAlertMessage>Email is required.</template>
-							<template v-slot:alertMessage >Please enter a valid email address.</template>
-						</InputEmail>
-						<SelectProfession class="m-b_4" :professions="professions" :currentSelection="selectedProfession" @onSelect="updateProfession" />
-						<SetPassword class="display_content" @passwordChanged="updatePassword" />
-							
-
-					</div>
-                    <div class="text_center">
-                        <Btn :isDisabled="isDisabled" :size="'medium'">
-                            <span class="p-r_3">Submit</span>
-                            <i v-if="loading" id="btnSpinner" class="spinner fa fa-spinner fa-spin self_center"></i>
-                        </Btn>
-                    </div>
-                </fieldset>
+				<div class="grid gap-x_5 gap-y_3 grid-col_2:md">
+					<TextInput class="m-b_4" :inputId="'firstname'" :type="'text'" v-model="firstnameValue" :required=true :placeholder="'First Name'" :state="firstnameState" @onStateChange="updateInputState">
+						<template v-slot:default>First Name</template>
+						<template v-slot:requiredAlertMessage>First Name is required.</template>
+					</TextInput>
+					<TextInput class="m-b_4" :inputId="'lastname'" :type="'text'" v-model="lastnameValue" :required=true :placeholder="'Last Name'" :state="lastnameState" @onStateChange="updateInputState">
+						<template v-slot:default>Last Name</template>
+						<template v-slot:requiredAlertMessage>Last Name is required.</template>
+					</TextInput>
+					<InputEmail class="m-b_4" :inputId="'email'" :type="'email'" v-model="emailValue" :required=true :placeholder="'Email'" :state="emailState" @onStateChange="updateEmailState">
+						<template v-slot:default>Email</template>
+						<template v-slot:requiredAlertMessage>Email is required.</template>
+						<template v-slot:alertMessage >Please enter a valid email address.</template>
+					</InputEmail>
+					<SelectProfession class="m-b_4" :professions="professions" :currentSelection="selectedProfession" @onSelect="updateProfession" />
+					<SetPassword class="display_contents" @passwordChanged="updatePassword" />
+				</div>
+				<div class="text_center">
+					<Btn :isDisabled="isDisabled" :size="'medium'">
+						<span class="p-r_3">Submit</span>
+						<i v-if="loading" id="btnSpinner" class="spinner fa fa-spinner fa-spin self_center"></i>
+					</Btn>
+				</div>
             </form>
         </div>
 	`,
