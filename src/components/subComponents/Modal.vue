@@ -11,6 +11,7 @@
 						class="absolute t_0 r_0 l_auto"
 						:corner="'square'"
 						:shadow="false"
+						:type="'button'"
 						@onClick="onClose"
 					>
 						<i class="fas fa-times"></i>
@@ -24,7 +25,7 @@
 					</div>
 					<div class="modal-footer p-x_0  m-b_n3 ">
 						<slot name="footer" class="">
-							<div class="p-x_2 p-x_3:md p-x_4:lg clear_fix"><Btn class="float_right "
+							<div class="p-x_2 p-x_3:md p-x_4:lg clear_fix"><Btn :size="'small'" :type="'button'" class="float_right "
 								@onClick="onClose" :state="'secondary'"
 							>{{cancelText}}</Btn></div>
 						</slot>
