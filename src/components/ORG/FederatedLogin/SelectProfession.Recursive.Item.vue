@@ -10,7 +10,7 @@
 export default {
 	name: "SelectProfessionItem",
 	props: {
-		professions: { type: Object },
+		professions: { type: Array },
 		currentSelection:{ type:Object }
 	},
 	data() {

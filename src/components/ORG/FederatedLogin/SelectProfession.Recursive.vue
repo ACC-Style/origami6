@@ -8,7 +8,7 @@
 			</ul> -->
 		</div>
 		<div v-if="currentSelection.hasOwnProperty('Subcategories')" class="br_2 br_acc br_solid">
-			<SelectProfession :professions="currentSelection['Subcategories']"></SelectProfession>
+			<select-profession :professions="currentSelection['Subcategories']" @onChildSelect="onChildSelect"></select-profession>
 		</div>
 	</section>
 </template>
@@ -27,7 +27,8 @@ export default {
 	},
 	data() {
 		return {
-			currentSelection: { type: Object }
+			currentSelection: { type: Object },
+			childSelection:{type:Object, default:()=>{}}
 		}
 	},
 	computed: {
@@ -35,9 +36,26 @@ export default {
 	},
 	methods: {
 		onSelect(e){
-			this.currentSelection = e
+			this.currentSelection = e,
+			this.onChildSelect( {current:e, child:{} } );
+			
+		},
+		onChildSelect(e){			
+			this.childSelection['Name']=this.currentSelection?.Name;
+			this.childSelection['Code']=this.currentSelection?.Code;
+			if( Object.keys(e.child).length === 0 ){
+				delete this.childSelection.Subcategories;
+			}
+			else{
+				this.childSelection.Subcategories = {};
+				this.childSelection.Subcategories['Name'] =e.child?.Name;
+				this.childSelection.Subcategories['Code'] =e.child?.Code;
+				if(e.child.Subcategories){
+					this.childSelection.Subcategories.Subcategories = e.child.Subcategories;
+				}
+			}
+			this.$emit('onChildSelect',{ current:this.currentSelection, child:this.childSelection});
 		}
-
 	},
 };
 </script>
