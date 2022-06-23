@@ -7,7 +7,7 @@
 				<li v-for="(prof, index) in professions" :key="'cata'+index" @click="onSelectCategory(prof , index)" class="c_black-8 h:c_black-9 h:bg_primary-3 p-x_3 p-y_2" :class="isActive(0,index)"><i class="far fa-arrow-circle-right m-r_3"></i>{{ prof["Name"] }}</li>
 			</ul> -->
 		</div>
-		<div v-if="currentSelection.Subcategories != null" class="br_2 br_acc br_solid">
+		<div v-if="currentSelection.Subcategories != null && currentSelection.Subcategories.length > 0" class="br_2 br_acc br_solid">
 			<select-profession :professions="currentSelection['Subcategories']" @onChildSelect="onChildSelect"></select-profession>
 		</div>
 	</section>
