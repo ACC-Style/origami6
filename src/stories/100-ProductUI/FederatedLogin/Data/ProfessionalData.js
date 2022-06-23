@@ -1,4 +1,4 @@
-'[
+export const professionalData = [
     {
         "Name": "Physician/Scientist",
         "Code": null,
@@ -512,4 +512,4 @@
             }
         ]
     }
-]'
+]
