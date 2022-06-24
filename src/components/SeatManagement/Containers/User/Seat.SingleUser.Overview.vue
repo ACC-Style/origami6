@@ -4,72 +4,62 @@
 		:actionIcon="actionIcon"
 		:actionColor="actionColor"
 	>
-		<div class="flex min-h_4rem relative" :class="statusColor">
-			<div
-				class="p-y_3 p-x_3 flex_none w_25:lg"
-				v-if="status == 'filled' || status =='requested' || status == 'locked' "
-			>
-				<span class="font_2 font_display lh_0 block" v-if="user.name != null">{{ user.name }}</span>
-				<a
-					:href="mailto"
-					v-if="user.name != null"
-                    						@mouseenter="()=>{ actionIcon='fa-envelope'}"
-						@mouseleave="()=>{actionIcon=undefined}"
-					class="block vertical-align_middle lh_0 undecorated h:underline c_primary h:c_primary-n2 p-x_2 m-t_2 z_2 vertical-align_middle"
+		<div class="flex flex_row:md flex_column min-h_4rem relative" :class="statusColor">
+			<header class="flex flex_row flex_auto w_100 max-w_50:md max-w_40:lg justify_between">
+				<div
+					class="p-y_3 p-x_3 flex_none w_50:lg"
+					v-if="status == 'filled' || status =='requested' || status == 'locked' "
 				>
-					<i class="fal font-size_down fa-envelope"></i>
-					email user
-				</a>
-			</div>
-			<div class="p-y_3 p-x_3 flex_none w_20:lg" v-else>
-				<span class="font_2 font_display lh_0 block c_black-5 p_2">Empty</span>
-			</div>
-			<div
-				class="flex_none flex flex content_stretch justify_between c_primary font_1"
-				v-if="status == 'filled' || status == 'locked'"
-			>
-				<div class="flex_auto p-x_3 br_solid br-l_1 br_black-2 flex flex_column justify_center">
-					<i class="fal fa-fw fa-user-crown" :class="adminStyles"></i>
+					<span class="font_2 font_display lh_0 block" v-if="user.name != null">{{ user.name }}</span>
+					<a
+						:href="mailto"
+						v-if="user.name != null"
+												@mouseenter="()=>{ actionIcon='fa-envelope'}"
+							@mouseleave="()=>{actionIcon=undefined}"
+						class="block vertical-align_middle lh_0 undecorated h:underline c_primary h:c_primary-n2 p-x_2 m-t_2 z_2 vertical-align_middle"
+					>
+						<i class="fal font-size_down fa-envelope"></i>
+						email user
+					</a>
 				</div>
-				<div class="flex_auto p-x_3 br_solid br-l_1 br_black-2 flex flex_column justify_center">
-					<i class="fal fa-fw fa-users-crown" :class="groupAdminStyles"></i>
+				<div class="p-y_3 p-x_3 flex_none w_50:lg" v-else>
+					<span class="font_2 font_display lh_0 block c_black-5 p_2">Empty</span>
 				</div>
-				<div class="flex_auto p-x_3 br_solid br-l_1 br_black-2 flex flex_column justify_center">
-					<i class="fal fa-fw fa-user" :class="userStyles"></i>
-				</div>
-				<div class="flex_auto p-x_3 br_solid br-l_1 br_black-2 flex flex_column justify_center">
-					<i class="fal fa-fw" :class="groupsStyles"></i>
-				</div>
-				<div class="flex_auto p-x_3 br_solid br-r_1 br-l_1 br_black-2 flex flex_column justify_center">
-					<i class="fal fa-fw" :class="bundlesStyles"></i>
-				</div>
-			</div>
-			<div class="flex_auto w_30 p_3">
-				<div v-if="status != 'empty' && status != 'filled' && status != 'locked'">
-					<strong>Status:</strong>
-					<span class="flex_auto inline-block self_center text_center">{{ status }}</span>
-				</div>
-				<div class="font_n3">
-					<!-- <div class v-if="status =='filled'">
-						<strong class="font_bold opacity_8 lowercase lh_0 block">
-							Accpeted:
-							<span class="font_regular">{{ date_accepted }}</span>
-						</strong>
-					</div>-->
-					<div class v-if="status =='requested'">
-						<strong class="font_bold opacity_8 lowercase lh_0 block">
-							Invited:
-							<span class="font_regular">{{ date_invite }}</span>
-						</strong>
+				<div
+					class="flex_none flex flex content_stretch justify_between c_primary font_1"
+					v-if="status == 'filled' || status == 'locked'"
+				>
+					<div class="flex_auto p-x_3 br_solid br-l_1 br_black-2 flex flex_column justify_center">
+						<i class="fal fa-fw fa-user-crown" :class="adminStyles"></i>
 					</div>
-					<!-- <div class v-if="status =='locked'">
-						<strong class="font_bold opacity_8 lowercase lh_0 block">
-							Locked Until:
-							<span class="font_regular">{{ date_lockedTill }}</span>
-						</strong>
-					</div>-->
+					<div class="flex_auto p-x_3 br_solid br-l_1 br_black-2 flex flex_column justify_center">
+						<i class="fal fa-fw fa-users-crown" :class="groupAdminStyles"></i>
+					</div>
+					<div class="flex_auto p-x_3 br_solid br-l_1 br_black-2 flex flex_column justify_center">
+						<i class="fal fa-fw fa-user" :class="userStyles"></i>
+					</div>
+					<div class="flex_auto p-x_3 br_solid br-l_1 br_black-2 flex flex_column justify_center">
+						<i class="fal fa-fw" :class="groupsStyles"></i>
+					</div>
+					<div class="flex_auto p-x_3 br_solid br-r_1 br-l_1 br_black-2 flex flex_column justify_center">
+						<i class="fal fa-fw" :class="bundlesStyles"></i>
+					</div>
 				</div>
-			</div>
+				<div class="flex_auto w_30 p_3 text_right text_left:lg" v-if="status != 'empty' && status != 'filled' && status != 'locked'">
+					<div class="nowrap" >
+						<strong>Status:</strong>
+						<span class="flex_auto inline-block self_center text_center">{{ status }}</span>
+					</div>
+					<div class="font-size_down-1">
+						<div class v-if="status =='requested'">
+							<strong class="font_bold opacity_8 lowercase lh_0 block">
+								Invited:
+								<span class="font_regular font-size_down">{{ date_invite }}</span>
+							</strong>
+						</div>
+					</div>
+				</div>
+			</header>
 			<div class="flex_auto w_50 m-l_auto flex flex_row justify_end">
 				<ul class="ul_none flex flex_row self_stretch font_0">
 					<a

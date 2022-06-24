@@ -3,12 +3,12 @@
 <div  v-if="users == null"  class="cursor_wait">
 	<SingleUserLoading />
 </div>
-<div v-else-if="users.length > 0" class="relative">
-	<ul class="ul_none" v-for="(user, index) in users " :key="index">
+<ul v-else-if="users.length > 0" class="relative ul_none">
+	<li v-for="(user, index) in users " :key="index">
 		<SingleUser v-bind="user" v-if="user.status != 'empty'"/>
-	</ul>
+	</li>
     <!-- <div class="sticky font_n2 b_4 l_auto float_right r_4 font_medium bg_white br_solid br_1 shadow_overlap-light br_black-3 br_round z_4 w_auto inline-block p-y_2 p-x_4"><strong>Legend:</strong>  <span><i class="fa fa-user-crown"></i> admin</span><strong>Legend:</strong>  <span><i class="fa fa-users-crown"></i> group admin</span><span><i class="fa fa-user"></i> subscription holder</span></div>    -->
-</div>
+</ul>
 <div v-else class="reading-typography max-w_65">
 	<H3 class="font">You Currently Don't have any users for this product in this Group.</H3>
 	<p class="font_copy"> You will need to add users to this group before you can proceed.  To add users you will need to pull empty users from the other groups. You can do by transfering empty users from another group. </p>
