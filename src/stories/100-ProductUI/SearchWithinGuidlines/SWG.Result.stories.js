@@ -87,7 +87,7 @@ export const Recommendation = ResultTemplate.bind({});
 Recommendation.args = {
 	result:results[2],
 	subtype: results[2].subtype,
-	itemtitle: results[2].itemtitle,
+	itemtitle: results[2].itemtitleFormatted,
 	abs: results[2].abs,
 	gltitle: results[2].gltitle,
 	jacclink: results[2].jacclink,
@@ -123,7 +123,7 @@ Section.args = {
 	pointofcare:results[1].pointofcare,
 	conditions:results[1].conditions,
 	amendments:results[1].amendments,
-	itemtitleFormatted:results[1].itemtitleFormatted,
+	itemtitle:results[1].itemtitleFormatted,
 	sectiontitleformatted:results[1].sectiontitleformatted,
 };
 
@@ -143,7 +143,7 @@ Table.args = {
 	pointofcare:results[0].pointofcare,
 	conditions:results[0].conditions,
 	amendments:results[0].amendments,
-	itemtitleFormatted:results[0].itemtitleFormatted,
+	itemtitle:results[0].itemtitleFormatted,
 	sectiontitleformatted:results[0].sectiontitleformatted,
 
 };

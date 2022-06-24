@@ -14,7 +14,7 @@
 	>		
     <section v-if="subtype=='recommendation' || subtype=='publication'">
 		<main class="result-content p-x_4 p-b_4 font_copy font_0 lh_3">
-			<h2 class="inline float_left" v-html='itemtitleFormatted'></h2>
+			<h2 class="inline float_left" v-html='itemtitle'></h2>
 			<CorLoeChiclet
 				class="float_right m-x_0 m-b_2 m-t_n5:md  m-l_4:md  absolute relative:md font_n3 font_n1:md font_0:lg t_3 r_3"
 				:cor="cor"
@@ -93,7 +93,7 @@
 		</section>
         <section v-else-if="subtype=='table'">
 		<main class="result-content p-x_4 p-b_4 font_copy font_0 lh_3 relative">
-			<h2 v-html="itemtitleFormatted"></h2>
+			<h2 v-html="itemtitle"></h2>
 			<div class="block swg-result" v-if="!isExpanded">
 				<div v-if="!el.is.lg"><div class="inline-block float_left clear_left m-b_3" v-html="results" ></div>
 				</div>
@@ -126,7 +126,7 @@
         </section>
         <section v-else>
 		<main class="result-content p-x_4 p-b_4 font_copy font_0 lh_3 relative">
-			<h2 v-html="itemtitleFormatted"></h2>
+			<h2 v-html="itemtitle"></h2>
 			<TransitionExpand>
 				<div class="block swg-result m-b_3" v-if="!isExpanded">
 					<div v-html="summary">
@@ -184,7 +184,7 @@ export default {
 	},
 	props: {
         subtype: { type: String, default: '' },
-		itemtitleFormatted: { type: String, default: "Title Didn't Load" },
+		itemtitle: { type: String, default: "Title Didn't Load" },
         abs: { type: Array, default:()=>[ "Summary (abs) Didn't Load" ]},
 		gltitle: { type: String },
 		summary: { type:  String, default: "Summary Didn't Load"},
