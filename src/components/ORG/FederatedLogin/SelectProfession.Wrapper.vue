@@ -30,7 +30,8 @@ export default {
 	data() {
 		return {
 			modalVisible: false,
-			path: []
+			path: [],
+			codes:[]
 		}
 	},
 	created: function() {
@@ -45,17 +46,19 @@ export default {
 			this.childSelection = e.child;
 			this.modalVisible = false;
 			this.path = [];
+			this.codes = [];
 			this.getPath(e.child);
 		},
 		getPath: function(object){
 			this.path.push(object.Name);
+			this.codes.push(object.Code);
 			if(object.Subcategories) {
 					const child = this.getPath(object.Subcategories);
 					if(child) {
 						this.path.unshift({ ...item, index:array.indexOf(item) });
 						return child;
 					}
-        		}
+        	}
 
 		},
 		cancelSelect(){
