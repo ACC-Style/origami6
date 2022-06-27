@@ -9,9 +9,9 @@
 		<div
 			data-target="hover-indicator"
 			:class="[hoverIndicatorStyles,' bg_'+ actionColor +'-5 c_'+actionColor+'-n1 br_'+actionColor+'-2 ' ]"
-			class="absolute t_0 r_0 b_0 br_1 br_solid l_auto inline-block p-x_3:md p-x_2 p-t_3 z_0 flex flex_column justify_around:md justify_start shadow_n1 transition_3 shadow_overlap-light w_10 flex flex_row justify_end display_none:touch"
+			class="absolute t_0 r_0 b_0 br_1 br_solid l_auto inline-block p-x_3:md p-x_2 p-t_3 z_0 flex flex_column-reverse shadow_n1 transition_3 shadow_overlap-light w_10 flex flex_row display_none:touch justify_around"
 		>
-			<i :class="actionIcon" class="fas fa-fw font-size_down-1"></i>
+			<i :class="actionIcon" class="fas fa-fw font-size_down-1 m-l_auto self_center"></i>
 		</div>
 		<div
 			class="br_solid br_black-2 br_1 transition_1 z_2 m-r_5:md m-r_5 m-r_0:touch transition_3"
