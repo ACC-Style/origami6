@@ -48,6 +48,7 @@ export default {
 			this.path = [];
 			this.codes = [];
 			this.getPath(e.child);
+			this.$emit('input',this.codes)
 		},
 		getPath: function(object){
 			this.path.push(object.Name);

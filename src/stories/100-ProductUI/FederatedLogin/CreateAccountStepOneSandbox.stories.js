@@ -117,7 +117,7 @@ const Template = (args, { argTypes }) => ({
 						<template v-slot:requiredAlertMessage>Email is required.</template>
 						<template v-slot:alertMessage >Please enter a valid email address.</template>
 					</InputEmail>
-					<SelectProfession class="m-b_4" :professions="professions" :currentSelection="selectedProfession" @onSelect="updateProfession" />
+					<SelectProfession class="m-b_4" :professions="professions" :currentSelection="selectedProfession" @v-bind="updateProfession" />
 					<SetPassword class="display_contents" @passwordChanged="updatePassword" />
 				</div>
 				<div class="text_center">
