@@ -34,12 +34,6 @@ export default {
 			codes:[]
 		}
 	},
-	created: function() {
-		if(Object.keys(this.currentSelection).length){
-			//Get the objects in the path to the current selection
-			this.getPath(this.professions, this.currentSelection.Code);
-		}
-	},
 	methods: {
 		foundEndOfTree(e){
 			this.currentSelection = e.current;

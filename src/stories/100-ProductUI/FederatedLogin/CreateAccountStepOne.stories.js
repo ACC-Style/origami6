@@ -1,7 +1,7 @@
 import TextInput from "../../../components/BasicForms/Input.Text.vue";
 import Btn from "../../../components/subComponents/Btn.vue";
 import InputEmail from "../../../components/BasicForms/Input.Email.vue";
-import SelectProfession from "../../../components/ORG/FederatedLogin/SelectProfession.vue";
+import SelectProfession from "../../../components/ORG/FederatedLogin/SelectProfession.Wrapper.vue";
 import SetPassword from "../../../components/ORG/FederatedLogin/SetPassword.vue";
 
 
@@ -66,9 +66,6 @@ const Template = (args, { argTypes }) => ({
 			if( this.emailValue == '' ) { 
 				this.emailState = 'requiredAlert';
 			}
-			/*else {
-				this.emailState = ''; 
-			}*/
 		},
 		updateProfession(profession){
 			this.selectedProfession = profession;
@@ -117,7 +114,7 @@ const Template = (args, { argTypes }) => ({
 						<template v-slot:requiredAlertMessage>Email is required.</template>
 						<template v-slot:alertMessage >Please enter a valid email address.</template>
 					</InputEmail>
-					<SelectProfession class="m-b_4" :professions="professions" :currentSelection="selectedProfession" @onSelect="updateProfession" />
+					<SelectProfession class="m-b_4" :professions="professions" :currentSelection="selectedProfession" @v-bind="updateProfession" />
 					<SetPassword class="display_contents" @passwordChanged="updatePassword" />
 				</div>
 				<div class="text_center">
