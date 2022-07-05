@@ -67,7 +67,10 @@ const options= [{
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { SelectInput },
-	template: `<SelectInput  v-bind="$props" :state="state" :value="value">
+	data: () => ({
+		value: ""
+	}),
+	template: `<SelectInput  v-bind="$props" :state="state" v-model="value">
 		<template v-slot:default >{{ defaultSlot }}</template>
 		<template v-slot:requiredAlertMessage >{{requiredAlertMessage}}</template>
 		<template v-slot:alertMessage >{{alertMessage}}</template>
