@@ -99,6 +99,11 @@ const Template = (args, { argTypes }) => ({
                 <p>Please note that creating a free ACC account does not make you a member of the ACC or give you access to member-only content, but it does allow you to register for events, purchase ACC products, and use promo codes for discounts.</p>
             </div>
 
+			<div class="relative clear_fix m-b_4">
+				<Btn :size="'small'" class="absolute"><i class="far fa-arrow-left self_center m-r_3"></i> Back</Btn>
+				<h3 class="text_center m-y_2">Step 2 of 2</h3>
+			</div>
+
             <form id="formForgotPassword" class="m_auto" novalidate v-on:submit.prevent="onSubmit">
 				<div class="grid gap-x_5 gap-y_3 grid-col_2:md">
 					<TextInput class="m-b_4" :inputId="'firstname'" :type="'text'" v-model="firstnameValue" :required=true :placeholder="'First Name'" :state="firstnameState" @onStateChange="updateInputState">
