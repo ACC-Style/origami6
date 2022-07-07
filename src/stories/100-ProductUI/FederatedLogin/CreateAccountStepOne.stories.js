@@ -46,7 +46,8 @@ const Template = (args, { argTypes }) => ({
 		//field state bindings
 		firstnameState: null,
 		lastnameState: null,
-		emailState: null
+		emailState: null,
+		profAlert: false
 	}),
 	computed: {
 		isDisabled() {
@@ -59,15 +60,25 @@ const Template = (args, { argTypes }) => ({
 				return false;
 			}
 			return true;
-		}
+		},
+		/*profAlert(){
+			if( Object.keys(this.selectedProfession) == 0 && this.firstCheck == false){
+				return true;
+			}
+			return false;
+		}*/
 	},
 	methods:{
-		onDisabledCheck(eventTargetDOM){ 
+		onDisabledCheck(eventTargetDOM){
+			if( Object.keys(this.selectedProfession) == 0){
+				this.profAlert = true;
+			}
 			if( this.emailValue == '' ) { 
 				this.emailState = 'requiredAlert';
 			}
 		},
 		updateProfession(profession){
+			this.profAlert = false;
 			this.selectedProfession = profession;
 		},
 		updatePassword(v){
@@ -110,7 +121,7 @@ const Template = (args, { argTypes }) => ({
 						<template v-slot:default>First Name</template>
 						<template v-slot:requiredAlertMessage>First Name is required.</template>
 					</TextInput>
-					<TextInput class="m-b_4" :inputId="'lastname'" :type="'text'" v-model="lastnameValue" :required=true :placeholder="'Last Name'" :state="lastnameState" @onStateChange="updateInputState">
+					<TextInput class="m-b_4" :inputId="'city'" :type="'text'" v-model="lastnameValue" :required=true :placeholder="'Last Name'" :state="lastnameState" @onStateChange="updateInputState">
 						<template v-slot:default>Last Name</template>
 						<template v-slot:requiredAlertMessage>Last Name is required.</template>
 					</TextInput>
@@ -119,10 +130,10 @@ const Template = (args, { argTypes }) => ({
 						<template v-slot:requiredAlertMessage>Email is required.</template>
 						<template v-slot:alertMessage >Please enter a valid email address.</template>
 					</InputEmail>
-					<SelectProfession class="m-b_4" :professions="professions" :currentSelection="selectedProfession" @v-bind="updateProfession" />
+					<SelectProfession class="m-b_4" :professions="professions" @input=updateProfession :professionalAlert="profAlert" />
 					<SetPassword class="display_contents" @passwordChanged="updatePassword" />
 				</div>
-				<div class="text_center">
+				<div class="text_center" @click="onDisabledCheck">
 					<Btn :isDisabled="isDisabled" :size="'medium'">
 						<span class="p-r_3">Submit</span>
 						<i v-if="loading" id="btnSpinner" class="spinner fa fa-spinner fa-spin self_center"></i>
