@@ -2,10 +2,12 @@
 	<section>
 		<div class="br_2 br_acc br_solid">
 			<span class="block bg_acc p_3 c_white font_bold">I'm a...</span>
-			<professional-item :professions="professions" :currentSelection="currentSelection" @onSelect="onSelect"></professional-item>
+			<professional-item :professions="prof" :currentSelection="currentSelection" @onSelect="onSelect">
+			</professional-item>
 		</div>
-		<div v-if="!endOfTree(currentSelection)" class="br_2 br_acc br_solid">
-			<select-profession :professions="currentSelection['Subcategories']" @onChildSelect="onChildSelect" @foundEndOfTree="foundEndOfTree"></select-profession>
+		<div v-if="subProf.length>=1" class="br_2 br_acc br_solid">
+			<select-profession :professions="subProf" :subProfessions="[]" @onChildSelect="onChildSelect"
+				@foundEndOfTree="foundEndOfTree"></select-profession>
 		</div>
 	</section>
 </template>
@@ -19,21 +21,35 @@ export default {
 	name: "SelectProfession",
 	components: { Btn, Modal, ProfessionalItem },
 	props: {
-		professions: { type: Array },
+		professions: { type: Array, default:()=>[] },
+		subProfessions:{type:Array, default:()=>[]},
 		
 	},
 	data() {
 		return {
-			currentSelection: { type: Object },
+			prof: this.professions,
+			subProf: this.subProfessions,
+			currentSelection: { type: Object, default: () => { } },
 			childSelection:{type:Object, default:()=>{}}
 		}
+	},
+	watch:{
+		professions: function (newValue, oldValue) {
+			// console.log("newValue: %s, previousValue: %s", newValue.length, oldValue.length);
+			this.prof = this.professions;
+		},
+		subProfessions: function (newValue, oldValue) {
+			// console.log("newValue: %s, previousValue: %s", newValue.length, oldValue.length);
+			this.subProf = this.subProfessions;
+		},
 	},
 	computed: {
 
 	},
 	methods: {
 		onSelect(e){
-			this.currentSelection = e,
+			this.currentSelection = e;
+			this.subProf = this.currentSelection['Subcategories'];
 			this.onChildSelect( {current:e, child:{} } );
 			
 		},
@@ -57,10 +73,7 @@ export default {
 			}
 		},
 		endOfTree(branch){
-			if( Object.keys(branch).length === 0 ){
-				return false;
-			}
-		 	return (branch.Subcategories == null || branch.Subcategories.length == 0 );	
+			return (branch.Subcategories == null || branch?.Subcategories == undefined || branch.Subcategories.length == 0 );	
 		},
 		foundEndOfTree(){
 			this.$emit('foundEndOfTree',{ current:this.currentSelection, child:this.childSelection});
