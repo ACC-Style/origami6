@@ -2,6 +2,8 @@
 	<button
 		class="ease_out transition_1 f:outline_none text_center br_none inline-block w_auto font_medium font_ui"
 		@click="onClick()"
+		@focus="onFocus()"
+		@blur="onBlur()"
 		:class="[buttonColors, 'br_' + corner, { p_0: shape != 'button' }]"
 		v-bind:disabled="isDisabled"
 		style="min-height:unset"
@@ -53,6 +55,12 @@ export default {
 	methods: {
 		onClick() {
 			this.$emit("onClick");
+		},
+		onFocus() {
+			this.$emit("onFocus");
+		},
+		onBlur() {
+			this.$emit("onBlur");
 		}
 	},
 	computed: {

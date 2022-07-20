@@ -28,12 +28,14 @@
 				/>
 				<Btn
 					:class="areaStyle"
-					state="secondary"
+					:state="buttonState"
 					:shadow="false"
 					corner="square"
 					size="small"
 					type="button"
 					@onClick="showHideToggle()"
+					@onFocus="toggleFocus()"
+					@onBlur="toggleFocus()"
 
 				>
 					<i class="far fa self_center" :class="showHideIcon"></i>
@@ -79,6 +81,8 @@ export default {
 	data() {
 		return {
 			isMasked: true,
+			isFocused: false,
+			buttonState: "secondary",
 		};
 	},
 	computed: {
@@ -91,17 +95,23 @@ export default {
 			return type;
 		},
 		areaStyle() {
-			let styles = "br-tr_radius br-br_radius";
+			let styles = "br-tr_radius br-br_radius br_solid br_2 p-y_1";
+			if (this.buttonState == "primary") {
+				return styles;
+			}
 			switch (this.state) {
 				case "requiredAlert":
 				case "alert":
+					//styles += (this.isFocused) ? " br_secondary-2 " : " bg_alert-3 c_alert-n3 br_alert-n1 ";
 					styles += " bg_alert-3 c_alert-n3 br_alert-n1 ";
 					break;
 				case "warning":
 					styles += " bg_warning-3  c_warning-n3 br_warning-n1 ";
+					//styles += (this.isFocused) ? " br_secondary-2 " : " bg_warning-3  c_warning-n3 br_warning-n1 ";
 					break;
 				//trimmed cases
 				default:
+					styles += (this.isFocused) ? " br_secondary-2" : " br_secondary-4";
 					break;
 			}
 			return styles;
@@ -110,6 +120,15 @@ export default {
 	methods: {
 		showHideToggle: function () {
 			this.isMasked = !this.isMasked;
+		},
+		toggleFocus: function () {
+			this.isFocused = !this.isFocused;
+			this.buttonState = this.buttonState == "secondary" ? "primary" : "secondary"
+			/*if(this.buttonState == "secondary"){
+				this.buttonState == this.thisState;
+			} else {
+				this.buttonState =="primary";
+			}*/
 		},
 		isPassword() {
 			const regex = RegExp('^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$');
